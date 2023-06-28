@@ -1,16 +1,19 @@
 # Quantitative Reasoning for Social Justice: An Active Learning Workbook
 
-### Kenan Ince
-#### Department of Mathematics, Westminster College, Salt Lake City
+### Kenan Ince and Bianca Thompson
+#### Department of Mathematics, Westminster University, Salt Lake City
 ##### Migrated from [github.com/kaince](https://github.com/kaince)
 ##### Including remixed materials from: 
 - [Mark Branson (Payday Loans)](https://web.stevenson.edu/mbranson/math-for-the-people.html)
 - Maybe you?
+- Folks at ICERM
 
 ## Latest Book Version
 [v04/18/2023: includes introduction and Student Loans section](https://qr-for-social-justice.github.io/workbook/)
 
 ## Welcome
+
+This is the new home for *Quantitative Reasoning for Social Justice: An Active Learning Workbook.*  
 
 Welcome to the workbook's GitHub page! This is a work in progress; I aim to write and collate open-source lesson plans for TMSJ (teaching math for social justice) into a workbook you can use in your courses. I am indebted to and model my work after the K-12 educators (e.g. [Bob Moses](https://rethinkingschools.org/articles/radical-equations/), [Jonathan Osler](https://radicalmath.org/)) who have been doing this work for decades.
 
