@@ -1,0 +1,654 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{url}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{plain}
+\newtheorem{question}[thm]{\protect\questionname}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\questionname}{Question}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 7 - Le Chiffre Indechiffrable (``The Indecipherable Cipher'')}
+\maketitle
+
+\section{Python module: Frequency Analysis}
+
+\textbf{Solving Affine Ciphers}:
+\begin{enumerate}
+\item Form a system of linear congruences to solve for $m$, the multiplicative
+constant, and $k$, the additive constant.
+\item Simplify the system of congruences by substitution, elimination, or
+addition/subtraction of congruences.
+\item Find the solution of the resulting congruence using trial and error
+or the extended Euclidean algorithm. 
+\item Use $m$ and $k$ to decrypt the ciphertext using the formula $p_{i}=m^{-1}(c_{i}-k)$
+mod $26$.
+\end{enumerate}
+
+\subsection{Python Module: Frequency Analysis}
+\begin{itemize}
+\item In order to break an affine (or any monoalphabetic) cipher, we have
+to do a frequency count.
+\item For longer messages, it's very impractical to frequency analyze by
+hand. For example, consider what would happen if you intercepted the
+entire Declaration of Independence enciphered with $C\equiv25P+5\mod26$.
+\item Let's start to build a tool to frequency analyze in Python!
+\item The algorithm we'll use is as follows: {[}show what would happen in
+the message ``TEST''{]}
+\begin{itemize}
+\item \textbf{Goal}: build a list of ciphertext letters together with their
+corresponding counts in the message.
+\begin{enumerate}
+\item Start with an empty count\_list.
+\item Add 26 zeroes to the empty count\_list, one to represent each ciphertext
+letter.
+\item Go through the intercepted ciphertext message letter by letter and,
+for each ciphertext letter in the message, add $1$ to that letter's
+entry in count\_list.
+\item Label each entry of count\_list with the corresponding ciphertext
+letter.
+\item Return the labeled count\_list to the user.
+\end{enumerate}
+\end{itemize}
+\end{itemize}
+\begin{xca}
+{[}CoCalc{]} open the Frequency Analysis module and work through it,
+step-by-step, with the class, giving them occasional tasks.
+\end{xca}
+
+
+\section{``The Indecipherable cipher''}
+
+\textbf{Last time: }
+
+\subsection*{The Process of Frequency Analysis}
+\begin{enumerate}
+\item Count the number of each letter in the ciphertext.
+\item Guess that the most common letter is equal to \textbf{e}. This determines
+the key. Attempt to decrypt this message using that key
+\item If the result is unintelligible, guess that the most common letter
+is equal to \textbf{t}. Repeat. If this doesn't work, guess that the
+most common letter is equal to \textbf{a}, etc. Use your knowledge
+of English to help if possible.
+\end{enumerate}
+\textbf{Today}: frequency analysis broke the simple substitution cipher
+and let cryptanalysts read almost any encrypted message they wanted.
+Until the development of a new cipher...
+\begin{itemize}
+\item Re-shuffle groups
+\end{itemize}
+\begin{xca}
+\textbf{(reading question) }Pass your ``alternating shift'' ciphertext
+clockwise in your groups and have your classmates try to break it
+without knowing the key. Try a quick frequency count on the ciphertext
+you receive to see if frequency analysis will help, and feel free
+to try and other tricks to decrypt the message aside from asking for
+the key.
+\begin{itemize}
+\item None of these probably worked...the ciphertext is so short that it's
+not much longer than the keyword! This is approaching a \textbf{one-time
+pad, }which is theoretically unbreakable.
+\end{itemize}
+\end{xca}
+
+~
+\begin{xca}
+\textbf{(RQ) }Watch the Numberphile video about the flaw in the Enigma
+machine, then answer the following questions in full sentences, explaining
+your reasoning in each case.
+\begin{enumerate}
+\item Does the Enigma machine encrypt using a monoalphabetic or polyalphabetic
+substitution cipher? Explain your answer. 
+\begin{itemize}
+\item The Enigma machine uses a polyalphabetic cipher, because the same
+letter can be enciphered in multiple different ways depending on the
+current rotor settings.
+\end{itemize}
+\item What mechanical aspect(s) of the Enigma machine make it monoalphabetic
+or polyalphabetic?
+\begin{itemize}
+\item The rotors rotate, effectively changing the cipher alphabet every
+time a new letter is encrypted.
+\end{itemize}
+\item What was the major flaw in the Enigma machine that allowed its codes
+to be broken? Why was this a flaw? 
+\begin{itemize}
+\item No letter could be encrypted as itself. This was a flaw because we
+can eliminate certain letter/word possibilties simply by determining
+if any letters would be encrypted as themselves.
+\end{itemize}
+\item Describe in 3-4 sentences how the Bombe machine (called \textquotedbl Christopher\textquotedbl{}
+in The Imitation Game) tests rotor positions in order to guess the
+settings of the Enigma machine. 
+\begin{itemize}
+\item The Bombe took common German phrases found in Enigma plaintext, such
+as ``wetterbericht'' (``weather report''), and slid it along the
+Enigma ciphertext until it determined where in the ciphertext the
+plaintext phrase could possibly occur.
+\item The Bombe machine tried to work out the plugboard at the front of
+the machine, which transposes (switches) pairs of letters. 
+\item Guessing a pair of letters which are connected in the plugboard allows
+us to determine other plugboard settings, since the way the rotors
+operate are predictable and change in a predictable way.
+\item Assuming, e.g., $(ta)$ is a plugboard setting (in other words, $t$
+and $a$ are swapped), if we conclude that $(tx)$ is a plugboard
+setting, this is a \textbf{contradiction }because $t$ can only be
+connected to at most one other letter in the plugboard.
+\item Once we find a contradiction, we can reject all the conclusions we
+came to from our initial plugboard guess because they're ``fruit
+of a poison tree''.
+\end{itemize}
+\item What made naval Enigma codes harder to break than Army or Air Force
+codes? 
+\begin{itemize}
+\item Naval Enigma codes had an extra rotor, making four rotors total instead
+of three.
+\end{itemize}
+\item If you had to explain to someone who knew no cryptography or probability
+how the Enigma code was broken, what would you say?
+\begin{itemize}
+\item The Bombe machine begins by assuming two letters are connected on
+the plugboard, hence are switched with each other. 
+\item It then uses known phrases or words and the fact that no letter is
+connected to itself to deduce other rotor positions from the initial
+guess.
+\item If we get a contradiction (a given letter being connected to more
+than one other letter), then we can eliminate all the deductions we
+made earlier.
+\item Once we eliminate all but one setting, that setting can be input into
+a captured or reverse-engineered Enigma machine to decrypt messages.
+\end{itemize}
+\end{enumerate}
+\end{xca}
+
+
+\section{Response to anonymous evals}
+\begin{itemize}
+\item Discuss what we want each function to do and steps (in Python) to
+do it before each module 
+\item Homework not properly synced with class material 
+\item Cut down on number of assigments
+\end{itemize}
+
+\section*{The Vigenere Cipher}
+\begin{xca}
+First, read p66-67 of The Code Book, through the paragraph ending
+in \textquotedbl smooth\textquotedbl , on Charles Babbage and his
+cryptanalysis of the Vigenere cipher. Then encrypt the following messages
+with the corresponding Vigen\`{e}re keywords, showing all your work,
+and bring your work to class to turn in on the date below. You may
+want to use the Vigen\`{e}re square on p102 of your CoursePack or
+modular arithmetic. Finally, answer the question below the messages.
+\begin{enumerate}
+\item \textquotedbl checkmate\textquotedbl , keyword = \textquotedbl rook\textquotedbl{} 
+\begin{enumerate}
+\item TVSMBAODV
+\end{enumerate}
+\item \textquotedbl poison the river\textquotedbl , keyword = \textquotedbl kafka\textquotedbl{}
+\begin{enumerate}
+\item zoncox tmo rsvjb 
+\end{enumerate}
+\item \textquotedbl the sun and the man in the moon\textquotedbl , keyword
+= \textquotedbl king\textquotedbl{} 
+\begin{enumerate}
+\item dpr yev ntn buk wia ox buk wwbt 
+\end{enumerate}
+\end{enumerate}
+In message 3, you may have noticed that \textquotedbl the\textquotedbl{}
+was enciphered in the same way twice. Why did this happen? If you
+intercepted the ciphertext from question 3 and wanted to guess the
+length of the key used to encrypt the message, can you think of a
+way to use this repetition to guess the key? Explain your answer.
+\begin{itemize}
+\item Since the ``BUK''s in the ciphertext are separated by $8$ letters
+(start at the first b, which we call $0$, and count up), we guess
+that the keyword must repeat at least every $8$ letters.
+\item For it to loop around like that every $8$ letters, the keyword either
+has to be $8$ letters long or a factor of $8$ (for example, if it's
+$4$ letters long $C_{1}C_{2}C_{3}C_{4}$, then the first b could
+fall on $C_{1}$ and the other characters
+\begin{align*}
+P_{1}P_{2}P_{3}P_{4}P_{5}P_{6}P_{7}P_{8}\\
+K_{1}K_{2}K_{3}K_{4}K_{1}K_{2}K_{3}K_{4}
+\end{align*}
+\item Any number that goes into $8$ evenly (any factor of $8$) would loop
+back around to ensure that $P_{1}$ and $P_{8}$ are encrypted with
+$K_{1}$.
+\end{itemize}
+\end{xca}
+
+\begin{itemize}
+\item It turns out the Enigma machine uses a souped-up version of a Vigen\`{e}re
+cipher, called a \emph{one-time pad}. So to understand Enigma, we
+need to understand Vigen\`{e}re first.
+\end{itemize}
+The Vigenere cipher uses not one, but 26 distinct cipher alphabets
+to encrypt a message. 
+\begin{itemize}
+\item {[}slide{]} First look at a Vigenere square, like the one in Table
+3 of Singh p48 or p95 (bottom numbering) of your CoursePack:
+
+\includegraphics{\string"Old Cryptography Notes/pasted8\string".png}
+\item Row 1 represents a cipher alphabet with a Caesar shift of 1, meaning
+it could be used to implement a Caesar shift cipher in which every
+letter of the plaintext is replaced by the letter one place further
+on in the alphabet. Similarly, row 2 represents a cipher alphabet
+with a Caesar shift of 2, and so on.
+\item We use a diferent row of the Vigenere square (a different cipher alphabet)
+to encrypt different letters of the message.
+\item The sender and receiver must agree on a system of switching between
+rows. This is achieved by using a keyword. To illustrate, let's encipher
+\textbf{divert troops to east ridge} using the keyword \textbf{WHITE}.
+\end{itemize}
+\begin{enumerate}
+\item First off, the keyword is spelled out above the message, and repeated
+over and over again so that each letter in the message is associated
+with a letter from the keyword: 
+
+\includegraphics{\string"Old Cryptography Notes/pasted9\string".png}
+\item To encrypt the first letter, begin by identifying the letter above
+it, which in turn defines a particular row in the Vigenere square.
+Look where the column headed by the plaintext letter intersects the
+row corresponding to the first keyword letter.
+
+The first letter, \textbf{d}, has \textbf{W} above it, so we look
+at row 22 of the Vigenere square to encipher it. We look where the
+column headed by \textbf{d} intersects the row beginning with \textbf{W}.
+We get the letter \textbf{Z. }Hence, the letter \textbf{d }in the
+plaintext is represented by \textbf{Z }in the ciphertext.
+\item Continue this process for the rest of the letters.
+
+In your groups, finish enciphering \textbf{divert troops to east ridge}.
+
+\includegraphics{\string"Old Cryptography Notes/pasted10\string".png}
+
+\end{enumerate}
+\begin{xca}
+Encipher the lyrics ``It's Friday, Friday, gotta get down on Friday''
+using the keyword ``Terrible''. How does it mask the repetition
+of the word Friday?
+
+Encipher the lyrics ``She's just a small town girl'' using the keyword
+``Journey''. Now use the keyword ``Don't Stop Believing''. Which
+offers more security?
+
+\includegraphics{\string"Old Cryptography Notes/pasted127\string".png}
+\end{xca}
+
+\begin{itemize}
+\item {[}slide{]} Why is the Vigen\`{e}re cipher so strong?
+\begin{itemize}
+\item Number of possible ciphers (the keyspace) is huge! For each letter
+of the keyword, there are $26$ choices. For a keyword that's only
+six letters long, that's 
+\[
+26\times26\times26\times26\times26\times26=26^{6}=308,915,776
+\]
+ possibilities.
+\item Letter frequencies are masked because all the e's in the plaintext
+might go to different ciphertext letters, making it useless to count
+the most common letter and guess it came from e.
+\end{itemize}
+\end{itemize}
+\begin{xca}
+{[}slide{]} Decrypt the message encrypted with Vigenere keyword ``SIKEN''.
+\end{xca}
+
+\begin{question}
+What other advantages does the Vigenere cipher have over the shift
+cipher?
+\begin{itemize}
+\item It may be easier to remember a keyword like ``BONANZA'' than a number
+shift, like $21$\textendash much less several numerical shifts!
+\item Breaking (or even decrypting) a Vigen\`{e}re-enciphered message requires
+more work and more knowledge of mathematics than decrypting a shift
+cipher.
+\end{itemize}
+\end{question}
+
+\begin{itemize}
+\item The Vigenere cipher was not immediately adopted because it took a
+long time to encode things, but when the telegraph was invented it
+gained greatly in popularity. It was considered unbreakable, and called
+in French \emph{le chiffre ind\'{e}chiffrable}, the ``indecipherable
+cipher''. But it wasn't really indecipherable...
+\end{itemize}
+
+\subsection{Reading Question: the Development of Cipher Machines}
+\begin{xca}
+Please read p124-142 of The Code Book (under the heading The Development
+of Cipher Machines), then answer the following questions in a text
+box below:
+\begin{enumerate}
+\item Describe the role of the scramblers in the Enigma machine. What is
+the benefit of adding multiple scramblers instead of just one? 
+\begin{enumerate}
+\item The scramblers encipher individual letters by connecting them via
+wires. For instance, plaintext a might go to A in the scrambler, which
+is connected by a wire to B, and the current goes out of the scrambler
+into the B lamp.
+\item Having multiple scramblers allows the cipher alphabet to change after
+each letter is enciphered, since scramblers rotate each other after
+encryption. Moreover, even after typing 26 letters, the cipher alphabet
+won't go back to the beginning because the second rotor will rotate.
+\end{enumerate}
+\item What is the benefit of adding a reflector to the Enigma machine? 
+\begin{enumerate}
+\item The reflector sends the current back through the machine in a mirror-symmetric
+way.
+\item This means that to get plaintext back from ciphertext, all you have
+to do is run the ciphertext through the machine.
+\item Encryption and decryption are the same process!
+\end{enumerate}
+\item Name two additional Enigma features that made decrypting Enigma more
+difficult. How did these features add to the security of the Enigma
+machine?
+\begin{enumerate}
+\item The plugboard switched letters with each other to add to the number
+of possible encryptions.
+\item The scramblers are removable and interchangeable, increasing the number
+of keys in a 3-rotor Enigma by a factor of $3!=6$.
+\end{enumerate}
+\end{enumerate}
+\end{xca}
+
+
+\subsection{Charles Babbage: Finding the Key Length for the Vigenere Cipher}
+
+Let's say you're handed a cipher and know it's a Vigenere cipher.
+{[}This is not very realistic; it's unlikely someone will have told
+you what kind of cipher you've intercepted! We'll talk about ways
+to figure out what cipher you're dealing with later.{]} You don't
+know the length of the key or anything about the original message.
+
+Charles Babbage figured out how to solve the Vigenere cipher by thinking
+very hard about examples, among other things. 
+
+\includegraphics{\string"Old Cryptography Notes/pasted22\string".png}
+
+\includegraphics{\string"Old Cryptography Notes/pasted23\string".png}
+\begin{xca}
+First, read p66-67 of The Code Book, through the paragraph ending
+in \textquotedbl smooth\textquotedbl , on Charles Babbage and his
+cryptanalysis of the Vigenere cipher. Then encrypt the following messages
+with the corresponding Vigen\`{e}re keywords, showing all your work,
+and bring your work to class to turn in on the date below. You may
+want to use the Vigen\`{e}re square on p102 of your CoursePack or
+modular arithmetic. Finally, answer the question below the messages.
+\begin{enumerate}
+\item \textquotedbl checkmate\textquotedbl , keyword = \textquotedbl rook\textquotedbl{} 
+\item \textquotedbl poison the river\textquotedbl , keyword = \textquotedbl kafka\textquotedbl{} 
+\item \textquotedbl the sun and the man in the moon\textquotedbl , keyword
+= \textquotedbl king\textquotedbl{} 
+\end{enumerate}
+In message 3, you may have noticed that \textquotedbl the\textquotedbl{}
+was enciphered in the same way twice. Why did this happen? If you
+intercepted the ciphertext from question 3 and wanted to guess the
+length of the key used to encrypt the message, can you think of a
+way to use this repetition to guess the key? Explain your answer.
+
+\includegraphics{\string"Old Cryptography Notes/pasted14\string".PNG}
+\begin{itemize}
+\item The word \textbf{the} is enciphered as \textbf{DPR }in the first instance,
+and then as \textbf{BUK }on the second and third occasions. This is
+because the second \textbf{the} is displaced by 8 letters from the
+third \textbf{the}, and eight is a multiple of the length of the keyword,
+which is four letters long. In other words, the second \textbf{the}
+is directly below \textbf{ING}, and the third \textbf{the} falls in
+the same place!
+\end{itemize}
+\end{xca}
+
+\begin{xca}
+\textbf{{[}RQ{]}}: 
+\begin{enumerate}
+\item In your own words, describe (step by step) the method Charles Babbage
+used to find the length of the key in a Vigenere cipher. 
+\item Suppose you intercept a Vigenere-enciphered message which has the
+ciphertext letters Y-P-I-V repeated 35 characters apart and the letters
+X-I-V-Q-Q repeated 56 characters apart. How long would you guess the
+key is? Explain your answer. 
+\begin{enumerate}
+\item the key length could be any of the shared factors of $35$ and $56$. 
+\item Since $7$ goes evenly into $35=7\times5$ and $56=7\times8$, and
+their only other shared factor is $1$, the keyword is almost certainly
+$7$ letters long.
+\end{enumerate}
+\item After you have determined the key length of a Vigenere cipher, do
+you have any thoughts on how you could use frequency analysis to determine
+the keyword (and thus decrypt the message)?
+\begin{enumerate}
+\item Since we know every seventh ciphertext letter (in the example above)
+was enciphered with the same keyword letter, we can do frequency analysis
+on every seventh letter in order to figure out the first letter of
+the keyword.
+\item Then, we could analyze the second letter, the eighth letter, and every
+letter congruent to $1\mod7$ to figure out the second letter of the
+keyword.
+\item Continue this process to find the entire keyword.
+\item How do we decrypt a Vigenere-enciphered message once we know the keyword?
+Share methods using the square and modular arithmetic. Since we're
+already using modular arithmetic to find the keyword, we might as
+well use it to decrypt the message!
+\end{enumerate}
+\end{enumerate}
+\end{xca}
+
+\begin{itemize}
+\item {[}slide{]} Now let's talk about Babbage's method. We'll use this
+ciphertext as an example:
+
+\includegraphics{\string"Old Cryptography Notes/pasted11\string".png}
+\end{itemize}
+\begin{enumerate}
+\item The first step is to find all sequences of four or more letters that
+are repeated more than once in the ciphertext.
+
+{[}slide{]} The sequence \textbf{E-F-I-Q }is repeated in the first
+line and in the fifth line, shifted forward by 95 letters. Why else
+could this happen?\emph{ }
+
+\emph{Well, most likely the same sequence of letters in the plaintext
+has been enciphered using the same part of the key. Alternatively,
+there's a slight chance that two different sequences of letters in
+the plaintext got enciphered using different parts of the text and
+coincidentally led to the identical sequence in the ciphertext. We'll
+restrict to sequences of four or more letters so the second possibility
+is slight.}
+
+If we could figure out the keyword, we'd be done, since it's used
+by the receiver to decipher the message. We can't yet figure out the
+keyword, but we can figure out its length.
+\item For each repeated sequence, count the displacement/spacing between
+the first repeat and the second repeat. Write it down in a table.
+
+Here's a table for this ciphertext:
+
+\includegraphics{\string"Old Cryptography Notes/pasted15\string".png}
+
+Remember to start counting the spacing at the first letter and end
+at the first letter of the next repeat. For instance, for \textbf{E-F-I-Q},
+count 1 for \textbf{F}, 2 for \textbf{I}, and so on until you reach
+the \textbf{E }of the next \textbf{E-F-I-Q}.
+\item Write out the factors, or divisors, of each of the numbers in the
+``repeat spacing'' column.
+
+Y'all can do this part!
+\begin{itemize}
+\item The factors of 95 are 1, 5, 19, and 95.
+\item For 5, the only factors are 5 and 1, since 5 is prime.
+\item The factors of 20 are 1, 2, 4, 5, 10, and 20.
+\item The factors of 120 are 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, ...
+\end{itemize}
+\begin{question}
+So what are our possible key lengths? Is it likely that the keyword
+is more than 20 letters long? How about 1 letter long? Why or why
+not?
+\end{question}
+
+\begin{itemize}
+\item Well, most English words are less than 20 letters long, so we'll assume
+the key is between 2 and 20 letters long. A 1-letter key is just a
+shift cipher, not a real Vigenere cipher.
+\item What other possible key lengths are there?
+\item Could the key be 3 letters long? Why or why not?
+\end{itemize}
+Well, if the key were 3 letters long, call the first letter \textbf{$\mathbf{L_{1}}$},
+the second letter $\mathbf{L_{2}}$, and the third letter $\mathbf{L_{3}}$,
+then we'd have the following situation:
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+$\mathbf{L_{1}}$ & $\mathbf{L_{2}}$ & $\mathbf{L_{3}}$ & $\mathbf{L_{1}}$ & $\mathbf{L_{2}}$ & $\mathbf{L_{3}}$ & $\mathbf{L_{1}}$ & $\mathbf{L_{2}}$ & $\mathbf{L_{3}}$ & $\mathbf{L_{1}}$ & $\mathbf{L_{2}}$ & $\mathbf{L_{3}}$ & $\mathbf{L_{1}}$ & $\mathbf{L_{2}}$ & $\mathbf{L_{3}}$ & $\mathbf{L_{1}}$ & $\mathbf{L_{2}}$ & $\mathbf{L_{3}}$ & $\mathbf{L_{1}}$ & $\mathbf{L_{2}}$ & $\mathbf{L_{3}}$ & $\mathbf{L_{1}}$ & $\mathbf{L_{2}}$ & $\mathbf{L_{3}}$ & $\mathbf{L_{1}}$\tabularnewline
+\hline 
+\hline 
+\textbf{W} & \textbf{C} & \textbf{X} & \textbf{Y} & \textbf{M} & \textbf{?} & \textbf{?} & \textbf{?} & \textbf{?} & ? & \textbf{?} & \textbf{?} & \textbf{?} & \textbf{?} & ? & \textbf{?} & \textbf{?} & \textbf{?} & \textbf{?} & ? & \textbf{W} & \textbf{C} & \textbf{X} & \textbf{Y} & \textbf{M}\tabularnewline
+\hline 
+\end{tabular}
+
+The first \textbf{W }would have been enciphered by the $\mathbf{L_{1}}$-alphabet,
+and the second \textbf{W }by the $\mathbf{L_{3}}$-alphabet. It's
+really unlikely that the repeat would happen like this! 
+
+It looks like we'd need the initial \textbf{W }of the second \textbf{W-C-X-Y-M
+}to be on \textbf{$\mathbf{L_{1}}$ }if the initial \textbf{W }of
+the first \textbf{W-C-X-Y-M }was. That means the first row would have
+to start over every 20 letters. 
+
+What possible length keywords could we have now?
+
+There are 6 possibilities:
+
+\includegraphics{\string"Old Cryptography Notes/pasted16\string".png}
+
+So the length of the key has to be one of the \textbf{factors} of
+20!
+\item The possible key lengths are the common factors of all of the repeat
+spacings.
+
+The same thing we did in step 3 applies to all the other repeat lengths:
+95, 5, and 120. The keyword length must divide each of 95, 5, 20,
+and 120. The only numbers that do this are 1 and 5, and we already
+said 1 couldn't be the length. So the length of the keyword is 5.
+
+\includegraphics{\string"Old Cryptography Notes/pasted17\string".png}
+
+\includegraphics{\string"Old Cryptography Notes/pasted18\string".png}
+
+\end{enumerate}
+\begin{xca}
+{[}slide; print{]} Determine the length of the key for the following
+Vigenere text using the underlined words:
+
+oiggbwagnuzsbyhtwsqpammvxiggoufwnleqaigvqnrdantdwntxbwacccztwnmcnqzpccaclizrnchtmczarvqgcsmcmxqsrwminxfdcbqeaibdbcfxxhfwjnmaugqcjlqrayminxqfduxcxqitjlqtwamvnxucjadtjnoxecxljlftbnucpqttcbqgcbmiwufxxhagjhkcjnudwmarxhotrpqsjhphxxqsrwminxopwfacpyzsdlqlnudtvyfdwusgnufqjnfanzutuxaucbmifudlnbmknwabnnasnxurjnqpyidirizdontpczutuxmhjzucjfdtbnucpjxplyrdantdbyiwxbqgnamknnttrlxxeye\uline{iqufiquf}cjnudwguvqnxxeyuirmmacistcbqgocfirhspwxbgxjqgcbmifyewxoxsmifwrmnjcczpuudvnletwmqlnwmcwifsnxurjnqlnwmcwifrxhetllminqqrjhzdcbmauiiiqcevaigcmnttklmkngqcuchxwamcmxqpmqtdbndjpaxtmbqgnbmknwacbyogjnqsrnrpaundeyajajadajalnlfdjxpdaxqiauoicbqlxlxsfcxaucfiuyzdcyzdafacplqbngntaqtpcqqhjsttaynjccfrjhzteyduxlstcqtpcntthxusqydtrnuhoidjbnttuchxwadpcbqgcintmypxluftmbqgnnaiqygcoczxbbqsfidzfburqntthqtdoigvqnttaytpeyfwdmrpamacxvxnjxhpwwqsrnuhaufwnlrdaoeixvqwnlqsnxurjnqscifwnadtjnfpbedtvuucrhsqnzagnoeiqufuaiyiqyetqizdaypsnuplnnmznczraymhnxpteifxxhfdcbmilughnzagfburqntthamknnttuueiooxavymhdlqdoxqkxnudwntpcqqwnlqwratahlqhxfhtcbmicbqhnxqpmmtpufzdcbmknxutmczkjcziqufiqcecjnudwozsnlsdmmtpuftpeymcnqnxantdozdtnxabjhpiqufvxpqgwgqcciriqybtxjxtksfwnjqdyfquxlfwnjqdyfqhquxawifenluhqzddvnttnudiq
+\begin{itemize}
+\item The spacing is $4$, and the factors of the spacing are $1,2,4$.
+Since $1$ and $2$ are very unlikely lengths for a Vigen\`{e}re cipher,
+since the code-maker wants more security than that if they're bothering
+to use Vigen\`{e}re to begin with, the key length is almost certainly
+$4$.
+\end{itemize}
+\end{xca}
+
+\begin{question}
+After we determine the length of the keyword, how can we use frequency
+analysis to decrypt the message using the repetition of the keyword
+in the cipher?
+\end{question}
+
+\begin{xca}
+{[}slide{]} Have students submit Vigen\`{e}re ciphertext with a {*}long{*}
+phrase as plaintext and a 3-8 letter keyword. Then assign people to
+try and find repetitions, if possible, to crack the length of the
+key. Then use https://tinyurl.com/SinghTool can decrypt automatically
+based on guessing key length and using frequency analysis on every
+$n$th letter, where $n$ is the length of the key.
+\end{xca}
+
+~
+\begin{xca}
+0.3, 2.14 in Coursepack, 2.4(a-b), find the possible key length(s)
+for the following Vigenere ciphertext:
+
+\includegraphics{\string"Old Cryptography Notes/pasted20\string".png}
+
+and crack it using frequency analysis. This tool: http://www.counton.org/explorer/codebreaking/frequency-analysis.php
+can help.
+\end{xca}
+
+
+\section*{Kryptos}
+\begin{itemize}
+\item {[}slide{]} Part 1: \url{https://www.youtube.com/watch?v=PuTddBGq3e0}
+\item Part 2: \url{https://www.youtube.com/watch?v=eBlApaPx3xU}
+\end{itemize}
+In fact, Kryptos (parts 1 and 2) used a modified Vigenere square.
+In order to find the length of the keywords (there were two!) there,
+the solvers had to use something called the Index of Coincidence,
+which we'll learn next week.
+
+Here's a quote from the CIA guy who first solved Parts I-III, in 1998:
+``Nothing is more frustrating than reading a cryptography book where
+the author easily and in a straightforward manner shows how the code
+was solved. It is a little like reading one of those books on \textquotedbl How
+I made a million dollars.\textquotedbl{} The methods typically work
+for that particular set of circumstances, but they often do not work
+in your particular case. Similarly, codes have distinct characteristics
+that frequently require each to be solved with a unique method. Because
+I did not see any need to dwell on the hundreds of things I had tried
+that didn\textquoteright t work, the methodologies I presented may
+seem a little too straightforward and deceptively easy. As the adage
+goes, \textquotedbl If at first you don\textquoteright t succeed\textquotedbl\textemdash and
+in cryptology you never do\textemdash \textquotedbl try, try again.\textquotedbl{}
+If the methods that I tried had not worked, I would have tried others
+until I found something that did.
+
+When confronted with a puzzle or problem, we sometimes can lose sight
+of the fact that we have issued a challenge to ourselves, not to our
+tools. And before we automatically reach for our computers, we sometimes
+need to remember that we already possess the most essential and powerful
+problem-solving tool within our own minds.''
+
+\section*{The Thomas Beale Cipher}
+
+http://www.thomasbealecipher.com/
+
+Try to find and decrypt the hidden messages that hold clues to the
+characters' secrets!
+
+\section*{Read ``Cracking the Enigma'' in The Code Book}
+
+\section*{Enigma Machine Videos: Numberphile}
+
+https://www.youtube.com/watch?v=G2\_Q9FoD-oQ\&src\_vid=V4V2bpZlqx8\&feature=iv\&annotation\_id=annotation\_309534
+
+\section*{Sample Enigma Encoding}
+
+http://enigma.louisedade.co.uk/
+\end{document}

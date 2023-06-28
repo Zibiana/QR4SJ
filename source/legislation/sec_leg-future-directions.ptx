@@ -1,0 +1,93 @@
+	<section xml:id="sec-leg-future-directions">
+		<title>Directions for Future Work</title>
+
+
+		<subsection xml:id="bayesian-analysis">
+			<title>Bayesian Analysis</title>
+
+			<p>
+				What do Bayesian analyses tell us about the trends seen in the exploratory data analysis above?
+			</p>
+
+		</subsection>
+
+		<subsection xml:id="textual-analysis-of-template-bills-proposed-state-bills">
+			<title>Textual Analysis of Template Bills &amp; Proposed State Bills</title>
+
+			<p>
+				There is substantial evidence (Pauly 2023; Schipper 2022; Contreras 2023) that <q>template bills</q> containing text for banning aspects of gender-affirming care and social transition were distributed at workshops hosted by far-right organizations such as the Heritage Foundation and Christian Family Policy Alliance over the past several years. For example, throughout 2019, the Heritage Foundation hosted a series of workshops on the <q>medical risks</q> of gender-affirming care for trans youth (Harvard Law Review 2021).
+			</p>
+
+			<p>
+				Given the text of template bills such as that found in Appendix II of (Theriot and Connelly, n.d.), how many of the bills proposed across the U.S. since 2019 have significant textual similarity to template bills authored by conservative organizations? Which template bills, and which organizations, have had the most influence in the text of bills that were proposed? Passed? In which states?
+			</p>
+
+		</subsection>
+
+		<subsection xml:id="do-anti-trans-bills-reflect-the-will-of-voters">
+			<title>Do Anti-Trans Bills Reflect the Will of Voters?</title>
+
+			<p>
+				In states where anti-trans bills are passed, is the percentage of voters (eligible/likely voters, residents, etc.) in a state that support such bills a plurality? A majority? Greater or less than the number of legislature members who voted for the anti-trans bill?
+			</p>
+
+			<p>
+				How does the number of anti-trans bills passed in a state correlate to how gerrymandered the state is (using a measure such as Markov chain Monte Carlo (Metric Geometry &amp; Gerrymandering Group, n.d.))?
+			</p>
+
+		</subsection>
+
+		<subsection xml:id="state-prioritization-of-anti-trans-bills">
+			<title>State Prioritization of Anti-Trans Bills</title>
+
+			<p>
+				Are most anti-trans bills passed during the beginning of legislative sessions, indicating that such bills are a high priority for the state legislature?
+			</p>
+
+			<p>
+				In order to extract information on state legislature convening and adjourning dates, we download the schedule of state legislature meeting dates from the <url href="https://documents.ncsl.org/wwwncsl/About-State-Legislatures/2023_session_calendar_1.pdf">National Conference of State Legislatures</url> website, then use the <url href="https://tabula.technology/">Tabula tool</url> to extract the data into a .csv file, making some manual edits. Finally, we load the .csv file into RStudio.
+			</p>
+
+			<pre>## Rows: 56 Columns: 3
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr (3): State, Convene, Adjourn
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</pre>
+
+		</subsection>
+
+		<subsection xml:id="impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health">
+			<title>Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</title>
+
+			<p>
+				The 2022 Trevor Project National Survey on LGBTQ Youth Mental Health (The Trevor Project 2022) found that 59% of young trans men and 48% of young trans women had considered suicide in the past year, while 22% of trans boys and 12% of trans girls had attempted suicide. The same survey found that 93% of trans and nonbinary youth said they had worried about legislation denying trans people access to gender-affirming healthcare.
+			</p>
+
+			<p>
+				Is the number of Google searches or Twitter posts related to anxiety, depression, and/or suicidality (<q>#distress</q>) among trans and nonbinary folks higher in 2023 than in previous years?
+			</p>
+
+			<p>
+				Is the amount of #distress correlated to whether a bill has just passed? To whether the bill impacts social or medical transition, drag performance, or <q>Other</q>?
+			</p>
+
+			<p>
+				How does the amount of #distress in states that have not passed anti-trans bills compare to states in which an anti-trans bill has been passed in the past year? The past two years?
+			</p>
+
+		</subsection>
+
+		<subsection xml:id="queer-and-trans-resistance">
+			<title>Queer and Trans Resistance</title>
+
+			<p>
+				How does the number of posts related to organizing protests, whether online or in-person, on Twitter after the passage of an anti-trans bill in a particular state compare to the number immediately before the passage of that bill?
+			</p>
+
+			<p>
+				How does the number of out transgender and nonbinary people elected to public office, featured in the most widely consumed media outlets, generally being visible…related to the number of bills proposed/passed? Possible source: <url href="https://victoryfund.org/">LGBTQ+ Victory Fund</url> for officeholders
+			</p>
+        </subsection>
+</section>

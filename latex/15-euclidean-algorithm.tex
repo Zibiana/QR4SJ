@@ -1,0 +1,780 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{amstext}
+\usepackage{amsthm}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{definition}
+\newtheorem{example}[thm]{\protect\examplename}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{\protect\definitionname}
+\theoremstyle{plain}
+\newtheorem{cor}[thm]{\protect\corollaryname}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\corollaryname}{Corollary}
+\providecommand{\definitionname}{Definition}
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 5 - Modular Inverses \& the Euclidean Algorithm}
+\maketitle
+
+\section{Warmup}
+\begin{xca}
+Who had a chance to do the exercises on the {[}slide 1{]}?
+\end{xca}
+
+\begin{itemize}
+\item \textbf{Recall}: the \textbf{\emph{affine cipher}} encrypts a plaintext
+number $P$ using the formula 
+\[
+C\equiv mP+k\mod26,
+\]
+where $m$ is called the \textbf{multiplicative key }and $k$ the
+\textbf{additive key}.
+\item To encrypt a message using an affine cipher, it's often useful to
+make a table as follows: 
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+Plaintext letter & g & h & o & s & t\tabularnewline
+\hline 
+\hline 
+Plaintext number $P$ & 6 & 7 & 14 & 18 & 19\tabularnewline
+\hline 
+Ciphertext number $C\equiv7P+1\mod26$ & $43\equiv17$ & $50\equiv24$ & ... &  & \tabularnewline
+\hline 
+Ciphertext letter & R & Y & ... &  & \tabularnewline
+\hline 
+\end{tabular}
+\item When we pass off this work to computers, these four steps will be
+what we'll tell the computer to do so that we don't have to encrypt
+long affine messages by hand.
+\end{itemize}
+\begin{example}
+Let's discuss encryption of ``assassinate the king now'' using the
+affine cipher $C\equiv3P+1\mod26$.
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+Plaintext letter & A & S & S & A & S & S & I & N & A & T & E\tabularnewline
+\hline 
+\hline 
+Plaintext number & 0 & 18 & 18 & 0 & 18 & 18 & 8 & 13 & 0 & 19 & 4\tabularnewline
+\hline 
+$3\times$ plaintext number $+1$ (mod 26) & 1 & $-17\equiv9$ & 9 & 1 & 9 & 9 & 25 & $40\equiv14$ & 1 & $-20\equiv6$ & ...finish this yourselves.\tabularnewline
+\hline 
+Ciphertext letter & B &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+Plaintext letter & T & H & E & K & I & N & G & N & O & W & \tabularnewline
+\hline 
+Plain number & 19 & 7 & 4 & 10 & 8 & 13 & 6 & 13 & 14 & 22 & \tabularnewline
+\hline 
+$3\times$ Plain number $+1$ &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+Cipher  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\end{tabular}
+\end{example}
+
+\begin{xca}
+\textbf{{[}RQ{]} }Encrypt the following using the affine cipher $C\equiv mP+k\mod26$,
+the standard alphabet, and the specified keys.
+\begin{enumerate}
+\item \textquotedbl do not erase\textquotedbl , $m=19,k=7$
+
+mn une fshlf
+\item \textquotedbl never say never\textquotedbl , $m=4,k=0$
+
+aqgqq uas aqgqq
+
+Notice plaintext n, v, and a are encrypted as A!
+\item \textquotedbl supercalifragilisticexpialidocious\textquotedbl ,
+$m=13,k=0$
+
+Why would this give us only Ns and As as ciphertext?
+\item Computers can only understand numbers (which are written in 0s and
+1s), not letters. The computer language ASCII represents all commonly-used
+written characters as numbers between 1 and 256. Do you think we can
+encrypt ASCII messages using the affine cipher $C\equiv8P\mod256$?
+Why or why not? 
+\begin{enumerate}
+\item Nope; $\gcd(8,256)=8>1$.
+\end{enumerate}
+\end{enumerate}
+From the work you did above, what multiplicative keys do you think
+\textquotedbl work\textquotedbl{} for affine ciphers? What is the
+\textquotedbl problem\textquotedbl{} with the keys that don't work?
+Even if you don't have a complete sense of the issue, explain your
+hypothesis.
+\end{xca}
+
+\begin{itemize}
+\item {[}slide{]} Why does this happen? Think back to your mod-12 multiplication
+tables; what numbers had all integers $\mod12$ in their columns?
+Which didn't?
+\end{itemize}
+
+\section{Warmup 2: multiplicative inverses $\mod26$}
+\begin{example}
+{[}slide{]} But now let's say that we're trying to crack the affine
+cipher. Let's take this ciphertext: \textbf{hikctyhghykaezztgaayrhbggrvgdyfg}
+and try to find $m$ and $k$.
+\begin{itemize}
+\item The most common letters are g and h, which appear six and four times,
+respectively. This suggests that the ciphertext g and h correspond
+to plaintext e and t. Let's write the previous statement in number
+form:
+\item Ciphertext 6 corresponds to plaintext 4, and ciphertext 7 corresponds
+to plaintext 19.
+\item Let's look at the equation $(\ast)$ above. When $c_{i}=6$, then
+$p_{i}=4$ and the equation becomes
+\[
+6\equiv4m+k.
+\]
+When $c_{i}=7$, then $p_{i}=19$ and the equation becomes
+\[
+7\equiv19m+k.
+\]
+\item Together, these equations give us a \textbf{system of congruences}
+\begin{eqnarray*}
+4m+k & \equiv & 6\\
+19m+k & \equiv & 7\mod26
+\end{eqnarray*}
+(both mod 26). But we don't know yet how to solve systems of congruences!
+\end{itemize}
+\end{example}
+
+\begin{xca}
+If this were a system of \textbf{equations}
+\begin{align*}
+4m+k & =6\\
+19m+k & =7
+\end{align*}
+how would you solve it for $m$ and $k$? 
+\end{xca}
+
+\begin{itemize}
+\item \textbf{Goal}: figure out what it means to divide $\mod26$.
+\item Well, dividing normally is the same as multiplying by the \emph{multiplicative
+inverse} of a number. What's a multiplicative inverse?
+\item For example, the multiplicative inverse of $3$ is $\frac{1}{3}$,
+so dividing by $3$ is the same as multiplying by $\frac{1}{3}$.
+And $3\times\frac{1}{3}=1$.
+\end{itemize}
+\begin{defn}
+The \textbf{multiplicative inverse of $a\mod n$ }is the number $a^{-1}$
+so that $aa^{-1}\equiv1\mod n$, if such an $a^{-1}$ exists.
+\end{defn}
+
+\begin{xca}
+\textbf{(Reading Question) }The goal of this assignment is to make
+yourself a \textquotedbl cheat sheet\textquotedbl{} which will tell
+you the multiplicative inverse of any number mod 26, assuming it exists.
+My expectation is not that you memorize such a list (though more power
+to you if you'd like to); I'll give you enough time to re-derive each
+multiplicative inverse using trial-and-error or the Extended Euclidean
+Algorithm on a quiz or exam.
+\end{xca}
+
+\begin{enumerate}
+\item Make a table as follows, with the numbers in the left column going
+from 0 to 25. We'll fill in the blanks throughout this assignment.
+
+\begin{tabular}{|c|c|c|}
+\hline 
+$a$ & Does $a^{-1}$ exist $\mod26$? & If so, what is $a^{-1}\mod26$?\tabularnewline
+\hline 
+\hline 
+$0$ & N & \tabularnewline
+\hline 
+$1$ & Y & $1$\tabularnewline
+\hline 
+$2$ & N & \tabularnewline
+\hline 
+$3$ & Y & $9$\tabularnewline
+\hline 
+$4$ & N & \tabularnewline
+\hline 
+$5$ & Y & $21$\tabularnewline
+\hline 
+$6$ & N & \tabularnewline
+\hline 
+$7$ & Y & $15$\tabularnewline
+\hline 
+$8$ & N & \tabularnewline
+\hline 
+$9$ & Y & $3$\tabularnewline
+\hline 
+$10$ & N & \tabularnewline
+\hline 
+$11$ & Y & $19$\tabularnewline
+\hline 
+$12$ & N & \tabularnewline
+\hline 
+$13$ & N & \tabularnewline
+\hline 
+$14$ & N & \tabularnewline
+\hline 
+$15$ & Y & $7$\tabularnewline
+\hline 
+$16$ & N & \tabularnewline
+\hline 
+$17$ & Y & $23$\tabularnewline
+\hline 
+$18$ & N & \tabularnewline
+\hline 
+$19$ & Y & $11$\tabularnewline
+\hline 
+$20$ & N & \tabularnewline
+\hline 
+$21$ & Y & $5$\tabularnewline
+\hline 
+$22$ & N & \tabularnewline
+\hline 
+$23$ & Y & $17$\tabularnewline
+\hline 
+$24$ & N & \tabularnewline
+\hline 
+$25$ & Y & $25$\tabularnewline
+\hline 
+\end{tabular}
+\end{enumerate}
+
+\section{Decrypting affine ciphers with known key}
+\begin{xca}
+{[}slide with letter-to-number chart{]} Decrypt the ciphertext ``HXBOO
+HAMOE PAPO'' given that it was encrypted using an affine cipher with
+equation $C\equiv3P+2\mod26$. {[}Hint: subtract the $2$ from both
+sides. How do we ``cancel the $3$'' given that we can't divide
+by $3$? Division by $3$ is the same as multiplication by $3^{-1}\mod26$...{]}
+\begin{itemize}
+\item We start with the equation $C\equiv3P+2\mod26$ and we want to solve
+it for $P$. 
+\item First, we subtract $2$ from both sides to get $C-2\equiv3P\mod26$. 
+\item Now, we want to ``divide by $3$'', which isn't allowed in modular
+arithmetic. But this is the same as multiplying by $3^{-1}$, which
+we saw in your Reading Question was $9$. So we multiply both sides
+of the congruence by $9$ to get
+\[
+P\equiv9(3P)\equiv9(C-2)\mod26.
+\]
+\item To decrypt this ciphertext, we plug each letter in for $C$, then
+record the values of $P$ we get, in order. The table from before
+is useful:
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+Ciphertext letter & H & X & B & O & O & H & A & M & O & E & P & A & P & O\tabularnewline
+\hline 
+\hline 
+Ciphertext number $C$ & $7$ & $23$ & 1 & 14 & 14 & 7 & 0 & 12 & 14 & 4 & 15 & 0 & 15 & 14\tabularnewline
+\hline 
+Plaintext number $P\equiv9(C-2)$ & $45\equiv19$ & $9(21)\equiv9(-5)=-45\equiv-19\equiv7$ & $9(-1)\equiv17$ & ... &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+Plaintext letter & t & h & r &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\end{tabular}
+\item Solution: ``three times nine'' (which is $27\equiv1$, hence $9=3^{-1}\mod26$
+\end{itemize}
+\end{xca}
+
+\begin{example}
+What affine ciphers work for ASCII given that ASCII is $\mod256$?
+\begin{itemize}
+\item Anything with odd multiplicative key
+\end{itemize}
+\end{example}
+
+\begin{itemize}
+\item Even if we can tell which affine ciphers ``work'', we still don't
+have a quick or even computable way to decrypt an affine cipher when
+we know the key!
+\end{itemize}
+\begin{example}
+In order to decrypt $C\equiv7P\mod29$ (using the cipher alphabet
+with !?, appended), we need to multiply both sides by some number
+$x$ so that $7x\equiv1\mod29$. How do we systematically find $x$?
+\end{example}
+
+\begin{itemize}
+\item Next time, we'll learn how to use the Euclidean algorithm to decrypt
+affine ciphers without having to guess and check!
+\end{itemize}
+\begin{xca}
+{[}if time{]} Python programming
+\end{xca}
+
+
+\section{Python module help: BruteShift and AffineEncrypt}
+\begin{xca}
+We've defined three Python functions so far, and I'd like to take
+the chance to look back on them and parse out what exactly each line
+of code is doing. I know Python has been confusing, so I'm hoping
+this will help.
+
+In your groups, take the Python function you're assigned and make
+two columns on a board:
+\begin{enumerate}
+\item one for the ``human steps'' for executing the function on example
+inputs (e.g. plaintext and key for ShiftEncrypt, ciphertext and key
+for ShiftDecrypt, ciphertext for BruteShift)
+\item one for the ``human steps'' for executing the function on arbitrary
+inputs (e.g. if someone gave you \emph{any} plaintext, what would
+you do to encrypt it using \emph{any} key?)
+\item one for each line of code under your ``def'' command for your function.
+\end{enumerate}
+Then try to match up each entry of column 3 to an entry of columns
+1/2. 
+\end{xca}
+
+\begin{itemize}
+\item \textbf{our library of Python functions:}
+\begin{itemize}
+\item \textbf{``}for \_\_\_ in \_\_\_\_'': repeat the code indented below
+for every (first blank) in (second blank).
+\begin{example}
+for plaintext\_letter in plaintext: do the following indented code
+for every letter in our plaintext.
+\end{example}
+
+\item (variable name) = \_\_\_\_\_: every time from now on that I type (variable
+name), replace it with \_\_\_\_.
+\begin{example}
+alph = ``ABCD...YZ'': the variable ``alph'' means all capital
+English letters from now on.
+\end{example}
+
+\item alph.find('letter'): find what position 'letter' is in the list ``alph''
+and output that position.
+\begin{example}
+alph.find('F'): count up from $A=0$ in the list 'alph' (draw) until
+we reach an F. Since F is in position $5$ (since we started our count
+at $0$), output the number $5$.
+\end{example}
+
+\item Mod($a,n$): reduce $a\mod n$. (Also $a\%n$ does the same thing.)
+\begin{example}
+Mod($13,7)=6$. $7\%6=1$.
+\end{example}
+
+\item string += thing to add to string: literally think of taking a string,
+poking a hole in thing, and stringing ``thing'' onto ``string''.
+\begin{itemize}
+\item plaintext += 'D': add a D to the end of our plaintext.
+\end{itemize}
+\item def FunctionName(input1, input2): whenever I write FunctionName and
+some inputs, run everything tabbed over underneath this line on those
+inputs.
+\begin{itemize}
+\item Ex.: def BruteShift(ciphertext): from now on, if I say BruteShift('DOFCOMWUYMUL'),
+I want you to run all the code that brute-forces the ciphertext 'DOFCOMWUYMUL'.
+\end{itemize}
+\item (function name)(input1, input2): runs the function on these two inputs
+\begin{example}
+ShiftEncrypt('APPLE', 4) encrypts the word 'APPLE' using a shift of
+$+4$.
+\end{example}
+
+\item string{[}number{]}: output whatever's in the position ``number''
+in the string.
+\begin{itemize}
+\item alph{[}10{]}: find the letter corresponding to the number $10$ in
+our letter-to-number chart.
+\end{itemize}
+\end{itemize}
+\item more unsurprisingly:
+\begin{itemize}
+\item $a+b$: add the number $a$ to the number $b$
+\item $a-b$: subtract $b$ from $a$.
+\end{itemize}
+\end{itemize}
+
+\subsection{ShiftEncrypt}
+
+\begin{tabular}{|c|c|}
+\hline 
+\textbf{Human} & \textbf{Python example (first with specific plaintext/key)}\tabularnewline
+\hline 
+\hline 
+1. Input the plaintext. & \texttt{plaintext = ``MONKEY'', key = 4}\tabularnewline
+\hline 
+2. Input the cipher alphabet. & \texttt{alph = ``ABCDEFGHIJKLMNOPQRSTUVWXYZ''}\tabularnewline
+\hline 
+3. Convert the first plaintext letter to a plaintext number. & \texttt{plaintext\_number = alph.find('M')}\tabularnewline
+\hline 
+4. Add the key to the plaintext number, mod $26$. & \texttt{ciphertext\_number = Mod(plaintext\_number + key, 26)}\tabularnewline
+\hline 
+5. Convert the ciphertext number back to a letter. & \texttt{ciphertext\_letter = alph{[}ciphertext\_number{]}}\tabularnewline
+\hline 
+6. Append the letter to the ciphertext. & \texttt{ciphertext += ciphertext\_letter}\tabularnewline
+\hline 
+ & \tabularnewline
+\hline 
+ & \tabularnewline
+\hline 
+\end{tabular}
+
+\subsection{ShiftDecrypt}
+
+\begin{tabular}{|c|c|}
+\hline 
+\textbf{Human} & \textbf{Python example (first with specific ciphertext/key)}\tabularnewline
+\hline 
+\hline 
+1. Input the ciphertext and key. & \texttt{ciphertext = ``DOFCOMWUYMUL'', key = 17}\tabularnewline
+\hline 
+2. Input the cipher alphabet. & \texttt{alph = ``ABCDEFGHIJKLMNOPQRSTUVWXYZ''}\tabularnewline
+\hline 
+3. Convert the first ciphertext letter to a number. & \texttt{ciphertext\_number = alph.find(ciphertext\_letter)}\tabularnewline
+\hline 
+4. Shift the ciphertext number back by the key, mod 26. & \texttt{plaintext\_number = Mod(ciphertext\_number - key, 26)}\tabularnewline
+\hline 
+5. Convert the plaintext number back to a letter. & \texttt{plaintext\_letter = alph{[}plaintext\_number{]}}\tabularnewline
+\hline 
+6. Append the plaintext letter to our plaintext. & \texttt{plaintext += plaintext\_letter}\tabularnewline
+\hline 
+ & \tabularnewline
+\hline 
+ & \tabularnewline
+\hline 
+\end{tabular}
+
+\subsection{BruteShift}
+\begin{xca}
+List out steps, in English, that would allow you to decrypt a shift
+cipher by testing every possible key.
+\end{xca}
+
+\begin{tabular}{|c|c|}
+\hline 
+\textbf{Human} & \textbf{Python example (first with specific ciphertext)}\tabularnewline
+\hline 
+\hline 
+1. Input the ciphertext. & \texttt{ciphertext = ``DOFCOMWUYMUL''}\tabularnewline
+\hline 
+2. Input the cipher alphabet. & \texttt{alph = ``ABCDEFGHIJKLMNOPQRSTUVWXYZ''}\tabularnewline
+\hline 
+3. Convert the first ciphertext letter to a number. & done as part of ShiftDecrypt\tabularnewline
+\hline 
+4. Try decrypting the ciphertext using every shift. & \texttt{for key in range(0,26): }\tabularnewline
+\hline 
+ & \texttt{ShiftDecrypt(ciphertext, key)}\tabularnewline
+\hline 
+ & \tabularnewline
+\hline 
+ & \tabularnewline
+\hline 
+ & \tabularnewline
+\hline 
+\end{tabular}
+
+\section{The connection between gcds and encryption}
+\begin{itemize}
+\item Why on earth does it matter whether the multiplicative key shares
+a factor with the modulus when encrypting with an affine cipher?
+\end{itemize}
+\begin{example}
+{[}slide{]} Look at the $\mod9$ table. Which numbers have multiplicative
+inverses $\mod9$?
+\begin{itemize}
+\item $0^{-1}$? There's nothing that, when multiplied by $0$, gives $1$,
+so $0$ doesn't have an inverse.
+\item $1^{-1}$? $=1$
+\item $2^{-1}=5$
+\item $3^{-1}$ doesn't exist
+\item $4^{-1}=7$
+\item $5^{-1}=2$
+\item $6^{-1}$ doesn't exist
+\item $7^{-1}=4$
+\item $8^{-1}=8$.
+\end{itemize}
+\end{example}
+
+\begin{itemize}
+\item What's so special about $3$ and $6$ here? The rows (or columns)
+for 3 and 6 in the table contain only multiples of $3$. Why is that
+the case?
+\item We've seen that, if the multiplicative key shares any factors (other
+than $1$) with the modulus, the affine cipher is no longer monoalphabetic. 
+\end{itemize}
+\begin{defn}
+Recall that a number is \textbf{prime} if the only integers that divide
+it are $1$ and itself. We'll use $p$ and $q$ to represent prime
+numbers. \textbf{Composite numbers} are integers greater than one
+that are not prime.
+\end{defn}
+
+\begin{itemize}
+\item You'll remember that every positive whole number has a unique \textbf{prime
+factorization}, i.e. a way to write it as a product of prime numbers.
+This fact is called the \textbf{Fundamental Theorem of Arithmetic.}
+\item Remember as well that we say an integer $d$ divides an integer $a$
+if $a/d$ is a whole number, i.e. $d$ goes evenly into $a$ with
+no remainder.
+\item A \textbf{common divisor }of two integers $a$ and $b$ is an integer
+(positive or negative) that divides both $a$ and $b$. 
+\end{itemize}
+\begin{defn}
+If $a$ and $b$ are not both zero, then the \textbf{greatest common
+divisor }of $a$ and $b$ is the largest positive integer that divides
+both $a$ and $b$. We denote the greatest common divisor of $a$
+and $b$ by $\gcd(a,b)$.
+\end{defn}
+
+\begin{xca}
+Compute the following gcds:
+\begin{enumerate}
+\item $\gcd(13,26)$
+\item $\gcd(55,165)$
+\item $\gcd(253,598)$.
+\begin{enumerate}
+\item How did you do it? Most people factor both numbers: $253=11\times23$
+and $598=2\times13\times23$, hence
+\[
+\gcd(253,598)=23.
+\]
+\item Factoring becomes annoying when we have big numbers. Fortunately,
+later we'll see a better way to compute gcds and hence find out which
+affine ciphers work.
+\end{enumerate}
+\end{enumerate}
+\end{xca}
+
+\begin{example}
+For example, the cipher $C\equiv13P+1\mod26$ that we saw earlier
+only has \textbf{two }possible ciphertext letters, $B$ and $O$.
+\end{example}
+
+\begin{itemize}
+\item This is because we can't get every possible ciphertext letter out.\textbf{
+In the example above, we can only get out the ciphertext letters that
+are multiples of $13$.}
+\item This is true in general: anytime the multiplicative key and the modulus
+share any factors, the only ciphertext letters that come out will
+be multiples of those factors.
+\item \textbf{This isn't enough ciphertext letters to be a good cipher},
+because it ``collapses'' multiple plaintext letters into a single
+ciphertext letter.
+\end{itemize}
+\begin{thm}
+If $a$ is a whole number between $0$ and $n-1$, then $\gcd(a,n)$
+goes evenly into any number that's congruent to $a\mod n$.
+\end{thm}
+
+\begin{proof}
+Assume some number $x$ is congruent to $4\mod12$. Then
+\[
+x\div12=yR4
+\]
+where $y$ is some whole number. So $x$ is some multiple of $12$
+plus $4$; we can write $x=12y+4$, where $y$ is some whole number.
+Now, $\gcd(4,12)=4$ and $x=4(3y+1)$ is divisible by $4$. 
+
+In general, if $x\equiv a\mod n$, then $x=ny+a$, where $y$ is some
+whole number. Then $\gcd(a,n)$ is in particular a divisor of both
+$a$ and $n$, meaning that $(ny+a)/\gcd(a,n)$ is a whole number.
+This means that $x/\gcd(a,n)$ is a whole number, hence $\gcd(a,n)\mid x$.
+\end{proof}
+\begin{cor}
+If $\gcd(a,n)\neq1$, then no multiple of $a$ is congruent to $1\mod n$.
+In other words, we can't get every number in row $a$ of the $\mod n$
+multiplication table, and \textbf{$a$ does not have a multiplicative
+inverse $\mod n$.}
+\end{cor}
+
+\begin{proof}
+Suppose that some multiple of $a$, say $ka$, is congruent to $1\mod n$.
+By the Theorem, this implies that $\gcd(a,n)\mid1$, and since $\gcd(a,n)\geq1$,
+this shows that we must have $\gcd(a,n)=1$. By this logic, if $\gcd(a,n)\neq1$,
+we couldn't have gotten $1\mod n$ as a multiple of $a$, so $a$
+has no multipicative inverse $\mod n$, and in particular $1$ doesn't
+show up in $a$'s row of the $\mod n$ multiplication table.
+\end{proof}
+\begin{cor}
+The following are equivalent for any whole numbers $m,n$:
+\begin{enumerate}
+\item $\gcd(m,n)=1$.
+\item any affine cipher with multiplicative key $m\mod n$ is decryptable
+by the intended recipient.
+\item every number between $0$ and $n-1$ is a multiple of $m\mod n$.
+\item $m$ has a multiplicative inverse $m^{-1}\mod n$.
+\end{enumerate}
+\end{cor}
+
+\begin{example}
+Consider the affine cipher $C\equiv13P\mod26$. Note that $\gcd(13,26)=13$.
+Any plaintext letter that we plug in will spit out some multiple of
+$13$. Reduced mod $26$, these multiples of $13$ all become either
+$13$ or $0$. And $13=\gcd(13,26)$ divides both $13$ and $0$ evenly.
+Since no multiple of $13$ can be congruent to $1\mod26$, $13$ does
+not have a multiplicative inverse $\mod26$.
+\end{example}
+
+\begin{itemize}
+\item Though sometimes we need slightly fancy math machinery to break affine
+ciphers, sometimes we can do so by trial and error.
+\end{itemize}
+
+\section{Finding gcds quickly using the Euclidean algorithm}
+\begin{defn}
+Recall that we write $a\mid b$ if $a$ goes evenly into $b$ with
+no remainder.
+
+If $a$ and $b$ are not zero, then the \textbf{greatest common divisor}
+of $a$ and $b$, called $\gcd(a,b)$, is the largest positive integer
+that divides both $a$ and $b$.
+
+If $\gcd(a,b)=1$, we say that $a$ and $b$ are \textbf{relatively
+prime}.
+\end{defn}
+
+\begin{example}
+How to find the gcd of 261 and 231 quickly:
+\begin{enumerate}
+\item Notice that if a number goes evenly into both $261$ and $231$, then
+it goes evenly into $261-231$ as well. (For example, since $\frac{261}{3}=87$
+and $\frac{231}{3}=77$, 
+\[
+\frac{261-231}{3}=\frac{261}{3}-\frac{231}{3}=87-77=10R0
+\]
+and since $10$ is a whole number, $3\mid(261-231)$.) This means
+that the biggest number that goes into both $261$ and $231$ must
+also go into $30$. So $\gcd(261,231)=\gcd(30,231)$.
+\item Repeat this process for $231$ and $30$. Any number that goes evenly
+into both $231$ and $30$ must also go evenly into $231-30$. Hence
+$\gcd(30,231)=\gcd(30,201)$. But this doesn't help all that much!
+We can keep subtracting $30$ from $231$ over and over until we get
+a number smaller than $30$:
+\[
+\gcd(30,231)=\gcd(30,201)=\gcd(30,171)=\gcd(30,141)=\dots
+\]
+but it's a lot faster to just figure out how many times $30$ goes
+into $231$ and take the remainder, since that's the same number that
+will be left over after we subtract all the $30$s out of $231.$
+In other words, notice that 
+\[
+231=30(7)+21
+\]
+so that if we subtract all the $30$s out of $231$, we end up subtracting
+seven $30$s, and we're left with $21$. Hence
+\[
+\gcd(30,231)=\gcd(30,21).
+\]
+\item Now, $\gcd(30,21)$ is a lot easier to compute than $\gcd(261,231)$!
+You can probably just read off that $\gcd(30,21)=3$. But say you
+didn't remember that offhand, or you ended up with a gcd that is harder
+to compute. Let me keep going to make a point:
+\begin{align*}
+30 & =21(1)+9\text{ so }\gcd(30,21)=\gcd(9,21)\\
+21 & =9(2)+3\text{ so }\gcd(9,21)=\gcd(9,3)\\
+9 & =3(3)+0\text{ so }\gcd(9,3)=\gcd(0,3).
+\end{align*}
+\end{enumerate}
+\end{example}
+
+\begin{xca}
+This is a weird step, right? What should the gcd of $0$ and any other
+number be?
+\begin{itemize}
+\item Since any number goes evenly into $0$\textemdash for example, $\frac{0}{3123}=0$
+so $3123\mid0$\textemdash $\gcd(0,3)=3$. 
+\item In general, if $x$ is any whole number, $\gcd(x,0)=x$.
+\item The method above will always end with a remainder of zero. Then the
+$\gcd$ we're looking for is just the other number.
+\end{itemize}
+\end{xca}
+
+\begin{defn}
+The process above is called the \textbf{Euclidean algorithm}. It was
+described by the mathematician Euclid, who basically invented geometry
+around $300$ B.C.
+\end{defn}
+
+\begin{itemize}
+\item Why are gcd's important? Well, we want to easily be able to tell which
+affine ciphers work, at the very least.
+\end{itemize}
+\begin{xca}
+\textbf{{[}RQ{]} }Use the Euclidean Algorithm to determine which of
+the following affine ciphers works to create decryptable ciphertext.
+Explain your answers.
+\begin{enumerate}
+\item (Khmer/Cambodian alphabet) $C\equiv17P+4\mod74$
+\begin{enumerate}
+\item Works:
+\begin{align*}
+74 & =17(4)+6\\
+17 & =6(2)+5\\
+6 & =5(1)+1\\
+5 & =1(5)+0.
+\end{align*}
+The $\gcd$ is just the last remainder before the $0$, so $\gcd(17,74)=1$
+and this cipher works for the Cambodian alphabet!
+\end{enumerate}
+\item $C\equiv365P\mod755$
+\begin{enumerate}
+\item Doesn't work, $365$ and $755$ share a factor of $5$
+\end{enumerate}
+\item $C\equiv87P\mod1364$
+\begin{enumerate}
+\item $1364=87(15)+69$
+\item $87=69(1)+18$
+\item $69=18(3)+15$
+\item $18=15(1)+3$
+\item $15=3(5)$ so $\gcd(87,1364)=3$ and the cipher doesn't work
+\end{enumerate}
+\item Unicode is an updated version of ASCII. Unicode gives a way of encoding
+information on a computer with 1,114,112 possible numbers. Only about
+$10\%$ of them are currently in use; say there are $111,411$ Unicode
+numbers in use. Does the affine encryption
+\[
+C\equiv103,011P+34,423\mod111,411
+\]
+work to encrypt Unicode characters?
+\begin{enumerate}
+\item $111411=103011(1)+8400$
+\item $103011=8400(12)+2211$
+\item $8400=2211(3)+1767$
+\item $2211=1767(1)+444$
+\item $1767=444(3)+435$
+\item $444=435(1)+9$
+\item $435=9(48)+3$
+\item $9=3(3)+0$
+\item So $\gcd(103011,111411)=3\neq1$. Hence this cipher doesn't work.
+\end{enumerate}
+\end{enumerate}
+\end{xca}
+
+
+\section{Python work time: AffineEncrypt}
+\begin{itemize}
+\item Walk through changes from ShiftEncrypt code
+\item Emphasize need for third input (now there are two keys! Each key is
+a separate input.)
+\end{itemize}
+
+\end{document}

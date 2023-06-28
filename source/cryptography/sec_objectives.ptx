@@ -1,0 +1,80 @@
+<section xml:id="crypto-objectives" xmlns:xi="http://www.w3.org/2001/XInclude">
+		<title>Objectives &amp; Prerequisites</title>
+
+		<p>
+			By the end of this section, an engaged learner will be able to:
+			<ul>
+				<li>
+					<p>
+						encrypt and decrypt simple shift ciphers using frequency analysis.
+					</p>
+				</li>
+				<li>
+					<p>
+						add, subtract, and multiply in modular arithmetic.
+					</p>
+				</li>
+				<li>
+					<p>
+						encrypt and cryptanalyze affine ciphers by solving systems of two congruences modulo <m>n</m> using the Euclidean Algorithm.
+					</p>
+				</li>
+				<li>
+					<p>
+						encrypt and cryptanalyze Vigenére ciphers using the Kasiski test (with the aid of computer programs).
+					</p>
+				</li>
+				<li>
+					<p>
+						[optional] edit simple Python programs with provided code to perform encryption and decryption and/or cryptanalysis of the above ciphers.
+					</p>
+				</li>
+				<li>
+					<p>
+						[optional] show that one-time pads are theoretically perfectly secure, while the Enigma machine was not.
+					</p>
+				</li>
+				<li>
+					<p>
+						describe the history of the Enigma machine and how each of its features contributed to its security and its cryptanalysis.
+					</p>
+				</li>
+				<li>
+					<p>
+						work with Engima machine emulators to encrypt and decrypt messages.
+					</p>
+				</li>
+				<li>
+					<p>
+						use the Diffie-Hellman key exchange to agree on a secret key.
+					</p>
+				</li>
+				<li>
+					<p>
+						perform modular exponentiation using the square-and-multiply algorithm and Euler's Theorem on the totient function.
+					</p>
+				</li>
+				<li>
+					<p>
+						send simple messages using RSA encryption.
+					</p>
+				</li>
+				<li>
+					<p>
+						understand and debate how the U.S. National Security Agency uses cryptography.
+					</p>
+				</li>
+			</ul>
+		</p>
+
+		<p>
+			This interactive chapter spans up to two weeks of class time, though it can be implemented partially in only one or two class sessions and would be appropriate for a course of any size, particularly one that emphasizes active learning. This chapter can be extended even to a full course in cryptography without prerequisites or to research projects investigating newer cryptosystems such as those arising from knot theory, and it can be implemented as an independent project given sufficient scaffolding.
+		</p>
+		<p>
+			These activities require no prerequisites other than high school-level algebra skills; the most complicated of which is the solution of systems of two equations in two unknowns, though a more proof-centric approach would benefit from prior student experience with proof techniques. Student proficiency in making factor trees and division with remainder will also be helpful, though these concepts can be reviewed on a just-in-time basis. Students will develop an understanding of the shift cipher, affine cipher, and RSA cryptosystem that is not standard in abstract or modern algebra courses; the only technology required is a calculator capable of reducing expressions modulo n and modular exponentiation, both of which are standard in the Google search box. Students may benefit from programs capable of encrypting and decrypting using shift and affine ciphers such as the open-source tools on the website <url href="https://cryptii.com">Cryptii</url>, though the author has successfully asked students to write their own programs in Python to perform these tasks.
+		</p>
+		<p>
+			We will often elide details of the lesson when introducing more standard abstract algebra topics such as modular arithmetic, systems of congruences, modular inverses, etc. These notes may be implemented with the reader&apos;s favorite presentation of these concepts; a couple that are freely available online include <xref ref="mcdevittClassNotesCryptologic2012,crismanNumberTheoryContext2021"></xref>.
+		</p>
+
+	</section>

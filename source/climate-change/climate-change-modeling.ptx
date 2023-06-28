@@ -1,0 +1,405 @@
+<section xml:id="climate-change-math-topic-mathematical-models">
+
+
+				<title>Mathematical Models</title>
+				<introduction>
+				<p>
+					Mathematical models provide a means of capturing how a confluence of variables factor into and effect situations They can also be used to make predictions regarding what is to come.  In this section we examine models that lend insight into global warming and the average global temperature predictions.  We will look at the Green House Effect and explore how to predict temperature increase based on varying amounts (distributions) of certain greenhouse gasses.  The main green house gasses are carbon dioxide, methane, and nitrous oxide.  Each has its own impact on temperature increase dependent on a combination of qualities including lifetime, abundance, and radiative capacity.  Units and other measures are often defined to capture how a confluence of qualities effect a particular inpact.  Global Warming Potential (GWP) and Global Temperature Potential (GTP) are two such examples that will also examine in this section. 
+				   </p>
+
+				   <!--  Iclude a sentence in the intro? "along the way we will delineate some tools and mathematical thinking that go into developing and understanding models" !-->
+
+
+				</introduction>
+
+				<subsection>
+					<title> The Green House Effect </title>
+					<p>
+					 The overarching idea of the Green House effect is that energy in the form of radiation enters the atmosphere  ("the green house") and while some of the radiation escapes, a percentage of it gets trapped.  This trapped radiation is trapped energy or heat which results in increasing the ambient temperature.  The percentage of energy that gets trapped and the resulting temperature increase depends on the molecular make up of the atmosphere.  
+					</p>
+
+					 <p>
+					 Green House gasses are gasses that trap energy.  Some of the gasses such as water vapor (<m> H_20</m>) are necessary for maintaining a stable temperature warm enough to supports life.   However, growing amounts of other Green House gasses such as carbon dioxide (<m> CO_2 </m> ), nitrious oxide (<m> N_2O</m> ), and methane <m>(CH_4)</m> have the effect of increasing the temperature potentially beyond livable conditions.  How much energy gets trapped the depends on the molecular make up of the atmosphere.  
+					 </p>
+
+					 <p>
+					 	In this section we will work through a simplified mathematical model with the goal of building intuition for how each compnent plays a role in the system. 
+					 </p>
+
+					 <!-- Do I need to define electromagnetic raditation? !-->
+
+                    <definition>
+						<title> Blackbody </title>
+						<p>
+						When electromagnetic radiation is incident upon an object, some of the radition is absorbed while some is reflected.  The specific proportions that are absorbed and radiated depend on the <!-- descriptor !--> properties of the object and whether it is in thermodynamic equlibrium with the surrounding evironment. <!-- is that correc--> A  <alert> blackbody </alert> is an perfect object in the sense that it abosorbs <em> all </em> the radiation incident upon it and emits radiation depending solely on its temperature.
+					<!-- Reference wikipedia  https://en.wikipedia.org/wiki/Black_body !-->
+					</p>
+
+					</definition>
+					<p>
+					  There are two important properties of blackbodies that we will rely on in our modeling. One is that blackbodies are "perfect" emitters. 
+					  <ul>
+							<li>Not only is the amount of radiation emitted dependent only on temperature but also, for a fixed temperature, blackbodies emit at the maximal energy level.  More specifics of this radiation are described below. </li>
+							<li>Blackbodies emit radiation isotropically, meaning the radiation is equally dispersed in all directions.</li>
+					   </ul>
+					  
+
+						 <!-- Reference wikipedia  https://en.wikipedia.org/wiki/Black_body !-->
+						</p>
+						
+
+						<definition>
+							<title>Blackbody Radiation </title>
+							<p>
+						       <!-- wikipedia -->
+						A blackbody in thermodynamic equilibrium (i.e with constant uniform temperature) emits electromagnetic radiation at a spectrum of wavelengths determined solely by the temperature of the body. The emission brom blackbodies is called <alert> blackbody radiation</alert> .
+					       </p>
+
+					      <p>
+					      Blackbodies emit different amounts of energy at different wavelengths.  How much radiation a blackbody emits at each wavelength is called the <alert> blackbody spectrum </alert> and is determined by Plank's law.  
+					      </p>
+					      
+
+					      </definition>
+
+					      <p>
+					      Below is a graph showing the blackbody spectrum.  Each curve is the spectrum for blackbody at the indicated temperature.  The temperatures are in Kelvin.  Note that <m> 0^o C </m> is <m> 273.15 K</m> and <m> T(^oC) = T(K) - 273.15</m> so for high temperatures like <m> 3000 K</m> or <m> 2726.85^o C</m> the magnitude in degress Kelvin and degrees Celcius are on the order of magnitude.  For reference the sun has a temperature of 5778 Kelvin
+					      </p>
+
+
+					      <figure>
+						<image source="climate-change/images/black_body.png">
+							<!-- Note possible a better graph is "thermal radiation on wiki" -->
+							<description> <!-- for someone who cannot see the visual? -->
+								This is a graph of the blackbody spectrum depicting the amount of radiation emmitted at each wavelength for blackbodies at temperatues of 3,000 Kelvin, 4,000 Kelvin, and 5000 Kelvin.  Each curve has a single peak and is skewed left.  At the temerature increases, the peak of the curve shifts left, occuring at shorter wavelenghts.  The wavelengths in the UV spectrum (0.01 to 0.38 <m>\mu m </m>) are indicated by a vertical rectangle.  The blackbody at 3000 Kelvin peaks in intensity at about 0.97 <m>\mu m </m> (in the near infrared).  The blackbody at 4000 Kelvin peaks in intesity at about 0.725  <m>\mu m </m> (visible but slightly too long for red).  The blackbody at 5000 Kelvin peaks in intensity at 0.58 <m>\mu m </m> (visible green light)
+							
+							</description>
+						</image>
+						<caption>
+							This graph depicts the blackbody spectrum showing the intensity of emission versus wavlength for blackbodies at temperatures of 3000, 4000, and 5000 Kelvin.
+						</caption>
+						<!-- Public Domain need to reference correctly.  Wiki page:  https://commons.wikimedia.org/wiki/File:Black_body.svg
+					        by  	Darth Kule  June 10, 2010 -->
+
+					</figure>
+
+					       <p>
+						Very few objects are perfect blackbodies.  However many are close enough in the sense that assuming blackbody radiation in calculations yeilds results that lend an accurate perspective. Of course the closer an object is to being a blackbody, the more acurate the calculations will be.  For our models we will need the relationship between the amount of radiation emitted by a blackbody and its temperature. The Stefan-Boltzmann law gives this relationship and states that the total energy, <m> J </m> emitted per unit area per unit time by a blackbody is directly proportional to the fourth power of its temperature.  The units are terms joules per second per square meter and are denoted <m> j/sm^2</m> .  So <m> J \propto T^4 </m> or <m> J =\sigma T^4  j/s m^2</m>   where <m> \sigma = 5.67 \times 10^{-8} </m> with units of <m> {W\,m^{-2}\,K^{-4}}  </m> is the Stefan-Boltzman constant.
+
+					<!--  https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law  !-->
+
+					</p>
+					<p>
+					 The radiative bodies that will play a role in our models are the Sun, Earth, and layers of the atmosphere.  In our calculations we will assume that the Sun and Earth radiate as perfect blackbodies.  The layers of the atmosphere are not close enough to perfect blackbodies so we will take them to be what is called <alert> graybodies </alert>.
+					</p>
+
+
+					 <definition>
+					 	<title> Graybody </title>
+					 	<p>
+					  The term graybody refers to an imperfect blackbody in the sense that it absorbs only a propotion of the incident radiation.  Graybodies can be more reflective of reality and adjusting for the lower absorption rate is a matter of scaling by what is called the emissivity.
+
+					<!-- resource:  https://www.comsol.com/blogs/understanding-classical-gray-body-radiation-theory/#:~:text=A%20gray%20body%20is%20an,emissivity%20of%20the%20gray%20body.  !--> 
+
+					</p>
+					</definition>
+
+					
+
+					 <definition>
+						<title> Emissivity</title>
+						<p>
+							The <alert> emissivity, <m>\epsilon </m> </alert> of a radiating object is the ratio of the amount of radiation the object emits compared to amount of radiation a blackbody at the same temperature, emits.  
+						<!-- resource https://www.npl.co.uk/resources/q-a/why-is-emissivity-important !-->
+						</p>
+						</definition>
+
+						<p>  
+							The emissivity is a proportion and thus dimensionless. 
+						</p>
+						
+						<exercise>
+						<p>
+							The emissivity ranges between which two values?
+						</p>
+						<hint>
+							Think about the extremem cases.  What is the most incident radiation an object can abosorb and what is the least as compared to that of a blackbody?
+						</hint>
+						<answer>
+							The emissivity ranges bewtween 0 and 1 inclusive.
+						</answer>
+					</exercise>
+              		
+              		<exercise>
+						<p>
+							Interpret the meaning of a radiating body with the minimal and the maximal emissivity.  Why does this make sense?
+						</p>
+						<hint>
+							What does it mean for the emmissivty ratio to be equal to 0 in terms of how much radiation it absorbs? What does it mean for the ration to be eqaul to 1 in terms of how much radiation it absorbs.  What does this tell you about the type of object? 
+						</hint>
+						<answer>
+							When the emissivity of a radiating body is 0, a radiating body aborbs none of the incent radiation and is thus a perfect reflector.  When the emissivity is 1, a radiating body absorbs as much incedent radiation as a blackbody.  Namely it aborbs all the incident radiation and is thus a perfect blackbody.
+						</answer>
+					</exercise>
+
+					<p>
+						A graybody that absorbs only a proportion of incident radiation also emits a proportion of the blackbody radiation.  For our models we assume the proportion absorbed is the same as the proportion emitted.  This absorption/emission propotion is exactly the emissivity of the object. So, for a graybody at temperature, <m>T</m>, with emissivity <m>\epsilon</m> the total energy, <m>J</m>, emitted per unit area per unit time is <m> J =\epsilon\sigma T^4 j/sm^2 </m>.		
+					 </p>
+
+					<exercise>
+						<p>
+							What is the amount of radiation, <m> J </m>, emitted by radiating bodies with minimal and maximal emissivity.  Why does this make sense?
+						</p>
+						<answer>
+							When the emissivity of a radiating body is 0, the body emits <m> J = \epsilon \sigma T^4 = 0 j/sm^2  </m>.  So a body that absorbs no incident radiation also emits no radiation.  When the emissivity is 1, the body emits <m> J = \epsilon \sigma T^4 = \sigma T^4  j/sm^2</m> which matches that of a
+						</answer>
+					</exercise>
+
+					
+
+					</subsection>
+
+					<subsection>
+						<title> Modeling the Green House Effect </title>
+						<introduction>
+						<p>
+						Our goal is not to create a perfect model that caputes every physical detail but rather invoke some simple mathematics so that we can view the conceptual model through an analytical lense.  In the process we will introduce and engage with the mathematical thought that goes into modeling.  We will work our way up step by step each time making a single generalization reflecting a bit more physical reality.
+					    </p>  
+					    <p>
+					    There are three major players in our series of models: our Sun, the Earth, and the Atmosphere.  
+					</p>
+
+					<p>
+					    The Sun radiates energy in all directions.  Some of the Sun's energy is reflected by the atomosphere and the rest reaches the Earth.  In our models, we will assume that the amount of solar energy reaching the Earth is fixed.  We will deonte this value by <m> Q</m>.  However, in reality, the amount of solar energy reaching Earth is starting to increase. This increase is caused by a decrease in <alert> albedo </alert>.  Albedo, denoted <m> \alpha </m>, is the proportion of solar energy that is reflected by the atmosphere.   Melting ice caps, catalyzed by global warming, are responsible for the decrease in albedo.  While we will not take the changing albedo into account, doing so could make a great extension project.
+					    </p>
+
+					    <p>
+					    We will denote the amount of energy the Earth radiates by <m> J_E </m>. For the purpose of our models we will take the Earth to be a blackbody.  By the Stefan-Boltzmann law, <m> J_E \propto T_E^4 </m> or <m> J_E =\sigma T_E^4  j/s m^2</m> where <m> T_E </m> is the temperature of Earth's surface.
+					    </p>
+
+					    <p>
+					    We will be treating the atmosphere as a graybody.  Initially we will take the atmosphere to be a single body.  We wil denote the amount of energy that radiates out from the atmosphere as <m> J_a </m>.  As a graybody, <m> J_a \propto T_a^4 </m> and <m> J_a=\epsilon_a \sigma T_a^4  j/s m^2</m> where <m> T_a </m> is the temperature of the atmosphere and <m> \epsilon_a </m> is the emissivity of the atmosphere.  Recall that as graybody, the atmosphere also aborbs only a proportion, <m> \epsilon_a </m>, of radiation incidident upon it.
+
+					    </p>	
+
+					   <p> One key assumption is that all compents are equilibrium. </p>
+
+				       </introduction>
+					
+              
+					   <subsubsection>
+						<title> First Model: one level of atmosphere </title>
+						<p>	 In this model we have our Sun, the Earth's surface, and the atmosphere.  Solar energy reaches Earth's surface.  The Earth   radiates out engery as a blackbody.  The atmosphere absorbs a proportion, <m> \epsilon_a </m>, of energy radiated by the earth and also radiates out energy as a graybody. 
+
+					      <figure>
+						<image source="climate-change/images/one_layer_model.png">
+							<!-- made by emily !-->
+							<description> <!-- for someone who cannot see the visual? !-->
+							
+							</description>
+						</image>
+						<caption>
+							The Sun, Earth's surface, and atmosphere all radiate out energy as well as absorb energy from the other bodies.
+						</caption>
+					    </figure>
+					</p>
+					<p>
+					    In the diagram above, each arrow starts at a radiating body and arrives to an absorbing body.
+				        </p>
+				      
+				      <p>
+					  Let's recall our variables.
+					<ul>
+						<li> <m> Q </m> is the amount of solar energy reaching Earth's surface. </li>
+						<li> <m> J_E</m> is the energy radiated per unit area by Earth surface.  </li>
+						<li> <m> J_a </m> is the energy radiated per unit area by the atmosphere. </li>
+					</ul>
+					</p>
+					<p>
+					Both the Earth's surface and the atomosphere radiate isotropically (i.e equally in all directions).  We capture this in our model by assuming half of the energy radiated by the atmosphere escapes out while half radiates back towards the earth. Since the Earth is a lower physical boundary in our model, we assume all the earth's radiation moves outwards and reaches the atmosphere.   Let's include radiation labels in out diagram. 
+
+                     <figure>
+						<image source="climate-change/images/one_layer_label.png">
+							<!-- made by emily !-->
+							<description> <!-- for someone who cannot see the visual? !-->
+							
+							</description>
+						</image>
+						<caption>
+							
+						</caption>
+					    </figure>
+
+					</p>
+
+					<p> Recall that our system involving the Sun, Earth, and atmosphere is in a state of equilibrium.  This means the amount of radiation absorbed by each body is equal to the amount radiation that body emits. We can write out a set of equilibrium equations.
+					<md>
+  					<mrow>  \amp \amp\text{ absorbed} =  \text{ emitted} </mrow>
+  					<mrow> \amp \amp </mrow>
+  					<mrow>  Earth: \amp \amp Q + J_a  =  J_E </mrow>
+  					<mrow> \amp \amp </mrow>
+  					<mrow>  atmosphere: \amp \amp \epsilon_a J_E = 2J_a</mrow>
+					</md>
+
+					<!-- I would like to make a table of equations labled out = in  I am sure there is a better way to do this !-->
+					Now let's use the Stefan-Boltzman law to write the radiation <m>J_E</m> and <m>J_a</m> in terms of temperature.  
+					With <m> J_a=\epsilon_a \sigma T_a^4 ~ j/s m^2 </m> and  <m> J_E = \sigma T_E^4 j/sm^2 </m> the equations become
+					<md>
+  					
+  					<mrow>  Earth: \amp\amp Q +  \epsilon_a \sigma T_a^4   =  \sigma T_E^4 </mrow>
+  					<mrow> \amp \amp </mrow>
+  					<mrow>  atmosphere: \amp \amp \epsilon_a\sigma T_E^4 = 2\epsilon_a \sigma T_a^4</mrow>
+					</md>
+
+					What we really want to understand is how the emissivity of the atmosphere <m>\epsilon_a </m>, affects the temperatures of the Earth and the atmosphere since emissivity is the link between greenhouse gasses and temperature increas. The higher the emissivity, <m>\epsilon_a </m>, the more radiation our atmospher absorbs or traps. The absorption of radiation is due to molecules in the atmosphere and higher concentrations of greenhouse gasses push up <m>\epsilon_a </m>. 
+				</p>
+
+				<p>
+					 First use the "atmosphere" equation to relate the termperatures of the Earth and atmosphere.
+					 Simplifying the last "atmosphere" equation we see that the temperature of the Earth is related to that of the atmosphere by  <m>  T^4_E = 2 T^4_a </m>
+
+				     or
+
+                     <md>
+					<mrow>  T_e = \sqrt[4]{2}T_a \phantom{lslsls} \amp or \amp T_e = 1.19T_a  </mrow>
+				     </md>
+
+				     Now we use the "earth" equation to write <m> T_e </m> and <m>T_a</m> in terms of the know quatities,Q and <m>\sigma </m>, and the emissivity <m>\epsilon_a </m>.
+				 </p>
+
+				 <p>
+					Substituting <m> T^4_E = 2T^4_a </m> into the "earth" equation we have <m>Q + \epsilon_a\sigma T_a^4 = 2\sigma T^4_a </m> . 
+				</p>
+
+				<p> Solving for <m> T_a^4 </m> yields <m>T^4_a = \frac{Q}{\sigma(2-\epsilon_a)}</m> and
+
+				
+				<md>
+  					<mrow>  T^4_a  =  \frac{Q}{\sigma(2-\epsilon_a)} \phantom{a} \amp or \amp \phantom{a} T_a = \left(\frac{Q}{\sigma(2-\epsilon_a)}\right)^{\frac{1}{4}} \phantom{a} K </mrow>
+  					<mrow> \amp \amp </mrow>
+  					<mrow> T^4_E =  \frac{2Q}{\sigma(2-\epsilon_a)} \phantom{a} \amp or \amp \phantom{a} T_E  = \left(\frac{2Q}{\sigma(2-\epsilon_a)}\right)^{\frac{1}{4}} \phantom{a} K </mrow>
+					</md>
+				   
+					Let's plug in the values for the constants.
+					<ul>
+						<li> <m> Q = 239.2 W ^*</m> </li>
+						<li> <m> \sigma = 5.67 \times 10^{-8} {W\,m^{-2}\,K^{-4}} </m>   </li>
+					</ul>
+
+					<m>^*</m>Note:  (<m> Q = \frac{S}{4}(1-\alpha)</m>  with the solar constant <m> S = 1367 Wm^{-2} </m> and albedo <m>\alpha = 0.3</m>)
+					</p>
+					<p> 
+					So our equations become
+
+				<md>
+  					<mrow>  T_a  =  \frac{254.9}{(2-\epsilon_a)} \phantom{a} K  \phantom{a} \amp  and \amp \phantom{a} T_E  =  \frac{303.3}{(2-\epsilon_a)} \phantom{a} K</mrow>
+					</md>
+
+				</p>
+
+					<exercise>
+						<p>
+							What happens to <m> T_E</m> and <m> T_a </m> as <m> \epsilon_a</m> increases?
+						</p>
+						<answer>
+							Emissivity ranges from 0 to 1. So when <m> \epsilon_a</m> increases <m> T_E</m> and <m> T_a </m> both increase since the denominator decreases.
+						</answer>
+					</exercise>
+
+					<exercise>
+						<p>
+							Based on the possible values for <m> \epsilon_a</m> what are the possible temperature ranges for <m> T_E</m> and <m> T_a </m> ?
+						</p>
+						<answer>
+							Emissivity ranges from 0 to 1. <m> T_a </m> ranges from 127.45 to 254.9 K.  When <m> \epsilon_a = 0 </m>, <m> T_a </m> is at its minimum of 127.45 K and when  <m> \epsilon_a = 1 </m>, <m> T_a </m> is at its maximum of 254.9 K.  <m> T_E </m> ranges from 151.65 to 303.3 K.
+						</answer>
+					</exercise>
+
+					
+					<exercise>
+						<p>
+							What happens to the rate of atmospheric absorption as <m> \epsilon_a</m> increases ?
+						</p>
+						<answer>
+							It's increasing.
+						</answer>
+					</exercise>
+
+					<p>
+					Currently the sufrace temerpature of the Earth is about <m> 15.2 ^{o}C</m>.  In Kelvin this is <m>T_E = 288.3 K</m>.  If we plug this temperature into our equation above <!-- need to number equations !--> we can use our model to predict the current atmospheric emissivity.
+					</p>
+					<!-- reference for current emissivity an how it changes due to CO2  
+					https://en.wikipedia.org/wiki/Idealized_greenhouse_model !-->
+					<exercise>
+						<p>
+							Take the current temperature of the earth to be <m> T_E = 288.3 K </m>. What does out model predic <m> \epsilon_a</m> is?  
+						</p>
+						<answer> 
+							Solving for <m>\epsilon_a </m> we find <m>\epsilon_a = 2- \left( \frac{303.3 }{T_E}  \right)</m>.  So for <m> T_E = 288.3  K </m>, <m>\epsilon_a = 0.947 </m> 
+							<m> \epsilon_a = 0.78 </m>
+						</answer>
+					</exercise>
+				<p>
+					For the current Earth temperature of 288.3 K or <m>15^oC</m>, our model estimates <m>\epsilon_a</m> as  0.947.  The actual value of <m> \epsilon_a </m>, accoding to <!-- https://en.wikipedia.org/wiki/Idealized_greenhouse_model !--> , is predicted to be <m> \epsilon_a = 0.78 </m>. In the next section you will have a chance to incorporate more details and develop a more presice model.  In the meantime,  while our model is somewhat off, we can still look at how a change in emissivity due to an increase in green house gasses effects the Earth's temperature.  
+				</p>
+				<p>
+					According to <!-- https://en.wikipedia.org/wiki/Idealized_greenhouse_model  !--> if the amount of carbon dioxide in the atmosphere doubles <!-- is over a ten year period important? !-->, it will cause the atmospheric emissivity to increase by 0.019.
+				</p>
+				<p>  Let's use our model to see the what is effect of an increase of 0.019 in emissivity (and thus in doubling the amount of carbon dioxide in the atmosphere) on the Eath's temperature.
+				  We have two options for using our model to predict the change in temperature.
+
+				  <ul>
+					<li> We can use the actual value of <m>T_E = 288.3 </m> and our predicted value of 0.947 for <m>\epsilon_a</m>   </li> 
+					<li> We can use the actual value of 0.78 for <m>\epsilon_a</m> and the current temperature predicted by our model for <m> T_E </m> </li>
+					</ul>
+
+				</p>
+				<exercise>
+						<p> Use the actual value of 288.3 K for <m> T_E </m> and the our model's predition of 0.947 for <m>\epsilon_a</m> . If the amount of carbon in the atmosphere were to double today so that <m>\epsilon_a</m> would increase by 0.019, use our model to determine the increase in the Earth's temperature.  In the atmosphere's temperature. 
+						</p>
+						<answer>
+							<m> \epsilon_a</m> would increase from 0.947 to 0.966 and our model predeicts that the Earth's temperature <m> T_E</m> will increase <m>5^o</m> from 288.3 K  to  293.3 K  or from  <m>15.3^oC</m> to <m> 20.3^oC</m>   
+						</answer>
+					</exercise>
+
+					<exercise>
+						<p>
+							Use the actual value of 0.78 for <m>\epsilon_a</m> and the current temperature predicted by our model for <m> T_E </m>.  If the amount of carbon in the atmosphere were to double today, <m>\epsilon_a</m> would increase from 0.019 from 0.78 to 0.80.  According to our model, what is the increase in the Earth's temperature?  In the atmosphere's temperature? 
+						</p>
+						<answer>
+							According to our model <m> T_E </m> would increase from 248.6 K  to 252.6 K  or from <m> 11.6^o C </m> to <m>15.6 ^o C </m>  so would increase <m>4^oC</m>.  <m> T_a </m> would increase from 
+						</answer>
+					</exercise>
+
+					<p>
+					In the exercises above you determined that if the amount of carbon dioxide in the atmosphere were to double, the Earth's temperature would increase <m>4^o</m> or <m>5^o</m> depending on if we used the actual value for earth's temperature or atmosphe's emissivity and used our model to predict the emissivity or temperature respectively. 
+					</p>     
+					
+					<p>
+					Let's compare our results to those stated in the literature.  According to <!-- https://en.wikipedia.org/wiki/Idealized_greenhouse_model  !-->, the Earth's temperature is currently 288.3 K or <m> 15.2^oC </m> and the atmospheric emissivity is <m> \epsilon_a = 0.78 </m>.  If the amount of carbon dixoide in the atmosphere were to double <m> \epsilon_a </m> is predicted to increase from 0.78 to 0.80 which in turn would cause the Earth's temperature to increase <m>1.2^o</m> from 288.3 K (<m>15.2^oC</m>)  to 289.5 K (<m> 16.4^oC </m>).  
+					</p>
+
+					<p>Our model is not that far off and while our model is not precise it allows us to see and feel the effect of doubling the level of carbon dioxide in the atmosphere.  However, when it comes to climate change and predicting temperature increase we do want to experts to have a smaller margin of error.  
+					</p>
+
+					<p>
+						Now that we have developed some analytical intuition for the greenhouse effect, we are ready for the next step.  We will build on our current model, taking into accout other physical factors that will hopefully result is more presision.
+				    </p> 
+				
+
+
+
+<!--    Reference for the one layer model:  https://c21.phas.ubc.ca/article/simple-earth-climate-model-single-layer-imperfect-greenhouse-atmosphere/ !-->
+<!-- helpful table of green house gas amounts  https://en.wikipedia.org/wiki/Radiative_forcing !-->
+
+					   </subsubsection>
+					
+					</subsection>
+
+
+              <subsection>
+					<title> Other Models and Measures </title>
+
+				</subsection>
+
+			</section>

@@ -1,0 +1,469 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{definition}
+\newtheorem{example}[thm]{\protect\examplename}
+\theoremstyle{definition}
+\newtheorem*{defn*}{\protect\definitionname}
+\theoremstyle{definition}
+\newtheorem*{example*}{\protect\examplename}
+\theoremstyle{definition}
+\newtheorem*{xca*}{\protect\exercisename}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\definitionname}{Definition}
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 Day 3 - Introduction to the Affine Cipher \& Modular Arithmetic}
+\maketitle
+
+\section{Growth Mindset video response}
+\begin{xca}
+(RQ) TPS: Reading questions: views of intelligence//Read this article
+(Links to an external site.) from the American Psychological Association
+(APA) on how \textquotedbl Believing You Can Get Smarter Makes You
+Smarter\textquotedbl{} and post in the thread below short (2-3 sentence)
+answers to the following questions:
+\begin{enumerate}
+\item How would you describe a \textquotedbl growth mindset\textquotedbl{}
+in your own words? 
+\item Name one skill you developed or one thing you learned to do through
+hard work and making mistakes. Do you believe that it's possible to
+learn math through hard work and making mistakes, or is math somehow
+different from music and basketball in this way? Why or why not? 
+\item What can you do in this course to promote a growth mindset about your
+own abilities? 
+\begin{enumerate}
+\item Most students mention that understanding takes time and work to affirm
+one's own knowledge
+\end{enumerate}
+\item What can your professor and fellow students do in this course to promote
+a growth mindset about your own abilities? 
+\begin{enumerate}
+\item Discuss my own struggles with math
+\item Everyone can learn math; mathematical ability is not fixed and can
+change with work. 
+\item I deeply hope that this course will not be like the typical math courses
+you've taken in the past in the sense that you won't be forced to
+do a bunch of computations in your head. If you're able to make little
+creative leaps based on what we've discussed in class, you'll do wonderfully
+in this course.
+\item In this course, you won't be graded on how quickly you learn material.
+Corrections {[}mention including exams{]}, weighting of your final
+grade toward the final exam/just coming to class having attempted
+problems, I hope will promote that mindset.
+\end{enumerate}
+\end{enumerate}
+\end{xca}
+
+\begin{itemize}
+\item A statement from the American Mathematical Society, hosts of the largest
+annual mathematics meeting in the world and organization that strives
+to represent research mathematicians worldwide:
+\begin{itemize}
+\item The AMS strives to ensure that participants in its activities enjoy
+a welcoming environment. In all its activities, the AMS seeks to foster
+an atmosphere that encourages the free expression and exchange of
+ideas. The AMS supports equality of opportunity and treatment for
+all participants, regardless of gender, gender identity or expression,
+race, color, national or ethnic origin, religion or religious belief,
+age, marital status, sexual orientation, disabilities, veteran status,
+or immigration status.
+\end{itemize}
+\item I would add socioeconomic status and mental illness to this list for
+my course policy (the latter could be considered covered under ``disability'',
+but I want to make this explicit).
+\item Title IX is a federal law that states: ``No person in the United
+States shall, on the basis of sex, be excluded from participation
+in, be denied the benefits of, or be subjected to discrimination under
+any education program or activity receiving Federal financial assistance.''
+I'd expand policy to include any of the categories mentioned above.
+\item Affirm that all students can excel in the course. Making this real
+by helping students understand their pathways to excelling. Undermining
+the potential interpretation of courses as filters for past experiences
+or weed-out contexts. Perhaps normalizing your own past struggles
+along the path to success.
+\item Resources that may help you succeed in this and other classes on campus:
+\begin{itemize}
+\item food pantry in Carleson Hall
+\item free counseling services at the Counseling Center, which provides
+``Brief counseling and referral services for individuals who may
+be experiencing psychological or emotional difficulties''.
+\item we'll talk multiple times throughout the semester about developing
+study skills that will benefit you during your college experience.
+{[}story of failing first exam; my goal to make sure you're prepared
+with study tips/skills early and often. Usually everyone passes my
+first midterm partially because of these skills!{]}
+\end{itemize}
+\end{itemize}
+
+\section{Why modular arithmetic?}
+
+\subsection{Decrypting shift ciphers with known key}
+\begin{xca}
+\textbf{(RQ1) }Try to apply al-Kindi's technique to the ciphertext
+\textquotedbl bpiwtbpixrpxhiwtqthiegdvgpb\textquotedbl . Assume
+that you know this message was encrypted with a simple shift cipher,
+but you don't know what the key (shift) is. Bring your work to class,
+on paper, on the day below for class discussion.
+\end{xca}
+
+\begin{itemize}
+\item Here's a quicker way to decrypt shift ciphers.
+\item Let's say we're trying to decrypt ``FZIYMDXFGVHVMWZNOMVKKZMVGDQZ''
+(``Mathematica is the best program'') with $k=21$. That means that
+we're going to shift every letter \textbf{back} by 21 letters.
+\item Try shifting ``F'' back by 21 letters. 
+\item Now we have to do it for the rest of the code. It's going to take
+a while, right? Any ideas on how to speed this up?
+\item Well, there are 26 letters in the alphabet. Shifting ``F'' back
+by 21 gives us: 
+\[
+f,e,d,c,b,a,z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,\underline{k}.
+\]
+\item Notice this is the same result as you get when shifting ``F'' \textbf{forward}
+by 5. The alphabet is cyclical, so shifting back by 15 is the same
+as shifting forward by 11.
+\item Now let's shift ``Z'' forward by 5. 
+\item This is where it's beneficial to have a \textbf{letter-number correspondence
+sheet}; number the letters in increasing order starting with $a=0$.
+{[}see the last page of your updated CoursePack.{]}
+
+\includegraphics{\string"Old Cryptography Notes/pasted42\string".png}
+\item Well, ``Z'' is the 25th letter in the alphabet. Adding 5 to 25 gives
+$30$. There's no 30th letter of the above alphabet, right? But the
+25th letter is ``z'', so the ``26th letter'' should be a shift
+of one letter from ``z''. That gives ``a''! \emph{What we're really
+saying here is that, in the sense of the alphabet, $z+1=25+1=0=a$,
+}just like $23:00+1=0:00$ in military time!
+\item Now $z+5=25+5=30$ is $4$ more than a, which is $e=4$!
+\item Keep going\textendash it's straightforward for p and i. For w, we
+get 33, which is $26+7$. So it's a shift of 7 from ``z'', which
+is the same as the 7th letter of the alphabet, which is \textbf{h}. 
+\end{itemize}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+Ciphertext & b & p & i & w & t & b & p & i & x & r & p & x & h & i & w & t & q & t & h & i & e & g & d & v & g & p & b\tabularnewline
+\hline 
+\hline 
+Ciphertext number & 1 & 15 & 8 & 22 & 19 & 1 & 15 & 8 & 23 & 17 & 15 & 23 & 7 & 8 & 22 & 19 & 16 & 19 & 7 & 8 & 4 & 6 & 3 & 21 & 6 & 15 & 1\tabularnewline
+\hline 
+Plaintext number & 12 & 1 & 19 & 33 & 4 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+Plaintext & \textbf{m} & \textbf{a} & \textbf{t} & \textbf{h} & \textbf{e} & ...you finish this. &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\end{tabular}
+\begin{example}
+Note: somehow $33=7$ in the alphabet! This is like thinking of the
+alphabet as a clock {[}draw{]} with $26$ numbers on it, going from
+$0$ on the top to $25$. Where is 33:00 on this clock? It's aka 7:00!
+\end{example}
+
+
+\section{Introduction to Modular Arithmetic}
+\begin{itemize}
+\item \textbf{Today}: we'll introduce prime factorizations and the Euclidean
+algorithm, in preparation for talking about affine ciphers on Thursday.
+Affine ciphers are a more complicated version of the shift cipher.
+Then we'll have a computer programming makeup day: finish as much
+programming from previous days as possible that wasn't finished. If
+possible, start with factoring and prime checkers.
+\item Suppose you're given the plaintext with first letter $p_{1}$, second
+letter $p_{2}$, and so on. Remember that the Caesar or \emph{simple
+shift} cipher takes each plaintext letter and adds some constant amount
+$k$ to it. 
+\item The \textbf{affine cipher} first \emph{multiplies }the plaintext letter
+by a certain amount $m$, then adds a constant amount $k$. 
+\item \includegraphics{\string"Old Cryptography Notes/pasted43\string".png}
+\item In order to understand the affine cipher, we need to learn some \textbf{modular
+arithmetic}. You've secretly been doing this already every time you've
+encrypted or decrypted a shift cipher.
+\end{itemize}
+\begin{example}
+{[}slide{]} Use the tool at https://tinyurl.com/ModClock to perform
+``clock arithmetic'', explaining that $12=0$ on clocks. For example:
+\begin{itemize}
+\item $12+1\equiv1\mod12$
+\item Since $96=12\times8$, $2+96\equiv2\mod12$.
+\item You can set different clock sizes! Ask students for a modulus and
+to predict various computations on a clock with that modulus.
+\end{itemize}
+\end{example}
+
+\begin{xca}
+\textbf{(RQ2) }Set your clock to $5$ hours.\textbf{ }Please complete
+the addition and multiplication tables modulo 5 on p105 of your Coursepack
+by filling in each box with one of the numbers 0, 1, 2, 3, or 4. For
+example, the $4+4$ box on the addition table is asking \textquotedbl on
+a clock with the numbers 0-4 on it, what time is 4 hours after 4 o'clock?\textquotedbl{}
+The 3x4 box on the multiplication table is asking \textquotedbl if
+we start at 0 o'clock and go forward four hours three times, what
+time will it be?\textquotedbl{}
+
+Bring your best attempt at filling in the tables to class on the date
+below for discussion. Remember, you won't be graded on correctness,
+but if you get lost please write a few sentences describing what you
+tried and why it didn't work.
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+$\times$ & 0 & 1 & 2 & 3 & 4\tabularnewline
+\hline 
+\hline 
+0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+\hline 
+1 & 0 & 1 & 2 & 3 & 4\tabularnewline
+\hline 
+2 & 0 & 2 & 4 & 1 & 3\tabularnewline
+\hline 
+3 & 0 & 3 & 1 & 4 & 2\tabularnewline
+\hline 
+4 & 0 & 4 & 3 & 2 & 1\tabularnewline
+\hline 
+\end{tabular}
+\end{xca}
+
+\begin{itemize}
+\item Let's start with a couple of definitions:
+\end{itemize}
+\begin{defn*}
+~
+\begin{enumerate}
+\item For the rest of this class, we'll write ``$a\mid b$'', say \textbf{``a
+divides b''}, if $b/a$ is an integer.
+\item If we're working on a clock that goes from $1$ to $n$, we say we're
+\textbf{working modulo $n$} and that $n$ is the \textbf{modulus}.
+\item Integers $a$ and $b$ are \textbf{congruent modulo $\mathbf{n}$}
+if $n\mid(a-b)$. (That is, if $(a-b)/n$ is an integer.) If two integers
+are congruent modulo $n$, we write $a\equiv b$ mod $n$.
+\item The process of writing an integer $a$ as an integer $b$ so that
+$a\equiv b\mod n$ and $0\leq b\leq n-1$ is called \textbf{reducing
+$a$ modulo $n$.}
+\end{enumerate}
+\end{defn*}
+How does this relate to the clock activity we just did?
+\begin{itemize}
+\item What does it mean if $n\mid(a-b)$? This is equivalent to saying $\frac{a-b}{n}$
+is a whole number, for example $4$. But if $\frac{a-b}{n}=4$, then
+$a-b=4n$, so $a=b+4n$. But $n$ is our clock size, so we can add
+and subtract $4n$ without changing what time it is. Hence $a$ and
+$b$ represent the same time on an $n$-hour clock if and only if
+$n\mid(a-b)$, so our definitions are equivalent!
+\end{itemize}
+\begin{example*}
+~
+\begin{enumerate}
+\item $7\equiv7$ mod 21 since $21\mid(7-7)$ ($0/21=0$, an integer)
+\item $14\equiv2$ mod 3 since $3\mid(14-2)$.
+\item $2\equiv12$ mod 5 since $5\mid(2-12)$.
+\end{enumerate}
+\end{example*}
+Usually, if we're thinking about integers modulo $n$, we only want
+to worry about the integers $0,1,2,\dots,n-1$. For instance, $12\equiv2$
+mod $5$, so we think about $2$ mod 5 instead of 12.
+
+We have two main ways to reduce $a$ mod $n$:
+\begin{enumerate}
+\item If $a\geq0$, we can replace $a$ with its remainder when it's divided
+by $n$. Continuing Example 1, $7\equiv7$ mod 21 since $7\div21=0$
+with remainder 7 and $14\equiv2$ mod 13 since $14\div3=4$ with remainder
+2.
+\item We can add or subtract multiple copies of $n$ since $n\equiv0$ mod
+$n$, which is especially helpful for $a<0$. For example, $-7\equiv3$
+mod 5 since $-7+2(5)=3$.
+\end{enumerate}
+The following table shows integers $x$ reduced modulo $5$ to $0,1,2,3,$
+and $4$:
+
+\includegraphics{\string"Old Cryptography Notes/pasted26\string".png}
+\begin{xca}
+{[}slide{]} Use the letter-number chart at the top of p30 of your
+Coursepack to:
+\begin{enumerate}
+\item Reduce {[}i.e.. find the time on an $n$-hour clock{]} the following
+numbers mod $n$:
+\begin{enumerate}
+\item $184\mod27$
+\begin{enumerate}
+\item We have that $184\div27=6R22$, so $184\equiv22\mod27$.
+\end{enumerate}
+\item $12\mod3$
+\begin{enumerate}
+\item Since $12/3=4R0$, $12\equiv0\mod3$.
+\end{enumerate}
+\item $0\mod17$
+\begin{enumerate}
+\item $0$ mod any positive number is $0$ because $0/\text{positive number}=0R0$!
+\end{enumerate}
+\item $3\mod1$.
+\begin{enumerate}
+\item Any whole number mod $1$ is $0$ because $x/1=xR0$ for any whole
+number $x$!
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{xca}
+
+\begin{example}
+Now, say we want to find something like $1080+108\mod108$. One way
+of interpreting this is ``if we start at $0:00$, go forward $1080$
+hours, then go forward $108$ hours, what time is it on a $108$-hour
+clock?
+\begin{itemize}
+\item One way of solving this problem is by adding $1080+108=1188$, then
+reducing $1188\mod108$.
+\item Can anyone think of an easier way?
+\begin{itemize}
+\item Notice that going forward $1080$ hours brings us back to $0:00$,
+since $1080\equiv0\mod108$.
+\item Notice also that going forward $108$ hours on a $108$-hour clock
+doesn't change the time. So we're still at $0$:$00$!
+\item Thus, $1080+108\equiv0\mod108$.
+\end{itemize}
+\item We've just discovered the following important fact about modular arithmetic:
+\begin{itemize}
+\item if we're trying to reduce $a+b\mod n$, we can first reduce $a$,
+then $b$, then add the results.
+\end{itemize}
+\end{itemize}
+\end{example}
+
+\begin{xca}
+What about multiplication? That is, can we say that
+\[
+1080(108)\equiv0(0)=0\mod108?
+\]
+Think about the clock interpretation of $1080\times108$ on a $108$-hour
+clock. What about of time are we going forward by, and how many times
+are we going forward this amount? Then reduce the following:
+\begin{enumerate}
+\item $90+15\mod15$
+
+Since $90=15\times6$, we have
+\[
+90+15\equiv15\times6+15\equiv0\times6+0=0\mod15.
+\]
+
+\item $90\times15\mod15$
+
+Similarly, we have~$90\times15\equiv0\times0=0\mod15$.
+\item $1155\times444\mod2$
+
+Since odd numbers are congruent to $1$ and even numbers are congruent
+to $0$ mod $2$, we have
+\[
+1155\times444\equiv1\times0=0\mod2.
+\]
+In particular, this says that the result of $1155\times444$ is even,
+which may not be surprising.
+\end{enumerate}
+\end{xca}
+
+\begin{itemize}
+\item Now, we note that modular arithmetic gives us a method of encrypting/decrypting
+messages using shift ciphers without having to count backwards/forwards
+in the alphabet:
+\end{itemize}
+\begin{xca}
+{[}slide/handout{]} Encrypt ``gogriffins'' using a shift of $-24$
+by doing the following:
+\begin{enumerate}
+\item Write out the plaintext message in the first row of a table, with
+a different column for each letter.
+\begin{enumerate}
+\item Use the letter-number chart at the top of p30 of your Coursepack to
+convert each letter of the plaintext to a number. Write the numbers
+under the corresponding letter.
+\item Can you convert the backwards shift of $24$ to a forwards shift that's
+easier to perform? Write the corresponding forward shift under each
+number.
+\item How does (c) relate to the process of reducing $-24\mod26$?
+\item Add the plaintext numbers and your forward shifts together and write
+the resulting ciphertext numbers in the row below. {[}illustrate the
+table{]}
+\item Use the letter-number chart to convert each ciphertext number to a
+ciphertext letter.
+\end{enumerate}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+plaintext letter & g & o & g & r & i & f & f & i & n & s\tabularnewline
+\hline 
+\hline 
+plaintext number & 6 & 14 & 6 & 17 & 8 & 5 & 5 & 8 & 13 & 18\tabularnewline
+\hline 
+$C\equiv P-24\equiv P+2\mod26$ & 8 & 16 & 8 & 19 & 10 & 7 & 7 & 10 & 15 & 20\tabularnewline
+\hline 
+ciphertext letter & I & Q & I & T & K & H & H & K & P & U\tabularnewline
+\hline 
+\end{tabular}
+\item Use the same strategy to decrypt ``JDMCQHBJKZLZQADRSQZOODQZKHUD''
+given that it was encrypted with a shift cipher with shift $+25$.
+
+Our encryption equation is $C\equiv P+25\equiv P-1\mod26$. So our
+decryption equation is $P\equiv C+1\mod26$. Shifting every letter
+forward by $1$ yields the plaintext ''kendricklamarbestrapperalive''.
+\item Finish the Arithme-Tic-Toc worksheet (Coursepack p105-109)
+\end{enumerate}
+\end{xca}
+
+~
+\begin{xca}
+{[}slide{]} Work on shift ciphers Python modules
+\end{xca}
+
+~
+\begin{xca}
+Worksheet: Affine Cipher 1 (Coursepack p110)
+\begin{enumerate}
+\item (TPS) Assign student groups to create the multiplication and addition
+tables for moduli other than 5 and 12. Students can investigate their
+assigned tables for mathematical ideas and present their findings
+to the class. In whole-class discussions, ask students to describe
+how they discovered their patterns. Encourage and validate a variety
+of appropriate responses. Using the activity sheet as a guide, ask
+groups to write down the following: 
+\begin{itemize}
+\item A summary of what they found, as well as why they think their findings
+are accuhadrate. 
+\begin{itemize}
+\item An explanation of any patterns they found. 
+\end{itemize}
+\end{itemize}
+\end{enumerate}
+\end{xca}
+
+\begin{xca*}
+1.1(a-c), 7(a-c), 8(a-c), 10 {[}Challenge problem!{]}, 15a, 16a
+\begin{xca*}
+\includegraphics{\string"Old Cryptography Notes/pasted136\string".png}
+\end{xca*}
+\end{xca*}
+
+\end{document}

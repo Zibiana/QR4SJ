@@ -1,0 +1,302 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{definition}
+\newtheorem{example}[thm]{\protect\examplename}
+\theoremstyle{definition}
+\newtheorem*{example*}{\protect\examplename}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{\protect\definitionname}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\definitionname}{Definition}
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 Day 4 - Affine Cipher Encryption; Intro to Systems of Congruences}
+\maketitle
+
+\section{Last Time}
+\begin{itemize}
+\item Usually, if we're thinking about integers modulo $n$, we only want
+to worry about the integers $0,1,2,\dots,n-1$. For instance, $12\equiv2$
+mod $5$, so we think about $2$ mod 5 instead of 12.
+\end{itemize}
+We have two main ways to reduce $a$ mod $n$:
+\begin{enumerate}
+\item If $a\geq0$, we can replace $a$ with its remainder when it's divided
+by $n$. Continuing Example 1, $7\equiv7$ mod 21 since $7\div21=0$
+with remainder 7 and $14\equiv2$ mod 13 since $14\div3=4$ with remainder
+2.
+\item We can add or subtract multiple copies of $n$ since $n\equiv0$ mod
+$n$, which is especially helpful for $a<0$. For example, $-7\equiv3$
+mod 5 since $-7+2(5)=3$.
+\end{enumerate}
+\begin{itemize}
+\item What does it mean if $n\mid(a-b)$? This is equivalent to saying $\frac{a-b}{n}$
+is a whole number, for example $4$. But if $\frac{a-b}{n}=4$, then
+$a-b=4n$, so $a=b+4n$. But $n$ is our clock size, so we can add
+and subtract $4n$ without changing what time it is. Hence $a$ and
+$b$ represent the same time on an $n$-hour clock if and only if
+$n\mid(a-b)$, so our definitions are equivalent!
+\end{itemize}
+\begin{xca}
+{[}slide{]} Use the letter-number chart at the top of p30 of your
+Coursepack to:
+\begin{enumerate}
+\item Reduce {[}i.e.. find the time on an $n$-hour clock{]} the following
+numbers mod $n$:
+\begin{enumerate}
+\item $184\mod27$
+\begin{enumerate}
+\item We have that $184\div27=6R22$, so $184\equiv22\mod27$.
+\end{enumerate}
+\item $12\mod3$
+\begin{enumerate}
+\item Since $12/3=4R0$, $12\equiv0\mod3$.
+\end{enumerate}
+\item $0\mod17$
+\begin{enumerate}
+\item $0$ mod any positive number is $0$ because $0/\text{positive number}=0R0$!
+\end{enumerate}
+\item $3\mod1$.
+\begin{enumerate}
+\item Any whole number mod $1$ is $0$ because $x/1=xR0$ for any whole
+number $x$!
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{xca}
+
+\begin{example}
+Now, say we want to find something like $1080+108\mod108$. One way
+of interpreting this is ``if we start at $0:00$, go forward $1080$
+hours, then go forward $108$ hours, what time is it on a $108$-hour
+clock?
+\begin{itemize}
+\item One way of solving this problem is by adding $1080+108=1188$, then
+reducing $1188\mod108$.
+\item Can anyone think of an easier way?
+\begin{itemize}
+\item Notice that going forward $1080$ hours brings us back to $0:00$,
+since $1080\equiv0\mod108$.
+\item Notice also that going forward $108$ hours on a $108$-hour clock
+doesn't change the time. So we're still at $0$:$00$!
+\item Thus, $1080+108\equiv0\mod108$.
+\end{itemize}
+\item We've just discovered the following important fact about modular arithmetic:
+\begin{itemize}
+\item if we're trying to reduce $a+b\mod n$, we can first reduce $a$,
+then $b$, then add the results.
+\end{itemize}
+\end{itemize}
+\end{example}
+
+\begin{xca}
+What about multiplication? That is, can we say that
+\[
+1080(108)\equiv0(0)=0\mod108?
+\]
+Think about the clock interpretation of $1080\times108$ on a $108$-hour
+clock. What about of time are we going forward by, and how many times
+are we going forward this amount? Then reduce the following:
+\begin{enumerate}
+\item $90+15\mod15$
+
+Since $90=15\times6$, we have
+\[
+90+15\equiv15\times6+15\equiv0\times6+0=0\mod15.
+\]
+
+\item $90\times15\mod15$
+
+Similarly, we have~$90\times15\equiv0\times0=0\mod15$.
+\item $1155\times444\mod2$
+
+Since odd numbers are congruent to $1$ and even numbers are congruent
+to $0$ mod $2$, we have
+\[
+1155\times444\equiv1\times0=0\mod2.
+\]
+In particular, this says that the result of $1155\times444$ is even,
+which may not be surprising.
+\end{enumerate}
+\end{xca}
+
+\begin{itemize}
+\item Now, we note that modular arithmetic gives us a method of encrypting/decrypting
+messages using shift ciphers without having to count backwards/forwards
+in the alphabet.
+\item Also, modular arithmetic inspires a new cipher, noting that the graph
+of the shift cipher $C\equiv P+k\mod26$ is a line with slope $1$,
+but there's no obvious reason to restrict to slope $1$. 
+\item The \textbf{affine cipher} encrypts a plaintext letter by first multiplying
+it by some \textbf{multiplicative key} $m$, then adding some \textbf{additive
+key $k$ }to the result.
+\end{itemize}
+\begin{example*}
+Consider the affine cipher where the plaintext letters are first multiplied
+by $3$ and then $1$ is added. Encrypt the phrase ``assassinate
+the king now'' using this affine cipher.
+
+We can still use a table like we did for the shift cipher:
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+Plaintext letter & A & S & S & A & S & S & I & N & A & T & E\tabularnewline
+\hline 
+\hline 
+Plaintext number & 0 & 18 & 18 & 0 & 18 & 18 & 8 & 13 & 0 & 19 & 4\tabularnewline
+\hline 
+$3\times$ plaintext number $+1$ (mod 26) & 1 & $-17\equiv9$ & 9 & 1 & 9 & 9 & 25 & $40\equiv14$ & 1 & $-20\equiv6$ & ...finish this yourselves.\tabularnewline
+\hline 
+Ciphertext letter & B &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+Plaintext letter & T & H & E & K & I & N & G & N & O & W & \tabularnewline
+\hline 
+Plain number & 19 & 7 & 4 & 10 & 8 & 13 & 6 & 13 & 14 & 22 & \tabularnewline
+\hline 
+$3\times$ Plain number $+1$ &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+Cipher  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\end{tabular}
+
+To write this cipher in equation form, we can call the resulting ciphertext
+$C$. Then, this cipher is given by
+\[
+C\equiv3P+1\text{ mod 26}.
+\]
+\end{example*}
+In general, the mathematical equation for the shift cipher with shift
+$k$ is given by
+\[
+C\equiv P+k\text{ mod 26}
+\]
+and the equation for the affine cipher is given by
+\[
+C\equiv mP+k\text{ mod 26}(\ast)
+\]
+where $m$ is called the \textbf{multiplicative key} and \textbf{$k$
+}is called the \textbf{additive key}.
+
+Suppose you're given some plaintext. Remember that the Caesar or simple
+shift cipher takes each plaintext letter and adds some constant amount
+$k$ to it. The \textbf{affine cipher} first multiplies the plaintext
+letter by a certain amount $m$, then adds a constant amount $k$. 
+
+\includegraphics{\string"Old Cryptography Notes/pasted43\string".png}
+\begin{xca}
+{[}Worksheet{]} Affine Cipher 1-2 (Coursepack p110)
+\end{xca}
+
+~
+\begin{xca}
+\textbf{(Reading Question) }Complete the following exercises, writing
+out your reasoning step-by-step as instructed in the specifications
+for student work for this course. Then turn in your answers in class
+on the date below.
+\begin{enumerate}
+\item Encrypt the following using the affine cipher $C\equiv mP+k\mod26$,
+the standard alphabet, and the specified keys. 
+\begin{enumerate}
+\item \textquotedbl never say never\textquotedbl , $m=4,k=0$
+\item \textquotedbl stop hammer time\textquotedbl , $m=5,k=2$ 
+\item \textquotedbl supercalifragilisticexpialidocious\textquotedbl ,
+$m=13,k=1$ {[}Hint: you can save yourself a lot of work by noticing
+a pattern! Think about what happens when the letter being encrypted
+is odd vs. even.{]} 
+\end{enumerate}
+\item Computers can only understand numbers (which are written in 0s and
+1s), not letters. The computer language ASCII represents all commonly-used
+written characters as numbers between 1 and 256. Do you think we can
+encrypt ASCII messages using the affine cipher $C\equiv8P\mod256$?
+Why or why not?
+\end{enumerate}
+\end{xca}
+
+\begin{example}
+But now let's say that we're trying to crack the affine cipher. Let's
+take this ciphertext: \textbf{hikctyhghykaezztgaayrhbggrvgdyfg} (https://pastebin.com/8L4vCZQT)
+and try to find $m$ and $k$.
+\begin{itemize}
+\item The most common letters are g and h, which appear six and four times,
+respectively. This suggests that the ciphertext G and H may correspond
+to plaintext e and t. Let's write the previous statement in number
+form:
+\item Ciphertext 6 corresponds to plaintext 4, and ciphertext 7 corresponds
+to plaintext 19.
+\item Let's look at the equation $(\ast)$ above. When $C=G=6$, then $P=e=4$
+and the equation becomes
+\[
+6\equiv4m+k.
+\]
+When $C=H=7$, then $P=t=19$ and the equation becomes
+\[
+7\equiv19m+k.
+\]
+\item Together, these equations give us a \textbf{system of congruences}
+\begin{eqnarray*}
+4m+k & \equiv & 6\\
+19m+k & \equiv & 7
+\end{eqnarray*}
+(both mod 26). But we don't know yet how to solve systems of congruences!
+\end{itemize}
+\end{example}
+
+\begin{xca}
+If this were a system of \emph{equations}, not congruences, what would
+your steps be?
+\end{xca}
+
+
+\section*{Solving Systems of Congruences}
+\begin{itemize}
+\item We'll start with some more basic facts and build up to solving systems
+of congruences.
+\end{itemize}
+\begin{defn}
+Recall that a number is \textbf{prime} if the only integers that divide
+it are $1$ and itself. We'll use $p$ and $q$ to represent prime
+numbers. \textbf{Composite numbers} are integers greater than one
+that are not prime.
+\end{defn}
+
+\begin{itemize}
+\item You'll remember that every positive whole number has a unique \textbf{prime
+factorization}, i.e. a way to write it as a product of prime numbers.
+This fact is called the \textbf{Fundamental Theorem of Arithmetic.}
+\end{itemize}
+\includegraphics{\string"Old Cryptography Notes/pasted39\string".png}
+\begin{xca}
+{[}if time{]} Python module work
+\end{xca}
+
+
+\end{document}

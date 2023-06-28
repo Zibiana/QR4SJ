@@ -1,0 +1,1642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext>
+	<docinfo>
+		<brandlogo url="https://web.stevenson.edu/mbranson/math-for-the-people.html" source="images/Math_Fist.PNG"/>
+	</docinfo>
+	<book xml:id="math-for-the-people">
+		<title>Math for the People</title>
+		<introduction>
+			<p> Text of the book introduction </p>
+		</introduction>
+		<chapter xml:id="payday-loans">
+			<title>Payday Loans</title>
+			<introduction xml:id="payday-loans-introduction">
+				<p>Almost everyone borrows money at some point in their life. When you borrow money from a bank or another financial organization, they charge <em>interest</em>.</p>
+
+				<p>How do banks decide how much it should cost to borrow money? Do they do this fairly? While everyone uses credit - whether for mortgages, student loans, credit cards, or in other forms - the poor often have less access to credit.  When organizations charge people unfairly high interest rates, the practice is called <em>predatory lending</em>.</p>
+
+				<p>Who you are, where you live, and what you do affects your ability to borrow money. In this module, we'll explore <em>payday loans</em>, a common (and expensive) way of borrowing money for people without other options.</p>
+
+				
+			</introduction>
+			<section xml:id="payday-loans-objectives">
+				<title>Objectives</title>
+				<p>
+					By the end of this module, students will be able to:
+					<ol>
+						<li>Calculate the financial cost of a payday loan.</li>
+						<li>Measure the geographical correlation between payday lenders and minority populations.</li>
+						<li>Define the concept of risk.</li>
+						<li>Outline the social implications of payday lending on individuals and communities.</li>
+						<li>Evaluate potential alternatives to payday lending through a mathematical lens.</li>
+					</ol>
+				</p>
+			</section>
+			<section xml:id="payday-loans-background">
+				<title>Understanding the Issue</title>
+				<subsection xml:id="payday-loans-background-interest-and-risk">
+					<title>Interest and Risk</title>
+					<definition xml:id="predatory-lending-interest">
+						<title>Interest</title>
+						<p>An amount of money, usually a percentage of the amount owed, which is added on to a debt which has not been paid.  Usually interest is added on once a month or once a year. The percentage is called the <em>interest rate</em>.</p>
+					</definition>
+					<p> Banks charge different interest rates in different situations.  For example, if you already have a lot of money borrowed from other banks, a bank may charge you a higher interest rate.  They do this because they are less confident that you will be able to pay the loaned money back, an idea called <em>risk</em>.</p>
+					<definition xml:id="predatory-lending-risk">
+						<title>Risk</title>
+						<p>The probability that the amount of money a bank makes on a loan or other investment is less than the amount of money that they loaned out.</p>
+					</definition>
+					<p>The risk of a loan is determined using a number of factors - the two most important are the borrower's <em>credit score</em> and whether the loan is <em>secured</em> or not.</p>
+					<definition>
+						<title>Credit Score</title>
+						<p>A credit score is a number, used in the United States and a number of other countries, which assigns a number (between 300 and 850) to a person's credit risk.  Higher numbers indicate lower risk.
+						</p>
+					</definition>
+					<figure>
+						<image source="images/credit-score.jpeg">
+							<description>
+								A bar with credit scores ranging from Very Bad to Excellent. Image Description available. 
+							</description>
+						</image>
+						<caption>
+							"FICO Credit Score Range" by cafecredit is licensed with <url href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</url>. <xref ref="image-description-credit-score">Image Description </xref>.
+						</caption>
+					</figure>
+					<p>Credit scores are determined by mathematical algorithms, and are based on many different factors.  We'll look at how they're determined in <xref ref="payday-loans-risk"/>.  The general principle of credit scores is that you are more likely to repay a loan if you have repaid other loans in the past.  While this may seem like a reasonable system at face-value, it can create huge problems for people who haven't had access to loans in the past.</p>
+
+
+					<p>The other main factor that affects risk is whether the loan is <em>secured</em>.  When you secure a loan, that means that you offer up something of value to guarantee that you will pay back the loan.  If you fail to pay back the loan, the lender can <em>reposess</em> whatever you offered up.  Large purchases - like cars or homes - are generally made on secured loans.  If you fail to pay back the loan, the lending agency will take back the car or home which you borrowed the money for.</p>
+				</subsection>
+				<subsection xml:id="payday-loans-types-of-loans">
+					<title>Types of Loans and Lenders</title>
+					<introduction>
+						<p>This module is primarily concerned with understanding how payday loans work.  On the surface, payday loans may seem like a pretty good deal - but when carefully compared with other types of loans, we'll see that they can actually end up costing the borrower a lot of money.  We'll look at how they compare to other types of loans that are available to people with better credit scores</p>
+					</introduction>
+					<subsubsection xml:id="payday-loans-types-of-loans-payday">
+						<title>Payday Loans</title>
+						<figure>
+							<image source="images/payday-loan-window.jpeg">
+								<description>
+									Window of a payday lender advertising loans of $50 to $500 with no credit check.
+								</description>
+							</image>
+							<caption>
+								"Payday Loan Place Window Graphics" by taberandrew is licensed with <url href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</url>. 
+							</caption>
+						</figure>
+						<p> Payday loans are a type of loan often called a "loan of last resort." Anyone can take out a payday loan - the lender does not check their credit score to determine risk.  Therefore, the lender must assume that everyone taking out a payday loan is high risk - even though that may not be true.  Payday loans are generally made for a short term, usually two weeks (the name comes from taking a loan until the next payday, when it can be paid back). At the end of the two weeks, the borrower must pay back the amount they borrowed plus a fee.  Payday loans are usually for small amounts - up to $1000 - and charge a fee of $10-$30 for each $100 borrowed [<xref ref="biblio-payday-loan-cfpb"/>].  So you might borrow $200 and pay it back two weeks later, plus a $30 fee.  While this may not seem like much, this is equivalent to an annual interest rate of 360% - almost 20 times what a credit card might charge!  In <xref ref="payday-loans-interest"/> we'll see how to compute how much interest a payday loan is charging.</p>
+						<figure>
+							<video youtube="3rOVmUnUM7A"/>
+							<caption>
+								A short explanation of how payday lending works from the Pew Charitable Trust.
+							</caption>
+						</figure>
+					</subsubsection>
+					<subsubsection xml:id="payday-loans-types-of-loans-bank">
+						<title>Bank Loans</title>
+						<p>
+							Traditional bank loans are very different than a payday loan.  The interest rate is determined by risk (credit score), the type of loan, and what kind of security the borrower can offer for the loan.  Bank loans will have much lower interest rates than payday loans, but are not available to everyone.  Many people get their first loan - when they don't have a credit history - by having someone else <em>cosign</em> it.  A cosigner is someone, usually a parent or other relative, who agrees to pay back the loan if the borrower cannot.  Student loans are an example of a type of loan that often has a cosigner - if the borrower is a student, they may not have the credit history or security to borrow on their own.
+						</p>
+						<p>
+							One popular type of bank loan, used by many consumers, is the credit card.  A credit card is effectively an agreement between the bank and the cardholder to loan any amount of money on a short-term basis, up to a certain amount - called the <em>credit limit</em>.  The cardholder agrees to pay back at least the interest on the loan each month, or pay a penalty.  If the cardholder doesn't make their minimum payment each month, in addition to the penalty fees, the bank can cancel the credit card.  Falling behind on paying a credit card can quickly add up - both in fees and in damage to your credit rating.  If you have a high credit score, banks will usually agree to give you a credit card with a low interest rate.  If your credit score isn't as good, though, they will either deny you a card entirely, offer you one with a high interest rate, or require you to secure the card (pay a deposit to cover any missed payments).
+						</p>
+						<p>
+							Many people take out bank loans to make major purchases, like homes or cars.  A <em>mortgage</em> is a bank loan which uses a home or piece of property as a security.  Many people use a mortgage to borrow money to buy a home.  If they fail to repay the loan, the bank gets to take the security - in this case, their home.  When the bank takes the security from the loan, it is called a <em>foreclosure</em> (usually used with homes and property) or a <em>reposession</em> (usually used with vehicles like cars or boats).  The result is the same - the bank takes the property which was used to secure the loan.  They are then able to sell that property to earn back the money that they loaned out.  Interest rates for these types of loans tend to be much lower, because the opportunity to foreclose on the property gives the bank a way to earn their money back even if the borrower does not repay the loan.
+						</p>
+					</subsubsection>
+					<subsubsection xml:id="payday-loans-types-of-loans-government">
+						<title>Government Loans</title>
+						<p> 
+							The government - both state and federal governments in the US - is also an important provider of loans.  These loans are either provided directly by the government or secured by the government (a private bank makes the loan, and the government provides the security for the borrower). In some cases - like subsidized student loans - the government may even pay part of the interest.  Government loans provide access to money for people in need, but the process for getting one can be complicated and take time.  In addition, many government loans are restricted to particular groups, like veterans, small businesses, or first-time college students. 
+						</p>
+						<p>
+							Some government loans can be <em>forgiven</em>, meaning that the government does not require the loan to be paid back in exchange for some form of service from the borrower.  For example, government student loans can be forgiven after ten years of work in public service, as long as certain requirements are met.
+						</p>
+					</subsubsection>
+					<subsubsection xml:id="payday-loans-types-of-loans-pawn">
+						<title>Pawn</title>
+						<p>
+							A pawn is a short-term secured loan, usually made to someone with a low or no credit score.  In a pawn, the borrower brings a valuable object (usually something small, like jewelry or electronics) to a pawn shop.  The pawnbroker pays them some percentage of the value of the item, generally less than half.  The borrower must then repay the amount, plus interest.  If the borrower doesn't pay the money back, the pawnbroker can sell their item to recoup their investment.
+						</p>
+						<p>
+							Pawns generally offer more favorable interest rates than payday loans, since the loan is secured.  However, the borrower loses the ability to use whatever they have pawned while the money is borrowed.  For something like jewelry, that can mean living with the anxiety of losing a valuable or sentimental item.  For something like electronics, it could impact their ability to communicate or work.
+						</p>
+					</subsubsection>
+				</subsection>
+				<subsection xml:id="payday-loans-background-discriminatory-lending">
+					<title>Discriminatory Lending</title>
+					<p>
+						The Equal Credit Opportunity Act (ECOA) is a federal law in the United States which prohibits discrimination in the loaning of money and other credit transactions <xref ref="biblio-fair-lending"/>.  The ECOA prohibits discrimination on the basis of
+						<ul>
+							<li>Race or color;</li>
+							<li>Religion;</li>
+							<li>National origin;</li>
+							<li>Sex;</li>
+							<li>Marital Status;</li>
+							<li>Age;</li>
+							<li>Source of income;</li>
+							<li>Excercise of consumer credit rights.</li>
+						</ul>
+					</p>
+					<p>
+						So if the ECOA exists, banks are unable to discriminate against different types of people, right? Unfortunately, no. While the ECOA makes it illegal to discriminate in mortgage lending, enforcement of the law is very challenging.  It is very difficult to prove, in a situation where so many different factors are involved, that race or national origin influenced the lenders decision.  Many lenders use complex computer algorithms to decide whether to lend to a particular borrower.  Frequently, these algorithms are <em>trained</em> in a process called <em>machine learning</em>, where the computer studies data from past loans.  The computer finds patterns in the data, and uses those patterns to make decision about whether to lend and what terms to offer.  Because that data is based on past lending decisions made by human beings, it can (and does) contain biased decisions made by those human beings.  Research has shown that these algorithms replicate the patterns of racial and ethnic discrimination that were made in the data they are trained on.<xref ref="biblio-mortgage-discrimination"/>  Therefore, although overt discrimination is forbidden in lending, it still occurs.
+					</p>
+
+					<p>
+						In addition to the discrimination that occurs through implicit bias (both in humans and in algorithms), the ECOA, and other similar laws in different countries, still allow banks and other lenders to discriminate on the basis of risk.  Banks can choose whether or not they want to lend someone money based on how likely that person is to pay it back.
+					</p>
+					<p> 
+						We've talked about how banks, the government, and other entities make decisions about who they will loan money to.  Those decisions are made primarily on the basis of two things: credit history and access to security.  If someone has a strong credit history - they have borrowed money and paid it back on time - or if they have access to property or someone with credit history to secure their loan - then they can obtain favorable terms for a loan.  If they do not have either of those things, then they are left to borrow money from lenders who demand much higher interest payments.
+					</p>
+					<p>
+						This brings us to the question, then, of which groups of people have access to those things.  Although the ECOA banned discrimination in the loaning of money in 1974, access to credit tends to be passed down through generations.  If your grandparents did not have access to credit, they may not have been able to support your parents when they needed to borrow money for education or a first home - in which case, your parents would be unable to offer the same opportunities to you.
+					</p>
+					<p>
+						Thus, the question of who has access to affordable credit can become a question of who has access to generational wealth.  Wealth is defined as the value of a family's assets - both money saved in bank accounts and investments as well as property like homes and cars - minus their debt.  Studies have shown that Black Americans (as well as other people of color) have far less wealth than white Americans.  In 2016, a study found that the median wealth of Black households was less than 10% of that of similar white households <xref ref="biblio-mortgage-discrimination"/>.  Wealth tends to accumulate in families over time.  This can be direct, like inheritance, where one generation receives wealth (money or property) directly from the previous one.  It can also be indirect.  For example, a college student may indirectly inherit generational wealth when their parents pay for part or all of their college, or when they win a scholarship from opportunities provided by their parents.  This allows them to avoid taking on debt to pay for college, which would decrease their overall wealth.  This accumulated wealth, then, gives them greater opportunities to credit in their future.  The effect of generational wealth can be seen in the paradoxical relationship between wealth and debt in America.  Even though they have 10 times the median wealth, white households have median debt which is more than twice as high as Black households <xref ref="biblio-mortgage-discrimination"/>.  The debt held by white households, though, tends to be less costly than that held by Black households.  Much of this discrepancy is due to access to cheaper forms of debt like home mortgages, home equity loans, and student loans.  Black households tend to hold more of their debt in more expensive forms of credit like credit card debt and installment loans.
+					</p>
+					<p> 
+						On the surface, payday loans are available to anyone.  Because wealthier and white households tend to have access to other forms of credit, payday loans tend to be used primarily by poorer households and people of color.  People who do not own their own home are 57% more likely to use payday loans than homeowners.  People without a 4-year college degree are 82% more likely to use payday loans than those with degrees.  Race, though, was the greatest predictor of whether someone had used a payday loan - Blacks were more than twice as likely (105% more likely) to have used a payday loan as individuals of other races and ethnicities, even after controlling for other factors like income level and homeownership <xref ref="biblio-race-and-payday-lending"/>.  If access to credit were only determined by risk - factors like income and access to security - we could expect the percentage of white and Black borrowers to be similar.
+					</p>
+					<p>
+						In addition to the obstacles imposed by lending discrimination and lack of generational wealth, there are other reasons why people would turn to predatory forms of lending. One very simple reason is where they live.
+					</p>
+					<p>
+						A study in 2019 found that there are simply fewer banks in majority Black neighborhoods.  In areas where the majority of residents were white, there was an average of 41 banks &#038; other financial institutions per 100,000 people.  In majority non-white neighborhoods, that number fell to 27 per 100,000.  Furthermore, banks in majority Black neighborhoods tended to charge higher fees than those in majority white neighborhoods <xref ref="biblio-race-and-banking"/>.
+					</p>
+					<p>
+						The lack of banks in majority Black neighborhoods is mirrored by a greater concentration of payday lenders.  A 2016 study in California found that the neighborhoods where payday lenders were concentrated were much more likely to be majority Black or Latinx <xref ref="biblio-payday-lending-in-black-neighborhoods"/>.  A 2020 survey found that Black respondents were more than twice as likely to say that they lived within one mile of a payday lender <xref ref="biblio-payday-lending-race-survey"/>. This lack of access to low-interest lenders, coupled with easy access to high-interest lenders, is called <em>reverse redlining</em>.  Redlining was the (now illegal) practice of singling out minority neighborhoods for mortgage discrimination, denying loans to people buying homes in those neighborhoods.  Redlining is considered a major contributor to the generational wealth gap between Black and white americans.  Similarly, reverse redlining creates neighborhoods without access to low-interest credit - not because of bank policies, per se, but because of physical proximity to lending institutions.
+					</p>
+				</subsection>
+				<conclusion>
+					<p> 
+						We've learned a lot about payday lenders - how they operate, why people use them, where they are, and what they do.  Now that we understand the sociological aspects of the issue, let's dive into the mathematics.  Mathematics can help us understand just how unfair payday lending is, how these lenders turn a profit, and study the inequity in where payday lenders are located.  We'll learn the mathematics we need to analyze these issues, and then dive into some deeper exploration of the inequity of payday lending.
+					</p>
+				</conclusion>
+			</section>
+			<section xml:id="chapter-tag-cui-bono">
+				<title>Cui Bono - Who Benefits?</title>
+				<p> 
+					When a crime is committed, the investigation often revolves around the concept of <em>cui bono</em> - Latin for "who benefits?"  While social justice issues are not crimes (well, sometimes they are), thinking about who stands to profit from the status quo can help us to understand how to solve the problem.
+				</p>
+				<figure>
+					<image source="images/money.jpeg">
+						<description>
+							Rolls of hundred dollar bills.
+						</description>
+					</image>
+					<caption>
+						"Money" by free pictures of money is licensed with <url href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</url>.
+					</caption>
+				</figure>
+				<assemblage>
+					<p>The Payday Lending industry in the USA had 11.2 billion dollars of revenue in 2019<xref ref="biblio-ibis"/>.  These companies benefit directly from the profits of payday lending, but they are not the only ones. A 2011 report by the Public Accountability Initiative found that payday lenders obtain much of their financing from major banks like Wells Fargo, JP Morgan Chase, and Bank of America <xref ref="biblio-public-accountability-initiative"/>.  They also found that the payday lenders had ties to many of the large Wall Street investment banks, either through partial ownership or through shared personnel.</p>
+				</assemblage>
+			</section>
+			<section xml:id="payday-loans-big-problem">
+				<title>The Big Problem: Predatory Lending</title>
+				<assemblage>
+					<p>What counts as predatory lending? What kinds of laws can help protect consumers? What are resources that can be provided to help people avoid predatory lending? </p>
+				</assemblage>
+				<p> In order to help people avoid predatory lending, we first need to figure out what predatory lending is.  We'll look at how we can compare different loans using interest rates - even if they're not clearly spelled out information we're given.</p>
+
+				<p>We'll talk about how high interest rates can be disguised as fees or rolled into payments. We'll discuss the different possible ways that companies can mislead consumers about the cost of their products.</p>
+
+				<p>We'll look at the concept of risk and expected value.  Predatory lending is based on the idea that higher risk borrowers - those less likely to be able to repay the loan - must pay higher interest rates.  But how high is too high?</p>
+
+				<p>We'll look at reverse redlining - where are payday lenders located? Do the patterns that were seen in California reappear in other places? How can we look at data and see where payday lenders are more likely to be?</p>
+
+				<p>Finally, we'll discuss what can be done to help people avoid predatory lending.  Are there laws which can be passed? Can community organizations help people find non-predatory lenders? How can we help people access credit from non-predatory sources?</p>
+			</section>
+			<section xml:id="payday-loans-interest">
+				<title>Simple and Compound Interest</title>
+				<introduction>
+					<p>There are two main types of interest - simple and compound.  Let's look at the mathematics involved in calculating each.  Then we'll see how we can use this mathematics to look at payday loans.</p>
+				</introduction>
+				<subsection xml:id="payday-loans-simple-interest">
+					<title>Simple Interest</title>
+					<p> Mathematically, interest is computed by taking a percentage of the principal.  We can think about interest from two perspectives.  From the perspective of the bank or the person loaning the money, they are making an <em>investment</em> - they give someone a certain amount of money, with the expectation that they will be paid back more money in the future.  From the perspective of the borrower, this money (or the object that they bought with it, like a house or a car) is a <em>loan</em> - they will repay more back in the future than what they borrowed.</p>
+
+					<figure>
+						<image source="images/rising-interest.jpeg">
+							<description>
+								Stacks of money getting higher with an arrow drawn along the tops of the increasing stacks.
+							</description>
+						</image>
+						<caption>
+							"rising-interest-rates-new-image1" by bhautikjoshi is licensed with <url href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</url>.
+						</caption>
+					</figure>
+					<assemblage>
+						<title>Simple Interest</title>
+						<p>If you invest a <em>principle</em> at an APR (written as a decimal) for a given number of years, the investment will now be worth:</p>
+						<p><me>amount = principle*(1 + APR*Time)</me></p>
+						<p>This can also be written, using variables, as</p>
+						<p><me>A = P(1 + r*t)</me></p>
+						<p>Here, <m>A</m> is the amount the investment is worth, <m>p</m> is the principle, <m>r</m> is the APR (written as a decimal), and <m>t</m> is the amount of time that the loan is made for.</p>
+					</assemblage>
+					<p>Simple interest is usually used for transactions between friends and family or for certain types of loans, like automobile purchases.  It is used because it is easy to calculate and understand.</p>
+					<p>Here are some examples for you to try:</p>
+					<example> 
+						<statement>
+							<p>Susan's parents loan them $1000 to help them move into a new apartment.  They ask that Susan pay the money back in 2 years with 4% simple interest.  How much will they owe?</p>
+						</statement>
+						<solution>
+							<p> 4%, written as a decimal, is <m>0.04</m>.  So using the formula above, we get that Susan owes their parents</p>
+							<me>amount = 1000*(1+0.04*2) = \$1080</me>
+						</solution>
+					</example>
+					<example>
+						<statement>
+							<p>Fernando purchases a $20,000 car.  The dealership loans them the money to buy the car at a 3.85% simple interest, for 5 years.  How much will Fernando need to pay each month to pay off the car in 5 years?</p>
+						</statement>
+						<hint>
+							<p>First compute how much Fernando owes total.  How many monthly payments will there be?</p>
+						</hint>
+						<solution>
+							<p> The total amount that Fernando owes is:</p>
+							<me> amount = 20000*(1 + 0.0385*5) = \$23,850</me>
+							<p> Since they are paying off the debt over 5 years, they will make <m>5*12=60</m> monthly payments.  Assuming that all of the monthly payments are the same, Fernando will need to pay</p>
+							<me>\frac{\$23850}{60} = \$397.50</me>
+						</solution>
+					</example>
+				</subsection>
+				<subsection xml:id="payday-loans-compound-interest">
+					<title>Compound Interest</title>
+					<p>Most lenders actually use a different way of calculating interest, called <em>compound interest</em>.  In compound interest, rather than just taking a percentage of the amount once, interest is calculated regularly - every day, month, year, or some other unit of time.  This causes interest to accumulate more rapidly, since you are taking a percentage not just of the original amount, but also of any interest that has already been added on.</p>
+
+					<p>For example, imagine you borrow $100 at 5% interest for 10 years.  With simple interest, you would add 5% of $100 - $5 - each year for 10 years, for a total of $50 worth of interest.  You would end up owing $150 after 10 years.  If you were paying 5% interest <em>compounded annually</em>, though, you would take 5% of the amount each year - including any interest that has already accumulated.</p>
+
+					<table>
+						<title>5% interest compounded annually.</title>
+						<tabular >
+							<row bottom="medium">
+								<cell>Year</cell>
+								<cell>Total Amount Owed with Interest</cell>
+							</row>
+							<row>
+								<cell>0</cell>
+								<cell>100</cell>
+							</row>
+							<row>
+								<cell>1</cell>
+								<cell>105 = 100 + 100*0.05</cell>
+							</row>
+							<row>
+								<cell>2</cell>
+								<cell>110.25 = 105 + 105*0.05</cell>
+							</row>
+							<row>
+								<cell>3</cell>
+								<cell>115.76 = 110.25 + 110.25*0.05</cell>
+							</row>
+							<row>
+								<cell>4</cell>
+								<cell>121.55 = 115.76 + 115.76*0.05</cell>
+							</row>
+							<row>
+								<cell>5</cell>
+								<cell>127.63 = 121.55 + 121.55*0.05</cell>
+							</row>
+							<row>
+								<cell>6</cell>
+								<cell>134.01 = 127.63 + 127.63*0.05</cell>
+							</row>
+							<row>
+								<cell>7</cell>
+								<cell>140.71 = 134.01 + 134.01*0.05</cell>
+							</row>
+							<row>
+								<cell>8</cell>
+								<cell>147.75 = 140.71 + 140.71*0.05</cell>
+							</row>
+							<row>
+								<cell>9</cell>
+								<cell>155.13 = 147.75 + 147.75*0.05</cell>
+							</row>
+							<row>
+								<cell>10</cell>
+								<cell>162.89 = 155.13 + 155.13*0.05</cell>
+							</row>
+						</tabular>
+					</table>
+					<p>If we were using simple interest to calculate the amount owed here, after 10 years, we would owe <me>100 + 100*0.05*10 = $150</me> The additional $12.89 is interest which is being paid on the interest!</p>
+					<p>$12 may not seem like that big of a deal (although it can be, for people who are really struggling), but compound interest adds up much faster when the amount borrowed or the interest rate is larger.  Even a small increase in the interest rate can have a huge effect on the amount owed at the end of the loan. </p>
+					<p>Creating this table isn't hard, but it is time-consuming.  One of the most important parts of mathematics is looking for patterns in numbers that we can use to save time.  In this formula, we can see that each time we take the previous amount and add 0.05 times that amount:</p>
+					<p><me>105 = 100 + 100*0.05</me></p>
+					<p><me>110.25 = 105 + 105*0.05</me></p>
+					<p>Notice that this is the same thing as multiplying the previous amount by 1.05</p>
+					<p><me>105 = 100 + 100*0.05 = 100*1.05</me></p>
+					<p><me>110.25 = 105 + 105*0.05 = 105*1.05</me></p>
+					<p>Multiplying by the same amount at every step gets us an <em>exponential</em> relationship.  We have</p>
+					<p><me>105 = 100*1.05</me></p>
+					<p><me>110.25 = 105*1.05 = 100*1.05*1.05 = 100*1.05^2</me></p>
+					<p><me>115.76 = 110.25*1.05 = 100*1.05^3</me></p>
+					<p>All together, this suggests a faster way to get any of the values in the table above, by using an exponential equation.  After <em>n</em> years, we will owe <me>100*1.05^n</me> dollars.  This gives us an equation for the amount of money owed when interest is computed annually.</p>
+					<p>In general, though, lenders can charge interest as often as they like.  Interest is frequently compounded <em>monthly</em> (12 times a year) or <em>daily</em> (365 times a year).  In these cases, we use basically the same formula - with two main changes.
+					<ul>
+						<li> If you pay 12% interest over the year, but you're being charged interest each month, you wouldn't pay 12% interest every month! Instead, we divide the interest rate by the number of times we compound each year.  12% annual interest would become <me>\frac{12\%}{12} = 1\%</me> monthly interest.  If we were compounding daily, we would have <me>\frac{12\%}{365} = 0.03288\%</me> daily interest.</li>
+						<li> We also need to increase the power on our exponent.  If you compute interest every month for 10 years, you're computing interest 12*10 = 120 times overall.  If you're compounding daily, you would have 365*10 = 3650 times overall.</li>
+					</ul>
+					Making these two changes gives us our formula for Compound Interest.</p>
+					<assemblage>
+						<title>Compound Interest</title>
+						<p>If you invest a <em>principle</em> at an APR (written as a decimal) for a given number of years, compounded <m>k</m> times per year, the investment will now be worth:</p>
+						<p><me>amount = principle*\left(1 + \frac{APR}{k}\right)^{(k*Time)}</me></p>
+						<p>This can also be written, using variables, as</p>
+						<p><me>A = P\left(1 + \frac{r}{k}\right)^{(k*t)}</me></p>
+						<p>Here, <m>A</m> is the amount the investment is worth, <m>p</m> is the principle, <m>r</m> is the APR (written as a decimal), <m>k</m> is the number of times interest is compounded each year, and <m>t</m> is the amount of time that the loan is made for.</p>
+					</assemblage>
+					<p>This exponential growth is what makes a small change to the interest rate such a big deal.  Let's look at two loans - both for $1000, compounded monthly, over a period of 10 years.  One lender charges an APR of 4%, while the other lender charges 7%.  Let's see how much you owe at the end of 10 years using each formula:
+						 <me>A = 1000\left(1 + \frac{0.04}{12}\right)^{(12*10)} = 1490.83</me>
+						 <me>A = 1000\left(1 + \frac{0.07}{12}\right)^{(12*10)} = 2009.66</me>
+					Even though 7% is only a small amount large than 4%, it makes a huge difference - over $500 - in how much you owe at the end of the loan.  Increasing the loan to 10% makes an even bigger difference:
+						<me>1000\left(1 + \frac{0.10}{12}\right)^{(12*10)} = $2707.04</me>
+					</p>
+					Here are some examples for you to try:
+					<example>
+						<statement>
+							<p>Tasha borrows $2000 at 14% interest, compounded monthly.  How much will they owe in a year?</p>
+						</statement>
+						<hint>
+							<p>We can tell this is compound interest because it says compounded. Figure out which numbers go where in the formula.</p>
+						</hint>
+						<solution>
+							<p> Tasha will owe
+								<me>A = 2000*\left(1 + \frac{0.14}{12}\right)^{12*1} = $2298.68</me>
+							</p>
+						</solution>
+					</example>
+					<example>
+						<statement>
+							<p>Diego borrowed money at a 15% interest rate for 5 years, compounded daily.  If they had to pay back $3000, how much did they borrow originally?</p>
+						</statement>
+						<hint>
+							<p>In this example, what are we looking for? Put everything else into the compound interest formula and solve for the missing variable.</p>
+						</hint>
+						<solution>
+							<p> We know what Diego has to pay back (A in the formula), but we don't know what he borrowed in the first place (P in the formula).  So we have:
+								<me>3000 = P*\left(1 + \frac{0.15}{365}\right)^{(5*365)}</me>
+								<me>\frac{3000}{\left(1 + \frac{0.15}{365}\right)^{(5*365)}} = P</me>
+								<me>$1417.32 = P</me>
+							Diego only borrowed $1417.32 at the beginning of the 5 years.  They paid back over twice as much as they borrowed.
+							</p>
+						</solution>
+					</example>
+				</subsection>
+				<subsection xml:id="payday-loans-solving-for-apr">
+					<title>Finding the Interest Rate</title>
+					<p>One of the ways that payday lenders conceal how much interest they're charging is by charging a "fee" instead of an interest rate.  For example, a payday lender may loan someone $200 for two weeks.  When they pay the money back, they charge them a $20 fee.</p>
+					<p>In this example, $20 may not seem like a lot - it's only 10% of the $200 that they borrowed.  Remember, though, that when we talk about interest rates, we talk about <em>annual</em> percentage rates.  This is 10% over two weeks - if you don't pay the $20 at the end of the first two weeks, you'll be charged another $20 at the end of the next two weeks! There are 52 weeks in the year, so by the end of the year (26 two-week periods) you would have paid <m>26*20 = $520</m> in interest - that's <m>\frac{520}{200} = 2.6 = 260%</m> of the amount you borrowed!  The annual percentage rate is 260%!</p>
+					<p>Notice that this is <em>simple interest</em> - the amount of interest that they charge you each time didn't change (it was $20 every two weeks).  Most payday lenders work this way - every two weeks you pay the fee until you can pay back the original money you borrowed.  The fees vary, but are usually between $10 and $30 per $100 borrowed every two weeks.<xref ref="biblio-payday-loan-cfpb"/></p>
+					<p>You can use the simple interest formula to figure out what the equivalent annual interest rate is.  Remember that when you use the formula, the time is always in years, so 2 weeks would equal <m>\frac{1}{26}</m> of a year.  Say you borrow $300 and pay a $25 fee per $100 for every two weeks.  You'll owe <m>300+25*3 = $375</m> at the end of the two weeks, so the simple interest formula gives you:
+					<me>375 = 300\left(1 + r*\left(\frac{1}{26}\right)\right)</me>
+					<me>3275 = 300 + \left(\frac{150}{13}\right)r</me>
+					<me>75 = \left(\frac{150}{13}\right)r</me>
+					<me> r = 75*\left(\frac{13}{150}\right) = 6.5 = 650\%</me>
+					The equivalent annual percentage rate is 650%.</p>
+					<p> How much would you owe after two weeks if you borrowed the same money on a credit card which charges 22% interest, compounded daily?  Here we use the compound interest formula.  Even though 22% is a pretty high interest rate for a credit card, you'll still end up paying a lot less than the payday loan:</p>
+					<me>A = 300*\left(1 + \frac{0.22}{365}\right)^{\left(365*\frac{1}{26}\right)} = $302.55</me>
+					<p>At 22%, compounded daily, you end up just paying $2.55 in interest after 2 weeks.</p>
+				</subsection>
+			</section>
+			<section xml:id="payday-loans-risk">
+				<title>Risk and Credit Scores</title>
+				<introduction>
+				<p>When we talked about lending in the introduction, we discussed the <em>credit score</em>.  Your credit score is a number - usually between 300 and 850 in the United States - which tells a lender how likely you are to repay borrowed money.  We can think of a credit score in terms of probability.</p>
+				</introduction>
+				<subsection xml:id="payday-loans-probability">
+					<title>Introduction to Probability</title>
+					<p>The <em>probability</em> of a particular event occurring is a number between 0 and 1 (or, equivalently, between 0% and 100%) which measures how likely that event is to occur.  If something has a probability of 0, that means it will never happen.  If it has a probability of 1, then it will always happen, no matter what.</p>
+					<p>Usually, when we study probability, we talk about simple situations where it's easy to determine the probability.  For example, if you roll a 6-sided die, the probability that you get a 6 is <m>\frac{1}{6}</m> because you're looking at 1 possibility out of 6 total.</p>
+					<p>However, in the real world, probabilities are usually much more complicated to determine.  To calculate your credit score, credit reporting agencies use many different factors - how long you've had loans or credit cards, how many times you have been late paying your bills, and the types of loans and credit cards that you have. There is no simple formula to calculate how likely you are to repay a loan.  The credit score summarizes the complicated calculations that have gone into determining the likelihood of you paying back money that you borrow.</p>
+					<p>Although it is an oversimplification of the actual situation, we'll use the credit score as a simple measure of probability so that we can see an example of how it works.  We'll treat a score of 300 - the lowest score - as meaning that the probability you pay back a loan is 0%.  We'll say that a credit score of 850 means that there is a 100% chance that you pay back the loan on time.  We'll treat every score between as a number between 0 and 100% using the formula
+						<me> \frac{credit score - 300}{850-300}</me>
+					So a credit score of 700, in our simplification would mean a <m>\frac{700-300}{850-300} = 0.73 = 73\%</m> chance of repaying the loan on time.</p>
+				</subsection>
+				<subsection xml:id="payday-loans-expected-value">
+					<title>Expected Value</title>
+					<p>Once banks determine how likely you are to repay a loan, they can make a decision about whether they will loan you money, whether that's as a student loan, credit card, or something else.  They use the credit score to determine the amount of money they can expect to make off of the loan.  If you don't repay the loan, they will lose all of the money that they loaned you.  If you do repay the loan, then they make money - in the form of the interest that you pay back on the loan.  This is called the <em>expected value</em> of the loan.  It depends on both the probability that a borrower will pay back the loan, the amount of money being borrowed, and the amount of interest that the bank will make off of the loan.</p>
+					<p>Before we look at the expected value of a loan, let's define the expected value in general.  Expected value works by using the probability to weight the reward of different events happening.  Consider this example: Say a friend makes you an offer.  They'll flip a coin.  If the coin comes up heads, they'll pay you $1.  If the coin comes up tails, you pay them $1.</p>
+					<p>If you play the game just once, you'll end up either $1 richer or $1 poorer - there's a 50% chance of either.  If you play it twice, you either win both, win the first and lose the second, lose the first and win the second, or lose both - so there are 4 possibilities.  If you win both times, you're $2 richer.  If you win one and lose one (either of the middle two situations) you're back where you started - $0 richer.  If you lose both, you're $2 poorer.  If you average out the different scenarios, you end up exactly where you started - there's exactly the same chance of winning money as losing.  So we say the expected value is $0 - on average, we don't expect to end up with any more money than we started with.</p>
+					<p>Expected value depends on probability - so it certainly isn't saying that if you play that game with your friend, you won't win any money! You could play 10 times and win every time...it just isn't very likely (the chance of that happening is a little less than 1/1000)</p>
+					<assemblage>
+						<title>Expected Value</title>
+						<p>Suppose you have multiple different possible events, each with some probability of occurring, and each with some "reward" our "benefit" (penalties or losses are represented as negative rewards).  Then the expected value is found by taking the probability of each event times the reward of that event, and adding them up:
+							<me>P(event 1)*R(event 1) + P(event 2)*R(event 2)</me>
+						where P(event) is the probability of the event, and R(event) is the reward.  You can continue this for more than 2 events - just multiply the probability times the reward and add it on.</p>
+						<p>The expected value tells you, on average, how much you can expect to "win" each time an event happens, by averaging out the wins and losses.</p>
+					</assemblage>
+					<p>Let's look at an example of how this works, using insurance as an example.  When an insurance company sells you insurance, they calculate the probability that you will use it - and how much they'll have to pay you if you do use it.  If you don't use the insurance, they "win" the amount of money that you pay for the insurance - if you do use it, they lose whatever they have to pay out for the claim (minus whatever you paid them).  On average, over lots and lots of customers, they'll earn the expected value from each customer. Let's look at an example.</p>
+					<p>An insurance company calculates that there is a 1% chance that a driver has a car accident each year, and that on average they will have to pay $15,000 per accident.  They charge $600 a year for insurance.  How much can they expect to earn, on average, from each customer?</p>
+					<p>The probability of having an accident is 1% (0.01), which means that the probability of not having an accident is 99% (0.99).  If you have an accident, the insurance company loses $15,000, minus the $600 you paid them, for a net "reward" of <m>$600 - $15,000 = -$14,400</m>.  If you don't have an accident, they earn a "reward" of $600 - the amount you paid for your insurance.  The expected value, then is:
+					<me>0.01*(-14,400) + 0.99(600) = $450</me>
+					On average, they can expect to earn $450 per customer that they sell insurance to.</p>
+					<p>Give it a try yourself - here are some examples to work out.</p>
+					<example>
+						<statement>
+							<p>An insurance company charges $2000 a year for home insurance. There is a 2% chance each year that a homeowner will make a claim, and the insurance company will need to pay them $23,000.  What is the expected value?</p>
+						</statement>
+						<hint>
+							<p>What is the probability that they have to pay money out? How much will they lose if they do (remember they get to keep the money that was paid for the insurance policy)?</p>
+						</hint>
+						<solution>
+							<p> The probability that they will have to pay is 2% = 0.02.  If they do have to pay, they will lose $23,000 minus the $2000 they charged the customer, for a total of $21,000.  There is a 98% = 0.98 chance that they don't have to pay, in which case they'll earn $2000 from the customer's premium. The expected value for the insurance company is
+								<me>0.02*(21,000)+0.98(2000) = $1540 </me>
+							On average, they can expect to earn $1540 per customer.
+							</p>
+						</solution>
+					</example>
+					<p>Let's look at example explicitly about how payday lenders operate.  Most payday lenders make their money because people renew their loans week after week, paying larger fees to borrow the money for a longer period of time.</p>
+					<example>
+						<statement>
+							<p>A payday lender loans you $200 with a $30 fee, to be paid back in 2 weeks.  If you don't pay it back in 2 weeks, you'll be charged another $30 fee, and another $30 for each 2 weeks after that.  They think that there is a 10% chance you'll pay it back in 2 weeks, a 20% chance you'll pay it back in 4 weeks, a 60% chance you'll pay it back in 6 weeks, and a 10% chance you won't pay it back at all.  What is the expected value of the loan for the lender?</p>
+						</statement>
+						<hint>
+							<p>Think about how much the payday lender earns (or loses) in each case.</p>
+						</hint>
+						<solution>
+							<p> There are 4 different situations here.  If you pay the loan back in 2 weeks (10% chance), the lender earns $30.  If you pay it back in 4 weeks (20% chance), they earn $60.  If you pay it back in 6 weeks (60% chance), they earn $90.  If you don't pay it back (10% chance), they lose $200.  The expected value is
+								<me> 0.10*30 + 0.20*60 + 0.60*90 + 0.10*(-200) = $49</me>
+							On average, they can expect to earn $49 per customer.
+							</p>
+						</solution>
+					</example>
+				</subsection>
+				<subsection xml:id="payday-loans-lending-decisions">
+					<title>How Banks Make Lending Decisions</title>
+					<p>Banks use the idea of risk to make decisions about how much money they will lend.  We'll look at a simplified example of how this works, though the reality is, of course, more complicated.  This will still give you an idea, fundamentally of how it works.</p>
+					<p>Say that you want to borrow $1000 from a bank via an unsecured loan. If the loan were secured, and you didn't pay it back, the bank could seize your house or car or whatever you had secured the loan with.  Since it's unsecured, the bank will lose all of the money that they loaned you if you don't pay it back.  Therefore, they want to make the expected value of loaning you money positive (for them) - that is, they want to ensure that on average the money that you pay them in interest makes up for the risk of you not paying the loan back.</p>
+					<p>Let's look at the situation where the bank loans you $1000 for 1 year, simple interest, and let's assume that they decide there's a 10% chance you don't pay the loan off.  If the interest rate is <em>r</em>, the expected value calculations look like this:
+					<table>
+						<title>Expected Value for a $1000 loan for 1 year with 10% risk of default</title>
+						<tabular >
+							<row bottom="medium">
+								<cell>Rate (r)</cell>
+								<cell>Amount of Interest</cell>
+								<cell>Expected Value</cell>
+							</row>
+							<row>
+								<cell>0.02</cell>
+								<cell>$20</cell>
+								<cell><m>0.1*(-1000)+0.9*(20) = -82</m></cell>
+							</row>
+							<row>
+								<cell>0.03</cell>
+								<cell>$30</cell>
+								<cell><m>0.1*(-1000)+0.9*(30) = -73</m></cell>
+							</row>
+							<row>
+								<cell>0.04</cell>
+								<cell>$40</cell>
+								<cell><m>0.1*(-1000)+0.9*(40) = -64</m></cell>
+							</row>
+							<row>
+								<cell>0.05</cell>
+								<cell>$50</cell>
+								<cell><m>0.1*(-1000)+0.9*(50) = -55</m></cell>
+							</row>
+							<row>
+								<cell>0.06</cell>
+								<cell>$60</cell>
+								<cell><m>0.1*(-1000)+0.9*(60) = -46</m></cell>
+							</row>
+							<row>
+								<cell>0.07</cell>
+								<cell>$70</cell>
+								<cell><m>0.1*(-1000)+0.9*(70) = -37</m></cell>
+							</row>
+							<row>
+								<cell>0.08</cell>
+								<cell>$80</cell>
+								<cell><m>0.1*(-1000)+0.9*(80) = -28</m></cell>
+							</row>
+							<row>
+								<cell>0.09</cell>
+								<cell>$90</cell>
+								<cell><m>0.1*(-1000)+0.9*(90) = -19</m></cell>
+							</row>
+							<row>
+								<cell>0.10</cell>
+								<cell>$100</cell>
+								<cell><m>0.1*(-1000)+0.9*(100) = -10</m></cell>
+							</row>
+							<row>
+								<cell>0.11</cell>
+								<cell>$110</cell>
+								<cell><m>0.1*(-1000)+0.9*(110) = -1</m></cell>
+							</row>
+							<row>
+								<cell>0.12</cell>
+								<cell>$120</cell>
+								<cell><m>0.1*(-1000)+0.9*(120) = 8</m></cell>
+							</row>
+						</tabular>
+					</table>
+					The bank would need to charge at least 12% interest to be guaranteed to make money.  In practice, a bank would charge considerably more interest for an unsecured loan if there were such a large chance they would get none of the money back - if they would loan it at all.  If you don't pay back your loan, your bank will sell the debt to a debt collector - who will pay them what they think the loan is worth, usually a fraction of the loan.  The debt collector will then attempt to get the money back through legal actions like lawsuits and garnished wages.
+					</p>
+					<example>
+						<statement>
+							<p>You apply for a loan of $10,000 from a bank.  They compute that there is a 1% chance that you won't pay the loan back, in which case they'll sell it to a debt collector for $5000.  What is the expected value for the bank if they charge you 4.25% interest, simple interest, and you pay the loan back in 2 years?</p>
+						</statement>
+						<hint>
+							<p>What does the bank gain if you pay the loan back? What do they lose if you don't?</p>
+						</hint>
+						<solution>
+							<p> There are 2 different situations here - either you don't pay the loan back in 2 years, or you do.  If you don't (1% chance), then the bank loses $5000 (they loaned you $10,000, and the debt collector only paid them $5,000). If you do pay it back (99% chance), then the bank gains the interest you paid back. After 2 years of 4.25% simple interest, you pay the bank back
+								<me> 10000 + 10000*0.0425*2 = $10,850</me>
+							The bank earned $850 (they loaned you $10,000, and got $10,850 back).  The expected value for the bank is
+								<me> 0.01*(-5000) + 0.99*(850) = $791.50</me>
+							If they made many loans like this, on average, they would earn $791.50 per customer.
+							</p>
+						</solution>
+					</example>
+					<p>Let's do a more complicated example, with compound interest.</p>
+					<example>
+						<statement>
+							<p>The bank is considering loaning you $5,000, at a rate of 8.75%, compounded monthly, to be paid back after 3 years.  They calculate that there is a 2% chance you won't pay the loan back, and they'll have to sell the debt to a debt collector for $3000.  What is the expected value for the bank?</p>
+						</statement>
+						<hint>
+							<p>Figure out how much the bank will earn on the loan if you pay it back in full, with interest, after 3 years.</p>
+						</hint>
+						<solution>
+							<p>If you pay the loan back, you'll pay the bank
+								<me>A = 5000*\left(1 + \frac{0.0875}{12}\right)^{12*3} = $6494.69</me>
+								This is $1494.69 more than the bank loaned you, so in this situation, they "win" $1494.69.  If you don't pay the loan back, they lose $2000, because they can only sell the loan to a debt collector for $3000.  Thus, the expected value is:
+								<me>0.02*(-2000)+0.98*(1494.69) = $1424.80</me>
+								The bank can expect to earn, on average, $1424.80 on each loan like this.
+							</p>
+						</solution>
+					</example>
+				</subsection>
+
+
+			</section>
+			<section xml:id="payday-loans-correlation">
+				<title>Correlation</title>
+				<introduction>
+					<p>
+						Our final mathematical topic for this module will be correlation.  When we looked at the background of payday lenders, we talked about the fact that they are more likely to be located in majority Black and Latinx neighborhoods.  We'll look at analyzing this mathematically through the lens of correlation.
+					</p>
+				</introduction>
+				<subsection xml:id="payday-loans-correlation-definition">
+					<title>Defining the Correlation</title>
+					<p>
+						Suppose we have two sets of numbers:
+						<me>{1,2,5,6,12}</me>
+						<me>{2,4,10,12,24}</me>
+					   If someone told you that the next number in the first set was 30, what would you expect the next number in the second set to be?  You would probably guess 60, because there's a clear pattern here - the number in the second series is always exactly double the corresponding number in the first series.
+					</p>
+					<p>
+						In practice, when we look at two sets of data, the relationship between them is rarely this exact.  For example, look at these two sets of data:
+						<me>{1,2,5,6,12}</me>
+						<me>{2,5,9,14,21}</me>
+						The values in the second set are just a little bit off from two times as much as the first set.  If someone told you the next number in the first set was 30, though, you would still probably expect the next number in the second set to be approximately 60 - maybe not exactly 60, but something close.  Even though one number doesn't exactly predict the other, it comes pretty close.
+					</p>
+					<p>
+						The correlation is a way of measuring how closely one set of numbers predict another.  The correlation gives a number between 1 and -1.  A correlation of 0 means that there is absolutely no relationship between the two sets of numbers - when one changes, you can't predict what will happen to the other.  A correlation of 1 means that there is a perfect relationship between the numbers - when the values in the first data set increase, the values in the second data set increases in a way that exactly corresponds.  Our first two sets of numbers would have a correlation of 1.  Our second pair would have a correlation close to 1, but not exactly 1.  A correlation of -1 also indicates a perfect relationship, but when one of the values in one set increases, the values in the second set will <em>decrease</em> in a way that exactly corresponds.  So the pattern is still perfect, but it works in reverse.
+					</p>
+					<p>
+						Computing the correlation is tricky.  We'll go through the process of computing it, which takes multiple steps, but in general we'll do it using software.  The R programming language lets us easily find the correlation between two sets of numbers.  Here, you'll see the two data sets we looked at above.  The cor function in R calculates the correlation between two sets of numbers - hit "Evaluate R" to calculate.  You can try different values in the exercise below - just hit "Evaluate R" to find the correlation.  You'll see that when we look at the first pair of data sets, the correlation is exactly 1:
+						<sage language="r">
+							<input>
+								x &lt;- c(1,2,5,6,12)
+								y &lt;- c(2,4,10,12,24)
+								cor(x,y)
+							</input>
+						</sage>
+						If we look at the second pair, though, the correlation is a little less than 1.
+						<sage language="r">
+							<input>
+								x &lt;- c(1,2,5,6,12)
+								y &lt;- c(2,5,9,14,21)
+								cor(x,y)
+							</input>
+						</sage>
+						0.9812022 is still very close to 1, though, because these numbers still mostly fit the pattern - just not perfectly.
+					</p>
+					<p>
+						If we have numbers that are completely unrelated, though - where there is no pattern between how much one increases by and the other - we'll see very low correlation:
+						<sage language="r">
+							<input> 
+								x &lt;- c(1,2,3,4,5)
+								y &lt;- c(7,-4,-3,-45,27)
+								cor(x,y)
+							</input>
+						</sage>
+					</p>
+				</subsection>
+				<subsection>
+					<title>Computing Correlation</title>
+					<p>
+						Computing the correlation is a little complicated, and is easiest done in multiple steps. While it's not crucial that you can go through all of these steps on your own, we'll explain how the correlation is defined to help understand why it computes how related two sets of data are.
+					</p>
+					<assemblage>
+						<title>Correlation</title>
+						<p>
+							If we have two sets of data <m>x = {x_1,x_2,\ldots,x_n}</m> and <m>y = {y_1,y_2,\ldots,y_n}</m> with the same number of values, the correlation is
+							<me>
+								cor(x,y) = \frac{(x_1-\overline{x})(y_1-\overline{y})+(x_2-\overline{x})(y_2-\overline{y})+\cdots+(x_n-\overline{x})(y_n-\overline{y})}{(n-1)s_x s_y}
+							</me>
+							where <m>\overline{x}</m> and <m>\overline{y}</m> are the means of <m>x</m> and <m>y</m>, and <m>s_x</m> and <m>s_y</m> are the sample standard deviations of <m>x</m> and <m>y</m>. 
+						</p>
+						<p>
+							You can compute the mean by adding up all the values and dividing by <m>n</m>.
+							<me>
+								\overline{x} = \frac{x_1+x_2+\cdots + x_n}{n}
+							</me>
+						</p>
+						<p>
+							You can compute the sample standard deviation by subtracting the mean from each value, squaring that, adding them all up, dividing by <m>(n-1)</m>, and taking the square root.
+							<me>
+								s_x = \sqrt{\frac{(x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots + (x_n - \overline{x})^2}{(n-1)}}
+							</me>
+						</p>
+					</assemblage>
+					<p>
+						This is a pretty complicated formula, but it turns out it's pretty easy to break it down into steps.
+						<ol>
+							<li>Compute the means <m>\overline{x}</m> and <m>\overline{y}</m>.</li> 
+							<li>Compute the sample standard deviations <m>s_x</m> and <m>s_y</m>.</li>
+							<li>Subtract the mean <m>\overline{x}</m> from each value in <m>x</m>, and the mean <m>\overline{y}</m> from each value in <m>y</m>.</li>
+							<li>Multiply the corresponding differences from <m>x</m> and <m>y</m> together.</li>
+							<li>Add them all up.</li>
+							<li>Divide the whole thing by <m>(n-1)s_x s_y</m>.</li>
+						</ol>
+					</p>
+					<p>
+						Let's see how this works with the second data set above:
+					</p>
+					<me>x = {1,2,5,6,12}</me>
+					<me>y = {2,5,9,14,21}</me>
+					<p>
+						First we'll compute the means and sample standard deviations of each data set:
+					</p>
+					<me>\overline{x} = \frac{1+2+5+6+12}{5} = 5.2</me>
+					<me>\overline{y} = \frac{2+5+9+14+21}{5} = 10.2</me>
+					<me>s_x = \sqrt{\frac{(1-5.2)^2 + (2-5.2)^2 + (5-5.2)^2 + (6-5.2)^2 + (12-5.2)^2}{5-1}} = 4.3244</me>
+					<me>s_y = \sqrt{\frac{(2-10.2)^2 + (5-10.2)^2 + (9-10.2)^2 + (14-10.2)^2 + (21-10.2)^2}{5-1}} = 7.5299</me>
+					<p>
+						Now that we have all of these, let's get down to the work of calculating the correlation.  Our next step is to subtract the mean from each data value in <m>x</m> and <m>y</m>:
+					</p>
+					<md>
+						<mrow>
+							(x - \overline{x}) = \lbrace (1-5.2),(2-5.2),(5-5.2),(6-5.2),(12-5.2)\rbrace 
+						</mrow>
+						<mrow>
+							= \lbrace -4.2,-3.2,-0.2,0.8,6.8\rbrace
+						</mrow>
+					</md>
+					<md>
+						<mrow>
+							(y - \overline{y}) = \lbrace (2-10.2),(5-10.2),(9-10.2),(14-10.2),(21-10.2)\rbrace
+						</mrow>
+						<mrow>
+							= \lbrace -8.2,-5.2,-1.2,3.8,10.8\rbrace
+						</mrow>
+					</md>
+					<p>
+						Now we'll multiply each corresponding pair together:
+					</p>
+					<md>
+						<mrow>
+							(x - \overline{x})*(y-\overline{y}) = \lbrace -4.2*-8.2,-3.2*-5.2,-0.2*-1.2,0.8*3.8,6.8*10.8\rbrace 
+						</mrow>
+						<mrow>
+							= \lbrace 34.44, 16.64, 0.24, 3.04, 73.44\rbrace
+						</mrow>
+					</md>
+					<p>
+						Now we'll add up all the values:
+					</p>
+					<me>  34.44 + 16.64 + 0.24 + 3.04 + 73.44 = 127.8</me>
+					<p> 
+						And finally, we divide by <m>(n-1)s_x s_y</m>.
+					</p>
+					<me>cor(x,y) = \frac{127.8}{(5-1)*4.3244*7.5299} = 0.9811</me>
+					<p>
+						This is the same value we got from R above, up to 3 decimal places (the difference comes because we rounded <m>s_x</m> and <m>s_y</m>)
+					</p>
+				</subsection>
+				<subsection>
+					<title>Using Correlation</title>
+					<p>
+						Ok, so we've defined this correlation, which tells us how one set of numbers is related to another.  But why does it matter?
+					</p>
+					<p>
+						An old adage says that "correlation does not imply causation," meaning that just because two things are correlated doesn't mean that change to one causes the change in another.  Two things could be correlated that are completely unrelated.  For example, there is a strong correlation (0.9039) between the number of bee colonies in the US and the divorce rate in South Carolina:
+					</p>
+					<figure>
+						<image source="images/honey-producing-bee-colonies-us_divorce-rate-in-south-carolina.png"/>
+						<caption>The number of honey-producing bee colonies in the US correlates with the divorce rate in South Carolina<xref ref="biblio-spurious-correlations"/></caption>
+					</figure>
+					<p>
+						Does this mean that bees are breaking up marriages in South Carolina, or that new divorcees are running out to start beekeeping? Of course not (or at least, probably not).  We don't have any other reason to believe that one of these variables is causing the other.  But when there is some reason why we might believe that one thing is causing another, the correlation can give us evidence to support that theory.
+					</p>
+					<figure>
+						<image source="images/correlation.png"/>
+						<caption> Correlation does not imply causation. <xref ref="biblio-correlation-comic"/></caption>
+					</figure>
+					<p>
+						For example, because of the legacy of systemic racism and intentional exclusion of Black Americans from the financial system, we could theorize that there are fewer banks - and more payday lenders - in majority Black neighborhoods.  We could use correlation to see if there is evidence for this theory - by looking at the racial makeup of a neighborhood and seeing if there is a correlation with the number of financial institutions.  This doesn't prove that banks are intentionally avoiding Black neighborhoods (though other evidence may support that claim) - it just provides evidence to support that theory.
+					</p>
+				</subsection>
+			</section>
+			<section xml:id="payday-loans-solving-for-change">
+				<title>Solving for Change</title>
+				<introduction>
+					<p>
+						Now that we understand interest rates, risk, and correlation, we can begin to really look at the problem of predatory lending.  The Center for Responsible Lending (CRL) tracks payday lending across the country.  Using a $300 loan, they calculated the annual percentage rate that you would pay in interest in each state of the United States.  Note that some of the states have no rate listed - those states have passed laws which make predatory lending unprofitable.
+					</p>
+						<figure>
+							<image source="images/payday-rates.png">
+								<description>
+									Map of the United States with typical payday loan APR. Image description available.
+								</description>
+							</image>
+							<caption>
+								Payday lending rates by state. States with no percentage listed have passed laws effectively outlawing predatory payday lending, usually by banning interest rates over a particular level. Calculations are based on a $300 loan. Image adapted from work by Spitfire19, <url href="https://creativecommons.org/licenses/by/1.0"> CC BY 1.0 </url>, via Wikimedia Commons. The adapted image is by Mark Branson <url href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </url>. Data from <xref ref="biblio-crl-payday-rates"/>. <xref ref="image-descriptions-payday-rates">Image Description </xref>.
+							</caption>
+						</figure>
+					<p>
+						All of these rates are unfair and predatory, but some of them are appalling.  In Texas, payday lenders charge up to 664% interest on a $300 loan - that means that over the course of a year, if you borrow $300, you end up paying back
+					</p>
+					<me>A = 300 + 300*(6.64)*(1) = \$2,292</me>
+					<p>
+						That's $1,992 in interest on a $300 loan - about $75 every two weeks.  Payday lenders tend to break their loans down into smaller amounts in order to make it seem like less.  Rather than saying $1,992 in interest every year, or even $75 every two weeks on a $300 loan, they would say, "Our fee is $25 for every $100 you borrow, paid back after two weeks."  If that 2 weeks ends, and you can't re-pay the loan...another $25 for every $100 is charged.  For a borrower struggling to make ends meet, the fees add up like clockwork.
+					</p>
+					<p>
+						Lenders make many arguments about why they should be able to charge these rates.  Sometimes they say that because people are willing to pay their rates, they should be able to charge them - if it were too much, no one would pay them.  They say that they have to charge such high interest rates because the risk of default - a borrower not paying back their loan - is so high.  And they make the argument that if they didn't lend money to these people, no one else would.
+					</p>
+					<p>
+						All of these arguments have some merit, and if we want to fight predatory lending, we need to learn to make counter-arguments.  This is where our newly learned mathematical skills come into play.
+					</p>
+				</introduction>
+				<subsection>
+					<title>If people are willing to pay...</title>
+					<p>
+						The first argument for payday lending says, basically, that if people are willing to pay for a payday loan, then it should be legal to offer them.  This is a free market argument - essentially saying that if the fees were too much, the market wouldn't support them.
+					</p>
+					<p>
+						There is definitely something to this argument - in Texas, for example, in 2021, there is no cap on the interest that can be charged for a payday loan, but as we saw above, the average rate is 664%.  This is essentially letting the market choose the rate - lenders have stopped at this point because no one will pay rates higher.
+					</p>
+					<p>
+						The people who borrow loans at these ultra-high interest rates, though, don't do it because they have plenty of money to throw around.  They do it because they have no other choice.  We can see this by looking at the correlation between the number of payday lenders and where people live.
+					</p>
+					<p>
+						<xref ref="table-alabama-lenders"/> shows data, taken from the 2012 American Community Survey (part of the Census) on the 20 largest counties in Alabama.  For each, we have the number of 522390 establishments (a category which includes payday lenders and related businesses which provide financial services outside of the traditional banking sector), the percentage of the population which is white, the percentage of the population which is Black, and the median household income.
+					</p>
+					<p>
+					<table xml:id="table-alabama-lenders">
+						  <tabular halign="right">
+						    <row header="yes">
+						      <cell halign="left">
+						        County
+						      </cell>
+						      <cell halign="left">
+						        Number of Payday Lenders
+						      </cell>
+						      <cell halign="left">
+						        Percent White
+						      </cell>
+						      <cell halign="left">
+						        Percent Black
+						      </cell>
+						      <cell halign="left">
+						        Median Household Income
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Baldwin County
+						      </cell>
+						      <cell>
+						        16
+						      </cell>
+						      <cell>
+						        86.3
+						      </cell>
+						      <cell>
+						        8.8
+						      </cell>
+						      <cell>
+						        48378
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Calhoun County
+						      </cell>
+						      <cell>
+						        15
+						      </cell>
+						      <cell>
+						        75.6
+						      </cell>
+						      <cell>
+						        21.4
+						      </cell>
+						      <cell>
+						        39169
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Cullman County
+						      </cell>
+						      <cell>
+						        6
+						      </cell>
+						      <cell>
+						        96.4
+						      </cell>
+						      <cell>
+						        1.1
+						      </cell>
+						      <cell>
+						        37287
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        DeKalb County
+						      </cell>
+						      <cell>
+						        6
+						      </cell>
+						      <cell>
+						        94
+						      </cell>
+						      <cell>
+						        0.8
+						      </cell>
+						      <cell>
+						        38445
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Elmore County
+						      </cell>
+						      <cell>
+						        10
+						      </cell>
+						      <cell>
+						        75.9
+						      </cell>
+						      <cell>
+						        20.9
+						      </cell>
+						      <cell>
+						        53328
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Etowah County
+						      </cell>
+						      <cell>
+						        10
+						      </cell>
+						      <cell>
+						        81.3
+						      </cell>
+						      <cell>
+						        15
+						      </cell>
+						      <cell>
+						        34264
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Houston County
+						      </cell>
+						      <cell>
+						        14
+						      </cell>
+						      <cell>
+						        70.2
+						      </cell>
+						      <cell>
+						        26.5
+						      </cell>
+						      <cell>
+						        40409
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Jefferson County
+						      </cell>
+						      <cell>
+						        82
+						      </cell>
+						      <cell>
+						        53.2
+						      </cell>
+						      <cell>
+						        42.6
+						      </cell>
+						      <cell>
+						        43959
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Lauderdale County
+						      </cell>
+						      <cell>
+						        9
+						      </cell>
+						      <cell>
+						        87.2
+						      </cell>
+						      <cell>
+						        10
+						      </cell>
+						      <cell>
+						        41908
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Lee County
+						      </cell>
+						      <cell>
+						        14
+						      </cell>
+						      <cell>
+						        70.2
+						      </cell>
+						      <cell>
+						        22.8
+						      </cell>
+						      <cell>
+						        45043
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Limestone County
+						      </cell>
+						      <cell>
+						        5
+						      </cell>
+						      <cell>
+						        80.7
+						      </cell>
+						      <cell>
+						        12.5
+						      </cell>
+						      <cell>
+						        47999
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Madison County
+						      </cell>
+						      <cell>
+						        23
+						      </cell>
+						      <cell>
+						        69.2
+						      </cell>
+						      <cell>
+						        24.5
+						      </cell>
+						      <cell>
+						        56839
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Marshall County
+						      </cell>
+						      <cell>
+						        9
+						      </cell>
+						      <cell>
+						        90.6
+						      </cell>
+						      <cell>
+						        2.1
+						      </cell>
+						      <cell>
+						        36197
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Mobile County
+						      </cell>
+						      <cell>
+						        51
+						      </cell>
+						      <cell>
+						        60.6
+						      </cell>
+						      <cell>
+						        35.1
+						      </cell>
+						      <cell>
+						        39691
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Montgomery County
+						      </cell>
+						      <cell>
+						        33
+						      </cell>
+						      <cell>
+						        39.6
+						      </cell>
+						      <cell>
+						        55.3
+						      </cell>
+						      <cell>
+						        41807
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Morgan County
+						      </cell>
+						      <cell>
+						        9
+						      </cell>
+						      <cell>
+						        82.2
+						      </cell>
+						      <cell>
+						        11.8
+						      </cell>
+						      <cell>
+						        45051
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        St. Clair County
+						      </cell>
+						      <cell>
+						        8
+						      </cell>
+						      <cell>
+						        87.7
+						      </cell>
+						      <cell>
+						        9.2
+						      </cell>
+						      <cell>
+						        51859
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Shelby County
+						      </cell>
+						      <cell>
+						        15
+						      </cell>
+						      <cell>
+						        81.1
+						      </cell>
+						      <cell>
+						        11.2
+						      </cell>
+						      <cell>
+						        65728
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Talladega County
+						      </cell>
+						      <cell>
+						        9
+						      </cell>
+						      <cell>
+						        64.2
+						      </cell>
+						      <cell>
+						        34
+						      </cell>
+						      <cell>
+						        31547
+						      </cell>
+						    </row>
+						    <row>
+						      <cell halign="left">
+						        Tuscaloosa County
+						      </cell>
+						      <cell>
+						        17
+						      </cell>
+						      <cell>
+						        67
+						      </cell>
+						      <cell>
+						        30.4
+						      </cell>
+						      <cell>
+						        41139
+						      </cell>
+						    </row>
+						  </tabular>
+						</table>
+					</p>
+					<p>
+						We can look at the correlations between these different data sets.  For example, the R code below calculates the correlation between the number of payday lenders and the white population of a county, which is -0.68.  
+					</p>
+					<sage language="r">
+						<input>
+							lenders &lt;- c(16, 15, 6, 6, 10, 10, 14, 82, 9, 14, 5, 23, 9, 51, 33, 9, 8, 15, 9, 17)
+							percent.white &lt;- c(86.3, 75.6, 96.4, 94, 75.9, 81.3, 70.2, 53.2, 87.2, 70.2, 80.7, 69.2, 90.6, 60.6, 39.6, 82.2, 87.7, 81.1, 64.2, 67)
+							cor(lenders,percent.white)
+						</input>
+					</sage>
+					<p>
+						This means that there is a negative correlation between the percentage of a county which is white and the number of payday lenders - that is, the more white people live in a county, the fewer payday lenders will you find.  Because Alabama is largely a biracial state (with non-white and non-Black minority populations making up a very small percentage of the population), we see a similar (but reversed) correlation between Black population and payday lenders of 0.67 - so more Black people in a county corresponds to more payday lenders. The R code to calculate that correlation is next.
+					</p>
+					<sage language="r">
+						<input>
+							lenders &lt;- c(16, 15, 6, 6, 10, 10, 14, 82, 9, 14, 5, 23, 9, 51, 33, 9, 8, 15, 9, 17)
+							percent.black &lt;- c(8.8, 21.4, 1.1, 0.8, 20.9, 15, 26.5, 42.6, 10, 22.8, 12.5, 24.5, 2.1, 35.1, 55.3, 11.8, 9.2, 11.2, 34, 30.4)
+							cor(lenders,percent.black)
+						</input>
+					</sage>
+					<p>
+						When we see a correlation like this, as we discussed before, we need to remember that it's not proof of a cause - just evidence.  One thing we should always be thinking about is the possibility of <em>confounding</em>.  Confounding is when another factor we're not thinking about causes a change in our data.  For example, here, poverty could be a confounding factor.  Because of the deep legacy of racial inequality in the United States, Black people are more likely to live in poverty.  Could the correlation between counties with higher Black populations and payday lenders actually be because those counties are poorer?  Let's look and see if there is a correlation between median income and the number of payday lenders.
+					</p>
+					<sage language="r">
+						<input>
+							lenders &lt;- c(16, 15, 6, 6, 10, 10, 14, 82, 9, 14, 5, 23, 9, 51, 33, 9, 8, 15, 9, 17)
+							median.income &lt;- c(48378, 39169, 37287, 38445, 53328, 34264, 40409, 43959, 41908, 45043, 47999, 56839, 36197, 39691, 41807, 45051, 51859, 65728, 31547, 41139)
+							cor(lenders,median.income)
+						</input>
+					</sage>
+					<p>
+						The correlation here is 0.02, extremely close to 0.  Remember that a correlation of 0 means that there is no relationship between the two data sets - that when one increases, the other is equally likely to increase or decrease.  So median income doesn't predict the number of payday lenders nearly as well as race.
+					</p>
+					<p>
+						In the exercises, we'll consider another possible confounding factor - population.  Is it possible that the counties with larger Black populations just have more people, and thus more payday lenders?
+					</p>
+				</subsection>
+				<subsection>
+					<title>We have to charge those rates, because of the risk!</title>
+					<p>
+						The second argument made for why payday loans are "fair" is that the lenders are taking a large risk by making the loans - so they should be entitled to charge high interest rates. One question here - which we won't focus on - is whether it is fair to charge interest at all, or if our society should have a more effective way of providing capital to those who lack it. <url href="https://www.kiva.org/">Kiva</url> is a non-profit organization that provides loans without interest worldwide, for example.  But even working within the existing framework of capitalism, where any money borrowed must be repaid with interest, we can ask the question of what level of interest is fair.
+					</p>
+					<p>
+						Let's look at how much money payday lenders are making on loans, through the lens of expected value.  In 2015, the Center for Responsible Lending (CRL) found that 46% of all payday loan borrowers <em>defaulted</em> on their loans within two years <xref ref="biblio-crl-defaults"/>.  A default on a loan occurs when the lender is unable to meet the terms of the loan. While this doesn't necessarily mean that they didn't pay the loan back (in fact, the CRL found that 66% of those defaulting eventually paid their loans back in full, plus any fees that they would have paid for defaulting, like late fees), it does mean that the lender is losing some money on the investment.  The same study found that 20% of loans are <em>charged off</em> within two years, meaning that the lender gives up on collecting the debt. Again, this doesn't mean they lose all of their money, since the loans are then usually sold to a debt collector who tries to collect some or all of the money, but they do lose much of their investment in this case.
+					</p>
+					<p>
+						Obviously, these situations are very complicated, and there are a lot of possible results, so as we did before, we'll consider a simplified version.
+					</p>
+					<p>
+						Let's assume that 20% of the time, the lender loses everything (the loan is charged off).  26% of the time (in the other defaults), they get paid back the full value of the loan, plus the interest, plus late fees.  In the remaining 54% of cases, the lender pays back the loan in full.  
+					</p>
+					<p>
+						In a 2014 report, the Consumer Financial Protection Bureau (CFPB) found that the median payday loan sequence is repaid after one month <xref ref="biblio-cfpb-payday-lending-report"/>.  So in our scenario above, there are 3 possibilities - 20% of the time, the lender loses everything; 26% of the time, they get back the loan, plus the interest and late fees; and 54% of the time they get their loan back plus interest.
+					</p>
+					<p>
+						Let's say someone borrows $300 for one month in California at a 460% interest rate.  The late fee for a defaulting lender is $25. How much money should the payday lender expect to make off of them?
+					</p>
+					<p>
+						First we need to calculate the interest paid, using the simple interest formula:
+						<me>
+							A = 300 + 300*4.60*\frac{1}{12} = \$415
+						</me>
+						The borrower ends up paying $415 total, or $115 in interest.
+					</p>
+					<p>
+						Now we can calculate expected value.  We take each probability and multiply it times the amount that the lender earns (or a negative value, if they lose money).  Then we add them up.
+						<me>
+							0.20*(-300) + 0.26*(115+25) + 0.54*(115) = \$38.50
+						</me>
+						On average, the lender earns $38.50 on the $300 loan.
+					</p>
+					<p>
+						Of course, many borrowers end up renewing their loans for much more than a month.  Unlike a borrower who pays back their loan quickly, who may just have a temporary emergency need for money, these borrowers struggle to ever pay back their loan, racking up more fees each time they renew the loan.  
+					</p>
+					<p>
+						What if we look at the exact same scenario, but the borrower borrows the money for a year?  Then they will pay back a total of 
+						<me>
+							A = 300 + 300*4.60*1 = \$1680
+						</me>
+						The borrower ends up paying $1,680 total, so $1,380 in interest.  If they default on the loan, they also end up paying late fee (possibly more than one, but let's assume just one).  We can calculate the expected value for the payday lender:
+						<me>
+							0.20*(-300) + 0.26*(1380+25) + 0.54*(1380) = \$1050.50
+						</me>
+						For every borrower that pays their loan back after a year of fees, on average, the lender can expect to earn $1050.50!  This illustrates the fundamental mechanic of payday lending - the lenders make more money if they lend to borrowers who can just barely afford to pay the loan back.  They have a vested interest in lending to people who are struggling to get by instead of those who are dealing with an unexpected emergency.
+					</p>
+				</subsection>
+				<subsection>
+					<title>If we don't lend to them, who will?</title>
+					<p>
+						This point, of all those made, is the most salient.  Payday lenders exist because for many people with poor credit, there are no other options.  If a borrower has something of value to pawn, they could use a pawn broker - but for people struggling to get by, things of value may be too precious to pawn (the computer that a student uses for school; heirloom jewelry; the car used to get to work).
+					</p>
+					<p>
+						However, as compelling as this argument might be, it turns out to be false.  Many states have banned payday lending, usually by setting a cap of 36% on annual interest rates.  While this cap may seem high when compared to interest rates on credit cards and other types of loans, it is generally low enough to make payday lending untenable.  In 2017, the Center for Responsible Lending studied states which have passed these kinds of bans, and found that banning payday loans did not significantly impact borrowers' access to credit <xref ref="biblio-shark-free-waters"/>. Borrowers who would otherwise have used a payday loan, had they been legal, turned to products such as lines of credit, installment loans, loans from religious institutions, and payment plans with creditors.  Because of the high interest rates and predatory fees, researchers found that taking out payday loans actually made consumers more likely to have negative financial outcomes, like declaring bankruptcy.
+					</p>
+					<p>
+						In the absence of payday lenders, financial institutions like credit unions can fill the gap.  Many credit unions, which are non-profits, offer payday alternative loans to their members.  These loans function much like payday loans, but with interest rates that are much more reasonable.  Removing bad actors like payday lenders creates more space for financial services like these to be successul in our communities.
+					</p>
+				</subsection>
+				<subsection>
+					<title>What Can We Do?</title>
+					<p>
+						The payday lending industry has deep pockets and strong connections to maany of the powerful people in this country.
+					</p>
+				</subsection>
+			</section>
+			<reading-questions xml:id="payday-loan-reflection">
+				<exercise> 
+					<p>
+						Do some research on payday lending laws in your state.  Is payday lending legal? Are there laws restricting what interest rates that they can charge?
+					</p>
+				</exercise>
+				<exercise>
+					<p>
+						One argument that people make about payday lending is that it offers a necessary service to people who cannot secure loans in other ways.  What are some other ways that people could borrow money that aren't as predatory?
+					</p>
+				</exercise>
+				<exercise>
+					<p>
+						One alternative to payday loans, originally popularized in India, is the microloan - low risk, low interest loans made to entrepreneurs with specific plans on how they plan to use the money.  Do some research on the microloan industry.  How do microloans differ from payday loans? Could they potentially be an alternative to payday loans in the United States?
+					</p>
+				</exercise>
+				<exercise>
+					<p>
+						What action can we take to help rein in the predatory lending industry?
+					</p>
+				</exercise>
+			</reading-questions>
+			<exercises xml:id="payday-loan-exercises">
+				<exercise> 
+					<p>
+						A payday lender charges an annual percentage rate of 350% (simple interest).  If you borrow $200 for two weeks, how much will you have to pay back? How much will you have to pay back if you renew the loan three times (for a total of 8 weeks)?
+					</p>
+				</exercise>
+				<exercise>
+					<p>
+						You borrow $500 from a payday lender for 2 weeks, and they charge you a fee of $50 when you repay the loan.  What is the equivalent annual percentage rate?  How much interest would you have paid if you borrowed the money on a credit card which charged 18% instead?
+					</p>
+				</exercise>
+				<exercise>
+					<p>
+						The file <url href="Data_Files/Alabama_Payday.csv">Alabama_Payday.csv</url> contains the data we looked at in <xref ref="payday-loans-solving-for-change"/>, but with two more columns - the population of each county and the number of payday lenders per 100,000 people in each county. In the chapter, we discussed the possibility that our correlation between payday lenders and larger Black populations might actually be a correlation between larger counties and larger Black populations, since we would expect larger counties to have more payday lenders.  Computing a figure per 100,000 people in an area is a common way to compare statistics in areas of differing populations.
+					</p>
+					<p>
+						Calculate the correlation to see if larger counties do have more payday lenders.  Then calculate the correlation between the number of payday lenders per 100,000 people and the percentage of each race in that county to see if there is still a correlation after we adjust for population.
+					</p>
+				</exercise>
+			</exercises>
+			<section>
+				<title>References</title>
+				<subsection>
+					<title>Bibliography</title>
+					<biblio type="raw" xml:id="biblio-fair-lending">
+						<title>FDIC Consumer Compliance Examination Manual</title> <url href="https://www.fdic.gov/regulations/compliance/manual/4/iv-1.1.pdf">https://www.fdic.gov/regulations/compliance/manual/4/iv-1.1.pdf</url>, Accessed 06/06/19.
+					</biblio>
+					<biblio type="raw" xml:id="biblio-payday-loan-cfpb">
+						<title>Consumer Financial Protection Bureau: What is a Payday Loan</title><url href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-payday-loan-en-1567/">https://www.consumerfinance.gov/ask-cfpb/what-is-a-payday-loan-en-1567/</url>,
+						Accessed 09/04/20.
+					</biblio>
+					<biblio type="raw" xml:id="biblio-public-accountability-initiative">
+						Connor, Kevin; Skomarovsky, Matthew <title>The Predator's Creditors: How the Biggest Banks are Bankrolling the Payday Loan Industry</title><url>https://public-accountability.org/wp-content/uploads/2011/09/payday-final-091410.pdf</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-ibis">
+						<title>Check Cashing &amp; Payday Loan Services in the US Market Size 2003-2025</title><url>https://www.ibisworld.com/industry-statistics/market-size/check-cashing-payday-loan-services-united-states/</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-mortgage-discrimination">
+						Brooks, Khristopher <title>Disparity in home lending costs minorities millions, researchers find.</title><url>https://www.cbsnews.com/news/mortgage-discrimination-black-and-latino-paying-millions-more-in-interest-study-shows/</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-systematic-inequality">
+						Hanks, Angela; Solomon, Danyelle; Weller, Christian <title>Systemic Inequality: How America's Structural Racism Helped Creaate the Black-White Wealth Gap</title><url>https://www.americanprogress.org/issues/race/reports/2018/02/21/447051/systematic-inequality/</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-race-and-payday-lending">
+						<url>https://www.pewtrusts.org/~/media/legacy/uploadedfiles/pcs_assets/2012/pewpaydaylendingreportpdf.pdf</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-race-and-banking">
+						Moise, Imani <title>African Americans underserved by U.S. banks: study</title><url>https://www.reuters.com/article/us-usa-banks-race/african-americans-underserved-by-u-s-banks-study-idUSKCN1V3081</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-payday-lending-in-black-neighborhoods">
+						California Department of Business Oversight <title>The Demographics of California Payday Lending: A Zip Code Analysis of Storefront Locations</title><url>https://dfpi.ca.gov/wp-content/uploads/sites/337/2019/02/The-Demographics-of-CA-Payday-Lending-A-Zip-Code-Analysis-of-Storefront-Locations.pdf</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-payday-lending-race-survey">
+						Williams, Claire <title>‘It's What We Call Reverse Redlining': Measuring the Proximity of Payday Lenders, Pawn Shops to Black Adults</title><url>https://morningconsult.com/2020/07/23/black-consumers-payday-loan-banking-services/</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-not-paying-loan">
+						Irby, Latoya <title>What Will Happen If I Default on My Credit Cards?</title><url>https://www.thebalance.com/what-will-happen-if-i-stop-paying-my-credit-card-960284</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-spurious-correlations">
+						Vigen, Tyler <title>Spurious Correlations.</title><url>https://tylervigen.com/view_correlation?id=75</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-correlation-comic">
+						Munroe, Randall <title>Correlation.</title><url>https://xkcd.com/552/</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-crl-payday-rates">
+						<title>Map of U.S. Payday Interest Rates.</title><url>https://www.responsiblelending.org/research-publication/map-us-payday-interest-rates</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-census">
+						<title> United States Census CEDSCI.</title><url>https://data.census.gov/cedsci/</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-crl-defaults">
+						Montezemolo, Susanna; Wolff, Sarah <title>Payday Mayday:Visible and Invisible Payday Lending Defaults</title><url>https://www.responsiblelending.org/payday-lending/research-analysis/finalpaydaymayday_defaults.pdf</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-cfpb-payday-lending-report">
+						Burke, Kathleen; Lanning, Jonathan; Leary, Jesse; Wang, Jialan. <title>CFPB Data Point: Payday Lending</title><url>https://files.consumerfinance.gov/f/201403_cfpb_report_payday-lending.pdf</url>
+					</biblio>
+					<biblio type="raw" xml:id="biblio-shark-free-waters">
+						Howarth, Robin; Davis, Delvin; Wolff, Sarah <title>Shark‐Free Waters: States are Better Off without Payday Lending.</title> <url>https://www.responsiblelending.org/sites/default/files/nodes/files/research-publication/crl_shark_free_waters_aug2016.pdf</url>
+					</biblio>
+				</subsection>
+				<subsection>
+					<title>Image Descriptions</title>
+					<ol>
+						<li xml:id="image-description-credit-score">
+							A bar showing credit scores categorized as Very Bad (300-599), Poor (600-649), Fair (650-699), Good (700-749), Very Good (750-799), and Excellent (800-850).  Only secured loans are available for people with scores in the very bad or poor range.  People with Fair or Good scores should be able to secure credit with good rates, while people with very good or excellent credit receive the best interest rates.
+						</li>
+						<li xml:id="image-descriptions-payday-rates">
+							A map of the United states with states shaded according to the typical payday loan rate in that state. Only states which allow predatory payday lending are labeled. Typical rates for those states are shown in the table below.
+							<table>
+							  <tabular>
+							    <row>
+							      <cell>
+							        State
+							      </cell>
+							      <cell>
+							        Typical Payday Loan APR
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Ohio
+							      </cell>
+							      <cell>
+							        138%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Oregon
+							      </cell>
+							      <cell>
+							        154%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Virginia
+							      </cell>
+							      <cell>
+							        173%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        New Mexico
+							      </cell>
+							      <cell>
+							        175%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Minnesota
+							      </cell>
+							      <cell>
+							        200%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Oklahoma
+							      </cell>
+							      <cell>
+							        203%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Maine
+							      </cell>
+							      <cell>
+							        217%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Rhode Island
+							      </cell>
+							      <cell>
+							        261%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Wyoming
+							      </cell>
+							      <cell>
+							        261%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Florida
+							      </cell>
+							      <cell>
+							        304%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Iowa
+							      </cell>
+							      <cell>
+							        336%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Michigan
+							      </cell>
+							      <cell>
+							        370%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Indiana
+							      </cell>
+							      <cell>
+							        382%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Delaware
+							      </cell>
+							      <cell>
+							        391%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Kansas
+							      </cell>
+							      <cell>
+							        391%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Washington
+							      </cell>
+							      <cell>
+							        391%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        South Carolina
+							      </cell>
+							      <cell>
+							        395%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Alaska
+							      </cell>
+							      <cell>
+							        435%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Alabama
+							      </cell>
+							      <cell>
+							        456%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        California
+							      </cell>
+							      <cell>
+							        460%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Hawaii
+							      </cell>
+							      <cell>
+							        460%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Tennessee
+							      </cell>
+							      <cell>
+							        460%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Kentucky
+							      </cell>
+							      <cell>
+							        469%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Louisiana
+							      </cell>
+							      <cell>
+							        478%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Wisconsin
+							      </cell>
+							      <cell>
+							        516%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Mississippi
+							      </cell>
+							      <cell>
+							        521%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        North Dakota
+							      </cell>
+							      <cell>
+							        526%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Missouri
+							      </cell>
+							      <cell>
+							        527%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Idaho
+							      </cell>
+							      <cell>
+							        652%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Nevada
+							      </cell>
+							      <cell>
+							        652%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Utah
+							      </cell>
+							      <cell>
+							        652%
+							      </cell>
+							    </row>
+							    <row>
+							      <cell>
+							        Texas
+							      </cell>
+							      <cell>
+							        664%
+							      </cell>
+							    </row>
+							  </tabular>
+							</table>
+						</li>
+					</ol>
+				</subsection>
+			</section>
+		</chapter>
+		<chapter xml:id="math-for-the-people-references">
+			
+		</chapter>
+	</book>
+</pretext>

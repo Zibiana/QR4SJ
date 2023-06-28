@@ -1,0 +1,400 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amstext}
+\usepackage{amsthm}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{\protect\definitionname}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\definitionname}{Definition}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 11 - Breaking the Enigma}
+\maketitle
+\begin{xca}
+\textbf{(reading question) }
+\begin{enumerate}
+\item Describe the role of the scramblers in the Enigma machine. What is
+the benefit of adding multiple scramblers instead of just one? 
+\begin{enumerate}
+\item The scramblers encipher individual letters by connecting them via
+wires. For instance, plaintext a might go to A in the scrambler, which
+is connected by a wire to B, and the current goes out of the scrambler
+into the B lamp.
+\item Having multiple scramblers allows the cipher alphabet to change after
+each letter is enciphered, since scramblers rotate each other after
+encryption. Moreover, even after typing 26 letters, the cipher alphabet
+won't go back to the beginning because the second rotor will rotate.
+\end{enumerate}
+\item What is the benefit of adding a reflector to the Enigma machine? 
+\begin{enumerate}
+\item The reflector sends the current back through the machine in a mirror-symmetric
+way.
+\item This means that to get plaintext back from ciphertext, all you have
+to do is run the ciphertext through the machine.
+\item Encryption and decryption are the same process!
+\end{enumerate}
+\item Name two additional Enigma features that made decrypting Enigma more
+difficult. How did these features add to the security of the Enigma
+machine?
+\begin{enumerate}
+\item The plugboard switched letters with each other to add to the number
+of possible encryptions.
+\item The scramblers are removable and interchangeable, increasing the number
+of keys in a 3-rotor Enigma by a factor of $3!=6$.
+\end{enumerate}
+\end{enumerate}
+\end{xca}
+
+
+\section{One-time pads}
+\begin{itemize}
+\item The Enigma machine is a portable \textbf{one-time pad}: a Vigen\`{e}re
+cipher with keyword a random string of letters as long as the message.
+\item When implemented perfectly, without human error, one-time pads are
+theoretically unbreakable. Do the following to determine why:
+\end{itemize}
+\begin{xca}
+{[}slide{]} 
+\begin{enumerate}
+\item Use the one-time pad DNCR GZBQCSP QRXZGNP as the Vigen\`{e}re key
+to decrypt the message JBQU SNSDKFV LZBSTNB . 
+\item Now decrypt the same message using pad DNCR OSOQCSP LNXBLLB. 
+\item Why are one-time pads theoretically unbreakable? 
+\item Pick another plaintext message of the same length as the given ciphertext
+and find a one-time pad so that decrypting the given ciphertext using
+your one-time pad yields your plaintext.
+\item What are some downsides to using a one-time pad on the battlefield? 
+\end{enumerate}
+\end{xca}
+
+
+\section{{[}slides{]} Components of the Enigma Machine}
+\begin{itemize}
+\item {[}slides{]} demonstrate downloading \& installing the Enigma machine,
+then run students through exercises
+\item Enigma types:
+\begin{itemize}
+\item 3-rotor Heer (Army) and Luftwaffe (airforce) Wehrmacht Enigma I
+\item Kriegsmarine (Navy) Enigma M3
+\item Kriegsmarine (Navy) four-rotor Enigma M4
+\end{itemize}
+\end{itemize}
+\begin{xca}
+\textbf{(reading question) }Read p143-154 of \emph{The Code Book},
+ending at the last full paragraph on p154 (the line \textquotedbl match
+it to a suspect\textquotedbl ). Then answer the following questions,
+explaining all reasoning, in a text box below.
+\end{xca}
+
+\begin{enumerate}
+\item Why did Poland take a particular interest in breaking the German Enigma
+codes in the period between WWI and WWII? 
+\begin{enumerate}
+\item It was sandwiched between conquering powers Germany and the USSR
+\end{enumerate}
+\item What is the difference between the day key and message key of an Enigma
+machine? Why did the Germans not just use a single daily key? 
+\begin{enumerate}
+\item The day key is agreed upon beforehand and consists of three letters
+(a scrambler orientation or \emph{grundstellung}) that are then used
+to encipher and send the message key.
+\item The message key is a random scrambler orientation chosen by the operator
+and sent using the day key to the recipient. It can supposedly only
+be decrypted by holders of the day key.
+\item Using a single day key for all messages would mean a ton of day-key
+ciphertext would be available to anyone who could intercept German
+radio signals, providing ample fodder for cryptanalysts. Using both
+a day and message key, in contrast, means that the day key encrypts
+only $6$ letters per message sent on that day, providing very little
+ciphertext for cryptanaylsis.
+\end{enumerate}
+\item What tactic did Marian Rejewski use to find the Enigma scrambler settings
+on a given day?
+\begin{enumerate}
+\item The double repetition of the message key that began every message
+gave two instances of each letter's ciphertext.
+\item For example, if a message began LOKRGM, that means that L and R are
+both encryptions of the first letter of the message key, hence L and
+R are related by the day key.
+\item By intercepting multiple messages and noting relationships between
+letters, Rejewski constructed \textbf{chains} of ciphertext letters
+(1st and 4th message key letters, for instance). 
+\item For example, if A is the 1st letter in one message and F is the fourth,
+then $A\to F$. Similarly, if F is the first letter in another message
+and W is the fourth, then $A\to F\to W$. If $W\to A$, then we have
+a chain with $3$ links: $A\to F\to W\to A$.
+\item The number of links in the chain is purely a consequence of the scrambler
+settings and has nothing to do with the plugboard settings. Swapping
+plugboard settings changes some of the letters in each chain (e.g.
+switching $A\to F\to W$ to $B\to C\to Q$ and vice versa), but not
+the lengths of the chains.
+\end{enumerate}
+\end{enumerate}
+\begin{xca}
+{[}slides{]} play around with the Enigma simulator and explore the
+components. 
+\end{xca}
+
+
+\section{Rotors (Walzen)}
+\begin{itemize}
+\item Each rotor interior encodes a monoalphabetic substitution cipher (swaps
+a pair of plaintext letters with each other seemingly randomly)
+\item {[}slide{]} By rotating the outer wheel, we're effectively changing
+the encoded monoalphabetic cipher--$a$ now goes where $b$ used
+to go under that rotor's cipher.
+\item The complexity increases: there are $3$ rotor slots and $5$ different
+rotors that can be swapped in and out for a Wehrmacht Enigma, and
+$4$ slots for $8$ possible rotors in the navy (kriegsmarine).
+\end{itemize}
+\begin{xca}
+How many possible ways are there of slotting the $5$ Wehrmacht rotors
+into $3$ slots? $8$ Kriegsmarine rotors into $4$ slots?
+\end{xca}
+
+\begin{defn}
+Each rotor has an \textbf{inner ring} which determines which letters
+are wired to which, and an \textbf{outer ring} which connects each
+letter of the inner ring with the previous/next Enigma component.
+
+Changing the ringstellung rotates the positions of all the electrical
+contacts, so that the wire that used to connect to A now connects
+to B, changing the monoalphabetic substitution cipher implemented
+by the rotor. Changing the grundstellung shifts the outer alphabet
+ring, so that an A typed on the keyboard enters the rotor as a B.
+Thus, the grundstellung applies an additional shift cipher offset
+to the output of the rotor. 
+\end{defn}
+
+\begin{xca}
+If each rotor has $26$ possible \emph{ringstellung} (inner ring positions
+of the electrical contacts) and $26$ possible \emph{grundstellung}
+(numbers facing up when we rotate the outer ring), how many possible
+rotor settings are there on a Wehrmacht Enigma? Kriegsmarine?
+
+How many possible ways are there to plug one cable into the plugboard
+(connecting two letters)? Two cables? Ten? Be sure not to double-count
+(e.g., $(ab)=(ba)$ and $(ab)(cd)=(cd)(ab)$).
+\begin{itemize}
+\item If order mattered, this wouldn't be too difficult--it's 
+\[
+26\times25\times24\times23\times22\times21\times20\times19\times18\times17=1.9275224\times10^{13},
+\]
+an enormous number of permutations!
+\item However, order doesn't matter: plugging $(ab)$ is the same as plugging
+$(ba)$. We'll have to \emph{divide} this huge number by the number
+of duplicate plugboard settings. 
+\item {[}slide{]} For one cable, there are $26\times25$ ordered ways of
+plugging two letters together, but we have to divide by the duplicates
+$AB=BA$, $2$ duplicates per setting: 
+\[
+\frac{26\times25}{2}=325\text{ possible settings}.
+\]
+\item For two cables, we can pick any four letters to put plugs into. Say
+we choose $A,B,C,D$. Then the following plugboard settings are equivalent:
+\[
+\begin{array}{ccc}
+(ab)(cd) & \leftrightarrow & (ab)(dc)\\
+\updownarrow &  & \updownarrow\\
+(ba)(cd) & \leftrightarrow & (ba)(dc)
+\end{array}
+\]
+There are $2^{2}=4$ ways of transposing two pairs of two letters
+each because each pair of letters adds a factor of $2$ to the number
+of possible rearrangements.
+\item But wait! We also have to account for the fact that $(ab)(cd)$ implies
+we're plugging $A\leftrightarrow B$ and $C\leftrightarrow D$ simultaneously.
+This is the same as $(cd)(ab)$, which is the same in turn as $(dc)(ab)$
+etc..., so the whole picture is more like 
+\[
+\begin{array}{ccc}
+(cd)(ab) & \leftrightarrow & (dc)(ab)\\
+\updownarrow &  & \updownarrow\\
+(cd)(ba) & \leftrightarrow & (dc)(ba)
+\end{array}\leftrightarrow\begin{array}{ccc}
+(ab)(cd) & \leftrightarrow & (ab)(dc)\\
+\updownarrow &  & \updownarrow\\
+(ba)(cd) & \leftrightarrow & (ba)(dc).
+\end{array}
+\]
+\item There are $8$ duplicates per two-cable setting! This is because there
+are $2=2!$ possible ways of placing two digrams (two-letter chunks)
+into $2$ slots, and $2^{2}=4$ ways of transposing/arranging the
+letters within each digram. So we have to multiply the number of possibilities
+from transpositions ($4=2^{2}$ for $2$ letters, $2^{n}$ for $n$
+letters) times the number of possible digram permutations $(n!$ for
+$n$ letters):
+\[
+\frac{26\times25\times24\times23}{2^{2}\times2!}=44850\text{ settings}.
+\]
+\item In general, we have the following pattern:
+
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Number of cables & $2$ & $3$ & $10$\tabularnewline
+\hline 
+\hline 
+Number of permutations & $\frac{26!}{(26-4)!}$ & $\frac{26!}{(26-6)!}$ & $\frac{26!}{(26-20)!}$\tabularnewline
+\hline 
+\# transpositions & $2^{2}$ & $2^{3}$ & $2^{10}$\tabularnewline
+\hline 
+\# rearrangements of pairs & $2!$ & $3!$ & $10!$\tabularnewline
+\hline 
+Number of settings & $\frac{26!}{(26-4)!\times2^{2}\times2!}=44850$ & $\frac{26!}{(26-6)!\times2^{3}\times3!}=3453450$ & $\frac{26!}{(26-20)!\times2^{10}\times10!}=150,738,275,000,000$\tabularnewline
+\hline 
+\end{tabular}
+\item For $n$ cables, the formula for the number of possible plugboard
+settings is:
+\[
+\frac{26!}{(26-2n)!\times2^{n}\times n!}=\frac{26\times25\times\dots\times(26-2n+1)}{2^{n}\times n!}
+\]
+\item If we use anywhere between $1$ and $10$ cables, we have to add all
+of the previously-computed numbers of settings together:
+\[
+\sum_{n=1}^{10}\frac{26!}{(26-2n)!\times2^{n}\times n!}=2.1675106498\times10^{14}>200,000,000,000,000
+\]
+which is too many settings even for a modern computer to brute-force.
+\item Compare to the $26\times26\times26=17,576$ possible ground positions
+(grundstellung) and $26^{3}=17,576$ possible ring settings (ringstellung)
+for three rotors. In total, three rotors have $26^{6}=308,915,776$
+possible settings, while the plugboard has almost $1,000,000$ times
+as many!
+\end{itemize}
+\end{xca}
+
+\begin{itemize}
+\item {[}slide{]} The Germans eventually got wise to this issue and only
+stated the encrypted message key once in each message. However, the
+Bletchley Park team headed by Turing was still able to break Enigma
+messages.
+\end{itemize}
+\begin{xca}
+Watch the Numberphile video about the flaw in the Enigma machine,
+then answer the following questions in full sentences, explaining
+your reasoning in each case.
+\begin{enumerate}
+\item Does the Enigma machine encrypt using a monoalphabetic or polyalphabetic
+substitution cipher? Explain your answer. What mechanical aspect(s)
+of the Enigma machine make it monoalphabetic or polyalphabetic? 
+\begin{enumerate}
+\item Pressing K repeatedly makes a different letter light up each time,
+so the cipher is polyalphabetic.
+\end{enumerate}
+\item What was the major flaw in the Enigma machine that allowed its codes
+to be broken? Why was this a flaw? 
+\begin{enumerate}
+\item No letter can be enciphered as itself.
+\item This allows one to determine the possible positions of a crib.
+\end{enumerate}
+\item Describe in 3-4 sentences how the Bombe machine (called \textquotedbl Christopher\textquotedbl{}
+in The Imitation Game) tests rotor positions in order to guess the
+settings of the Enigma machine. 
+\begin{enumerate}
+\item The Bombe tries to work out the plugboard at the front of the machine.
+\item The signal first goes through the plugboard, through the machine,
+and back through the plugboard.
+\end{enumerate}
+\item What made naval Enigma codes harder to break than Army or Air Force
+codes? 
+\begin{enumerate}
+\item The rotor starting positions (message key) were sent at the beginning
+of each message, in another code (day key) entirely.
+\end{enumerate}
+\item If you had to explain to someone who knew no cryptography or probability
+how the Enigma code was broken, what would you say?
+\begin{enumerate}
+\item Guess a word or phrase that might appear in an Enigma message, such
+as WETTERBERICHT (weather report).
+\item Write the word on a piece of paper, and slide your guess for the Enigma
+code underneath until you find positions where it ``fits'', i.e.
+has no letter enciphered as itself.
+\item From this point, knowing say that $t\mapsto E$, work out the plugboard
+settings by making a guess as to where a plug is (e.g. $T\leftrightarrow A$).
+Deduce from this and the knowledge that
+\[
+t\to\text{Plugboard}\to^{a}\text{Rotors}\to^{P}\text{Plugboard}\to E
+\]
+that $(PE)$ is a connection. 
+\item Do the same for the other letters in your crib. If you get a contradiction,
+that two letters are connected to the same letter in the plugboard,
+our initial guess must have been wrong. Repeat to eliminate all guesses
+that give contradictions.
+\item If all 26 options are wrong, that means the rotor position is wrong.
+Change the rotor position and check the next position.
+\item Turing's ideas helped save time:
+\begin{enumerate}
+\item Once you've found a contradiction, all guesses that led to the contradiction
+are ``fruit of a poison tree''; you can discard them all.
+\item The Bombe machine can very quickly eliminate incorrect deductions
+with electrical circuits. What you're left with at the end is what
+wasn't wrong.
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{xca}
+
+\begin{itemize}
+\item {[}slide{]} In a story that may be apocryphal (a legend), a German
+officer stationed in North Africa would send periodic messages containing
+the phrase \textquotedbl nothing to report\textquotedbl{} in German,
+which translates to \emph{keine besonderen ereignisse}. 
+\end{itemize}
+\begin{xca}
+Suppose that one of the Allied listening posts in North Africa intercepts
+the following coded message: UAUNFYRLPZSWMEDSINFKRJXFSXKJCAXKEZ. You
+suspect that this message contains the plaintext sequence KEINEBESONDERENEREIGNISSE. 
+\begin{enumerate}
+\item Give one example of a collection of 25 consecutive ciphertext letters
+in the coded message that cannot decrypt to \textquotedbl KEINEBESONDERENEREIGNISSE\textquotedbl .
+Explain your answer. Can you tell which ciphertext letters in the
+coded message correspond to this plaintext? Explain your answer and
+describe your reasoning.
+\end{enumerate}
+\end{xca}
+
+\begin{itemize}
+\item The German word ``EINS'', meaning ``one'', was found in 90\% of
+plaintext Enigma messages.
+\begin{itemize}
+\item The Bletchley Park crew made a catalog of every possible Enigma encipherment
+of ``EINS''. If one of those possible ciphertexts showed up in a
+message, it was likely that it decrypted to ``EINS''.
+\item From there, the crew could determine the Enigma settings.
+\end{itemize}
+\item By 1945, almost all German Enigma traffic could be decrypted within
+a day or two.
+\item The Germans were still confident of its security and openly discussed
+their plans and movements.
+\item After the war, it was learnt that German cryptographers were aware
+that Enigma was not unbreakable, they just couldn't fathom that anyone
+would go to such lengths to do it.
+\end{itemize}
+\begin{xca}
+VigenereEncrypt Python module
+\end{xca}
+
+
+\end{document}

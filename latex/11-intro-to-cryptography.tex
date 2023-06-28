@@ -1,0 +1,362 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{remark}
+\newtheorem{claim}[thm]{\protect\claimname}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\claimname}{Claim}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 Day 1 - Introduction}
+\author{Kenan Ince}
+
+\maketitle
+
+
+\section{Introduction}
+\begin{itemize}
+\item Name/pronouns/PhD from Rice, research in how hard it is to untie mathematical
+knots
+
+\begin{itemize}
+\item Please feel free to talk to me about my research at any time during
+the semester. 
+\end{itemize}
+\item My primary goal in teaching math is to communicate that math is a
+creative, logical field with immense importance to society. A lot
+of what we're teaching is logic, which is like a prosthetic you attach
+to your reasoning to make it more powerful.
+\end{itemize}
+
+\subsubsection{Office and office hours}
+\begin{itemize}
+\item My office is Foster 311 (go up the stairs to the third floor, turn
+right; I'm at the end of the hall.)
+\item My office hours this semester will be MW 1-2pm; TTH 11am-12pm. Anyone
+who can't make those hours? I'll usually be around the office 1-4pm
+MW, 10am-1pm TTh, and (maybe) 11-noon Friday as well. Make appointments
+at least $24$ hours in advance!
+\item Tentative course outline: linked in Canvas under Syllabus
+\end{itemize}
+
+\subsubsection{Canvas}
+\begin{itemize}
+\item How to access Canvas
+\begin{itemize}
+\item When you log on, you're faced with the course modules
+\item You must complete the previous module before starting the current
+one
+\item All course assignments will be posted in Canvas
+\item You can look at your assignment grades by clicking Grades in the left-hand
+menu
+\end{itemize}
+\item Sign up now for Canvas notifications (should be on by default; under
+Account -> Notifications)
+\begin{itemize}
+\item Keep Due Date, Course Content, Announcement settings on ``notify
+me right away'' (the checkmark button)
+\end{itemize}
+\item I can't guarantee I'll always remember to announce assignments in-class;
+you're expected to check Canvas before and after every class period
+to determine what assignments you have.
+\item I will post all of your grades in Canvas.
+\item We take the Title IX and disability provisions extremely seriously!
+If you require any academic accommodations related to a disability,
+please contact Karen Hicks ASAP.
+\end{itemize}
+
+\section{{[}slide{]} Introductory codebreaking}
+\begin{itemize}
+\item OK, let's get to some codebreaking! You can work in groups for these.
+\end{itemize}
+\begin{enumerate}
+\item The following message has been encrypted with a ``shift cipher'',
+i.e. by shifting each letter forward by some number of letters (and
+once a letter hits Z, it loops back around to A). Decipher the message.
+
+BJQHTRJYTBJXYRNSXYJWNMTUJDTZMFAJKZSNSYMNXHQFXX
+\begin{itemize}
+\item possible techniques: just trying a bunch of shifts, giving up, discovering
+frequency analysis
+\item {[}answer{]}: WELCOMETOWESTMINSTERIHOPEYOUHAVEFUNINTHISCLASS
+\item tactics: most frequent letter = E
+\end{itemize}
+\item Try to decipher the following secret message.
+\begin{itemize}
+\item ykt vk jks boue sk le akkv/ykt vk jks boue sk wogf kj yktp fjeeq/rkp
+o btjvpev hcgeq sbpktab sbe veqeps pemejscja/ykt kjgy boue sk ges
+sbe qkrs ojchog kr yktp lkvyg/kue wbos cs gkueq
+\begin{itemize}
+\item possible techniques: trying a bunch of shifts, word spacing \& guessing
+3-letter words, filling in the blanks
+\item Keyword cipher with key ``OLIVER''
+\item It's the following excerpt from the Mary Oliver poem ``Wild Geese'':\\
+You do not have to be good. You do not have to walk on your knees
+For a hundred miles through the desert, repenting. You only have to
+let the soft animal of your body love what it loves.
+\item tactic: same idea, not a shift so have to figure out each letter individually
+\begin{itemize}
+\item look at how much spacing helps!
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\item Try to decipher the following message.
+
+\includegraphics{pasted1}
+\begin{itemize}
+\item Hint 1: The ciphertext letters NYPVTT decrypt to BERLIN
+\item Hint 2: The word immediately following BERLIN is CLOCK
+\item Process: notice it's not monoalphabetic since $i,n\mapsto T$; get
+frustrated, wonder about spacing...?
+\end{itemize}
+{[}this is Kryptos part IV; solve it and you'll be famous!{]}
+\end{enumerate}
+\begin{itemize}
+\item Why do you think I gave you an unsolved code?
+\begin{itemize}
+\item What do you think mathematicians spend most of their time doing?
+\item How do you define ``success'' when working on an unsolved problem?
+\begin{itemize}
+\item Making sense of a problem
+\item Increasing depth of understanding (what methods DON'T work?)
+\item How would you describe your process of engagement on this problem?
+\end{itemize}
+\item Failure is completely normal! 
+\begin{itemize}
+\item Even on problems that are solved, it often took years or even millennia
+to solve them!
+\item So don't feel ashamed or worried if you don't get something immediately.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\section{Setting the Stage}
+
+Get in groups of size 3\textendash 4. Group members should introduce
+themselves - name, pronouns, hobbies outside school, goals for the
+semester/year, reason they're taking the course. For each of the questions
+that follow, I will ask you to: 
+\begin{enumerate}
+\item Think about a possible answer on your own. 
+\item Discuss your answers with the rest of your group. 
+\item Share a summary of each group\textquoteright s discussion. 
+\end{enumerate}
+
+\subsubsection{Questions}
+\begin{enumerate}
+\item What are the goals of a liberal arts education? 
+\item How does a person learn something new? 
+\item What is the value of making mistakes in the learning process? 
+\item How do we create a safe environment where risk taking is encouraged
+and productive failure is valued? 
+\end{enumerate}
+\begin{itemize}
+\item I will be teaching this course using active learning methods for all
+the reasons you gave, as well as because research shows IBL improves
+student understanding of mathematics more than traditional lecture-based
+teaching methods.
+\end{itemize}
+\begin{quotation}
+\textquotedblleft Any creative endeavor is built on the ash heap of
+failure.\textquotedblright \textemdash Mike Starbird
+\end{quotation}
+\begin{claim}
+An education must prepare a student to ask and explore questions in
+contexts that do not yet exist. That is, we need individuals capable
+of tackling problems they have never encountered and to ask questions
+no one has yet thought of. 
+
+If we really want students to be independent, inquisitive, \& persistent,
+then we need to provide them with the means to acquire these skills.
+\end{claim}
+
+\begin{itemize}
+\item Group roles: In order to facilitate group interaction, you will take
+on group roles designed to mimic the role of mathematical and/or cryptographical
+researchers. The roles are as follows \textbf{(follow along in your
+syllabus)}:
+\begin{itemize}
+\item \textbf{The facilitator} is responsible for making sure every student
+is able to contribute and be heard. \emph{Contributions} may include
+asking good questions, rephrasing someone else's idea, coming up with
+a way of connecting mathematics to the real world, and many others. 
+\item the \textbf{resource manager} is responsible for obtaining and keeping
+track of all necessary resources to solve a problem. \emph{Resources}
+may include writing utensils, paper, the Internet, your instructor,
+data sources, and most importantly, your team. 
+\item the \textbf{lead author} is responsible for writing down the ideas
+that each group comes up with. 
+\item the \textbf{communicator} is responsible for reporting what your group
+came up with to the class, instructor, and any relevant community
+groups. 
+\end{itemize}
+\item Assign roles to each group by first letters of first name; they'll
+rotate every day of class.
+\item Anyone can answer questions posed to the whole class, but if your
+group came up with an idea that hasn't been shared yet, it \textbf{someone}
+in your group's responsibility to share your answer so that everyone
+can learn from you!
+\end{itemize}
+
+\subsection{Engagement Points (Extra Credit Opportunities)}
+\begin{itemize}
+\item The Westminster College Department of Mathematics values the experiences
+that students have with mathematics and data science outside of the
+formal classroom. In order to encourage our students to find new and
+interesting ways to engage with our disciplines, we have incorporated
+a department-wide extra credit policy in which extracurricular activities
+gain you \textquotedbl engagement points\textquotedbl{} which will
+contribute toward your course grades..
+\item Examples of activities that are likely to qualify include, but are
+not limited to: attending office hours three times; attending a meeting
+of the S-Cubed seminar; volunteering in the East High or Cottonwood
+Tutoring Programs; attending Lemma social activities or meetings;
+attending college Diversity, Equity, and Inclusion programming; taking
+the Putnam exam; attending a screening of a film with mathematical
+themes; participating in a Research Experience for Undergraduates
+(REU) during the summer; attending a non-required math-related talk
+or seminar; attending a regional/national math conference; giving
+a talk related to math; submitting or publishing a paper in an academic
+journal; participating in a math competition; reading a book with
+mathematical themes; and many others.
+\item If you participated in an activity that you think qualifies for engagement
+points, please fill out the Google Form located at tinyurl.com/WMengagement.
+Because we are unable to constantly check the form responses, please
+contact me to determine whether you were granted engagement points
+for your activity.
+\item In this course, you may use three engagement points at any time to
+get a free Pass on a reading response or five engagement points to
+get a free Pass on a news response. I reserve the right to limit how
+many times you may redeem engagement points in these ways. Please
+send me an email or tell me in person if you'd like to use your engagement
+points.
+\end{itemize}
+
+\subsubsection{Tutoring Programs}
+\begin{itemize}
+\item You may earn engagement points by volunteering your time in Westminster's
+Cottonwood High or East High Tutoring Programs. This involves volunteering
+at least three times to work at an after-school-tutoring lab at one
+of the two high schools with which Westminster has a partnership.
+There, you would help high school students struggling with mathematics.
+The high-school students receiving this tutoring are usually in Algebra
+I, Geometry, or Algebra II and see mathematics as confusing and frustrating.
+Both Programs are looking for a willingness to help remove this fear
+from a scary subject in their tutors.
+\item Students who tutor or TA at least three times in the Cottonwood tutoring
+program will receive a stipend of $\$8$ for every hour spent tutoring,
+as well as one engagement point per hour volunteered.\} Please see
+tinyurl.com/sherlockclub for further details and to sign up for Cottonwood
+tutoring or teaching assistantship. 
+\item We take the Title IX and disability provisions extremely seriously!
+If you require any academic accommodations related to a disability,
+please contact Karen Hicks ASAP.
+\end{itemize}
+
+\subsection{Group work}
+\begin{itemize}
+\item What rules should we set for groups?
+\begin{itemize}
+\item Whose voices are valued?
+\item What philosophy do we have about who can make contributions to mathematics
+and the value of those contributions?
+\item How does this connect to the values we espouse for our democracy?
+\end{itemize}
+\item Anyone can answer questions posed to the whole class, but if your
+group came up with an idea that hasn't been shared yet, it \textbf{someone}
+in your group's responsibility to share your answer so that everyone
+can learn from you!
+\end{itemize}
+
+\subsubsection{Growth mindset}
+\begin{itemize}
+\item \textquotedblleft How many of you feel, deep down in your most private
+thoughts, that you aren\textquoteright t actually any good at math?
+That by some miracle, you\textquoteright ve managed to fake your way
+to this point, but you\textquoteright re always at least a little
+worried that your secret will be revealed? That you\textquoteright ll
+be found out?\textquotedblright{}
+\item \textquotedblleft I want you to discuss the following question with
+your groups\textendash How is it that so many of you have developed
+negative feelings about your own abilities, despite the fact that
+you are all in a college mathematics course and many people don't
+make it to this level of course?\textquotedblright{}
+\item certain experiences cause new connections in the brain to form or
+strengthen, making the brain smarter by literally rewiring it. Here\textquoteright s
+some evidence:
+\begin{itemize}
+\item In a study with rats, researchers put some rats in empty cages and
+others in stimulating cages with puzzles and other rats. The rats
+in the stimulating environments were smarter, and their brains even
+weighed more! 
+\item London taxi drivers have to give their brains a workout when they
+navigate the complicated streets of London. Research suggests this
+has an impact on the brain. The part of the brain responsible for
+spatial awareness is bigger in taxi drivers compared to other Londoners.
+And the longer a person has been a taxi driver, the bigger that part
+of the brain. 
+\end{itemize}
+\item I don't value students based on their academic performance. I respect
+trying and failing at least as much as not trying and succeeding.
+\end{itemize}
+
+\subsubsection{Technology policy}
+\begin{itemize}
+\item No open laptops in class unless I ask you to take them out.
+\end{itemize}
+
+\subsubsection{Study groups}
+
+Under ``graded discussions'' in Canvas.
+
+\subsection{Programming}
+\begin{itemize}
+\item How do professional cryptographers encrypt and decrypt messages?
+\begin{itemize}
+\item You witnessed how long it took to decrypt messages by hand.
+\item Computers can:
+\begin{itemize}
+\item Try every possible shift in order to break a shift cipher without
+even trying.
+\item Count the frequency of various encoded (``ciphertext'') letters
+in order to determine what the most common letter is, thus telling
+you what letter probably corresponds to ``e''
+\item By doing this, guess the keyword in the keyword cipher above.
+\item Encode messages using a given cipher without any effort on your part.
+\end{itemize}
+\item For these reasons, we'll be using the programming language Python
+in this course.
+\begin{itemize}
+\item You won't have to come up with code on your own! For everything you'll
+need to encode, you'll have a template that you can copy/paste and
+just change a few things. \textbf{This is by far the best way to do
+programming in this class}.
+\item If you have experience programming and/or finish programming early,
+you're more than welcome to try to extend what you've done so far!
+\end{itemize}
+\item Now log in to Codecademy on your computers.
+\begin{itemize}
+\item ``Introduction to Python'' module; talk students through beginning
+example
+\item Give class time to work on it ($20$-$30$ min)
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\end{document}

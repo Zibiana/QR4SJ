@@ -1,0 +1,82 @@
+<section xml:id="cui-bono-who-benefits">
+    <title>Cui Bono: Who Benefits? </title>
+
+<!-- div attr= class="xca"-->
+<reading-questions xml:id="rqs-minhaj">
+<exercisegroup>
+    <title>Hasan Minhaj on Student Loans</title>
+    <introduction>
+            
+        The comedian Hasan Minhaj, of the former Netflix weekly show Patriot Act, focused a popular episode of his show on student loans in the US. Amazingly, this led to an invitation to testify before Congress on September 10, 2019, on the student loan debt crisis.
+
+        <video xml:id="netflixisajokeStudentLoansPatriot2019" youtube="t0CyBv18A5k" />
+
+        Please watch the above YouTube clip from <i>Patriot Act</i> (good closed captioning available on YouTube), then answer the following questions.
+    </introduction>
+
+        
+    <exercise number="1">
+        <p>
+            What are some of the consequences that are faced by people who can't pay off their student loans?
+        </p>
+    </exercise>
+
+    <exercise number="2">
+    <p>
+        What happened in 2010 to change the landscape of student loan debt in the US?
+    </p>
+    </exercise>
+        
+    <exercise number="3">
+        <p>
+            What are loan servicers, and what has their role been in the student loan crisis?
+        </p>
+
+    </exercise>>
+
+    <exercise number="4">
+        <p>
+            What are three ways in which Navient has mistreated borrowers?
+        </p>
+    </exercise>
+
+    <exercise number="5">
+    <p> 
+        What is an income-based repayment plan? What is forbearance, and why has it negatively affected borrowers when Navient encourages borrowers to enter forbearance instead of income-based repayment?
+    </p>
+    </exercise>
+    
+    <exercise number="6">
+        <p>
+            In what ways does Minhaj argue that the Department of Education has failed borrowers?
+        </p>
+    </exercise>
+</exercisegroup>
+</reading-questions>
+<!--</div attr= class="xca">-->
+
+    <p>
+        The highest proportion of student loan debt (the amount of debt held per student) <url href="https://web.archive.org/web/20230407141731/https://www.nytimes.com/interactive/2018/08/25/opinion/sunday/student-debt-loan-default-college.html" visual="nytimes.com/interactive/2018/08/25/opinion/sunday/student-debt-loan-default-college.html">is held by students at for-profit colleges</url>, which are colleges that are not funded by taxes but instead depend on federal student aid (guaranteed by the government) and the tuition dollars that students pay to attend, often backed up by federal student aid. Contrast this situation with the vast majority of colleges and universities in the U.S., which are nonprofit institutions, which are usually run by a not-for-profit institution, religious organization, or government and hence often receive funding from taxes or a particular religious group.
+    </p>
+
+    <p>
+        The greatest proportion of defaults (see <xref ref="def-default" />) on student debt in <m>2015</m> <url href="https://muse.jhu.edu/article/616850" visual="muse.jhu.edu/article/616850">occurred at the University of Phoenix, Walden University, Nova Southeastern University, Capella University, and Strayer University</url>, of which all but Nova are for-profit.
+    </p>
+
+    <p>
+        Almost all students are eligible to receive federal student loans, which are student loans funded by the U.S. federal government through programs such as Pell Grants. Federal loans are either subsidized (that is, interest payments are <url href="https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized">covered by the federal government for a period including the student's time at a college or university</url>; such loans are restricted to undergraduates only) or unsubsidized (in which case borrowers must pay the interest).
+    </p>
+
+    <p>
+        In contrast, private student loans are loans offered by non-governmental companies which are heavily advertised, do not offer the relatively generous forbearance and deferred-payment options that federal loans do, and charge interest while the borrower is in college. Often, private student loan interest rates are higher even than those of unsubsidized federal student loans. Since many students do not have a credit history, federal student loans do not require proof of, or a co-signer attesting, <q>creditworthiness</q>, or evidence of past ability to repay debt; as of the <m>2010</m>s, <url href="https://files.consumerfinance.gov/f/201207_cfpb_Reports_Private-Student-Loans.pdf">most private student loans required such proof</url>. Additionally, students who declare bankruptcy are unable to discharge private student loans, meaning borrowers who have no money are <url href="https://www.txs.uscourts.gov/sites/txs/files/CLE%20Discharge%20and%20Dischargeability%20%202019%20%20Podcast.pdf" visual="txs.uscourts.gov/sites/txs/files/CLE%20Discharge%20and%20Dischargeability%20%202019%20%20Podcast.pdf">still required to pay private corporations back for student loans</url>. Therefore, the U.S. government earns more income from student loans, but profits less, on average, than private student loan companies.
+    </p>
+
+    <p>
+        Employers benefit from the number of students who attend college, including those who could not otherwise attend without taking out student loans. <q>Credentialism</q>, the continuing growth in employers' expectations of postsecondary education on the part of their employees, <url href="https://journals.sagepub.com/doi/10.1177/23328584221093325" visual="journals.sagepub.com/doi/10.1177/23328584221093325">has been called a key driver of student loan debt</url>. In <m>2020</m>, earnings were stagnant for most workers, but declined rapidly for workers with no college education. This pressures people to seek a college education whether or not they can afford it.
+    </p>
+
+    <p>
+        Finally, <url href="https://webcache.googleusercontent.com/search?q=cache:QCadmloDEIoJ:https://www.theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us" visual="theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us">a <m>2022</m> article in <em>The Atlantic</em></url> implies that middle-class college graduates were able to advance their cause over other causes championed by more marginalized groups because they have higher relative political power compared to non-college graduates. Certainly, as we will see in the next sections, middle-class college graduates benefit a great deal from President Biden's <m>2022</m> student debt cancellation policy.
+    </p>
+
+</section>

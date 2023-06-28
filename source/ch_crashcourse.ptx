@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<chapter xml:id="ch-crashcourse" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- Change title when you have one: -->
+  <title>A Crash Course: Incorporating Social Justice into Postsecondary Math</title>
+  <!-- If the chapter has sections, there may be an introduction -->
+  <!-- before those sections. Note the <p> tags around content.  -->
+  <introduction>
+    <p>Welcome to the workbook! I hope it is helpful to you. I believe this is one of the first attempts to write a text for a quantitative reasoning course framed around social justice (specifically targeted at higher-ed math faculty) as possible (though the <url href="https://web.stevenson.edu/mbranson/m4tp/" visual="web.stevenson.edu/mbransons/m4tp"><i>Math for the People</i></url>, edited by Mark Branson and Whitney George, contains an excellent selection of plug-and-play modules for such a course). I am indebted to and model my work after the K-12 educators (e.g. Bob Moses, Jonathan Osler) who have been doing this work for decades.</p>
+  </introduction>
+
+  <!-- Sections can be written directly here, but it might help  -->
+  <!-- with organization to include them as separate files.      -->
+  <!-- That way it is easy to include the section in a different -->
+  <!-- chapter later if you change your mind about the order.    -->
+  <xi:include href="./sec_crashcourse-intro.ptx" />
+  <xi:include href="./sec_crashcourse-examples.ptx" />
+
+  <!-- One or more of the sections of a chapter might be exercises-->
+  <!-- <xi:include href="./ex_firstch.ptx"/> -->
+</chapter>

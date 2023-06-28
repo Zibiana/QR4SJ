@@ -1,0 +1,27 @@
+<section xml:id="sec-leg-project">
+		<title>Mini-Project: Analyzing Legislation</title>
+        <introduction>
+            <p>
+                In a democracy, or even a state which retains enough characteristics of a democracy that there is a legislative process, social justice advocates often must monitor trends in legislation that is proposed and passed. In the U.S., the legislative branch of the government was designed by the founders to be the most powerful, having the ability to control the number of justices on the Supreme Court and confirm justices, as well as overriding vetoes and policy of the executive branch.
+            </p>
+            <p>
+                Access to data is itself a social justice issue. For example, researchers over the last decade have monitored public Twitter posts to analyze how people feel about various issues, or generally what people are talking about (a process called "sentiment analysis"). Previously, access to <m>1\%</m> of tweets on the platform had been free through Twitter's API, a collection of methods for accessing Twitter's data. However, in March 2023, Elon Musk and other Twitter decision-makers <url href="https://www.wired.com/story/twitter-data-api-prices-out-nearly-everyone/">raised the price for access to <m>0.3\%</m> of tweets to $42,000 a month</url>, a cost that one researcher said no "academic on the planet...could afford."
+            </p>
+            <p>
+                More directly related to legislative analysis, proposed legislation is usually listed on state and territorial government webpages, but one would have to visit all of these 56+ pages, find a way of downloading the data into a spreadsheet, and continually monitor each of the pages for new bills in order to keep up with proposed legislation nationwide. Websites such as <url href="https://legiscan.com/legiscan">LegiScan</url> make this easier by aggregating data from all state legislatures, but in order to get this data into a form that can be imported into data analysis software, some knowledge of data scraping/scripting is required, and for large queries, paid API access may be necessary.
+            </p>
+            <p> 
+                For these reasons, we use data that has already been collected and cleaned by nonprofit or government sources. We have first accessed the website <url href="https://crtforward.law.ucla.edu/map/">"CRT Forward Tracking Project"</url>, which tracks bills seeking to ban or limit discussion of historical and systemic racism in the United States. This website does not provide a way of downloading its data, so we try a couple of low-effort tricks before simply copy-pasting their entire table into an Excel file.
+                
+                In this chapter, you've seen how one might analyze legislation affecting transgender and nonbinary rights. Now it's your turn: download this Excel file and use it to answer the following questions.
+            </p>
+        </introduction>
+    <exercises xml:id="exercises-leg-project">
+    <exercise>
+        Use the CRT Forward website and other Internet sources to define any key terms (in particular, terms related to "critical race theory"--who defined it? What has it meant historically? How is it interpreted by progressives? Democrats? Republicans? The far-right activist Christopher Rufo?) necessary to understand the data.
+    </exercise>
+
+    
+
+    </exercises>
+</section>

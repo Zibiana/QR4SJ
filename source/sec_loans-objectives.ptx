@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_loans-objectives" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Objectives</title>
+
+    <p>
+        By the end of this section, an engaged learner will be able to:
+    </p>
+
+    <p><ul>
+        <li>
+                <p>
+        understand the impact of student demographics, type of institution, and time on student loan debt.
+    </p>
+        </li>
+
+        <li>
+                <p>
+        perform exploratory data analysis on a numerical variable (college tuition, student loan debt) as a function of a numerical (year) or categorical (institution type, student demographics) variable.
+    </p>
+
+    <p><ul>
+        <li>
+                <p>
+        create line charts of student loan data over time.
+    </p>
+        </li>
+
+        <li>
+                <p>
+        create scatterplots of student loan debt versus college graduation rates.
+    </p>
+        </li>
+
+        <li>
+                <p>
+        create bar charts of the average student loan debt owed by various demographic groups.
+    </p>
+        </li>
+
+        <li>
+                <p>
+        compute summary statistics to describe each of the above.
+    </p>
+        </li>
+
+    </ul></p>
+        </li>
+
+        <li>
+                <p>
+        use linear regression and correlation to judge trends in numerical data on tuition and student loan debt as a function of time and predict future outcomes.
+    </p>
+        </li>
+
+        <li>
+                <p>
+        use a chi-squared test for independence to analyze the impact of student demographics (race, gender, and others) on student loan debt load.
+    </p>
+        </li>
+
+        <li>
+                <p>
+        understand how data analysis can contribute to understanding the impact of student loan debt and government policy on student loans.
+    </p>
+        </li>
+
+    </ul></p>
+
+</section>

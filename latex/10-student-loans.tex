@@ -1,0 +1,1295 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{babel}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[unicode=true]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{\protect\definitionname}
+\theoremstyle{definition}
+\newtheorem{example}[thm]{\protect\examplename}
+
+\makeatother
+
+\providecommand{\definitionname}{Definition}
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSBS 6 - Student Loans, Regression, \& Interest}
+\maketitle
+
+\section{Why Care?}
+\begin{itemize}
+\item $66\%$ of fourth-year college students in the US have an average
+of $\$26,600$ in student loans.
+\item {[}slide{]} The total U.S. student debt currently stands at \$$1.5$
+trillion\textemdash the second-highest level of consumer debt behind
+mortgages, and higher than both credit cards and auto loans.
+\item The average debt for a $2017$ graduate is $\$28,650$.
+\item Student loan debt is a social justice issue.
+\begin{itemize}
+\item About half of all individuals who default on their student loans never
+earned a college credential. (elitism)
+\item the typical Black or African American borrower is more than four times
+as likely to default on student loans that their white peers. (racism)
+\item about $27\%$ of those who default on student loans are parents. (classism)
+\item more than $80\%$ of Pell Grant recipients come from families who
+earn $\$40,000$ annually or less. Roughly $90\%$ of individuals
+who default within $12$ years of enrolling in college received a
+Pell Grant at some point. (classism)
+\end{itemize}
+\item {[}slide{]} student loan debt is in the news lately, especially due
+to the Congressional hearing on 9/10/19 and Elizabeth Warren's proposal
+to cancel student loan debt for most debtors.
+\begin{itemize}
+\item {[}slide{]} AoC making a student loan payment while at the Congressional
+hearing
+\end{itemize}
+\item \textbf{Goal: }gain experience in applying your mathematical knowledge
+to analyze and better understand your own financial situation and
+those of your fellow students.
+\begin{itemize}
+\item examine the relationship between the year and cost of college tuition/fees
+\end{itemize}
+\end{itemize}
+
+\section{Video response: Patriot Act on student loans}
+\begin{enumerate}
+\item What are some of the consequences that are faced by people who can't
+pay off their student loans?
+\begin{itemize}
+\item aggressive debt collection practices: 
+\begin{itemize}
+\item suspending licenses of healthcare workers
+\item being arrested by US Marshal's office for $\$1,500$ in debt (no legal
+representation)
+\end{itemize}
+\end{itemize}
+\item What happened in 2010 to change the landscape of student loan debt
+in the US?
+\begin{enumerate}
+\item Government used to partner with banks, and government would be on
+the hook for defaults instead of banks
+\item Obama in $2010$ ``cut out the middlemen'' (banks) and students
+began borrowing directly from the government.
+\item Department of Education became the largest loan-giving bank in the
+US.
+\end{enumerate}
+\item What are loan servicers, and what has their role been in the student
+loan crisis? 
+\begin{enumerate}
+\item Companies that collect money, make sure you're paying on time, and
+explain all your repayment options (theoretically)
+\item Poor loan servicing causes problems for students. ``Financial terrorism''
+\end{enumerate}
+\item What are three ways in which Navient has mistreated borrowers? 
+\begin{enumerate}
+\item Overcharging troops
+\item Damaging the credit of disabled borrowers, including double-charging
+them
+\item Bad customer service
+\begin{enumerate}
+\item Telling people they might have to live in their truck
+\item Service was inadequate, including keeping calls to seven minutes or
+under
+\item March Madness-style bracket to have agents compete to speed through
+as many clients as possible
+\item Misleading borrowers by telling them to go in forbearance instead
+of income-based repayment plans
+\end{enumerate}
+\end{enumerate}
+\item What is an income-based repayment plan? What is forbearance, and why
+has it negatively affected borrowers when Navient encourages borrowers
+to enter forbearance instead of income-based repayment? 
+\begin{enumerate}
+\item Income-based repayment plans: allow people to tailor payments to their
+income
+\item Forbearance: stop making payments temporarily, but pay more interest
+later
+\begin{enumerate}
+\item Has added $\$4$ billion in interest (according to Consumer Financial
+Protection Bureau)
+\end{enumerate}
+\item Forbearance often isn't in the best interest of people, but it's faster
+on the phone
+\end{enumerate}
+\item In what ways does Minhaj argue that the Department of Education has
+\textquotedbl failed borrowers\textquotedbl ?
+\begin{enumerate}
+\item They keep hiring shitty loan servicers
+\item They're not protecting borrowers
+\item They mismanage loan forgiveness programs (e.g. by not actually processing
+applications for people who go into public service and meet the forgiveness
+requirements; only $96$ out of $30,000$ applications were approved
+in $2017$.)
+\end{enumerate}
+\end{enumerate}
+\begin{xca}
+\textbf{(Reading Question) }For these questions, use the Excel spreadsheet
+of college costs over time provided by the College Board. You\textquoteright ll
+likely want to download the spreadsheet, since we'll use it for graphing
+in Excel in class.
+\begin{enumerate}
+\item Use the spreadsheet to compare your current tuition with what your
+peers paid twenty years ago. 
+\item After looking at the spreadsheet carefully, what questions do you
+have about college tuition? Write down two or three. 
+\item What kind of graph do you think would work well for this data? Explain
+your answer. 
+\begin{enumerate}
+\item You probably chose a \emph{line graph} (has time on $x$-axis and
+some numerical variable on the $y$-axis) or a \emph{scatterplot}
+(a numerical variable {[}years since $1978$-$79${]} on the $x$-axis
+and a different one on the $y$-axis) for your graph.
+\end{enumerate}
+\item Try to graph the data presented in the spreadsheet. You can use Excel,
+Google Sheets, or any other technological tool that can plot and fit
+data points. Make separate graphs for private nonprofit four-year
+colleges, public four-year colleges, and public two-year colleges,
+starting from the academic year 1978-79 as year zero and going in
+five-year intervals. In Excel, you just select the data you want to
+graph, go up to the Ribbon/toolbar at the top of the screen, and click
+Insert -> Recommended Charts. Try a few out; which ones work well
+for you data and which don't? We'll discuss good graphs for this data
+in class. Bring your answers to each question and the Excel/Google
+document with your data/graphs to class on the date below for discussion.
+\item What does ``enrollment-weighted'' mean?
+\end{enumerate}
+\end{xca}
+
+
+\section{Data basics}
+\begin{itemize}
+\item What are data? \emph{Data} (plural) are careful observations made
+as part of the scientific process.
+
+\begin{itemize}
+\item ex. the observation of whether the drug treatments eliminated kidney
+stones
+\end{itemize}
+\item \emph{Statistics} is the study of how best to collect, analyze, and
+draw conclusions from data.
+\item The scientific process of investigation goes something like this:
+
+\begin{enumerate}
+\item Identify a question or problem.
+\item Collect relevant data.
+\item Analyze the data.
+\item Form a conclusion.
+\end{enumerate}
+\item Statistics is interested in making stages 2-4 as objective as possible
+(though we can't ever attain perfect objectivity!), rigorous, and
+efficient.
+\end{itemize}
+
+\section{Reading Question: Going to College}
+\begin{xca}
+Please read Ch. 3 (Arms Race) of Weapons of Math Destruction, by the
+data scientist Cathy O'Neil, then give the following questions your
+best attempt. Bring your answers to class for discussion.
+\end{xca}
+
+\begin{enumerate}
+\item Name three reasons that O'Neil considers the U.S. News \& World Report
+college rankings a WMD. 
+\begin{itemize}
+\item Measuring ``educational excellence'', which isn't well-defined
+\item the rankings are self-reinforcing: a bad ranking could prevent top
+students/faculty from joining a college
+\item the rankings have great scale: they are incredibly popular and widely-read,
+squishing individual colleges into a single model
+\end{itemize}
+\item How did the U.S. News rankings change colleges? How did it change
+access to college for students? How did it change tuition and fee
+costs? 
+\begin{enumerate}
+\item Colleges began to game the rankings, sending false data on SAT scores,
+acceptance/graduation rates, freshman retention, student-faculty ratio,
+and alumni giving.
+\item Colleges worked hard to improve their rankings because they didn't
+have a choice. Because the rankings graded on a curve, it led to an
+``arms race''.
+\item Schools are all more selective to game the rankings, making the concept
+of a ``safety school'' largely extinct.
+\item Tuition and fees were left out of the US News model, giving college
+presidents a ``gilded checkbook'' with which to game the rankings
+by raising tuition and fees.
+\end{enumerate}
+\item At one point the author suggests that gaming the US News ranking might
+not be bad for a university, as \textquotedblleft most of the proxies\dots{}
+reflect a school\textquoteright s overall quality to some degree\textquotedblright{}
+(58). Do you agree? 
+\item If creating or running a WMD is so profitable, how can we push back
+against them? 
+\item Do you find other university ranking schemes to be preferable to the
+US News one, either personally or within this book\textquoteright s
+argument?
+\end{enumerate}
+
+\section{1.3 Overview of data collection principles}
+\begin{itemize}
+\item The first step in conducting research is to identify what you want
+to investigate. Make it clear! 
+\end{itemize}
+\begin{xca}
+Think about each of the following questions, then share in your groups: 
+\begin{itemize}
+\item What are some research questions you may want to investigate about
+student loans?
+\item What subjects or \textbf{cases }should be studied in each? (This is
+called the \textbf{target population}.) 
+\item What \textbf{variables} are important? 
+\item It's usually too expensive to collect data for every case in a population.
+How could you take a \textbf{sample}, or subset of the cases, which
+is representative of the population? 
+\end{itemize}
+\end{xca}
+
+\begin{itemize}
+\item Tell students anecdotal evidence for each. 
+\end{itemize}
+\begin{defn}
+\textbf{Anecdotal evidence }is evidence from particular situations
+that we've heard about or experienced and remembered.
+\begin{itemize}
+\item Usually unusual cases that stick in our minds because they're striking 
+\begin{itemize}
+\item e.g. more likely to remember people who took 7 years to graduate 
+\end{itemize}
+\end{itemize}
+\end{defn}
+
+\begin{itemize}
+\item How do we take a sample that's representative of a population? 
+\begin{itemize}
+\item Let's say we're trying to estimate the average student loan debt for
+Westminster undergrads currently at the institution. What sample population
+would you choose? 
+\end{itemize}
+\begin{enumerate}
+\item Random selection 
+\begin{itemize}
+\item e.g. a raffle 
+\item called a simple random sample 
+\item Problems: what if only 30\% of people respond? 
+\begin{itemize}
+\item Maybe those people have the most free time because they're effective
+at time management and will graduate earlier 
+\item Maybe those people have free time because they're procrastinating
+and will graduate later 
+\item High non-response introduces non-response bias if respondents are
+not representative 
+\end{itemize}
+\end{itemize}
+\item Pick by hand, e.g. people you know 
+\begin{itemize}
+\item What major are most of your friends? 
+\item What age are most of your friends? 
+\item How might these influence the study? 
+\item Bias is the skewing of a sample due to human error. 
+\end{itemize}
+\item Stop people walking around near Dick 
+\begin{itemize}
+\item More likely to get STEM majors 
+\item Convenience sample is not representative 
+\end{itemize}
+\item Literally just ask every Westminster student, and spend lots of time
+hunting them down
+\begin{enumerate}
+\item Census
+\end{enumerate}
+\end{enumerate}
+\begin{itemize}
+\item If 50\% of the ratings for a product on Amazon are negative, does
+that mean 50\% of buyers are dissatisfied with the product? 
+\end{itemize}
+\item Explanatory and response variables 
+\begin{itemize}
+\item Let's say our question is: \textquotedblleft is federal spending,
+on average, higher or lower in counties with high rates of poverty?\textquotedblright{} 
+\begin{itemize}
+\item if we suspect poverty affects spending in a county, then poverty is
+the explanatory variable and spending is response variable 
+\item what if we suspect counties are poor because the government spends
+less in those counties? 
+\item Doesn't actually mean poverty causes spending or vice versa; \textquotedblleft explanatory\textquotedblright{}
+just reflects our guess 
+\end{itemize}
+\item What if our question is \textquotedblleft if homeownership is lower
+than the national average, will the percent of multi-unit structures
+be above or below average?\textquotedblright{} 
+\begin{itemize}
+\item Can't tell which is explanatory and which is response 
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\rule[0.5ex]{1\columnwidth}{1pt}
+
+{[}start 9-25-19{]}
+
+\subsection{In the news}
+\begin{itemize}
+\item Harvard legacy/athlete preferences at Harvard {[}v.gd/EImanc{]}
+\item How to measure who supports impeaching Trump after he attempted to
+work with the Ukraine government to get dirt on Biden's son? {[}https://v.gd/3wyRf7{]}
+\item Two types of data collection 
+\begin{enumerate}
+\item Observational studies 
+\begin{enumerate}
+\item collecting data in a way that does not interfere with the situation 
+\begin{enumerate}
+\item any examples? 
+\item e.g. surveys, records, observing what happens 
+\item correlation does not prove causation 
+\end{enumerate}
+\end{enumerate}
+\item Experiments 
+\begin{enumerate}
+\item used to investigate causation 
+\item examples? e.g. drug tests, stents 
+\end{enumerate}
+\end{enumerate}
+\end{itemize}
+\begin{xca}
+If we want to measure student loan debt across all colleges and university
+students in the US, should we use an experiment or an observational
+study?
+
+Go to the end of the College Board report, and try to figure out what
+sampling strategy and data-collection methods they used.
+\begin{itemize}
+\item There are more than $5300$ colleges/universities, but they only measured
+$4000$. {[}https://professionals.collegeboard.org/higher-ed/recruitment/annual-survey{]}
+\item It was a Web survey and they only collected data from those institutions
+that responded: convenience sample! But it got such a large proportion
+of colleges/universities in the US to respond that we can at least
+try to draw some conclusions from it.
+\begin{itemize}
+\item What traits may be true of those colleges/universities that responded
+vs. failed to respond to the survey?
+\end{itemize}
+\end{itemize}
+\end{xca}
+
+~
+\begin{xca}
+Fill out the anonymous form at \url{https://tinyurl.com/WMGPA}. We'll
+gather data in a second. (Pull up data and scatterplot it.) Then TPS: 
+\begin{enumerate}
+\item What is the explanatory and what is the response variable? 
+\item Describe the relationship between the two variables. Make sure to
+discuss unusual observations, if any. 
+\item Is this an experiment or an observational study? 
+\item Can we conclude that studying longer hours leads to higher GPAs? 
+\end{enumerate}
+\end{xca}
+
+
+\section{Scatterplots}
+\begin{itemize}
+\item If we think one numerical/quantitative variable influences another,
+(year and college tuition/fees, SAT scores and income, incidence of
+autism and percent of population vaccinated, time spent listening
+to Mozart in the womb and intelligence), then especially if we think
+there's a pattern in their relationship (as income increases, so will
+SAT scores), it can be useful to view the data in a \textbf{scatterplot. }
+\end{itemize}
+\begin{defn}
+In a \textbf{scatterplot, t}he values of one variable appear on the
+horizontal axis, and the values of the other variable appear on the
+vertical axis. Each data point appears as the point $(x,y)$, where
+$x$ is the $x$-axis value and $y$ is the $y$-axis value.
+\end{defn}
+
+\begin{itemize}
+\item You can describe the overall pattern of a scatterplot by the \textbf{direction,
+form, }and \textbf{strength }of the relationship.
+\item The \textbf{correlation }is a number $R$ computed by a program which
+falls between $-1$ and $1$. Positive $R$ means positive association;
+negative $R$ means negative association.
+\item Write in number line form:
+
+\begin{tabular}{|c|c|c|}
+\hline 
+ & Positive & Negative\tabularnewline
+\hline 
+\hline 
+Very & Strong positive correlation & Strong negative correlation\tabularnewline
+\hline 
+Slightly & Weak positive correlation & Weak negative correlation\tabularnewline
+\hline 
+\end{tabular}
+\item The most common way to describe the relationship between two quantitative
+variables is a scatterplot.
+\end{itemize}
+
+\subsubsection{Interpreting scatterplots}
+\begin{itemize}
+\item When examining a scatterplot, look for the overall pattern and any
+striking deviations from that pattern.
+\item You can describe the overall pattern of a scatterplot by the \textbf{direction,
+form, }and \textbf{strength }of the relationship.
+\item The \textbf{direction }answers the question: as the $x$-axis variable
+increases, what happens to the $y$-axis variable?
+\begin{itemize}
+\item Two variables are \textbf{positively associated }when above-average
+values of one tend to accompany above-average values of the other
+and below-average values also tend to occur together. The scatterplot
+slopes upward as we move from left to right.
+\item Two variables are \textbf{negatively associated }when above-average
+values of one tend to accompany below-average values of the other,
+and vice versa. The scatterplot slopes downward from left to right.
+\end{itemize}
+\item The \textbf{form }is the overall shape of the graph outlined by the
+data points in a scatterplot. 
+\begin{itemize}
+\item Is it a straight-line trend?
+\item Is it a curved relationship?
+\end{itemize}
+\item The \textbf{strength }is determined by how closely the points follow
+a clear form.
+\item An important kind of deviation is an \textbf{outlier}, an individual
+value which falls outside the overall pattern of the relationship.
+\end{itemize}
+\begin{xca}
+{[}https://tinyurl.com/LifevsGDP{]} This figure is a scatterplot of
+data from the World Bank. The individuals are all the world\textquoteright s
+nations for which data are available. 
+\begin{enumerate}
+\item What are the explanatory and response variables in this situation?
+\begin{itemize}
+\item The explanatory variable is a measure of how rich a country is: the
+gross domestic product (GDP) per person. GDP is the total value of
+the goods and services produced in a country, converted into dollars. 
+\item The response variable is life expectancy at birth.
+\end{itemize}
+\item What overall trend do we notice? What is the direction, form, and
+strength of this relationship? Interpret this trend in context.
+\begin{itemize}
+\item We expect people in richer countries to live longer. The overall pattern
+of the scatterplot does show this, but the relationship has an interesting
+shape. Life expectancy tends to rise very quickly as GDP increases,
+then levels off. 
+\item People in very rich countries such as the United States typically
+live no longer than people in poorer but not extremely poor nations.
+Some of these countries, such as Costa Rica, even do better than the
+United States.
+\item The association is positive and very strong.
+\end{itemize}
+\item What outliers do you notice? Interpret these outliers in context.
+\begin{itemize}
+\item Three African nations are outliers. Their life expectancies are similar
+to those of their neighbors but their GDPs are higher.
+\item Equatorial Guinea and Gabon produce oil, and Sierra Leone produces
+diamonds. It may be that income from mineral exports goes mainly to
+a few people and so pulls up GDP per person without much effect on
+either the income or the life expectancy of ordinary citizens. That
+is, GDP per person is a mean, and we know that mean income can be
+much higher than median income.
+\end{itemize}
+\end{enumerate}
+\end{xca}
+
+~
+\begin{xca}
+\textbf{14.1 Brain size and intelligence}. For centuries people have
+associated intelligence with brain size. A recent study used magnetic
+resonance imaging to measure the brain size of several individuals.
+The IQ and brain size (in units of 10,000 pixels) of six individuals
+are as follows: {[}slide{]}
+
+Is there a clear explanatory variable? If so, what is it and what
+is the response variable? Make a scatterplot of these data, then interpret
+it. What is the form, direction, and strength of the association?
+Are there any outliers?
+\begin{itemize}
+\item Either brain size or IQ could be the explanatory variable, since the
+causality is unclear (and probably doesn't exist)
+\begin{itemize}
+\item If we switched which variables we thought of as explanatory and response,
+our correlation wouldn't change, even though the slope of the best-fit
+line did.
+\end{itemize}
+\item There's a very weak positive, straight-line correlation.
+\begin{itemize}
+\item Can we conclude that brain size affects intelligence based on this
+data?
+\begin{itemize}
+\item No; it's only $6$ people!
+\item Also, the correlation is way too weak.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{xca}
+
+
+\section{Regression lines}
+\begin{itemize}
+\item If a scatterplot shows a straight-line relationship between two variables,
+we'd like to summarize this overall pattern by drawing a line on the
+graph.
+\item A \textbf{regression line} is a straight line that describes how a
+response variable $y$ changes as an explanatory variable $x$ changes. 
+\begin{itemize}
+\item We often use a regression line to predict values of $y$ from $x$.
+\end{itemize}
+\end{itemize}
+\begin{xca}
+{[}slide{]} The lengths of two bones in fossils of the extinct beast
+archaeopteryx closely follow a straight-line pattern. {[}This is basically
+saying leg length predicts wing length.{]} The existing data is from
+$5$ fossils. If we find another incomplete fossil with femur length
+$50$ cm and missing humerus, can we predict how long the humerus
+is? Why or why not? How accurate do you think this prediction will
+be?
+\begin{itemize}
+\item The straight-line pattern connecting humerus length to femur length
+is so strong that we feel quite safe in using femur length to predict
+humerus length. 
+\item First, draw a line that fits the data well. Do this by hand now; we'll
+learn how to do it better.
+\item {[}slide{]} Then, starting at the femur length (50 cm), go up to the
+line, then over to the humerus length axis. We predict a length of
+about 56 cm. 
+\item This is the length the humerus would have if this fossil\textquoteright s
+point lay exactly on the line. All the other points are close to the
+line, so we think the missing point would also be close to the line.
+That is, we think this prediction will be quite accurate.
+\end{itemize}
+\end{xca}
+
+~
+\begin{xca}
+{[}slide{]} The scatterplot shows the \% vote for the Democratic candidate
+for President by state in $1980$ and $1984$. {[}The outlier is Georgia,
+who voted for hometown Jimmy Carter in $1980$ and went more strongly
+Reagan in $1984$.{]} Given a state that voted $40\%$ Democratic
+in $1980$, can we predict the Democratic vote in that state in $1984$?
+Why or why not? How accurate do you think this prediction will be?
+\begin{itemize}
+\item We could use the regression line drawn in Figure 15.2 to predict a
+state\textquoteright s 1984 vote from its 1980 vote. 
+\item The points in this figure are more widely scattered about the line
+than are the points in the fossil bone plot in the previous slide. 
+\item The correlations, which measure the strength of the straight-line
+relationships, are $r=0.994$ for Figure 15.1 and $r=0.704$ for Figure
+15.2. 
+\item The scatter of the points makes it clear that predictions of voting
+will be generally less accurate than predictions of bone length.
+\end{itemize}
+\end{xca}
+
+\begin{itemize}
+\item Different people might draw different regression lines by eye.
+\end{itemize}
+\begin{xca}
+How could we measure how well a regression line fits actual data?
+\begin{itemize}
+\item 7The measure of how well a line fits data is the distance between
+the actual and predicted $y$-coordinates, which is hard to guesstimate
+by eye.
+\item In addition, positive and negative distances could cancel each other
+out\textendash we need to make the values positive!
+\item But we also want very large distances to have a disproportionate effect\textendash we
+should square the sum of the distances!
+\end{itemize}
+\end{xca}
+
+\begin{defn}
+The \textbf{least-squares regression line }of $y$ on $x$ is the
+line that makes the sum of the squares of the vertical distances of
+the data points from the line as small as possible. 
+
+In practice, a computer will spit out the equation for the best least-squares
+regression line if you give it data.
+\end{defn}
+
+\begin{itemize}
+\item The equation you get will be of form $y=mx+b$, where $m$ is the
+\textbf{slope} of the line and $b$ is the \textbf{$y$-intercept}.
+\begin{itemize}
+\item The \textbf{slope }is the amount $y$ changes when $x$ increases
+by one.
+\item The \textbf{$y$-intercept }is the value of $y$ when $x=0$.
+\end{itemize}
+\end{itemize}
+\begin{xca}
+The equation of the least-squares line for humerus vs. femur length
+in Archaeopteryx is
+\[
+\text{humerus length}=-3.66+(1.197\times\text{femur length}).
+\]
+\begin{enumerate}
+\item What is the slope of this line? The $y$-intercept? What meaning,
+if any, does each have in context?
+\begin{itemize}
+\item The slope is $1.197$, which says that humerus length increases roughly
+$1.197$ cm for every $1$ cm increase in femur length.
+\end{itemize}
+\item What would be the predicted humerus length for a fossil with femur
+$50$ cm long using this equation?
+\begin{itemize}
+\item Plug in $50$
+\end{itemize}
+\item Sketch this line on axes and extend it out to $200$ cm on the $x$
+axis. Can we use this line to predict the femur length for a fossil
+with humerus length $74$ cm? $121$ cm?
+\end{enumerate}
+\end{xca}
+
+
+\subsection{Understanding prediction}
+\begin{itemize}
+\item In practice, we use several explanatory variables to predict a response.
+\item As part of its admissions process, a college might use ACT Math and
+Verbal scores and high-school grades in English, math, and science
+($5$ explanatory variables) to predict first-year college grades.
+\item All statistical methods of predicting a response share the following
+basic properties of least-squares regression lines:
+\begin{itemize}
+\item Prediction is based on fitting some ``model'' to a set of data.
+That model is not always a straight line.
+\item {[}slide{]} Prediction works best when the model fits the data closely.
+It'd be inaccurate (and \textbf{overfitting})\textbf{ }to attempt
+to predict revenue from corporate tax rate using the Laffer curve
+in the slide.
+\item {[}slide{]} Prediction outside the range of available data is risky.
+The ``regression to the moon'' prediction that women will run faster
+than the speed of sound in $2600$ is clearly inaccurate. 
+\begin{itemize}
+\item Prediction outside the range of available data is referred to as \textbf{extrapolation}.
+Beware of extrapolation!
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsection{Correlation}
+\begin{xca}
+{[}slide{]} Which of these scatterplots has a stronger positive association?
+{[}they're the same{]}
+\end{xca}
+
+\begin{itemize}
+\item It's easy to fool the eye. We need a numerical measure of the strength
+of an association.
+\item Our overall strategy for any data analysis: use a numerical measure
+to supplement a graph.
+\end{itemize}
+\begin{defn}
+The \textbf{correlation }describers the direction and strength of
+a straight-line relationship between two quantitative variables. Correlation
+is ususally written as $R$.
+\end{defn}
+
+\begin{itemize}
+\item In practice, we'll think of $R$ as the output of a computer program
+when we ask it for the correlation.
+\item Correlation measures the strength and direction of a straight-line
+relationship.
+\item Regression draws a line to describe the relationship.
+\item {[}slide{]} In both cases, outliers have a significant effect!
+\begin{itemize}
+\item Be wary if your scatterplot shows strong outliers.
+\end{itemize}
+\end{itemize}
+\begin{xca}
+In this slide, Hawaii is a high outlier. The orange best-fit line
+works if Hawaii is included, and the black dotted best-fit line works
+if Hawaii is removed. How would the strength of the relationship between
+max annual precip and max $24$-hour precip change if we removed Hawaii? 
+\begin{itemize}
+\item The correlation for all $50$ states is $R=0.510$.
+\item If we leave out Hawaii, the correlation drops to $R=0.248$\textendash almost
+disappearing!
+\item Outliers can make there appear to be correlation when there's really
+not.
+\end{itemize}
+\end{xca}
+
+\begin{itemize}
+\item The usefulness of a regression line for prediction depends on the
+strength of the association.
+\item The right measure of the usefulness of a regression line is $R^{2}$.
+\end{itemize}
+\begin{defn}
+The \textbf{square of the correlation}, $R^{2}$, is the proportion
+of the variation in the values of $y$ that is explained by the trendline.
+\begin{itemize}
+\item The idea is that when there is a straight-line relationship, some
+of the variation in $y$ is accounted for by the fact that as $x$
+changes it pulls $y$ along with it.
+\end{itemize}
+\end{defn}
+
+\begin{itemize}
+\item In reporting a regression, it is usual to give $R^{2}$ as a measure
+of how successful the regression was in explaining the response. When
+you see a correlation, square it to get a better feel for the strength
+of the association. 
+\begin{itemize}
+\item Perfect correlation ($R=-1$ or $R=1$) means the points lie exactly
+on a line. Then $R^{2}=1$ and all of the variation in one variable
+is accounted for by the straight-line relationship with the other
+variable. 
+\item If $R=-0.7$ or $R=0.7$, $R^{2}=0.49$ and about half the variation
+is accounted for by the straight-line relationship. In the $R^{2}$
+scale, correlation \textpm 0.7 is about halfway between 0 and \textpm 1.
+\end{itemize}
+\end{itemize}
+\begin{xca}
+{[}slide{]} There's lots of variation in the humerus length of these
+fossils. Does it seem like a lot or a little of the variation in humerus
+length is accounted for by variation in femur length? Given that $R=0.994$
+for this relationship, what is the exact percentage of variation in
+humerus length that's caused by variation in femur length? What does
+this tell us about the accuracy of predicting humerus length using
+femur length?
+\begin{itemize}
+\item There is a lot of variation in the humerus lengths of these 5 fossils,
+from a low of 41 cm to a high of 84 cm. 
+\item The scatterplot shows that we can explain almost all of this variation
+by looking at femur length and at the regression line. As femur length
+increases, it pulls humerus length up with it along the line. There
+is very little leftover variation in humerus length, which appears
+in the scatter of points about the line. 
+\item Because $R=0.994$ for these data, $R^{2}=(0.994)^{2}=0.988$. So
+the variation \textquotedblleft along the line\textquotedblright{}
+as femur length pulls humerus length with it accounts for $98.8\%$
+of all the variation in humerus length. The scatter of the points
+about the line accounts for only the remaining 1.2\%. 
+\item Little leftover scatter says that prediction will be accurate.
+\end{itemize}
+\end{xca}
+
+
+\section{Week 5 homework: linear models \& climate change}
+\begin{itemize}
+\item In a week (October 7), the activist group Extinction Rebellion is
+launching a week of direct, nonviolent action ``for climate and ecological
+justice''. {[}rebellion.earth/international-rebellion{]}
+\item What are the data supporting this rebellion? Against it? (Anthropocene
+extinction, global warming, climate change, rainforests burning, Global
+South and poor, PoC effects)
+\end{itemize}
+
+\section{Why Is College Tuition Twice as High as in $1995$?}
+\begin{xca}
+Student Loans Worksheet 1; use Desmos to compare your trendline functions
+and to evaluate your trendline functions at various $x$-coordinates.
+\end{xca}
+
+
+\section{Student Loans 1a: reading questions}
+\begin{xca}
+\textbf{(HW) }The goal of the following assignment is to better understand
+the complicated world of student loans, student loan debt, and the
+politics of both.
+
+The following four questions are about the College Board's Trends
+in Student Aid publication from 2017.
+\begin{enumerate}
+\item Explain the difference between subsidized and unsubsidized federal
+loans. 
+\item When did the federal government begin giving unsubsidized loans to
+students according to the chart in Trends in Student Aid 2015? 
+\item Between the years 2000 and 2012, what was the trend for both subsidized
+and unsubsidized loans? 
+\item Define private student loans. 
+\end{enumerate}
+The following questions are about the article \textquotedbl The Student
+Loan Debt Crisis in 9 Charts\textquotedbl{} by Mother Jones, accessible
+online.
+\begin{enumerate}
+\item Choose five charts in the article and write a 200-to-300-word paragraph
+explaining the meaning of the data presented in the graphs and how
+the information presented in each are related to one another. 
+\item In the figure that represents the percentage change of tuition and
+The Consumer Price Index (CPI), explain the two trends and suggest
+what type of functions (polynomial, exponential, linear, horizontal/vertical
+lines, parabolas) can be used to fit each curve. Which trend is rising
+faster? Give a mathematical argument. 
+\item What is the size of the student loan debt? How does it compare with
+the auto loan and the credit card industry? 
+\item Compare the different scenarios for the total interest paid on a \$23,000
+loan. In addition to turning your homework in online, please bring
+a copy of it to class on the due date for discussion.
+\end{enumerate}
+\end{xca}
+
+
+\section{Student Loans 2b: Compound Interest}
+\begin{xca}
+\textbf{{[}Desmos: tinyurl.com/RQCompound{]} (Reading Question) }Given
+the following options for a student loan, which are you more likely
+to choose and why? 
+\begin{enumerate}
+\item Borrowing \$10,000 at an interest rate of 5\%, compounded every year,
+and paying the full amount owed ten years later. 
+\begin{enumerate}
+\item Balance in year $T$: $B_{1}(T)=\$10000(1.05)^{T}$
+\item Amount paid: $B_{1}(10)=\$16288.95$
+\end{enumerate}
+\item Borrowing \$10,000 at an interest rate of 5\%, compounded every year,
+and paying \$1000 per year until the loan is paid off. 
+\begin{enumerate}
+\item This is a complicated question, as is the next.
+\item After year one, you'll owe $O(1)=10000(1.05)-1000$.
+\item After year two, you'll owe $O(2)=[10000(1.05)-1000](1.05)-1000$.
+\item This continues to change; does it ever equal zero? We don't quite
+have the tools to analyze this situation currently.
+\end{enumerate}
+\item Borrowing \$10,000 at an interest rate of 5\%, compounded every year,
+and paying \$2000 per year until the loan is paid off. 
+\begin{enumerate}
+\item Same deal, except this time you'll pay off your loan faster.
+\end{enumerate}
+\item Borrowing \$10,000 with \$100 interest every year and paying the full
+amount owed ten years later. 
+\item Borrowing \$10,000 with \$100 interest every year and paying \$1000
+per year until the loan is paid off. 
+\item Borrowing \$10,000 with \$100 interest every year and paying \$2000
+per year until the loan is paid off. 
+\end{enumerate}
+\end{xca}
+
+
+\subsection{Money Earns Money; Debt Loses Money}
+\begin{itemize}
+\item Imagine you take out a loan for $\$1,000$. Would you rather pay $\$100$
+per year in interest, or $8\%$ per year in interest? In each case
+the interest is taken from your bank account each year, and you aren't
+paying off any of the loan.
+\item The first scenario is called \textbf{simple interest}. You find the
+new balance by adding $\$100$ each year to the previous balance. 
+\item The second scenario is a little more complicated and is called \textbf{compound
+interest}. The interest each year is a fixed percentage of the balance. 
+\end{itemize}
+\begin{example}
+To find how much you owe after the first year, use the \textbf{one-plus
+trick}: in other words, take the $8\%$ interest and add $1$ or $100\%$
+to it to get $1.08$. Now multiply that $1.08$ by your principal,
+$\$1,000$, to find the amount owed after year one:
+\[
+1.08\times\$1,000=\$1,080.
+\]
+
+After two years, you would again owe $8\%$ interest, but this time
+on your balance of $\$1,080$. So after year two, you would owe
+\[
+1.08\times\$1,080=\$1,166.40.
+\]
+\end{example}
+
+\rule[0.5ex]{1\columnwidth}{1pt}
+
+{[}start here 10-7-19{]}
+\begin{xca}
+\textbf{{[}Reading Question: Student Loan Activism{]} }Roughly 70
+percent of grads leave college with student debt, and over 44 million
+Americans hold a total of~\$1.4 trillion in student loan debt. For
+these reasons, student debt holders have the potential to be a powerful
+political force. Organizations such as Freedom to Prosper are working
+to politically organize student debt holders and other Americans in
+favor of student debt cancellation by the government.
+\begin{enumerate}
+\item Using Freedom to Prosper's Debt Burden Index, research your home state
+and current Congressional district (you can look up your district
+by zip code here). What is the student debt burden score for your
+home state/Congressional district? How does it compare to the Utah
+and UT-02 (Utah's Second Congressional District, which includes Westminster
+and Sugar House) averages? 
+\begin{enumerate}
+\item In my home state of Texas, the debt burden index is $55$. This is
+lower than Utah's index of $67$ (surprising to me because of the
+relatively low cost of Utah colleges).
+\item In my home Congressional district, Texas's Second Congressional District,
+the debt burden index is $58$. This is slightly less than UT-02's
+score of $60$.
+\end{enumerate}
+\item At the bottom of this page, read about the methodology Freedom to
+Prosper used to compute their debt burden indices. What do you like
+about their methodology? What do you dislike? 
+\begin{enumerate}
+\item Like: attempts to cross-reference with income and racial demographcs,
+uses well-gathered IRS data sets
+\item Dislike: as the page mentions, the Statistics of Income data source
+is a measure of tax returns, not individual debt. Low earners may
+live in wealthy areas.
+\item While the Statistics of Income data is the most comprehensive data
+on student debt at the most granular geographic level available, it
+is a measure of tax returns, not individuals. Some people file their
+taxes jointly, and not everyone who is responsible for paying off
+a student loan claims the deduction on their taxes. However, there
+is a strong correlation between the share of student loan interest
+deduction filings and the share of survey respondents who reporting
+being responsible for student debt payments at various geographic
+levels, so this does not seem to have systematically biased our results.
+With respect to the construction of our burden index, adjusting the
+rate of student loan deductions by other economic indicators imposes
+a strong ecological assumption that doesn\textquoteright t hold in
+all cases \textemdash{} there are certainly low-income student debt
+holders who live in relatively wealthy areas. However, this adjustment
+should, on average, move us closer to the accurate reflection of where
+student debt burden is most acutely felt that would be available in
+an ideal world where we had similar data at the individual level.
+\end{enumerate}
+\item Read Freedom to Prosper's \textquotedbl Truths about Student Debt
+Holders\textquotedbl{} and pick one statistic that interests you.
+Using estimation and/or Internet research, fact-check the statistic.
+How true is the statistic? How misleading is Freedom to Prosper's
+analysis of the statistic? 
+\item In \textquotedbl Truth \#5\textquotedbl{} from the above page, Freedom
+to Prosper presents statistics about Black and African-American student
+loan debt. In what way(s) do you think historical oppression and current
+racism impact student loan debt? In what way(s) does student loan
+debt interact with and/or exacerbate racial inequalities?
+\end{enumerate}
+\end{xca}
+
+
+\subsection{Student Loans Worksheet 2: Interest }
+\begin{xca}
+Imagine you take out a loan for $\$1,000$. Would you rather pay $\$100$
+per year in interest, or $8\%$ per year in interest? In each case
+the interest is taken from your bank account each year, and you aren't
+paying off any of the loan.
+
+The first scenario is called \textbf{simple interest}. You find the
+new balance by adding $\$100$ each year to the previous balance. 
+
+The second scenario is a little more complicated. The interest each
+year is a fixed percentage of the balance. This scenario is called
+\textbf{compound interest}. For example, after $1$ year, you'd owe
+$8\%$ in interest on top of the $100\%$ you already owe, so you'd
+owe $108\%=1.08$ times the initial balance of the loan:
+\[
+1.08\times\$1,000=\$1,080.
+\]
+\begin{enumerate}
+\item Make a table of what you would owe under both scenarios now and in
+years $1,2,3,$ and $4$.
+\item Try to find an equation for your balance, $S$, on the simple interest
+loan after $T$ years. What kind of function is this?
+\begin{itemize}
+\item $S(T)=1000+100T$
+\item Linear function
+\end{itemize}
+\item Try to find an equation for your balance, $C$, on the compound interest
+loan after $T$ years. What kind of function is this?
+\begin{itemize}
+\item $C(T)=1000(1.08)^{T}$
+\item Exponential function
+\end{itemize}
+\item Using the graphing calculator at \url{https://desmos.com/calculator},
+input $S(T)=$ followed by your equation for the simple interest loan.
+Change the screen zoom so you can see the general shape of the graph.
+What is the shape of the graph? Does this match your answer to \#2?
+\begin{enumerate}
+\item See \url{https://www.desmos.com/calculator/1eh5vlumxs} or \url{tinyurl.com/WCSBSInterest}.
+\end{enumerate}
+\item Using the graphing calculator at \url{https://desmos.com/calculator},
+input $C(T)=$ followed by your equation for the compound interest
+loan. Change the screen zoom so you can see the general shape of the
+graph. What is the shape of the graph? Does this match your answer
+to \#3?
+\item After about how many years will the balance on both types of loan
+be equal? Explain your answer.
+\begin{enumerate}
+\item Other than $T=0$, the only other intersection point of the graphs
+is $(6.532,1653.22)$. After about six and a half years on either
+plan, you'll owe $\$1653.22$.
+\end{enumerate}
+\item In the simple interest loan, how many years will it take for you to
+owe double what you owed initially? What about in the compound interest
+loan?
+\begin{enumerate}
+\item Simple interest: we solve for $T$ in the equation $S(T)=2000$:
+\begin{align*}
+2000 & =2(1000)=1000+100T\\
+1000 & =100T\\
+T & =10\text{ years}.
+\end{align*}
+\item Compound interest: we solve for $T$ in the equation $C(T)=2000$:
+\begin{align*}
+1000(1.08)^{T} & =2000\\
+(1.08)^{T} & =2\\
+T & =\log_{1.08}(2)\approx9.006\text{ years}.
+\end{align*}
+\end{enumerate}
+\item Which loan would you rather take out if you expect to pay off all
+your debt at once in $5$ years? Explain your answer.
+\begin{enumerate}
+\item When $T=5$, the simple interest loan balance is (barely) higher:
+$S(5)=1500$, while $C(5)=1469.328$. 
+\item I'd rather take out the compound interest loan in this case.
+\end{enumerate}
+\item Which loan would you rather take out if you expect to pay off all
+your debt at once in $10$ years? Explain your answer.
+\begin{enumerate}
+\item When $T=10$, the compound interest loan has a higher balance: $C(10)=2158.925$,
+while $S(10)=2000$.
+\item Therefore, I'd rather take out the simple interest loan in this case.
+\end{enumerate}
+\item Now, where exactly is the ``inflection point'' where the simple
+interest loan becomes cheaper? If you wanted to take out a loan for
+$8$ or $9$ years, which would be better? in your equations for $S(T)$
+and $C(T)$, replace the number $1000$ with the letter $P$ (for
+the \textbf{principal} amount of your loan), the number $100$ with
+$m$ (for the slope of your function), and $1.08$ with $R$ (for
+the interest \textbf{rate} of the compound interest loan). Desmos
+should prompt you to ``add slider''; click on the prompt.
+\begin{enumerate}
+\item Change the value of $m$ to $100$, then slide the value of $m$ down.
+What happens to the interest owed as $m$ decreases? How much would
+you owe after $5$ years if $m=50$? If $m=500$? How does the shape
+of the graph change when $m$ is negative? Then change the value of
+$m$ back to $100$.
+\begin{itemize}
+\item {[}demonstrate{]} $m$ changes the slope of the line by rotating the
+line around the $y$-intercept like a hinge.
+\item When $m=50$, you'd owe $\$1250$.
+\item When $m=500$, you'd owe $\$3500$
+\item When $m<0$, the line has a negative slope, so the loan balance would
+decrease instead of increasing over time.
+\end{itemize}
+\item How does the interest rate affect which loan would be cheaper? Change
+the value of $R$ to $1.08$, then slide the value of $R$ around.
+What happens to the interest owed as $R$ decreases? Increases? How
+much would you owe after five years if $R=1.2$? If $R=1.02$? How
+does the shape of the graph change when $R=1$? $R<1$? Then change
+the value of $R$ back to $1.08$.
+\begin{itemize}
+\item {[}demonstrate{]} Changing $R$ drastically changes the curvature
+of the compound interest graph. Small changes in interest rate lead
+to large changes in amount owed!
+\item As $R$ decreases, the balance on the loan decreases.
+\item As $R$ increases, the balance on the loan increases.
+\item If $R=1.2$, then $C(5)$ would equal $\$2488.32$.
+\item If $R=1.02$, then $C(5)$ would equal $\$1104.08$.
+\item When $R=1$, the graph is a horizontal line. No interest is accrued.
+\item When $R<1$, the graph represents exponential decay and is decreasing.
+\end{itemize}
+\item How does the principal amount of the loan affect which loan would
+be cheaper? Change the value of $P$ to $1000$, then slide the value
+of $P$ around. What happens to the amount owed over time as $P$
+decreases? Increases? How much would you owe after five years if $P=500$?
+If $P=2000$? How does the shape of the graph change when $P=0$?
+$P<0$? Is this what you would expect?
+\begin{itemize}
+\item {[}demonstrate{]} Increasing the value of $P$ shifts both $S(T)$
+and $C(T)$ up and to the left.
+\item {[}demonstrate{]} Decreasing the value of $P$ shifts both $S(T)$
+and $C(T)$ down and to the right. Interestingly, the intersection
+points between $S(T)$ and $C(T)$ also change, so whether a simple
+or compound interest loan is better for you depends, among other things,
+on the principal.
+\item If $P=500$, $C(5)=\$734.66$.
+\item If $P=2000$, $C(5)=\$2938.66$.
+\item {[}demonstrate{]} as we shift $P$, the compound and simple interest
+graphs both shift up and to the left (for increasing $P$) or down
+and to the right (for decreasing $P$). However, the effect on the
+compound vs. simple interest graphs are not equal. As $P$ changes,
+the compound and simple interest graphs do a complicated dance that
+makes it somewhat difficult to predict which would be a better option.
+\end{itemize}
+\end{enumerate}
+\item If your loan provider offered to halve your interest, how much would
+you save over $10$ years in the first (simple interest) scenario?
+In the second (compound interest) scenario (where your rate is $4\%$
+rather than $8\%$)?
+\item Consult the following link to learn how the interest on student loans
+is calculated: \url{https://studentaid.ed.gov/sa/types/loans/interest-rates#what-interest}.
+Next, calculate and compare the interest owed on the following loans: 
+\begin{itemize}
+\item Loan A: loan with principal amount of $\$15000$ with interest at
+$7\%$, assuming you made your last payment 30 days ago. 
+\item Loan B: loan with principal amount of $\$15000$ with interest at
+$4\%$, assuming you made your last payment 30 days ago.
+\item Loan C: loan with principal amount of $\$15000$ with interest at
+$7\%$, assuming you made your last payment 60 days ago.
+\item Loan D: loan with principal amount of $\$15000$ with interest at
+$7\%$, assuming you made your last payment 120 days ago. 
+\end{itemize}
+\end{enumerate}
+\end{xca}
+
+
+\section{Student Loans 3a: Repayment Plans}
+\begin{xca}
+Please read \href{https://www.nerdwallet.com/blog/loans/student-loans/student-loan-repayment-plans/?educalc}{this article}
+from financial advice site Nerdwallet, then answer the following questions.
+(If you don't have student loans, pretend you have loans amounting
+to 50\% of your tuition costs and answer the questions accordingly).
+Turn in your answers in a text box below and bring them to class on
+the date below for discussion.
+\begin{enumerate}
+\item Do you anticipate being eligible for Public Service Loan Forgiveness
+(PSLF), or is this option interesting to you? Why or why not? 
+\begin{itemize}
+\item \textbf{Choose an income-driven plan if public service forgiveness
+is an option}: Public Service Loan Forgiveness is a federal program
+available to government and nonprofit employees. If you\textquoteright re
+eligible, you can get your remaining loan balance forgiven tax-free
+after you make 120 qualifying loan payments. You need to make most
+of those payments on a federal income-driven repayment plan to benefit
+from PSLF. Otherwise, you\textquoteright ll end up paying off the
+loan before you\textquoteright re eligible for forgiveness. 
+\end{itemize}
+\item Fill out the form entitled \textquotedbl Is an income-driven repayment
+plan right for you?\textquotedbl{} and describe your results. Why
+is(n't) it recommended for you to enroll in a repayment plan based
+on your information? 
+\begin{itemize}
+\item Because you're nailing your payments, want to pay your loans off quickly,
+and don't work for an organization that would qualify you for Public
+Service Loan Forgiveness, an income-driven repayment plan is probably
+not a good option for you. For borrowers with strong credit and income
+profiles, refinancing student loans is another option for reducing
+the monthly payment. 
+\item Because you'd like to pay your loans off quickly, you may want to
+avoid being on an income-driven repayment plan for a long period of
+time, as these plans extend your repayment period. However, it could
+still make sense for you to take advantage of an IDR plan for a shorter
+period of time if you are having trouble making your monthly payments.
+You can remain on an IDR plan and pay more than the minimum per month,
+with no penalty, if you'd like to pay your loans off faster. If you
+have questions about which specific plan is best for you, call your
+student loan servicer or calculate your payments with the estimator
+below. 
+\end{itemize}
+\item Compare and contrast the various income-driven repayment plans, including
+Income-based repayment, Income-contingent repayment, Pay As You Earn,
+and Revised Pay As You Earn. What are the similarities and differences
+between each plan? Which do you think would work best for your loans
+based on the information given? 
+
+\includegraphics[scale=0.75,bb = 0 0 200 100, draft, type=eps]{pasted2.png}
+\item Compare and contrast the basic federal repayment plans, including
+standard, graduated, and extended repayment. What are the similarities
+and differences between each plan? Which do you think would work best
+for your loans based on the information given?
+
+\includegraphics[scale=0.75,bb = 0 0 200 100, draft, type=eps]{pasted3.png}
+\end{enumerate}
+\end{xca}
+
+
+\subsection{Student Loans Worksheet 3a: You and Giselda}
+\begin{xca}
+\textbf{{[}RQ: when do students pay off debt?{]} }Read this CNBC article
+entitled \textquotedbl This Is the Age Most Americans Pay Off Student
+Loans\textquotedbl , then answer the following questions in a text
+box or file upload. Also bring a copy of your responses to class on
+the date below for discussion.
+\end{xca}
+
+\begin{enumerate}
+\item Describe the graph entitled \textquotedbl Number of Student Loan
+Borrowers by Age Group\textquotedbl{} in words, including the direction,
+form, and strength of any trends observed. What years are outliers,
+and why might those years be outliers? 
+\begin{enumerate}
+\item The first graph shows that Americans of all age groups are borrowing
+student loans at an increasing rate between $2004$ and $2015$.
+\item There are strong, roughly linear, positive trends among all age groups,
+with the least strong trend being the under-30 age group.
+\item The main outlier is $2010$-$2012$ for Americans under $30$, when
+students borrowed at a decreasing rate. This is likely due to the
+Great Recession, when many younger Americans put off college due to
+lack of funds.
+\end{enumerate}
+\item Do the same for the graph entitled \textquotedbl Total Student Loan
+Balances by Age Group\textquotedbl . 
+\begin{enumerate}
+\item There are strong, positive, exponential trends in student loan balances
+among all age groups except under-30.
+\item There is a strong, positive, linear trend in student loan balances
+among Americans under 30.
+\item Outliers include the years $2011$-$2013$ for Americans under $30$,
+when there was a drastic increase in the total student loan balances.
+This could be due to the aftereffects of the Great Recession when
+younger Americans weren't able to pay off existing loans, making their
+balances increase more than average due to interest or default.
+\end{enumerate}
+\item Choose a statistic from the article and fact-check it, using either
+estimation or the Internet. How true is the statistic? How misleading?
+Explain your answer.
+\end{enumerate}
+\begin{xca}
+\textbf{{[}Worksheet 3a: You and Giselda{]} }Imagine the following
+scenario. If you have student loans, Giselda attended a four-year
+private liberal arts college between 1999-2003 and borrowed the same
+percentage of her tuition as you did. Suppose that both you and Giselda
+will pay off your student loans within ten years. If you don\textquoteright t
+have student loans (lucky!), pretend that you and Giselda both borrowed
+50\% of your tuition costs, but Giselda attended a private four-year
+liberal arts college between 1999-2003.
+
+Use the table below to make a payment plan for both you and Giselda.
+Try to make the table reflect your loan situation as closely as possible,
+and consider various options for how long it will take to pay off
+your loans. (Usually, of course, the optimal situation is to pay off
+loans as quickly as possible, but for many American students, this
+isn\textquoteright t feasible.) 
+
+Use your models for college tuition in 1999 and your actual Westminster
+tuition + fees, less any scholarships/grants, to fill in the Tuition
+row of the table.
+\begin{itemize}
+\item Tuition and fees at four-year private nonprofit institutions like
+Westminster can be modeled using the equation $N(T)=\$531.52T+\$7143.40$,
+where $T$ is measured in years after the $1978$-$79$ academic year.
+\item Since Giselda started in the $1999$-$2000$ academic year, $21$
+years after the $1978$-$79$ academic year, her costs can be estimated
+by plugging in $T=21$ to the equation above:
+\[
+N(21)=\$531.52(21)+\$7143.40=\$18,305.32.
+\]
+\item If you started college in $2018$-$2019$, $30$ years after the $1978$-$79$
+academic year, your tuition and fees would be estimated as
+\[
+N(30)=\$23,089.
+\]
+\end{itemize}
+\end{xca}
+
+
+\subsection{Student Loans Worksheet 3b: You and Fatimah}
+
+Imagine the following scenario. Fatimah attended a four-year private
+liberal arts college at the same time as you and borrowed the same
+percentage of their tuition as you did. (If you don\textquoteright t
+have student loans, assume you and Fatimah both borrowed 50\% of tuition
+costs.) Suppose that both you and Fatimah will pay off your student
+loans within ten years, but your interest rate is double Fatimah\textquoteright s.
+Use the table below to make a payment plan for both you and Fatimah.
+Try to make the table reflect your loan situation as closely as possible,
+and consider various options for how long it will take to pay off
+your loans. (Usually, of course, the optimal situation is to pay off
+loans as quickly as possible, but for many American students, this
+isn\textquoteright t feasible.)
+\end{document}

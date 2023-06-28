@@ -1,0 +1,270 @@
+<chapter xml:id="climate-change" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Climate Change</title>
+	<introduction xml:id="climate-change-introduction">
+		<p>
+			<em>This module is based on the "Greenhouse Gas Emissions" chapter originally authored by Mark Branson, Emily Landes, and Fern Van Vliet for the text <url href="https://web.stevenson.edu/mbranson/m4tp/version1/climate-change.html">Math for the People</url>, edited by Mark Branson and Whitney George.
+			
+			This version of the module was remixed from the original by Kenan Ince in accordance with the Creative Commons 4.0 license.</em>
+		</p>
+		<p>The introduction should provide background on the topic.  It should be relatively brief - there's more space to go into background information during the background section.</p>
+		<p>Text of introduction second paragraph</p>
+	</introduction>
+	<section xml:id="climate-change-objectives">
+		<title>Objectives</title>
+		<p>
+			By the end of this module students will be able to:
+			<ol>
+				<li> Describe the scale of global greenhouse gas emissions.</li>
+				<li> Compare the quantity of emissions between individuals, corporations, and nation states.</li>
+				<li> Model the greenhouse effect with varying levels of greenhouse gases.</li>
+				<li> Create data visualizations of both quantitative and qualitative data related to greenhouse gas emissions.</li>
+				<li> Evaluate strategies for reducing emissions using quantitative tools.</li>
+				<li> Discuss the consequences of failing to cut greenhouse gas emissions.</li>
+				<li> Propose actions to mitigate emissions in your personal life, institution, and nation</li>
+			</ol>
+		</p>
+	</section>
+
+	<xi:include href="climate-change-introduction.ptx"/>
+
+	<section xml:id="climate-change-cui-bono">
+		<title>Cui Bono - Who Benefits?</title>
+		<p> 
+			The unfortunate reality of climate change is that we all benefit - the quality of life which we have is largely due to the cheap availability of fossil fuels.  We can get around easily with cars, fly (relatively) cheaply when we go on vacation, eat the food that we want, and buy all of the things that we want.  All of the things that we do produce greenhouse gases, at some level.  
+		</p>
+		<p>
+			Some individuals, though, benefit more than others.  The corporations that produce the goods we buy - our cars, plastics, electronics, and food - are motivated to keep selling more stuff, even if that stuff produces greenhouse gas emissions.  Fossil fuel companies make money by extracting and selling fossil fuels like coal, natural gas, and petroleum.  All of this economic activity contributes to government tax revenues, which allows politicians to spend more money on their constituents and special interests.
+		</p>
+		<p>
+			In short, unless you live in a cabin in the woods, grow all of your own food, and use energy only from zero-emissions sources (even a campfire generates greenhouse gases), you're benefiting from greenhouse gas emissions.  If you own a car company or an oil company (or have stock in them), you're benefiting a lot more.
+		</p>
+	</section>
+	<section xml:id="climate-change-big-problem">
+		<title>Big Problem: What is the best way to reduce greenhouse gas emissions?</title>
+		<assemblage>
+			<p>
+				What are the best strategies for reducing greenhouse gas emissions?
+			</p>
+		</assemblage>
+		<p> 
+			Most people agree that we need to reduce greenhouse gas emissions, so that we can limit the dangerous effects of global warming.  There are, however, many different strategies for doing this.  Should we focus our efforts on switching to electric cars? Or to convincing everyone to switch to a vegan diet? How can we evaluate and find the best strategies for reducing emissions - before it's too late?
+		</p>
+	</section>
+
+	<xi:include href="climate-change-math-topic-scientific-notation.ptx"/>
+
+	<xi:include href="climate-change-math-topic-data-visualization.ptx"/>
+
+	<xi:include href="climate-change-modeling.ptx"/>
+
+	<xi:include href="climate-change-solving-for-change.ptx"/>
+
+	<conclusion xml:id="climate-change-conclusion">
+		<p> Conclusion of module.</p>
+	</conclusion>
+	<reading-questions xml:id="climate-change-reflection">
+		<exercise> 
+			<p>
+
+			</p>
+		</exercise>
+	</reading-questions>
+	<exercises xml:id="climate-change-exercises">
+		<exercise> <p>Mathematical exercise.  These exercises should be quantitative in nature, but could involve other tasks, like gathering data, using technology, or analyzing consequences to come to an answer.  The answer need not be quantitative.</p></exercise>
+		<exercise> <p>Mathematical exercise</p></exercise>
+	</exercises>
+
+	<section xml:id="climate-change-references">
+		<title>References</title>
+		<subsection>
+			<title>Bibliography</title>
+			<biblio xml:id="climate-change-biblio-emissions-by-country">
+				Worlddata.info, Ranking of countries by greenhouse gas emissions (06-07-2021), <url aria-label="Ranking of countries by greenhouse gas emissions" href="https://www.worlddata.info/climate-change-by-country.php"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-acs-vehicle-access">
+				American Community Survey 2019, Tenure by Vehicles Available (06-25-2021), <url aria-label="Tenure by Vehicles Available, ACS 2019" href="https://data.census.gov/cedsci/table?q=vehicle%20access&amp;tid=ACSDT1Y2019.B25044&amp;hidePreview=true"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-gdp-vs-co2">
+				Our World in Data, CO2 Emissions per capita vs GDP per capita, <url aria-label=
+				"CO2 Emissions per capita vs GDP per capita" href="https://ourworldindata.org/grapher/co2-emissions-vs-gdp"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-global-temperature-anomaly">
+				National Centers for Environmental Information at the National Oceanic and Atmospheric Administration, Climate at a Glance: Global Time Series, <url aria-label="Global mean temperature anomaly" href="https://www.ncdc.noaa.gov/cag/global/time-series/globe/land_ocean/ytd/12/1880-2019"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-overall-co2-emissions">
+				World Bank, CO2 emissions (kt), <url aria-label="Overall CO2 emissions" href="https://data.worldbank.org/indicator/EN.ATM.CO2E.KT"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-ons-vehicle-access">
+				Office for National Statistics, Number of Vehicls Per Household, <url aria-label="Vehicles per household in the UK" href="https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/adhocs/009922numberofvehiclesperhousehold"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-video-scatterplot-gdp-co2">
+				A. Lipponen, CO2 Emissions, GDP &amp; temperature by country 1961-2014, <url aria-label="CO2 emissions, GDP &amp; temperature by country 1961-2014" href="https://www.flickr.com/photos/150411108@N06/32308286658/in/album-72157684433789793/"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-video-temperature-anomalies">
+				A. Lipponen, Temperature Anomalies by Country 1880-2017, <url aria-label="Temperature Anomalies by Country 1880-2017" href="https://www.flickr.com/photos/150411108@N06/43350961005/in/photostream/"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-video-per-capita-co2">
+				R. Rohde, Map of Greenhouse Gas Emissions per Person, <url aria-label="Map of Greenhouse Gas Emissions per Person" href="https://berkeleyearth.org/dv/map-of-climate-change-emissions-per-person/"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-climate-sound">
+				C. Chafe, H. Gordon, K. Pennington, K. Snow, V. Vasquez, D. Venton, The 1200-year Climate Podcast in Detail, <url aria-label="The 1200-year Climate Podcast in Detail" href="https://chrischafe.net/the-1200-year-climate-podcast-in-detail/"/>.	
+			</biblio>
+			<biblio xml:id="climate-change-biblio-causes-of-climate-change">
+				British Geological Survey, United Kingdom Research Institute, What Causes the Earth's Climate to Change? <url aria-label="What Causes the Earth's Climate to Change?" href="https://www.bgs.ac.uk/discovering-geology/climate-change/what-causes-the-earths-climate-to-change/"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-cretaceous-climate-change">
+				C. Bardeen, R. Garcia, O. Toon, A. Conley, On transient climate change at the Cretaceous-Paleogene boundary due to atmospheric soot injections, PNAS 114 (36) (2017) E7415-E7424 <url aria-label="n transient climate change at the Cretaceous−Paleogene boundary due to atmospheric soot injections" href="https://www.pnas.org/content/114/36/E7415"/>
+			</biblio>
+			<biblio xml:id="climate-change-biblio-fourth-assessment">
+				IPCC, 2007: Climate Change 2007: The Physical Science Basis. Contribution of Working Group I to the Fourth Assessment Report of the Intergovernmental Panel on Climate Change [Solomon, S., D. Qin, M. Manning, Z. Chen, M. Marquis, K.B. Averyt, M.Tignor and H.L. Miller (eds.)]. Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-world-of-change">
+				World of Change: Global Temperatures <url aria-label="World of Change: Global Temperatures" href="https://earthobservatory.nasa.gov/world-of-change/global-temperatures"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-causes-national-geographic">
+				Causes of Global Warming, Explained. <url aria-label="Causes of Global Warming, Explained" href="https://www.nationalgeographic.com/environment/article/global-warming-causes"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-history-global-warming">
+				Weart, S. The Discovery of Global Warming. <url aria-label="The Discovery of Global Warming" href="https://history.aip.org/climate/co2.htm"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-temperature-moon">
+				Sharp, T. What is the Temperature of the Moon? <url aria-label="What is the Temperature of the Moon?" href="https://www.space.com/18175-moon-temperature.html"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-history-co2">
+				Earth Science Communications Team at NASA's Jet Propulsion Laboratory. Climate Change: How do we Know? <url aria-label="Climate Change: How do we Know?" href="https://climate.nasa.gov/evidence/"/>
+			</biblio>
+			<biblio xml:id="climate-change-biblio-extinction">
+				C. Román-Palacios, J. Wiens. Recent responses to climate change reveal the drivers of species extinction and survival. PNAS 117 (8) (2020) P.4211-4217 <url aria-label="Recent responses to climate change reveal the drivers of species extinction and survival" href="https://www.pnas.org/content/117/8/4211"/>
+			</biblio>
+			<biblio xml:id="climate-change-biblio-crops">
+				D. Ray, P. West, M. Clark, J. Gerber, A. Prishchepov, S. Chatterjee. Climate change has likely already affected global food production. PLoS ONE 14(5): e0217148. (2019) <url aria-label="Climate change has likely already affected global food production." href="https://doi.org/10.1371/journal.pone.0217148"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-refugees">
+				United Nations High Commission on Refugees (UNHCR). Displaced on the frontlines of the climate emergency <url aria-label="Displaced on the frontlines of the climate emergency" href="https://storymaps.arcgis.com/stories/065d18218b654c798ae9f360a626d903"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-us-population">
+				Census Bureau. 2019 U.S. Population Estimates Continue to Show the Nation’s Growth Is Slowing. <url aria-label="2019 U.S. Population Estimates Continue to Show the Nation’s Growth Is Slowing" href="https://www.census.gov/newsroom/press-releases/2019/popest-nation.html"/>
+			</biblio>
+			<biblio xml:id="greehouse-gas-biblio-emissions-inventory">
+				Environmental Protection Agency. Inventory of U.S. Greenhouse Gas Emissions and Sinks<url aria-label="Inventory of U.S. Greenhouse Gas Emissions and Sinks" href="https://www.epa.gov/ghgemissions/inventory-us-climate-change-emissions-and-sinks"/>
+			</biblio>
+			<biblio xml:id="climate-change-biblio-emissions-china">
+				M. Grant, K. Larsen. Preliminary China Emissions Estimates for 2019. <url aria-label="Preliminary China Emissions Estimates for 2019" href="https://rhg.com/research/preliminary-china-emissions-2019/"/>
+			</biblio>
+			<biblio xml:id="climate-change-biblio-china-population">
+				Worldometer. China Population. <url aria-label="China Population" href="https://www.worldometers.info/world-population/china-population/"/>
+			</biblio>
+			<biblio xml:id="climate-change-biblio-us-oil-consumption">
+				U.S. Energy Information Administration. How much oil is consumed in the United States. <url aria-label="How much oil is consumed in the United States" href="https://www.eia.gov/tools/faqs/faq.php?id=33&amp;t=6"/>
+			</biblio>
+			<biblio xml:id="climate-change-biblio-aqua-satellite">
+				NASA. About Aqua. <url aria-label="About Aqua" href="https://aqua.nasa.gov/content/about-aqua"/>
+			</biblio>
+			<biblio xml:id="climate-change-biblio-co2-historical-data">
+				H. Ritchie, Who has contributed most to global CO2 emissions? <url aria-Label="who has contributed most to global CO2 emissions" href="https://ourworldindata.org/contributed-most-global-co2"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-co2-annual-data">
+				H. Ritchie, M. Roser, CO2 and Greenhouse Gas Emissions. <url aria-Label="CO2 and Greenhouse Gas Emissions" href="https://ourworldindata.org/co2-and-other-climate-change-emissions"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-paris-agreement">
+				United Nations. The Paris Agreement. <url aria-label="The Paris Agreement" href="https://www.un.org/en/climatechange/paris-agreement"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-emissions-by-region">
+				Global Carbon Project, via Our World in Data. Annual CO2 Emissions by Region. <url aria-Label="Annual CO2 Emissions by Region" href="https://ourworldindata.org/grapher/annual-co-emissions-by-region"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-world-population">
+				E. Ortiz-Ospina, M. Roser, H. Ritchie, World Population Growth. <url aria-label="World Population Growth" href="https://ourworldindata.org/world-population-growth"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-livestock">
+				P.J. Gerber, H. Steinfeld, B. Henderson, A. Mottet, C. Opio, J. Dijkman, A. Falcucci, G. Tempio, Tackling climate change through livestock – A global assessment of emissions and mitigation opportunities. Food and Agriculture Organization of the United Nations (FAO), Rome (2013). <url aria-label="Tackling climate change through livestock – A global assessment of emissions and mitigation opportunities" href="https://www.fao.org/3/i3437e/i3437e.pdf"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-sources-of-emissions">
+				Environmental Protection Agency. Sources of Greenhouse Gas Emissions. <url aria-Label="Sources of Greenhouse Gas Emissions" href="https://www.epa.gov/ghgemissions/sources-climate-change-emissions"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-pandemic">
+				C. Rasmussen. Emission Reductions From Pandemic Had Unexpected Effects on Atmosphere. <url aria-label="Emission Reductions From Pandemic Had Unexpected Effects on Atmosphere" href="https://www.jpl.nasa.gov/news/emission-reductions-from-pandemic-had-unexpected-effects-on-atmosphere"/>
+			</biblio>
+			<biblio xml:id="climate-change-biblio-necessary-reduction">
+				University of East Anglia Communications. Global Carbon Emissions Need to Shrink by 10 Times Faster. <url aria-label="Global Carbon Emissions need to shrink by 10 times faster" href="https://earth.stanford.edu/news/global-carbon-emissions-need-shrink-10-times-faster-0#gs.3792lq"/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-six-sectors">
+				United Nations Environment Programme. The Six-Sector Solution to the Climate Crisis. <url aria-label="Six-Sector Solution to the Climate Crisis" href="https://www.unep.org/interactive/six-sector-solution-climate-change/"/>
+			</biblio>
+			<biblio xml:id="climate-change-biblio-rcp">
+				G. P. Wayne. The Beginner's Guide to Representative Concentration Pathways. Skeptical Science. <url aria-label="The Beginner's Guide to Representative Concentration Pathways" href="https://skepticalscience.com/rcp.php?t=1"/>. Accessed 07-28-22.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-sea-level-rise">
+				S. Jevrejeva, L. Jackson, R. Riva, J. Moore. Coastal sea level rise with warming above 2 °C. PNAS 113 (47) 13342-13347. <url href="https://www.pnas.org/doi/10.1073/pnas.1605312113"/>. Accessed 07/30/22.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-miami-tides">
+				NOAA. Tides &amp; Currents. Observed Water Levels at 8723214, Virginia Key, Biscayne Bay, FL From 2016/10/02 00:00 GMT to 2016/11/01 23:59 GMT. <url href="https://tidesandcurrents.noaa.gov/waterlevels.html?id=8723214&amp;units=standard&amp;bdate=20161002&amp;edate=20161101&amp;timezone=GMT&amp;datum=MLLW&amp;interval=6&amp;action="/>.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-nyc-storm-surge">
+				A. Garner, M. Mann, K. Emanuel, R. Kopp, N. Lin, R. Alley, B. Horton, R. DeConto, J. Donnelly, D. Pollard. Impact of climate change on New York City’s coastal flood hazard: Increasing flood heights from the preindustrial to 2300 CE. PNAS 114 (45) 11861-11866. <url href="https://www.pnas.org/doi/pdf/10.1073/pnas.1703568114"/>. Accessed 07/30/22.
+			</biblio>
+			<biblio xml:id="climate-change-biblio-crop-yields">
+				C. Zhao, B. Liu, S. Piao, S. Asseng. Temperature increase reduces global yields of major crops in four independent estimates. PNAS 114 (35) 9326-9331. <url href="https://www.pnas.org/doi/10.1073/pnas.1701762114"/>. Accessed 07/30/22.
+			</biblio>
+		</subsection>
+		<subsection>
+			<title>Image Descriptions</title>
+			<ol>
+				<li xml:id="climate-change-image-history-co2">
+					A graph with years from 400,000 years ago on the horizontal axis and atmospheric CO2 in parts per million (ppm) on the vertical axis. The graph shows that atmospheric CO2 has fluctuated between about 180 and 300 ppm for the last 400,000 years, but has soared from less than 300 ppm to over 400 ppm in the last century.
+				</li>
+				<li xml:id="climate-change-image-bar-chart-vehicle-access">
+					A graph with the number of vehicles on the horizontal axis and millions of households on the vertical axis. For each number of vehicles, a rectangle is drawn with height equal to the number of households with that many vehicles. The data displayed is from the frequency table given above.
+				</li>
+				<li xml:id="climate-change-image-histogram-co2">
+					A graph with the per capita CO2 emissions in tons per person on the horizontal axis and number of countries on the vertical axis.  For each range of emissions levels, a rectangle is drawn with height equal to the number of countries that produce that level of emissions.  The data displayed is from the frequency table given above.
+				</li>
+				<li xml:id="climate-change-image-bar-chart-methane">
+					A graph with the names of countries on the horizontal axis and millions of equivalent tons of CO2 on the vertical axis. For each country, a rectangle is drawn with the height of the rectangle corresponding to the methane emissions of each country.  The data displayed is from the table given above.
+				</li>
+				<li xml:id="climate-change-image-pie-chart-co2">
+					A circle with wedges representing countries with emissions in the given ranges.  One wedge is very large, relative to the others, and several wedges are only 0 or 1 percent of the circle. The data displayed is from the table given above.
+				</li>
+				<li xml:id="climate-change-image-scatterplot-gdp-co2">
+					A graph with GDP, in 2011 dollars per person, on the horizontal axis and CO2 emissions, in tons per person, on the vertical axis.  The values for 165 different nations are represented by dots on the graph, with the horizontal position of the dot corresponding to GDP and the vertical position of the dot corresponding to CO2 emissions.  The data shown in the graph is in <a href="data-files/co2-emissions-vs-gdp-2018.xlsx">gdp and co2 emissions for all countries in 2018 [Excel Spreadsheet]</a>.
+				</li>
+				<li xml:id="climate-change-image-line-graph-global-temperature-anomaly">
+					A graph with years on the horizontal axis and the global mean temperature anomaly, in degrees celsius difference from the mean temperature from 1901-2000 on the vertical axis.  The value for each year is represented by a dot on the graph, with the horizontal position of the dot corresponding to the year and the vertical position of the dot corresponding to global mean temperature anomaly.  The data shown in the graph is in <a href="data-files/global-temperature-anomaly.xlsx">global mean temperature anomalies from 1880 to 2019 [Excel Spreadsheet]</a>.
+				</li>
+				<li xml:id="climate-change-image-paired-line-graph-co2-us-china">
+					A graph with years on the horizontal axis and total co2 emissions in gigatons on the vertical axis. The values for the USA and China from 1960 to 2018 are represented as points on the graph, with the horizontal position determined by year and the vertical position determined by emissions. The data shown in the graph is in <a href="data-files/paired-line-graph-co2-us-china.xlsx">overall co2 emissions for the USA and China from 1960 to 2018 [Excel Spreadsheet]</a>.
+				</li>
+				<li xml:id="climate-change-image-paired-line-graph-co2-us-singapore">
+					A graph with years on the horizontal axis and total co2 emissions in gigatons on the vertical axis. The values for the USA and Singapore from 1960 to 2018 are represented as points on the graph, with the horizontal position determined by year and the vertical position determined by emissions. The data shown in the graph is in <a href="data-files/paired-line-graph-co2-us-singapore.xlsx">overall co2 emissions for the USA and Singapore from 1960 to 2018 [Excel Spreadsheet]</a>.
+				</li>
+				<li xml:id="climate-change-image-side-by-side-line-graph-co2-singapore">
+					A graph with years on the horizontal axis and total co2 emissions in kilotons on the vertical axis. The values for Singapore from 1960 to 2018 are represented as points on the graph, with the horizontal position determined by year and the vertical position determined by emissions. The data shown in the graph is in <a href="data-files/paired-line-graph-co2-us-singapore.xlsx">overall co2 emissions for the USA and Singapore from 1960 to 2018 [Excel Spreadsheet]</a>.
+				</li>
+				<li xml:id="climate-change-image-side-by-side-line-graph-co2-us">
+					A graph with years on the horizontal axis and total co2 emissions in kilotons on the vertical axis. The values for the United States from 1960 to 2018 are represented as points on the graph, with the horizontal position determined by year and the vertical position determined by emissions. The data shown in the graph is in <a href="data-files/paired-line-graph-co2-us-singapore.xlsx">overall co2 emissions for the USA and Singapore from 1960 to 2018 [Excel Spreadsheet]</a>.
+				</li>
+				<li xml:id="climate-change-image-paired-bar-graph-vehicles-gb-us">
+					A graph with number of vehicles on the horizontal access and percentage of households owning that many vehicles on the vertical axis.  For each number of vehicles, there is a bar representing the percentage of Great Britain households and a bar representing the percentage of United States households.  The height of the bar is determined by the percentage.  The data contained in the graph is shown here:
+					<xi:include href="tables/paired-bar-graph-vehicles-gb-us.xml"/>
+				</li>
+				<li xml:id="climate-change-image-pie-chart-vehicles-us">
+					A circle divided into wedges, with each wedge proportional in size to the percentage of the United States population who own 0, 1, 2, 3, 4, or 5 or more vehicles.  The percentages also appear on the graph. The data shown in the chart is the United States data from the table below:
+					<xi:include href="tables/paired-bar-graph-vehicles-gb-us.xml"/> 
+				</li>
+				<li xml:id="climate-change-image-pie-chart-vehicles-gb">
+					A circle divided into wedges, with each wedge proportional in size to the percentage of the Great Britain population who own 0, 1, 2, 3, 4, or 5 or more vehicles.  The percentages also appear on the graph. The data shown in the chart is the Great Britain data from the table below:
+					<xi:include href="tables/paired-bar-graph-vehicles-gb-us.xml"/> 
+				</li>
+				<li xml:id="climate-change-image-stacked-bar-chart-vehicles-gb-us">
+					Two bars, one for the United States and one for Great Britain.  Each bar is divided proportionally using the number of households with 0, 1, 2, 3, 4, or 5 or more vehicles in each country.  The data shown in the chart is the data in this table:
+					<xi:include href="tables/paired-bar-graph-vehicles-gb-us.xml"/> 
+				</li>
+				<li xml:id="climate-change-image-co2-historical-emissions">
+					A stacked 100% line chart, with years from 1750 to present on the x-axis, and percentage of total historical global CO2 emissions from 1750 to that year on the y-axis. Different colors denote the different regions of the world. The data shown in the chart is available at <xref ref="climate-change-biblio-co2-historical-data"/>
+				</li>
+				<li xml:id="climate-change-image-co2-annual-emissions">
+					A stacked 100% line chart, with years from 1750 to present on the x-axis, and percentage of annual global CO2 emissions from 1750 to that year on the y-axis. Different colors denote the different regions of the world. The data shown in the chart is available at <xref ref="climate-change-biblio-co2-annual-data"/>
+				</li>
+			</ol>
+		</subsection>
+	</section>
+</chapter>

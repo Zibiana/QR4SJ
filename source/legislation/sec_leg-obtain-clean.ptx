@@ -1,0 +1,72 @@
+<section xml:id="sec-leg-obtain-clean">
+		<title>Obtaining and Cleaning the Data</title>
+		<introduction>
+			<p>
+				Here, we will find reputable sources for data on anti-trans bills and get the data into a form we can analyze.
+			</p>
+		</introduction>
+
+
+		<subsection xml:id="importing-and-merging-the-data">
+			<title>Importing and Merging the Data</title>
+			<exercises xml:id="exercises-import">
+			<exercisegroup>
+			<title>Finding Data Online</title>
+			<introduction>
+				Our first goal is to find data. Note that any data found online may change web addresses, stop updating, go offline, or become unreliable over time. Your instructor will be able to tell you which sources of data to use if the ones below are no longer reliable.
+			</introduction>
+			    <exercise>
+				<p>
+					Go to the website <url href="https://tracktranslegislation.com">tracktranslegislation.com</url>, which in turn obtains its data from <url href="https://legiscan.com">LegiScan</url>, and browse around. What are two things that you notice about the site? Two things that surprise you? Two things that aren't on the site that you wonder about?
+				</p>
+				</exercise>
+				<exercise>
+				<p>
+					This data is up-to-date from 2021 through April 21, 2023. In order to track bills prior to 2021, we use data from the ACLU&apos;s <url href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018"><q>Past Legislation Affecting LGBT Rights Across the Country</q> pages for 2018, 2019, and 2020</url>.
+				</p>
+                <p>
+                    Go to the <url href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020">ACLU "Past Legislation Affecting LGBT Rights Across the Country 2020"</url> webpage and skim that page. What similarities do you notice with the data found on the Track Trans Legislation website? What differences do you notice? Click on the "View 2019" and "View 2018 Session bills" links and do the same for those years.
+				</p>
+				</exercise>
+				<exercise>
+                <p>
+                    We'd like to get a sense of how anti-trans legislation in the U.S. changed over time, so we're going to try to <em>merge</em> the Track Trans Legislation (TTL) data with the ACLU data. Since the ACLU data has different bill "Status" categories than TTL, we'll need to figure out how to classify each ACLU bill into one of the TTL categories. 
+                </p>
+                <p>    
+                    Use the <url href="https://www.tracktranslegislation.com/terminology">Terminology</url> page on the TTL website to answer the following question. Which of the TTL categories would you classify "Referred to committee" into? "Hearing scheduled"? "Withdrawn"? You may want to click on the bill numbers on the ACLU site to see how the website LegiScan, a constantly-updated bill tracker, classifies each bill.
+                </p>
+				</exercise>
+			</exercisegroup>
+			</exercises>
+ 
+			<p>
+                Note that the 2020 ACLU page was last updated on March 20, 2020, since many state legislatures were suspended or closed during the first year of the COVID-19 pandemic; the ACLU page promised to <q>update the tracker as major new developments occur[red] .</q> This data has distinct variable names and organization, so we also modify the ACLU data to match the Track Trans Legislation data as closely as possible.
+            </p>
+			<p>
+				For example, bills that were withdrawn, not passed by the end of a given legislative session, explicitly listed as <q>Dead</q>, or were recommended against by a committee and did not proceed in the legislature were relabeled <q>Dead</q> (at least for that year). The exception was when the bill description is specifically listed as <q>hearing scheduled</q>, <q>referred to committee</q>, carried over from another year, or otherwise makes clear that the bill is still under consideration, in which case <q>Introduced</q> or <q>Crossed Over</q> (depending on whether the bill had been passed by at least one chamber) were used.
+			</p>
+
+			<p>
+				We only include bills in categories tracked by both data sources; this leaves out, for example, bills preventing localities from passing anti-discrimination ordinances within a state. We use a broad reading of the <q>religious freedom</q> category to include bills that allow for people with <q>sincerely-held religious beliefs</q> in that state to challenge nondiscrimination laws, discriminate against LGBTQ+ people, refuse to provide healthcare to LGBTQ+ people, refuse to provide adoption services to LGBTQ+ people; discriminate against married LGBTQ+ people, and receive funding for discriminatory student groups at public universities, among others.
+			</p>
+		</subsection>
+
+		<subsection xml:id="cleaning-the-data">
+			<title>Cleaning the Data</title>
+
+			<p>
+				First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., <q>AZ</q> instead of <q>Arizona</q>), while Track Trans Legislation uses full names. So we use a program (that you won't have to worry about!) to convert full names to abbreviations in the whole dataset. 
+				
+                We also note that, for example, the 2021 dataset includes some bills passed in January 2022, so we eliminate duplicate bills.
+			</p>
+
+			<p>
+				This decreases the number of bills in our dataset from 927 to 893. Next, note that the bills whose status is labeled <c>Introduced*</c> by TTL are those that failed to meet their state&apos;s <q>crossover deadline</q>, the date by which a bill must pass out of the chamber in which it was introduced and to the other chamber (e.g. State House vs. Senate). According to the site <url href="https://www.tracktranslegislation.com/">Track Trans Legislation</url>, a bill that is not passed in its initial chamber by the crossover deadline <q>faces high procedural hurdles in order to move forward.</q> Thus, we wish to classify these bills (at least for the current session) as <q>Dead/Failed</q>.
+			</p>
+
+			<p>
+				Moreover, one bill&apos;s status is listed as <q>Posted</q>, Kentucky&apos;s HB132 in 2020. <url href="https://legiscan.com/KY/bill/HB132/2020">LegiScan research</url> reveals that this bill died in committee, so we update its status to <c>Dead/Failed</c>.
+			</p>
+
+		</subsection>
+	</section>

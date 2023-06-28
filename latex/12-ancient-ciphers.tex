@@ -1,0 +1,217 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{babel}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[unicode=true]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{question}[thm]{\protect\questionname}
+\theoremstyle{definition}
+\newtheorem*{xca*}{\protect\exercisename}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{definition}
+\newtheorem{example}[thm]{\protect\examplename}
+
+\makeatother
+
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\questionname}{Question}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 Day 2 - Ancient Ciphers}
+\author{Kenan Ince}
+\maketitle
+
+\section{Preliminaries}
+\begin{enumerate}
+\item Check reading notes for \emph{The Code Book }p1-14
+\begin{enumerate}
+\item Steganography (Xerxes hiding a message underneath wax on a piece of
+wood; scytales) vs. cryptography (making it less likely that brute
+force will work to decrypt a message)
+\begin{enumerate}
+\item Note that we used a keyword cipher with key OLIVER to encrypt the
+poem from last class (still a monoalphabetic substition cipher)
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Decoding cryptography jargon}
+\begin{itemize}
+\item \textbf{Cryptography }(from Greek \emph{kryptos-}, meaning ``hidden'')
+is secret communication by hiding the meaning of a message, not its
+existence. The process of hiding the meaning of a message is called
+\textbf{encryption.} The recipient of the message has to \textbf{decrypt
+}or \textbf{decipher} the message in order to read it. Often the method
+of encryption relies on a \textbf{key}, some special number(s) or
+word(s) that only the sender and recipient know.
+\item Before computers, encryption methods were relatively simple, not explicitly
+mathematical, and often not very secure. Encryption methods commonly
+used today tend to use very sophisticated mathematics. Today, we all
+use cryptographic methods when we use our cell phones or make online
+purchases.
+\item \textbf{Cryptanalysis} is the study of cryptographic algorithms with
+the intent of recovering secret messages without knowing the secret
+key. Example: enemy governments, spies.
+\item A \textbf{cipher} is a set of steps (or \textbf{algorithm}) for encrypting
+a message, or \textbf{plaintext}, into apparently unintelligible \textbf{ciphertext.}
+\end{itemize}
+
+\section*{Types of ciphers}
+\begin{itemize}
+\item There are two basic tools that can be used in encryption algorithms:
+\textbf{transposition} (rearrange the characters) and \textbf{substitution}
+(replacing characters with other characters).
+\end{itemize}
+\begin{question}
+Do you know any transposition or substitution ciphers?
+\end{question}
+
+\begin{itemize}
+\item Now, time for a group exercise:
+\end{itemize}
+\begin{xca*}
+{[}have students use Coursepacks, additional paper{]}
+
+\includegraphics{\string"Old Cryptography Notes/pasted1\string".png}
+\end{xca*}
+\begin{itemize}
+\item Another form of transposition is used in the first ever military cryptographic
+device, the Spartan \emph{scytale} ($\sigma\kappa\nu\tau\alpha\lambda\eta$):
+{[}hand out several different diameter tubes, one to each group; use
+pencils{]}
+\item Now, take a piece of paper, wrap it around your tube, and write an
+{*}plaintext{*} message on it. Then unwrap it. See how it's encrypted?
+Pass it to the group to your right and see if they can decipher it
+\emph{without showing them the tube you wrapped it around.}
+\end{itemize}
+
+\section*{The Caesar cipher}
+
+\includegraphics{\string"Old Cryptography Notes/pasted2\string".png}
+
+The Caesar cipher is an example of a \textbf{monoalphabetic substitution
+cipher}, in which every character is replaced by some other character. 
+
+\includegraphics{\string"Old Cryptography Notes/pasted3\string".png}
+\begin{xca}
+{[}slide{]} Substitution Ciphers PDF (Coursepack p94-98) \href{https://drive.google.com/file/d/1LcZXss5WHM9_ZguPoo-tY7SGt41IEGRB/view}{Lesson plan}
+
+How did you decrypt substitution ciphers in the worksheet?
+\end{xca}
+
+
+\section{Decrypting simple shift ciphers with known key}
+\begin{itemize}
+\item Here's a quicker way to decrypt shift ciphers.
+\item Let's say we're trying to decrypt ``bpiwtbpixrpxhiwtqthiegdvgpb''
+(``Mathematica is the best program'') with $k=15$. That means that
+we're going to shift every letter \textbf{back} by 15 letters.
+\item Try shifting ``b'' back by 15 letters. 
+\item Now we have to do it for the rest of the code. It's going to take
+a while, right? Any ideas on how to speed this up?
+\item Well, there are 26 letters in the alphabet. Shifting ``b'' back
+by 15 gives us: 
+\[
+a,z,y,x,w,v,u,t,s,r,q,p,o,n,m
+\]
+\item Notice this is the same result as you get when shifting ``b'' \textbf{forward}
+by 11. The alphabet is cyclical, so shifting back by 15 is the same
+as shifting forward by 11.
+\item Now let's shift ``p'' forward by 11. 
+\item This is where it's beneficial to have a \textbf{letter-number correspondence
+sheet}; number the letters in increasing order starting with $a=0$.
+
+\includegraphics{\string"Old Cryptography Notes/pasted42\string".png}
+\item Well, ``p'' is the 15th letter in the alphabet. Adding 11 to 15
+gives 26. There's no 26th letter of the above alphabet, right? But
+the 25th letter is ``z'', so the ``26th letter'' should be a shift
+of one letter from ``z''. That gives ``a''! \emph{What we're really
+saying here is that, in the sense of the alphabet, $26=0$. We'll
+learn more about this later.}
+\item Keep going\textendash it's straightforward for p and i. For w, we
+get 33, which is $26+7$. So it's a shift of 7 from ``z'', which
+is the same as the 7th letter of the alphabet, which is \textbf{h}. 
+\end{itemize}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+Ciphertext & b & p & i & w & t & b & p & i & x & r & p & x & h & i & w & t & q & t & h & i & e & g & d & v & g & p & b\tabularnewline
+\hline 
+\hline 
+Ciphertext number & 1 & 15 & 8 & 22 & 19 & 1 & 15 & 8 & 23 & 17 & 15 & 23 & 7 & 8 & 22 & 19 & 16 & 19 & 7 & 8 & 4 & 6 & 3 & 21 & 6 & 15 & 1\tabularnewline
+\hline 
+Plaintext number & 12 & 1 & 19 & 33 & 4 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+Plaintext & \textbf{m} & \textbf{a} & \textbf{t} & \textbf{h} & \textbf{e} & ...you finish this. &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
+\hline 
+\end{tabular}
+\begin{example}
+Note: somehow $33=7$ in the alphabet! This is like thinking of the
+alphabet as a clock {[}draw{]} with $26$ numbers on it, going from
+$0$ on the top to $25$. Where is 33:00 on this clock? It's aka 7:00!
+\end{example}
+
+\begin{xca}
+\textbf{(Reading question) }We say two numbers $a$ and $b$ are \textbf{congruent
+modulo $n$}, written $a\equiv b\mod n$,\textbf{ }if one of the following
+equivalent statements is true:
+\begin{itemize}
+\item $n$ evenly divides $b-a$ (with no remainder), written $n\mid(b-a)$.
+\item $a$:00 and $b$:00 would be the same time on a clock with $n$ numbers
+(where $n=0$).
+\item $a$ and $b$ have the same remainder upon division by $n$.
+\item subtracting some multiple of $n$ from $a$ yields $b$ or vice versa.
+\end{itemize}
+\textbf{Reducing a number $a\mod n$ }means the process of finding
+the remainder when you divide $a$ by $n$.
+\begin{enumerate}
+\item (1.5) Reduce the following numbers modulo 16: 
+\begin{enumerate}
+\item $27$ has remainder $11$ when divided by $16$, so $27\equiv11\mod16$.
+\item $544$: divide $544$ by $16$ to get $34$, remainder $0$. So $544\equiv0\mod16$.
+\item $32\equiv0\mod16$ because $\frac{32}{16}=2$, remainder $0$.
+\end{enumerate}
+\end{enumerate}
+\end{xca}
+
+
+\section*{Python time: work on Codecademy lessons}
+\begin{itemize}
+\item Demonstrate how to log in and start the lessons
+\end{itemize}
+
+\section*{Reflection}
+\begin{enumerate}
+\item What were the two most important concepts from today's class?
+\item What were two things you didn't fully understand?
+\item What were your two favorite things we did in class today?
+\end{enumerate}
+
+\section*{Additional exercises}
+
+0.1, 6, 7, 8
+
+\includegraphics{\string"Old Cryptography Notes/pasted98\string".png}
+
+\includegraphics{\string"Old Cryptography Notes/pasted123\string".png}
+\end{document}

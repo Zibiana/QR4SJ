@@ -1,0 +1,869 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amstext}
+\usepackage{amsthm}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{remark}
+\newtheorem{note}[thm]{\protect\notename}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{\protect\definitionname}
+\theoremstyle{definition}
+\newtheorem{example}[thm]{\protect\examplename}
+\theoremstyle{plain}
+\newtheorem{cor}[thm]{\protect\corollaryname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\theoremstyle{plain}
+\newtheorem{lyxalgorithm}[thm]{\protect\algorithmname}
+\newtheorem{act}[thm]{\protect\activityname}
+\theoremstyle{definition}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\algorithmname}{Algorithm}
+\providecommand{\corollaryname}{Corollary}
+\providecommand{\definitionname}{Definition}
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\notename}{Note}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\providecommand{\activityname}{Activity}
+
+\usepackage{makeidx}
+\usepackage{times}      % Times  fonts
+\usepackage{amsmath}
+\usepackage{amssymb}    % extra math symbols
+\usepackage{graphicx}   % for placing figures
+\usepackage{url}
+\usepackage[colorlinks]{hyperref}
+\usepackage{color}
+\usepackage{enumitem}   % for enumerating items
+\usepackage{booktabs}   % for tables
+\usepackage{tikz}       %for drawing diagrams
+\usepackage{pgfplots}   %for drawing diagrams
+\pgfplotsset{compat=1.18}
+
+\topmargin=-.55in
+\oddsidemargin=0in
+\evensidemargin=0in
+\textwidth=6.5in
+\textheight=9.1in
+
+\frenchspacing
+\flushbottom
+\pagestyle{myheadings}
+% Make sure you personalize the article title below!
+\markboth{Cross-Curricular Applications for Pure Mathematics Courses}{Modular Arithmetic through Secret Codes}
+\date{June 1, 2022}
+
+\begin{document}
+\title{Modular Arithmetic through Secret Codes}
+
+%% Include all authors under \author{}
+\author{Kenan \.{I}nce}
+\maketitle
+
+%% Include affiliation in the same order as you entered the authors above
+%% \affiliation{Westminster College (Salt Lake City)}
+
+
+{\small \textit{\textit{Math Courses:}} Introduction to Proofs, Abstract Algebra, Number Theory, Introduction to Cryptography}
+
+{\small \textit{\textit{Interdisciplinary Connections: }} cryptography, history, computer science/programming, language}
+
+\maketitle
+
+\section{Introduction}
+
+This article addresses a topic that has been my most effective motivation for moving students toward abstract mathematical thinking: cryptographic applications of modular arithmetic,
+multiplicative inverses, systems of congruences, and the Euclidean
+algorithm. Section \ref{KI-sec:Extensions-and-Alterations} provides
+the option to extend this material through the Diffie-Hellman key
+exchange, modular exponentiation, Euler's Theorem on the totient function,
+and RSA encryption. Students will be guided through the way modular
+arithmetic and basic group theory emerges naturally when considering
+monoalphabetic substitution ciphers such as the shift and affine ciphers.
+These interactive lessons span up to two weeks of class time, though
+they can be implemented partially in only one or two class sessions
+and would be appropriate for a course of any size, particularly one
+that emphasizes active learning.
+
+After investigating simple shift ciphers, students will model such
+ciphers as functions of the form $c\equiv p+k\mod n$ for some shift
+$k$, where $p$ denotes the plaintext or English-language input,
+$c$ denotes the encrypted ciphertext, and $n$ is the number of characters
+in the plaintext alphabet. Students will then extend these affine
+functions to allow any slope $m$-{}-the affine cipher. After determining
+the importance of the multiplicative key $m$ being relatively prime
+to $n$, the Euclidean algorithm is introduced as a method for computing
+the greatest common divisor. We then shift our focus to the use of modular exponentiation
+as cipher and key exchange process in Diffie-Hellman and RSA encryption.
+This plan can be extended even to a full course in cryptography without
+prerequisites or to research projects investigating newer cryptosystems
+such as those arising from knot theory, and it can be implemented
+as an independent project given sufficient scaffolding. 
+
+\section{Prerequisites and Project Preparation}
+
+These activities require no prerequisites other than high school-level
+algebra skills; the most complicated of which is the solution of systems
+of two equations in two unknowns, though a more proof-centric approach
+would benefit from prior student experience with proof techniques.
+Student proficiency in making factor trees and division with remainder
+will also be helpful, though these concepts can be reviewed on a just-in-time
+basis. Students will develop an understanding of the shift cipher,
+affine cipher, and RSA cryptosystem that is not standard in abstract
+or modern algebra courses; the only technology required is a calculator
+capable of reducing expressions modulo n and modular exponentiation,
+both of which are standard in the Google search box. Students may
+benefit from programs capable of encrypting and decrypting using shift
+and affine ciphers such as the open-source tools on the website Cryptii
+\cite{friederesCryptii2022}, though the author has successfully asked students
+to write their own programs in Python to perform these tasks. 
+
+I use ''Python modules,'' or worksheets where students copy-paste
+existing Python code and change a line or two, to help students learn
+how to use Python for cryptography. Drafts of these modules can be
+found at \cite{inceResourcesFirstYearCollege2022}. 
+
+I will often elide details of the lesson when introducing more standard
+abstract algebra topics such as modular arithmetic, systems of congruences,
+modular inverses, etc. These notes may be implemented with the reader's
+favorite presentation of these concepts; a couple that are freely
+available online include \cite{mcdevittClassNotesCryptologic2012,crismanNumberTheoryContext2021}.
+
+\section{The Project}
+\subsection{Preliminary Activity}
+There are many exercises below in which students are asked to analyze
+plaintext or ciphertext where said text is not specified. These texts may be provided the instructor based on the
+cryptographic methods described below. This flexibility is emphasized
+in order to allow customization of the specific texts students will
+play with, including customizing ciphertexts to a college or university's
+context.
+
+It is useful to establish some cryptographic terminology which we
+will use for the remainder of this text. To that end, consider the
+definitions below:
+
+\textit{Cryptography }(from Greek \emph{kryptos-}, meaning ``hidden'')
+is secret communication by hiding the meaning of a message, not its
+existence. The process of hiding the meaning of a message is called
+\textit{encryption.} The recipient of the message has to \textit{decrypt
+}or \textit{decipher} the message in order to read it. 
+
+Often the method of encryption relies on a \textit{key}, some special
+number(s) or word(s) that only the sender and recipient know.\textit{
+Cryptanalysis} is the study of cryptographic algorithms with the intent
+of recovering secret messages \emph{without} knowing the secret key. 
+
+There are two basic tools that can be used in encryption algorithms:
+\textit{transposition} (rearranging the characters) and \textit{substitution}
+(replacing characters with other characters). The emphasis of these
+notes will be on substitution ciphers.
+
+A \textit{(substitution)} \textit{cipher} is an algorithm for encrypting
+a message into apparently unintelligible\textit{ }text\textit{. }Each
+cipher may be viewed as a function 
+\[
+f:\mathcal{P}\to\mathcal{C}
+\]
+where $\mathcal{P}$ is the space of \textit{plaintext}, or readable
+text in a given alphabet (here the English alphabet consisting of
+the $26$ lowercase English letters will be used unless specified
+otherwise) and $\mathcal{C}$ is the space of \textit{ciphertext}
+or encrypted text (here the uppercase $26$-letter English alphabet
+unless otherwise specified). We also identify each letter in $\mathcal{P}$ and $\mathcal{C}$,
+in order, with an element of $\mathbb{Z}/26\mathbb{Z}$ (so
+that $a\leftrightarrow0,b\leftrightarrow1$, etc.). It will be clear
+from context which representation of $\mathcal{P}$ and $\mathcal{C}$
+we are using. If $f$ is injective (and hence, since here $\mathcal{P}$
+and $\mathcal{C}$ are finite, bijective), we say it is a \textit{monoalphabetic
+(substitution) cipher}.
+
+The use of uppercase in the ciphertext and lowercase in the plaintext
+is a cryptographic convention designed to distinguish the two types
+of text, especially in partially-deciphered messages; we will often
+ignore the distinction and say, for example, ``$f(p)=p+3$ is the
+shift cipher with shift $+3$'' where lowercase $p\in\mathcal{P},c\in\mathcal{C}$ denote individual letters. We will commonly refer to a particular
+$p\in\mathcal{P}$ which we will call simply \textit{the plaintext}
+and its image $c:=f(p)\in\mathcal{C}$ (\textit{the ciphertext}). Notably,
+for courses without mathematical prerequisites such as that taught
+by the other using the flow of concepts below, the spaces and notation
+$\mathcal{P}$ and $\mathcal{C}$ are hidden, and ciphers are analyzed
+by analyzing particular $p$ and $f(p)$, as well as determining $f^{-1}(c)$
+given particular $c\in\mathcal{C}$. 
+
+\begin{act}
+One may begin by simply giving students various encrypted messages
+to decode along with a handful of hints. Ask students to work in groups,
+with one member of each group of 3-4 students serving as the facilitator,
+the recorder, and the reporter (sharing their work with the class),
+respectively. For instructors following the order of topics below,
+it is important that at least one message be a \textit{shift cipher},
+a cipher of form $f(p)=p+k\mod26$ for some $k\in\mathbb{Z}/26\mathbb{Z}$. In order for students to be able to systematically decrypt a shift cipher, the message should either be fairly long (students can split the message into pieces when decrypting it) or otherwise rigged so that plaintext `e' is one of the top three most common letters in the plaintext.
+
+It is recommended to give students two other messages as well. At this stage students
+are often not prepared for ciphers $f$ which are not bijective, so
+one may use, for example, a \textit{keyword cipher}
+\[
+f=\begin{pmatrix}a & b & c & d & e & f & g & h & \dots & z \\
+				 K & E & Y & W & O & R & D & A & \dots & Z 
+\end{pmatrix}
+\]
+where the \textit{keyword} is a chosen English word and the plaintext, again, is long enough or otherwise rigged so that the plaintext letters occur with similar relative frequencies to those of English as a whole. Note the following
+features of the keyword cipher: first the keyword is spelled out under the
+first $n$ letters of the plaintext alphabet, where $n$ is the number
+of distinct letters in the keyword. Then the alphabet is spelled out
+in order, except that when a letter has already been written as part
+of the keyword, it is skipped and we move onto the next letter of
+the alphabet.
+
+The above keyword cipher illustrates a \textit{cipher alphabet} in
+function form: a representation of the ordered pair $(\mathcal{P},f(\mathcal{P}))$
+for a given cipher $f$.
+Of course, any other representation of $(\mathcal{P},f(\mathcal{P}))$,
+such as a table of values, will do (and tables of values are commonly
+used to represent cipher alphabets). Students often decrypt such a message
+without identifying the keyword, but it is fruitful to point out that
+identifying a pattern will assist in the decryption process at this
+stage. 
+
+Finally, it is recommended to assign one unsolved cipher such as that used in
+Part $4$ of the Kryptos sculpture \cite{bauerJamesSanbornKryptos2016}.
+Pass on (unattributed) to the students the hints that artist Jim Sanborn
+gave: the ciphertext letters NYPVTT decrypt to BERLIN, and the word
+immediately following BERLIN is CLOCK. Then, give students time in
+groups to attempt to solve all three ciphers. Usually many students
+solve the shift cipher, a good handful (with my assistance) solve
+the keyword cipher, and generally these students move onto Kryptos,
+notice it's not monoalphabetic since (by the hints) $i,n\mapsto T$,
+get frustrated, wonder about spacing, and come to a loss. At this
+stage one may tell them something like, ``this is an unsolved cipher known
+as Kryptos Part $4$; solve it and you'll be famous!''
+
+Follow up by letting them know that we are not trying to be cruel,
+then ask them why we would give them an unsolved code. Based on our
+conversation, one may follow up with statements like, ``What do you
+think mathematicians spend most of their time doing? How do you define
+``success'' when working on an unsolved problem?'' We emphasize that
+making sense of a problem, increasing their depth of understanding
+(what methods DON'T work?), describing their process of engagement,
+and even failing are all completely normal aspects of doing mathematics.
+Even problems that are solved often took years or even
+millennia to solve; therefore, there is no shame or cause for alarm
+if they don't understand something immediately. This helps
+ground students as we move onto more and more abstract and difficult
+mathematics.
+
+\end{act}
+
+Now, ask students what strategies they used to decrypt the messages
+above. For the first message, students may use \textit{brute force,
+}simply trying various shifts until one works. However, a more interesting
+strategy involves counting which ciphertext letter is the most frequent
+and guessing that letter corresponds to plaintext `e'. 
+
+\subsection{The Caesar/shift cipher}
+
+The \textit{Caesar cipher} is an example of a \textit{monoalphabetic
+substitution cipher}, in which every character is replaced by some
+other character. It is the earliest known example of a substitution
+cipher and, according to the Roman historian Suetonius, was used by
+Julius Caesar himself. It is currently understood as encrypting messages
+by shifting every letter forward in the alphabet by $3$; that is,
+as the function $f(p)=p+3\mod26$. More generally, a \textit{shift cipher} may shift every letter forward by any amount.
+
+It is easy to generate example shift ciphertext and have students
+decrypt this ciphertext. Prompt them to continually investigate the
+methods they use to cryptanalyze shift ciphers: does it involve brute
+force? Counting the number of occurrences of each letter and comparing
+to English letter frequencies, then guessing the most common ciphertext
+letter corresponds to $e$? Spotting patterns between adjacent letters?
+There is no ``wrong'' way, but it is the goal of cryptographers to
+find a general method for decrypting a given family of cipher no matter
+the particular message or peculiarities of the cipher; therefore,
+we want to move students' thinking toward counting letter frequencies
+as a method of cryptanalyzing any monoalphabetic substitution cipher.
+
+Inform students that there is a faster way to decrypt shift ciphers
+than saying the alphabet backwards in their heads. Ask them to try
+decrypting a message that was encrypted with a very large forward
+shift such as $+25$. How would they do it? Likely by shifting each
+letter \textit{forwards} by $1$ to obtain the plaintext message.
+This means that in the English alphabet, $0=25+1=26$, and now you
+can introduce modular arithmetic (working with modulus $26$ for the
+foreseeable future). It's beneficial to provide students with a \textit{letter-to-number
+correspondence sheet}, which numbers English letters in increasing
+order starting with $a=0$.
+
+\begin{act}
+Have students decrypt a message (long enough or rigged so that its letter frequencies are close to those in English in general) 	that was encrypted using each of the following:
+	\begin{enumerate}
+	\item A Caesar cipher $c\equiv p+3\mod26$.
+	\item A shift cipher with a shift other than $3$ (without telling students the shift).
+	\item A shift cipher with a shift greater than $26$ (without telling students the shift).
+	\item How many different shift ciphers are there in the English alphabet? In other words, how hard is it to cryptanalyze the shift cipher by brute force?
+	\end{enumerate}
+
+\end{act}
+
+
+The usefulness of the clock metaphor for introducing
+modular arithmetic cannot be overstated: we are thinking of the alphabet as a clock with
+$26$ numbers on it, going from $0$ on the top to $25$. Can students
+determine various times on this clock? Up until this point, students
+were not likely to fully understand our definition of a cipher as
+a function modulo $26$, but now they can. The following activity is one I've used to help students learn basic modular arithmetic without any prerequisites:
+
+\begin{act}
+\begin{enumerate}
+	\item Reduce several numbers modulo $26$, including numbers much larger than $26$, using various notions of ``congruence modulo $26$'' (e.g. $a\equiv b\mod26$ if $a$:00 and $b$:00 are the same time on a $26$-hour clock, $a$ and $b$ have the same remainder upon division by $26$, $26\mid (a-b)$, subtracting a multiple of $26$ from $b$ yields $a$).
+
+	\item Create addition and multiplication tables modulo 5 and modulo 14. What patterns do students notice? What do they wonder about these tables?		
+\end{enumerate}
+\end{act}
+
+
+\subsection{Frequency analysis}
+
+To determine the amount of the shift for an unknown shift cipher,
+the 9th century Iraqi Arab polymath Abu Y\={u}suf Ya\textquoteleft q\={u}b
+ibn 'Is\d{h}\={a}q a\d{s}-\d{S}abb\={a}\d{h} al-Kind\={\i}, in order
+to better understand what he saw as God's messages in the Qu'ran,
+developed a technique that later became known as \textit{frequency
+analysis}. The following passage from his \emph{Manuscript on Deciphering
+Crptographic Messages }describes this technique:
+\begin{quotation}
+One way to solve an encrypted message, if we know its language, is
+to find a different plaintext of the same language long enough to
+fill one sheet or so, and then we count the occurrences of each letter.
+We call the most frequently occurring letter the \textquoteleft first\textquoteright ,
+the next most occurring letter the \textquoteleft second\textquoteright ,
+the following most occurring the \textquoteleft third\textquoteright ,
+and so on, until we account for all the different letters in the plaintext
+sample.
+
+Then we look at the cipher text we want to solve, and we also classify
+its symbols. We find the most occurring symbol and change it to the
+form of the \textquoteleft first\textquoteright{} letter of the plaintext
+sample, the next most common symbol is changed to the form of the
+\textquoteleft second\textquoteright{} letter, and so on, until we
+account for all symbols of the cryptogram we want to solve.
+\end{quotation}
+
+In this portion of the project, have students develop their own ``frequency
+analysis muscle'' and hone it into a mental algorithm for cryptanalyzing
+shift ciphers. 
+
+\begin{act}
+	The mnemonic ``ETAOIN SHRDLU'' is useful for remembering the relative frequencies of the twelve most common English letters in decreasing order of frequency, although the mnemonic does not reflect all written English and changes with the living language. 
+	\begin{enumerate}
+		\item (Optional for coding-focused courses) Use the step-by-step module at \cite{inceResourcesFirstYearCollege2022} entitled ``Frequency Analysis'' to write a Python frequency analysis tool. Then input several English texts of at least, say, twenty pages, and verify that most of the most frequent twelve letters	are in the list ETAOIN SHRDLU.
+		\item Take three or four English texts of at least a couple of pages in length (books in the public domain, found online, are a good source of plaintext here). Encrypt these using shifts chosen however you like, then have students use their Python program, or one of the many available frequency analysis applets online, to determine the shifts used to encrypt each message. For additional practice, have them decrypt the first sentence and verify their guessed shift is correct. \textit{Note}: some texts, especially shorter ones, will require students to guess multiple shifts and test each to see which gives legible plaintext, which verifies that their guess was correct.
+	\end{enumerate}
+	
+\end{act}
+
+\subsection{Affine ciphers}
+
+At this stage, you may introduce \textit{affine
+ciphers}, a natural generalization of shift ciphers. We've described
+the shift cipher as a function $f(p)\equiv p+k\mod26$. Note that
+this is simply a linear function with slope $1$ and $y$-intercept
+$k$. But there is no requirement that ciphers stick to a slope of
+$1$; the \textit{affine cipher} first \emph{multiplies }the plaintext
+letter by a certain amount $m$, then adds a constant amount $k$.
+Its equation is 
+\begin{equation}
+c:=f(p)\equiv mp+k\mod26.\label{KI-eq:affine-cipher}
+\end{equation}
+Here $m$ is called the \textit{multiplicative key} and $k$ the \textit{additive
+key}. (We do not call these ``linear ciphers'' to avoid confusion
+with the notion of ``linear'' students may see in
+the future when studying linear transformations and homomorphisms.)
+
+\begin{act}
+\begin{enumerate}
+\item Have students create two or three plaintext 	messages and pair each message with any value of $k$ and a value of $m$ such that $\gcd(m,26)=1$. Then encrypt each message using the affine cipher with that multiplicative and additive key.
+\item Pass your resulting ciphertexts clockwise in your group without sharing the values of $m$ and $k$. What are your thoughts as you attempt to decrypt this ciphertext? (Note that students will likely be unable to decrypt affine ciphertext at this stage, but the resulting considerations may lead them down a fruitful path. We will discuss an algorithm for decrypting affine ciphers in the following section.)
+\end{enumerate}
+\end{act}
+
+
+\subsection{Onramp to number theory}
+
+At this stage, students are ready to learn the material in a standard
+integer division and modular arithmetic unit, in the order you wish
+to present it for your context. For example, the material of Chapters
+$2$ through $8$ of \cite{crismanNumberTheoryContext2021}, from
+integer division and Diophantine equations to the so-called ``Chinese''
+(in particular, Sun-tzu) remainder theorem and the theory of cyclic
+groups, are all motivated by the theory of affine ciphers and can
+be covered at this stage. We highly recommend calling back to cryptography
+whenever possible; the following section is an overview of one possible
+order in which various number-theoretic results can be motivated by
+the theory of affine ciphers.
+
+Following the presentation of shift ciphers above, students may then
+practice encrypting and decrypting affine ciphers with known multiplicative
+and additive keys. Prompt them to consider how they would cryptanalyze
+an affine cipher. After using frequency analysis, they may determine
+which ciphertext letter corresponds to $e$, but this is not enough
+since we need to solve for two unknowns, $m$ and $k$. So students
+may realize we need to find two letter pairs of the form $(p,c)$ where $c=f(p)$
+and set up a \textit{system of congruences
+\begin{align}
+c_{1} & \equiv m\cdot p_{1}+k\nonumber \\
+c_{2} & \equiv m\cdot p_{2}+k\mod26.\label{KI-eq:affine-cipher-system}
+\end{align}
+}
+
+Students may remember how they solved systems of equations in high
+school. It is recommended to encourage them to use elimination, not substitution,
+in preparation for future linear algebra classes down the road. 
+
+A fruitful area of inquiry at this point is to prompt students how,
+once they obtain a single congruence of the form 
+\[
+c_{2}-c_{1}\equiv m(p_{2}-p_{1})\mod26,
+\]
+they might solve for $m$. Usually students think they can simply
+``divide by $p_{2}-p_{1}$,'' so it takes some prompting (``what if
+$p_{2}-p_{1}=13$?'') for them to realize this is not always possible
+modulo $n$. This is a natural spot to introduce the idea of inverses
+modulo $26$, and more generally modulo $n$. We'll start with some
+more basic facts and build up to solving systems of congruences. 
+
+The \textit{multiplicative inverse $a^{-1}$ of $a\mod n$ }is the
+number $a^{-1}$ so that $aa^{-1}\equiv1\mod n$, if such an $a^{-1}$
+exists. Recall that a number is \textit{prime} if the only integers
+that divide it are $1$ and itself. \textit{Composite numbers} are
+integers greater than one that are not prime. Every positive whole
+number has a unique \textit{prime factorization}, i.e. a way to write
+it as a product of prime numbers. This fact is called the \textit{Fundamental
+Theorem of Arithmetic.}
+
+\begin{act}
+Have students attempt to encrypt given messages with the affine cipher
+using various multiplicative and additive keys. To illustrate the
+relevant idea that $c\equiv mp+k\mod n$ is monoalphabetic if and
+only if $\gcd(m,n)=1$, have students use at least one $m$ relatively
+prime to $26$ and one $m$ that is not (for example $m=13$, which
+makes very clear to students that the resulting affine cipher is not
+monoalphabetic and near-impossible to decrypt even by someone who
+knows the key).
+
+Ask students: from the work you just did, what multiplicative keys
+do you think ``work'' for affine ciphers? What is the
+``problem'' with the keys that don't work? Even if they
+don't have a complete sense of the issue, have them explain their hypothesis.
+Prompt students to make multiplication tables modulo $n$ for some
+reasonably small composite $n$; ask them to compare what happens
+in rows which are relatively prime to $n$ versus rows that aren't.
+How might this connect to the issue with the affine cipher $c\equiv13p+k\mod26$?
+What patterns do they notice or wonder about?
+\end{act}
+
+Hopefully students will realize that there are significant problems
+with an affine cipher where $m\mid26$! 
+
+\begin{act}
+	
+\begin{enumerate}
+\item At this point, it is useful for students to make themselves a ``cheat sheet'' which tells them
+the multiplicative inverse of any number mod 26, if it exists. (My
+expectation is not that they memorize such a list, though more power
+to them if they'd like to!) At this point, the most likely strategy
+students will use to find $m^{-1}\mod26$ is trial and error: multiplying
+each $m$ by various integers mod $26$ until they end up with $1\mod26$.
+The number they multiplied by to get $1$ is their $m^{-1}$, if such
+a number exists. Ask: what relationship between $m$ and the modulus
+$26$ predicts whether $m^{-1}$ exists?
+
+\item In an introduction to proof or number theory class, this would be
+an excellent time to prompt students to prove that $m^{-1}$ exists
+modulo $n$ if and only if $\gcd(m,n)=1$. Prompt them to think about
+their multiplication tables and the fact that every integer modulo
+$n$ appears in the $m$th row precisely when $m$ and $n$ are relatively
+prime. In fact, students can prove that 
+\begin{prop}
+\label{KI-prop:gcd(m,n)-divides-mk}If $m$ is a whole number between
+$0$ and $n-1$, then $\gcd(m,n)$ divides any number that's congruent
+to $m\mod n$. 
+\end{prop}
+
+One prompt to lead students toward the general proof is the following
+specific example: assume some number $x$ is congruent to $m=4\mod12$.
+Then $x/12=yR4$ (here $R$ denotes ``remainder'' in language that
+should be familiar to students), where $y$ is some whole number.
+So $x$ is some multiple of $12$ plus $4$; we can write $x=12y+4$,
+where $y$ is some whole number. Now, $\gcd(4,12)=4$ and $x=4(3y+1)$
+is divisible by $4$. 
+
+\item At this point, students have the cheat sheet and tools necessary to
+decrypt affine ciphers with known key. Have them try decrypting some
+example ciphertext under various affine ciphers. Naturally, students
+may at first be most comfortable only doing arithmetic modulo $26$,
+but it takes surprisingly little in my experience to prompt them to
+consider other moduli. Students may try decrypting affine
+ciphers in different alphabets at this stage: for example, decrypt
+$c\equiv7p\mod29$ using the lowercase English alphabet with !?, appended.
+We need to multiply both sides by some number $x$ so that $7x\equiv1\mod29$.
+How do we systematically find $x$? This is a great time for an optional
+detour into the extended Euclidean algorithm; students without much
+previous college-level math experience often find this difficult,
+so it may be skipped without losing the thread of this activity.
+
+\item Students in a proof-based course may now attempt to prove the following
+corollary of Proposition \ref{KI-prop:gcd(m,n)-divides-mk}.
+\begin{cor}
+If $\gcd(m,n)\neq1$, then no multiple of $m$ is congruent to $1\mod n$.
+In other words, we can't get every number in row $m$ of the $\mod n$
+multiplication table, and \textit{$m$ }does not have a multiplicative
+inverse\textit{ $\mod n$.} In fact, the following are equivalent
+for any whole numbers $m,n$:
+\begin{enumerate}
+\item $\gcd(m,n)=1$.
+\item any affine cipher with multiplicative key $m\mod n$ is decryptable
+by the intended recipient.
+\item every number between $0$ and $n-1$ is a multiple of $m\mod n$.
+\item $m$ has a multiplicative inverse $m^{-1}\mod n$.
+\end{enumerate}
+\end{cor}
+
+An example that may lead students toward part of the proof: consider
+the affine cipher $c\equiv13p\mod26$. Note that $\gcd(13,26)=13$.
+Any plaintext letter that we plug in will spit out some multiple of
+$13$. Reduced mod $26$, these multiples of $13$ all become either
+$13$ or $0$. And $\gcd(13,26)=13$ divides both $13$ and $0$ evenly.
+Since no multiple of $13$ can be congruent to $1\mod26$, $13$ does
+not have a multiplicative inverse modulo $26$.
+
+\item Now, prompt students to consider how important it is before decrypting
+an affine cipher to verify that $\gcd(m,n)=1$. Given a cipher like
+$c\equiv137p+538\mod341319$, how could students determine whether
+the cipher was monoalphabetic, and hence whether our techniques will
+decrypt it? 
+
+\item Computers can only understand numbers (which are written in $0$s and $1$s), not letters. The computer language ASCII represents all commonly-used written characters as numbers between $1$ and $256$. Do you think we can encrypt ASCII messages using the affine cipher $C\equiv8P\mod256$? Why or why not? What multiplicative keys can be used in a monoalphabetic, affine ASCII cipher?
+\end{enumerate}
+\end{act}
+
+We now may introduce the Euclidean algorithm as a powerful
+(and programmable) tool for finding greatest common divisors. A recommended way of introducing the Euclidean algorithm, as in much
+of these notes, is to start with an example. 
+
+\begin{act}
+\begin{enumerate}
+	\item Suppose we want to find
+the greatest common divisor of, say, $261$ and $231$. Have students
+recall (perhaps by verifying a specific example) that, if a number divides
+both $261$ and $231$, then it divides $261-231=30$ as well. Similarly,
+if a number divides both $231$ and $30$ (as it must if it divides
+$261$ and $231$), then it divides $231-30=201$, and $201-30=171$,
+and$\dots231-30(7)=21$. Therefore, $\gcd(261,231)=\gcd(231,30)=\gcd(30,21)=\dots$. Hence, compute $\gcd(261,231)$ and verify it using a method more familiar to you, such as factor trees. 
+\item Prove that the Euclidean algorithm ``works'' in
+general to compute $\gcd(m,n)$ for any $m,n\in\mathbb{Z}$.
+	\item Use the Euclidean algorithm to compute the gcds of two or three pairs of numbers. It may benefit students to make the first pair of numbers relatively small and one of the pairs relatively large such that the pair of large numbers has a quick Euclidean algorithm solution which is nonobvious using the method of factor trees. For example, one may use any pair of numbers of the form $(n,kn+1)$ for some $n,k\in\mathbb{N}$.
+	\item Unicode is an updated version of ASCII. Unicode gives a way of encoding information on a computer with $1,114,112$ possible numbers. Only about $10\%$ of them are currently in use; say there are $111,411$ Unicode numbers in use. Does the affine cipher $C\equiv103,011P+34,423\mod111,411$ encrypt Unicode characters monoalphabetically?
+
+\end{enumerate}
+	
+\end{act}
+
+To motivate solving systems of linear congruences, we may use the
+cryptanalysis of affine ciphers. As in (\ref{KI-eq:affine-cipher-system})
+above, systems of linear congruences arise naturally after guessing
+two plaintext-ciphertext pairs in an affine cipher. Solving the system
+is necessary to determine the multiplicative and additive keys of
+the affine cipher, hence to decrypt it. The dangerous thing for students
+at this point is to make the ``wrong'' guess and end up trying to
+solve a congruence of the form $am\equiv b\mod26$ where $\gcd(a,26)\neq1$.\textit{
+}This is an excellent time to discuss the general theory of solving
+linear congruences, and if you wish even generalize to polynomial,
+factorial, and other more general congruences. At any rate, students
+may now use the following algorithm to cryptanalyze any monoalphabetic
+affine cipher:
+\begin{enumerate}
+\item Form a system of linear congruences to solve for $m$, the multiplicative
+constant, and $k$, the additive constant.
+\item Simplify the system of congruences by substitution, elimination, or
+addition/subtraction of congruences.
+\item Find the solution of the resulting congruence using trial and error
+or the extended Euclidean algorithm. 
+\item Use $m$ and $k$ to decrypt the ciphertext using the formula $p=m^{-1}(c-k)$
+mod $26$.
+\end{enumerate}
+
+To accomplish step $1$, students must guess two plaintext-ciphertext
+pairs, and to avoid insoluble congruences, it suffices to always guess
+the ciphertext corresponding to plaintext $e,t$. Students can type
+the messages into an online frequency analysis tool to get a frequency
+count, or, in a more programming-focused course, the collection of
+Python modules at \cite{inceResourcesFirstYearCollege2022} includes
+a module in which students write a frequency analysis tool themselves
+in Python.
+
+Students may notice one issue with this algorithm: what if you have
+no idea what ciphertext letter corresponds to plaintext $e$ in your
+message? Certainly English messages may have different most-common
+letters. This could lead to a lesson on the index of coincidence and
+other probabilistic methods for determining both which cipher we're
+dealing with and matching letter frequencies. Though these concepts
+are beyond the scope of these notes as written, see Chapter $2$ of
+\cite{mcdevittClassNotesCryptologic2012} for an excellent treatment
+without prerequisites.
+
+\begin{act}
+\begin{enumerate}
+\item Encrypt some short ($3$-$10$ words) plaintext using an affine cipher of your choice. Now, give students the equation of the affine cipher (say, $c\equiv 3p+2\mod26$) and have students determine the \textit{decryption equation} for that affine cipher by solving for $p$ in the cipher's equation. Finally, use that decryption equation to determine the plaintext $p$ corresponding to each given ciphertext letter $c$, and hence decrypt the message.
+\item Encrypt some short ($3$-$10$ words) plaintext \textit{in which the most common letter is `e' and the second-most common is `t')} using an affine cipher of your choice. Now, have students use the algorithm to cryptanalyze this affine ciphertext.
+	
+\end{enumerate}
+\end{act}
+
+
+At this point in the project, one may introduce the Vigen\`{e}re
+cipher and its primary tools for cryptanalysis, the Kasiski and Friedman
+tests. This leads naturally to asking what happens when a Vigen\`{e}re
+keyword is as long as the message it's used to encrypt, whence students
+can prove to themselves that such a cipher (a \textit{one-time pad})
+is theoretically unbreakable by showing that different keywords lead
+to intelligible, but different, plaintext messages. The \textit{Enigma
+machine }is then introduced as a ``portable one-time pad generator,''
+providing an opportunity to tie the course to the more recent history
+of World War II.
+
+However, because these concepts are less explicitly connected to number
+theory and algebra, they are omitted in this text. See \cite{mcdevittClassNotesCryptologic2012}
+for an excellent set of notes for those who choose to teach this material.
+
+
+\section{\label{KI-sec:Extensions-and-Alterations}Extensions and Alterations}
+
+These resources are currently used at a small liberal arts college in an entire first-year seminar course entitled
+``Making \& Breaking Secret Codes.'' As such, the project
+described above is supplemented with additional material and assignments such as the
+Python modules \cite{inceResourcesFirstYearCollege2022} and pre-class
+Reading Questions, often from \cite{singhCodeBookScience2011}. 
+
+In this course, most of the material in \cite{mcdevittClassNotesCryptologic2012}
+(which is also provided to students as a supplementary resource) is discussed,
+with the possible exception of probability, which is often left out
+due to time constraints. A sample of the discussion of the
+Diffie-Hellman key exchange and modular exponentiation is provided in Section
+\ref{KI-subsec:The-Diffie-Hellman-Key}. These notes lead into the material
+on the square-and-multiply algorithm, Euler's Theorem, and eventually
+RSA encryption described in \cite{mcdevittClassNotesCryptologic2012}.
+Sometimes, the extended Euclidean algorithm is also introduced after
+describing the importance of finding multiplicative inverses when
+cryptanalyzing the affine cipher, though students without much prior
+mathematical experience tend to find this material confusing and somewhat
+intimidating.
+
+This activity has not yet been extended to a research
+project; however, some ideas for such projects are included in Section
+\ref{KI-subsec:Potential-Undergraduate-Research}.
+
+Finally, these notes arose from a course originally taught in the
+Duke TIP summer program which included an ``evening session'' in which
+students were walked through the Python modules found in \cite{inceResourcesFirstYearCollege2022}.
+It is highly recommended to guide students through these modules if they are used, since students without prior coding experience often
+find Python, especially its ubiquitous and sometimes uninformative
+syntax error messages, intimidating. The Python modules could also
+be used as the ``backbone'' for an independent study on the use of
+programming in cryptography and/or to introduce the material described
+above.
+
+\subsection{\label{KI-subsec:The-Diffie-Hellman-Key}The Diffie-Hellman key exchange}
+
+In order to introduce more contemporary (i.e., post-$1970$) cryptography,
+specifically public-key cryptography, it is recommended to start with the
+Diffie-Hellman key exchange. The idea is introduced via discussion of the
+problem of informing the intended recipient what key to use
+to send an encrypted message (the \textit{key distribution problem}),
+quite a significant issue: if one lives in a government where all
+Internet traffic is subject to government search, for example, how
+does one send a message across the world? Students often suggest physically
+transporting a key or sending a person to tell the recipient the key,
+but that just reframes the problem in terms of safely getting the
+key or person physically to the intended location. 
+
+At this stage, students engage in a Socratic dialogue on whether
+it's possible to solve the key distribution problem. In other words,
+suppose Alice wants to send a message to Bob, and suppose they live
+in a country in which any unencrypted message, or any key, will be
+intercepted and read by the postal service. For this discussion, imagine
+that Alice has a physical key that she wants to send to Bob in such
+a way that it can't be opened by the postal service. How could Alice
+do this?
+
+One way that students eventually arrive at to solve this problem
+is that Alice can somehow secure the key so that it can't be opened
+before Bob receives it. However, this begs the question of how \emph{Bob
+}can access the key. Some semesters students discover the analogy
+used by Simon Singh in his excellent \emph{Code Book} \cite{singhCodeBookScience2011},
+which is usually assigned as a required text to provide students with
+historical background. Singh's presentation is eminently readable
+without sacrificing accuracy or detail. 
+
+In any case, the analogy works in the following steps:
+\begin{enumerate}
+\item Alice places her key inside a box and uses a padlock to lock the box.
+Alice keeps the key to the padlock and sends the locked box to Bob.
+\item The box can't be opened in transit without Alice's key. When Bob receives
+the box, he places an \emph{additional }padlock on the box and keeps
+the key to his padlock. Bob then sends the doubly-locked box back
+to Alice.
+\item Again, the box can't be opened in transit without both Alice and Bob's
+keys. When Alice receives the box, she \emph{unlocks} her padlock
+and sends the box back to Bob.
+\item Finally, the box can't be unlocked in transit without Bob's key. However,
+once Bob receives the box, he simply unlocks his padlock and opens
+the box.
+\end{enumerate}
+This little story provides a solution to one of the oldest and most
+important problems in cryptography, the \textit{key exchange problem}.
+Exchanging keys (whether physical or cryptographic) is a deeply vulnerable
+part of cryptography, and historically, if Alice and Bob wanted to
+exchange secret messages, they must first meet or somehow transmit
+a secret key \emph{unencrypted}. Anyone who intercepts the key would
+be able to read any purportedly secret messages sent between Alice
+and Bob.
+
+Now, the astute reader may notice that the analogy above requires
+double-encryption with our given cipher to be commutative. Students
+then investigate which ciphers discussed so far actually
+have this property. This is a worthwhile pre-class activity to assign:
+is the shift cipher commutative? That is, if we want to encrypt a
+message with two consecutive shift ciphers, does it matter which order
+we use (it does not)? What about affine ciphers (it does)? Vigen\`{e}re
+ciphers (it does not)? Other ciphers?
+
+What is really needed is a mathematical process that works more like
+padlocks than socks and shoes. In other words, we want to be able to have
+Alice and Bob each add their locks, then take them off in the opposite
+order in order to decrypt the message. And we want to do this without
+it being possible for anyone who intercepts the message to decrypt
+it! We want a \emph{trapdoor one-way function} (easy to encrypt, hard
+to decrypt without the key) in which \emph{encryption with two keys}
+is the same as decryption. A one-way function that arose in the affine
+cipher is multiplication mod $p$ - finding inverses is hard! 
+
+This stage is a perfect time to introduce modular exponentiation\textit{
+}and the theory behind it, which turns out to be the ``lock'' we
+use for the Diffie-Hellman key exchange. Though the treatment in these
+notes ends here, the treatment in \cite{mcdevittClassNotesCryptologic2012}
+is recommended for courses without prerequisites, or the instructor's favorite number theory book
+for proof-based courses. These suggested materials also include
+the Extended Euclidean Algorithm, an introduction to Euler's totient function, Fermat's Little Theorem, 
+Euler's Theorem on the totient function, and proofs of all theorems involved appropriate in level for an introductory abstract algebra or number theory course.
+
+\subsection{\label{KI-subsec:Potential-Undergraduate-Research}Potential undergraduate
+research projects}
+
+The following are research projects that may be suitable for undergraduates who have a reasonable grasp on the material above and are interested in continuing to explore cryptography. In particular, these have been considered as research directions in a two-month summer undergraduate research program where the goal for students is primarily to gain mathematical maturity (defined here as gaining the ability to read research papers and to experience working on unsolved problems), not necessarily to prove publishable results.
+
+\begin{enumerate}
+\item Read \cite{smithMakingHashThings2015a}. Invent and test a new hash
+function. Perturb some conditions and see what happens.
+\item Read \cite{christensenPolishMathematiciansFinding2007a}. Perturb
+some conditions in Rejewski's Theorems and see what happens.
+\item Read Problem $1727$ in \cite{johnstonProblems2006} and its solution.
+Though this problem has already been solved, students could solve
+similar problems, perhaps by changing the seed or experimenting with
+determining the periods of the sequences generated from various seeds.
+\item Read \cite{marzuoliPostQuantumCryptography2011}. How could one break
+this cryptosystem? Investigate Shor's algorithm and the ability of
+quantum computers to cryptanalyze RSA. How could Bob know how to mutate
+the knots without using RSA? Investigate alternate key exchange algorithms
+(besides public or private key encryption). Could one use a public
+knot whose inverse is hard to find and mimic RSA?
+\end{enumerate}
+
+\section{Reflections and Advice}
+
+Learning about elementary ciphers has historically provided even first-year
+students with the motivation and context to gain experience and facility
+with modular arithmetic, including the idea of multiplicative inverses
+and the structure of finite cyclic groups. These ideas could easily
+lead to an examination of a broader range of group theory, for example
+in the context of an abstract algebra course, or become the first
+few weeks of a seminar course on the mathematics of code-making and
+code-breaking without prerequisites, as it has been implemented at the author's
+institution. These notes are more than suitable for independent study
+or summer programs for motivated high-school students; in fact, this
+is how they first originated. 
+
+It is very useful to undergird a discussion of this material with
+a very elementary introduction to Python programming, since all contemporary
+cryptography happens on computers and many more recent ciphers are
+incredibly cumbersome to implement by hand. The website CoCalc \cite{CoCalcCollaborativeCalculation},
+by the makers of the SageMath computing software (which runs on top
+of Python), provides an online interface allowing students to program
+without installing any Python distributions on their own computers,
+saving headache. This website is not free, but each student is able
+to pay about \$12 toward ``upgrading'' their CoCalc projects for one
+semester. The free version of CoCalc is almost unusable
+due to lag, so upgrading is recommended. The costs of such an upgrade can be implemented as course fees or more informally.
+The Python modules, as well as rubrics and solutions used to grade
+them, can be found at the author's GitHub page \cite{inceResourcesFirstYearCollege2022}.
+
+The points of struggle mentioned above for students are worth reflecting
+on. These include multiple issues with learning to program for the
+first time: wading through confusing syntax errors, understanding
+the importance of whitespace in Python functions, and determining
+where to edit the preexisting code given to them. These issues can be
+somewhat ameliorated by walking through portions of Python modules
+as a whole class, breaking down the code underlying a function line
+by line to connect it to the more familiar steps of implementing a
+cipher by hand, and emphasizing that students are not expected to
+write their own code, only to change a word or two in the code provided
+for them. That said, students still tend to find Python, and programming,
+to be one of their least favorite aspects of what is generally a very
+fun course to teach and, per my students, to participate in. Other
+points of struggle include the extended Euclidean algorithm (due to
+the amount of symbolic manipulation involved), the complexity of the
+Enigma machine's components, and more generally the concept of modular
+arithmetic (though students usually gain understanding quickly by
+way of the clock metaphor). Feedback is welcome on any of the material
+above. Cryptography is very fun, yet it provides a window for first-year students into material
+not usually taught until a first course in abstract algebra, as well
+as motivation for more experienced students to learn number theory.
+
+\section{Additional Resources}
+
+Please find the bibliography below. High praise is reserved for
+Tim McDevitt and Frank Arnold's text \cite{mcdevittClassNotesCryptologic2012},
+which is provided to the author's students as a resource (and from which 
+exercises are sometimes assigned as homework). Simon Singh's \emph{The Code Book }\cite{singhCodeBookScience2011}
+is an excellent, richly detailed, and deeply readable source for the
+historical and sociopolitical context of cryptography as well as entertaining
+descriptions of the underlying mathematics. The Cipher Challenge at
+the back of the book leads students through all of the ciphers described
+therein; the author uses it as a way for students to earn extra credit by solving
+a set number of the ten parts. In order to emphasize the human aspects
+of cryptography and its contemporary relevance, one may have students watch
+a video or read about the NSA/GCHQ and other cryptographic agencies
+as well as their recent political activities. Given that the NSA is
+the United States' largest employer of Ph.D. mathematicians, and in
+the context of the revelations of Edward Snowden and other recent
+whistleblowers, this discussion remains deeply relevant.
+
+\subsection{Bibliography}
+
+\bibliographystyle{abbrv}
+\bibliography{WCSAM206.bib}
+
+\end{document}

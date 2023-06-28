@@ -1,0 +1,132 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{amsthm}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 12.5 - The NSA}
+\maketitle
+
+\section{How does the NSA hack our emails?}
+\begin{xca}
+\textbf{(Reading question; discuss in class; students have watched
+video/submitted responses before class) }Please watch the video at
+\url{https://www.youtube.com/watch?v=ulg_AHBOIQU} and the supplement
+at \url{https://www.youtube.com/watch?v=1O69uBL22nY} and consider
+the following questions:
+\begin{enumerate}
+\item What are elliptic curves?
+\begin{enumerate}
+\item Equations with two variables like $y^{2}=x^{3}-3x+5$, modulo some
+large prime number.
+\end{enumerate}
+\item Explain how elliptic curves are used for cryptography, assuming you're
+talking to someone who doesn't know any cryptography or anything about
+elliptic curves.
+\begin{enumerate}
+\item Using curves like $y^{2}=x^{3}-3x+5\mod p$ for some prime $p$ to
+produce points, near the curve, which seem completely random (we extract
+pseudorandom bits from these points)
+\item Start with some ''seed'' that you choose yourself
+\item Need two solutions $P,Q$, one to start the cycle and one to scramble
+the output of the cycle. These solutions become the steps in the procedure.
+\item These will become the ''pseudorandom bits'' that will be used as the
+key(s) for some cipher later on.
+\end{enumerate}
+\item What is a backdoor, and how did the NSA build a backdoor into their
+recommended elliptic curve solutions?
+\begin{enumerate}
+\item A backdoor is a hidden way to break a code by using additional information
+about the cipher that is not commonly known.
+\item Knowing the relationship between $P$ and $Q$ is the backdoor that
+allows the NSA to determine which ''pseudorandom bits'' will be spit
+out of the algorithm. The NSA reverse-engineered the chosen points
+$P,Q$ to have a specific relationship known only to the NSA.
+\end{enumerate}
+\item Do you agree with Frenkel's statement that ``mathematics can be used
+for good, but it can also be used for evil''? What does he mean by
+this?
+\begin{enumerate}
+\item Math has the opportunity for misuse, e.g. for the government to read
+our private information
+\end{enumerate}
+\item How did the NSA persuade companies to use their preferred algorithm
+for elliptic curve cryptography? 
+\begin{enumerate}
+\item It published a document encouraging people to use their chosen solutions,
+which are hard to find by hand, but which the NSA provided.
+\item The NSA may have paid companies to use the 'cracked' algorithm.
+\end{enumerate}
+\item Do you believe the NSA's reading of private emails was necessary for
+national security? How much privacy do you think it's appropriate
+to sacrifice for security?
+\item Who do you think is most to blame for the NSA's abillity to read private
+emails?
+\end{enumerate}
+\end{xca}
+
+
+\section{Debate: Is the NSA's Surveillance of Americans Justified?}
+\begin{xca}
+Watch the video at \url{https://www.youtube.com/watch?v=Rs27d3QZhz8},
+(ok well probably the John Oliver at \url{https://www.youtube.com/watch?v=XEVlyP4_11M};
+FISA in 2020 at \url{https://www.nytimes.com/2021/04/30/us/politics/national-security-surveillance-pandemic.html})
+thinking about the following questions:
+\begin{itemize}
+\item What is the history of the NSA? How did the US use cryptography and
+ciphers historically?
+\item The video is clearly outdated; what do you think has changed since
+the video was made? Why am I showing you such an outdated video?
+\item Do you think the NSA's surveillance of Americans is required to protect
+us?
+\item Is it legal?
+\item What amount of liberty/privacy is it OK to sacrifice for increased
+security?
+\item Do you trust the NSA with your information?
+\item If an administration comes to power which doesn't like people with
+a certain religious or political belief, how could the surveillance
+already being done be used?
+\item Are people like Edward Snowden heroes? Traitors? Do they deserve punishment?
+\end{itemize}
+\end{xca}
+
+~
+\begin{xca}
+Form 2 groups, ``yes'' and ``no'', at random. Split each group
+in half: half to record what's said, half to debate. Use these rules
+for debate:
+\begin{itemize}
+\item No personal criticism allowed. 
+\item The more the better. The more ideas proposed, the more likely something
+useful will happen. A premium will be placed on unusual or unique
+ideas or suggestions.
+\end{itemize}
+Instructor roles:
+\begin{itemize}
+\item Write down interesting points and bring them up again when appropriate
+\item Only intervene if things get far off-topic or unproductive. 
+\item Tolerate brief periods of silence -- that's when students are thinking!
+\item Redirect questions to the class.
+\item At the end, ask students to summarize the discussion.
+\end{itemize}
+\end{xca}
+
+
+\end{document}

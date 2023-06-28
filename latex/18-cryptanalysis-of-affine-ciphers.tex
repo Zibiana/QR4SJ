@@ -1,0 +1,426 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{example}[thm]{\protect\examplename}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{Breaking Affine Ciphers without the Key}
+\maketitle
+
+\section{The Euclidean Algorithm in Python}
+\begin{example}
+The Euclidean Algorithm. Let's follow the algorithm to compute $\gcd(2,5)$
+and figure out what we want to program in Python. I'll do things slightly
+differently to make it programmable, but note that the algorithm is
+still basically the same. 
+
+Here $a=2$ and $b=5$.
+
+\begin{tabular}{|c|c|}
+\hline 
+to compute $\gcd(2,5)$ & to compute $\gcd(a,b)$ if $a<b$\tabularnewline
+\hline 
+\hline 
+Reduce $5\mod2$ to get $1$. & Reduce $b\mod a$.\tabularnewline
+\hline 
+Replace $b=5$ with $b=1$. & Replace $b$ with $b\mod a$.\tabularnewline
+\hline 
+Switch $a=2$ and $b=1$ so that $a=1<2=b$. & Switch $a$ and the new $b$ so that $a<b$.\tabularnewline
+\hline 
+Reduce $2$ mod $1$ to get $0$. & Reduce the new $b$ mod the new $a$.\tabularnewline
+\hline 
+Replace $b=2$ with $b=0$. & Replace $a$ with $a\mod b$.\tabularnewline
+\hline 
+Switch $a=1$ and $b=0$ so that $a=0<1=b$. & Switch $a$ and the new $b$ so that $a<b$.\tabularnewline
+\hline 
+Stop the algorithm now that $a=0$. & ...stop the algorithm when the smaller number $a=0$.\tabularnewline
+\hline 
+The gcd is the last nonzero remainder, $b=1$. & The gcd is the last nonzero remainder, $b$.\tabularnewline
+\hline 
+\end{tabular}.
+
+\begin{tabular}{|c|c|}
+\hline 
+to compute $\gcd(a,b)$ if $a<b$ & \textbf{code {[}ask the class{]}}\tabularnewline
+\hline 
+\hline 
+Reduce $b\mod a$. & $b\%a$\tabularnewline
+\hline 
+Replace $b$ with $b\mod a$. & $b=b\%a$\tabularnewline
+\hline 
+Switch $a$ and the new $b$ so that $a<b$. & $a,b=b,a$\tabularnewline
+\hline 
+Reduce the new $b$ mod the new $a$. & $b\%a$\tabularnewline
+\hline 
+Replace $b$ with $b\mod a$. & $b=b\%a$\tabularnewline
+\hline 
+Switch $a$ and the new $b$ so that $a<b$. & $a,b=b,a$\tabularnewline
+\hline 
+...stop the algorithm when the smaller number $a=0$. & Put this repeated process under ``while $a$ != $0$:''\tabularnewline
+\hline 
+The gcd is the last nonzero remainder, $b$. & at the end of the while loop: ``return b''\tabularnewline
+\hline 
+\end{tabular}
+
+\end{example}
+
+\begin{xca}
+Finish defining the $\gcd$ function and using it to compute the gcds
+in CoCalc.
+\end{xca}
+
+\textbf{Last Time}: we've been working on the following process for
+solving affine ciphers if we knew the key (e.g. we were the intended
+recipient):
+\begin{enumerate}
+\item Define ``division'' in modular arithmetic, where we can.
+\item Learn when multiplicative inverses exist modulo $n$.
+\item Learn how to find the multiplicative inverse of a number modulo $n$.
+(Recall this requires the Extended Euclidean Algorithm, as below.)
+\begin{enumerate}
+\item Do the regular Euclidean algorithm on $a$ and $b$ to get $\gcd(a,b)$.
+Write all your steps on separate rows on the left side of the page.
+\item On the right side of the page, solve each equation for the remainder
+at each step.
+\item Begin with the bottom equation and substitute the remainders in ascending
+order. Simplify at each step, being careful not to explicitly multiply
+the remainders or the original two numbers.
+\end{enumerate}
+\end{enumerate}
+\begin{itemize}
+\item But what if we intercept a message from a hostile foreign government
+that we know was encrypted with an affine cipher. Naturally, they
+wouldn't just hand us the keys. What do we do?
+\item We already know how to use frequency analysis to guess which letter
+corresponds to plaintext ``e'', ``t'', ``a'', or another common
+letter.
+\item Now let's bring everything together to break affine ciphers with unknown
+key!
+\end{itemize}
+
+\section{Solving linear congruences}
+
+We know how to solve equations like $C\equiv15P\mod26$ for $P$ by
+multiplying both sides by the multiplicative inverse of $15\mod26$,
+which is $7$:
+\[
+7C\equiv(7\cdot15)P\equiv P\mod26.
+\]
+
+\begin{example}
+But now let's say that we're trying to crack the affine cipher. 
+\end{example}
+
+\begin{xca}
+Encrypt the message ``etta eats eels'' using the affine cipher with
+$m=-1$ and $k=-1$. 
+\end{xca}
+
+\begin{example}
+Let's take the resulting ciphertext, VGGZ VZGH VVOH, assume we don't
+know the keys, and try to solve for $m$ and $k$.
+\begin{itemize}
+\item The most common letters are $V$ and $G$, which appear seven and
+four times, respectively. This suggests that the ciphertext V and
+G correspond to plaintext e and t, respectively. Let's write the previous
+statement in number form:
+\item Ciphertext 21 corresponds to plaintext 4, and ciphertext 6 corresponds
+to plaintext 19.
+\item Let's look at the equation $(\ast)$ above. When $C=21$, then $P=4$
+and the equation becomes
+\[
+21\equiv4m+k.
+\]
+When $C=6$, then $P=19$ and the equation becomes
+\[
+6\equiv19m+k.
+\]
+\item Together, these equations give us a \textbf{system of congruences}
+\begin{eqnarray*}
+4m+k & \equiv & 21\mod26\\
+19m+k & \equiv & 6\mod26.
+\end{eqnarray*}
+But we don't know yet how to solve systems of congruences!
+\end{itemize}
+\end{example}
+
+\begin{xca}
+\textbf{(reading question) }If this were a system of \emph{equations}
+like the ones you saw in Algebra II, how would you solve the system?
+In other words, solve the system of equations
+\begin{align*}
+4m+k & =21\\
+19m+k & =6.
+\end{align*}
+\begin{itemize}
+\item We subtract the second equation from the first to get
+\[
+-15m\equiv15\mod26
+\]
+\item We notice right away that $m\equiv-1$ is the solution to this equation!
+\item It's not always this easy, though. What if we'd guessed instead that
+$e\mapsto G$ and $a\mapsto V$? Then our system becomes
+\begin{align*}
+6 & \equiv4m+k\mod26\\
+21 & \equiv0m+k\mod26
+\end{align*}
+so that right away we say that $k=21$. Subtracting $k=21$ from both
+sides of the top equation gives
+\[
+4m\equiv-15\equiv11\mod26
+\]
+which actually has no solution!
+\end{itemize}
+\end{xca}
+
+\begin{itemize}
+\item \textbf{Ground rule}: stick to guessing what $e$ and $t$ go to when
+attempting to crack affine ciphers and you'll be safe.
+\end{itemize}
+\begin{xca}
+Solve the following systems of congruences $\mod26$ for $m$ and
+$k$:
+\begin{enumerate}
+\item 
+\begin{align*}
+3 & \equiv13m+k\\
+2 & \equiv12m+k
+\end{align*}
+
+Subtracting equation $2$ from equation $1$ gives $1\equiv m$ immediately.
+Plugging in $m=1$ into the first equation gives $3\equiv13+k\mod26$,
+hence $k=-10\equiv16\mod26$. 
+\item 
+\begin{align*}
+17 & \equiv23m+k\\
+12 & \equiv16m+k
+\end{align*}
+
+Subtracting the second equation from the first gives $5\equiv7m$.
+Now we want to solve for $m$, which means we need to multiply both
+sides by $7^{-1}=15$:
+\[
+15\times5=15\times7m\equiv m\mod26
+\]
+Since $15\equiv-11\mod26$, $15\times5\equiv-11\times5=-55\equiv-3\mod26$.
+So $m=-3\equiv23\mod26$. We plug in $m=-3$ to the second equation
+to solve for $k$:
+\begin{align*}
+12 & \equiv16(-3)+k\mod26\\
+12 & \equiv-48+k\mod26\\
+60 & \equiv k\mod26\\
+8 & \equiv k\mod26.
+\end{align*}
+
+\item 
+\begin{align*}
+25 & \equiv15m+k\\
+12 & \equiv2m+k
+\end{align*}
+
+\begin{itemize}
+\item Note: this one simplifies to $13\equiv13m\mod26$. This could have
+the solution $m\equiv1\mod26$, of course, but it also has the solutions
+\[
+m\equiv3,5,7,9,11,13,15,17,19,21,23,25\mod26
+\]
+\end{itemize}
+\end{enumerate}
+\end{xca}
+
+\begin{prop}
+\textbf{We can't solve systems of congruences mod 26 if we end up
+with a congruence $am\equiv b\mod26$ where $\gcd(a,26)\neq1$! }The
+problem is that $a^{-1}$ doesn't exist $\mod26$, and so we can end
+up with multiple possible answers for $m$.
+\end{prop}
+
+\begin{xca}
+{[}slide{]} Decipher the affine ciphertext \textbf{hikctyhghykaezztgaayrhbggrvgdyfg
+}given that the most common ciphertext letters are G and H, respectively.
+\begin{itemize}
+\item The system is 
+\begin{align*}
+6 & \equiv4m+k\mod26\\
+7 & \equiv19m+k\mod26
+\end{align*}
+\item Subtracting the first equation from the second gives
+\[
+1\equiv15m\mod26
+\]
+\item Multiplying by $15^{-1}=7\mod26$ on both sides yields
+\[
+7\equiv(7\times15)m\equiv m\mod26.
+\]
+\item Plugging in $m=7$ to the first equation yields
+\begin{align*}
+6 & \equiv4(7)+k\mod26\\
+ & \equiv2+k\mod26\\
+4 & \equiv k\mod26
+\end{align*}
+so that our encryption equation was
+\[
+C\equiv7P+4\mod26.
+\]
+\item This means our decryption equation is
+\begin{align*}
+C-4 & \equiv7P\mod26\\
+15(C-4) & \equiv(15\cdot7)P\equiv P\mod26\\
+15C-60\equiv15C-8 & \equiv P\mod26.
+\end{align*}
+\item Plugging in yields the plaintext
+\[
+\text{tim wrote toms address on the envelope}.
+\]
+\end{itemize}
+\end{xca}
+
+\textbf{Solving Affine Ciphers}:
+\begin{enumerate}
+\item Form a system of linear congruences to solve for $m$, the multiplicative
+constant, and $k$, the additive constant.
+\item Simplify the system of congruences by substitution, elimination, or
+addition/subtraction of congruences.
+\item Find the solution of the resulting congruence using trial and error
+or the extended Euclidean algorithm. 
+\item Use $m$ and $k$ to decrypt the ciphertext using the formula $p_{i}=m^{-1}(c_{i}-k)$
+mod $26$.
+\end{enumerate}
+
+\subsection{Python Module: Frequency Analysis}
+\begin{itemize}
+\item In order to break an affine (or any monoalphabetic) cipher, we have
+to do a frequency count.
+\item For longer messages, it's very impractical to frequency analyze by
+hand. For example, consider what would happen if you intercepted the
+entire Declaration of Independence enciphered with $C\equiv25P+5\mod26$.
+\item Let's start to build a tool to frequency analyze in Python!
+\item The algorithm we'll use is as follows: {[}show what would happen in
+the message ``TEST''{]}
+\begin{itemize}
+\item \textbf{Goal}: build a list of ciphertext letters together with their
+corresponding counts in the message.
+\begin{enumerate}
+\item Start with an empty count\_list.
+\item Add 26 zeroes to the empty count\_list, one to represent each ciphertext
+letter.
+\item Go through the intercepted ciphertext message letter by letter and,
+for each ciphertext letter in the message, add $1$ to that letter's
+entry in count\_list.
+\item Label each entry of count\_list with the corresponding ciphertext
+letter.
+\item Return the labeled count\_list to the user.
+\end{enumerate}
+\end{itemize}
+\end{itemize}
+\begin{xca}
+{[}CoCalc{]} open the Frequency Analysis module and work through it,
+step-by-step, with the class, giving them occasional tasks.
+\end{xca}
+
+\begin{itemize}
+\item \textbf{Problem}: what if you have no idea what ``E'' is in your
+message? 
+\end{itemize}
+\begin{example}
+For instance, consider the message ``YZU RO YBOYZEBA YZUIZOND'',
+which you're told is encrypted with an affine cipher. Just looking
+at this message, your first guess would be that $e\mapsto Y$ or that
+$e\mapsto Z$, both of which would be incorrect! Aside from attempting
+a brute-force attack, it's very unclear how to decipher this message
+without more information. Short messages, in general, are much harder
+to decipher using frequency analysis.
+\end{example}
+
+\begin{xca}
+Suppose you're told that the most common letters in the plaintext
+message are z and i. Decrypt the message.
+\begin{itemize}
+\item zip on zanzibar ziplines
+\end{itemize}
+\textbf{{[}reading question{]} }See if you can decrypt your ``weird''
+affine-enciphered messages if the author tells you the two most common
+plaintext letters in each message. How easy or difficult is the process? 
+
+{[}slide{]} Decrypt GYOMXNOGNG QUGN ETNMX MPLMZOMXYM K TMMJOXA XEN
+TKZ ZMQEBMF TZEQ KJKZQ EX YEXNMQLJKNOXA NHM TJEEF ET XMI CXEIJMFAM
+IHOYH MKYH WMKZ RZOXAG IONH ON given the frequency distribution: \includegraphics[scale=0.5]{\string"Old Cryptography Notes/pasted101\string".png}
+
+SCIENTISTS MUST OFTEN EXPERIENCE A FEELING NOT FAR REMOVED FROM ALARM
+ON CONTEMPLATING THE FLOOD OF NEW KNOWLEDGE WHICH EACH YEAR BRINGS
+WITH IT
+
+$C\equiv7P+10\mod26$
+
+For the following, you can type the messages into an online frequency
+analysis tool such as the one at dcode.fr/frequency-analysis to get
+a frequency count. (Next week, you'll develop a frequency analysis
+tool of your own in Python.) Then decipher each message.
+\end{xca}
+
+~
+\begin{xca}
+\textbf{{[}slide{]} }
+
+\includegraphics[scale=0.5]{\string"Old Cryptography Notes/pasted102\string".png}
+\end{xca}
+
+~
+\begin{xca}
+\includegraphics[scale=0.5]{\string"Old Cryptography Notes/pasted73\string".png}
+
+\includegraphics{\string"Old Cryptography Notes/pasted132\string".png}
+\end{xca}
+
+
+\section*{Read ``Cracking the Enigma'' in The Code Book}
+
+\section*{Enigma Machine Videos: Numberphile}
+
+https://www.youtube.com/watch?v=G2\_Q9FoD-oQ\&src\_vid=V4V2bpZlqx8\&feature=iv\&annotation\_id=annotation\_309534
+
+\section*{Sample Enigma Encoding}
+
+http://startpad.googlecode.com/hg/labs/js/enigma/enigma-sim.html
+
+\section*{Evening Session}
+
+\textbf{Journal entry. }Do you believe that cryptography and cryptographical
+techniques can be primarily used for ``good'' or for ``evil''?
+Explain.
+
+Breaking Master Locks (see PDF)
+\end{document}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This frontmatter division will contain all content before the -->
+<!-- first chapter.  Fill in and comment/uncomment to see how this -->
+<!-- works.                                                        -->
+
+<frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
+  <titlepage>
+    <author>
+      <personname>Kenan Ince</personname>
+      <department>Department of Mathematics</department>
+      <institution>Westminster University, Salt Lake City</institution>
+    </author>
+<!--    <author>
+      <personname>Sean Raleigh</personname>
+      <department>Departments of Mathematics and Data Science</department>
+      <institution>Westminster University, Salt Lake City</institution>
+    </author>
+    <author>
+      <personname>Bianca Thompson</personname>
+      <department>Department of Mathematics</department>
+      <institution>Westminster University, Salt Lake City</institution>
+    </author> -->
+    <date><today/></date>
+  </titlepage>
+
+  <colophon>
+    <website>
+      <name><c>cs.westminstercollege.edu/~kince</c></name>
+      <address>https://cs.westminstercollege.edu/~kince</address>
+    </website>
+
+    <copyright>
+      <!-- In addition to specifying the copyright holder, you should  -->
+      <!-- include a license, such as the cc-by-sa license shown below -->
+      <!-- so people reading your book know how they can use it.       -->
+      <year>2020<ndash/><today/></year>
+      <holder>Kenan Ince</holder>
+      <!-- <minilicense><image source="../images/by-sa.png" /></minilicense> -->
+      <shortlicense>
+        <!-- <image source="../images/by-sa.png" width="15%"/>  -->
+        This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+        To view a copy of this license, visit
+        <url
+          href="http://creativecommons.org/licenses/by-sa/4.0/"
+          visual="creativecommons.org/licenses/by-sa/4.0">
+          CreativeCommons.org</url>
+      </shortlicense>
+
+    </copyright>
+
+  </colophon>
+
+  <dedication>
+    <p>
+      For all those who dare to dream of a more just world.
+    </p>
+  </dedication>
+
+  <acknowledgement>
+    <p>
+      We would like to thank our colleagues at Westminster who have encouraged interdisciplinary and justice-minded thinking, every educator doing this work, and especially the activists and K-12 educators who have blazed the trail of social justice math for decades.
+    </p>
+
+  </acknowledgement>
+
+  <preface xml:id="preface">
+    <!-- You should be a little careful about what you put here -->
+    <!-- Avoid elements that should have a number, for example  -->
+    <p>
+      This workbook is designed to be used as the primary text for a course on quantitative reasoning with a particular focus on social and political issues. We encourage you to implement the chapters as modules in any relevant course; see <xref ref="ch-crashcourse" /> for some tips on beginning to develop such a course.
+    </p>
+  
+    <p>
+      See <xref ref="appendix_lit-review" /> for a review of literature on pedagogical practices that promote equity and inclusion, which are suggested when teaching the material in this text.
+    </p>
+
+    <p>
+      Thank you for considering using a portion or all of this text in one of your courses!
+    </p>
+
+  </preface>
+
+  <!-- You can have more than one preface. -->
+</frontmatter>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_firstch-examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Example SJ Math Activities for the First Day</title>
+    <introduction>Here are some examples of questions I've asked my students, almost always in a think-pair-share format, to start off a semester-long course on quantitative reasoning for social justice.</introduction>
+  
+ 
+          <exercise>
+        <title>Defining social justice</title>
+
+
+              <statement>What do you think of when you think of social justice? What are 2-3 issues of SJ you're passionate about? Can we develop a working definition of SJ as a class?</statement>
+
+    <answer>
+      <p>
+        Some possible answers: 
+<ul>        <li>justice in terms of the distribution of wealth, opportunities, and privileges within a society. (Google Dictionary)</li>
+            <li>a concept of fair and just relations between the individual and society. (Wikipedia)</li>
+            <li>a state or doctrine of egalitarianism (Merriam-Webster)</li>
+            <li>A broad term for action intended to create genuine equality, fairness and respect among peoples. (University of Massachusetts Lowell Department of Multicultural Affairs)</li>       
+          </ul>
+        </p>
+    
+    <p>One working definition that my classes have used (due to Sensoy-DiAngelo) is the following. <i>Social justice</i> is a recognition that:
+<ul>
+    <li>all people are individuals, but we are also members of socially constructed groups; </li>
+    <li>society is stratified, and social groups are valued unequally; </li>
+    <li>social groups that are valued more highly have greater access to resources and this access is structured into the institutions and cultural norms; </li>
+    <li>social injustice is real and exists today; </li>
+    <li>relations of unequal power are constantly being enacted at both the micro (individual) and macro (structural) levels; </li>
+    <li>we are all socialized to be complicit in these relations; </li>
+    <li>those who claim to be for social justice must strategically act from that claim in ways that challenge social injustice; and </li>
+    <li>this action requires a commitment to an ongoing and lifelong process. </li>
+        </ul>
+    </p>
+      </answer>
+
+  </exercise>
+  <p>
+    Here are some more examples I've used in courses during the pandemic:
+  </p>
+
+    <exercise>
+        <title>A first-day activity for a pandemic</title>
+        <introduction>Consider the following questions</introduction>
+        
+
+        <task><statement>What are some social justice issues that are important to you in the midst of rising inequality and authoritarianism, climate crisis, racial justice movements, and more?</statement></task>
+        <task><statement>What are some ways we could measure each of these issues? (how bad they are, solutions, societal reactions, etc.)</statement></task>
+        <task><statement>What are some things you don't know how to measure about each of these issues?</statement></task>
+        <task><statement>Estimate: what are some strategies for measuring these things? Don't try to plug in numbers yet, just make a list.</statement></task>
+        <task><statement>What are some ways to, as accurately as possible, measure how severe the COVID-19 outbreak is in your city? Write down any assumptions you make about what “severe” means.</statement></task>
+        <task><statement>If you were a disability rights activist concerned about the dangers of COVID-19 for immunocompromised folks, which of these ways would you choose to measure? Estimate or find the info.</statement></task>
+        <task><statement>If you were an administrator at your college or university, which of these ways would you choose to measure? Explain, then estimate or find the info.</statement></task>
+        <task><statement>What are some things it would be ideal to be able to measure in order to curtail or prevent the spread of COVID-19 in your city? Do the same as above: how would you measure these things as a disability rights activist? As a college administrator?</statement></task>
+        <task><statement>Brainstorm some ways to obtain the measurements you described above. If you obtained these measurements, how could you use them to advocate for positive change?</statement></task>
+        <task><statement>What questions about social justice, health/accessibility, and math does this activity bring up for you?</statement></task>
+
+    <solution>
+      <p>You may have come up with questions similar to the following:
+          <ol>
+              <li>How did we measure X?</li>
+              <li>What's the best way to measure X?</li>
+              <li>What values are inherent in the way we measure X?</li>
+              <li>If your goal is to advocate for social justice, how does that change the “best” way of measuring X?</li>
+          </ol>
+      </p>
+  
+  <p>
+      We just demonstrated a couple of tools we'll use many times in the next week or two: 
+      <ul>
+          <li><b>Estimation</b>: round up or down to make calculations easier and numbers less messy. As we saw when estimating the number of classrooms needed for the US household wealth, rounding before the computation ends can introduce error. Therefore, if you have a calculator, it's best to plug into the calculator before rounding, whereas if you're computing by hand, rounding may be necessary in order to increase the accuracy of your computations. Everyone makes arithmetic mistakes–you'll see me do it plenty of times!</li>
+          <li><b>Dimensional analysis</b>: start with the given and multiply by fractions, canceling out the units, until you get something in the units your answer should be in. This is almost always your answer!</li>
+      </ul>
+    </p>
+    </solution>
+    </exercise>
+    
+<exercise>
+    <title>Setting the stage</title>
+            This activity is almost directly adapted from Dana Ernst's <url visual="https://danaernst.com/setting-the-stage/">"Setting the Stage"</url> inquiry-based learning activity.
+            
+            <statement>Get in groups of size 3–4. Group members should introduce themselves - name, pronouns, hobbies outside school, goals for the semester/year, reason they're taking the course. For each of the questions that follow, I will ask you to: 
+            <ol>
+                <li>Think about a possible answer on your own.</li>
+                <li>Discuss your answers with the rest of your group.</li>
+                <li>Share a summary of each group's discussion. </li>
+            </ol>
+    
+            The questions are as follows:
+            <ol>
+                <li>What are the goals of a college or university education? How does social justice fit in? How does math?</li>
+                <li>How does a person learn something new? </li>
+                <li>What is the value of making mistakes in the learning process? </li>
+                <li>How do we create a safe environment where risk taking is encouraged and productive failure is valued? </li>        
+            </ol></statement>
+
+            <solution>
+        <p>
+            As Ernst describes on <url visual="https://danaernst.com/setting-the-stage/">his website</url>, 
+<p>Each time I've run the activity, the responses are slightly different. The responses to the first two questions are usually what you would expect. Question 3 always generates great discussions. The idea of “productive failure” naturally arises when discussing question 4 and I provide them with this language sometime while discussing this question. Listening to the students' responses to question 4 is awesome. It's really nice to get the students establishing the necessary culture of the class without me having to tell them what to do.</p>
+
+                <p>After we are done discussing the 5 questions, I elaborate on the importance of productive failure and inform that I will often tag things in class with the hashtag #pf in an attempt to emphasize its value. I also provide them with the following quote from Mike Starbird: “Any creative endeavor is built on the ash heap of failure.” I wrap up the activity by conveying some claims I make about education and stating some of my goals as a teacher. </p>
+
+                <p><b>Claims</b>
+                    <ul>
+                        <li>An education must prepare a student to ask and explore questions in contexts that do not yet exist. That is, we need individuals capable of tackling problems they have never encountered and to ask questions no one has yet thought of.</li>
+                        <li>If we really want students to be independent, inquisitive, &amp; persistent, then we need to provide them with the means to acquire these skills.</li>
+                    </ul>
+                </p>
+            
+        </p>
+            </solution>        
+    </exercise>    
+    	<subsection xml:id="group-work-and-class-norms">
+		<title>Group work and class norms</title>
+<introduction>There is some evidence that the use of group roles, in which all group members rotate assigned tasks each day, improves student learning<fn>See e.g. Hauk, S., Speer, N. M., Kung, D., Tsay, J.-J., and Hsu, E. (Eds.) (2013). Video cases for college mathematics instructor professional development, currently accessible (as of 3-29-2022) at <url visual="http://collegemathvideocases.org/pdf/GroupWork.pdf">this link</url>.</fn>
+            Additionally, in a course that discusses sensitive political topics, my experience has emphasized the importance of agreeing on discussion norms <b>before</b> beginning a sensitive discussion. I hope the following activities help with establishing both of these sets of norms.
+            </introduction>
+
+		<subsubsection xml:id="ground-rules">
+			<title>Ground rules</title>
+
+			<p>
+				Given the nature of this course, it's important that we develop class norms to promote an atmosphere which will facilitate the learning process as well as respect the experiences of different groups in the classroom and the larger society. The class can agree to revise them and add others, but all students must commit themselves to the final set of rules by the end of the first class. These principles will guide our class discussions and interactions.
+			</p>
+
+            <statement><title>Setting group norms</title>
+            <exercise><p>Think-Pair-Share on what common norms for group work and discussion are important for our class.</p>
+
+			<p><ul>
+				<li>
+							<p>
+				Whose voices are valued?
+			</p>
+				</li>
+
+				<li>
+							<p>
+				What philosophy do we have about who can make contributions to mathematics and the value of those contributions?
+			</p>
+				</li>
+
+				<li>
+							<p>
+				How does this connect to the values we espouse for our democracy?
+			</p>
+				</li>
+                </ul>
+            </p>
+            </exercise>
+            <example-solution>
+            <p>
+				Here are some useful classroom norms:
+			</p>
+
+			<p><ol>
+				<li>
+							<p>
+				<term>Controversy and vulnerability</term>: different views are expected and honored with a group commitment to understand the sources of disagreement and to work cooperatively toward common solutions <term>without putting a disproportionate responsibility on marginalized groups to educate us</term>.
+			</p>
+
+			<p><ul>
+				<li>
+							<p>
+				No one's identities are under question: e.g. no arguing that queer people are wrong for existing.
+			</p>
+				</li>
+
+				<li>
+							<p>
+				Please come talk to your instructor anytime you feel uncomfortable enough that it's affecting your work in class.
+			</p>
+				</li>
+
+			</ul></p>
+				</li>
+
+				<li>
+							<p>
+				<term>Own your intentions and your impact.</term> Acknowledge that the impact of your actions is not always congruent with your intentions and that positive or neutral intentions do not trump negative impact. Participate truthfully and accept when your actions or words harm others.
+			</p>
+				</li>
+
+				<li>
+							<p>
+				<term>Challenge by choice</term>: individuals may determine for themselves if and to what degree they will participate in a given discussion or activity. It is possible not to participate in a few activities and still receive an A in the course. Be aware of what factors influence your decision about whether to challenge yourself on a given issue.
+			</p>
+				</li>
+
+				<li>
+							<p>
+				<term>Respect</term>: each other and yourselves. Investigate how your cultural context affects what you think of as respect for others and acknowledge what respect looks like in other contexts.
+			</p>
+				</li>
+
+				<li>
+							<p>
+				<term>No attacks</term>. personal attacks are a form of extreme disrespect. Disagreeing with ideas is welcome; attacking individuals for their ideas is not.
+			</p>
+                </li>
+                </ol>
+                </p>
+                </example-solution>
+                </statement>
+<!-- div attr= class="xca"-->
+               
+			<exercises>
+                <exercise><p>(TPS) What does respect look like for you? How might ideas of respect vary with cultural context? How might you firmly challenge the views of someone else in a respectful manner?</p></exercise>
+			<!--</div attr= class="xca">-->
+
+                <exercise><p>What are the differences betweeen a personal attack and a challenge to an idea that makes an individual feel uncomfortable? What are some situations that might blur the lines between the two? How can we acknowledge when certain beliefs (e.g. trans people not existing) are inherently personal attacks? </p></exercise>
+		<!--</div attr= class="xca">-->
+				</exercises>
+                    
+
+			
+</subsubsection>
+            <subsubsection xml:id="group-roles">
+                <title>Group roles</title>
+							<p>
+				<term>Group roles</term>: In order to facilitate group interaction, you will take on group roles designed to mimic the role of mathematical and/or sociological researchers. The roles are as follows: 			</p>
+
+			<p><ul>
+				<li>
+							<p>
+				<term>The facilitator</term> is responsible for making sure every student is able to contribute and be heard. <em>Contributions</em> may include asking good questions, rephrasing someone else's idea, coming up with a way of connecting mathematics to the real world, and many others.
+			</p>
+				</li>
+
+				<li>
+							<p>
+				the <term>resource manager</term> is responsible for obtaining and keeping track of all necessary resources to solve a problem. <em>Resources</em> may include writing utensils, paper, the Internet, your instructor, data sources, and most importantly, your team.
+			</p>
+				</li>
+
+				<li>
+							<p>
+				the <term>lead author</term> is responsible for writing down the ideas that each group comes up with.
+			</p>
+				</li>
+
+				<li>
+							<p>
+				the <term>communicator</term> is responsible for reporting what your group came up with to the class, instructor, and any relevant community groups.
+			</p>
+				</li>
+
+			</ul></p>
+
+                <exercise><p>Assign roles to each group by first letters of first name; they'll rotate every day of class. Anyone can answer questions posed to the whole class, but if your group came up with an idea that hasn't been shared yet, it <i>someone</i> in your group's responsibility to share your answer so that everyone can learn from you!</p></exercise>
+            </subsubsection>
+    </subsection>
+</section>
+

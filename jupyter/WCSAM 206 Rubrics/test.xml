@@ -1,0 +1,236 @@
+<pretext>
+
+    <docinfo>
+        <macros>
+        \newcommand{\doubler}[1]{2#1}
+        </macros>
+    </docinfo>
+
+    <article xml:id="minimal">
+        <title>Conversion Script Test</title>
+
+        <frontmatter>
+
+            <titlepage>
+                <author>
+                    <personname>Virgil U Pierce</personname>
+                    <institution>University of Northern Colorado</institution>
+                </author>
+                <date><today /></date>
+            </titlepage>
+
+            <abstract>
+                <p>Testing of conversion of a Jupyter notebook to Pretext, and compiling</p>
+            </abstract>
+            
+            <introduction>
+
+                <p>Check if process.call worked</p>
+
+                <p>This is a short paragraph to introduce the article (but it is not the abstract).  
+                It is optional, in case it would be preferable to have the first section be titled an 
+                <q>Introduction.</q></p>
+            </introduction>
+            
+        </frontmatter><section>
+ <title> Rubric:
+</title>
+
+<p><ul>
+<li><p>50 points: `ShiftEncrypt` function encrypts `stargazer` as `JKRIXRQVI`</p>
+</li>
+<li><p>35 points: Student writes a working function in Exercise 2 that correctly encrypts their chosen plaintext in Exercise <p><ol>
+<li>
+</li>
+</li>
+</ol></p>
+<li>15 points: Student justifies why a shift of 27 is equivalent to a shift of 1 in a 26-letter alphabet in Exercise 1.</li>
+</p></ul>
+</p>
+
+</section>
+<section>
+ <title> Shift Ciphers in Sage
+</title>
+
+<subsection>
+ <title> Welcome!
+</title>
+
+<p>Welcome to your first Sage module for the course! Sage is a bunch of math-centric enhancements to the Python programming language. </p>
+
+<p>Does that mean you're expected to learn how to program in this course? Not at all! While you're welcome to play around and try to extend your code if you have prior programming experience (come talk to me about your plans if this is the case), most of what you'll be doing involves "thoughtful copy-pasting" of existing code.</p>
+
+<p>What is "thoughtful copy/paste"? When coding is new to people, it's almost impossible to type a line of code that will run without error. Why not find some code that you know will execute and modify it slightly? It's in that modification that one needs to be thoughtful. What do you need to change and why? The goal for this course is that you'll come out with a little more knowledge of how to tweak a single bit of code to suit your needs.</p>
+
+<p>Does this sound like cheating? It isn't a cop-out. It's helping everyone get to the point where Sage makes sense and will give results. In fact, you have some programming background and are interested in doing more with R, there are countless online resources you can visit to augment your learning. (The rest of the free Codecademy Python course is a good start.)</p>
+
+
+</subsection>
+<subsection>
+ <title> What's the point?
+</title>
+
+<p>So why are we using programming in a cryptography course? Frankly, because no one does cryptography anymore with pen and paper. While this may have been possible in Julius Caesar's time, nowadays cryptography is conducted almost exclusively on computers, by computer programs. In fact, by the end of this course, we'll be doing cryptography this is <em>literally impossible</em> to do by hand. This type of cryptography (RSA encryption) keeps credit card info safe online and is one of the most commonly used computer programs today.</p>
+
+<p>Even for older encryption systems like shift ciphers, it's still an enormous time-saver to use a computer to encrypt our messages. My goal in this course is to give you more time to focus on concepts than on the arithmetic and simple computations you need to encrypt shift ciphers. Once you understand the basics of how a cipher works, shifting repetitive tasks to a computer helps you focus on the broader concepts underlying each type of encryption.</p>
+
+
+</subsection>
+<subsection>
+ <title> Setting Up
+</title>
+
+<p>To this end, our goal is to play around with a small program that will encrypt text using a shift cipher. </p>
+
+<p>We want to be able to input any plaintext we want and the desired shift. The program should then spit out the ciphertext.</p>
+
+<p>First, we'll do an example, encoding the message "MYSECRET" using a shift of 3, like the classical Caesar cipher. You'll then use this example to define a function.</p>
+<listing>
+<console>
+<input>
+# Don't change any of the lines beginning with # signs! These are "comments" (here used to give instructions) and don't affect what your code is doing.
+# Don't mess with the code below; it just defines our cipher alphabet as all capital English letters. That means our ciphertext and plaintext will both be capital letters. This is a bit different from how we do things in class, but Python works differently.
+
+alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+</input>
+</console>
+</listing>
+<p>Our first step is to write the plaintext message we want to encrypt and label it with the variable ``plaintext``. After we type the line below, every time we write ``plaintext``, Python will replace it with ``'MYSECRET'``.</p>
+<listing>
+<console>
+<input>
+plaintext = 'MYSECRET'
+</input>
+</console>
+</listing>
+<p>Next, we define the key. In this case, the key is the number of letters to the right we want to shift. (Note that negative keys correspond to left shifts.) As an example, let's use the classical Caesar cipher, which has a right shift of 3 letters. From now on, whenever we type the word ``key``, Python will replace it with the number 3.</p>
+<listing>
+<console>
+<input>
+key = 3
+</input>
+</console>
+</listing>
+<p>OK, now here's the tricky part. How do we actually shift every single letter of the plaintext ``'MYSECRET'`` over by 3? </p>
+
+<p>We'll do it one letter at a time using a "for loop" (remember these from your Intro to Python on Codecademy?).</p>
+
+<p>For weird reasons that aren't too important, we'll start with an empty ciphertext message and use a for loop to add ciphertext letters to it, one by one.</p>
+
+<p>Define the variable ``ciphertext`` to be an empty string of letters. This empty string is written as ``''``, two apostrophes with nothing (our empty word) between them.</p>
+<listing>
+<console>
+<input>
+ciphertext = ''
+</input>
+</console>
+</listing>
+<p>Now, we want to go through every letter of the plaintext 'MYSECRET' and, one by one, replace these letters with ciphertext letters.</p>
+
+<p>In other words, for every letter in the plaintext, we want to do the following in order:</p>
+
+<p><ol>
+<li><p> Convert the plaintext letter to a plaintext number. Sage already has the ability to do this built-in.</p>
+</li>
+<li><p> To get a ciphertext number, shift the plaintext number up by 3, looping around so that, for example, Z is replaced with C. In other words, we're taking the plaintext number plus <m>3</m>, mod <m>26</m>, to get the ciphertext number. </p>
+</li>
+<li><p> Convert the ciphertext number to a ciphertext letter. </p>
+</li>
+<li><p> Append that letter to our output ciphertext.</p>
+</li>
+</ol></p>
+
+
+</subsection>
+<subsection>
+ <title> Shifting a Single Letter
+</title>
+
+<p>This process can be tricky to understand, so let's go through it with a single letter first. Say we want to encrypt the letter M from 'MYSECRET'. What do we need to do?</p>
+
+<p><ol>
+<li><p> Convert the plaintext letter to a plaintext number. </p>
+</li>
+</ol></p>
+
+<p>Sage does this using the function ``alph.find``. Recall that when Python deals with letters, you have to put apostrophes or quotation marks (it doesn't matter which) around them so that Python realizes they're letters. (Technically, Python counts anything within apostrophes or quotes as a "string", which is exactly how we want it to treat letters and words.) So to find which number corresponds to the letter M, we'd write:</p>
+<listing>
+<console>
+<input>
+alph.find('M')
+</input>
+<output>
+12
+</output>
+</console>
+</listing>
+<p>Click on the code chunk above. Now, click on the button "Run" in the toolbar just below the "File, Edit, View" menu. What happens? Is this what you'd expect? Write your answer in the empty text box below this line.</p>
+<p>We would expect this because the letter M corresponds to the number 12.</p>
+<p>Let's store this plaintext number <m>12</m> for later. In order to store answers, we'll have to give them names. Let's name this <m>12</m>, which is the plaintext number corresponding to the letter 'M'. We'll call it ``plaintext_number`` (no spaces are allowed in Python names).</p>
+
+<p>Recall that naming things in Python is done with the `=` sign. For example, to label the number <m>4</m> with the word `banana`, we'd just write `banana = 4`.</p>
+
+<p>Later, we're going to generalize our code, so instead of just writing `plaintext_number = 12`, we'll remember that the <m>12</m> came from the command `alph.find('M')`. Thus, we'll label `alph_find('M')` with the label `plaintext_number` as follows:</p>
+<listing>
+<console>
+<input>
+plaintext_number = alph.find('M')
+</input>
+</console>
+</listing>
+<p>Below, write ``plaintext_number`` in the code box, click Run, and verify that Sage spits out the number <m>12</m>.</p>
+<listing>
+<console>
+<input>
+plaintext_number
+</input>
+<output>
+12
+</output>
+</console>
+</listing>
+<p>Here's our next step:</p>
+
+<p><ol>
+<li><p> To get a ciphertext number, shift the plaintext number up by 3, looping around so that, for example, Z is replaced with C. In other words, we're taking the plaintext number plus 3, mod 26, to get the ciphertext number. </p>
+</li>
+</ol></p>
+
+<p>Sage also has this ability built-in. For example, to do 24 plus 3 mod 26, the code is ``Mod(24+3,26)``. The first thing after the parentheses is the number we want to reduce mod 2<p><ol>
+<li><p> The second number is the modulus. This gives us a ciphertext number.</p>
+</li>
+</ol></p>
+</p>
+<p>Below, write the code to add <m>3</m> to the number <m>12</m> mod <m>26</m>. In other words, we want to do <m>12+3\mod{26}</m>. Then run your code. If it doesn't do what you expect, talk to a group member or your instructor.</p>
+<listing>
+<console>
+<input>
+Mod(3+12,26)
+</input>
+<output>
+15
+</output>
+</console>
+</listing>
+<p>Because we'll be generalizing this code in a bit, let's replace that <m>12</m> in your code above with the variable `plaintext_number`. In the box below, copy your code from above, but delete the <m>12</m> and write `plaintext_number` in its place. (This will be useful later.)</p>
+<listing>
+<console>
+<input>
+Mod(3+plaintext_number,26)
+</input>
+<output>
+15
+</output>
+</console>
+</listing>
+<p>Finally, just like we labeled <m>12</m> with `plaintext_number`, we'll label the <m>15</m> with `ciphertext_number`. Copy your code from the box above and paste it after the equals sign in the box below.</p>
+<listing>
+<console>
+<input>
+ciphertext_number = Mod(3+plaintext_number,26)
+</input>
+</console>
+</listing>
+</article>
+</pretext>

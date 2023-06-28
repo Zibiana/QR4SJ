@@ -1,0 +1,381 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{\protect\definitionname}
+\theoremstyle{plain}
+\newtheorem{lyxalgorithm}[thm]{\protect\algorithmname}
+\theoremstyle{definition}
+\newtheorem{example}[thm]{\protect\examplename}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\algorithmname}{Algorithm}
+\providecommand{\definitionname}{Definition}
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 14 - RSA Encryption, or: Factoring Is Hard}
+\maketitle
+
+\section{Last Time}
+\begin{itemize}
+\item We saw that the Diffie-Hellman Key Exchange could be used to agree
+on a single number, which could be used as a shared secret key.
+\item However, there is no obvious way to \emph{undo} the process of the
+key exchange, even if you're the intended recipient, and recover the
+sender's private key.
+\item In other words, there's no way to \emph{decrypt }a message under Diffie-Hellman,
+since any plaintext taken to the power of two exponents $\mod p$
+will be changed in a way that it's impossible to recover without knowing
+the sender's secret key.
+\item In $1973$, Clifford Cocks invented a scheme that allowed for an encrypted
+message to be sent, and decrypted, \emph{without }any key exchange
+that would be helpful to a cryptanalyst. It was equivalent to what
+would be independently invented by Rivest, Shamir, and Adleman in
+1977 and called RSA encryption after the first letters of their last
+names.
+\end{itemize}
+
+\section{Reading question}
+\begin{xca}
+\textbf{(reading question)} Recall that a \textbf{trapdoor one-way
+function} is a mathematical process that's easy to do forwards, hard
+to undo, but easy to undo if you have a secret key (the \textquotedbl trapdoor\textquotedbl ).
+As an example, consider the process of mixing colors described in
+the Diffie-Hellman Color Exchange video.
+
+Watch the delightfully cheesy (and 90s) video above, then answer the
+following questions about what you've watched in a text box or document
+below:
+\end{xca}
+
+\begin{enumerate}
+\item In Clifford Cocks's cipher, what information is kept secret? 
+\begin{enumerate}
+\item the two prime numbers that are multiplied together in order to generate
+the public modulus
+\item hence, the inverse $e^{-1}\mod(p-1)(q-1)$
+\end{enumerate}
+\item In Clifford Cocks's cipher, what information is made public? 
+\begin{enumerate}
+\item the composite number $N=pq$, which is the product of two secret large
+primes $p$ and $q$.
+\item the base used for exponentiation.
+\end{enumerate}
+\item What one-way function does Cocks use in his algorithm to prevent anyone
+who intercepts his messages from reading them? 
+\begin{enumerate}
+\item Really two:
+\begin{enumerate}
+\item multiplication of large prime numbers
+\item modular exponentiation
+\end{enumerate}
+\end{enumerate}
+\item Why is it hard to undo the one-way function in this case?
+\begin{enumerate}
+\item multiplication is easy, but factoring (especially factoring products
+of very large primes) is hard
+\item taking powers mod $N$ is easy (for computers); solving the discrete
+log problem (without knowing $e^{-1}\mod(p-1)(q-1)$) is really hard!
+\end{enumerate}
+\end{enumerate}
+
+\section{Overview}
+\begin{itemize}
+\item To do cryptography, we need a process (encryption) that's easy to
+do forwards, but hard to do backwards (decryption) \textbf{unless
+}you have a secret key. Such a process is called a \textbf{one-way
+function}.
+\item However, the process has to be easy to do backwards \emph{if you have
+a secret key}, otherwise the intended recipient could never hope to
+read the message. The use of such a key is called a \textbf{trapdoor},
+and a one-way function with a trapdoor is understandably called a
+\textbf{trapdoor one-way function.}
+\item How did Cocks/RSA come up with their cipher? They first noted that
+mathematicians had already come up with a way of solving the discrete
+log problem in specific instances: if we happen to know that the modulus
+$N$ is the product of two prime numbers $p,q$!
+\item The primary one-way function in RSA is $m^{e}\mod pq$, where $m$
+is the message, $e$ is a public key (published by whoever wants to
+send messages using RSA), and $pq$ is the product of two very large
+prime numbers.
+\item This ultimately relies on \textbf{two }one-way functions.
+\begin{enumerate}
+\item It's easy (for computers) to take powers $\mod N$, where $N$ is
+some large composite number, but it's hard to \textbf{undo }exponentiation
+$\mod N$ (the discrete logarithm problem) because of the seemingly
+random way in which modular exponentiation jumbles numbers.
+\item It's easy (for computers) to multiply two very large prime numbers,
+but hard to factor a large composite number that's the product of
+two large primes.
+\end{enumerate}
+\item No non-quantum computer could ever hope to do either of these problems.
+But then how would the intended recipient receive the message?
+\item The trapdoor hinges entirely on Euler's Theorem:
+\end{itemize}
+\begin{defn}
+\textbf{Euler's phi function }or \textbf{totient function }$\phi(n)$,
+defined on a positive whole number $n$, is defined to be the number
+of whole numbers less than or equal to $n$ that are relatively prime
+to (share no factors other than $1$ with) $n$.
+\begin{itemize}
+\item We've already said that Euler's Thoerem states that, if $a$ is any
+positive whole number and $p$ is a prime number that doesn't share
+any factors with $a$, then $a^{p-1}\equiv1\mod p$. Note that $\phi(p)=p-1$,
+since every positive whole number less than $p$ (a total of $p-1$
+numbers) share no factors with $p$.
+\item Euler's Theorem also says that, if $p$ and $q$ are prime numbers
+and $a$ is any positive whole number so that $\gcd(a,pq)=1$, then
+$a^{(p-1)(q-1)}\equiv1\mod pq$. It's true in general that $\phi(pq)=(p-1)(q-1)$
+if $p,q$ are prime, since the $p-1$ numbers less than $p$, the
+$q-1$ numbers less than $q$, and all the products thereof share
+no factors with $pq$.
+\item In fact, Euler's Theorem says more than that. It actually says the
+following:
+\end{itemize}
+\end{defn}
+
+\begin{thm}[Euler's Theorem]
+ If $a$ and $n$ are positive whole numbers such that $\gcd(a,n)=1$,
+then $a^{\phi(n)}\equiv1\mod n$.
+\end{thm}
+
+Euler's Theorem is actually a generalization of another theorem called
+Fermat's Little Theorem.
+\begin{thm}[Fermat's Little Theorem]
+ If $n$ is a positive integer and $p$ is prime, then $n^{p}\equiv n\mod p$.
+\end{thm}
+
+\begin{proof}
+By Euler's Theorem, $n^{p-1}\equiv1\mod p$. Hence, 
+\[
+n^{p}=(n^{p-1})n\equiv1n=n\mod p.
+\]
+\end{proof}
+\begin{itemize}
+\item Fermat's ``big theorem'' is his famous Last Theorem, which says
+that the equation $a^{n}+b^{n}=c^{n}$ has no solutions for any integer
+value of $n$ bigger than $2$. It was proved in $1995$ after centuries
+of work, by mathematician Andrew Wiles, who won a million-dollar prize.
+\item You may believe that it's hard to factor very large numbers, but how
+well does modular exponentiation really jumble up numbers? Is it really
+that hard to undo?
+\end{itemize}
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted180\string".png}
+
+\section{The Algorithm}
+\begin{itemize}
+\item Have people come up to the board to be Alice, Bob, and Eve.
+\end{itemize}
+\begin{lyxalgorithm}[RSA Encryption]
+ (whisper the primes to Alice; announce the public info)
+\begin{enumerate}
+\item Alice wants to receive messages from Bob without Eve, who looks through
+everyone's mail, intercepting it. Alice picks two huge prime numbers,
+$p$ and $q$. In general, we want the primes to be enormous, but
+for simplicity in this example we'll assume that Alice chooses $p=17,q=11$.
+She keeps these numbers secret.
+\item Alice multiples $p$ and $q$ together to get another number, $N$
+(capitalized because it's really big). In this case, $N=17\times11=187$.
+She now picks another number $e$, the \textbf{encryption key}, with
+the property that $e^{-1}$ exists mod $\phi(pq)$, i.e. $\gcd(e,\phi(pq))=1$.
+In this case, $\phi(pq)=(17-1)(11-1)=160$, and Alice chooses $e=7$,
+which has the property that $\gcd(7,160)=1$. In general, $\phi(pq)=(p-1)(q-1)$
+as above.
+\item Alice can now publish $e$ and $N$ in something akin to a telephone
+directory (but online). Since these two numbers are necessary for
+encryption, they must be available to anyone who wants to send Alice
+a message. Together, the numbers $e$ and $N$ are called the \textbf{public
+key. }(Everyone must have their own value of $N$ if they want to
+receive messages, since $N$ depends on $p$ and $q$.)
+\item To encrypt a message $M$, we convert the message's letters to ASCII
+(underneath, the computer is doing everything in binary). Suppose
+Bob wants to send Alice a simple kiss, $M=X=88$. Now, similar to
+Diffie-Hellman, the message $M$ is encrypted using the agreed-upon
+equation
+\[
+C\equiv M^{e}\mod N
+\]
+where $C$ is the ciphertext number and $M$ is the message. To encrypt
+this message, Bob looks up Alice's public key, and discovers that
+$N=187$ and $e=7$. This provides Bob with the encryption formula
+required to send messages to Alice: $C\equiv M^{7}\mod187$. Bob plugs
+his kiss $M=88$ into this equation to get
+\[
+C\equiv88^{7}\mod187.
+\]
+Bob (really his computer) uses the modular exponentiation algorithm
+to compute $88^{7}\mod187$:
+\begin{align*}
+88^{7}\mod187 & =88^{4}\times88^{2}\times88^{1}\mod187\\
+88^{1} & =88\mod187\\
+88^{2} & =7744\equiv77\mod187\\
+88^{4} & =59969536\equiv132\mod187\\
+88^{7} & \equiv88\times77\times132=894432\equiv11\mod187.
+\end{align*}
+Bob now sends the ciphertext, $C=11$, to Alice.
+\item We know that modular exponentiation is a one-way function, so it is
+very difficult to work backwards from $C=11$ and recover the original
+message $M$. Hence, Eve cannot decipher the message. However, Alice
+can decipher the message because she has special information: the
+values of $p$ and $q$. She computes
+\[
+d=e^{-1}\mod\phi(N)
+\]
+using something called the Extended Euclidean Algorithm (or a modular
+inverse table on a computer). For example, in this case $d=23\mod(16\times10)=23\mod160$.
+\item To decrypt the message, Alice uses the formula 
+\begin{align*}
+M & \equiv C^{d}\mod N\\
+ & \equiv11^{23}\mod187\\
+ & \equiv11^{1}\times11^{2}\times11^{4}\times11^{16}\mod187\\
+ & \equiv11\times121\times55\times154\mod187\\
+ & \equiv88\mod187.
+\end{align*}
+Now Alice has deciphered Bob's kiss, $X=88$.
+\end{enumerate}
+\end{lyxalgorithm}
+
+\begin{itemize}
+\item Among other things, what's great about this algorithm is that anyone
+can send a message to Alice using her equation $C\equiv M^{7}\mod187$,
+but this information is not enough to decipher the message without
+knowing the values of $p$ and $q$. And only Alice knows these values!
+\item The reason that the decipherment works if Alice knows $p$ and $q$
+is Euler's Theorem: $d=e^{-1}$ is the multiplicative inverse of $e\mod\phi(pq)$,
+meaning that $ee^{-1}\equiv1\mod\phi(pq)$, hence $ee^{-1}$ is $1$
+more than a multiple of $\phi(pq)$. Call this multiple $k\phi(pq)$;
+then $ee^{-1}=1+k\phi(pq)$. Now Alice computes
+\begin{align*}
+C^{d}\mod N & =(M^{e})^{d}\mod N\\
+ & \equiv M^{ee^{-1}}\mod pq\\
+ & \equiv M^{1+k\phi(pq)}\mod pq\text{ for some integer }k\\
+ & \equiv M\times(M^{\phi(pq)})^{k}\mod pq\\
+ & \equiv^{Euler}M(1)^{k}\mod pq\\
+ & \equiv M\mod pq.
+\end{align*}
+\end{itemize}
+\begin{example}
+Alice publishes her public kerys $e=7$ and $pq=77$ for all to see.
+To send the message $M=25<pq$ to Alice, Bob computes 
+\[
+C\equiv M^{e}\mod pq=25^{7}\mod77\equiv53\mod77
+\]
+and sends it to Alice. Alice uses her private key, $d=43$, to compute
+\begin{align*}
+C^{d}\mod pq & =53^{43}\mod77\\
+ & \equiv25\mod77\\
+ & =M.
+\end{align*}
+If Eve intercepts $C=53$, she can decipher it only if she can solve
+$M^{7}\mod77\equiv53$ for $M$. But this is the discrete logarithm
+problem, which is too hard to solve if we use big enough numbers!
+\end{example}
+
+\begin{xca}
+With the person across from you, transmit the message ``25'' using
+RSA and the following keys. Make sure to specify which parts of your
+communication are public and private!
+\begin{enumerate}
+\item $p=5$, $q=7$, $e=5$
+\item $p=3$, $q=5$, $e=3$
+\end{enumerate}
+\end{xca}
+
+
+\section{Why does RSA work?}
+\begin{itemize}
+\item The trapdoor functions of RSA hinge entirely on Euler's Theorem.
+\item But why is Euler's Theorem true?
+\end{itemize}
+\begin{xca}
+Let $a=3,n=7$. Compute (splitting the work up in groups) $a\mod n,2a\mod n,3a\mod n,\dots,6a\mod n$.
+\begin{itemize}
+\item $3,6,2,5,1,4$, in that order. Notice that $3^{-1}=5\mod7$ since
+$3\times5=15\equiv1\mod7$. 
+\end{itemize}
+\end{xca}
+
+\begin{itemize}
+\item This is true in general if $a,n$ are two numbers that don't share
+any factors other than $1$:
+\end{itemize}
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted190\string".png}
+
+Now
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted185\string".png}
+\begin{xca}
+Compute $3^{\phi(7)}\mod7$ by multiplying $(3\cdot1)(3\cdot2)(3\cdot3)(3\cdot4)(3\cdot5)(3\cdot6)$
+and verifying the result is the same as $(1)(2)(3)(4)(5)(6)\mod7$.
+Since the former is $3^{\phi(7)}(1\cdot2\cdot3\cdot4\cdot5\cdot6)\mod7$,
+this means 
+\begin{align*}
+3^{\phi(7)}(1\cdot2\cdot3\cdot4\cdot5\cdot6)\equiv(1\cdot2\cdot3\cdot4\cdot5\cdot6)\mod7.
+\end{align*}
+What is the inverse of $(1\cdot2\cdot3\cdot4\cdot5\cdot6)\mod7$?
+Multiply both sides by this inverse. The left side becomes $3^{\phi(7)}$.
+What does the right side become? What does this say about $3^{\phi(7)}\mod7$?
+\end{xca}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted186\string".png}
+
+\section{RSA in the real world}
+\begin{itemize}
+\item The message $M$ could be a private number, like a credit card number,
+that one party wishes to send to another, or $M$ could be an encoded
+message or part of a message (in ASCII).
+\item Encrypting data using RSA is relatively slow, so if Alice and Bob
+want to exchange a lot of data (a lot of $M$'s), then it might be
+wise to have $M$ be a shared key for something like a one-time pad
+instead.
+\item Finally, RSA can be used to generate digital signatures. If Bob sends
+a message to Alice, how does Alice know that Bob really sent it?
+\item One thing that Bob can do is encrypt his ``signature'' with his
+own \emph{private} key, and when Alice receives his message, she can
+decrypt it using Bob's \emph{public }key (since $(M^{e})^{d}\equiv M$,
+it's also true that $(M^{d})^{e}\equiv M$) because multiplication
+is commutative).
+\end{itemize}
+\begin{example}
+Bob sends a surprising message to Alice: ``Alice, I've decided to
+major in math. It's the coolest! Bob ($125010690$)
+
+Bob knows that Alice won't believe he actually sent the message, so
+he digitally signed it by enciphering his name (in ASCII) using his
+own private key. Alice finds that Bob's public keys are $e=1234567891$
+and $pq=176391331$, and she computes
+\begin{align*}
+152010690^{e}\mod pq & =125010690^{1234567891}\mod176391331\\
+ & \equiv66111098\mod176391331.
+\end{align*}
+Since the decrypted digital signature ($66$ $111$ $098$) has an
+ASCII equivalent of \emph{Bob}, Alice is sure that Bob actually sent
+the message.
+\end{example}
+
+\begin{xca}
+{[}slide{]}
+\end{xca}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted189\string".png}
+\end{document}

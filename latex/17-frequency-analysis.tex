@@ -1,0 +1,201 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{definition}
+\newtheorem*{xca*}{\protect\exercisename}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 Unit 7 - Frequency Analysis for Shift Ciphers}
+\maketitle
+
+\section*{Last Time}
+\begin{itemize}
+\item We discovered how to decrypt affine ciphers once you know the key.
+\item It's a matter of solving the encryption equation $C\equiv mP+k\mod n$
+for $P$:
+\begin{enumerate}
+\item Subtract $k$ from both sides: $C-k\equiv mP\mod n$.
+\item Multiply both sides by $m^{-1}$, the multiplicative inverse of $m\mod n$:
+\[
+m^{-1}(C-k)\equiv P\mod n
+\]
+\end{enumerate}
+\end{itemize}
+\textbf{Today}: We'll learn how to break shift and affine ciphers
+(and all monoalphabetic substitution ciphers) \textbf{without knowing
+the key(s) to start with}. The tools we'll need come from the Arabs
+around 900 A.D.
+\begin{itemize}
+\item These tools were so effective that they killed off the shift cipher
+once they were common knowledge!
+\item The extended Euclidean algorithm wasn't published until $1740$, so
+unless people were able to guess-and-check multiplicative inverses,
+the affine cipher was safe in comparison.
+\end{itemize}
+
+\section{Reading questions}
+\begin{xca}
+{[}slide{]} Read the Sherlock Holmes story \textquotedbl The Adventure
+of the Dancing Men\textquotedbl{} only through the end of Ch. 11 by
+clicking on the title. Since we've discussed frequency analysis, you
+now have all the tools you need to crack the code before Sherlock
+does! Don't read ahead until you've given your best attempt to cracking
+the code, and bring your work to class on the date below for group
+discussion.
+\begin{itemize}
+\item {[}slide{]} solution
+\item have students read decrypted forms of messages
+\end{itemize}
+(pass ciphertext clockwise in groups) Read p14-17 of The Code Book,
+until the last full paragraph, the quote from al-Kindi. Then make
+up some short (\textasciitilde 10 letters) plaintext where the most
+common letter is something unusual, like x or z. Encrypt your plaintext
+with an affine cipher of your choice and bring your plaintext and
+ciphertext, on separate sheets, to class on the date below.
+\begin{itemize}
+\item Note how hard it is with short messages! A computer could check all
+the $26^{2}$ affine cipher possibilities pretty quickly, though.
+\end{itemize}
+\end{xca}
+
+
+\section{The Arab cryptanalysts and breaking simple shift ciphers}
+
+Read p14-17 (until the last full paragraph, the quote from al-Kindi).
+al-Kindi's technique became known as \textbf{frequency analysis},
+and it's surprisingly straightforward to apply. 
+
+\subsection*{The Process of Frequency Analysis}
+
+Flip to the table at the bottom of p19 of your books. There's a listing
+of the most common letters used in English:
+
+\includegraphics[scale=0.25]{\string"Old Cryptography Notes/1000px-English_letter_frequency_(frequency)\string".png} 
+
+You'll want to refer back to this as you do the next exercise.
+
+Note that this doesn't always apply\textendash some texts use letters
+less frequently. For example, in the book \textbf{A Void} by Georges
+Perec {[}write this phrase on board by itself somewhere{]}, the letter
+``e'' is not used at all!
+
+You might ask how reliable the listing of common letters is. Figure
+1.2 shows a stacked bar chart that shows the frequencies of the letters
+in ``The Gold-Bug'', the 2006 State of the Union address, ``Julius
+Caesar'', and the ``USA Patriot Act'':
+
+\includegraphics{\string"Old Cryptography Notes/pasted7\string".png}
+\begin{xca}
+{[}CoursePack p99{]} ``Breaking the Code.pdf''
+\end{xca}
+
+
+\section*{Solving Simple Substitution Ciphers}
+
+\textbf{For group work}: designate one person in the group to write
+down ideas as they're said so you remember them. Designate another
+person to write out your solution at the end. Designate two people
+to generate as many ideas as possible, and the other two people to
+respond to those ideas.
+\begin{itemize}
+\item This was the experience of many cryptographers after al-Kindi's technique
+of frequency analysis became commonly known.
+\item What we've done in building codes was hard, and cracking them may
+seem too easy given the painstaking work we've done to encrypt our
+messages. 
+\begin{itemize}
+\item However, it's often true that codes are easier to break than to make.
+\end{itemize}
+\item Frequency analysis will crack both shift and affine ciphers and reveal
+the weaknesses of monoalphabetic substitution ciphers of any kind.
+\item What we've done so far has been hard, but you've been on top of it!
+\item The next cipher we'll discuss will be a bit easier to encrypt than
+the affine cipher.
+\item However, frequency analysis isn't perfect:
+\begin{itemize}
+\item Issue: our standard English frequencies don't always apply. 
+\item For example, in the book \textbf{A Void} by Georges Perec {[}write
+this phrase on board by itself somewhere{]}, the letter ``e'' is
+not used at all! 
+\item But the longer the message, the more likely it is to conform to standard
+English frequencies.
+\end{itemize}
+\end{itemize}
+\begin{xca*}
+{[}handout; slide{]} Assume we have intercepted this scrambled message.
+The challenge is to decipher it. We know the text is in English, and
+that it has been scrambled according to a monoalphabetic substitution
+cipher with a keyphrase, but we don't know the key. Use frequency
+analysis. {[}This is a hard problem\textendash work in your groups!{]}
+
+\includegraphics{\string"Old Cryptography Notes/pasted5\string".png}
+\end{xca*}
+\textbf{Solution. }Frequency analysis gives the following table of
+letters:
+
+\includegraphics{\string"Old Cryptography Notes/pasted6\string".png}
+
+The three most common letters are \textbf{O, X, }and \textbf{P.} We
+focus on how they appear next to all the other letters. For example,
+if \textbf{O }represents a vowel, it should appear before and after
+most of the other letters, whereas if it represents a consonant, it
+will tend to avoid many of the other letters.
+
+\textbf{O }neighbors the majority of letters, and so does \textbf{X.}
+But \textbf{P }avoids most other letters and clusters around only
+a few of them. This suggests that \textbf{O }and \textbf{X }are vowels,
+while \textbf{P }is a consonant.
+
+Hence \textbf{O }and \textbf{X }are probably \textbf{e} and \textbf{a}.
+But which is which? Notice that \textbf{OO} appears twice, while \textbf{XX}
+doesn't ever appear. Since \textbf{ee} is more common in English than
+\textbf{aa}, probably $O=e$ and $X=a$.
+
+The other letters that appear on their own are \textbf{$X=a$ }(which
+is expected since ``a'' is a word) and \textbf{Y.} Hence probably
+\textbf{Y} is \textbf{i}, the only other one-letter English word.
+
+The letter \textbf{h }often goes before the letter \textbf{e}, but
+rarely after it. This is characteristic of \textbf{B,} so probably
+$B=h$. Then start replacing letters. Guess where ``the'', ``and''
+appear. Then \textbf{C} must be a vowel and $C=o$. Then $K=s$. Get
+the phrase ``thoMsand and one niDhts''. Hence $M=u$ and $D=g$.
+Now guess the keyphrase is ``A VOID BY GEORGES PEREC'', which is
+reduced to ``AVOIDBYGERSPC'' after removing spaces and repetitions.
+
+\section*{Reflection}
+\begin{enumerate}
+\item What were the two most important concepts from today's class?
+\item What were two things you didn't fully understand?
+\item What were your two favorite things we did in class today?
+\end{enumerate}
+
+\section*{Homework (start in-class if time)}
+
+\includegraphics{\string"Old Cryptography Notes/pasted126\string".png}
+
+\includegraphics{\string"Old Cryptography Notes/pasted99\string".png}
+
+\includegraphics{\string"Old Cryptography Notes/pasted124\string".png}
+\end{document}

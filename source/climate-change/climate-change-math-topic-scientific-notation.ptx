@@ -1,0 +1,222 @@
+<section xml:id="climate-change-math-topic-scientific-notation">
+	<title>Scientific Notation and Number Sense</title>
+	<subsection>
+		<title>Thinking about Size Comparisons</title>
+		<p>
+			How can we compare the numbers 100 and 1,000?
+		</p>
+		<p>
+			Answers you might have given:
+			<ul>
+				<li>1,000 is 900 more than 100.</li>
+				<li>100 is 900 less than 1,000.</li>
+				<li>100 is 1/10 as big as 1,000.</li>
+				<li>1,000 is 10 times as big as 100.</li>
+			</ul>
+		</p>
+		<assemblage>
+			<p>
+				Reflection question: Look at the different ways of comparing those two numbers. What are the benefits of each of these comparisons? What are some reasons for not using some of these comparisons? Why might someone choose to use one way of comparing instead of another?
+			</p>
+		</assemblage>
+		<p>
+			How can you compare the following sets of numbers? 
+			<ul>
+				<li>1,000,000,000,000 and 10</li>
+				<li>545,430,089,384,398,938,938,398,983,982,345,523,234,942 and 9,293,983,983,298,982,983,483</li>
+				<li>0.0000000001 and 10,000,000,000,000,000</li>
+			</ul>
+		</p>
+		<p>
+			You can compare these numbers in the same ways as the ways you might have chosen to compare 100 and 1000, but they may not be as meaningful or useful.  Instead, you might want to see  Can you think of any other ways to compare these numbers?
+		</p>
+		<figure>
+			<video youtube="0fKBhvDjuy0"/>
+			<caption>
+				Powers of Ten is a (slightly outdated) movie from the 1970s which shows how the different powers of ten are related. 
+			</caption>
+		</figure>
+		<p>
+			Understanding very large numbers can be hard to do.  Some strategies for trying to understand very large numbers are:
+		</p>
+		<ul>
+			<li>
+				Breaking the number down into smaller pieces.  For example, say you were trying to understand the number $1,000,000,000 (1 billion dollars).  If you made $100 an hour, and you worked full-time (40 hours per week in the US), 50 weeks a year, it would take 5000 years for you to earn $1,000,000,000...and that doesn't even account for taxes!
+				<me>
+					(\$100/\text{hour})*(40\text{hours/week})*(50\text{weeks/year})*(5000\text{years}) = \$1,000,000,000
+				</me>
+			</li>
+			<li>
+				Changing the units of the number can be helpful, especially when there is another unit which might help you understand better. The Aqua satellite, used to measure greenhouse gas emissions, orbits 2,300,000 feet above the Earth. This large number is easier to comprehend if you convert it into 436 miles <xref ref="climate-change-biblio-aqua-satellite"/>
+			</li>
+			<li>
+				Comparing the quantity to something else you already can envision.  The 2,300,000 feet or 436 miles we found in the previous bullet is still somewhat difficult to understand.  Thinking of this as the distance from Washington D.C. to Boston, or from San Diego to San Jose, can be more helpful (at least if you've been to those cities).
+			</li>
+			<li>
+				Looking at the quantity per person, or per unit area, or per some other unit. In 2020, the US used 763 million gallons of oil, on average, every day <xref ref="climate-change-biblio-us-oil-consumption"/>.  That is a little bit more than 2 gallons per person.
+			</li>
+		</ul>
+	</subsection>
+	<subsection>
+		<title>What is Scientific Notation?</title>
+		<p>
+			So far, we have been writing numbers using decimal notation. Decimal notation is our usual way of writing the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 to talk about a number. But, sometimes decimal notation can make it more difficult to understand really big or really small numbers.
+			Scientific notation is a way of writing very large or very small numbers in order to make the numbers easier for people to understand. Scientific notation also makes it easier to write down numbers that would be very long in decimal notation.
+		</p>
+		<definition>
+			<title>Scientific Notation</title>
+			<p>
+				We say a number is in <em>scientific notation</em> if it is written in the form
+				<me>
+					A.XXXX * 10^{power}
+				</me>
+				where A is the first non-zero digit in the number, and <em>power</em> is the appropriate power.
+			</p>
+		</definition>
+		<p>
+			To put a number into scientific notation, we first figure out what the place is of the first nonzero digit.  Each place in a number corresponds to a power of 10 - for example, the hundreds place corresponds to <m>10^2 = 100</m>, while the millions place corresponds to <m>10^6 = 1,000,000</m>.  If <m>n > 0</m>, then <m>10^n</m> is a 1 followed by <m>n</m> 0s.  The ones place is <m>10^0 = 1</m>.
+		</p>
+		<p>
+			For negative values of <m>n</m>, we get decimals.  For example, <m>10^{-1} = \frac{1}{10^1} = 0.1</m>, one-tenth.  <m>10^{-3} = \frac{1}{10^3} = 0.001</m>, one one-thousandth.
+		</p>
+		<p>
+			To do arithmetic with numbers in scientific notation, you proceed differently depending on what you're doing.
+		</p>
+		<assemblage>
+			<p>
+				To multiply/divide numbers in scientific notation, you can divide both the decimal part and the exponent part separately.
+			</p>
+			<me>
+				\frac{1.234*10^9}{5.678*10^3} = \frac{1.234}{5.678}*\frac{10^9}{10^3} = 0.2173*10^6 = 217,300
+			</me>
+			<p>
+				To add or subtract numbers in scientific notation, you'll need to write them both with the same power (use whichever power is larger), and then add or subtract the decimal parts. 
+			</p>
+			<me>
+				1.234*10^9 - 5.678*10^7 = 1.234*10^9 - 0.005678*10^9 = 1.172*10^9
+			</me>
+			<p>
+				If you end up with a zero in front of the decimal, you'll need to move the decimal place over one or more places:
+			</p>
+			<me>
+				1.234*10^9 - 1.231*10^9 = 0.003*10^9 = 3*10^6
+			</me>
+		</assemblage>
+		<p>
+			Try this yourself in the examples below.  Don't worry about rounding - we'll talk about how to decide how many decimal places to round to in the next section.
+		</p>
+		<example>
+			<statement>
+				Find the product of <m>2.23*10^3</m> and <m>4.25*10^{-4}</m>.
+			</statement>
+			<solution>
+				<me>
+					(2.23*4.25)*(10^3*10^{-4}) = 9.48*10^{-1}
+				</me>
+			</solution>
+		</example>
+		<example>
+			<statement>
+				Find the sum of <m>5.72*10^5</m> and <m>6.43*10^6</m>.
+			</statement>
+			<solution>
+				<me>
+					0.572*10^6 + 6.43*10^6 = 7.00*10^6
+				</me>
+			</solution>
+		</example>
+	</subsection>
+	<subsection>
+		<title>Significant figures</title>
+		<p>
+			When working with numbers with lots of decimal digits, how many digits should you keep? This is the idea behind <em>signficant figures</em>.
+		</p>
+		<definition>
+			<title>Significant Figures</title>
+			<p>
+				The number of significant figures or significant digits in a number which has been rounded is the total number of digits written, minus any leading zeros (zeros written before the first non-zero digit).  Numbers that have not been rounded have an infinite number of significant figures.
+			</p>
+		</definition>
+		<p>
+			For example, the number 123.4567 has 7 significant digits, but so does the number 0.0001234567.  The number 1.234567000 has 10 significant digits, because we count the zeros which aren't leading zeros.
+		</p>
+		<example>
+			<statement>
+				The population of the United States was 328,239,523 in 2019 <xref ref="climate-change-biblio-us-population"/>. How many significant digits does this number have?
+			</statement>
+			<solution>
+				<p>
+					There are 9 significant digits here.
+				</p>
+			</solution>
+		</example>
+		<p>
+			In a number written in scientific notation, we count the significant digits the same way.  For example, the number <m>1.2345*10^{-3}</m> has 5 significant digits (notice that this is the same as if we had written it as <m>0.0012345</m>).
+		</p>
+		<example> 
+			<statement>
+				<p>
+					The United States emitted the equivalent of <m>6.558*10^9</m> metric tons of carbon dioxide in greenhouse gases during 2019 <xref ref="greehouse-gas-biblio-emissions-inventory"/>. How many significant figures are there in this number?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					There are 4 significant figures.
+				</p>
+			</solution>
+		</example>
+		<p>
+			Significant figures are important because they tell us how accurate numbers are.  Say we wanted to know what the average CO2 emissions per person were in the United States.  We can take the numbers we had in the last two examples and divide:
+			<me>
+				\frac{6.558*10^9}{328,239,523} = 19.979312485169557...
+			</me>
+			The calculator produces a number of digits here, but how can we know how many values to round to? Significant figures give us a way to decide this.
+		</p>
+		<assemblage>
+			<p>
+				When multiplying or dividing two numbers, round to the smaller number of significant digits.
+			</p>
+			<p>
+				When adding or subtracting two numbers, round to the smaller number of decimal places (significant figures after the decimal point).
+			</p>
+		</assemblage>
+		<p>
+			For our example above, since the population number has 9 significant digits, and the CO2 emissions only has 4, we will round to 4 decimal places and say that the emissions per person is <m>19.98</m> metric tons per person.  Compare this to what we do when we subtract.  
+		</p>
+		<p>
+			Say we want to know how many more tons of CO2 equivalents per person were emitted in the US than in China.  In 2019, China had <m>1.3902*10^{10}</m> (5 significant figures) of CO2 equivalent emissions <xref ref="climate-change-biblio-emissions-china"/>, and the population was 1,433,783,686 (10 significant figures) <xref ref="climate-change-biblio-china-population"/>. So in China, the emissions per person were
+			<me>
+				\frac{1.3902*10^10}{1,433,783,686} = 9.6960232814...
+			</me>
+			Since we're dividing, we keep 5 significant figures and get <m>9.69602</m> tons of CO2 equivalent emissions per person.  If we want to know how many more tons are emitted per person in the US, we subtract:
+			<me>
+				19.98 - 9.9602 = 10.0198
+			</me>
+			Since we are subtracting, we take the lesser of the significant figures after the decimal - 2 in this case.  So we round the answer to 10.02 metric tons more per person.
+		</p>
+		<p>
+			What’s that big ‘E’ on my calculator?
+			You’ve probably seen an output like this before on your calculator.
+		</p>
+		<p>
+			The second line might look really complicated, but this is just the way your calculator was programmed to write numbers in scientific notation. The product of 315,246 and 134,512,361 is too big to fit all of it on the calculator screen in one line. So, the calculator programmers decided to represent that product using scientific notation.
+			4.240448376E13 means the same thing as <m>4.240448376 * 10^{13}</m>.
+		</p>
+		<p>
+			But, not all calculators use ‘E’ to describe very large or very small numbers. 
+			Desmos provides an <url href="https://www.desmos.com/scientific">online scientific calculator</url> that anyone can use. If you try to add, subtract, multiply, or divide two numbers with more than 9 digits, Desmos will automatically write them in scientific notation.  Instead of using the capital E, Desmos writes scientific notation the same way that we've seen.
+		</p>
+		<p>
+			An important note:
+			There are other symbols that you might see sometimes on your calculator that look similar to this capital E, but they actually mean very different things.
+		</p>
+		<ul>
+			<li>
+				<m>e</m>: The lowercase e is a number that is important for lots of applications of mathematics. The name of this number is the same as the name of the letter:  e. It is equal to about 2.71828, and should not be confused with the scientific notation symbol.
+			</li>
+			<li>
+				<m>\Sigma</m>:This symbol, which looks like a sideways W,  is called ‘sigma’. Sigma is a Greek letter, and it is sometimes used in mathematics to talk about addition.
+			</li>
+		</ul>
+	</subsection>
+</section>

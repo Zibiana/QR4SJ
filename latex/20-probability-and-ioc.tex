@@ -1,0 +1,114 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem*{question*}{\protect\questionname}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\questionname}{Question}
+
+\begin{document}
+\title{WCSAM 206 10 - Probability \& the Index of Coincidence}
+
+\maketitle
+\textbf{Today: }so far, for every code I've given you to break, we've
+assumed you knew the way the code was encrypted. When might this assumption
+be realistic? When might it not?
+
+Reliable: 
+\begin{itemize}
+\item One code is the ``gold standard''
+\item You know your enemy tends to use only one type of given code (e.g.
+Enigma)
+\end{itemize}
+Unreliable:
+\begin{itemize}
+\item You're dealing with a message from an unknown sender (e.g. you intercepted
+something as a security agent)
+\item There are multiple codes in common use
+\end{itemize}
+\begin{question*}
+How can you tell how a given code was encrypted \emph{without being
+able to break it}?
+\end{question*}
+\textbf{Answer}: Use mathematics, specifically probability!
+
+\includegraphics[scale=0.5]{\string"Old Cryptography Notes/pasted74\string".png}
+
+\includegraphics[scale=0.5]{\string"Old Cryptography Notes/pasted75\string".png}
+
+Remember our main (non-mechanical) methods of encipherment are the
+simple shift cipher, Vigenere cipher, and affine cipher.
+\begin{question*}
+What would be the IoC for shift ciphertext?
+
+What about for affine ciphertext?
+\end{question*}
+It turns out both are around 0.066, just like regular English.
+
+One of the advantages of Vigenere is that it obscures letter frequencies;
+it thwarts frequency analysis. Should its IoC be $<$ or $>0.066$?
+
+Less, because it should be even less likely that one letter is more
+frequent than another.
+
+How do we calculate the IoC for a given body of text? Need to compute
+the probability that two randomly selected letters are the same. Let's
+define ``random'' and show how we compute probability:
+
+\section*{Counting}
+
+Do all examples as exercises.
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted76\string".png}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted77\string".png}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted78\string".png}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted79\string".png}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted85\string".png}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted86\string".png}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted80\string".png}
+
+\includegraphics{\string"Old Cryptography Notes/pasted133\string".png}
+
+\includegraphics{\string"Old Cryptography Notes/pasted134\string".png}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted81\string".png}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted82\string".png}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted83\string".png}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted84\string".png}
+
+\includegraphics{\string"Old Cryptography Notes/pasted135\string".png}
+
+\includegraphics{pasted2}
+
+\includegraphics{pasted3}
+
+\includegraphics{pasted4}
+
+\includegraphics{pasted5}
+
+\includegraphics{pasted6}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted89\string".png}
+\end{document}

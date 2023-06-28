@@ -1,0 +1,227 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSBS 220 4 - Units and Unit Conversions}
+\maketitle
+
+\section{Reading question: the MPG illusion}
+\begin{xca}
+Please read Sections 2.1-2.2 of~Common Sense Mathematics, on units
+and MPG, then answer the following questions. Bring your answers to
+class on the date below for discussion.
+\begin{enumerate}
+\item There are about 3.8 liters in a gallon and about 1.6 kilometers in
+a mile. If a car can travel 30 miles for every gallon of gas it burns,
+approximately how many kilometers can it travel per liter of gas?
+Just like in Section 2.1 of~Common Sense Mathematics, write out your
+units and cancel units just like you would cancel numerators and denominators
+in a fraction. 
+\begin{enumerate}
+\item We convert mi/gal (mpg) to gpm (gal/mi) by taking a reciprocal:
+\[
+30\frac{\text{mi}}{\text{gal}}=\frac{1\text{ gal}}{30\text{ mi}}
+\]
+\item We convert gpm to kmpl (kilometers per liter):
+\[
+\frac{1\text{ gal}}{30\text{ mi}}\times\frac{3.8\text{ L}}{1\text{ gal}}\times\frac{1\text{ mi}}{1.6\text{ km}}=0.079\frac{\text{km}}{\text{L}}
+\]
+\end{enumerate}
+\item If a car can travel 30 miles per gallon of gas, how many gallons of
+gas does the car need to travel one mile? Show all work and units,
+cancelling units when needed. 
+\begin{enumerate}
+\item It needs $1/30=0.0\overline{3}$ gallons per mile.
+\end{enumerate}
+\item If a car can travel 30 miles per gallon of gas, how many liters of
+gas does the car need to travel one kilometer?~Show all work and units,
+cancelling units when needed. 
+\begin{enumerate}
+\item We can just take the reciprocal of the fraction from (1):
+\[
+\frac{1\text{ L}}{0.079\text{ km}}=12.69\frac{\text{km}}{\text{L}}
+\]
+\end{enumerate}
+\item If you were looking to buy a new car, what, if anything, does reading
+Section 2.2 change about what you'd consider before buying? Explain.
+\end{enumerate}
+\end{xca}
+
+
+\section{Units \& Unit Conversions}
+
+\subsection{Tips \& tricks for unit conversion}
+\begin{itemize}
+\item Always write out the units along with the numbers, putting ``per''
+units in the denominator and primary units in the numerator.
+\item It's useful to convert units when existing units make your answer
+too small to be properly understood (e.g. converting $.0062$ prisoners
+per capita below to $620$ prisoners per $100,000$ people.)
+\item Write out units at each step {[}demonstrate with conversion suggestion
+from the class{]}
+\end{itemize}
+\begin{xca}
+\textbf{(Worksheet) Measurement \& Unit Conversions}
+\begin{enumerate}
+\item The reading covered one of the conundrums about the way we report
+fuel efficiency. Here we practice these types of calculations to make
+sure the ideas are clear. If you assume both vehicles travel the same
+distance each year, which option will save the most gas? If you assume
+the Honda travels twice as far as the Toyota each year, which option
+will save the most gas?
+\begin{itemize}
+\item Option 1: Replace an old Toyota truck (that gets 17 mpg) with a new
+one getting 21 mpg
+\begin{itemize}
+\item old Toyota: 
+\[
+10,000\text{ miles}\times\frac{1\text{ mile}}{17\text{ gallons}}=588.24\text{ gallons}
+\]
+\item new Toyota: 
+\[
+10,000\times\frac{1}{21}=476.19\text{ gallons}
+\]
+\item difference: $588.24-476.19=112.05$ gallons
+\end{itemize}
+\item Option 2: Replace an old Honda Civic (that gets 32 mpg) with a new
+one getting 40 mpg.
+\begin{itemize}
+\item old Civic:
+\[
+10,000\text{ miles}\times\frac{1\text{ mile}}{32\text{ gallons}}=312.5\text{ gallons}
+\]
+\item new Civic: 
+\[
+10,000\times\frac{1}{40}=250\text{ gallons}
+\]
+\item difference: $312.5-250=62.5$ gallons
+\end{itemize}
+\item The first option will save more gas if the cars travel the same distance
+(assume $10,000$ mi) each year.
+\begin{itemize}
+\item Note that we're increasing the mpg by $4$ in the first question and
+$8$ in the second, yet the first option saves more money.
+\end{itemize}
+\item If the Honda travels twice as far, say $20,000$ mi, then the old
+Civic uses $312.5\times2=625$ gallons and the new Civic uses $250\times2=500$
+gallons, a savings of $125$ gallons. So in this case replacing the
+Honda makes more sense.
+\end{itemize}
+\item In the US, roughly $2.2$ million people were in prison (federal,
+state or local) in $2018$. In Russia, that number is just under 900,000.
+Why would it be misleading to say that Russia imprisons half of the
+people the US does? What units would make a comparison more fair?
+Look up incarceration rates for various countries. 
+\begin{enumerate}
+\item We need to look at prisoners \emph{per capita}: Russia has $144.3$
+million people so 
+\[
+\frac{900,000\text{ prisoners}}{144,300,000\text{ people}}=.0062\text{ prisoners per capita}
+\]
+\item It's more useful to think in bigger numbers: that's $620$ prisoners
+per $100,000$ people.
+\item In the US, in contrast, there are
+\[
+\frac{2\text{ million prisoners}}{300\text{ million people}}=.0066\text{ prisoners per capita}.
+\]
+That's $667$ prisoners per $100,000$ people. So Russia and the US
+have similar incarceration rates.
+\item \includegraphics{pasted1}
+\end{enumerate}
+\item Convert the following to units that make more sense to you:
+\begin{itemize}
+\item Capetown, South Africa target water usage: $87$ liters / day 
+\begin{itemize}
+\item $23$ gal/day
+\end{itemize}
+\item German Gas Prices: $1.42$ Euros / L 
+\begin{itemize}
+\item $\$6.29$ per gallon
+\end{itemize}
+\item South African VW\textquoteright s efficiency: $5.1\text{L}/100\text{km}$
+\begin{itemize}
+\item $46.12$ mpg
+\end{itemize}
+\item Recycled Paper: $1379$ RMB/tonne
+\begin{itemize}
+\item $\$0.09$/pound
+\end{itemize}
+\end{itemize}
+\item Put the following liquids in order from cheapest to most expensive
+(per unit volume) by converting all prices to a single standard. Explain
+the widely different prices for these liquids.
+\begin{itemize}
+\item Five Wives Vodka (\$17.99 / 750 mL)
+\begin{itemize}
+\item $\$24$/L
+\end{itemize}
+\item Oil (West Texas Intermediate crude) (\$69.61 / barrel) 
+\begin{itemize}
+\item $\$69.61/158.987\text{ L}=\$0.43$ per liter
+\end{itemize}
+\item Milk (\$3.79 / gallon)
+\begin{itemize}
+\item $\$1.00$/L
+\end{itemize}
+\item Mount Olympus bottled water (\$4.49 / 12 L) 
+\begin{itemize}
+\item $\$0.37/L$
+\end{itemize}
+\item Pure Vanilla Extract (\$6.29 / 59 ml)
+\begin{itemize}
+\item \$$106.61/L$
+\end{itemize}
+\item The ordering is
+\begin{enumerate}
+\item Bottled water
+\item Oil
+\item Milk
+\item Vodka
+\item Vanilla extract (kinda surprising to me how oil is relatively cheap,
+but this is almost certainly 
+\end{enumerate}
+\end{itemize}
+\item (from mpgillusion.com) Assume that a person drives 10,000 miles per
+year and is contemplating changing from a current vehicle to a new
+one. First, without doing any calculations (just using intuition and
+guesswork), rank the following five pairs of old and new vehicles
+in order of their benefit to the environment (i.e., which new car
+would reduce gas consumption the most compared to the original car).
+Use 1 for the largest savings and 5 for the smallest savings. Then
+verify your answers through calculation. 
+\begin{enumerate}
+\item 18 MPG to 28 MPG
+\item 16 MPG to 20 MPG 
+\item 22 MPG to 24 MPG 
+\item 42 MPG to 48 MPG 
+\item 34 MPG to 50 MPG 
+\end{enumerate}
+\item Convert each answer above from MPG to GPM. Do the GPM numbers reflect
+the true benefits in changing vehicles? Explain.
+\end{enumerate}
+\end{xca}
+
+
+\end{document}

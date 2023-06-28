@@ -1,0 +1,88 @@
+<table>
+  <tabular>
+    <row header="yes">
+      <cell>
+      </cell>
+      <cell colspan="2">
+        Percentage of Households
+      </cell>
+    </row>
+    <row>
+      <cell>
+        Number of vehicles
+      </cell>
+      <cell>
+        Great Britain
+      </cell>
+      <cell>
+        United States
+      </cell>
+    </row>
+    <row>
+      <cell>
+        0
+      </cell>
+      <cell>
+        25%
+      </cell>
+      <cell>
+        9%
+      </cell>
+    </row>
+    <row>
+      <cell>
+        1
+      </cell>
+      <cell>
+        43%
+      </cell>
+      <cell>
+        32%
+      </cell>
+    </row>
+    <row>
+      <cell>
+        2
+      </cell>
+      <cell>
+        23%
+      </cell>
+      <cell>
+        37%
+      </cell>
+    </row>
+    <row>
+      <cell>
+        3
+      </cell>
+      <cell>
+        6%
+      </cell>
+      <cell>
+        15%
+      </cell>
+    </row>
+    <row>
+      <cell>
+        4
+      </cell>
+      <cell>
+        2%
+      </cell>
+      <cell>
+        5%
+      </cell>
+    </row>
+    <row>
+      <cell>
+        5+
+      </cell>
+      <cell>
+        1%
+      </cell>
+      <cell>
+        2%
+      </cell>
+    </row>
+  </tabular>
+</table>

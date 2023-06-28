@@ -1,0 +1,255 @@
+<pretext>
+
+    <docinfo>
+        <macros>
+        \newcommand{\doubler}[1]{2#1}
+        </macros>
+    </docinfo>
+
+    <article xml:id="minimal">
+        <title>Conversion Script Test</title>
+
+        <frontmatter>
+
+            <titlepage>
+                <author>
+                    <personname>Virgil U Pierce</personname>
+                    <institution>University of Northern Colorado</institution>
+                </author>
+                <date><today /></date>
+            </titlepage>
+
+            <abstract>
+                <p>Testing of conversion of a Jupyter notebook to Pretext, and compiling</p>
+            </abstract>
+            
+            <introduction>
+
+                <p>Check if process.call worked</p>
+
+                <p>This is a short paragraph to introduce the article (but it is not the abstract).  
+                It is optional, in case it would be preferable to have the first section be titled an 
+                <q>Introduction.</q></p>
+            </introduction>
+            
+        </frontmatter><section>
+ <title> Decrypting Shift Ciphers Using Brute Force
+</title>
+
+<subsection>
+ <title> What is brute force?
+</title>
+
+<p>Let's say you intercept a message that you know was encrypted with a shift cipher, but you don't know the key. Is it possible to just try every possible key until you figure out what the message says?</p>
+
+<p>With shift ciphers and some other simple types of ciphers, the answer is yes! This is a good reason that the shift cipher is not currently used for military purposes. It was all well and good for Julius Caesar when no one was aware that shift ciphers existed, but now that they're commonly known, any shift-ciphered message could be broken by a (not particularly bright) computer in a few seconds.</p>
+
+<p>Breaking a cipher by <alert>brute force</alert> (or a <alert>brute-force attack</alert>) means trying to decrypt a message using all possible keys until you find a key that generates reasonable English plaintext. </p>
+
+<p>Let's start with a specific example. Say you encounter the ciphertext "PBVHFUHW", and you know it's been encrypted using a shift cipher (with unknown key). How would you execute a brute-force attack on this message with pen and paper? In the text box below, write out the steps you would take. How many possible keys would we have to try to decrypt a message that has been enciphered using an unknown shift cipher? Why?</p>
+
+</subsection>
+<subsection>
+ <title> The `range` command
+</title>
+
+<p>It would be quite a pain to write out all those numbers each time we wanted to tell Python to try all shifts. Thankfully, Python has a built-in command that denotes all numbers in a given range.</p>
+
+<p>Say you want the numbers 0, 1, 2, 3, 4, 5, and <p><ol>
+<li><p> The "Sagely" way of doing this is `srange(0,7)` (the `s` stands for 'Sage'). Notice that the second number in the parentheses is never reached. So Sage's "syntax" (the language it uses) for number ranges is </p>
+</li>
+</ol></p>
+</p>
+<p>``srange(first number in the range, last number in the range + 1)``</p>
+
+<p>Below, write the Sage command to print the numbers 0 through 2<p><ol>
+<li><p> Then run your command and see if it works. Remember that ``print(7)`` is the command to print the number 7. If your code doesn't work, talk to a group member or to your instructor.</li>
+</p></ol>
+</p>
+</p>
+<listing>
+<console>
+<input>
+
+</input>
+</console>
+</listing>
+<p>Let's see how to decrypt the message 'PBVHFUHW' if all we know is that it was encrypted with a shift cipher (unknown shift). First, just like with encryption, we want to define a cipher alphabet: in this case, all capital English letters.</p>
+<listing>
+<console>
+<input>
+# Define our cipher alphabet as all capital English letters
+
+alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+</input>
+</console>
+</listing>
+<p>What else do we need? Well, we have to tell the computer what plaintext we want to decrypt. Just like we did in the previous Sage module, we label our plaintext with the variable ``plaintext``. After we type the line below, every time we write ``plaintext``, Sage will replace it with ``'PBVHFUHW'``. That way, we don't have to remember and re-type the ciphertext every time we want to refer to it.</p>
+<listing>
+<console>
+<input>
+# Input the ciphertext we want to decrypt
+
+ciphertext = 'PBVHFUHW'
+</input>
+</console>
+</listing>
+<p>Now, go back to the `ShiftEncrypt` Sage module. What was our next step in that case? Would we be able to use the same next step here? Why or why not? Write your answer below.</p>
+<p>Replace this text with your answer.</p>
+<p>It looks like we're going to have to try every possible shift between <m>0</m> and <m>25</m>, including <m>0</m> and <m>25</m>. Below, write the `srange` command that describes the range of numbers <m>0,1,2,\dots,25</m>. Then test your command by running it and verifying that it prints the correct set of numbers. If it doesn't work, talk to someone.</p>
+<listing>
+<console>
+<input>
+
+</input>
+</console>
+</listing>
+
+</subsection>
+<subsection>
+ <title> Testing all shifts using a `for` loop
+</title>
+
+<p>Great! You've found the code that describes the range of numbers <m>0,1,2,3,\dots,25</m>. Now we want the computer to try every possible one of these numbers as a shift. In other words, `for` every one of these numbers, we want to try the ShiftDecrypt process we encoded in the last module.</p>
+
+<p>Here's a great thing about Python: it's "stackable". In other words, we've already written the code to decrypt a message with known key in the `ShiftDecrypt` module, so we don't need to rewrite it again. We can simply copy/paste that code into this module. Then, whenever we want to try a specific key, say <m>7</m>, on a specific message, say "GJKRGE", we can just write</p>
+
+<p>``ShiftDecrypt('GJKRGE',7)``.</p>
+
+<p>Below, copy/paste your function from code chunk (<p><ol>
+<li><p>9) of the ShiftDecrypt module and run it. (It shouldn't do anything, but running it in this worksheet means the `ShiftDecrypt` command is now accessible to us for the rest of the module.)</li>
+</p></ol>
+</p>
+</p>
+<listing>
+<console>
+<input>
+
+</input>
+</console>
+</listing>
+<p>Time for our `for` loop! For every possible shift between <m>0</m> and <m>25</m>, we want to try `ShiftDecrypt`ing the ciphertext using that shift. </p>
+
+<p>Underneath the `for` loop below, tabbed over, write the code that would allow you to run the function `ShiftDecrypt` on the variable `ciphertext` with the key being the variable `shift`.</p>
+<listing>
+<console>
+<input>
+# Define our cipher alphabet as all capital English letters
+
+alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+# Input the ciphertext we want to decrypt
+
+ciphertext = 'PBVHFUHW'
+
+for shift in range(0,26):
+    ShiftDecrypt(ciphertext, shift)
+</input>
+</console>
+</listing>
+<p>Test your code by running it. Can you figure out what the plaintext corresponding to the ciphertext 'PBVHFUHW'? If so, write that plaintext below and discuss how you found it. If not, explain why not.</p>
+<p>Below, based on your investigations so far, discuss how secure you think the shift cipher is. Would you use the shift cipher to send a message to a friend? To store the password to your Facebook/Instagram/Snapchat account? What about to send military messages? Explain your answers.</p>
+<listing>
+<console>
+<input>
+
+</input>
+</console>
+</listing>
+
+</subsection>
+<subsection>
+ <title> The `BruteShift` function
+</title>
+
+<p>Now, we'll write a function that allows us to brute force any intercepted shift-enciphered message. As before, when shift ciphers are used in the real world, the ciphertext is almost certain not to be 'PBVHFUHW'. Instead of this specific ciphertext, we want to allow ourselves the freedom to <em>define</em> whatever ciphertext we want. In other words, we want ``ciphertext`` to be the <em>input</em> to a function.</p>
+
+<p>We can almost exactly recycle our code from above, where we brute-force decrypted 'PBVHFUHW'. However, we'll need to replace any references to specific ciphertext with the variable `ciphertext`.</p>
+
+<p>In the code box below, remove all references to the ciphertext 'PBVHFUHW', replacing them with references to the variable `ciphertext`. Then try running the chunk. Once you've run the chunk and observed what happens, read the text below.</p>
+<listing>
+<console>
+<input>
+
+</input>
+</console>
+</listing>
+<p>The chunk above should have again spit out the <m>26</m> possible plaintexts corresponding to the plaintext 'PBVHFUHW'. This is because we've already told Python in the previous section that `ciphertext` is a placeholder for the text 'DOFCOMWUYMUL'. </p>
+
+<p>As before, to save us from having to write out all this code anytime we want to decrypt a message with a shift cipher, we'll wrap everything up in a <alert>function</alert>. Then, if we want to brute-force decrypt the message 'AJTQETA',</p>
+
+<p>``BruteShift('AJTQETA')``</p>
+
+<p>Just like a mathematical function like <m>f(x)=3x+2</m>, Python functions have <em>inputs</em> or <em>independent variables</em> (like <m>x</m> in the example <m>f(x)=3x+2</m>) and <em>outputs</em> or <em>dependent variables</em> (like the <m>3x+2</m>). For every input <m>x</m> (for example <m>x=3</m>), the function outputs <m>3</m> times that input plus <m>2</m>. So for the input <m>3</m>, the function <m>f(x)</m> spits out <m>11</m>.</p>
+
+<p>Remember from Codecademy that, to start defining a Python function, you have to start with a `def` command. I'll set the `def` command up for you below; try copy-pasting your code from the chunk above underneath the `def` command. Remember that everything the function does has to be tabbed over once. Then run the chunk below.</p>
+<listing>
+<console>
+<input>
+def BruteShift(ciphertext):
+    
+</input>
+</console>
+</listing>
+
+</subsection>
+<subsection>
+ <title> Exercises
+</title>
+
+<p><ol>
+<li><p> Use your shiny new function to decrypt the phrase "DLLAZLABPJRPQKLQVFBIAQLYORQBCLOZB" (spaces removed) given that it was encrypted with a shift cipher. Write the code you use to do this and run that code below.</li>
+</p></ol>
+</p>
+<listing>
+<console>
+<input>
+
+</input>
+</console>
+</listing>
+<p><ol>
+<li><p> Below, copy-paste your beefed-up `ShiftEncrypt` function from Exercise 2 of that assignment and run the chunk.</li>
+</p></ol>
+</p>
+<listing>
+<console>
+<input>
+
+</input>
+</console>
+</listing>
+<p>Now, use that beefed-up `ShiftEncrypt` function to encrypt a message in the chunk below.</p>
+<listing>
+<console>
+<input>
+
+</input>
+</console>
+</listing>
+<p>Finally, below, define a function that uses brute force to decrypt a message that was encrypted using the larger alphabet from Exercise <m>2</m> from the `ShiftDecrypt` module. Be sure to adjust the modulus accordingly!</p>
+<listing>
+<console>
+<input>
+
+</input>
+</console>
+</listing>
+<p><ol>
+<li><p> Finally, test your new function by first using your beefed-up `ShiftEncrypt` function from Exercise 2 of that assignment to encrypt a message. Then, in the box below, input the encrypted message and run your beefed-up `BruteDecrypt` function from Exercise <m>2</m> above to decrypt it. Did you get the plaintext you started with? Why or why not?</li>
+</p></ol>
+</p>
+<listing>
+<console>
+<input>
+# Write the code to decrypt your encrypted message here.
+</input>
+</console>
+</listing>
+<p>Below, describe whether you got the plaintext you started with and why or why not.</p>
+
+</subsection>
+
+</section>
+</article>
+</pretext>

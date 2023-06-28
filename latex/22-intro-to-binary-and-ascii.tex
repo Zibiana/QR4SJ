@@ -1,0 +1,304 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{example}[thm]{\protect\examplename}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 11 - Intro to Binary and ASCII (1937-1960s CE)}
+\maketitle
+
+\section{Last Time}
+\begin{itemize}
+\item Enigma consists of three components in the following order:
+\[
+P\mapsto S\to W\to UKW\to W\to S\mapsto C
+\]
+where $S$ is the plugboard (steckerbrett), $W$ is the rotors (walzen),
+and $UKW$ is the reflector (umkehrwalze).
+\item Plugging two letters together in the plugboard swaps those letters
+with each other. So if a and w are plugged, we have the plugboard
+setting $(aw)$, meaning that every a that goes through the plugboard
+comes out as a w and vice versa.
+\item There are 3-4 rotors that, together, encode a different cipher alphabet
+for each letter. This alphabet changes for each letter since entering
+one letter shifts the rotors.
+\item The reflector sends the electric signal that enters it back through
+the rotors and then through the plugboard. The function of the reflector
+is to make it so that typing in plaintext into Enigma outputs ciphertext,
+while typing in ciphertext outputs plaintext.
+\end{itemize}
+\begin{example}
+{[}Canvas discusison{]} Illustrate with the sample message how to
+encrypt/decrypt.
+\end{example}
+
+\begin{xca}
+{[}Canvas discussion{]} Encrypt a message using some Enigma settings,
+then post your message for others to decrypt.
+\end{xca}
+
+
+\section{Reading question: early computer cryptography}
+\begin{xca}
+Read \emph{The Code Book }from the beginning of Ch. 6 to the heading
+``God Rewards Fools'', then answer the following questions:
+\begin{enumerate}
+\item What was the occasion for the building of the world's first programmable
+computer?
+\begin{enumerate}
+\item The British invented the first programmable computer, named Colossus,
+in order to break the Lorenz cipher used to encrypt communications
+between Hitler and his generals.
+\end{enumerate}
+\item What are three significant differences between computer encryption
+and the mechanical encryption used in Enigma?
+\begin{enumerate}
+\item A computer can mimic the action of cipher machines that are too complex
+to actually be built.
+\item A computer can operate much more quickly than mechanical scramblers.
+\item Computers scramble numbers rather than letters of the alphabet.
+\end{enumerate}
+\item Mimic the way a computer would encrypt the message ``yes'' by doing
+the following, then bring your work and ciphertext to class on separate
+sheets of paper on the date below:
+\begin{enumerate}
+\item {[}slide{]} Using Table 24 in \emph{The Code Book}, convert ``yes''
+to ASCII.
+\begin{enumerate}
+\item 121 101 115
+\end{enumerate}
+\item Choose a message key that's three letters long or less, and convert
+that key into ASCII.
+\begin{enumerate}
+\item e.g. ``woo'' = 119 111 111
+\end{enumerate}
+\item Add the ASCII digits of ``yes'' to the ASCII digits of your key
+to perform an ASCII Vigen\`{e}re cipher!
+\end{enumerate}
+\end{enumerate}
+\end{xca}
+
+\begin{xca}
+Pass your ciphertext clockwise in your groups, telling the recipient
+your keyword (but not your key numbers). Decrypt the message you've
+received, converting the ASCII back to text.
+\end{xca}
+
+
+\section{Binary Codes}
+\begin{xca}
+(Reading Question: Early Computer Cryptography) Please read Sections
+3.2 through 3.4 of your Coursepack, then give the following questions
+from p61-62 (bottom numbering) of your Coursepack your best attempt,
+showing all work. Then turn your work in on paper on the date below.
+\begin{itemize}
+\item \#4(a,b): Convert the following decimal integers to binary.
+\begin{enumerate}
+\item $13$: since $13=8+4+1=1(2^{3})+1(2^{2})+0(2^{1})+1(2^{0})$, we have
+$13=1101_{2}$.
+\item $45$: since 
+\[
+45=32+13=32+8+4+1
+\]
+we can write
+\begin{align*}
+45 & =2^{5}+2^{3}+2^{2}+2^{0}\\
+ & =101101_{2}.
+\end{align*}
+\end{enumerate}
+\item \#5(a,b): convert the binary integers to decimal.
+\begin{enumerate}
+\item $10000_{2}$: 
+\[
+10000_{2}=1\times2^{4}+0=16
+\]
+\item $101001_{2}$
+\begin{align*}
+101001_{2} & =1\times2^{5}+1\times2^{3}+1\times2^{1}\\
+ & =32+8+1=41.
+\end{align*}
+\end{enumerate}
+\item \#8
+\begin{itemize}
+\item We add $\mod2$ to get $10011000110100_{2}$.
+\end{itemize}
+\end{itemize}
+\end{xca}
+
+\textbf{Today. }We'll discuss the way computers encode information
+and the unique challenges computers pose for cryptography. Then we'll
+talk about what some call the most important cryptological development
+since the Caesar cipher!
+\begin{itemize}
+\item Computers store information as \textbf{bits}, $0$s and $1$s. This
+is called ``binary'' or ``base 2''. They do this because information
+is stored in a binary format (e.g. high and low voltages) that we
+represent with binary digits (or bits) $0$ (off) and $1$ (on).
+\item So a number like $4085$, as stored in your computer, looks like $1111111110101_{2}$.
+The subscript $2$ refers to the \textbf{base}, or the number whose
+powers form the ``places'' in your number.
+\item \textbf{How?} Well, normally, we write numbers ``base 10''. So a
+number like $4085$ really means
+\begin{align*}
+4085 & =4(10^{3})+0(10^{2})+8(10^{1})+5(10^{0})\\
+ & =4000+0+80+5.
+\end{align*}
+\item Throughout history, people have used other bases. The ancient Babylonians
+used $60$ as a base, so they'd write $4085=185_{60}$:
+\begin{align*}
+4085 & =1(60^{2})+8(60)+5\\
+ & =3600+480+5.
+\end{align*}
+\end{itemize}
+\begin{xca}
+Write the following binary integers in base $10$ (our standard number
+system):
+\begin{enumerate}
+\item $10_{2}$
+
+$=1(2^{1})+0(2^{0})=2$
+\item $100_{2}$
+
+$=1(2^{2})+0(2^{1})+0(2^{0})=4$
+\item $1111_{2}$
+
+$=1(2^{2})+4(2^{1})+3(2^{0})=4+8+3=15$
+\item $110100_{2}$
+
+$=1(2^{5})+1(2^{4})+1(2^{2})=32+16+4=52$
+\end{enumerate}
+\end{xca}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted141\string".png}
+
+\section{ASCII}
+\begin{itemize}
+\item Every single file on a computer is stored as bits (binary digits).
+\item To store English text as bits, we just need to associate letters (or
+characters) with positive integers and then let the computer store
+the integers in a binary format.
+\item {[}slide{]} A popular way that computers represent characters as integers
+is via the American Standard Code for Information Interchange (ASCII)
+as shown:
+\end{itemize}
+\begin{xca}
+Encode ``HI MOM'' in ASCII, then encode the ASCII numbers in binary.
+
+We first convert ``HI MOM'' to ASCII: 
+\[
+72\text{ }73\text{ }32\text{ }77\text{ }79\text{ }77
+\]
+
+We then convert each ASCII decimal to binary:
+\begin{align*}
+72 & =64+8\\
+ & =2^{6}+2^{3}\\
+ & =1\times2^{6}+0\times2^{5}+0\times2^{4}+1\times2^{3}+0\times2^{2}+0\times2^{1}+0\times2^{0}\\
+ & =1001000_{2}.
+\end{align*}
+Similarly, since $73=72+1\times2^{0}$, 
+\[
+73=1001001_{2}.
+\]
+Since $32=2^{5}$, $32=100000_{2}$. Since $77=73+2^{2}$, 
+\[
+77=1001101_{2}.
+\]
+Since $79=77+2^{1}$, 
+\[
+79=1001111_{2}.
+\]
+So our message in binary is
+\[
+1001000,1001001,100000,1001101,1001111,1001101.
+\]
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted149\string".png}
+\end{xca}
+
+\begin{itemize}
+\item We just need to find the largest power of $2$ less than each number,
+then add $1$ to that power. 
+\begin{enumerate}
+\item For example, 
+\begin{align*}
+100 & =64+32+4\\
+ & =2^{6}+2^{5}+2^{2}
+\end{align*}
+so our binary representation starts with the $2^{6}$ths place and
+goes to the $2^{0}$ths place, for a total of $7$ binary digits.
+\item The largest power of $2$ less than $200$ is $128=2^{7}$, so $8$
+digits.
+\item The largest power of $2$ less than $300$ is $256=2^{8}$, so $9$
+digits.
+\item The largest power of $2$ less than $500$ is also $256$, so $9$
+digits.
+\item The largest power of $2$ less than $800$ is $512=2^{9}$, so $10$
+digits.
+\end{enumerate}
+\end{itemize}
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted153\string".png}
+\begin{xca}
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted152\string".png}
+
+Which of the ciphers that we've used so far are effective in binary?
+\end{xca}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted154\string".png}
+
+\includegraphics[scale=0.75]{\string"Old Cryptography Notes/pasted151\string".png}
+
+How many potential keys are there for a $4$-bit keyword?
+\begin{itemize}
+\item A $4$-bit keyword can encode $2^{0},2^{1},2^{2},$ and $2^{3}$rds
+places. For each bit, there are $2$ possibilities, $0$ and $1$.
+Therefore, for $4$ bits, there are 
+\[
+2\times2\times2\times2=2^{4}=16
+\]
+possible keys. This is even less secure than a shift cipher!
+\end{itemize}
+\begin{xca}
+~
+\begin{enumerate}
+\item Choose one group member to be the sender and one the receiever. (You
+can have two receivers.) Then have the sender choose a message to
+encrypt and convert it to binary. \textbf{Don't share it with the
+receiever.}
+\item Agree on an equation (values for $e$ and $n$ in the equation $p^{e}\mod n$).
+Use the Diffie-Hellman key exchange with this equation to agree on
+a numerical key ($\geq10000$). Have someone in your group be Eve
+and try to find your key (probably unsuccessfully for such a large
+key).
+\item Then represent this numerical key in binary and use it to encrypt
+the sender's binary message.
+\item Receiver(s): decrypt the message using the key, and convert the message
+back to ASCII, then to plaintext.
+\end{enumerate}
+\end{xca}
+
+
+\end{document}

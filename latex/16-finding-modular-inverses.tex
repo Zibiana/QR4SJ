@@ -1,0 +1,310 @@
+%% LyX 2.3.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{xca}[thm]{\protect\exercisename}
+\theoremstyle{definition}
+\newtheorem{example}[thm]{\protect\examplename}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{WCSAM 206 - Finding Multiplicative Inverses Modulo $n$}
+\title{}
+\maketitle
+
+\section{Last Time}
+\begin{itemize}
+\item We used the Euclidean Algorithm to find the $\gcd$ of pairs of large
+numbers.
+\item If $\gcd(m,n)=1$, then the affine cipher $C\equiv mP+k\mod n$ works
+to encrypt information (for any additive key $k$).
+\item If $\gcd(m,n)\neq1$, then the affine cipher doesn't work.
+\end{itemize}
+\begin{xca}
+\textbf{(Preview Activity) }Using the Euclidean Algorithm we learned
+in class, give each of the following questions your best attempt,
+showing all work. Then bring your work to class on the date below
+for discussion.
+\end{xca}
+
+\begin{enumerate}
+\item Compute the following gcds: 
+\begin{enumerate}
+\item $\gcd\left(87,1364\right)$
+\begin{enumerate}
+\item We compute
+\begin{align*}
+1364 & =87(15)+59\\
+87 & =59(1)+28\\
+59 & =28(2)+3\\
+28 & =3(9)+1\\
+3 & =1(3)+0
+\end{align*}
+so that $\gcd(87,1364)=1$.
+\end{enumerate}
+\item $\gcd\left(103011,111411\right)$
+\begin{enumerate}
+\item We compute
+\begin{align*}
+111411 & =103011(1)+8400\\
+103011 & =8400(12)+2211\\
+8400 & =2211(3)+1767\\
+2211 & =1767(1)+444\\
+1767 & =444(3)+435\\
+444 & =435(1)+9\\
+435 & =9(48)+3\\
+9 & =3(3)+0
+\end{align*}
+hence $\gcd(103011,1114111)=\gcd(3,0)=3$.
+\item You could have determined that $103011$ and $111411$ share a factor
+of $3$ by adding their digits up and verifying that the result is
+divisible by $3$.
+\end{enumerate}
+\end{enumerate}
+\item Which of the affine ciphers below are decryptable? Explain your answer. 
+\begin{enumerate}
+\item $C\equiv255P+251\mod256$ (an ASCII cipher) 
+\begin{enumerate}
+\item We compute
+\begin{align*}
+256 & =255(1)+1\\
+255 & =1(255)+0
+\end{align*}
+so that $\gcd(255,256)=1$ and the cipher is decryptable.
+\end{enumerate}
+\item $C\equiv2228225P+5738254\mod1114112$
+\begin{enumerate}
+\item We compute
+\begin{align*}
+2228225 & =1114112(2)+1\\
+1114112 & =1(1114112)+0
+\end{align*}
+so that $\gcd(2228225,1114112)=1$ and the cipher is decryptable.
+\end{enumerate}
+\item $C\equiv-4P+42\mod532$
+\end{enumerate}
+\end{enumerate}
+\begin{example}
+Does the affine cipher $C\equiv343P+3\mod454$ work to transmit a
+message? Use the Euclidean Algorithm to answer this question.
+\begin{itemize}
+\item This time, we'll write out our steps very carefully in the Euclidean
+Algorithm, because we'll be coming back and doing each step backwards
+in order to find $343^{-1}\mod454$.
+\end{itemize}
+\begin{enumerate}
+\item Since $454>343$, we reduce $454\mod343$. This is the same as dividing
+$454$ by $343$ and keeping the remainder:
+\begin{equation}
+454=343(1)+111\label{eq:step-1}
+\end{equation}
+so $\gcd(343,454)=\gcd(343,111)$.
+\item Now, since $343>111$, we divide $343$ by $111$ and keep the remainder:
+\begin{equation}
+343=111(3)+10\label{eq:step-2}
+\end{equation}
+so that $\gcd(343,111)=\gcd(111,10)$.
+\item Since $111>10$, we divide again:
+\begin{equation}
+111=10(11)+1\label{eq:step-3}
+\end{equation}
+so that $\gcd(111,10)=\gcd(10,1)=1$.
+\end{enumerate}
+\end{example}
+
+\begin{itemize}
+\item Same old, same old. But hidden within the Euclidean Algorithm is a
+method for finding multiplicative inverses $\mod n$! 
+\item We can use our work above to find $343^{-1}\mod454$.
+\item The key is to use the EA to find $x$ and $y$ so that $343x+454y=1$.
+If we can do this, then we can reduce both sides modulo $454$ to
+get
+\[
+343x\equiv1\mod454
+\]
+and $x$ will be the multiplicative inverse of $343$!
+\end{itemize}
+\begin{example}
+Look closer at (\ref{eq:step-3}): there's a 1 there! If we could
+isolate that 1 and get it equal to some multiple of 343 plus some
+multiple of 454, we'd be done!
+\end{example}
+
+Well, let's play around with it:
+\[
+1=111-10(11)
+\]
+
+Darn, $111$ and $10(11)$ aren't multiples of $343$ or $454$! But
+from (\ref{eq:step-2}), $10=343-111(3)$, so
+\begin{eqnarray*}
+1 & = & 111-[343-111(3)](11)\\
+ & = & 111-343(11)+111(33)\\
+ & = & 111(34)-343(11).
+\end{eqnarray*}
+Now all we need is to make $111$ look like some multiples of $343$
+added/subtracted from some multiples of $454$! Well, via (\ref{eq:step-1}),
+\[
+111=454-343
+\]
+so that
+\begin{eqnarray*}
+1 & = & 454(34)-343(34)-343(11)\\
+1 & = & 454(34)-343(45)
+\end{eqnarray*}
+hence $x=-45$ and $y=34$! 
+\begin{itemize}
+\item This means that $343(-45)+454(34)=1$, and hence that
+\[
+343(-45)\equiv1\mod454.
+\]
+Hence, the multiplicative inverse of $343$ is $343^{-1}=-45\equiv409\mod454$.
+\item Therefore, if we want to decrypt a message that has been enciphered
+using the affine cipher $C\equiv343P+3\mod454$, we can get a decryption
+equation by first subtracting $3$ from both sides and then multiplying
+by $-45$:
+\begin{align*}
+C-3 & \equiv343P\mod454\\
+-45(C-3) & \equiv P\mod454.
+\end{align*}
+\end{itemize}
+\rule[0.5ex]{1\columnwidth}{1pt}
+
+{[}start here 10-16-18{]}
+\begin{itemize}
+\item Recap: say we want to find the multiplicative inverse of $a\mod n$.
+Then, if we:
+\begin{enumerate}
+\item Perform the Euclidean Algorithm on $a$ and $n$ until you get $1$
+as one of the numbers on the left side of a sheet of paper.
+\item Solve each of the resulting equations for their remainders on the
+right side of each of the equations.
+\item Starting with the bottom remainder equation which equals $1$, plug
+in each preceding remainder equation in place of the remainders, collecting
+like terms together between plugging in. Be careful not to explicitly
+multiply the remainders or the original two numbers.
+\item Reduce the resulting equation modulo $n$ to see what $a^{-1}\mod n$
+is.
+\item Check your answer by multiplying $a$ by your conjectured inverse
+and reducing $\mod n$ to see if you get $1$.
+\end{enumerate}
+\item Why don't you try another example:
+\end{itemize}
+\begin{xca}
+Find the multiplicative inverse of $15\mod28$. Then use this inverse
+to decrypt the message 
+\[
+\text{!C! GWE?KTA}
+\]
+given that it was encrypted using the affine cipher $C\equiv15P+2\mod28$
+and the alphabet ABCDEFGHIJKLMNOPQRSTUVWXYZ!?
+
+\textbf{Note}: this problem would take forever if we used ``guess
+and check''.
+\begin{enumerate}
+\item Apply the Euclidean Algorithm to find $\gcd(15,28)$ until we get
+a remainder of $1$ (if we can't get a remainder of $1$, there is
+no multiplicative inverse):
+\begin{align*}
+28 & =15(1)+13\\
+15 & =13(1)+2\\
+13 & =2(6)+1
+\end{align*}
+\item Solve each of the resulting equations for their remainders:
+\begin{align*}
+13 & =28-15(1)\\
+2 & =15-13(1)\\
+1 & =13-2(6)
+\end{align*}
+\item Starting with the bottom equation which equals $1$, plug in each
+of the preceding equations in place of the remainders and collect
+like terms after each step:
+\begin{align*}
+1 & =13-2(6)\\
+ & =13-[15-13](6)\\
+ & =13-15(6)+13(6)\\
+ & =13(7)-15(6)\\
+ & =[28-15](7)-15(6)\\
+ & =28(7)-15(7)-15(6)\\
+1 & =28(7)-15(13)
+\end{align*}
+\item Reduce the resulting equation mod $n$:
+\[
+1\equiv0\cdot7-15(13)\equiv15(-13)\mod28
+\]
+so that $15^{-1}=-13\equiv15\mod28$. $15$ is its own inverse mod
+$28$, but there's no way we would have just guessed that without
+somehow remembering that $15^{2}=224+1$ and that $224$ is a multiple
+of $28$.
+\item Check that your inverse actually gives you $1$ when multiplied by
+$15$:
+\[
+15\times15=225=28(8)+1\equiv1\mod28
+\]
+\item Now, we use the fact that $15^{-1}=15\mod28$ to solve $C\equiv15P+2\mod28$
+for $P$:
+\begin{align*}
+C-2 & \equiv15P\mod28\\
+15(C-2) & \equiv P\mod28.
+\end{align*}
+\item Plugging into this equation, we get that the message is ``yay euclid''
+:)
+\end{enumerate}
+\end{xca}
+
+~
+\begin{xca}
+A message is encrypted using the equation $C\equiv97P+31\mod233$.
+Find the decryption equation for this affine cipher.
+\begin{enumerate}
+\item Use the Euclidean Algorithm to show that $\gcd(97,233)=1$ and hence
+that this cipher works.
+\item Use the Extended Euclidean Algorithm to find $x$ and $y$ so that
+$97x+233y=1$:
+
+\includegraphics[scale=0.5]{\string"Old Cryptography Notes/pasted53\string".png}
+\item Use the inverse of $97\mod233$ to solve the encryption equation for
+$P$:
+\begin{align*}
+C-31 & \equiv97P\mod233\\
+-12(C-31) & \equiv P\mod233.
+\end{align*}
+\end{enumerate}
+\end{xca}
+
+~
+\begin{xca}
+Use the extended Euclidean Algorithm to find the decyption equation
+corresponding to each of the following encryption equations, or say
+why the cipher doesn't work:
+\begin{enumerate}
+\item $C\equiv24P+7\mod54$
+\item $C\equiv19P+3\mod26$
+\item $C\equiv57P+43\mod81$
+\item $C\equiv15P+8\mod38$
+\item $C\equiv29P-4\mod40$
+\item $C\equiv8P\mod49$
+\end{enumerate}
+\end{xca}
+
+\includegraphics{\string"Old Cryptography Notes/pasted130\string".png}
+\end{document}

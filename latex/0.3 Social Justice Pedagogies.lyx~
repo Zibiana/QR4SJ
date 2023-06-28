@@ -1,0 +1,586 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Social Justice Pedagogies
+\end_layout
+
+\begin_layout Section
+Stopped for Effect: The Urgency of Active Learning
+\end_layout
+
+\begin_layout Standard
+We would be remiss to fail to include a section on pedagogies that have
+ been repeatedly shown in studies and large meta-analyses to improve learning
+ for all students, particularly minoritized students.
+ In a 
+\begin_inset CommandInset href
+LatexCommand href
+name "meta-analysis of 225 studies on STEM course performance"
+target "https://www.pnas.org/doi/full/10.1073/pnas.1319030111"
+literal "false"
+
+\end_inset
+
+, Freeman 
+\emph on
+et al.
+
+\emph default
+ (2014) showed that evidence-based pedagogies which involve student participatio
+n, commonly but 
+\begin_inset CommandInset href
+LatexCommand href
+name "increasingly vaguely"
+target "https://cte.rice.edu/blogarchive/2018/7/16/active-learning-has-become-a-buzz-word"
+literal "false"
+
+\end_inset
+
+ referred to as ``active learning'', improved student performance by half
+ a letter grade, while lecturing results in a 
+\begin_inset Formula $55\%$
+\end_inset
+
+ increase in student failure rates compared to active learning and the odds
+ ratio for failing was 
+\begin_inset Formula $1.95$
+\end_inset
+
+ under traditional lecturing (what might better be called 
+\begin_inset CommandInset href
+LatexCommand href
+name "``continuous exposition by the teacher'')"
+target "https://derekbruff.org/?p=3126"
+literal "false"
+
+\end_inset
+
+.
+ Famously, the study concludes that
+\end_layout
+
+\begin_layout Quotation
+If the experiments analyzed here had been conducted as randomized controlled
+ trials of medical interventions, they may have been stopped for benefit—meaning
+ that enrolling patients in the control condition might be discontinued
+ because the treatment being tested was clearly more beneficial.
+ For example, a recent analysis of 143 randomized controlled medical trials
+ that were stopped for benefit found that they had a median relative risk
+ of 0.52, with a range of 0.22 to 0.66.
+ In addition, best-practice directives suggest that data management committees
+ may allow such studies to stop for benefit if interim analyses have large
+ sample sizes and 
+\begin_inset Formula $P$
+\end_inset
+
+ values under 
+\begin_inset Formula $0.001$
+\end_inset
+
+.
+ Both criteria were met for failure rates in the education studies we analyzed:
+ The average relative risk was 0.64 and the 
+\begin_inset Formula $P$
+\end_inset
+
+ value on the overall odds ratio was 
+\begin_inset Formula $<<0.001$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Additionally, the benefits of active learning are felt disproportionately
+ by students from groups underrepresented in STEM.
+ A 
+\begin_inset CommandInset href
+LatexCommand href
+name "meta-analysis of many studies on student exam scores and failure rates (Theobald et al. 2020)"
+target "https://www.pnas.org/doi/10.1073/pnas.1916903117#:~:text=Active%20learning%20benefits%20all%20students,promote%20equity%20in%20higher%20education."
+literal "false"
+
+\end_inset
+
+ found that ``achievement gaps'' in exam scores were decreased by 
+\begin_inset Formula $33\%$
+\end_inset
+
+ under active learning, while gaps in passing rates decreased by 
+\begin_inset Formula $45\%$
+\end_inset
+
+.
+ The study emphasizes the urgency of adopting inclusive teaching practices:
+\end_layout
+
+\begin_layout Quotation
+Underrepresentation in STEM is primarily due to attrition.
+ Underrepresented minority (URM) students in the United States, for example,
+ start college with the same level of interest in STEM majors as their overrepre
+sented peers, but 6-y STEM completion rates drop from 52% for Asian Americans
+ and 43% for Caucasians to 22% for African Americans, 29% for Latinx, and
+ 25% for Native Americans.
+ Disparities in STEM degree attainment are also pronounced for low-income
+ versus higher-income students.
+\end_layout
+
+\begin_layout Standard
+Importantly, improvements in performance were only observed for students
+ that participated in ``high-intensity active learning''—meaning those in
+ which a great deal of class time involved students engaged in activities
+ designed to help them construct their own knowledge.
+ Per the Discussion section:
+\end_layout
+
+\begin_layout Quotation
+We propose that two key elements are required to design and implement STEM
+ courses that reduce, eliminate, or reverse achievement gaps: deliberate
+ practice and a culture of inclusion.
+ Deliberate practice emphasizes 1) extensive and highly focused efforts
+ geared toward improving performance—meaning that students work hard on
+ relevant tasks, 2) scaffolded exercises designed to address specific deficits
+ in understanding or skills, 3) immediate feedback, and 4) repetition (49).
+ These are all facets of evidence-based best practice in active learning
+ (38, 50, 51).
+ Equally important, inclusive teaching emphasizes treating students with
+ dignity and respect (52), communicating confidence in students' ability
+ to meet high standards (53), and demonstrating a genuine interest in students'
+ intellectual and personal growth and success (54, 55).
+ 
+\end_layout
+
+\begin_layout Section
+So What Is ``Active Learning''?
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "There is no single agreed-upon definition of ``active learning''."
+target "https://cte.rice.edu/blogarchive/2018/7/16/active-learning-has-become-a-buzz-word"
+literal "false"
+
+\end_inset
+
+ However, certain pedagogies and interventions show up repeatedly in the
+ literature as particularly effective.
+ I am indebted to Josh Eyler and the Rice University Center for Teaching
+ Excellence in my own journey to learn and implement evidence-based pedagogies.
+ The book 
+\emph on
+What the Best College Teachers Do
+\emph default
+ provides a digestible summary, as does Josh's book 
+\emph on
+How Humans Learn.
+ 
+\emph default
+The ideas below are heavily influenced by each of these sources as well
+ as my own experience.
+\end_layout
+
+\begin_layout Subsection
+Empathy and inclusion
+\end_layout
+
+\begin_layout Standard
+First and foremost, the best teachers are empathetic and inclusive.
+ In particular, they believe that every student can learn, and that learning
+ cannot happen with ``productive failure''.
+ Grounded in this philosophy, effective teachers make space for all students
+ to try and fail and try again in low-stakes environments.
+ This often involves allowing students to correct assignments/exams and
+ certainly not repeatedly giving high-stakes assessments without providing
+ time for students to reflect and correct mistakes.
+\end_layout
+
+\begin_layout Subsection
+Peer instruction
+\end_layout
+
+\begin_layout Standard
+In pedagogies such as 
+\emph on
+inquiry-based learning 
+\emph default
+in mathematics and POGIL in computer science, a mixture of instructor feedback
+ and peer instruction is involved.
+ Many inquiry-based math courses involve students presenting on the board
+ to the rest of the class, after which respectful student feedback is solicited.
+ Peer instruction helps avoid the 
+\emph on
+expert blind spot,
+\emph default
+ when instructors forget what was most confusing in their own learning process
+ after years of professional experience and fail to emphasize potential
+ problem areas to students.
+\end_layout
+
+\begin_layout Subsection
+Metacognition
+\end_layout
+
+\begin_layout Standard
+Students bring their own prior knowledge into every course they take.
+ In order to promote learning–which necessitates a change in mental models–it's
+ important to invest time in getting to know students' schemata related
+ to your subject and meet students where they are.
+ This often involves 
+\emph on
+metacognition
+\emph default
+, or thinking about thinking, both modeled by the instructor (``what do
+ you notice? What do you wonder?'') and encouraged on assignments (e.g.
+ through required reflections when students revise and resubmit assignments).
+ In math, this sometimes involves 
+\emph on
+teaching the paradoxes
+\emph default
+–as mathematicians, we value paradox for the inaccuries it points out in
+ our own thinking, and it's worth passing this tool on to our students.
+\end_layout
+
+\begin_layout Subsection
+Instructor-guided construction of knowledge
+\end_layout
+
+\begin_layout Standard
+Contemporary definitions of active learning are rooted in the educational
+ theory of 
+\emph on
+constructivism
+\emph default
+, in which we all build our own knowledge and the best way to learn is to
+ be handed the building blocks.
+ Most educational researchers agree that some level of instructor guidance
+ is necessary for students to learn to put together the building blocks
+ and build theoretical structures, and even what is thankfully less frequently
+ called the ``full Moore method'' incorporates some level of instructor
+ guidance, at least when providing feedback on proofs.
+\end_layout
+
+\begin_layout Standard
+Increasingly, researchers emphasize that 
+\emph on
+lecturing 
+\emph default
+does not in itself constitute bad pedagogy; indeed, the frequency and level
+ of interactivity of a lecture is essential in determining how effective
+ it is.
+ 
+\emph on
+Mini-lectures
+\emph default
+ of around 
+\begin_inset Formula $10$
+\end_inset
+
+ minutes at a time, interspersed with group work on authentic, challenging
+ problems, can be an effective course structure.
+ Mini-lectures are a particularly good place to introduce definitions or
+ foundational theorems, as well as to offer students a ``guided tour'' of
+ more difficult topics.
+ Making time for students to ask questions during lectures–and even calling
+ on students or groups to share their responses to a lecture–help engage
+ students and facilitate learning.
+\end_layout
+
+\begin_layout Section
+Liberatory grading practices
+\end_layout
+
+\begin_layout Subsection
+What does the research say?
+\end_layout
+
+\begin_layout Standard
+Unfortunately, there is a dearth of research supporting either traditional
+ grading practices or the alternative practices that have begun to grow
+ in popularity among college educators, such as specifications/standards-based
+ grading, ``grading for growth'' (sometimes called ``mastery-based grading''),
+ and ungrading 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "matttownsleyWhatDoesResearch2016"
+literal "false"
+
+\end_inset
+
+.
+ In fact, these terms are often not used in a well-defined way; for example,
+ I consider ``grading for growth'' to allow the opportunity for revision
+ and to base final grades on which concepts a student has demonstrated mastery;
+ however, a list of learning targets a student is expected to know by end
+ of term may be referred to by some as ``specifications''.
+ 
+\end_layout
+
+\begin_layout Standard
+What is known is that traditional grading has been linked to increased student
+ stress and anxiety and cheating, as well as decreased cooperative learning,
+ critical thinking, extrinsic student motivation, and feelings of trust
+ between teachers and students 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chamberlinImpactGradesStudent2018a"
+literal "false"
+
+\end_inset
+
+.
+ This has led many academics to question whether traditional grading is
+ the best way of performing the dual goals of providing both formative feedback
+ to the student and summative feedback to external audiences such as graduate
+ schools and employers, or even how much importance should be placed on
+ the latter function.
+ 
+\end_layout
+
+\begin_layout Standard
+A recent experiment in cell biology courses has shown that specifications
+ grading improves student attitudes about learning and their performance
+ on content-related assessment questions compared to control sections 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "katzmanEffectSpecificationsGrading"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Standards-based grading and ``grading for growth''
+\end_layout
+
+\begin_layout Standard
+Indeed, the definition of ``specifications grading'' used in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "katzmanEffectSpecificationsGrading"
+literal "false"
+
+\end_inset
+
+—``a grading system in which mastery of specific educational outcomes is
+ the basis for the final grade a student earns in the course''—resembles
+ many faculty's definition of ``standards-based grading'' or ``grading for
+ growth''.
+ In perhaps the most famous book on specifications grading for postsecondary
+ educators, Nilson and Stanny 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nilsonSpecificationsGradingRestoring2014"
+literal "false"
+
+\end_inset
+
+ define specifications grading as ``binary grading that is based on up-front,
+ clearly communicated pass/fail expectations''.
+ Specifications, thus, are traditionally standards for passing 
+\emph on
+assignments
+\emph default
+, whereas the ``standards'' in standards-based grading often align with
+ course-wide learning objectives and are a basis for assigning final letter
+ grades: ``the course grade is based on how many standards the student has
+ mastered 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mendezStandardsBasedSpecificationsGrading2018a"
+literal "false"
+
+\end_inset
+
+.''
+\end_layout
+
+\begin_layout Standard
+``Grading for growth'', perhaps better known by the name ``mastery-based
+ grading'', is a grading system designed to measure whether, and how much,
+ students understand the learning objectives of the course by the end of
+ the term.
+ These learning objectives are granular and specific, often measured by
+ assignments designed to allow students the opportunity to demonstrate understan
+ding of a few learning targets at a time.
+ Teachers give feedback on student understanding and lack thereof with specific
+ recommendations for students.
+ Students then take this feedback and either revise their previous answers
+ or practice that objective more in time for future opportunities to demonstrate
+ knowledge of that target.
+ 
+\end_layout
+
+\begin_layout Standard
+Often, classrooms using standards-based grading 
+\end_layout
+
+\begin_layout Subsection
+Ungrading
+\end_layout
+
+\begin_layout Section
+Sources and further reading
+\end_layout
+
+\begin_layout Standard
+If you're new to incorporating social justice issues into math classes,
+ I'd encourage you to start by reading or skimming Jonathan Osler's “A Guide
+ for Integrating Issues of Social and Economic Justice into Mathematics
+ Curriculum” 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "oslerGuideIntegratingIssues"
+literal "false"
+
+\end_inset
+
+, made by a high-school educator but equally relevant in the postsecondary
+ context.
+ Next, Drew Winter's “Infusing Mathematics with Culture” 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "winterInfusingMathematicsCulture2007"
+literal "false"
+
+\end_inset
+
+ offers a valuable framework for thinking about the relationship between
+ mathematical content and social justice issues, as well as an emphasis
+ on connecting to student activism and interests.
+ 
+\end_layout
+
+\begin_layout Standard
+An excellent framework for designing a course, even if you have already
+ chosen a text, is the ``backwards design'' method proposed by Wiggins and
+ McTighe 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wigginsUnderstandingDesign2005"
+literal "false"
+
+\end_inset
+
+, summarized in a guide by Bowen at the Vanderbilt University Center for
+ Teaching 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bowenUnderstandingDesign"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "qr4sj"
+options "amsalpha"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

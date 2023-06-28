@@ -1,0 +1,91 @@
+<section xml:id="debt-big-problem">
+    <title>Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt </title>
+
+<!-- div attr= class="defn"-->
+    <definition>
+        <statement>
+            <p>        
+                <term>Student loans</term> are a form of debt taken on in order to help students afford to pay tuition, fees, and other expenses necessary to attend colleges and universities. Unlike scholarships or grants, student loans must be repaid.
+            </p>
+        </statement>
+    </definition><!--</div attr= class="defn">-->
+
+    <p>
+        In July <m>2021</m>, student loan debt in the U.S. totaled <m>\$1.73</m> trillion. In <m>2019</m>, <url href="https://web.archive.org/web/20230130125025/https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans" visual="https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans">the average debt held by a student loan borrower was <m>\$30,000</m></url>.
+    </p>
+
+<!-- div attr= xml:id="def:default" class="defn"-->
+<definition xml:id="def-default">
+    <statement>
+        <p>
+            <term>Defaulting</term> on a loan means a borrower stops making the required payments on that loan. When someone defaults on a student loan, the federal government is allowed to withhold their tax refund, paycheck, or (for older adults) Social Security payments.
+            
+        </p>
+    </statement>
+</definition>
+<!--</div attr= xml:id="def:default" class="defn">-->
+
+    <p>
+        The average person to default on their student loans owes less than <m>\$10,000</m>, suggesting that defaulters are make significantly lower incomes than the average student loan borrower. Those borrowers who did not complete a college degree are <url href="https://web.archive.org/web/20230130125025/https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans" visual="https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans">three times as likely to default as those who completed</url>. Moreover, half of Black borrowers who took out loans in <m>2003</m>-<m>2004</m> had defaulted after <m>12</m> years.
+    </p>
+
+<!-- div attr= class="defn"-->
+<definition xml:id="def-pell">
+    <statement>
+        <p>
+            The <term>Pell Grant</term> is a federal government grant which provides money for college to low-income students that does not have to be repaid, unlike student loans.
+            
+        </p>
+    </statement>
+</definition>
+    <!--</div attr= class="defn">-->
+
+    <p>
+        Those who receive a Pell Grant, signaling they are low-income without adding to their debt, are still <url href="https://web.archive.org/web/20230130125025/https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans" visual="https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans">disproportionately likely to default on their student loans</url>.
+    </p>
+
+<!-- div attr= class="defn"-->
+<definition xml:id="def-for-profit">
+    <statement>
+        <p>
+            All public and most private colleges (<m>91\%</m> of all colleges in <m>2016</m> <url href="https://files.eric.ed.gov/fulltext/ED603581.pdf" visual="files.eric.ed.gov/fulltext/ED603581.pdf">are <term>not-for-profit institutions</term></url>, meaning they invest their profits back into the institution and often operate under independent governance. A college that is not registered as a not-for-profit institution is called a <term>for-profit college</term>.
+        </p>
+    </statement>
+</definition>
+
+<!-- div attr= class="defn"-->
+<definition xml:id="def-independent">
+    <statement>
+        <p>
+            A college or university operates under <term>independent governance</term> if their leadership is <url href="https://files.eric.ed.gov/fulltext/ED603581.pdf" visual="files.eric.ed.gov/fulltext/ED603581.pdf">required to focus on factors other than generating a profit when providing an education</url>.
+            
+        </p>
+    </statement>
+</definition>
+    
+    <!--</div attr= class="defn">-->
+
+    <p>
+        A government study in <m>2017</m> found that the default rates for student borrowers at for-profit institutions, which are not required to focus on factors other than profit, were nearly double compared to community colleges; for-profit institutions have <url href="https://nces.ed.gov/pubs2018/2018410.pdf" visual="nces.ed.gov/pubs2018/2018410.pdf">more expensive tuition and fees than community colleges, have lower graduation rates, and have less valuable credentials</url>.
+    </p>
+
+<!-- div attr= class="defn"-->
+<definition xml:id="def-tuition-fees">
+    <statement>
+    <p>
+        <term>Tuition</term> is the amount of money charged by a college for instruction by faculty.
+    </p>
+    </statement>
+    <statement>
+    <p>
+        A <term>student fee</term> is a sum of money charged to students at a school, college, or university in addition to tuition. Student fees may be used to support student organizations and activities, sports teams, exercise facilities, class supplies such as art materials, or anything else beyond the cost of instruction.
+    </p>
+</statement>
+</definition>
+    <!--</div attr= class="defn">-->
+
+    <p>
+        The United States is a relative outlier compared to other nations in the high cost of college tuition and fees. For example, according to a late <m>2017</m> study by the Organisation for Economic Cooperation and Development (OECD), the U.S. has the <url href="https://read.oecd-ilibrary.org/education/education-at-a-glance-2017_eag-2017-en" visual="read.oecd-ilibrary.org/education/education-at-a-glance-2017_eag-2017-en">highest average tuition costs of the <m>35</m> OECD member countries</url>. This tuition has increased over time.
+    </p>
+
+</section>

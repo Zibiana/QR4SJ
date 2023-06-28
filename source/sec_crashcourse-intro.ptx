@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_crashcourse-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Getting Started</title>
+  <introduction>
+    <p>If you're new to incorporating social justice issues into math classes, I'd encourage you to start by reading or skimming Jonathan Osler's <url visual="https://drive.google.com/file/d/1tz6Tc0Ug44OyAN_WFRODFT-LNRRQBCnS/view?usp=sharing">“A Guide for Integrating Issues of Social and Economic Justice into Mathematics Curriculum”</url>, made by a high-school educator but equally relevant in the postsecondary context. Next, Drew Winter's <url visual="https://drive.google.com/file/d/1Hui9iITN5yD8D32aniSSDH73PvOoS8GQ/view?usp=sharing">“Infusing Mathematics with Culture”</url> offers a valuable framework for thinking about the relationship between mathematical content and social justice issues, as well as an emphasis on connecting to student activism and interests.
+    </p>
+    <p>
+      This book is meant to be used as a workbook for students in a quantitative reasoning (QR) course framed around issues of social justice (SJ). This course developed out of my <url visual="https://kenanince.org/OER4SJ">resource folder for open-access SJ math resources</url>; feel free to mix and match chapters from this book and resources from the folder to plug into existing courses as well as to "remix" your own full course.
+    </p>
+  </introduction>
+  <subsection xml:id="subsec-why-math-for-SJ">
+    <title>Why Teach Postsecondary Math for Social Justice?</title>
+    <p>
+    <ul>
+    <li>Culturally relevant teaching practices contribute to educational equity and social justice (McGee 2014)</li>
+    <li>Teaching math with a social justice frame increases student learning and achievement (Gutstein 2003; Moses &amp; Cobb 2001; Winter 2007)</li>
+        <li>Math is already political. What assumptions do our algorithms and databases inherit (O'Neill 2016)? What do we think is "worthy" of mathematical inquiry? Math with applications to <url visual="https://nagt.org/nagt/publications/trenches/articles/v5n3-5.html">petroleum engineering or fracking (Hendrickson 2015)</url>? <url visual="https://www.tandfonline.com/doi/abs/10.1080/09332480.2006.10722786?journalCode=ucha20&amp;journalCode=ucha20">Statistical analyses of police stops by race (Khadjavi 2013</url>, <url visual="https://rpubs.com/kaince/SLCPD">Ince 2021</url>)?</li>
+    </ul>
+    See <url visual="https://www.kenanince.org/literature-review-teaching-math-for-equity-social-justice"> this literature review (Ince 2015)</url> for an investigation of what the research shows about teaching math for social justice.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-other-textbooks">
+    <title>Other Texts for a Math for Social Justice Course</title>
+    <p>
+      Resources are beginning to be developed for full postsecondary courses, largely in quantitative reasoning, for social justice. A few of the exciting new resources are described in the table below; please <url visual="https://forms.gle/Sfm9fvngRipEjneq9">fill out this form</url> if you know of any postsecondary-level resources I'm missing!
+    </p>
+
+      <table>
+          <title>Texts for a Semester Course on Social Justice Math</title>
+          <tabular halign="center">
+              <row header="yes" bottom="minor">
+                  <cell>Resource Type</cell>
+                  <cell>Authors</cell>
+                  <cell>Name and Links to Resource(s)</cell>
+                  <cell>Cost</cell>
+              </row>
+              <row>
+                  <cell>Complete lesson plan collections</cell>
+                  <cell>Gizem Karaali, Lily Khadjavi</cell>
+                  <cell><i><url visual="https://bookstore.ams.org/clrm-60">Mathematics for Social Justice</url></i> and <i><url visual="https://bookstore.ams.org/cdn-1630595793631/clrm-66/">Focusing on Quantitative Reasoning and Statistics</url></i></cell>
+                  <cell>~$60 each</cell>
+              </row>
+              <row>
+                  <cell>Lesson plan collection in development</cell>
+                  <cell>Mark Branson, Whitney George</cell>
+                  <cell><i><url visual="https://www1.rebus.community/#/project/8825e826-1c44-4900-95e4-ef14b4704be2">Math for the People</url></i></cell>
+                  <cell>Free</cell>
+              </row>
+              <row>
+                  <cell>Complete PDF book; not always SJ-focused</cell>
+                  <cell>David Lippman</cell>
+                  <cell><i><url visual="http://www.opentextbookstore.com/mathinsociety/index.html">Math in Society</url></i></cell>
+                  <cell>Free</cell>
+              </row>
+
+              </tabular>
+    </table>
+
+  </subsection>
+
+  <conclusion>
+    <p>
+
+    </p>
+  </conclusion>
+</section>

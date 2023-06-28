@@ -1,0 +1,80 @@
+<table>
+  <tabular>
+    <row header="yes">
+      <cell>
+        Per Capita Emissions
+      </cell>
+      <cell>
+        Number of Countries
+      </cell>
+      <cell>
+        Relative Frequency
+      </cell>
+    </row>
+    <row>
+      <cell>
+        [0,5)
+      </cell>
+      <cell>
+        65
+      </cell>
+      <cell>
+        67%
+      </cell>
+    </row>
+    <row>
+      <cell>
+        [5,10)
+      </cell>
+      <cell>
+        19
+      </cell>
+      <cell>
+        20%
+      </cell>
+    </row>
+    <row>
+      <cell>
+        [10,15)
+      </cell>
+      <cell>
+        4
+      </cell>
+      <cell>
+        4%
+      </cell>
+    </row>
+    <row>
+      <cell>
+        [15,20)
+      </cell>
+      <cell>
+        5
+      </cell>
+      <cell>
+        5%
+      </cell>
+    </row>
+    <row>
+      <cell>
+        &gt; 20
+      </cell>
+      <cell>
+        4
+      </cell>
+      <cell>
+        4%
+      </cell>
+    </row>
+    <row>
+      <cell>
+        Total
+      </cell>
+      <cell>
+        97
+      </cell>
+      <cell>
+      </cell>
+    </row>
+  </tabular>
+</table>

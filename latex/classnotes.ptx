@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>WCSBS 220 1 - Course Introduction</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">WCSBS 220 1 - Course Introduction</h1>
+</header>
+<h1 id="introduction-to-the-course">Introduction to the Course</h1>
+<h2 id="about-me">About me</h2>
+<ul>
+<li><p>Name/pronouns/PhD from Rice, research in how hard it is to untie
+mathematical knots</p>
+<ul>
+<li><p>Please feel welcome to talk to me about my research at any time
+during the semester if you're interested.</p></li>
+</ul></li>
+<li><p>My primary goal in teaching math is to communicate that math is a
+creative, logical field with immense importance to society. which is
+like a prosthetic you attach to your reasoning to make it more
+powerful.</p></li>
+</ul>
+<h2
+id="syllabus---read-at-least-pages-1-through-12-in-your-own-time">Syllabus
+- read at least pages <span class="math inline">1</span> through <span
+class="math inline">12</span> in your own time</h2>
+<h3 id="about-the-class">About the class</h3>
+<ul>
+<li><p>In this class, my goal is to get you to stretch your minds by
+working in groups on problems that are hard for you. You won't be graded
+on how quickly you pick things up or whether you understand every
+detail, as long as you develop certain skills that allow you to do math
+that is pertinent to your lives.</p></li>
+<li><p>In this course, we'll often follow the following outline:</p>
+<ol>
+<li><p>ask a question or questions related to an issue of social justice
+(e.g. are people of color more often exposed to hazardous pollutants
+than white people?)</p></li>
+<li><p>delve into some mathematics that will help us answer that
+question (e.g. measures of exposure to pollutants, measures of
+closeness, measures of “how PoC-dominant” a county is)</p></li>
+<li><p>model the social justice question with a mathematical
+question;</p></li>
+<li><p>use the mathematics we've learned to answer the mathematical
+question and interpret the answer in terms of the social justice
+question.</p></li>
+</ol></li>
+<li><p>In the syllabus, you'll find information on how to study math,
+learning outcomes, textbooks, office hours, and extra credit
+opportunities.</p></li>
+</ul>
+<h3 id="office-and-office-hours">Office and office hours</h3>
+<ul>
+<li><p>My office is Foster 311 (go up the stairs to the third floor,
+turn right; I'm at the end of the hall.)</p></li>
+<li><p>My office hours this semester will be MW 1-2pm; TTH 11am-12pm.
+Anyone who can't make those hours? I'll usually be around the office
+1-4pm MW, 10am-1pm TTh, and (maybe) 11-noon Friday as well. Make
+appointments at least <span class="math inline">24</span> hours in
+advance!</p></li>
+<li><p>Tentative course outline: linked in Canvas under
+Syllabus</p></li>
+</ul>
+<h3 id="canvas">Canvas</h3>
+<ul>
+<li><p>Sign up now for Canvas notifications</p></li>
+<li><p>I can't guarantee I'll always remember to announce assignments
+in-class; you're expected to check Canvas before and after every class
+period to determine what assignments you have.</p></li>
+<li><p>I will post all of your grades in Canvas.</p></li>
+<li><p>We take the Title IX and disability provisions extremely
+seriously! If you require any academic accommodations related to a
+disability, please contact Karen Hicks ASAP.</p></li>
+</ul>
+<h2 id="what-is-social-justice">What is social justice?</h2>
+<div class="xca">
+<p><strong> 1</strong>. (TPS) What do you think of when you think of
+social justice? What are 2-3 issues of SJ you're passionate about?</p>
+<ul>
+<li><p>Some possible answers:</p>
+<ul>
+<li><p>justice in terms of the distribution of wealth, opportunities,
+and privileges within a society. (Google Dictionary)</p></li>
+<li><p>a concept of fair and just relations between the individual and
+society. (Wikipedia)</p></li>
+<li><p>a state or doctrine of egalitarianism (Merriam-Webster)</p></li>
+<li><p>A broad term for action intended to create genuine equality,
+fairness and respect among peoples. (University of Massachusetts Lowell
+Department of Multicultural Affairs)</p></li>
+</ul></li>
+<li><p>Can we develop a working definition as a class?</p></li>
+<li><p>One definition (Sensoy-DiAngelo): social justice is a recognition
+that:</p>
+<ul>
+<li><p>all people are individuals, but we are also members of socially
+constructed groups;</p></li>
+<li><p>society is stratified, and social groups are valued
+unequally;</p></li>
+<li><p>social groups that are valued more highly have greater access to
+resources and this access is structured into the institutions and
+cultural norms;</p></li>
+<li><p>social injustice is real and exists today;</p></li>
+<li><p>relations of unequal power are constantly being enacted at both
+the micro (individual) and macro (structural) levels;</p></li>
+<li><p>we are all socialized to be complicit in these
+relations;</p></li>
+<li><p>those who claim to be for social justice must strategically act
+from that claim in ways that challenge social injustice; and</p></li>
+<li><p>this action requires a commitment to an ongoing and lifelong
+process.</p></li>
+</ul></li>
+<li><p>How is this similar to and different from your definitions? The
+UN's definition? Thomas Jefferson's?</p></li>
+</ul>
+</div>
+<h2 id="isnt-math-objective">Isn't math “objective”?</h2>
+<ul>
+<li><p><span>[</span>What's wrong with this chart
+slides<span>]</span></p></li>
+<li><p>https://tinyurl.com/mathoffracking: what do we choose to study as
+mathematicians/statisticians?</p></li>
+<li><p>https://tinyurl.com/WMDTalk: Weapons of Math Destruction on the
+“value-added model” for teacher evaluations</p></li>
+</ul>
+<h2 id="introductory-problem-tps-in-groups">Introductory problem (TPS in
+groups)</h2>
+<ul>
+<li><p>Let's agree to use classrooms as a measure of wealth, here used
+as synonymous with net worth, for today's purposes.</p></li>
+<li><p>For reference, the sum of all US wealth owned by households at
+the end of <span class="math inline">2016</span> was <span
+class="math inline">$90.2</span> trillionthat's <span
+class="math inline">90, 200, 000, 000</span>.</p></li>
+</ul>
+<div class="xca">
+<p><strong> 2</strong>. Assume the total US household wealth was held
+entirely in <span class="math inline">$100</span> bills.</p>
+<ol>
+<li><p>How many classrooms would it take to fit the US household wealth?
+There's a lot to estimate here. Be systematic and consider reasonable
+estimations. DO NOT guess some dimensions and dispense of the problem in
+<span class="math inline">2</span> min - this is primetime for debate
+within your group.</p>
+<ol>
+<li><p>wealth <span class="math inline"><em>W</em> ≈ $113</span>
+trillion <span
+class="math inline"> ≈ $110, 000, 000, 000</span></p></li>
+<li><p>measure dim</p></li>
+<li><p>guess <span class="math inline">20 × 30 × 10</span> feet</p></li>
+<li><p>guess a <span class="math inline">$100</span> bill is flat and
+<span class="math inline">6 × 4</span> in or <span
+class="math inline">$\frac{1}{2}\times\frac{1}{3}$</span> feet</p></li>
+<li><p>The volume of the classroom is <span
+class="math display"><em>V</em> = 20 × 30 × 10 = 6000
+ft<sup>3</sup>.</span></p></li>
+<li><p>We need <span
+class="math display">$$\frac{W}{100}=\$1,100,000,000\approx1\text{
+billion}$$</span> $100 bills to hold the total US household
+wealth.</p></li>
+<li><p>If we filled one classroom with <span
+class="math inline">$100</span> bills, how many could we fit on the
+floor? Well, each is <span
+class="math inline">$\frac{1}{2}\times\frac{1}{3}$</span>, and assuming
+we place them with the long side toward the long side of the classroom,
+we can fit <span class="math inline">$30/(\frac{1}{2})=60$</span> dollar
+bill-lengths on the long side of the classroom
+<span>[</span>draw?<span>]</span> and <span
+class="math inline">$20/(\frac{1}{3})=60$</span> dollar bill-widths in
+the classroom. That's <span class="math display">60 × 60 = 360</span>
+hundred-dollar bills just on the floor. But the classroom is <span
+class="math inline">10</span> ft high, so we can actually fit <span
+class="math display">60 × 60 × 10 = 3600</span> dollar bills in a
+classroom.</p></li>
+<li><p>We need to fit about <span class="math inline">1</span> billion
+dollar bills total in our classrooms. That is, we want to convert dollar
+bills to classrooms. But dimensional analysis from chemistry gives us a
+tool: <span class="math display">$$1,000,000,000\text{ dollar
+bills}\times\frac{1\text{ classroom}}{3600\text{
+bills}}\approx280,000\text{ classrooms}.$$</span></p></li>
+<li><p>This is a tool we'll use in the coming weeks! In fact, we can use
+canceling numerators and denominators to plan our entire computation:
+<span class="math display">$$W=\$110,000,000,000\times\frac{1\text{
+\$100 bill}}{\$100}\times\frac{1\text{ classroom}}{3600\text{ \$100
+bills}}\approx310,000\text{ classrooms}$$</span> which matches our
+result up to the rounding error introduced as we simplified the
+calculation by rounding.</p></li>
+</ol></li>
+<li><p>How many of those classrooms do you think should go to the
+wealthiest <span class="math inline">1%</span>? To the least wealthy
+<span class="math inline">90%</span>?</p></li>
+<li><p>In <span class="math inline">2016</span>, how many of those
+classrooms actually went to the top <span class="math inline">1%</span>
+and how many to the bottom <span class="math inline">90%</span>? For
+reference, the top <span class="math inline">1%</span> got <span
+class="math inline">40%</span> of the wealth in <span
+class="math inline">2016</span> and the bottom <span
+class="math inline">90%</span> got <span
+class="math inline">22%</span>.</p>
+<ol>
+<li><p>Interesting question: how do we measure “how unequal”
+incomes/wealth are in a country? Lorenz curves plot the percentile of
+people on the <span class="math inline"><em>x</em></span>-axis and the
+percentage of wealth they got on the <span
+class="math inline"><em>y</em></span>-axis. So the numbers above say
+that the points <span class="math display">(99%,40%) and
+(10%,22%)</span> are on the Lorenz curve. This is because the top <span
+class="math inline">1%</span> fall in the <span
+class="math inline">99</span>th percentile, since <span
+class="math inline">99%</span> of people earn less than them.</p></li>
+<li><p>The top <span class="math inline">1%</span> got <span
+class="math display">$$40\%(W)=0.4W\times\frac{1}{\$100}\times\frac{1}{3600}\approx120,000\text{
+classrooms}$$</span> while the bottom <span
+class="math inline">90%</span> got <span
+class="math display">$$22\%(W)=0.22W\times\frac{1}{\$100}\times\frac{1}{3600}\approx67,000\text{
+classrooms}.$$</span></p></li>
+</ol></li>
+<li><p>What questions about wealth does this activity bring up for you?
+I can think of a few:</p>
+<ol>
+<li><p>How did you determine how many <span
+class="math inline">$100</span> bills it would take to contain the US
+household wealth?</p></li>
+<li><p>How did you determine how many <span
+class="math inline">$100</span> bills a classroom could hold?</p></li>
+<li><p>How do we measure wealth <em>inequality</em> in a
+country?</p></li>
+<li><p>What assumptions are we making about an ideal society?</p></li>
+</ol></li>
+</ol>
+</div>
+<ul>
+<li><p>We just demonstrated a couple of tools we'll use many times in
+the next week or two:</p>
+<ul>
+<li><p><strong>Estimation</strong>round up or down to make calculations
+easier and numbers less messy. As we saw when estimating the number of
+classrooms needed for the US household wealth, rounding before the
+computation ends can introduce error. Therefore, if you have a
+calculator, it's best to plug into the calculator before rounding,
+whereas if you're computing by hand, rounding may be necessary in order
+to increase the accuracy of your computations. Everyone makes arithmetic
+mistakesyou'll see me do it plenty of times!</p></li>
+<li><p><strong>Dimensional analysis</strong>: start with the given and
+multiply by fractions, canceling out the units, until you get something
+in the units your answer should be in. This is almost always your
+answer!</p></li>
+</ul></li>
+</ul>
+<h1 id="setting-the-stage">Setting the Stage</h1>
+<p>Get in groups of size 3. Group members should introduce themselves -
+name, pronouns, hobbies outside school, goals for the semester/year,
+reason they're taking the course. For each of the questions that follow,
+I will ask you to:</p>
+<ol>
+<li><p>Think about a possible answer on your own.</p></li>
+<li><p>Discuss your answers with the rest of your group.</p></li>
+<li><p>Share a summary of each group's discussion.</p></li>
+</ol>
+<h3 id="questions">Questions</h3>
+<ol>
+<li><p>What are the goals of a liberal arts education? How does social
+justice fit in? How does math?</p></li>
+<li><p>How does a person learn something new?</p></li>
+<li><p>What is the value of making mistakes in the learning
+process?</p></li>
+<li><p>How do we create a safe environment where risk taking is
+encouraged and productive failure is valued?</p></li>
+</ol>
+<ul>
+<li><p>I will be teaching this course using IBL methods for all the
+reasons you gave, as well as because research shows IBL improves student
+understanding of mathematics more than traditional lecture-based
+teaching methods.</p></li>
+</ul>
+<blockquote>
+<p>“Any creative endeavor is built on the ash heap of failure.”Mike
+Starbird</p>
+</blockquote>
+<div class="claim">
+<p><em> 3</em>. An education must prepare a student to ask and explore
+questions in contexts that do not yet exist. That is, we need
+individuals capable of tackling problems they have never encountered and
+to ask questions no one has yet thought of.</p>
+<p>If we really want students to be independent, inquisitive, &amp;
+persistent, then we need to provide them with the means to acquire these
+skills.</p>
+</div>
+<h3 id="engagement-points-extra-credit-opportunities">Engagement Points
+(Extra Credit Opportunities)</h3>
+<ul>
+<li><p>The Westminster College Department of Mathematics values the
+experiences that students have with mathematics and data science outside
+of the formal classroom. In order to encourage our students to find new
+and interesting ways to engage with our disciplines, we have
+incorporated a department-wide extra credit policy in which
+extracurricular activities gain you engagement points which will
+contribute toward your course grades..</p></li>
+<li><p>Examples of activities that are likely to qualify include, but
+are not limited to: attending office hours three times; attending a
+meeting of the S-Cubed seminar; volunteering in the East High or
+Cottonwood Tutoring Programs; attending Lemma social activities or
+meetings; attending college Diversity, Equity, and Inclusion
+programming; taking the Putnam exam; attending a screening of a film
+with mathematical themes; participating in a Research Experience for
+Undergraduates (REU) during the summer; attending a non-required
+math-related talk or seminar; attending a regional/national math
+conference; giving a talk related to math; submitting or publishing a
+paper in an academic journal; participating in a math competition;
+reading a book with mathematical themes; and many others.</p></li>
+<li><p>If you participated in an activity that you think qualifies for
+engagement points, please fill out the Google Form located at
+tinyurl.com/WMengagement. Because we are unable to constantly check the
+form responses, please contact me to determine whether you were granted
+engagement points for your activity.</p></li>
+<li><p>In this course, you may use three engagement points at any time
+to get a free Pass on a reading response or five engagement points to
+get a free Pass on a news response. I reserve the right to limit how
+many times you may redeem engagement points in these ways. Please send
+me an email or tell me in person if you'd like to use your engagement
+points.</p></li>
+</ul>
+<h3 id="tutoring-programs">Tutoring Programs</h3>
+<ul>
+<li><p>You may earn engagement points by volunteering your time in
+Westminster's Cottonwood High or East High Tutoring Programs. This
+involves volunteering at least three times to work at an
+after-school-tutoring lab at one of the two high schools with which
+Westminster has a partnership. There, you would help high school
+students struggling with mathematics. The high-school students receiving
+this tutoring are usually in Algebra I, Geometry, or Algebra II and see
+mathematics as confusing and frustrating. Both Programs are looking for
+a willingness to help remove this fear from a scary subject in their
+tutors.</p></li>
+<li><p>Students who tutor or TA at least three times in the Cottonwood
+tutoring program will receive a stipend of <span
+class="math inline">$8</span> for every hour spent tutoring, as well as
+one engagement point per hour volunteered.} Please see
+tinyurl.com/sherlockclub for further details and to sign up for
+Cottonwood tutoring or teaching assistantship.</p></li>
+</ul>
+<h1 id="group-work-and-class-norms">Group work and class norms</h1>
+<h2 id="ground-rules">Ground rules</h2>
+<p>Given the nature of this course, it's important that we develop class
+norms to promote an atmosphere which will facilitate the learning
+process as well as respect the experiences of different groups in the
+classroom and the larger society. The class can agree to revise them and
+add others, but all students must commit themselves to the final set of
+rules by the end of the first class. These principles will guide our
+class discussions and interactions.</p>
+<div class="xca">
+<p><strong> 4</strong>. TPS on what common norms for group work and
+discussion are important for our class.</p>
+<ul>
+<li><p>Whose voices are valued?</p></li>
+<li><p>What philosophy do we have about who can make contributions to
+mathematics and the value of those contributions?</p></li>
+<li><p>How does this connect to the values we espouse for our
+democracy?</p></li>
+</ul>
+</div>
+<p>Here are some useful classroom norms:</p>
+<ol>
+<li><p><strong>Controversy and vulnerability</strong>: different views
+are expected and honored with a group commitment to understand the
+sources of disagreement and to work cooperatively toward common
+solutions <strong>without putting a disproportionate responsibility on
+marginalized groups to educate us</strong>.</p>
+<ul>
+<li><p>No one's identities are under question: e.g. no arguing that
+queer people are wrong for existing.</p></li>
+<li><p>Please come talk to me anytime you feel uncomfortable enough that
+it's affecting your work in class.</p></li>
+</ul></li>
+<li><p><strong>Own your intentions and your impact.</strong> Acknowledge
+that the impact of your actions is not always congruent with your
+intentions and that positive or neutral intentions do not trump negative
+impact. Participate truthfully and accept when your actions or words
+harm others.</p></li>
+<li><p><strong>Challenge by choice</strong>: individuals may determine
+for themselves if and to what degree they will participate in a given
+discussion or activity. It is possible not to participate in a few
+activities and still receive an A in the course. Be aware of what
+factors influence your decision about whether to challenge yourself on a
+given issue.</p></li>
+<li><p><strong>Respect</strong>: each other and yourselves. Investigate
+how your cultural context affects what you think of as respect for
+others and acknowledge what respect looks like in other contexts.</p>
+<div class="xca">
+<p><strong> 5</strong>. (TPS) What does respect look like for you? How
+might ideas of respect vary with cultural context? How might you firmly
+challenge the views of someone else in a respectful manner?</p>
+</div></li>
+<li><p><strong>No attacks</strong>. personal attacks are a form of
+extreme disrespect. Disagreeing with ideas is welcome; attacking
+individuals for their ideas is not.</p>
+<div class="xca">
+<p><strong> 6</strong>. What are the differences betweeen a personal
+attack and a challenge to an idea that makes an individual feel
+uncomfortable? What are some situations that might blur the lines
+between the two? How can we acknowledge when certain beliefs (e.g. trans
+people not existing) are inherently personal attacks?</p>
+</div></li>
+</ol>
+<ul>
+<li><p>Group roles: In order to facilitate group interaction, you will
+take on group roles designed to mimic the role of mathematical and/or
+sociological researchers. The roles are as follows <strong>(follow along
+in your syllabus)</strong>:</p>
+<ul>
+<li><p><strong>The facilitator</strong> is responsible for making sure
+every student is able to contribute and be heard. <em>Contributions</em>
+may include asking good questions, rephrasing someone else's idea,
+coming up with a way of connecting mathematics to the real world, and
+many others.</p></li>
+<li><p>the <strong>resource manager</strong> is responsible for
+obtaining and keeping track of all necessary resources to solve a
+problem. <em>Resources</em> may include writing utensils, paper, the
+Internet, your instructor, data sources, and most importantly, your
+team.</p></li>
+<li><p>the <strong>lead author</strong> is responsible for writing down
+the ideas that each group comes up with.</p></li>
+<li><p>the <strong>communicator</strong> is responsible for reporting
+what your group came up with to the class, instructor, and any relevant
+community groups.</p></li>
+</ul></li>
+<li><p>Assign roles to each group by first letters of first name;
+they'll rotate every day of class.</p></li>
+<li><p>Anyone can answer questions posed to the whole class, but if your
+group came up with an idea that hasn't been shared yet, it
+<strong>someone</strong> in your group's responsibility to share your
+answer so that everyone can learn from you!</p></li>
+</ul>
+<h2 id="homework">Homework</h2>
+<ol>
+<li><p>Vote on a social justice topic of your choice to discuss starting
+Week 3 of the course.</p></li>
+<li><p>Write in a topic that you'd like to discuss in this class,
+whether it's already on the list or not.</p></li>
+<li><p>Electronically sign the learning contract for the course (5
+min)</p></li>
+<li><p>Read the syllabus (by Tuesday) and bring any questions about it
+to class.</p></li>
+<li><p>(by Friday of next week, but start working now) Write a 1-2 page
+(double spaced) mathematical autobiography based on the questions on
+Canvas and turn it in to me in my office, either during office hours or
+email me for an appointment.</p></li>
+</ol>
+</body>
+</html>
