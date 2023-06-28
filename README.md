@@ -17,7 +17,7 @@ This is the new home for *Quantitative Reasoning for Social Justice: An Active L
 
 Welcome to the workbook's GitHub page! This is a work in progress; I aim to write and collate open-source lesson plans for TMSJ (teaching math for social justice) into a workbook you can use in your courses. I am indebted to and model my work after the K-12 educators (e.g. [Bob Moses](https://rethinkingschools.org/articles/radical-equations/), [Jonathan Osler](https://radicalmath.org/)) who have been doing this work for decades.
 
-The book itself is currently hosted [on GitHub Pages](https://qr-for-social-justice.github.io/workbook/). Feel free to explore, and don't hesitate to reach out (email Kenan's first initial, followed by their last name, at westminsteru dot edu) if you have comments, questions, or suggestions!
+The book itself is currently hosted [on GitHub Pages](https://qr-for-social-justice.github.io/workbook/). Feel free to explore, and don't hesitate to reach out (email Bianca's first initial, followed by their last name, at westminsteru dot edu) if you have comments, questions, or suggestions!
 
 ## Compilation instructions
 If your goal is to use the book as-is in a course or seminar, you can simply share the [book's website](https://bit.ly/QR4SJ) with your students; [bit.ly/QR4SJ](https://bit.ly/QR4SJ) can be used as a memorable link. 
