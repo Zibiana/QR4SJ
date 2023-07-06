@@ -45,6 +45,9 @@
 
     <xi:include href="./legislation/ch_legislation.ptx" />
 
+
+    <xi:include href="./from-latex/ch_from-latex.ptx"/>
+
     <!-- The final chapter contains a wide variety of elements to  -->
     <!-- illustrate what pretext can do, plus links to more help.  -->
     <!-- We recommend keeping this handy, and commenting it out    -->
