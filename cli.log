@@ -1,8 +1,7 @@
-INFO    : PreTeXt project found in `/Users/bthompson/Dropbox/github/QR4SJworkbook`.
-WARNING : Using CLI version 1.6.0 but project's `requirements.txt`
-WARNING : is configured to use 1.5.2. Consider either installing
-WARNING : CLI version 1.5.2 or changing `requirements.txt` to match 1.6.0.
-INFO    : Now preparing local server to preview directory `/Users/bthompson/Dropbox/github/QR4SJworkbook/output/web`.
+INFO    : PreTeXt project found in `/Users/bthompson/Dropbox/github/QR4SJ`.
+WARNING : Project's CLI version could not be detected from `requirements.txt`.
+WARNING : Try `pretext init --refresh` to produce a compatible file.
+INFO    : Now preparing local server to preview directory `/Users/bthompson/Dropbox/github/QR4SJ/output/web`.
 INFO    :   (Reminder: use `pretext deploy` to deploy your built project to a public
 INFO    :   GitHub Pages site that can be shared with readers who cannot access your
 INFO    :   personal computer.)

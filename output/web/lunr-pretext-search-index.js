@@ -160,7 +160,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Fermi Estimation",
-  "body": " Fermi Estimation   Fermi estimation  What's copyright around adding youtube videos here? There's a cool youtube video on Fermi estimations.    Textual Analysis of Template Bills & Proposed State Bills  There is substantial evidence (Pauly 2023; Schipper 2022; Contreras 2023) that template bills containing text for banning aspects of gender-affirming care and social transition were distributed at workshops hosted by far-right organizations such as the Heritage Foundation and Christian Family Policy Alliance over the past several years. For example, throughout 2019, the Heritage Foundation hosted a series of workshops on the medical risks of gender-affirming care for trans youth (Harvard Law Review 2021).  Given the text of template bills such as that found in Appendix II of (Theriot and Connelly, n.d.), how many of the bills proposed across the U.S. since 2019 have significant textual similarity to template bills authored by conservative organizations? Which template bills, and which organizations, have had the most influence in the text of bills that were proposed? Passed? In which states?    Do Anti-Trans Bills Reflect the Will of Voters?  In states where anti-trans bills are passed, is the percentage of voters (eligible\/likely voters, residents, etc.) in a state that support such bills a plurality? A majority? Greater or less than the number of legislature members who voted for the anti-trans bill?  How does the number of anti-trans bills passed in a state correlate to how gerrymandered the state is (using a measure such as Markov chain Monte Carlo (Metric Geometry & Gerrymandering Group, n.d.))?    State Prioritization of Anti-Trans Bills  Are most anti-trans bills passed during the beginning of legislative sessions, indicating that such bills are a high priority for the state legislature?  In order to extract information on state legislature convening and adjourning dates, we download the schedule of state legislature meeting dates from the National Conference of State Legislatures website, then use the Tabula tool to extract the data into a .csv file, making some manual edits. Finally, we load the .csv file into RStudio.  ## Rows: 56 Columns: 3 ## ── Column specification ──────────────────────────────────────────────────────── ## Delimiter: \",\" ## chr (3): State, Convene, Adjourn ## ## ℹ Use `spec()` to retrieve the full column specification for this data. ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.    Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health  The 2022 Trevor Project National Survey on LGBTQ Youth Mental Health (The Trevor Project 2022) found that 59% of young trans men and 48% of young trans women had considered suicide in the past year, while 22% of trans boys and 12% of trans girls had attempted suicide. The same survey found that 93% of trans and nonbinary youth said they had worried about legislation denying trans people access to gender-affirming healthcare.  Is the number of Google searches or Twitter posts related to anxiety, depression, and\/or suicidality ( #distress ) among trans and nonbinary folks higher in 2023 than in previous years?  Is the amount of #distress correlated to whether a bill has just passed? To whether the bill impacts social or medical transition, drag performance, or Other ?  How does the amount of #distress in states that have not passed anti-trans bills compare to states in which an anti-trans bill has been passed in the past year? The past two years?    Queer and Trans Resistance  How does the number of posts related to organizing protests, whether online or in-person, on Twitter after the passage of an anti-trans bill in a particular state compare to the number immediately before the passage of that bill?  How does the number of out transgender and nonbinary people elected to public office, featured in the most widely consumed media outlets, generally being visible…related to the number of bills proposed\/passed? Possible source: LGBTQ+ Victory Fund for officeholders   "
+  "body": " Fermi Estimation   Fermi estimation  What's copyright around adding youtube videos here? There's a cool youtube video on Fermi estimations.   "
 },
 {
   "id": "sec_spinning_numbers",
@@ -169,34 +169,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Spinning the numbers",
-  "body": " Spinning the numbers   Here, we will find reputable sources for data on anti-trans bills and get the data into a form we can analyze.    Stuff stuff stuffa    Finding Data Online  Our first goal is to find data. Note that any data found online may change web addresses, stop updating, go offline, or become unreliable over time. Your instructor will be able to tell you which sources of data to use if the ones below are no longer reliable.  Go to the website tracktranslegislation.com , which in turn obtains its data from LegiScan , and browse around. What are two things that you notice about the site? Two things that surprise you? Two things that aren't on the site that you wonder about?  This data is up-to-date from 2021 through April 21, 2023. In order to track bills prior to 2021, we use data from the ACLU's Past Legislation Affecting LGBT Rights Across the Country pages for 2018, 2019, and 2020 . Go to the ACLU \"Past Legislation Affecting LGBT Rights Across the Country 2020\" webpage and skim that page. What similarities do you notice with the data found on the Track Trans Legislation website? What differences do you notice? Click on the \"View 2019\" and \"View 2018 Session bills\" links and do the same for those years.  We'd like to get a sense of how anti-trans legislation in the U.S. changed over time, so we're going to try to merge the Track Trans Legislation (TTL) data with the ACLU data. Since the ACLU data has different bill \"Status\" categories than TTL, we'll need to figure out how to classify each ACLU bill into one of the TTL categories. Use the Terminology page on the TTL website to answer the following question. Which of the TTL categories would you classify \"Referred to committee\" into? \"Hearing scheduled\"? \"Withdrawn\"? You may want to click on the bill numbers on the ACLU site to see how the website LegiScan, a constantly-updated bill tracker, classifies each bill.    Note that the 2020 ACLU page was last updated on March 20, 2020, since many state legislatures were suspended or closed during the first year of the COVID-19 pandemic; the ACLU page promised to update the tracker as major new developments occur[red] . This data has distinct variable names and organization, so we also modify the ACLU data to match the Track Trans Legislation data as closely as possible.  For example, bills that were withdrawn, not passed by the end of a given legislative session, explicitly listed as Dead , or were recommended against by a committee and did not proceed in the legislature were relabeled Dead (at least for that year). The exception was when the bill description is specifically listed as hearing scheduled , referred to committee , carried over from another year, or otherwise makes clear that the bill is still under consideration, in which case Introduced or Crossed Over (depending on whether the bill had been passed by at least one chamber) were used.  We only include bills in categories tracked by both data sources; this leaves out, for example, bills preventing localities from passing anti-discrimination ordinances within a state. We use a broad reading of the religious freedom category to include bills that allow for people with sincerely-held religious beliefs in that state to challenge nondiscrimination laws, discriminate against LGBTQ+ people, refuse to provide healthcare to LGBTQ+ people, refuse to provide adoption services to LGBTQ+ people; discriminate against married LGBTQ+ people, and receive funding for discriminatory student groups at public universities, among others.    Cleaning the Data  First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., AZ instead of Arizona ), while Track Trans Legislation uses full names. So we use a program (that you won't have to worry about!) to convert full names to abbreviations in the whole dataset. We also note that, for example, the 2021 dataset includes some bills passed in January 2022, so we eliminate duplicate bills.  This decreases the number of bills in our dataset from 927 to 893. Next, note that the bills whose status is labeled Introduced* by TTL are those that failed to meet their state's crossover deadline , the date by which a bill must pass out of the chamber in which it was introduced and to the other chamber (e.g. State House vs. Senate). According to the site Track Trans Legislation , a bill that is not passed in its initial chamber by the crossover deadline faces high procedural hurdles in order to move forward. Thus, we wish to classify these bills (at least for the current session) as Dead\/Failed .  Moreover, one bill's status is listed as Posted , Kentucky's HB132 in 2020. LegiScan research reveals that this bill died in committee, so we update its status to Dead\/Failed .   "
-},
-{
-  "id": "exercise-8",
-  "level": "2",
-  "url": "sec_spinning_numbers.html#exercise-8",
-  "type": "Exercise",
-  "number": "2.2.1.1",
-  "title": "",
-  "body": "Go to the website tracktranslegislation.com , which in turn obtains its data from LegiScan , and browse around. What are two things that you notice about the site? Two things that surprise you? Two things that aren't on the site that you wonder about? "
-},
-{
-  "id": "exercise-9",
-  "level": "2",
-  "url": "sec_spinning_numbers.html#exercise-9",
-  "type": "Exercise",
-  "number": "2.2.1.2",
-  "title": "",
-  "body": "This data is up-to-date from 2021 through April 21, 2023. In order to track bills prior to 2021, we use data from the ACLU's Past Legislation Affecting LGBT Rights Across the Country pages for 2018, 2019, and 2020 . Go to the ACLU \"Past Legislation Affecting LGBT Rights Across the Country 2020\" webpage and skim that page. What similarities do you notice with the data found on the Track Trans Legislation website? What differences do you notice? Click on the \"View 2019\" and \"View 2018 Session bills\" links and do the same for those years. "
-},
-{
-  "id": "exercise-10",
-  "level": "2",
-  "url": "sec_spinning_numbers.html#exercise-10",
-  "type": "Exercise",
-  "number": "2.2.1.3",
-  "title": "",
-  "body": "We'd like to get a sense of how anti-trans legislation in the U.S. changed over time, so we're going to try to merge the Track Trans Legislation (TTL) data with the ACLU data. Since the ACLU data has different bill \"Status\" categories than TTL, we'll need to figure out how to classify each ACLU bill into one of the TTL categories. Use the Terminology page on the TTL website to answer the following question. Which of the TTL categories would you classify \"Referred to committee\" into? \"Hearing scheduled\"? \"Withdrawn\"? You may want to click on the bill numbers on the ACLU site to see how the website LegiScan, a constantly-updated bill tracker, classifies each bill. "
+  "body": " Spinning the numbers   How do we lie with numbers? How do we avoid being fooled and understanding the nuances of numbers?   "
 },
 {
   "id": "sec_lying_with_visuals",
@@ -205,70 +178,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.3",
   "title": "Lying with graphs",
-  "body": " Lying with graphs   Bill Type vs. Status  Graphs are cool, and full of lies.  Note that crossing over refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.  ## Bill Type Crossed Over Dead\/Failed Introduced Passed ## Drag Performance 6 11 19 0 ## Healthcare 10 85 112 5 ## ID Updates 4 9 15 0 ## Nondiscrimination Protections 0 6 6 1 ## Other 8 26 38 1 ## Public Facilities 6 29 22 2 ## Religious Freedom 1 13 22 1 ## Schools \/ Education 8 42 47 1 ## Youth Athletics 23 70 158 3 ## Total 66 291 439 14 ## Signed\/Enacted Vetoed Total ## 2 0 38 ## 17 0 229 ## 5 0 33 ## 0 0 13 ## 4 1 78 ## 7 0 66 ## 4 0 41 ## 4 0 102 ## 35 4 293 ## 78 5 893  We see what percentage of each bill status was made up of each bill type:  ## Bill Type Crossed Over Dead\/Failed Introduced Passed ## Drag Performance 15.8% 28.9% 50.0% 0.0% ## Healthcare 4.4% 37.1% 48.9% 2.2% ## ID Updates 12.1% 27.3% 45.5% 0.0% ## Nondiscrimination Protections 0.0% 46.2% 46.2% 7.7% ## Other 10.3% 33.3% 48.7% 1.3% ## Public Facilities 9.1% 43.9% 33.3% 3.0% ## Religious Freedom 2.4% 31.7% 53.7% 2.4% ## Schools \/ Education 7.8% 41.2% 46.1% 1.0% ## Youth Athletics 7.8% 23.9% 53.9% 1.0% ## Total 7.4% 32.6% 49.2% 1.6% ## Signed\/Enacted Vetoed Total ## 5.3% 0.0% 100.0% ## 7.4% 0.0% 100.0% ## 15.2% 0.0% 100.0% ## 0.0% 0.0% 100.0% ## 5.1% 1.3% 100.0% ## 10.6% 0.0% 100.0% ## 9.8% 0.0% 100.0% ## 3.9% 0.0% 100.0% ## 11.9% 1.4% 100.0% ## 8.7% 0.6% 100.0%  And what percentage of each bill type had each status:  ## Status Drag Performance Healthcare ID Updates ## Crossed Over 9.1% 15.2% 6.1% ## Dead\/Failed 3.8% 29.2% 3.1% ## Introduced 4.3% 25.5% 3.4% ## Passed 0.0% 35.7% 0.0% ## Signed\/Enacted 2.6% 21.8% 6.4% ## Vetoed 0.0% 0.0% 0.0% ## Total 4.3% 25.6% 3.7% ## Nondiscrimination Protections Other Public Facilities Religious Freedom ## 0.0% 12.1% 9.1% 1.5% ## 2.1% 8.9% 10.0% 4.5% ## 1.4% 8.7% 5.0% 5.0% ## 7.1% 7.1% 14.3% 7.1% ## 0.0% 5.1% 9.0% 5.1% ## 0.0% 20.0% 0.0% 0.0% ## 1.5% 8.7% 7.4% 4.6% ## Schools \/ Education Youth Athletics Total ## 12.1% 34.8% 100.0% ## 14.4% 24.1% 100.0% ## 10.7% 36.0% 100.0% ## 7.1% 21.4% 100.0% ## 5.1% 44.9% 100.0% ## 0.0% 80.0% 100.0% ## 11.4% 32.8% 100.0%  It seems like bills related to ID updates (i.e., preventing trans and nonbinary people from having their IDs show their correct gender identity), public facilities (often preventing trans people from using the bathroom that fits their gender identity), and youth athletics (i.e., preventing trans girls from competing on girls' sports teams) are most likely to be signed by their state's governor and enacted into law (after passing both legislative chambers).  However, of all the bills that were signed and enacted, most of them by far were related to youth athletics (over double the number of bills from any other category), followed by healthcare, suggesting that more bills were proposed in those categories.  We seek to represent this data in a side-by-side bar chart. In order to provide a more digestible, big-picture viewpoint, we classify the bills by the type of gender-affirming care that is targeted: social transition (excluding artistic performance, which Track Trans Legislation categorizes under Drag Performance ), healthcare\/medical transition, drag performances (noting that performing in drag and being transgender are distinct, though sometimes overlapping, categories), and Other .     In order to better see proportions, we also show a stacked bar chart that scales every x -axis group to 100%:      Did the type of bill impact its likelihood of being passed and\/or signed?  However, the observed trends could simply relate to the fact that the largest numbers of bills nationwide were proposed in those categories.  In order to simplify the following charts and analysis, we combine certain bill statuses into categories: bills that have crossed over, passed, or were signed and enacted have a significant chance of impacting the lives of trans and nonbinary people in that state, while bills that were vetoed, died, or failed have no chance of impacting lives. Bills listed simply as introduced may or may not have the support to eventually pass, but since they are not currently impacting the ability of trans\/nonbinary people to access healthcare, play sports, etc., we count them as Not Passed .  Now, we want to see a breakdown of the number and percentages of each type of bill that did and didn't pass.  ## Bill Type Not Passed Passed Total ## Drag 30 8 38 ## Medical 197 32 229 ## Other 65 13 78 ## Social 443 105 548 ## Total 735 158 893 ## Bill Type Not Passed Passed ## Drag 78.9% 21.1% ## Medical 86.0% 14.0% ## Other 83.3% 16.7% ## Social 80.8% 19.2% ## Total 82.3% 17.7%  We wish to plot the number and proportion of each type of bill that was passed.          From this chart, it appears that bills restricting hormone therapy, puberty blockers, and other medical interventions are actually somewhat less likely to pass than other types of bills, and that while the number of anti-drag bills is substantially smaller than the number of other types of bills, they are somewhat more likely to pass.  Importantly, fewer than 25% of any type of bill since 2018 has passed. What happens when we break down the bills by year?     Is 2023 the Year of Transphobia?  A common claim in the news media, and a common feeling among trans and nonbinary folks, is that 2023 is by far the worst recent year for anti-trans legislation. Let's investigate the following questions:   What total number of anti-trans bills were proposed each year from 2018 to 2023?  What total number of anti-trans bills were passed each of these years? In 2023, since the session is not over in many states, we run the analysis in two ways: including both bills that crossed over and bills that were signed\/enacted, and only considering bills which were signed\/enacted.  What types of anti-trans bills were proposed more often in 2023 than in previous years?  What types of anti-trans bills were passed more often in 2023?  What states introduced\/passed the majority of anti-trans bills in 2023, and are these the same states as in previous years?   We start by creating a data frame that shows only the bills passed, crossed over (hence passed by at least one chamber of the legislature and not yet dead), and\/or signed and enacted between 2021 and 2023, as well as in each year and in the years preceding 2023.      Note that these bills only go through April 21, 2022 . To emphasize the change in the number of bills that have a chance of passing or have already been passed over time, we combine all the years 2017-2022 and compare them to 2023.     It appears that 2023 will, indeed, have many anti-trans bills pass than all previous years since 2018 combined (again, recall that the 2023 data in this analysis only goes through April 21, 2023). What about the likelihood of any particular anti-trans bill to pass in 2023 compared to previous years?      There appears to be a slight increase in the proportion of bills of all types that passed in 2023 compared to 2018-22. This difference becomes even more pronounced when we separate 2022:  ## after_21 Not Passed Passed ## 2022-23 78.2% 21.8% ## 2018-21 84.7% 15.3% ## Total 80.1% 19.9%       "
-},
-{
-  "id": "p-75",
-  "level": "2",
-  "url": "sec_lying_with_visuals.html#p-75",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "crossing over "
-},
-{
-  "id": "figure-1",
-  "level": "2",
-  "url": "sec_lying_with_visuals.html#figure-1",
-  "type": "Figure",
-  "number": "2.3.1",
-  "title": "",
-  "body": "   "
-},
-{
-  "id": "figure-2",
-  "level": "2",
-  "url": "sec_lying_with_visuals.html#figure-2",
-  "type": "Figure",
-  "number": "2.3.2",
-  "title": "",
-  "body": "   "
-},
-{
-  "id": "figure-3",
-  "level": "2",
-  "url": "sec_lying_with_visuals.html#figure-3",
-  "type": "Figure",
-  "number": "2.3.3",
-  "title": "",
-  "body": "   "
-},
-{
-  "id": "p-93",
-  "level": "2",
-  "url": "sec_lying_with_visuals.html#p-93",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "only go through April 21, 2022 "
-},
-{
-  "id": "figure-4",
-  "level": "2",
-  "url": "sec_lying_with_visuals.html#figure-4",
-  "type": "Figure",
-  "number": "2.3.4",
-  "title": "",
-  "body": "   "
-},
-{
-  "id": "figure-5",
-  "level": "2",
-  "url": "sec_lying_with_visuals.html#figure-5",
-  "type": "Figure",
-  "number": "2.3.5",
-  "title": "",
-  "body": "   "
+  "body": " Lying with graphs  "
 },
 {
   "id": "sec_unit_conversion",
@@ -277,88 +187,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Unit Conversion and why should we care",
-  "body": " Unit Conversion and why should we care   We begin by investigating key definitions necessary to understand transgender and nonbinary identities and how they are targeted by recent bills.    Anti-Trans Bills in the U.S. Starting 2018    The following questions are about bills prohibiting various types of transition and healthcare for trans and nonbinary people in the U.S., primarily proposed and passed beginning in 2018. Think about your personal definition, then do some research online, to find definitions of the following terms. Be sure to use reputable websites: most university\/college sites (put \"site:*.edu\" at the end of your Google search), the leading professional organizations (American Medical Association, American Pediatric Association, American Psychological Association), the Genderbread Person , and (usually) the sources linked from Wikipedia are all options. In what way(s) do your personal definition(s) agree and disagree with the Internet definitions?   Gender.  Biological sex.  Assigned sex at birth.  Gender identity.  Transgender.  Nonbinary.  Social and medical transition.  Gender-affirming healthcare.  Drag performance.    We emphasize the years since 2018 in this analysis because, in 2019, the conservative Heritage Foundation and conservative Christian Family Policy Alliance distributed a model strategy for banning gender-affirming care to state legislators at a conference (Harvard Law Review 2021). In 2020, a conference attendee and South Dakota legislator published a version of the bill seeking to criminalize doctors' provision of puberty blockers and hormones to transgender patients under the age of 16. Similar bills followed the same year: in Colorado, Florida, Illinois, Iowa, Kentucky, Missouri, Oklahoma, and South Carolina (Bauer 2020). Though the 2020 bills failed, the language in bills in South Carolina, South Dakota, and Arkansas in 2021 attempting to allow physicians to refuse to treat transgender children shared similar language, which originated in a Model Conscience Protection Act published by Kevin Theriot and Ken Connelly of the conservative Alliance Defending Freedom (Theriot and Connelly, n.d.). As we will see below, more and more bills are being proposed, and more are passing, every year since.  These bills go against studies showing that transgender children between the age of 5 and 12 viewed their gender identities similarly to cisgender children (Olson, Key, and Eaton 2015), among other academic studies. The leading association of pediatricians in the United States recommends that youth who identify as [transgender] have access to comprehensive, gender-affirming, and developmentally appropriate health care that is provided in a safe and inclusive clinical space…[and] that pediatricians have a role in advocating for policies and laws that protect youth who identify as [transgender] from discrimination and violence (Rafferty et al. 2018).   We briefly describe how each aspect of gender-affirming healthcare is targeted by the categories of bills used in the data analysis below. Social transition is targeted through youth athletics bills preventing young people from competing on sports teams under their identified gender. ID requirements prevent the changing of the sex listed on birth certificates, driver's licenses, and other government IDs. Public facilities laws prevent all trans people from using restrooms and other gendered public facilities that match their gender identity. Schools\/education laws vary but include laws banning teachers from using students' correct pronouns at all or without parental permission, discussing queer and trans\/nonbinary identities in the classroom, and displaying items such as pride flags supporting queer and trans identities, among others.   Drag performance laws (perhaps better categorized as gender expression laws ), a recent development as of 2023, ban drag shows or male or female impersonators in certain circumstances, such as in the presence of minors (Tennessee's Senate Bill 3) or on Sundays from 1 a.m. to 12 p.m. (Arizona's SB 1030). Laws barring municipalities from passing nondiscrimination protections , as well as religious freedom laws, legalize discrimination in certain circumstances against LGBTQ+ people, particularly by those with a strongly felt religious conviction that being LGBTQ+ is wrong. Finally, healthcare laws prevent gender-affirming care for various groups in various ways, often including bans on hormone therapy and surgery for those under 18.  In the rest of this chapter, you will identify and analyze recent anti-trans and anti-nonbinary bills over time, focusing on their impacts, whether or not they passed, and other details that impact people's lives.  "
-},
-{
-  "id": "exercise-11",
-  "level": "2",
-  "url": "sec_unit_conversion.html#exercise-11",
-  "type": "Exercise",
-  "number": "2.4.1",
-  "title": "",
-  "body": "Gender. "
-},
-{
-  "id": "exercise-12",
-  "level": "2",
-  "url": "sec_unit_conversion.html#exercise-12",
-  "type": "Exercise",
-  "number": "2.4.2",
-  "title": "",
-  "body": "Biological sex. "
-},
-{
-  "id": "exercise-13",
-  "level": "2",
-  "url": "sec_unit_conversion.html#exercise-13",
-  "type": "Exercise",
-  "number": "2.4.3",
-  "title": "",
-  "body": "Assigned sex at birth. "
-},
-{
-  "id": "exercise-14",
-  "level": "2",
-  "url": "sec_unit_conversion.html#exercise-14",
-  "type": "Exercise",
-  "number": "2.4.4",
-  "title": "",
-  "body": "Gender identity. "
-},
-{
-  "id": "exercise-15",
-  "level": "2",
-  "url": "sec_unit_conversion.html#exercise-15",
-  "type": "Exercise",
-  "number": "2.4.5",
-  "title": "",
-  "body": "Transgender. "
-},
-{
-  "id": "exercise-16",
-  "level": "2",
-  "url": "sec_unit_conversion.html#exercise-16",
-  "type": "Exercise",
-  "number": "2.4.6",
-  "title": "",
-  "body": "Nonbinary. "
-},
-{
-  "id": "exercise-17",
-  "level": "2",
-  "url": "sec_unit_conversion.html#exercise-17",
-  "type": "Exercise",
-  "number": "2.4.7",
-  "title": "",
-  "body": "Social and medical transition. "
-},
-{
-  "id": "exercise-18",
-  "level": "2",
-  "url": "sec_unit_conversion.html#exercise-18",
-  "type": "Exercise",
-  "number": "2.4.8",
-  "title": "",
-  "body": "Gender-affirming healthcare. "
-},
-{
-  "id": "exercise-19",
-  "level": "2",
-  "url": "sec_unit_conversion.html#exercise-19",
-  "type": "Exercise",
-  "number": "2.4.9",
-  "title": "",
-  "body": "Drag performance. "
+  "body": " Unit Conversion and why should we care   blurblur   "
 },
 {
   "id": "sec_reading_questions",
@@ -367,25 +196,25 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.5",
   "title": "Reading Questions",
-  "body": " Reading Questions   ???????  Access to data is itself a social justice issue. For example, researchers over the last decade have monitored public Twitter posts to analyze how people feel about various issues, or generally what people are talking about (a process called \"sentiment analysis\"). Previously, access to of tweets on the platform had been free through Twitter's API, a collection of methods for accessing Twitter's data. However, in March 2023, Elon Musk and other Twitter decision-makers raised the price for access to of tweets to $42,000 a month , a cost that one researcher said no \"academic on the planet...could afford.\"  More directly related to legislative analysis, proposed legislation is usually listed on state and territorial government webpages, but one would have to visit all of these 56+ pages, find a way of downloading the data into a spreadsheet, and continually monitor each of the pages for new bills in order to keep up with proposed legislation nationwide. Websites such as LegiScan make this easier by aggregating data from all state legislatures, but in order to get this data into a form that can be imported into data analysis software, some knowledge of data scraping\/scripting is required, and for large queries, paid API access may be necessary.  For these reasons, we use data that has already been collected and cleaned by nonprofit or government sources. We have first accessed the website \"CRT Forward Tracking Project\" , which tracks bills seeking to ban or limit discussion of historical and systemic racism in the United States. This website does not provide a way of downloading its data, so we try a couple of low-effort tricks before simply copy-pasting their entire table into an Excel file. In this chapter, you've seen how one might analyze legislation affecting transgender and nonbinary rights. Now it's your turn: download this Excel file and use it to answer the following questions.      "
+  "body": " Reading Questions   ???????      "
 },
 {
-  "id": "exercise-20",
+  "id": "exercise-8",
   "level": "2",
-  "url": "sec_reading_questions.html#exercise-20",
+  "url": "sec_reading_questions.html#exercise-8",
   "type": "Exercise",
   "number": "2.5.1",
   "title": "",
   "body": ""
 },
 {
-  "id": "refs-anti-trans-leg",
+  "id": "refs-essential-knowledge",
   "level": "1",
-  "url": "refs-anti-trans-leg.html",
+  "url": "refs-essential-knowledge.html",
   "type": "References",
   "number": "2.6",
   "title": "References",
-  "body": " ACLU of Missouri. 2023. Advocates Sue to Block Missouri Attorney General's Anti-Transgender Rule Restricting Gender-Affirming Care.  https:\/\/www.aclu-mo.org\/en\/news\/advocates-sue-block-missouri-attorney-generals-anti-transgender-rule-restricting-gender .  American Civil Liberties Union. 2018. Past Legislation Affecting LGBT Rights Across the Country (2018).  https:\/\/www.aclu.org\/past-legislation-affecting-lgbt-rights-across-country-2018 .  ———. 2019. Past Legislation Affecting LGBT Rights Across Country 2019.  https:\/\/www.aclu.org\/past-legislation-affecting-lgbt-rights-across-country-2019 .  ———. 2020. Past Legislation Affecting LGBT Rights Across the Country 2020.  https:\/\/www.aclu.org\/past-legislation-affecting-lgbt-rights-across-country-2020 .  Bauer, Sydney. 2020. The New Anti-Trans Culture War Hiding in Plain Sight.  The New Republic , February. https:\/\/newrepublic.com\/article\/156539\/new-anti-trans-culture-war-hiding-plain-sight .  Contreras, Russell. 2023. The Forces Behind Anti-Trans Bills Across the U.S.  https:\/\/www.axios.com\/2023\/03\/31\/anti-trans-bills-2023-america .  González, Oriana. 2023. What Is the State of Gender-Affirming Care in America.  https:\/\/www.axios.com\/2023\/03\/03\/gender-affirming-care-trans-youth-us .  Harvard Law Review. 2021. Outlawing Trans Youth: State Legislatures and the Battle over Gender-Affirming Healthcare for Minors.  Harvard Law Review 134 (6). https:\/\/harvardlawreview.org\/print\/vol-134\/outlawing-trans-youth-state-legislatures-and-the-battle-over-gender-affirming-healthcare-for-minors\/ .  Katy Steinmetz. 2014. The Transgender Tipping Point.  https:\/\/time.com\/135480\/transgender-tipping-point\/ .  Metric Geometry & Gerrymandering Group. n.d. GerryChain.  https:\/\/mggg.github.io\/GerryChain\/ .  Olson, Kristina R., Aidan C. Key, and Nicholas R. Eaton. 2015. Gender cognition in transgender children.  Psychological Science 26 (4): 467–74. https:\/\/doi.org\/10.1177\/0956797614568156 .  Pauly, Madison. 2023. Inside the Secret Working Group That Helped Push Anti-Trans Laws Across the Country.  https:\/\/www.motherjones.com\/politics\/2023\/03\/anti-trans-transgender-health-care-ban-legislation-bill-minors-children-lgbtq\/ .  Rafferty, Jason, COMMITTEE ON PSYCHOSOCIAL ASPECTS OF CHILD AND FAMILY HEALTH, COMMITTEE ON ADOLESCENCE, GAY, BISEXUAL, AND TRANSGENDER HEALTH AND WELLNESS SECTION ON LESBIAN, Michael Yogman, Rebecca Baum, Thresia B. Gambon, et al. 2018. Ensuring Comprehensive Care and Support for Transgender and Gender-Diverse Children and Adolescents.  Pediatrics 142 (4): e20182162. https:\/\/doi.org\/10.1542\/peds.2018-2162 .  Schipper, Kellie. 2022. Conservative Political Tactics to Obstruct Gender-Affirming Healthcare for Transgender Youth in the USA. PhD thesis.  The Trevor Project. 2022. 2022 National Survey on LGBTQ Youth Mental Health.  https:\/\/www.thetrevorproject.org\/survey-2022\/assets\/static\/trevor01_2022survey_final.pdf .  Theriot, Kevin H, and Ken Connelly. n.d. Free to Do No Harm: Conscience Protections for Healthcare Professionals.  Arizona State Law Journal 49 (0549): 549–605.  Trans Legislation Tracker. n.d. Trans Legislation Tracker: 2022 Anti-Transgender Bills.  https:\/\/translegislation.com\/bills\/2022 .  "
+  "body": " "
 },
 {
   "id": "sec_loans-objectives",
@@ -406,54 +235,54 @@ var ptx_lunr_docs = [
   "body": " Cui Bono: Who Benefits?     Hasan Minhaj on Student Loans  The comedian Hasan Minhaj, of the former Netflix weekly show Patriot Act, focused a popular episode of his show on student loans in the US. Amazingly, this led to an invitation to testify before Congress on September 10, 2019, on the student loan debt crisis. Please watch the above YouTube clip from Patriot Act (good closed captioning available on YouTube), then answer the following questions.  What are some of the consequences that are faced by people who can't pay off their student loans?  What happened in 2010 to change the landscape of student loan debt in the US?  What are loan servicers, and what has their role been in the student loan crisis? > What are three ways in which Navient has mistreated borrowers?  What is an income-based repayment plan? What is forbearance, and why has it negatively affected borrowers when Navient encourages borrowers to enter forbearance instead of income-based repayment?  In what ways does Minhaj argue that the Department of Education has failed borrowers?     The highest proportion of student loan debt (the amount of debt held per student) is held by students at for-profit colleges , which are colleges that are not funded by taxes but instead depend on federal student aid (guaranteed by the government) and the tuition dollars that students pay to attend, often backed up by federal student aid. Contrast this situation with the vast majority of colleges and universities in the U.S., which are nonprofit institutions, which are usually run by a not-for-profit institution, religious organization, or government and hence often receive funding from taxes or a particular religious group.  The greatest proportion of defaults (see ) on student debt in  occurred at the University of Phoenix, Walden University, Nova Southeastern University, Capella University, and Strayer University , of which all but Nova are for-profit.  Almost all students are eligible to receive federal student loans, which are student loans funded by the U.S. federal government through programs such as Pell Grants. Federal loans are either subsidized (that is, interest payments are covered by the federal government for a period including the student's time at a college or university ; such loans are restricted to undergraduates only) or unsubsidized (in which case borrowers must pay the interest).  In contrast, private student loans are loans offered by non-governmental companies which are heavily advertised, do not offer the relatively generous forbearance and deferred-payment options that federal loans do, and charge interest while the borrower is in college. Often, private student loan interest rates are higher even than those of unsubsidized federal student loans. Since many students do not have a credit history, federal student loans do not require proof of, or a co-signer attesting, creditworthiness , or evidence of past ability to repay debt; as of the s, most private student loans required such proof . Additionally, students who declare bankruptcy are unable to discharge private student loans, meaning borrowers who have no money are still required to pay private corporations back for student loans . Therefore, the U.S. government earns more income from student loans, but profits less, on average, than private student loan companies.  Employers benefit from the number of students who attend college, including those who could not otherwise attend without taking out student loans. Credentialism , the continuing growth in employers' expectations of postsecondary education on the part of their employees, has been called a key driver of student loan debt . In , earnings were stagnant for most workers, but declined rapidly for workers with no college education. This pressures people to seek a college education whether or not they can afford it.  Finally, a article in The Atlantic implies that middle-class college graduates were able to advance their cause over other causes championed by more marginalized groups because they have higher relative political power compared to non-college graduates. Certainly, as we will see in the next sections, middle-class college graduates benefit a great deal from President Biden's student debt cancellation policy.  "
 },
 {
-  "id": "exercise-21",
+  "id": "exercise-9",
   "level": "2",
-  "url": "cui-bono-who-benefits.html#exercise-21",
+  "url": "cui-bono-who-benefits.html#exercise-9",
   "type": "Reading Question",
   "number": "3.2.1",
   "title": "",
   "body": "What are some of the consequences that are faced by people who can't pay off their student loans? "
 },
 {
-  "id": "exercise-22",
+  "id": "exercise-10",
   "level": "2",
-  "url": "cui-bono-who-benefits.html#exercise-22",
+  "url": "cui-bono-who-benefits.html#exercise-10",
   "type": "Reading Question",
   "number": "3.2.2",
   "title": "",
   "body": "What happened in 2010 to change the landscape of student loan debt in the US? "
 },
 {
-  "id": "exercise-23",
+  "id": "exercise-11",
   "level": "2",
-  "url": "cui-bono-who-benefits.html#exercise-23",
+  "url": "cui-bono-who-benefits.html#exercise-11",
   "type": "Reading Question",
   "number": "3.2.3",
   "title": "",
   "body": "What are loan servicers, and what has their role been in the student loan crisis? "
 },
 {
-  "id": "exercise-24",
+  "id": "exercise-12",
   "level": "2",
-  "url": "cui-bono-who-benefits.html#exercise-24",
+  "url": "cui-bono-who-benefits.html#exercise-12",
   "type": "Reading Question",
   "number": "3.2.4",
   "title": "",
   "body": "What are three ways in which Navient has mistreated borrowers? "
 },
 {
-  "id": "exercise-25",
+  "id": "exercise-13",
   "level": "2",
-  "url": "cui-bono-who-benefits.html#exercise-25",
+  "url": "cui-bono-who-benefits.html#exercise-13",
   "type": "Reading Question",
   "number": "3.2.5",
   "title": "",
   "body": "What is an income-based repayment plan? What is forbearance, and why has it negatively affected borrowers when Navient encourages borrowers to enter forbearance instead of income-based repayment? "
 },
 {
-  "id": "exercise-26",
+  "id": "exercise-14",
   "level": "2",
-  "url": "cui-bono-who-benefits.html#exercise-26",
+  "url": "cui-bono-who-benefits.html#exercise-14",
   "type": "Reading Question",
   "number": "3.2.6",
   "title": "",
@@ -532,9 +361,9 @@ var ptx_lunr_docs = [
   "body": " Changes in College Tuition over Time  Use the Excel spreadsheet on average undergraduate tuition and fees and room and board rates charged for full-time students in degree-granting institutions, by level and control of institution: 1969-70 through 2020-21 (from the National Center for Education Statistics ) to do the following:    Create a graph, trendline, and interpret the value for each type of institution: public nonprofit, private nonprofit, private for-profit. What does it mean?    Use it to predict average tuition and fees across the country in the current year. How accurate is your prediction?    What trends over time do you notice in each the three graphs? Describe trends in words, using phrases like increasing , decreasing , increasing slope , decreasing slope . What overall trend do we notice that's common to all three graphs over time?    The -squared value that I asked you to show in 1(f) measures what proportion of the variation in the variable is explained by the trendline. For instance, means that of the variation in is explained by the trendline, so the trendline is a perfect fit. Conversely, means that the trendline explains of the variation in the variable, so this trendline doesn't fit the data at all. What percentage of the variation in two-year public college tuition ( ) is explained by the variation in year ( )? What about when four-year private college tuition? Four-year public college tuition?     Outliers  are data that fall far away from the trendline. What outliers do you notice, if any? Interpret these outliers in context: what do they mean for tuition and fees over time, and what possible historical explanations could there be for these outliers?     Polynomials  are a special type of mathematical function, or process for turning one number into another. Polynomials are functions of the form sums of powers of , maybe with constant terms in front. For example, , , and are all polynomials. The polynomial takes the input and turns it into the output . All numbers which make sense to input are called the domain of the function, and the possible sensical outputs you could get are called the range. What is the domain and range of each of the polynomial trendlines?    Use this model to predict the tuition cost for a student entering each type of institution in the current academic year. How accurate do you think your prediction is?    Use the model to predict the tuition cost for a student entering a public two-year college in the academic years - , - , and - . How accurate do you think your predictions are?    Within (roughly) what domain do you think your trendline can make fairly accurate predictions? Explain.    "
 },
 {
-  "id": "p-188",
+  "id": "p-107",
   "level": "2",
-  "url": "changes-in-college-tuition-over-time.html#p-188",
+  "url": "changes-in-college-tuition-over-time.html#p-107",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -568,63 +397,63 @@ var ptx_lunr_docs = [
   "body": " Breakdown of the percentage of U.S. non-mortgage consumer debt from 2009 to 2022.   Breakdown of the percentage of U.S. non-mortgage consumer debt from 2009 to 2022 showing the following approximate 2022 distribution: auto debt, student loan debt, credit card debt, consumer finance, \"other\". Source: Equifax Inc., 2022.   "
 },
 {
-  "id": "exercise-27",
+  "id": "exercise-15",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-27",
+  "url": "student-debt-by-college-type.html#exercise-15",
   "type": "Exercise",
   "number": "3.5.1",
   "title": "",
   "body": "The percentage of total debt in 2008 that was student loans vs. mortgage debt. "
 },
 {
-  "id": "exercise-28",
+  "id": "exercise-16",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-28",
+  "url": "student-debt-by-college-type.html#exercise-16",
   "type": "Exercise",
   "number": "3.5.2",
   "title": "",
   "body": "The percentage of total debt in 2021 that was student loans vs. mortgage debt. "
 },
 {
-  "id": "exercise-29",
+  "id": "exercise-17",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-29",
+  "url": "student-debt-by-college-type.html#exercise-17",
   "type": "Exercise",
   "number": "3.5.3",
   "title": "",
   "body": "Why do you think did this graph choose 2003 as a starting year? "
 },
 {
-  "id": "exercise-30",
+  "id": "exercise-18",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-30",
+  "url": "student-debt-by-college-type.html#exercise-18",
   "type": "Exercise",
   "number": "3.5.4",
   "title": "",
   "body": "Do research online if needed to determine why the second quarter of was the previous peak in U.S. total consumer debt. "
 },
 {
-  "id": "exercise-31",
+  "id": "exercise-19",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-31",
+  "url": "student-debt-by-college-type.html#exercise-19",
   "type": "Exercise",
   "number": "3.5.5",
   "title": "",
   "body": "Find another source for the US consumer debt broken down by type of debt in 2008 and in 2019. Does it agree with the graph above? Why or why not? "
 },
 {
-  "id": "exercise-32",
+  "id": "exercise-20",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-32",
+  "url": "student-debt-by-college-type.html#exercise-20",
   "type": "Exercise",
   "number": "3.5.1",
   "title": "",
   "body": "Create a graph, trendline, and interpret the value for each type of institution: public nonprofit, private nonprofit, private for-profit. What does it mean? Use it to predict average tuition and fees across the country in the current year. How accurate is your prediction? "
 },
 {
-  "id": "exercise-33",
+  "id": "exercise-21",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-33",
+  "url": "student-debt-by-college-type.html#exercise-21",
   "type": "Exercise",
   "number": "3.5.2",
   "title": "",
@@ -640,81 +469,81 @@ var ptx_lunr_docs = [
   "body": "Left-click on your graph. In the top menu under “Chart Tools”, click Design. Click Add Chart Element -> Trendline -> More trendline options. Click on the data you want to make a trendline for. In the right sidebar, select Polynomial and play around with the “Order” until you get a good fit for your data. Check “Display Equation on chart” and “Display R-squared value on chart”. Now, our goal is to get all our values larger than roughly 0.96, which is a very large degree of accuracy. If some of your trendlines have , double-click on the offending trendline(s) until the sidebar comes up and increase the “Order” of your polynomial until . "
 },
 {
-  "id": "exercise-35",
+  "id": "exercise-23",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-35",
+  "url": "student-debt-by-college-type.html#exercise-23",
   "type": "Exercise",
   "number": "3.5.4",
   "title": "",
   "body": "What trends over time do you notice in each the three graphs? Describe trends in words, using phrases like “increasing”, “decreasing”, “increasing slope”, “decreasing slope”. What overall trend do we notice that's common to all three graphs over time? "
 },
 {
-  "id": "exercise-36",
+  "id": "exercise-24",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-36",
+  "url": "student-debt-by-college-type.html#exercise-24",
   "type": "Exercise",
   "number": "3.5.5",
   "title": "",
   "body": "The -squared value that you were asked to show in above measures what proportion of the variation in the -variable is explained by the trendline. For instance, means that of the variation in y is explained by the trendline, so the trendline is a perfect fit. Conversely, means that the trendline explains of the variation in the variable, so this trendline doesn't fit the data at all. What percentage of the variation in two-year public college tuition ( ) is explained by the variation in year ( )? What about when four-year private college tuition? Four-year public college tuition? "
 },
 {
-  "id": "exercise-37",
+  "id": "exercise-25",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-37",
+  "url": "student-debt-by-college-type.html#exercise-25",
   "type": "Exercise",
   "number": "3.5.6",
   "title": "",
   "body": " Outliers are data that fall far away from the trendline. What outliers do you notice, if any? Interpret these outliers in context: what do they mean for tuition and fees over time, and what possible historical explanations could there be for these outliers? "
 },
 {
-  "id": "exercise-38",
+  "id": "exercise-26",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-38",
+  "url": "student-debt-by-college-type.html#exercise-26",
   "type": "Exercise",
   "number": "3.5.7",
   "title": "",
   "body": " Polynomials are a special type of mathematical function, or process for turning one number into another. Polynomials are functions of the form : sums of powers of , maybe with constant terms in front. For example, , , and are all polynomials. The polynomial takes the input 1 and turns it into the output . All numbers which make sense to input are called the domain of the function, and the possible sensical outputs you could get are called the range. What is the domain and range of each of the polynomial trendlines? "
 },
 {
-  "id": "exercise-39",
+  "id": "exercise-27",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-39",
+  "url": "student-debt-by-college-type.html#exercise-27",
   "type": "Exercise",
   "number": "3.5.8",
   "title": "",
   "body": "Use this model to predict the tuition cost for a student entering each type of institution in the academic year current academic year. How accurate do you think your prediction is? "
 },
 {
-  "id": "exercise-40",
+  "id": "exercise-28",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-40",
+  "url": "student-debt-by-college-type.html#exercise-28",
   "type": "Exercise",
   "number": "3.5.9",
   "title": "",
   "body": "Use the model to predict the tuition cost for a student entering a public two-year college in the academic years - , - , and - . How accurate do you think your predictions are? "
 },
 {
-  "id": "exercise-41",
+  "id": "exercise-29",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-41",
+  "url": "student-debt-by-college-type.html#exercise-29",
   "type": "Exercise",
   "number": "3.5.10",
   "title": "",
   "body": "Within (roughly) what domain do you think your trendline can make fairly accurate predictions? Explain. "
 },
 {
-  "id": "exercise-42",
+  "id": "exercise-30",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-42",
+  "url": "student-debt-by-college-type.html#exercise-30",
   "type": "Exercise",
   "number": "3.5.11",
   "title": "",
   "body": "Does this table (and the supplement on the number of students in grad school) back up the suggestion of this Atlantic article  that the cause of increased student debt is that more students are taking out loans to enroll in grad school? Why or why not? "
 },
 {
-  "id": "exercise-43",
+  "id": "exercise-31",
   "level": "2",
-  "url": "student-debt-by-college-type.html#exercise-43",
+  "url": "student-debt-by-college-type.html#exercise-31",
   "type": "Exercise",
   "number": "3.5.1",
   "title": "",
@@ -730,31 +559,148 @@ var ptx_lunr_docs = [
   "body": " The Intersectional Inequities of Student Debt   The average undergraduate student who takes out student loans has around in debt by the end of their higher education, according to the U.S. Department of Education. However, this debt is not spread equitably by demographic category: of non-Hispanic-identifying Black families carry an education loan, compared to of non-Hispanic white families and of Hispanic-identifying families .  Student debt is also not equally spread among age groups; Millennials (who were - years old in ) total over billion in student loan debt, compared to a little over million of Gen Z (under in ), a little under million held by those - years of age in , a bit under million held by those - years old, and only around million held by those or older in  .  Since Black families have been prevented from amassing generational wealth through systemic racism (in which laws favor one racial group over another), the legacy of slavery and Jim Crow, and mass incarceration, as well as continued implicit and explicit racism in public policy, housing (including the legacy of redlining, a policy which conitnued through ), private banking and lending, access to education, and hiring practices, Black folks are both more likely to have to take on debt to attend college and less likely to attain wealth due to a college education .  In particular, a study found that the average white college-educated parent contributed to their children's education, while Black parents contributed on average. This is true despite the fact that, when controlling by household type and economic situation, Black parents contribute more on average than white parents.  Lower-income Black parents are disproportionately likely to take out Parent PLUS loans, which are loans provided by the U.S. Department of Education to the parents of college students. Parent PLUS loans are unsubsidized and charge a loan fee (added to each loan payment) of and an interest rate of as of  , adding a substantial financial burden to the parent borrower.  Under these circumstances, Black borrowers default on student loans five times more often that white borrowers . Therefore, the disproportionate load of student debt on Black borrowers is both a symptom of, and exacerbates, the racial wealth gap in the U.S., or the difference in total assets and debts between Black and white Americans.  Defaulting on federal student loan debt leads to consequences such as bad credit ratings, a decrease in tax refunds, the garnishment of wages, and removal of security clearances which are at times a condition of employment . The consequences for those who default include an inability to obtain loans to buy homes or cars, loss of wages, or loss of employment.   The Toll of Student Debt in the U.S.   The data in this section come partly from a New York Times article by Ella Koeze and Karl Russell entitled The Toll of Student Debt in the U.S. An archived version of the article can be accessed here .  What are three things you notice about the graphs shown in the article? Explain what these particular things mean for students with debt.  What are three things you wonder about based on the article that are not answered in the article itself?  Do some research online and find reputable sources to answer your questions above.      Trends in Student Aid   The following four questions are about the most recent College Board Trends in Student Aid  publication, which can be downloaded here .   Explain the difference between subsidized and unsubsidized federal loans. (You may have to use other online sources.)  When did the federal government begin giving unsubsidized loans to students according to the chart in Trends in Student Aid ? (You may also have to use other online sources.)  Since the year , describe the trend for both subsidized and unsubsidized loans.    The Biden-Harris Loan Forgiveness Plans   In and , the Biden-Harris administration released a plan whose multiple components are designed to decrease the burden of student loan debt on lower-income individuals. Read the White House's announcement of the plan , then answer the following questions.   In your own words, describe the three main components of the White House's student debt relief plan . Who is impacted by each part? What impacts would the plan have on each group?  Which do you feel is the most essential component of the plan? Why?  What is the current status of this debt relief plan? You may have to do additional research online. Has it been blocked by the courts? Changed by legislation? Implemented in full? Why or why not?  >    The Atlantic asks, “ Who Really Benefits From Student-Loan Forgiveness ?”  The article hints that student loan debt has received national attention because college graduates have significant political power. Do you believe that student debt forgiveness is a privileged position to advocate for? Why or why not?  Why might student debt exacerbate the racial wealth gap? Do you think it does?  Do you believe that canceling student debt helps shrink the racial wealth gap? Why or why not?  How could you use statistics to determine whether student loan debt was due to rising tuition\/fees, inflation, or as the article mentions, the number of recipients attending grad school? What do you believe?       According to a late 2017 study by the Organisation for Economic Cooperation and Development , the U.S. has the greatest annual average tuition and fees of all surveyed countries charged to nationals of that country. Note that the symbols a in the table mean the category does not pply , while m means data are not available ( missing ).   What general trends (by continent, region, degree type, or type of institution) do you notice in the table? Explain.  What impact may the missing or not applicable data have on the general trends observed in the table? Explain.      Reading the News on Student Loans   Part of quantitative literacy is being able to critically interpret numbers and mathematics in the news media. To that end, find an article from the last four years involving student loans that makes at least 2-3 numerical claims. The College Board website or reputable news sources ( New York Times , Washington Post , Reuters, Associated Press, etc.) about government policy on student loans and loan forgiveness are good sources,; you're welcome to find your own sources as well. Take the number(s) in your article and do the following:   Decide what point the article is trying to make by citing these numbers.  Before pulling out an electronic device, brainstorm a list of questions (3-5) you'd like to know about the numbers–things that would help you understand if the numbers are big or small, and whether or not the underlying data actually supports the article's argument.  Get online and try to answer your questions.  Rate the article's claims on two scales:   How true is the statement? (0 = completely false, 4 = completely true)    How misleading is the statement? (0 = not at all, 4 = totally misleading) (In other words, when you look at the underlying data, does it support the article's point or not?)       Student Debt by Race: What Is Fair?    Compare the total amount paid in student debt for various racial groups using this table .   Does it seem like any racial groups are being disproportionately saddled with student loan debt? How can we compare, say, debt held by white vs. Asian students to see whether the difference is larger than we'd expect? Well, first we need to quantify the idea of “what we'd expect”...what does this mean? Create an expected frequency table for what you'd expect to see if there were absolutely no racial differences in student debt.  Compute the difference between the observed count for each race and the expected count . What do you notice?  What if we averaged all the 's for each racial group? This is effectively the idea of a chi-squared test for goodness-of-fit , which is used by statisticians to determine whether any differences observed are small enough to be due to chance or large enough that they give evidence of a difference. What would the equation for this average look like?  We'll use a computer to perform this test in a minute. First, what groups do you think are disproportionately likely\/unlikely to hold student loan debt? What racial groups have a higher\/lower debt burden per person?  Now, enter this data into an app such as RStudio or an online tool. In RStudio, run this code to do a chi-squared test. (In a statistics class, walk through the steps.) Output the -value (the likelihood the observed differences are due to chance alone) and residuals , which are basically scaled versions of the s for each racial group. Which are highest? Lowest? Is there evidence of racial bias?    If these materials are being used for a course in, say, introductory statistics for STEM fields or a higher-level data science class, this is a good time to discuss linear regression with multiple predictors to formalize the effect of year and type of institution on tuition or race and year on student debt. However, since this text is primarily intended for courses without prerequisites targeted at majors and non-majors alike, such material is beyond the scope of this chapter.  "
 },
 {
-  "id": "exercise-44",
+  "id": "exercise-32",
   "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-44",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-32",
   "type": "Exercise",
   "number": "3.6.1",
   "title": "",
   "body": "What are three things you notice about the graphs shown in the article? Explain what these particular things mean for students with debt. "
 },
 {
-  "id": "exercise-45",
+  "id": "exercise-33",
   "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-45",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-33",
   "type": "Exercise",
   "number": "3.6.2",
   "title": "",
   "body": "What are three things you wonder about based on the article that are not answered in the article itself? "
 },
 {
-  "id": "exercise-46",
+  "id": "exercise-34",
   "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-46",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-34",
   "type": "Exercise",
   "number": "3.6.3",
   "title": "",
   "body": "Do some research online and find reputable sources to answer your questions above. "
+},
+{
+  "id": "exercise-35",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-35",
+  "type": "Reading Question",
+  "number": "3.6.1",
+  "title": "",
+  "body": "Explain the difference between subsidized and unsubsidized federal loans. (You may have to use other online sources.) "
+},
+{
+  "id": "exercise-36",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-36",
+  "type": "Reading Question",
+  "number": "3.6.2",
+  "title": "",
+  "body": "When did the federal government begin giving unsubsidized loans to students according to the chart in Trends in Student Aid ? (You may also have to use other online sources.) "
+},
+{
+  "id": "exercise-37",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-37",
+  "type": "Reading Question",
+  "number": "3.6.3",
+  "title": "",
+  "body": "Since the year , describe the trend for both subsidized and unsubsidized loans. "
+},
+{
+  "id": "exercise-38",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-38",
+  "type": "Reading Question",
+  "number": "3.6.1",
+  "title": "",
+  "body": "In your own words, describe the three main components of the White House's student debt relief plan . Who is impacted by each part? What impacts would the plan have on each group? "
+},
+{
+  "id": "exercise-39",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-39",
+  "type": "Reading Question",
+  "number": "3.6.2",
+  "title": "",
+  "body": "Which do you feel is the most essential component of the plan? Why? "
+},
+{
+  "id": "exercise-40",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-40",
+  "type": "Reading Question",
+  "number": "3.6.3",
+  "title": "",
+  "body": "What is the current status of this debt relief plan? You may have to do additional research online. Has it been blocked by the courts? Changed by legislation? Implemented in full? Why or why not? "
+},
+{
+  "id": "exercise-41",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-41",
+  "type": "Reading Question",
+  "number": "3.6.1",
+  "title": "",
+  "body": "The article hints that student loan debt has received national attention because college graduates have significant political power. Do you believe that student debt forgiveness is a privileged position to advocate for? Why or why not? "
+},
+{
+  "id": "exercise-42",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-42",
+  "type": "Reading Question",
+  "number": "3.6.2",
+  "title": "",
+  "body": "Why might student debt exacerbate the racial wealth gap? Do you think it does? "
+},
+{
+  "id": "exercise-43",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-43",
+  "type": "Reading Question",
+  "number": "3.6.3",
+  "title": "",
+  "body": "Do you believe that canceling student debt helps shrink the racial wealth gap? Why or why not? "
+},
+{
+  "id": "exercise-44",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-44",
+  "type": "Reading Question",
+  "number": "3.6.4",
+  "title": "",
+  "body": "How could you use statistics to determine whether student loan debt was due to rising tuition\/fees, inflation, or as the article mentions, the number of recipients attending grad school? What do you believe? "
+},
+{
+  "id": "p-156",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#p-156",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "missing "
+},
+{
+  "id": "exercise-45",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-45",
+  "type": "Reading Question",
+  "number": "3.6.1",
+  "title": "",
+  "body": "What general trends (by continent, region, degree type, or type of institution) do you notice in the table? Explain. "
+},
+{
+  "id": "exercise-46",
+  "level": "2",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-46",
+  "type": "Reading Question",
+  "number": "3.6.2",
+  "title": "",
+  "body": "What impact may the missing or not applicable data have on the general trends observed in the table? Explain. "
 },
 {
   "id": "exercise-47",
@@ -763,7 +709,7 @@ var ptx_lunr_docs = [
   "type": "Reading Question",
   "number": "3.6.1",
   "title": "",
-  "body": "Explain the difference between subsidized and unsubsidized federal loans. (You may have to use other online sources.) "
+  "body": "Decide what point the article is trying to make by citing these numbers. "
 },
 {
   "id": "exercise-48",
@@ -772,7 +718,7 @@ var ptx_lunr_docs = [
   "type": "Reading Question",
   "number": "3.6.2",
   "title": "",
-  "body": "When did the federal government begin giving unsubsidized loans to students according to the chart in Trends in Student Aid ? (You may also have to use other online sources.) "
+  "body": "Before pulling out an electronic device, brainstorm a list of questions (3-5) you'd like to know about the numbers–things that would help you understand if the numbers are big or small, and whether or not the underlying data actually supports the article's argument. "
 },
 {
   "id": "exercise-49",
@@ -781,174 +727,57 @@ var ptx_lunr_docs = [
   "type": "Reading Question",
   "number": "3.6.3",
   "title": "",
-  "body": "Since the year , describe the trend for both subsidized and unsubsidized loans. "
+  "body": "Get online and try to answer your questions. "
 },
 {
   "id": "exercise-50",
   "level": "2",
   "url": "the-intersectional-inequities-of-student-debt.html#exercise-50",
   "type": "Reading Question",
-  "number": "3.6.1",
-  "title": "",
-  "body": "In your own words, describe the three main components of the White House's student debt relief plan . Who is impacted by each part? What impacts would the plan have on each group? "
-},
-{
-  "id": "exercise-51",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-51",
-  "type": "Reading Question",
-  "number": "3.6.2",
-  "title": "",
-  "body": "Which do you feel is the most essential component of the plan? Why? "
-},
-{
-  "id": "exercise-52",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-52",
-  "type": "Reading Question",
-  "number": "3.6.3",
-  "title": "",
-  "body": "What is the current status of this debt relief plan? You may have to do additional research online. Has it been blocked by the courts? Changed by legislation? Implemented in full? Why or why not? "
-},
-{
-  "id": "exercise-53",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-53",
-  "type": "Reading Question",
-  "number": "3.6.1",
-  "title": "",
-  "body": "The article hints that student loan debt has received national attention because college graduates have significant political power. Do you believe that student debt forgiveness is a privileged position to advocate for? Why or why not? "
-},
-{
-  "id": "exercise-54",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-54",
-  "type": "Reading Question",
-  "number": "3.6.2",
-  "title": "",
-  "body": "Why might student debt exacerbate the racial wealth gap? Do you think it does? "
-},
-{
-  "id": "exercise-55",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-55",
-  "type": "Reading Question",
-  "number": "3.6.3",
-  "title": "",
-  "body": "Do you believe that canceling student debt helps shrink the racial wealth gap? Why or why not? "
-},
-{
-  "id": "exercise-56",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-56",
-  "type": "Reading Question",
-  "number": "3.6.4",
-  "title": "",
-  "body": "How could you use statistics to determine whether student loan debt was due to rising tuition\/fees, inflation, or as the article mentions, the number of recipients attending grad school? What do you believe? "
-},
-{
-  "id": "p-237",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#p-237",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "missing "
-},
-{
-  "id": "exercise-57",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-57",
-  "type": "Reading Question",
-  "number": "3.6.1",
-  "title": "",
-  "body": "What general trends (by continent, region, degree type, or type of institution) do you notice in the table? Explain. "
-},
-{
-  "id": "exercise-58",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-58",
-  "type": "Reading Question",
-  "number": "3.6.2",
-  "title": "",
-  "body": "What impact may the missing or not applicable data have on the general trends observed in the table? Explain. "
-},
-{
-  "id": "exercise-59",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-59",
-  "type": "Reading Question",
-  "number": "3.6.1",
-  "title": "",
-  "body": "Decide what point the article is trying to make by citing these numbers. "
-},
-{
-  "id": "exercise-60",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-60",
-  "type": "Reading Question",
-  "number": "3.6.2",
-  "title": "",
-  "body": "Before pulling out an electronic device, brainstorm a list of questions (3-5) you'd like to know about the numbers–things that would help you understand if the numbers are big or small, and whether or not the underlying data actually supports the article's argument. "
-},
-{
-  "id": "exercise-61",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-61",
-  "type": "Reading Question",
-  "number": "3.6.3",
-  "title": "",
-  "body": "Get online and try to answer your questions. "
-},
-{
-  "id": "exercise-62",
-  "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-62",
-  "type": "Reading Question",
   "number": "3.6.4",
   "title": "",
   "body": "Rate the article's claims on two scales:   How true is the statement? (0 = completely false, 4 = completely true)    How misleading is the statement? (0 = not at all, 4 = totally misleading) (In other words, when you look at the underlying data, does it support the article's point or not?)   "
 },
 {
-  "id": "exercise-63",
+  "id": "exercise-51",
   "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-63",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-51",
   "type": "Exercise",
   "number": "3.6.1",
   "title": "",
   "body": "Does it seem like any racial groups are being disproportionately saddled with student loan debt? How can we compare, say, debt held by white vs. Asian students to see whether the difference is larger than we'd expect? Well, first we need to quantify the idea of “what we'd expect”...what does this mean? Create an expected frequency table for what you'd expect to see if there were absolutely no racial differences in student debt. "
 },
 {
-  "id": "exercise-64",
+  "id": "exercise-52",
   "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-64",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-52",
   "type": "Exercise",
   "number": "3.6.2",
   "title": "",
   "body": "Compute the difference between the observed count for each race and the expected count . What do you notice? "
 },
 {
-  "id": "exercise-65",
+  "id": "exercise-53",
   "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-65",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-53",
   "type": "Exercise",
   "number": "3.6.3",
   "title": "",
   "body": "What if we averaged all the 's for each racial group? This is effectively the idea of a chi-squared test for goodness-of-fit , which is used by statisticians to determine whether any differences observed are small enough to be due to chance or large enough that they give evidence of a difference. What would the equation for this average look like? "
 },
 {
-  "id": "exercise-66",
+  "id": "exercise-54",
   "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-66",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-54",
   "type": "Exercise",
   "number": "3.6.4",
   "title": "",
   "body": "We'll use a computer to perform this test in a minute. First, what groups do you think are disproportionately likely\/unlikely to hold student loan debt? What racial groups have a higher\/lower debt burden per person? "
 },
 {
-  "id": "exercise-67",
+  "id": "exercise-55",
   "level": "2",
-  "url": "the-intersectional-inequities-of-student-debt.html#exercise-67",
+  "url": "the-intersectional-inequities-of-student-debt.html#exercise-55",
   "type": "Exercise",
   "number": "3.6.5",
   "title": "",
@@ -973,18 +802,18 @@ var ptx_lunr_docs = [
   "body": " Student Debt Forgiven under the Biden-Harris Plan  Distribution of student loan forgiveness benefit by income under the Biden student loan forgiveness plan. Most of the debt forgiven would have accumulated for those in the - age group; hence, this column may be more representative of the plan's effects. No benefit is expected to go to the top of earners in either age group. Data from Wharton School of Business.     All Ages  Age -    Income Group  Percentage of benefit  Percentage of benefit    Bottom      st- th percentile      st- th percentile      st- th percentile      -      -      "
 },
 {
-  "id": "exercise-68",
+  "id": "exercise-56",
   "level": "2",
-  "url": "loans-solving-for-change.html#exercise-68",
+  "url": "loans-solving-for-change.html#exercise-56",
   "type": "Reading Question",
   "number": "3.7.1",
   "title": "",
   "body": "What does the article describe as the origin of the Debt Collective and the movement to cancel student debt from for-profit colleges? "
 },
 {
-  "id": "exercise-69",
+  "id": "exercise-57",
   "level": "2",
-  "url": "loans-solving-for-change.html#exercise-69",
+  "url": "loans-solving-for-change.html#exercise-57",
   "type": "Reading Question",
   "number": "3.7.2",
   "title": "",
@@ -1000,81 +829,81 @@ var ptx_lunr_docs = [
   "body": " A photo of two Occupy Wall Street protesters, one of whom carries a sign saying \"I Owe SallieMae .\" Photo by Bob Jagendorf entitled \"Occupy Wall Street - Student Loans\" under a CC BY-NC 2.0 license.   A photo of two Occupy Wall Street protesters, one of whom carries a sign saying \"I Owe SallieMae .\" Photo by Bob Jagendorf entitled ``Occupy Wall Street - Student Loans'' under a CC BY-NC 2.0 license.   "
 },
 {
-  "id": "exercise-70",
+  "id": "exercise-58",
   "level": "2",
-  "url": "loans-solving-for-change.html#exercise-70",
+  "url": "loans-solving-for-change.html#exercise-58",
   "type": "Reading Question",
   "number": "3.7.3",
   "title": "",
   "body": "What makes Corinthian and other for-profit colleges different from private nonprofit colleges or public universities? "
 },
 {
-  "id": "exercise-71",
+  "id": "exercise-59",
   "level": "2",
-  "url": "loans-solving-for-change.html#exercise-71",
+  "url": "loans-solving-for-change.html#exercise-59",
   "type": "Reading Question",
   "number": "3.7.4",
   "title": "",
   "body": "Do you agree with the Department of Education's actions? Why or why not? "
 },
 {
-  "id": "exercise-72",
+  "id": "exercise-60",
   "level": "2",
-  "url": "loans-solving-for-change.html#exercise-72",
+  "url": "loans-solving-for-change.html#exercise-60",
   "type": "Reading Question",
   "number": "3.7.5",
   "title": "",
   "body": "What should the Department of Education do with student loans held by other for-profit colleges, including those who were not as openly fraudulent as Corinthian (who paid companies to hire their students for two days in order to inflate their job placement numbers)? "
 },
 {
-  "id": "exercise-73",
+  "id": "exercise-61",
   "level": "2",
-  "url": "loans-solving-for-change.html#exercise-73",
+  "url": "loans-solving-for-change.html#exercise-61",
   "type": "Reading Question",
   "number": "3.7.6",
   "title": "",
   "body": "What should the Department of Education do with student loans held by nonprofit colleges? "
 },
 {
-  "id": "exercise-74",
+  "id": "exercise-62",
   "level": "2",
-  "url": "loans-solving-for-change.html#exercise-74",
+  "url": "loans-solving-for-change.html#exercise-62",
   "type": "Exercise",
   "number": "3.7.1",
   "title": "",
   "body": "What percentage of the benefit will your age and income group receive years from now? "
 },
 {
-  "id": "exercise-75",
+  "id": "exercise-63",
   "level": "2",
-  "url": "loans-solving-for-change.html#exercise-75",
+  "url": "loans-solving-for-change.html#exercise-63",
   "type": "Exercise",
   "number": "3.7.2",
   "title": "",
   "body": "If you are in one of the groups (single adults earning under a year and married couples earning under a year, plus an additional for Pell Grant recipients) that President Biden targeted for debt forgiveness in , what amount of debt will you have forgiven? "
 },
 {
-  "id": "exercise-76",
+  "id": "exercise-64",
   "level": "2",
-  "url": "loans-solving-for-change.html#exercise-76",
+  "url": "loans-solving-for-change.html#exercise-64",
   "type": "Exercise",
   "number": "3.7.3",
   "title": "",
   "body": "Do you believe that President Biden's student loan debt forgiveness policy is a good idea? Why or why not? Do its benefits for lower-income debtors outweigh its impats on the U.S. budget? Estimate whether your taxes will rise as a result and, if so, by how much, using a well-explained dimensional analysis. "
 },
 {
-  "id": "exercise-77",
+  "id": "exercise-65",
   "level": "2",
-  "url": "loans-solving-for-change.html#exercise-77",
+  "url": "loans-solving-for-change.html#exercise-65",
   "type": "Exercise",
   "number": "3.7.4",
   "title": "",
   "body": "The following note from the Wharton Budget Model describes the income groups listed in : Estimate household income percentile thresholds for 2022 all age: 20%: $28,784; 40%: $50,795; 60%: $82,400; 80%: $141,096; 90% $212,209; 95%: $321,699; 99%: $961,711; 99.9%: $3,668,499.    Given this information, estimate the percentage of the student loan forgiveness plan your income group will receive.     The Congressional Budget Office , a nonpartisan organization within the legislative branch of the United States government, estimated the total cost of Biden's student loan forgiveness program at billion. Use this estimate, together with the information above, to estimate how much total debt relief (in U.S. dollars) your income and age group wlil receive years from now.   "
 },
 {
-  "id": "exercise-78",
+  "id": "exercise-66",
   "level": "2",
-  "url": "loans-solving-for-change.html#exercise-78",
+  "url": "loans-solving-for-change.html#exercise-66",
   "type": "Exercise",
   "number": "3.7.5",
   "title": "",
@@ -1108,9 +937,9 @@ var ptx_lunr_docs = [
   "body": " Preliminary Activity  There are many exercises below in which students are asked to analyze plaintext or ciphertext where said text is not specified. These texts may be provided the instructor based on the cryptographic methods described below. This flexibility is emphasized in order to allow customization of the specific texts students will play with, including customizing ciphertexts to a college or university’s context.  It is useful to establish some cryptographic terminology which we will use for the remainder of this text. To that end, consider the definitions below:   Cryptography (from Greek kryptos- , meaning hidden ) is secret communication by hiding the meaning of a message, not its existence. The process of hiding the meaning of a message is called encryption. The recipient of the message has to decrypt or decipher the message in order to read it.  Often the method of encryption relies on a key , some special number(s) or word(s) that only the sender and recipient know. Cryptanalysis is the study of cryptographic algorithms with the intent of recovering secret messages without knowing the secret key.  There are two basic tools that can be used in encryption algorithms: transposition (rearranging the characters) and substitution (replacing characters with other characters). The emphasis of these notes will be on substitution ciphers.  A (substitution)  cipher is an algorithm for encrypting a message into apparently unintelligible text . Each cipher may be viewed as a function where is the space of plaintext , or readable text in a given alphabet (here the English alphabet consisting of the lowercase English letters will be used unless specified otherwise) and is the space of ciphertext or encrypted text (here the uppercase -letter English alphabet unless otherwise specified). We also identify each letter in and , in order, with an element of (so that , etc.). It will be clear from context which representation of and we are using. If is injective (and hence, since here and are finite, bijective), we say it is a monoalphabetic (substitution) cipher .  The use of uppercase in the ciphertext and lowercase in the plaintext is a cryptographic convention designed to distinguish the two types of text, especially in partially-deciphered messages; we will often ignore the distinction and say, for example, is the shift cipher with shift where lowercase denote individual letters. We will commonly refer to a particular which we will call simply the plaintext and its image ( the ciphertext ). Notably, for courses without mathematical prerequisites such as that taught by the other using the flow of concepts below, the spaces and notation and are hidden, and ciphers are analyzed by analyzing particular and , as well as determining given particular .    1 . One may begin by simply giving students various encrypted messages to decode along with a handful of hints. Ask students to work in groups, with one member of each group of 3-4 students serving as the facilitator, the recorder, and the reporter (sharing their work with the class), respectively. For instructors following the order of topics below, it is important that at least one message be a shift cipher , a cipher of form for some . In order for students to be able to systematically decrypt a shift cipher, the message should either be fairly long (students can split the message into pieces when decrypting it) or otherwise rigged so that plaintext e is one of the top three most common letters in the plaintext.    It is recommended to give students two other messages as well. At this stage students are often not prepared for ciphers which are not bijective, so one may use, for example, a keyword cipher  where the keyword is a chosen English word and the plaintext, again, is long enough or otherwise rigged so that the plaintext letters occur with similar relative frequencies to those of English as a whole. Note the following features of the keyword cipher: first the keyword is spelled out under the first letters of the plaintext alphabet, where is the number of distinct letters in the keyword. Then the alphabet is spelled out in order, except that when a letter has already been written as part of the keyword, it is skipped and we move onto the next letter of the alphabet.    The above keyword cipher illustrates a cipher alphabet in function form: a representation of the ordered pair for a given cipher . Of course, any other representation of , such as a table of values, will do (and tables of values are commonly used to represent cipher alphabets). Students often decrypt such a message without identifying the keyword, but it is fruitful to point out that identifying a pattern will assist in the decryption process at this stage.    Finally, it is recommended to assign one unsolved cipher such as that used in Part of the Kryptos sculpture . Pass on (unattributed) to the students the hints that artist Jim Sanborn gave: the ciphertext letters NYPVTT decrypt to BERLIN, and the word immediately following BERLIN is CLOCK. Then, give students time in groups to attempt to solve all three ciphers. Usually many students solve the shift cipher, a good handful (with my assistance) solve the keyword cipher, and generally these students move onto Kryptos, notice it’s not monoalphabetic since (by the hints) , get frustrated, wonder about spacing, and come to a loss. At this stage one may tell them something like, this is an unsolved cipher known as Kryptos Part ; solve it and you’ll be famous!    Follow up by letting them know that we are not trying to be cruel, then ask them why we would give them an unsolved code. Based on our conversation, one may follow up with statements like, What do you think mathematicians spend most of their time doing? How do you define success when working on an unsolved problem? We emphasize that making sense of a problem, increasing their depth of understanding (what methods DON’T work?), describing their process of engagement, and even failing are all completely normal aspects of doing mathematics. Even problems that are solved often took years or even millennia to solve; therefore, there is no shame or cause for alarm if they don’t understand something immediately. This helps ground students as we move onto more and more abstract and difficult mathematics.   Now, ask students what strategies they used to decrypt the messages above. For the first message, students may use brute force, simply trying various shifts until one works. However, a more interesting strategy involves counting which ciphertext letter is the most frequent and guessing that letter corresponds to plaintext e .  "
 },
 {
-  "id": "p-306",
+  "id": "p-225",
   "level": "2",
-  "url": "preliminary-activity.html#p-306",
+  "url": "preliminary-activity.html#p-225",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1126,18 +955,18 @@ var ptx_lunr_docs = [
   "body": " The Caesar\/shift cipher  The Caesar cipher is an example of a monoalphabetic substitution cipher , in which every character is replaced by some other character. It is the earliest known example of a substitution cipher and, according to the Roman historian Suetonius, was used by Julius Caesar himself. It is currently understood as encrypting messages by shifting every letter forward in the alphabet by ; that is, as the function . More generally, a shift cipher may shift every letter forward by any amount.  It is easy to generate example shift ciphertext and have students decrypt this ciphertext. Prompt them to continually investigate the methods they use to cryptanalyze shift ciphers: does it involve brute force? Counting the number of occurrences of each letter and comparing to English letter frequencies, then guessing the most common ciphertext letter corresponds to ? Spotting patterns between adjacent letters? There is no wrong way, but it is the goal of cryptographers to find a general method for decrypting a given family of cipher no matter the particular message or peculiarities of the cipher; therefore, we want to move students’ thinking toward counting letter frequencies as a method of cryptanalyzing any monoalphabetic substitution cipher.  Inform students that there is a faster way to decrypt shift ciphers than saying the alphabet backwards in their heads. Ask them to try decrypting a message that was encrypted with a very large forward shift such as . How would they do it? Likely by shifting each letter forwards by to obtain the plaintext message. This means that in the English alphabet, , and now you can introduce modular arithmetic (working with modulus for the foreseeable future). It’s beneficial to provide students with a letter-to-number correspondence sheet , which numbers English letters in increasing order starting with .    2 . Have students decrypt a message (long enough or rigged so that its letter frequencies are close to those in English in general) that was encrypted using each of the following:      A Caesar cipher .      A shift cipher with a shift other than (without telling students the shift).      A shift cipher with a shift greater than (without telling students the shift).      How many different shift ciphers are there in the English alphabet? In other words, how hard is it to cryptanalyze the shift cipher by brute force?     The usefulness of the clock metaphor for introducing modular arithmetic cannot be overstated: we are thinking of the alphabet as a clock with numbers on it, going from on the top to . Can students determine various times on this clock? Up until this point, students were not likely to fully understand our definition of a cipher as a function modulo , but now they can. The following activity is one I’ve used to help students learn basic modular arithmetic without any prerequisites:    3 .     Reduce several numbers modulo , including numbers much larger than , using various notions of congruence modulo (e.g. if :00 and :00 are the same time on a -hour clock, and have the same remainder upon division by , , subtracting a multiple of from yields ).      Create addition and multiplication tables modulo 5 and modulo 14. What patterns do students notice? What do they wonder about these tables?     "
 },
 {
-  "id": "p-315",
+  "id": "p-234",
   "level": "2",
-  "url": "the-caesarshift-cipher.html#p-315",
+  "url": "the-caesarshift-cipher.html#p-234",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "2 "
 },
 {
-  "id": "p-322",
+  "id": "p-241",
   "level": "2",
-  "url": "the-caesarshift-cipher.html#p-322",
+  "url": "the-caesarshift-cipher.html#p-241",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1153,9 +982,9 @@ var ptx_lunr_docs = [
   "body": " Frequency analysis  To determine the amount of the shift for an unknown shift cipher, the 9th century Iraqi Arab polymath Abu Yūsuf Ya‘qūb ibn ’Isḥāq aṣ-Ṣabbāḥ al-Kindı̄, in order to better understand what he saw as God’s messages in the Qu’ran, developed a technique that later became known as frequency analysis . The following passage from his Manuscript on Deciphering Crptographic Messages describes this technique:   One way to solve an encrypted message, if we know its language, is to find a different plaintext of the same language long enough to fill one sheet or so, and then we count the occurrences of each letter. We call the most frequently occurring letter the ‘first’, the next most occurring letter the ‘second’, the following most occurring the ‘third’, and so on, until we account for all the different letters in the plaintext sample.  Then we look at the cipher text we want to solve, and we also classify its symbols. We find the most occurring symbol and change it to the form of the ‘first’ letter of the plaintext sample, the next most common symbol is changed to the form of the ‘second’ letter, and so on, until we account for all symbols of the cryptogram we want to solve.   In this portion of the project, have students develop their own frequency analysis muscle and hone it into a mental algorithm for cryptanalyzing shift ciphers.    4 . The mnemonic ETAOIN SHRDLU is useful for remembering the relative frequencies of the twelve most common English letters in decreasing order of frequency, although the mnemonic does not reflect all written English and changes with the living language.      (Optional for coding-focused courses) Use the step-by-step module at entitled Frequency Analysis to write a Python frequency analysis tool. Then input several English texts of at least, say, twenty pages, and verify that most of the most frequent twelve letters are in the list ETAOIN SHRDLU.      Take three or four English texts of at least a couple of pages in length (books in the public domain, found online, are a good source of plaintext here). Encrypt these using shifts chosen however you like, then have students use their Python program, or one of the many available frequency analysis applets online, to determine the shifts used to encrypt each message. For additional practice, have them decrypt the first sentence and verify their guessed shift is correct. Note : some texts, especially shorter ones, will require students to guess multiple shifts and test each to see which gives legible plaintext, which verifies that their guess was correct.     "
 },
 {
-  "id": "p-330",
+  "id": "p-249",
   "level": "2",
-  "url": "frequency-analysis.html#p-330",
+  "url": "frequency-analysis.html#p-249",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1171,9 +1000,9 @@ var ptx_lunr_docs = [
   "body": " Affine ciphers  At this stage, you may introduce affine ciphers , a natural generalization of shift ciphers. We’ve described the shift cipher as a function . Note that this is simply a linear function with slope and -intercept . But there is no requirement that ciphers stick to a slope of ; the affine cipher first multiplies the plaintext letter by a certain amount , then adds a constant amount . Its equation is Here is called the multiplicative key and the additive key . (We do not call these linear ciphers to avoid confusion with the notion of linear students may see in the future when studying linear transformations and homomorphisms.)    5 .     Have students create two or three plaintext messages and pair each message with any value of and a value of such that . Then encrypt each message using the affine cipher with that multiplicative and additive key.      Pass your resulting ciphertexts clockwise in your group without sharing the values of and . What are your thoughts as you attempt to decrypt this ciphertext? (Note that students will likely be unable to decrypt affine ciphertext at this stage, but the resulting considerations may lead them down a fruitful path. We will discuss an algorithm for decrypting affine ciphers in the following section.)     "
 },
 {
-  "id": "p-335",
+  "id": "p-254",
   "level": "2",
-  "url": "affine-ciphers.html#p-335",
+  "url": "affine-ciphers.html#p-254",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1189,45 +1018,45 @@ var ptx_lunr_docs = [
   "body": " Onramp to number theory  At this stage, students are ready to learn the material in a standard integer division and modular arithmetic unit, in the order you wish to present it for your context. For example, the material of Chapters through of , from integer division and Diophantine equations to the so-called Chinese (in particular, Sun-tzu) remainder theorem and the theory of cyclic groups, are all motivated by the theory of affine ciphers and can be covered at this stage. We highly recommend calling back to cryptography whenever possible; the following section is an overview of one possible order in which various number-theoretic results can be motivated by the theory of affine ciphers.  Following the presentation of shift ciphers above, students may then practice encrypting and decrypting affine ciphers with known multiplicative and additive keys. Prompt them to consider how they would cryptanalyze an affine cipher. After using frequency analysis, they may determine which ciphertext letter corresponds to , but this is not enough since we need to solve for two unknowns, and . So students may realize we need to find two letter pairs of the form where and set up a system of congruences   Students may remember how they solved systems of equations in high school. It is recommended to encourage them to use elimination, not substitution, in preparation for future linear algebra classes down the road.  A fruitful area of inquiry at this point is to prompt students how, once they obtain a single congruence of the form they might solve for . Usually students think they can simply divide by , so it takes some prompting ( what if ? ) for them to realize this is not always possible modulo . This is a natural spot to introduce the idea of inverses modulo , and more generally modulo . We’ll start with some more basic facts and build up to solving systems of congruences.  The multiplicative inverse of is the number so that , if such an exists. Recall that a number is prime if the only integers that divide it are and itself. Composite numbers are integers greater than one that are not prime. Every positive whole number has a unique prime factorization , i.e. a way to write it as a product of prime numbers. This fact is called the Fundamental Theorem of Arithmetic.     6 . Have students attempt to encrypt given messages with the affine cipher using various multiplicative and additive keys. To illustrate the relevant idea that is monoalphabetic if and only if , have students use at least one relatively prime to and one that is not (for example , which makes very clear to students that the resulting affine cipher is not monoalphabetic and near-impossible to decrypt even by someone who knows the key).    Ask students: from the work you just did, what multiplicative keys do you think work for affine ciphers? What is the problem with the keys that don’t work? Even if they don’t have a complete sense of the issue, have them explain their hypothesis. Prompt students to make multiplication tables modulo for some reasonably small composite ; ask them to compare what happens in rows which are relatively prime to versus rows that aren’t. How might this connect to the issue with the affine cipher ? What patterns do they notice or wonder about?   Hopefully students will realize that there are significant problems with an affine cipher where !    9 .     At this point, it is useful for students to make themselves a cheat sheet which tells them the multiplicative inverse of any number mod 26, if it exists. (My expectation is not that they memorize such a list, though more power to them if they’d like to!) At this point, the most likely strategy students will use to find is trial and error: multiplying each by various integers mod until they end up with . The number they multiplied by to get is their , if such a number exists. Ask: what relationship between and the modulus predicts whether exists?      In an introduction to proof or number theory class, this would be an excellent time to prompt students to prove that exists modulo if and only if . Prompt them to think about their multiplication tables and the fact that every integer modulo appears in the th row precisely when and are relatively prime. In fact, students can prove that     7 . If is a whole number between and , then divides any number that’s congruent to .    One prompt to lead students toward the general proof is the following specific example: assume some number is congruent to . Then (here denotes remainder in language that should be familiar to students), where is some whole number. So is some multiple of plus ; we can write , where is some whole number. Now, and is divisible by .      At this point, students have the cheat sheet and tools necessary to decrypt affine ciphers with known key. Have them try decrypting some example ciphertext under various affine ciphers. Naturally, students may at first be most comfortable only doing arithmetic modulo , but it takes surprisingly little in my experience to prompt them to consider other moduli. Students may try decrypting affine ciphers in different alphabets at this stage: for example, decrypt using the lowercase English alphabet with !?, appended. We need to multiply both sides by some number so that . How do we systematically find ? This is a great time for an optional detour into the extended Euclidean algorithm; students without much previous college-level math experience often find this difficult, so it may be skipped without losing the thread of this activity.      Students in a proof-based course may now attempt to prove the following corollary of Proposition .     8 . If , then no multiple of is congruent to . In other words, we can’t get every number in row of the multiplication table, and does not have a multiplicative inverse . In fact, the following are equivalent for any whole numbers :      .      any affine cipher with multiplicative key is decryptable by the intended recipient.      every number between and is a multiple of .      has a multiplicative inverse .      An example that may lead students toward part of the proof: consider the affine cipher . Note that . Any plaintext letter that we plug in will spit out some multiple of . Reduced mod , these multiples of all become either or . And divides both and evenly. Since no multiple of can be congruent to , does not have a multiplicative inverse modulo .      Now, prompt students to consider how important it is before decrypting an affine cipher to verify that . Given a cipher like , how could students determine whether the cipher was monoalphabetic, and hence whether our techniques will decrypt it?      Computers can only understand numbers (which are written in s and s), not letters. The computer language ASCII represents all commonly-used written characters as numbers between and . Do you think we can encrypt ASCII messages using the affine cipher ? Why or why not? What multiplicative keys can be used in a monoalphabetic, affine ASCII cipher?     We now may introduce the Euclidean algorithm as a powerful (and programmable) tool for finding greatest common divisors. A recommended way of introducing the Euclidean algorithm, as in much of these notes, is to start with an example.    10 .     Suppose we want to find the greatest common divisor of, say, and . Have students recall (perhaps by verifying a specific example) that, if a number divides both and , then it divides as well. Similarly, if a number divides both and (as it must if it divides and ), then it divides , and , and . Therefore, . Hence, compute and verify it using a method more familiar to you, such as factor trees.      Prove that the Euclidean algorithm works in general to compute for any .      Use the Euclidean algorithm to compute the gcds of two or three pairs of numbers. It may benefit students to make the first pair of numbers relatively small and one of the pairs relatively large such that the pair of large numbers has a quick Euclidean algorithm solution which is nonobvious using the method of factor trees. For example, one may use any pair of numbers of the form for some .      Unicode is an updated version of ASCII. Unicode gives a way of encoding information on a computer with possible numbers. Only about of them are currently in use; say there are Unicode numbers in use. Does the affine cipher encrypt Unicode characters monoalphabetically?     To motivate solving systems of linear congruences, we may use the cryptanalysis of affine ciphers. As in ( ) above, systems of linear congruences arise naturally after guessing two plaintext-ciphertext pairs in an affine cipher. Solving the system is necessary to determine the multiplicative and additive keys of the affine cipher, hence to decrypt it. The dangerous thing for students at this point is to make the wrong guess and end up trying to solve a congruence of the form where . This is an excellent time to discuss the general theory of solving linear congruences, and if you wish even generalize to polynomial, factorial, and other more general congruences. At any rate, students may now use the following algorithm to cryptanalyze any monoalphabetic affine cipher:    Form a system of linear congruences to solve for , the multiplicative constant, and , the additive constant.    Simplify the system of congruences by substitution, elimination, or addition\/subtraction of congruences.    Find the solution of the resulting congruence using trial and error or the extended Euclidean algorithm.    Use and to decrypt the ciphertext using the formula mod .    To accomplish step , students must guess two plaintext-ciphertext pairs, and to avoid insoluble congruences, it suffices to always guess the ciphertext corresponding to plaintext . Students can type the messages into an online frequency analysis tool to get a frequency count, or, in a more programming-focused course, the collection of Python modules at includes a module in which students write a frequency analysis tool themselves in Python.  Students may notice one issue with this algorithm: what if you have no idea what ciphertext letter corresponds to plaintext in your message? Certainly English messages may have different most-common letters. This could lead to a lesson on the index of coincidence and other probabilistic methods for determining both which cipher we’re dealing with and matching letter frequencies. Though these concepts are beyond the scope of these notes as written, see Chapter of for an excellent treatment without prerequisites.    11 .     Encrypt some short ( - words) plaintext using an affine cipher of your choice. Now, give students the equation of the affine cipher (say, ) and have students determine the decryption equation for that affine cipher by solving for in the cipher’s equation. Finally, use that decryption equation to determine the plaintext corresponding to each given ciphertext letter , and hence decrypt the message.      Encrypt some short ( - words) plaintext in which the most common letter is e and the second-most common is t ) using an affine cipher of your choice. Now, have students use the algorithm to cryptanalyze this affine ciphertext.     At this point in the project, one may introduce the Vigenère cipher and its primary tools for cryptanalysis, the Kasiski and Friedman tests. This leads naturally to asking what happens when a Vigenère keyword is as long as the message it’s used to encrypt, whence students can prove to themselves that such a cipher (a one-time pad ) is theoretically unbreakable by showing that different keywords lead to intelligible, but different, plaintext messages. The Enigma machine is then introduced as a portable one-time pad generator, providing an opportunity to tie the course to the more recent history of World War II.  However, because these concepts are less explicitly connected to number theory and algebra, they are omitted in this text. See for an excellent set of notes for those who choose to teach this material.  "
 },
 {
-  "id": "p-344",
+  "id": "p-263",
   "level": "2",
-  "url": "onramp-to-number-theory.html#p-344",
+  "url": "onramp-to-number-theory.html#p-263",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "6 "
 },
 {
-  "id": "p-347",
+  "id": "p-266",
   "level": "2",
-  "url": "onramp-to-number-theory.html#p-347",
+  "url": "onramp-to-number-theory.html#p-266",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "9 "
 },
 {
-  "id": "p-348",
+  "id": "p-267",
   "level": "2",
-  "url": "onramp-to-number-theory.html#p-348",
+  "url": "onramp-to-number-theory.html#p-267",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "7 8 "
 },
 {
-  "id": "p-365",
+  "id": "p-284",
   "level": "2",
-  "url": "onramp-to-number-theory.html#p-365",
+  "url": "onramp-to-number-theory.html#p-284",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "10 "
 },
 {
-  "id": "p-379",
+  "id": "p-298",
   "level": "2",
-  "url": "onramp-to-number-theory.html#p-379",
+  "url": "onramp-to-number-theory.html#p-298",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1333,9 +1162,9 @@ var ptx_lunr_docs = [
   "body": " Scientific Notation and Number Sense   Thinking about Size Comparisons  How can we compare the numbers 100 and 1,000?  Answers you might have given:  1,000 is 900 more than 100.  100 is 900 less than 1,000.  100 is 1\/10 as big as 1,000.  1,000 is 10 times as big as 100.     Reflection question: Look at the different ways of comparing those two numbers. What are the benefits of each of these comparisons? What are some reasons for not using some of these comparisons? Why might someone choose to use one way of comparing instead of another?   How can you compare the following sets of numbers?  1,000,000,000,000 and 10  545,430,089,384,398,938,938,398,983,982,345,523,234,942 and 9,293,983,983,298,982,983,483  0.0000000001 and 10,000,000,000,000,000    You can compare these numbers in the same ways as the ways you might have chosen to compare 100 and 1000, but they may not be as meaningful or useful. Instead, you might want to see Can you think of any other ways to compare these numbers?    Powers of Ten is a (slightly outdated) movie from the 1970s which shows how the different powers of ten are related.   Understanding very large numbers can be hard to do. Some strategies for trying to understand very large numbers are:   Breaking the number down into smaller pieces. For example, say you were trying to understand the number $1,000,000,000 (1 billion dollars). If you made $100 an hour, and you worked full-time (40 hours per week in the US), 50 weeks a year, it would take 5000 years for you to earn $1,000,000,000...and that doesn't even account for taxes!   Changing the units of the number can be helpful, especially when there is another unit which might help you understand better. The Aqua satellite, used to measure greenhouse gas emissions, orbits 2,300,000 feet above the Earth. This large number is easier to comprehend if you convert it into 436 miles   Comparing the quantity to something else you already can envision. The 2,300,000 feet or 436 miles we found in the previous bullet is still somewhat difficult to understand. Thinking of this as the distance from Washington D.C. to Boston, or from San Diego to San Jose, can be more helpful (at least if you've been to those cities).  Looking at the quantity per person, or per unit area, or per some other unit. In 2020, the US used 763 million gallons of oil, on average, every day . That is a little bit more than 2 gallons per person.     What is Scientific Notation?  So far, we have been writing numbers using decimal notation. Decimal notation is our usual way of writing the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 to talk about a number. But, sometimes decimal notation can make it more difficult to understand really big or really small numbers. Scientific notation is a way of writing very large or very small numbers in order to make the numbers easier for people to understand. Scientific notation also makes it easier to write down numbers that would be very long in decimal notation.   Scientific Notation  We say a number is in scientific notation if it is written in the form where A is the first non-zero digit in the number, and power is the appropriate power.   To put a number into scientific notation, we first figure out what the place is of the first nonzero digit. Each place in a number corresponds to a power of 10 - for example, the hundreds place corresponds to , while the millions place corresponds to . If , then is a 1 followed by 0s. The ones place is .  For negative values of , we get decimals. For example, , one-tenth. , one one-thousandth.  To do arithmetic with numbers in scientific notation, you proceed differently depending on what you're doing.   To multiply\/divide numbers in scientific notation, you can divide both the decimal part and the exponent part separately.   To add or subtract numbers in scientific notation, you'll need to write them both with the same power (use whichever power is larger), and then add or subtract the decimal parts.   If you end up with a zero in front of the decimal, you'll need to move the decimal place over one or more places:    Try this yourself in the examples below. Don't worry about rounding - we'll talk about how to decide how many decimal places to round to in the next section.   Find the product of and .       Find the sum of and .        Significant figures  When working with numbers with lots of decimal digits, how many digits should you keep? This is the idea behind signficant figures .   Significant Figures  The number of significant figures or significant digits in a number which has been rounded is the total number of digits written, minus any leading zeros (zeros written before the first non-zero digit). Numbers that have not been rounded have an infinite number of significant figures.   For example, the number 123.4567 has 7 significant digits, but so does the number 0.0001234567. The number 1.234567000 has 10 significant digits, because we count the zeros which aren't leading zeros.   The population of the United States was 328,239,523 in 2019 . How many significant digits does this number have?   There are 9 significant digits here.    In a number written in scientific notation, we count the significant digits the same way. For example, the number has 5 significant digits (notice that this is the same as if we had written it as ).    The United States emitted the equivalent of metric tons of carbon dioxide in greenhouse gases during 2019 . How many significant figures are there in this number?    There are 4 significant figures.    Significant figures are important because they tell us how accurate numbers are. Say we wanted to know what the average CO2 emissions per person were in the United States. We can take the numbers we had in the last two examples and divide: The calculator produces a number of digits here, but how can we know how many values to round to? Significant figures give us a way to decide this.   When multiplying or dividing two numbers, round to the smaller number of significant digits.  When adding or subtracting two numbers, round to the smaller number of decimal places (significant figures after the decimal point).   For our example above, since the population number has 9 significant digits, and the CO2 emissions only has 4, we will round to 4 decimal places and say that the emissions per person is metric tons per person. Compare this to what we do when we subtract.  Say we want to know how many more tons of CO2 equivalents per person were emitted in the US than in China. In 2019, China had (5 significant figures) of CO2 equivalent emissions , and the population was 1,433,783,686 (10 significant figures) . So in China, the emissions per person were Since we're dividing, we keep 5 significant figures and get tons of CO2 equivalent emissions per person. If we want to know how many more tons are emitted per person in the US, we subtract: Since we are subtracting, we take the lesser of the significant figures after the decimal - 2 in this case. So we round the answer to 10.02 metric tons more per person.  What’s that big ‘E’ on my calculator? You’ve probably seen an output like this before on your calculator.  The second line might look really complicated, but this is just the way your calculator was programmed to write numbers in scientific notation. The product of 315,246 and 134,512,361 is too big to fit all of it on the calculator screen in one line. So, the calculator programmers decided to represent that product using scientific notation. 4.240448376E13 means the same thing as .  But, not all calculators use ‘E’ to describe very large or very small numbers. Desmos provides an online scientific calculator that anyone can use. If you try to add, subtract, multiply, or divide two numbers with more than 9 digits, Desmos will automatically write them in scientific notation. Instead of using the capital E, Desmos writes scientific notation the same way that we've seen.  An important note: There are other symbols that you might see sometimes on your calculator that look similar to this capital E, but they actually mean very different things.    : The lowercase e is a number that is important for lots of applications of mathematics. The name of this number is the same as the name of the letter: e. It is equal to about 2.71828, and should not be confused with the scientific notation symbol.   :This symbol, which looks like a sideways W, is called ‘sigma’. Sigma is a Greek letter, and it is sometimes used in mathematics to talk about addition.    "
 },
 {
-  "id": "figure-10",
+  "id": "figure-5",
   "level": "2",
-  "url": "climate-change-math-topic-scientific-notation.html#figure-10",
+  "url": "climate-change-math-topic-scientific-notation.html#figure-5",
   "type": "Figure",
   "number": "5.5.1",
   "title": "",
@@ -1423,36 +1252,36 @@ var ptx_lunr_docs = [
   "body": " Quantitative Data  Data which can be represented numerically is called quantitative data. This includes both data which is already numerical, and data which can be made numerical. Dates are a good example of quantitative data that isn't always written in numbers (for example, \"March\" doesn't seem numerical, but can be represented by 3 since it is the 3rd month of the year).  Quantitative data naturally falls into one of two types - discrete and continuous . While there are more complicated ways to distinguish between them mathematically, for our purpose the big difference is that with quantitative discrete data we have a small number of distinct possible responses, while with quantitative continuous data we have a large number of different possible responses.  "
 },
 {
-  "id": "figure-11",
+  "id": "figure-6",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-11",
+  "url": "climate-change-math-topic-data-visualization.html#figure-6",
   "type": "Figure",
   "number": "5.6.3",
   "title": "",
   "body": "  Two boxes filled with numbers. The box on the left displays an example containing quantitative discrete data with many repeated values: 1, 2, 3, 2, 2, 5, 1, 4, 5, 3, 1, 2, 3, 2, 2, 3, 1, 1, 3, and 4. The box on the right contains quantitative continuous data with many different distinct values: 31, 53, 63, 18, 42, 31, 57, 86, 78, 29, 49, 22, 48, 85, 23, 19, 94, 11, 41, 31, 19, 17, 82, and 83.   Quantitative discrete (left) vs. Quantitative continuous (right) data.  "
 },
 {
-  "id": "exercise-79",
+  "id": "exercise-67",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#exercise-79",
+  "url": "climate-change-math-topic-data-visualization.html#exercise-67",
   "type": "Checkpoint",
   "number": "5.6.4",
   "title": "",
   "body": "A survey asks people how many cars they own. Would the answers here be numeric or non-numeric? Are multiple people likely to give the same answer? Would you expect to have many different answers? Quantitative Discrete. The answer is a number, and most people will answer 0, 1, or 2, with with very few people giving larger numbers. "
 },
 {
-  "id": "exercise-80",
+  "id": "exercise-68",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#exercise-80",
+  "url": "climate-change-math-topic-data-visualization.html#exercise-68",
   "type": "Checkpoint",
   "number": "5.6.5",
   "title": "",
   "body": "A researcher collects a list of the companies which emit the most methane into the atmosphere. Would this data be numeric or non-numeric? This is qualitative data - the data we are collecting consists of company names, not numbers. "
 },
 {
-  "id": "exercise-81",
+  "id": "exercise-69",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#exercise-81",
+  "url": "climate-change-math-topic-data-visualization.html#exercise-69",
   "type": "Checkpoint",
   "number": "5.6.6",
   "title": "",
@@ -1477,9 +1306,9 @@ var ptx_lunr_docs = [
   "body": "   Number of Vehicles Available  Millions of Households    0  10.6    1  39.8    2  45.3    3  18.1    4  6.3    5+  2.7    "
 },
 {
-  "id": "figure-12",
+  "id": "figure-7",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-12",
+  "url": "climate-change-math-topic-data-visualization.html#figure-7",
   "type": "Figure",
   "number": "5.6.9",
   "title": "",
@@ -1495,9 +1324,9 @@ var ptx_lunr_docs = [
   "body": "   Per Capita Emissions  Number of Countries    [0,5)  65    [5,10)  19    [10,15)  4    [15,20)  5    [20,25)  2    [25,30)  0    [30,35)  1    [35,40)  1    "
 },
 {
-  "id": "figure-13",
+  "id": "figure-8",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-13",
+  "url": "climate-change-math-topic-data-visualization.html#figure-8",
   "type": "Figure",
   "number": "5.6.11",
   "title": "",
@@ -1513,9 +1342,9 @@ var ptx_lunr_docs = [
   "body": "   Country  Total Methane Emissions in Equivalent Tons of CO2    China  1.17E+10    United States  5.51E+09    India  3.04E+09    Japan  1.17E+09    Brazil  9.39E+08    Germany  7.84E+08    Canada  6.52E+08    Saudi Arabia  6.26E+08    Australia  5.02E+08    United Kingdom  4.38E+08    "
 },
 {
-  "id": "figure-14",
+  "id": "figure-9",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-14",
+  "url": "climate-change-math-topic-data-visualization.html#figure-9",
   "type": "Figure",
   "number": "5.6.13",
   "title": "",
@@ -1540,9 +1369,9 @@ var ptx_lunr_docs = [
   "body": "   Number of Vehicles Available  Millions of Households  Percentage of Households    0  10.57  9%    1  39.82  32%    2  45.29  37%    3  18.09  15%    4  6.30  5%    5+  2.74  2%    Total  122.80      "
 },
 {
-  "id": "figure-15",
+  "id": "figure-10",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-15",
+  "url": "climate-change-math-topic-data-visualization.html#figure-10",
   "type": "Figure",
   "number": "5.6.16",
   "title": "",
@@ -1558,9 +1387,9 @@ var ptx_lunr_docs = [
   "body": "   Per Capita Emissions  Number of Countries  Relative Frequency    [0,5)  65  67%    [5,10)  19  20%    [10,15)  4  4%    [15,20)  5  5%    [20,25)  2  2%    [25,30)  0  0%    [30,35)  1  1%    [35,40)  1  1%    Total  97      "
 },
 {
-  "id": "figure-16",
+  "id": "figure-11",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-16",
+  "url": "climate-change-math-topic-data-visualization.html#figure-11",
   "type": "Figure",
   "number": "5.6.18",
   "title": "",
@@ -1576,9 +1405,9 @@ var ptx_lunr_docs = [
   "body": "   Per Capita Emissions  Number of Countries  Relative Frequency    [0,5)  65  67%    [5,10)  19  20%    [10,15)  4  4%    [15,20)  5  5%    > 20  4  4%    Total  97      "
 },
 {
-  "id": "figure-17",
+  "id": "figure-12",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-17",
+  "url": "climate-change-math-topic-data-visualization.html#figure-12",
   "type": "Figure",
   "number": "5.6.20",
   "title": "",
@@ -1594,81 +1423,81 @@ var ptx_lunr_docs = [
   "body": "  Scatterplot of the gdp and co2 data. Image description available.   Scatterplot of the relationship between GDP and CO2, per capita, of nations in 2018. Image Description .  "
 },
 {
-  "id": "figure-19",
+  "id": "figure-14",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-19",
+  "url": "climate-change-math-topic-data-visualization.html#figure-14",
   "type": "Figure",
   "number": "5.6.22",
   "title": "",
   "body": "  Line graph of the global mean temperature anomaly. Image description available.   Line graph of the global mean temperature anomaly fom 1880 to 2019. Data is from . Image Description .  "
 },
 {
-  "id": "figure-20",
+  "id": "figure-15",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-20",
+  "url": "climate-change-math-topic-data-visualization.html#figure-15",
   "type": "Figure",
   "number": "5.6.23",
   "title": "",
   "body": "  Line graphs of the total CO2 emissions of the United States and China. Image description available.   Paired line graph of the total CO2 emissions of the United States and China from 1960 to 2018 in gigatons. Data is from . Image Description .  "
 },
 {
-  "id": "figure-21",
+  "id": "figure-16",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-21",
+  "url": "climate-change-math-topic-data-visualization.html#figure-16",
   "type": "Figure",
   "number": "5.6.24",
   "title": "",
   "body": "  Line graphs of the total CO2 emissions of the United States and Singapore. Image description available.   Paired line graph of the total CO2 emissions of the United States and Singapore from 1960 to 2018 in gigatons. Data is from . Image Description .  "
 },
 {
-  "id": "figure-22",
+  "id": "figure-17",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-22",
+  "url": "climate-change-math-topic-data-visualization.html#figure-17",
   "type": "Figure",
   "number": "5.6.25",
   "title": "",
   "body": "  Line graphs of the total CO2 emissions of Singapore. Image description available.   Total CO2 emissions of Singapore from 1960 to 2018 in kilotons. Data is from . Image Description .  "
 },
 {
-  "id": "figure-23",
+  "id": "figure-18",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-23",
+  "url": "climate-change-math-topic-data-visualization.html#figure-18",
   "type": "Figure",
   "number": "5.6.26",
   "title": "",
   "body": "  Line graphs of the total CO2 emissions of the United States. Image description available.   Total CO2 emissions of the United States from 1960 to 2018 in kilotons. Data is from . Image Description .  "
 },
 {
-  "id": "figure-24",
+  "id": "figure-19",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-24",
+  "url": "climate-change-math-topic-data-visualization.html#figure-19",
   "type": "Figure",
   "number": "5.6.27",
   "title": "",
   "body": "  Bar chart of vehicle ownership in Great Britain and the United States. Image description available.   Percentage of households owning 0, 1, 2, 3, 4, and 5 or more vehicles in Great Britain (data from 2014-2016) and the United States (data from 2019). Data is from and . Image Description .  "
 },
 {
-  "id": "figure-25",
+  "id": "figure-20",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-25",
+  "url": "climate-change-math-topic-data-visualization.html#figure-20",
   "type": "Figure",
   "number": "5.6.28",
   "title": "",
   "body": "  Pie chart of household vehicle access in the USA. Image description available.   Number of vehicles accessible to each household in the United States, as a percentage of the total number of households. Data from . Image Description .  "
 },
 {
-  "id": "figure-26",
+  "id": "figure-21",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-26",
+  "url": "climate-change-math-topic-data-visualization.html#figure-21",
   "type": "Figure",
   "number": "5.6.29",
   "title": "",
   "body": "  Pie chart of household vehicle access in Great Britain. Image description available.   Number of vehicles accessible to each household in Great Britain, as a percentage of the total number of households. Data from . Image Description .  "
 },
 {
-  "id": "figure-27",
+  "id": "figure-22",
   "level": "2",
-  "url": "climate-change-math-topic-data-visualization.html#figure-27",
+  "url": "climate-change-math-topic-data-visualization.html#figure-22",
   "type": "Figure",
   "number": "5.6.30",
   "title": "",
@@ -1738,9 +1567,9 @@ var ptx_lunr_docs = [
   "body": " Blackbody Radiation   A blackbody in thermodynamic equilibrium (i.e with constant uniform temperature) emits electromagnetic radiation at a spectrum of wavelengths determined solely by the temperature of the body. The emission brom blackbodies is called blackbody radiation .  Blackbodies emit different amounts of energy at different wavelengths. How much radiation a blackbody emits at each wavelength is called the blackbody spectrum and is determined by Plank's law.  "
 },
 {
-  "id": "figure-32",
+  "id": "figure-27",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#figure-32",
+  "url": "climate-change-math-topic-mathematical-models.html#figure-27",
   "type": "Figure",
   "number": "5.7.3",
   "title": "",
@@ -1765,99 +1594,99 @@ var ptx_lunr_docs = [
   "body": " Emissivity  The emissivity,  of a radiating object is the ratio of the amount of radiation the object emits compared to amount of radiation a blackbody at the same temperature, emits.   "
 },
 {
-  "id": "exercise-82",
+  "id": "exercise-70",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#exercise-82",
+  "url": "climate-change-math-topic-mathematical-models.html#exercise-70",
   "type": "Checkpoint",
   "number": "5.7.6",
   "title": "",
   "body": "The emissivity ranges between which two values? Think about the extremem cases. What is the most incident radiation an object can abosorb and what is the least as compared to that of a blackbody? The emissivity ranges bewtween 0 and 1 inclusive. "
 },
 {
-  "id": "exercise-83",
+  "id": "exercise-71",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#exercise-83",
+  "url": "climate-change-math-topic-mathematical-models.html#exercise-71",
   "type": "Checkpoint",
   "number": "5.7.7",
   "title": "",
   "body": "Interpret the meaning of a radiating body with the minimal and the maximal emissivity. Why does this make sense? What does it mean for the emmissivty ratio to be equal to 0 in terms of how much radiation it absorbs? What does it mean for the ration to be eqaul to 1 in terms of how much radiation it absorbs. What does this tell you about the type of object? When the emissivity of a radiating body is 0, a radiating body aborbs none of the incent radiation and is thus a perfect reflector. When the emissivity is 1, a radiating body absorbs as much incedent radiation as a blackbody. Namely it aborbs all the incident radiation and is thus a perfect blackbody. "
 },
 {
-  "id": "exercise-84",
+  "id": "exercise-72",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#exercise-84",
+  "url": "climate-change-math-topic-mathematical-models.html#exercise-72",
   "type": "Checkpoint",
   "number": "5.7.8",
   "title": "",
   "body": "What is the amount of radiation, , emitted by radiating bodies with minimal and maximal emissivity. Why does this make sense? When the emissivity of a radiating body is 0, the body emits . So a body that absorbs no incident radiation also emits no radiation. When the emissivity is 1, the body emits which matches that of a "
 },
 {
-  "id": "figure-33",
+  "id": "figure-28",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#figure-33",
+  "url": "climate-change-math-topic-mathematical-models.html#figure-28",
   "type": "Figure",
   "number": "5.7.9",
   "title": "",
   "body": "       The Sun, Earth's surface, and atmosphere all radiate out energy as well as absorb energy from the other bodies.  "
 },
 {
-  "id": "figure-34",
+  "id": "figure-29",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#figure-34",
+  "url": "climate-change-math-topic-mathematical-models.html#figure-29",
   "type": "Figure",
   "number": "5.7.10",
   "title": "",
   "body": "         "
 },
 {
-  "id": "exercise-85",
+  "id": "exercise-73",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#exercise-85",
+  "url": "climate-change-math-topic-mathematical-models.html#exercise-73",
   "type": "Checkpoint",
   "number": "5.7.11",
   "title": "",
   "body": "What happens to and as increases? Emissivity ranges from 0 to 1. So when increases and both increase since the denominator decreases. "
 },
 {
-  "id": "exercise-86",
+  "id": "exercise-74",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#exercise-86",
+  "url": "climate-change-math-topic-mathematical-models.html#exercise-74",
   "type": "Checkpoint",
   "number": "5.7.12",
   "title": "",
   "body": "Based on the possible values for what are the possible temperature ranges for and ? Emissivity ranges from 0 to 1. ranges from 127.45 to 254.9 K. When , is at its minimum of 127.45 K and when , is at its maximum of 254.9 K. ranges from 151.65 to 303.3 K. "
 },
 {
-  "id": "exercise-87",
+  "id": "exercise-75",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#exercise-87",
+  "url": "climate-change-math-topic-mathematical-models.html#exercise-75",
   "type": "Checkpoint",
   "number": "5.7.13",
   "title": "",
   "body": "What happens to the rate of atmospheric absorption as increases ? It's increasing. "
 },
 {
-  "id": "exercise-88",
+  "id": "exercise-76",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#exercise-88",
+  "url": "climate-change-math-topic-mathematical-models.html#exercise-76",
   "type": "Checkpoint",
   "number": "5.7.14",
   "title": "",
   "body": "Take the current temperature of the earth to be . What does out model predic is? Solving for we find . So for ,   "
 },
 {
-  "id": "exercise-89",
+  "id": "exercise-77",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#exercise-89",
+  "url": "climate-change-math-topic-mathematical-models.html#exercise-77",
   "type": "Checkpoint",
   "number": "5.7.15",
   "title": "",
   "body": "Use the actual value of 288.3 K for and the our model's predition of 0.947 for . If the amount of carbon in the atmosphere were to double today so that would increase by 0.019, use our model to determine the increase in the Earth's temperature. In the atmosphere's temperature.  would increase from 0.947 to 0.966 and our model predeicts that the Earth's temperature will increase from 288.3 K to 293.3 K or from to  "
 },
 {
-  "id": "exercise-90",
+  "id": "exercise-78",
   "level": "2",
-  "url": "climate-change-math-topic-mathematical-models.html#exercise-90",
+  "url": "climate-change-math-topic-mathematical-models.html#exercise-78",
   "type": "Checkpoint",
   "number": "5.7.16",
   "title": "",
@@ -1900,36 +1729,36 @@ var ptx_lunr_docs = [
   "body": "   Region  2019 Emissions  Population    International Transport     -    Oceania          Asia (excluding China & India)          China          India          Africa          South America          North America (excluding USA)          United States          Europe (excluding EU-27)          EU-27          Total          "
 },
 {
-  "id": "exercise-91",
+  "id": "exercise-79",
   "level": "2",
-  "url": "climate-change-solving-for-change.html#exercise-91",
+  "url": "climate-change-solving-for-change.html#exercise-79",
   "type": "Checkpoint",
   "number": "5.8.4",
   "title": "",
   "body": "Which region on this list contributed the most CO2 to the atmosphere in 2019? Remember, in scientific notation, you compare the exponents first and then the digits. China, with tons of CO2 in 2019, had higher emissions than any other region, because the exponent is larger than any other. "
 },
 {
-  "id": "exercise-92",
+  "id": "exercise-80",
   "level": "2",
-  "url": "climate-change-solving-for-change.html#exercise-92",
+  "url": "climate-change-solving-for-change.html#exercise-80",
   "type": "Checkpoint",
   "number": "5.8.5",
   "title": "",
   "body": "Some countries,like China, argue that their emissions are naturally higher because they have more people. Compare the United States and China - if you look instead at tons of CO2 per person, which one has higher emissions? To find emissions per person, divide the total emissions by the population. Be careful to divide correctly with scientific notation! In China, we have In the USA, we have The USA produces more than twice as much per person as China. "
 },
 {
-  "id": "p-587",
+  "id": "p-506",
   "level": "2",
-  "url": "climate-change-solving-for-change.html#p-587",
+  "url": "climate-change-solving-for-change.html#p-506",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "carbon footprint "
 },
 {
-  "id": "exercise-93",
+  "id": "exercise-81",
   "level": "2",
-  "url": "climate-change-solving-for-change.html#exercise-93",
+  "url": "climate-change-solving-for-change.html#exercise-81",
   "type": "Checkpoint",
   "number": "5.8.6",
   "title": "",
@@ -1945,27 +1774,27 @@ var ptx_lunr_docs = [
   "body": "  Sea Level Rise in Selected Cities under 3 Scenarios: 2℃, 4℃, and ℃ Temperature Rise by 2100   City  2 °C  4 °C  5 °C      Low  Median  Upper  Low  Median  Upper  Low  Median  Upper    Bangkok  0.12  0.19  0.32  0.35  0.59  1.17  0.49  0.87  1.91    Dublin  0.1  0.18  0.31  0.28  0.52  1.12  0.36  0.73  1.79    Glasgow  0.03  0.11  0.25  0.11  0.38  0.97  0.15  0.54  1.58    Guangzhou  0.12  0.21  0.34  0.36  0.62  1.2  0.51  0.91  1.93    Hamburg  0.17  0.27  0.4  0.42  0.69  1.25  0.56  0.95  1.95    Ho Chi Minh  0.12  0.2  0.33  0.37  0.62  1.2  0.5  0.9  1.96    Hong Kong  0.13  0.2  0.32  0.37  0.61  1.18  0.52  0.9  1.9    Jakarta  0.11  0.18  0.3  0.34  0.58  1.12  0.49  0.85  1.8    Kuala Lumpur  0.11  0.18  0.31  0.33  0.58  1.19  0.47  0.86  1.92    Lagos  0.14  0.21  0.34  0.38  0.62  1.2  0.52  0.9  1.92    London  0.12  0.2  0.33  0.3  0.55  1.15  0.38  0.75  1.82    Manila  0.13  0.2  0.34  0.37  0.63  1.22  0.51  0.92  1.99    New Orleans  0.16  0.24  0.37  0.39  0.63  1.27  0.52  0.88  2.01    New York  0.2  0.31  0.46  0.48  0.78  1.43  0.64  1.09  2.24    San Francisco  0.1  0.16  0.3  0.27  0.49  1.15  0.37  0.73  1.87    "
 },
 {
-  "id": "exercise-94",
+  "id": "exercise-82",
   "level": "2",
-  "url": "climate-change-solving-for-change.html#exercise-94",
+  "url": "climate-change-solving-for-change.html#exercise-82",
   "type": "Checkpoint",
   "number": "5.8.8",
   "title": "",
   "body": "What would London look like with the median sea level rise from 5℃ of global warming? The median sea level rise from 5℃ of global warming is 0.78m, so we can round to 0.8m.  Putting this into the map, we get the following map of London . Substantial parts of South London would be under water, and even more of the port areas east of the city.  "
 },
 {
-  "id": "exercise-95",
+  "id": "exercise-83",
   "level": "2",
-  "url": "climate-change-solving-for-change.html#exercise-95",
+  "url": "climate-change-solving-for-change.html#exercise-83",
   "type": "Checkpoint",
   "number": "5.8.9",
   "title": "",
   "body": "The article gives sea level rise figures for 136 coastal cities in Table S2. Find the median sea level rise in Miami if global warming is 5℃ by 2100. How does this compare to the median sea level rise if global warming is limited to 2℃ by 2100? The median sea level rise with 5℃ is 0.86 m. With 2℃ it is 0.22 m.  With 0.9 m of sea level rise, substantial parts of Miami Beach and areas around the river will be flooded, as seen in this map of Miami .  With 0.2 m of sea level rise, only small coastal areas will flood, as seen in this map of Miami .  "
 },
 {
-  "id": "exercise-96",
+  "id": "exercise-84",
   "level": "2",
-  "url": "climate-change-solving-for-change.html#exercise-96",
+  "url": "climate-change-solving-for-change.html#exercise-84",
   "type": "Checkpoint",
   "number": "5.8.10",
   "title": "",
@@ -1981,9 +1810,9 @@ var ptx_lunr_docs = [
   "body": "   "
 },
 {
-  "id": "exercise-97",
+  "id": "exercise-85",
   "level": "2",
-  "url": "climate-change-reflection.html#exercise-97",
+  "url": "climate-change-reflection.html#exercise-85",
   "type": "Reading Question",
   "number": "5.9.1",
   "title": "",
@@ -1999,18 +1828,18 @@ var ptx_lunr_docs = [
   "body": " Mathematical exercise. These exercises should be quantitative in nature, but could involve other tasks, like gathering data, using technology, or analyzing consequences to come to an answer. The answer need not be quantitative.  Mathematical exercise  "
 },
 {
-  "id": "exercise-98",
+  "id": "exercise-86",
   "level": "2",
-  "url": "climate-change-exercises.html#exercise-98",
+  "url": "climate-change-exercises.html#exercise-86",
   "type": "Exercise",
   "number": "5.10.1",
   "title": "",
   "body": "Mathematical exercise. These exercises should be quantitative in nature, but could involve other tasks, like gathering data, using technology, or analyzing consequences to come to an answer. The answer need not be quantitative. "
 },
 {
-  "id": "exercise-99",
+  "id": "exercise-87",
   "level": "2",
-  "url": "climate-change-exercises.html#exercise-99",
+  "url": "climate-change-exercises.html#exercise-87",
   "type": "Exercise",
   "number": "5.10.2",
   "title": "",
@@ -2080,81 +1909,81 @@ var ptx_lunr_docs = [
   "body": " Understanding the Issue   We begin by investigating key definitions necessary to understand transgender and nonbinary identities and how they are targeted by recent bills.    Anti-Trans Bills in the U.S. Starting 2018    The following questions are about bills prohibiting various types of transition and healthcare for trans and nonbinary people in the U.S., primarily proposed and passed beginning in 2018. Think about your personal definition, then do some research online, to find definitions of the following terms. Be sure to use reputable websites: most university\/college sites (put \"site:*.edu\" at the end of your Google search), the leading professional organizations (American Medical Association, American Pediatric Association, American Psychological Association), the Genderbread Person , and (usually) the sources linked from Wikipedia are all options. In what way(s) do your personal definition(s) agree and disagree with the Internet definitions?   Gender.  Biological sex.  Assigned sex at birth.  Gender identity.  Transgender.  Nonbinary.  Social and medical transition.  Gender-affirming healthcare.  Drag performance.    We emphasize the years since 2018 in this analysis because, in 2019, the conservative Heritage Foundation and conservative Christian Family Policy Alliance distributed a model strategy for banning gender-affirming care to state legislators at a conference (Harvard Law Review 2021). In 2020, a conference attendee and South Dakota legislator published a version of the bill seeking to criminalize doctors' provision of puberty blockers and hormones to transgender patients under the age of 16. Similar bills followed the same year: in Colorado, Florida, Illinois, Iowa, Kentucky, Missouri, Oklahoma, and South Carolina (Bauer 2020). Though the 2020 bills failed, the language in bills in South Carolina, South Dakota, and Arkansas in 2021 attempting to allow physicians to refuse to treat transgender children shared similar language, which originated in a Model Conscience Protection Act published by Kevin Theriot and Ken Connelly of the conservative Alliance Defending Freedom (Theriot and Connelly, n.d.). As we will see below, more and more bills are being proposed, and more are passing, every year since.  These bills go against studies showing that transgender children between the age of 5 and 12 viewed their gender identities similarly to cisgender children (Olson, Key, and Eaton 2015), among other academic studies. The leading association of pediatricians in the United States recommends that youth who identify as [transgender] have access to comprehensive, gender-affirming, and developmentally appropriate health care that is provided in a safe and inclusive clinical space…[and] that pediatricians have a role in advocating for policies and laws that protect youth who identify as [transgender] from discrimination and violence (Rafferty et al. 2018).   We briefly describe how each aspect of gender-affirming healthcare is targeted by the categories of bills used in the data analysis below. Social transition is targeted through youth athletics bills preventing young people from competing on sports teams under their identified gender. ID requirements prevent the changing of the sex listed on birth certificates, driver's licenses, and other government IDs. Public facilities laws prevent all trans people from using restrooms and other gendered public facilities that match their gender identity. Schools\/education laws vary but include laws banning teachers from using students' correct pronouns at all or without parental permission, discussing queer and trans\/nonbinary identities in the classroom, and displaying items such as pride flags supporting queer and trans identities, among others.   Drag performance laws (perhaps better categorized as gender expression laws ), a recent development as of 2023, ban drag shows or male or female impersonators in certain circumstances, such as in the presence of minors (Tennessee's Senate Bill 3) or on Sundays from 1 a.m. to 12 p.m. (Arizona's SB 1030). Laws barring municipalities from passing nondiscrimination protections , as well as religious freedom laws, legalize discrimination in certain circumstances against LGBTQ+ people, particularly by those with a strongly felt religious conviction that being LGBTQ+ is wrong. Finally, healthcare laws prevent gender-affirming care for various groups in various ways, often including bans on hormone therapy and surgery for those under 18.  In the rest of this chapter, you will identify and analyze recent anti-trans and anti-nonbinary bills over time, focusing on their impacts, whether or not they passed, and other details that impact people's lives.  "
 },
 {
-  "id": "exercise-100",
+  "id": "exercise-88",
   "level": "2",
-  "url": "leg-understanding.html#exercise-100",
+  "url": "leg-understanding.html#exercise-88",
   "type": "Exercise",
   "number": "7.1.1",
   "title": "",
   "body": "Gender. "
 },
 {
-  "id": "exercise-101",
+  "id": "exercise-89",
   "level": "2",
-  "url": "leg-understanding.html#exercise-101",
+  "url": "leg-understanding.html#exercise-89",
   "type": "Exercise",
   "number": "7.1.2",
   "title": "",
   "body": "Biological sex. "
 },
 {
-  "id": "exercise-102",
+  "id": "exercise-90",
   "level": "2",
-  "url": "leg-understanding.html#exercise-102",
+  "url": "leg-understanding.html#exercise-90",
   "type": "Exercise",
   "number": "7.1.3",
   "title": "",
   "body": "Assigned sex at birth. "
 },
 {
-  "id": "exercise-103",
+  "id": "exercise-91",
   "level": "2",
-  "url": "leg-understanding.html#exercise-103",
+  "url": "leg-understanding.html#exercise-91",
   "type": "Exercise",
   "number": "7.1.4",
   "title": "",
   "body": "Gender identity. "
 },
 {
-  "id": "exercise-104",
+  "id": "exercise-92",
   "level": "2",
-  "url": "leg-understanding.html#exercise-104",
+  "url": "leg-understanding.html#exercise-92",
   "type": "Exercise",
   "number": "7.1.5",
   "title": "",
   "body": "Transgender. "
 },
 {
-  "id": "exercise-105",
+  "id": "exercise-93",
   "level": "2",
-  "url": "leg-understanding.html#exercise-105",
+  "url": "leg-understanding.html#exercise-93",
   "type": "Exercise",
   "number": "7.1.6",
   "title": "",
   "body": "Nonbinary. "
 },
 {
-  "id": "exercise-106",
+  "id": "exercise-94",
   "level": "2",
-  "url": "leg-understanding.html#exercise-106",
+  "url": "leg-understanding.html#exercise-94",
   "type": "Exercise",
   "number": "7.1.7",
   "title": "",
   "body": "Social and medical transition. "
 },
 {
-  "id": "exercise-107",
+  "id": "exercise-95",
   "level": "2",
-  "url": "leg-understanding.html#exercise-107",
+  "url": "leg-understanding.html#exercise-95",
   "type": "Exercise",
   "number": "7.1.8",
   "title": "",
   "body": "Gender-affirming healthcare. "
 },
 {
-  "id": "exercise-108",
+  "id": "exercise-96",
   "level": "2",
-  "url": "leg-understanding.html#exercise-108",
+  "url": "leg-understanding.html#exercise-96",
   "type": "Exercise",
   "number": "7.1.9",
   "title": "",
@@ -2170,27 +1999,27 @@ var ptx_lunr_docs = [
   "body": " Obtaining and Cleaning the Data   Here, we will find reputable sources for data on anti-trans bills and get the data into a form we can analyze.    Importing and Merging the Data    Finding Data Online  Our first goal is to find data. Note that any data found online may change web addresses, stop updating, go offline, or become unreliable over time. Your instructor will be able to tell you which sources of data to use if the ones below are no longer reliable.  Go to the website tracktranslegislation.com , which in turn obtains its data from LegiScan , and browse around. What are two things that you notice about the site? Two things that surprise you? Two things that aren't on the site that you wonder about?  This data is up-to-date from 2021 through April 21, 2023. In order to track bills prior to 2021, we use data from the ACLU's Past Legislation Affecting LGBT Rights Across the Country pages for 2018, 2019, and 2020 . Go to the ACLU \"Past Legislation Affecting LGBT Rights Across the Country 2020\" webpage and skim that page. What similarities do you notice with the data found on the Track Trans Legislation website? What differences do you notice? Click on the \"View 2019\" and \"View 2018 Session bills\" links and do the same for those years.  We'd like to get a sense of how anti-trans legislation in the U.S. changed over time, so we're going to try to merge the Track Trans Legislation (TTL) data with the ACLU data. Since the ACLU data has different bill \"Status\" categories than TTL, we'll need to figure out how to classify each ACLU bill into one of the TTL categories. Use the Terminology page on the TTL website to answer the following question. Which of the TTL categories would you classify \"Referred to committee\" into? \"Hearing scheduled\"? \"Withdrawn\"? You may want to click on the bill numbers on the ACLU site to see how the website LegiScan, a constantly-updated bill tracker, classifies each bill.    Note that the 2020 ACLU page was last updated on March 20, 2020, since many state legislatures were suspended or closed during the first year of the COVID-19 pandemic; the ACLU page promised to update the tracker as major new developments occur[red] . This data has distinct variable names and organization, so we also modify the ACLU data to match the Track Trans Legislation data as closely as possible.  For example, bills that were withdrawn, not passed by the end of a given legislative session, explicitly listed as Dead , or were recommended against by a committee and did not proceed in the legislature were relabeled Dead (at least for that year). The exception was when the bill description is specifically listed as hearing scheduled , referred to committee , carried over from another year, or otherwise makes clear that the bill is still under consideration, in which case Introduced or Crossed Over (depending on whether the bill had been passed by at least one chamber) were used.  We only include bills in categories tracked by both data sources; this leaves out, for example, bills preventing localities from passing anti-discrimination ordinances within a state. We use a broad reading of the religious freedom category to include bills that allow for people with sincerely-held religious beliefs in that state to challenge nondiscrimination laws, discriminate against LGBTQ+ people, refuse to provide healthcare to LGBTQ+ people, refuse to provide adoption services to LGBTQ+ people; discriminate against married LGBTQ+ people, and receive funding for discriminatory student groups at public universities, among others.    Cleaning the Data  First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., AZ instead of Arizona ), while Track Trans Legislation uses full names. So we use a program (that you won't have to worry about!) to convert full names to abbreviations in the whole dataset. We also note that, for example, the 2021 dataset includes some bills passed in January 2022, so we eliminate duplicate bills.  This decreases the number of bills in our dataset from 927 to 893. Next, note that the bills whose status is labeled Introduced* by TTL are those that failed to meet their state's crossover deadline , the date by which a bill must pass out of the chamber in which it was introduced and to the other chamber (e.g. State House vs. Senate). According to the site Track Trans Legislation , a bill that is not passed in its initial chamber by the crossover deadline faces high procedural hurdles in order to move forward. Thus, we wish to classify these bills (at least for the current session) as Dead\/Failed .  Moreover, one bill's status is listed as Posted , Kentucky's HB132 in 2020. LegiScan research reveals that this bill died in committee, so we update its status to Dead\/Failed .   "
 },
 {
-  "id": "exercise-109",
+  "id": "exercise-97",
   "level": "2",
-  "url": "sec-leg-obtain-clean.html#exercise-109",
+  "url": "sec-leg-obtain-clean.html#exercise-97",
   "type": "Exercise",
   "number": "7.2.1.1",
   "title": "",
   "body": "Go to the website tracktranslegislation.com , which in turn obtains its data from LegiScan , and browse around. What are two things that you notice about the site? Two things that surprise you? Two things that aren't on the site that you wonder about? "
 },
 {
-  "id": "exercise-110",
+  "id": "exercise-98",
   "level": "2",
-  "url": "sec-leg-obtain-clean.html#exercise-110",
+  "url": "sec-leg-obtain-clean.html#exercise-98",
   "type": "Exercise",
   "number": "7.2.1.2",
   "title": "",
   "body": "This data is up-to-date from 2021 through April 21, 2023. In order to track bills prior to 2021, we use data from the ACLU's Past Legislation Affecting LGBT Rights Across the Country pages for 2018, 2019, and 2020 . Go to the ACLU \"Past Legislation Affecting LGBT Rights Across the Country 2020\" webpage and skim that page. What similarities do you notice with the data found on the Track Trans Legislation website? What differences do you notice? Click on the \"View 2019\" and \"View 2018 Session bills\" links and do the same for those years. "
 },
 {
-  "id": "exercise-111",
+  "id": "exercise-99",
   "level": "2",
-  "url": "sec-leg-obtain-clean.html#exercise-111",
+  "url": "sec-leg-obtain-clean.html#exercise-99",
   "type": "Exercise",
   "number": "7.2.1.3",
   "title": "",
@@ -2206,63 +2035,63 @@ var ptx_lunr_docs = [
   "body": " Visualizing the Data   Bill Type vs. Status  We now summarize the relationships of the type of bill to its status to determine whether specific types of bills were more likely to succeed.  Note that crossing over refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.  ## Bill Type Crossed Over Dead\/Failed Introduced Passed ## Drag Performance 6 11 19 0 ## Healthcare 10 85 112 5 ## ID Updates 4 9 15 0 ## Nondiscrimination Protections 0 6 6 1 ## Other 8 26 38 1 ## Public Facilities 6 29 22 2 ## Religious Freedom 1 13 22 1 ## Schools \/ Education 8 42 47 1 ## Youth Athletics 23 70 158 3 ## Total 66 291 439 14 ## Signed\/Enacted Vetoed Total ## 2 0 38 ## 17 0 229 ## 5 0 33 ## 0 0 13 ## 4 1 78 ## 7 0 66 ## 4 0 41 ## 4 0 102 ## 35 4 293 ## 78 5 893  We see what percentage of each bill status was made up of each bill type:  ## Bill Type Crossed Over Dead\/Failed Introduced Passed ## Drag Performance 15.8% 28.9% 50.0% 0.0% ## Healthcare 4.4% 37.1% 48.9% 2.2% ## ID Updates 12.1% 27.3% 45.5% 0.0% ## Nondiscrimination Protections 0.0% 46.2% 46.2% 7.7% ## Other 10.3% 33.3% 48.7% 1.3% ## Public Facilities 9.1% 43.9% 33.3% 3.0% ## Religious Freedom 2.4% 31.7% 53.7% 2.4% ## Schools \/ Education 7.8% 41.2% 46.1% 1.0% ## Youth Athletics 7.8% 23.9% 53.9% 1.0% ## Total 7.4% 32.6% 49.2% 1.6% ## Signed\/Enacted Vetoed Total ## 5.3% 0.0% 100.0% ## 7.4% 0.0% 100.0% ## 15.2% 0.0% 100.0% ## 0.0% 0.0% 100.0% ## 5.1% 1.3% 100.0% ## 10.6% 0.0% 100.0% ## 9.8% 0.0% 100.0% ## 3.9% 0.0% 100.0% ## 11.9% 1.4% 100.0% ## 8.7% 0.6% 100.0%  And what percentage of each bill type had each status:  ## Status Drag Performance Healthcare ID Updates ## Crossed Over 9.1% 15.2% 6.1% ## Dead\/Failed 3.8% 29.2% 3.1% ## Introduced 4.3% 25.5% 3.4% ## Passed 0.0% 35.7% 0.0% ## Signed\/Enacted 2.6% 21.8% 6.4% ## Vetoed 0.0% 0.0% 0.0% ## Total 4.3% 25.6% 3.7% ## Nondiscrimination Protections Other Public Facilities Religious Freedom ## 0.0% 12.1% 9.1% 1.5% ## 2.1% 8.9% 10.0% 4.5% ## 1.4% 8.7% 5.0% 5.0% ## 7.1% 7.1% 14.3% 7.1% ## 0.0% 5.1% 9.0% 5.1% ## 0.0% 20.0% 0.0% 0.0% ## 1.5% 8.7% 7.4% 4.6% ## Schools \/ Education Youth Athletics Total ## 12.1% 34.8% 100.0% ## 14.4% 24.1% 100.0% ## 10.7% 36.0% 100.0% ## 7.1% 21.4% 100.0% ## 5.1% 44.9% 100.0% ## 0.0% 80.0% 100.0% ## 11.4% 32.8% 100.0%  It seems like bills related to ID updates (i.e., preventing trans and nonbinary people from having their IDs show their correct gender identity), public facilities (often preventing trans people from using the bathroom that fits their gender identity), and youth athletics (i.e., preventing trans girls from competing on girls' sports teams) are most likely to be signed by their state's governor and enacted into law (after passing both legislative chambers).  However, of all the bills that were signed and enacted, most of them by far were related to youth athletics (over double the number of bills from any other category), followed by healthcare, suggesting that more bills were proposed in those categories.  We seek to represent this data in a side-by-side bar chart. In order to provide a more digestible, big-picture viewpoint, we classify the bills by the type of gender-affirming care that is targeted: social transition (excluding artistic performance, which Track Trans Legislation categorizes under Drag Performance ), healthcare\/medical transition, drag performances (noting that performing in drag and being transgender are distinct, though sometimes overlapping, categories), and Other .     In order to better see proportions, we also show a stacked bar chart that scales every x -axis group to 100%:      Did the type of bill impact its likelihood of being passed and\/or signed?  However, the observed trends could simply relate to the fact that the largest numbers of bills nationwide were proposed in those categories.  In order to simplify the following charts and analysis, we combine certain bill statuses into categories: bills that have crossed over, passed, or were signed and enacted have a significant chance of impacting the lives of trans and nonbinary people in that state, while bills that were vetoed, died, or failed have no chance of impacting lives. Bills listed simply as introduced may or may not have the support to eventually pass, but since they are not currently impacting the ability of trans\/nonbinary people to access healthcare, play sports, etc., we count them as Not Passed .  Now, we want to see a breakdown of the number and percentages of each type of bill that did and didn't pass.  ## Bill Type Not Passed Passed Total ## Drag 30 8 38 ## Medical 197 32 229 ## Other 65 13 78 ## Social 443 105 548 ## Total 735 158 893 ## Bill Type Not Passed Passed ## Drag 78.9% 21.1% ## Medical 86.0% 14.0% ## Other 83.3% 16.7% ## Social 80.8% 19.2% ## Total 82.3% 17.7%  We wish to plot the number and proportion of each type of bill that was passed.          From this chart, it appears that bills restricting hormone therapy, puberty blockers, and other medical interventions are actually somewhat less likely to pass than other types of bills, and that while the number of anti-drag bills is substantially smaller than the number of other types of bills, they are somewhat more likely to pass.  Importantly, fewer than 25% of any type of bill since 2018 has passed. What happens when we break down the bills by year?     Is 2023 the Year of Transphobia?  A common claim in the news media, and a common feeling among trans and nonbinary folks, is that 2023 is by far the worst recent year for anti-trans legislation. Let's investigate the following questions:   What total number of anti-trans bills were proposed each year from 2018 to 2023?  What total number of anti-trans bills were passed each of these years? In 2023, since the session is not over in many states, we run the analysis in two ways: including both bills that crossed over and bills that were signed\/enacted, and only considering bills which were signed\/enacted.  What types of anti-trans bills were proposed more often in 2023 than in previous years?  What types of anti-trans bills were passed more often in 2023?  What states introduced\/passed the majority of anti-trans bills in 2023, and are these the same states as in previous years?   We start by creating a data frame that shows only the bills passed, crossed over (hence passed by at least one chamber of the legislature and not yet dead), and\/or signed and enacted between 2021 and 2023, as well as in each year and in the years preceding 2023.      Note that these bills only go through April 21, 2022 . To emphasize the change in the number of bills that have a chance of passing or have already been passed over time, we combine all the years 2017-2022 and compare them to 2023.     It appears that 2023 will, indeed, have many anti-trans bills pass than all previous years since 2018 combined (again, recall that the 2023 data in this analysis only goes through April 21, 2023). What about the likelihood of any particular anti-trans bill to pass in 2023 compared to previous years?      There appears to be a slight increase in the proportion of bills of all types that passed in 2023 compared to 2018-22. This difference becomes even more pronounced when we separate 2022:  ## after_21 Not Passed Passed ## 2022-23 78.2% 21.8% ## 2018-21 84.7% 15.3% ## Total 80.1% 19.9%       "
 },
 {
-  "id": "p-646",
+  "id": "p-565",
   "level": "2",
-  "url": "sec-leg-visualize.html#p-646",
+  "url": "sec-leg-visualize.html#p-565",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "crossing over "
 },
 {
-  "id": "figure-37",
+  "id": "figure-32",
   "level": "2",
-  "url": "sec-leg-visualize.html#figure-37",
+  "url": "sec-leg-visualize.html#figure-32",
   "type": "Figure",
   "number": "7.3.1",
   "title": "",
   "body": "   "
 },
 {
-  "id": "figure-38",
+  "id": "figure-33",
   "level": "2",
-  "url": "sec-leg-visualize.html#figure-38",
+  "url": "sec-leg-visualize.html#figure-33",
   "type": "Figure",
   "number": "7.3.2",
   "title": "",
   "body": "   "
 },
 {
-  "id": "figure-39",
+  "id": "figure-34",
   "level": "2",
-  "url": "sec-leg-visualize.html#figure-39",
+  "url": "sec-leg-visualize.html#figure-34",
   "type": "Figure",
   "number": "7.3.3",
   "title": "",
   "body": "   "
 },
 {
-  "id": "p-664",
+  "id": "p-583",
   "level": "2",
-  "url": "sec-leg-visualize.html#p-664",
+  "url": "sec-leg-visualize.html#p-583",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "only go through April 21, 2022 "
 },
 {
-  "id": "figure-40",
+  "id": "figure-35",
   "level": "2",
-  "url": "sec-leg-visualize.html#figure-40",
+  "url": "sec-leg-visualize.html#figure-35",
   "type": "Figure",
   "number": "7.3.4",
   "title": "",
   "body": "   "
 },
 {
-  "id": "figure-41",
+  "id": "figure-36",
   "level": "2",
-  "url": "sec-leg-visualize.html#figure-41",
+  "url": "sec-leg-visualize.html#figure-36",
   "type": "Figure",
   "number": "7.3.5",
   "title": "",
@@ -2287,9 +2116,9 @@ var ptx_lunr_docs = [
   "body": " Mini-Project: Analyzing Legislation   In a democracy, or even a state which retains enough characteristics of a democracy that there is a legislative process, social justice advocates often must monitor trends in legislation that is proposed and passed. In the U.S., the legislative branch of the government was designed by the founders to be the most powerful, having the ability to control the number of justices on the Supreme Court and confirm justices, as well as overriding vetoes and policy of the executive branch.  Access to data is itself a social justice issue. For example, researchers over the last decade have monitored public Twitter posts to analyze how people feel about various issues, or generally what people are talking about (a process called \"sentiment analysis\"). Previously, access to of tweets on the platform had been free through Twitter's API, a collection of methods for accessing Twitter's data. However, in March 2023, Elon Musk and other Twitter decision-makers raised the price for access to of tweets to $42,000 a month , a cost that one researcher said no \"academic on the planet...could afford.\"  More directly related to legislative analysis, proposed legislation is usually listed on state and territorial government webpages, but one would have to visit all of these 56+ pages, find a way of downloading the data into a spreadsheet, and continually monitor each of the pages for new bills in order to keep up with proposed legislation nationwide. Websites such as LegiScan make this easier by aggregating data from all state legislatures, but in order to get this data into a form that can be imported into data analysis software, some knowledge of data scraping\/scripting is required, and for large queries, paid API access may be necessary.  For these reasons, we use data that has already been collected and cleaned by nonprofit or government sources. We have first accessed the website \"CRT Forward Tracking Project\" , which tracks bills seeking to ban or limit discussion of historical and systemic racism in the United States. This website does not provide a way of downloading its data, so we try a couple of low-effort tricks before simply copy-pasting their entire table into an Excel file. In this chapter, you've seen how one might analyze legislation affecting transgender and nonbinary rights. Now it's your turn: download this Excel file and use it to answer the following questions.      "
 },
 {
-  "id": "exercise-112",
+  "id": "exercise-100",
   "level": "2",
-  "url": "sec-leg-project.html#exercise-112",
+  "url": "sec-leg-project.html#exercise-100",
   "type": "Exercise",
   "number": "7.5.1",
   "title": "",
@@ -2323,189 +2152,189 @@ var ptx_lunr_docs = [
   "body": " Annotated Bibliography   Questions : How can higher-education mathematics instructors promote equality of opportunity through working toward the academic success of underrepresented students and encouraging students to critically analyze their sociopolitical environment with an eye toward social change?     Aslan Tutak, F., Bondy, E., & Adams, T. L. (2011). Critical pedagogy for critical mathematics education.  International Journal of Mathematical Education in Science and Technology ,  42 (1), 65–74. doi:10.1080\/0020739X.2010.510221   Critical pedagogy is pedagogy that aims to raise questions about \"the way things are\" and how things might be done differently with an eye toward equality and justice. Three domains related to critical mathematics education are surveyed: ethnomathematics, equity in mathematics education, and culturally responsive teaching. Ethnomathematics emphasizes the ways various cultures have done and do mathematics; culturally responsive teaching is defined as \"using the cultural characteristics, experiences, and perspectives of ethnically diverse students as conduits for teaching them more effectively\"; and equity in mathematics education is the creation of an educational environment in which all groups enjoy equal opportunities and equitable treatment.  Aslan Tutak, Bondy, and Adams argue that critical pedagogy has not been implemented systematically or in-depth in mathematics classrooms. The authors envision a combination of multiculturalism and equity efforts with a critical perspective, supported by education research. The authors also emphasize the importance of critical education of teachers.  Because critical pedagogy gives no specific teaching techniques or subject matter, it requires the deep commitment of the teacher or professor to the critical education process and adjustment of techniques to fit specific classrooms.     Bartell, T. G. (2013). Learning to teach mathematics for social justice: Negotiating social justice and mathematical goals.  Journal for Research in Mathematics Education ,  44 (1), 129–163.   The concept of teaching mathematics for social justice (TMSJ) is introduced as the use of mathematics both to provide students with the education necessary to succeed in the current system as well as “to critically analyze [students'] world to ultimately promote a democratic society in which all get an opportunity to participate fully\". A growing number of researchers argue that TMSJ can support the \"ongoing struggle for equity in mathematics education\". This article presents a qualitative study of teachers in a graduate course learning to implement TMSJ. Although there are many conceptions of what \"social justice\" and \"equity\" are, the author draws her conception from Paulo Freire of an education \"not to integrate those who are marginalized into the existing society but rather to change society so that all are included\". Darling-Hammond's (2002) model of equity pedagogy includes understanding of oneself in relation to others (Self), the power structures that interact with their understanding of pedagogy (Society), the ways that culture and context affect students (Students), and how to develop classroom practices that support their students (School). It seems to me that as students grow to understand mathematics as \"useful in investigating the sociopolitical realities that shape their lives\", we will see greater engagement by underrepresented students in mathematics, so that the dual goals of TMSJ are mutually reinforcing.  Bartell argues that expanding a social justice-related math curriculum across a whole unit or year, as well as educating teachers on how to choose data, would increase the extent to which teachers achieved TMSJ goals.     Springer, L., Stanne, M. E., & Donovan, S. S. (1999). Effects of small-group learning on undergraduates in science, mathematics, engineering, and technology: A meta-analysis.  Review of Educational Research , 69(1), 21–51.   Excessively competitive classroom environments have been shown to decrease the ability of underrepresented students to participate in the classroom. Several meta-analyses have shown that small-group learning and cooperation in the classroom increases achievement and productivity, self-esteem, inter-group attitudes, and attitudes toward learning, all of which benefit underrepresented students greatly and help to counter stereotype threat. Affective or humanist theorists argue that a move toward more democratic and collaborative teaching and learning processes would benefit women and underrepresented groups by giving them more opportunities to be heard. The authors’ meta-analysis showed that small-group learning benefitted student achievement significantly more for groups composed primarily of Black or Latin@\/e students ( d = 0.76 ) compared with mostly white ( d = 0.46 ) or relatively heterogeneous ( d = 0.42 ) groups. Moreover, small-group learning led to more favorable attitudes toward learning among all students, but especially among women.      Schulteis, M. S. (2013). Serving Hope: Building Service-Learning into a Non-Major Mathematics Course to Benefit the Local Community.  Primus  : Problems, Resources, and Issues in Mathematics Undergraduate Studies , 23(6), 572–584.   Service learning has been shown to provide an avenue to connect students’ learning with their lives and, in doing so, enhances both. Particularly in math courses, service learning has given students new motivation to master the course content. At Concordia University Irvine, a small liberal arts university, the required core mathematics course recommends that students tutor elementary-aged homeless students in mathematics. The university claims that the tutoring gives students an opportunity to relearn and strengthen their mastery of basic math skills. Moreover, students reflect on their experiences through written and oral work, and this gives them an increased sense of personal efficacy, awareness of the world, and awareness of their own personal values. Students also reflected on the ways that the mathematical “life lessons” from the Heart of Mathematics textbook by Burger and Starbird were used during the tutoring. Overall, service learning seemed to promote a greater understanding of both mathematics and the importance of service.      Hodge, L. L. (2006). An Orientation on the Mathematics Classroom that Emphasizes Power and Identity: Reflecting on Equity Research.  The Urban Review, 38(5),  373–385. doi:10.1007\/s11256-006-0041-7   This paper is focused on critiquing the notion of the neutrality of the mathematics classroom. Hodge defines diversity as cultural diversity, with “culture” including race, ethnicity, home life, class, gender, and the interactions between such categories. Hodge points out that racial groups are a social construct and argues against seeing racial groups as homogeneous. Hodge is oriented toward promoting equity in the mathematics classroom, especially considering mathematics as a “gatekeeper” for careers and life chances in general. Hodge argues that we should see the mathematics classroom as an environment for students which promotes a certain kind of thinking, one that is structured by “relationships among qualities” (376). Per Hodge, students possess ways of speaking, writing, dressing, and thinking determined by their culture (“cultural capital”), and students with cultural capital similar to that deemed “acceptable” or dominant in the classroom generally succeed and are rewarded. This conception of cultural capital brings into question the kinds of “academic success” that math teachers and professors are concerned with promoting. Hodge draws on the work of Moll (1997) to argue for the situation of mathematics education in the cultural realities of students, as well as examining what is regarded as “legitimate” participation in mathematics classrooms.      Treisman, U. (1992). Studying Students Studying Calculus: A Look at the Lives of Minority Mathematics Students in College.  The College Mathematics Journal, 23(5) , 362–372. doi:10.2307\/2686410   This article, adapted from a lecture by the author, discusses the author and colleagues’ experiences in trying to improve the performances (as measured by GPA and test scores) of students of color in calculus classrooms at UC-Berkeley. In the mid-1970s, when the author began his work, 60% of Black students enrolled in calculus at Berkeley received a D or F. The author’s initial conception of the reasons for this poor performance named student motivation, inadequate preparation, lack of family support, and income gaps as the culprits. Through interviews, Treisman realized the average student of color at Berkeley was highly motivated, that even students of color with high SAT scores (a measure of “prior preparedness”) were failing, and that students of color often had very supportive parents, though often they had lower incomes. However, Treisman noticed that the difference between (primarily) Black students who were failing and the Chinese students he studied who were getting higher grades was amount of time spent working outside of class and amount of group collaboration outside of class. Treisman implemented an “anti-remedial program” (368) for students who saw themselves as well-prepared to provide students with a challenging, collaborative, community-based learning environment, which emphasized the importance of a great deal of out-of-class work. According to Treisman, the program resulted in Black students outperforming their white and Asian peers. This seems to support the results of studies showing that all students, especially students of color, benefit greatly from group learning (c.f. Springer, Stanne, & Donovan, 1999, above).      Gutstein, E., & Peterson, B. (2005). Introduction. In E. Gutstein & B. Peterson (Ed.),  Rethinking Mathematics: Teaching Social Justice by the Numbers . Rethinking Schools.   In this section of their book Rethinking Mathematics , Gutstein and Peterson argue that a social justice approach to mathematics benefits students by allowing them to recognize the importance of mathematics as an essential tool for understanding and potentially changing the world. Other benefits of this philosophy, according to the authors, include educating students about social issues, connecting mathematics with students’ cultural and community histories, increasing student participation in democracy, and increasing student motivation. No studies are cited to support these assertions, but anecdotal evidence is used throughout the book to justify them. The authors advise teachers to get to know their students and communities and to use the issues students bring up as springboards for math lessons. This fits with the idea, brought up in class, that students come in to a classroom with their own schemas for understanding the world, and that meeting the students where they are is the best educational philosophy. The authors point out that disadvantaged communities, those who are currently the target of outreach to improve retention and performance in math courses, are the ones whose experiences are privileged under this style of teaching, and thus that they may be more likely to learn math in a justice framework. Gutstein and Peterson argue that teaching math in a “neutral” way is not possible, because even trying to leave politics out of the classroom is a political decision that prevents questioning of the status quo.      Gutiérrez, M. V. (2005). ‘I Thought This U.S. Place Was Supposed to Be About Freedom’: Young Latinas Engage in Mathematics and Social Change to Save Their School. In E. Gutstein & B. Peterson (Ed.),  Rethinking Mathematics: Teaching Social Justice by the Numbers . Rethinking Schools.   This chapter of Rethinking Mathematics centers around the math-based effort of the author and a group of 5th-grade, Latina students to prevent the closure of their elementary school. The district argued that the school, Agave Elementary, was close enough to the receiving school and labeled “underperforming” on standardized tests, thus it should be closed. The author helped shape the students’ ideas into solvable problems. The girls analyzed test score data over time and found an increase in performance over the past few years. Moreover, the girls investigated the walk to the receiving school, measuring the amount of time it took them to walk based on a given rate. This points to a potential connection with calculus and using derivatives to measure velocity if a similar activity were done for undergraduate students. Having shown that the receiving school was too far a walk by gathering and analyzing data, the district allowed Agave to remain open. The statements of one of the girls suggest that she felt empowered and connected to the math that she used. In general, activities like this that combine math with students’ lives and with politics help support an education that engages students to become active agents for social change.      Martin, D. B. (2012).  Learning Mathematics while Black . Educational Foundations, 26, 47–66.   In this article, Martin argues that, despite a dearth of “rigorous, explanatory research” on Black children and mathematics, Black children and their competencies tend to be framed in ways that reinforce stereotypes of Black children as “underperforming” and “mathematically illiterate”. Martin points out that historical and structural considerations affect the material and cultural circumstances of Black children, and that some policymakers and researchers ignore these forces when describing Black children in the context of “at-risk, poverty-ridden communities, ghettos, dysfunctional families, and oppositional stances toward schooling”. Martin argues for a more robust view of the “resilience” of Black children in education, including the ways that Black children overcome “ideologies of Black intellectual inferiority”. Resilience among Black students has been categorized by McGee (2009) as fragile or robust , according as students’ motivations were to disprove external racial stereotypes or to develop self-generated motivations and racial identities. Martin argues that scholars in teaching and learning ignore issues such as neoliberal education reform, structural racism, and social policy at their own detriment and to the detriment of Black children who come to be characterized as innately “underachieving”, despite having to overcome issues such as poor teacher support, low funding for public education, school closures, lowered expectations, and others. Finally, Martin describes a study that showed how strong early educational experiences, recognition of their abilities by educators, strong support systems, and a strong positive mathematical and academic identity promoted success among Black children.      Malloy, C. E. Instructional Strategies and Dispositions of Teachers Who Help African American Students Gain Conceptual Understanding. In Martin, D. B. (Ed.),  Mathematics teaching, learning, and liberation in the lives of black children . New York: Routledge.   Malloy begins his chapter by examining a case study in which a Black student is left out of group work because he was “not at the same level as the rest of the students in the class”; this exemplifies how students who are not prepared well by previous coursework could be invisibilized and neglected in future courses. Studies show that Black students learn math best when they are allowed to “focus on the whole, use improvisational intuitive thinking, recall relevant verbal ideas, engage in human and social content material, respond to extrinsic motivation, focus on interests, learn from informal class discussion, achieve interdependently, and narrate human concepts”. Thus, in order to accommodate instruction for all students, teachers must acknowledge student preferences in acquiring knowledge, develop activities that promote student-student and student-teacher interaction, value the knowledge that students bring in to the classroom, create learning opportunities in which students are interdependent, and encourage\/provide feedback to students as they learn. This process is encouraged by the culturally relevant\/responsive pedagogies of Ladson-Billings and Irvine. The primary aim of Ladson-Billings’ pedagogy is to “assist in the development of a relevant Black personality that allows African American students to choose academic excellence yet still identify with their African and African American culture”. Irvine emphasizes that effective teachers must provide all students with high-level knowledge regardless of previous categorization. Furthermore, using a social justice frame that emphasizes the role of mathematics in democracy and addressing inequality results in student learning and achievement (Gutstein, 2003; Moses & Cobb, 2001). Malloy identifies the concern that most teachers studied did not ask students to use “complex and non-algorithmic” thinking, nor did they work to develop a sociopolitical or critical consciousness in their students.      McGee, E. O., & Hostetler, A. L. (2014). Historicizing Mathematics and Mathematizing Social Studies for Social Justice: A Call for Integration.  Equity & Excellence in Education , 47 (2) , 208–229.  https:\/\/www.tandfonline.com\/doi\/abs\/10.1080\/10665684.2014.900428   The authors argue for greater integration of mathematics and social studies at the K-12 level in order to emphasize their intersections. The authors define social justice in U.S. education as focused on “striving for educational excellence via the examination of social and historical issues and, therefore, giving voice to the marginalized, and recognizing inequities in order to empower marginalized and privileged students alike so that they can empower those around them to promote diversity and inclusiveness for all persons”. Studies have shown that teachers of social studies and mathematics alike focus very little on sexism and racism. In mathematics, this may stem from the myth of math’s objectivity, as instructors may consider social issues “out of the scope” of their classroom. However, there is still substantial inequality even within schools, as financially under-resourced schools have fewer highly-qualified teachers, and 83% of teachers are White. Many teacher training programs provide limited education about social justice or culturally relevant pedagogy, though researchers have confirmed that culturally relevant teaching practices contributes to educational equity and social justice. Bob Moses, a civil rights activist who started the Algebra Project to provide social justice-based algebra education to low-income students, argues that algebra acts as a gatekeeper to higher levels of mathematics, which disproportionately excludes students of color and poorer students. Although some criticism has held that social justice pedagogy in mathematics is under-theorized, non-rigorous, and requires highly socially conscious teachers to work, others argue that content knowledge becomes more meaningful when it is applied to social issues.      Winter, D. (2007). Infusing mathematics with culture: Teaching technical subjects for social justice.  New Directions for Teaching and Learning, 2007 (111), 97–106.  http:\/\/doi.org\/10.1002\/tl.291   The National Survey of Student Engagement, 2004, has found that undergraduate students are often passionate about social and political issues; the author argues that bringing such issues into the mathematics classroom can increase student engagement and performance. This provides evidence against the criticism often leveled against social justice pedagogy in mathematics that it necessarily would not focus enough on mathematical proficiency. The author provides a model of social justice pedagogy in STEM courses which introduces sociocultural phenomena through readings, videos, and activities, then the students would be given a problem and a structured worksheet to apply mathematics to the problem. Finally, students interpreted their mathematical solution in the context of the original issue, often leading to discussion about the broader implications of their solution. In this study, the author applies this model to precalculus classes, teaching functions, graphing, and statistics through examining political corruption and economic development worldwide, climate change in Zimbabwe and its impact on agriculture, and water security and native peoples’ rights in Botswana, to name a few. Winter derives several principles for social justice education from Marilyn Frankenstein (1990), including using real situations and real information, emphasizing situations that students might have learned about through news or other media, and using controversial materials to help students increase their curiosity, understand other perspectives more accurately, solve problems more effectively, and generate creative ideas (Johnson and Johnson, 1979). Students taught using the social justice approach performed statistically significantly better than a control group; they performed better on a mathematical assessment (exceeding the control group’s scores by 11.9%) and had fewer students with a grade of D or lower in the class (15.4% in the social justice pedagogy condition, as opposed to 22.9% in the control group).      Jackson, K., & Wilson, J. (2012). Supporting African American Students’ Learning of Mathematics: A Problem of Practice. Urban Education, 47(2), 354–398.  http:\/\/doi.org\/10.1177\/0042085911429083   There is a lack of studies that investigate specific teaching practices which benefit African-American students, including teacher-student interaction and its effects. Although trying to specify “general” practices across a group as diverse as African-Americans in the US may lead to essentialization, a variety of historical conditions in the US have meant that almost all African-Americans have been told that they are inferior academically. Therefore, the studies this article calls for would benefit any group which is systemically marginalized in US mathematics education, including women and Latin@s. Across all the studies reviewed, it seems that providing African-American students with a common experience that grounds mathematical ideas, as well as explicitly encouraging and supporting African-American students to do more sophisticated mathematics, are important. Studies that focus on “successful” African-American learners provide an important counternarrative but also do not explicitly state what made those learners “successful”. The authors suggest that future studies investigate “(a) teachers’ orientations to teaching African-American students math, (b) forms of instructional practice that support African-American students to participate in rigorous mathematical activity, and (c) African-American students’ experiences as learners of mathematics”.      Osler, J. (2007). A guide for integrating issues of social and economic justice into mathematics curriculum. Retrieved March, 26, 2008.   In contrast to the above article, a series of conjectured forms of instructional practice that would support African-American students (and all marginalized students) is given, and many of them are congruent with scientifically studied pedagogical recommendations, although few have been tested under controlled conditions. In the absence of scholarship testing specific practices, it seems the SoTL community is currently limited to such suggestions. The article suggests that, in a context of worsening oppression for low-income and people of color in the US, a failure to address social and economic justice in all areas of education is actively harmful for future generations. Drawing on ideas of Bob Moses (founder of the Algebra Project) and Paulo Freire, Osler delineates two components of “social justice mathematics”: math literacy as a civil right\/social justice issue, and studying issues of social justice in the math classroom. Osler suggests that the use of such practices would not only give students a concrete connection to the mathematics they were learning, it would allow students to engage in higher-level mathematical thinking. Osler’s guidelines include: (1) working with a textbook with a strong mathematical framework and scaffolding, (2) talk to students to decide on social justice issues to cover, (3) set up units around “Essential Questions”, (4) introduce the social justice issue first, (5) then begin the mathematics, devoting as much time as necessary to the concepts and scaffolding both math and social justice along the way, (6) end with a great project. Some specific unit ideas: for exponents, studying compound interest and population growth; for probability, exploring the possibility that a traffic stop should be (and is) a person of color.      Rousseau, C., & Tate, W. F. (2003). No Time like the Present: Reflecting on Equity in School Mathematics.  Theory into Practice ,  42 (3), 210–216.   The Professional Standards for Teaching Mathematics (NCTM, 1991) recommend that teacher reflection should occur and focus on how students’ linguistic, ethnic, racial, socioeconomic, and cultural backgrounds influence their learning of mathematics. Within the social reconstructionist tradition, teacher reflection was a political act “that either contributes to or hinders the realization of a more just and humane society” (Zeichner, 1996). However, preservice teachers often view student diversity as a problem rather than a resource, and many teachers hold a view that “all students should be treated equally in the classroom”, even when this leads to disproportionately negative outcomes for students of color. The authors argue that this “one-size-fits-all” mentality is a common, serious obstacle to true teacher reflection and social justice. Further, the authors identify the “color-blind” mentality, in which a teacher claims “not to see color”, to lead to ignoring students’ cultural backgrounds in the classroom, thus decreasing student engagement, as well as a refusal to combat historical and actual racist practices. In classroom observations, the authors report several instances of students being “allowed to fail” through their teacher’s neglect; such students were disproportionately Black, specifically Black men.      Anderson, R. (2007). Being a Mathematics Learner: Four Faces of Identity.  Mathematics Educator ,  17 (1), 7–14.   This paper focuses on a view of learning mathematics through “social participation” (Wenger, 1998) and includes not only thoughts and actions but membership in social communities. Four “faces” of mathematical identity are discussed using selected quotations from students attending a small, rural high school in the U.S. Pacific Northwest. Identity refers to “how we define ourselves and how others define us”. The first face of identity is engagement (direct experience of the world and active involvement with others); students made to do repetitive exercises without creating meaning on their own may not see themselves as mathematics learners. The second face is imagination, how students envision mathematics fitting in to their broader lives; teaching mathematics without contextualizing it in students’ personal worlds would lead to students developing an identity as “not a mathematics learner”. The third face is alignment, how students align their energies within an institution in response to the imagination phase. The fourth face is nature, but scientific studies have indicated that all students have the capacity to be mathematics learners. The authors recommend that teachers allow students to generate meaning and strategies for solving problems; one starting point is using mathematical tasks that have multiple responses or one response with multiple solutions; hdold their students to high expectations; keeping students informed of institutional requirements for college and careers; and discount the nature face in favor of the others.      Joseph, G. G. (1987). Foundations of Eurocentrism in mathematics.  Race & Class ,  28 (3), 13–28.   The author argues that the way mathematics is taught around the world is indicative of a colonial, Eurocentric narrative in which Europe is seen as a “civilizing” force and the significant contributions of mathematicians from non-European backgrounds are downplayed. Through a historical narrative, Joseph shows that such mathematical leaps as written mathematical records, a place value number system, the technique of measurement, our base 10 number system, the “Pythagorean Theorem”, and algebra all originated outside of Europe and were then used by Europeans to advance their own mathematics. Some of the greatest mathematicians of antiquity, such as Euclid, Archimedes, Apollonius, and Diophantus, developed from the intersections of Greek mathematics with Babylonian and Egyptian mathematics during the Alexandrian Empire. Arab scholars developed a rigorous, advanced geometry and algebra during what in Europe was known as the “Dark Ages”. The marginalization of these contributions contributes to the perception of mathematics as independent of economics, politics, and culture; frames mathematical pursuits as confined to a select few (usually white men); and the enshrining of deductive axiomatic logic (i.e. “formal” mathematical proof) as the “only” method of mathematical discovery. If we as teachers acknowledge the diverse groups which contribute to mathematics and the diversity of ways of doing mathematics, we may be better able to engage students with various backgrounds and mathematical cultures.      Gutstein, E. (2008). Reinventing Freire: mathematics education for social transformation. In J. Matos, P. Valero, & Yasukawa, Keiko (Eds.),  Proceedings of the Fifth International Mathematics Education and Society Conference . Albufeira, Portugal.   The author reflects on the educational philosophy of Paulo Freire as it relates to the current state of mathematics education in the US. Freire’s emphasis on basing the content of education on “the present, existential, concrete situation, reflecting the aspirations of the people”. Gutstein identifies Freire’s idea that “political experiences are necessary to develop political consciousness” as the most relevant to his current work. Gutstein argues that the modern emphasis on mathematics education in the US is largely in service of the status quo and “profitability for the financial and corporate elite”. In contrast, Gutstein aims to politicize the mathematics he teaches in a social justice-focused school in Chicago. Although there are several collections of “mathematics for social justice” projects, units, and lessons, Gutstein claims that no cogent and cohesive curriculum exists and identifies the need for one. However, Gutstein identifies one “solution” to this problem as using rich mathematics curricula and including relevant social justice concepts that are co-created with students in response to the curriculum.      Brodie, K. (2008) Describing teacher change: interactions between teacher moves and learner contributions. In J. Matos, P. Valero, & Yasukawa, Keiko (Eds.),  Proceedings of the Fifth International Mathematics Education and Society Conference . Albufeira, Portugal.   This paper describes a case study of a motivated, mathematically knowledgeable tenth-grade teacher at a public school in Johannesburg, South Africa, made up entirely of Black students; learners are often assaulted on their way to and from school. Since recent research has shown that mathematics education reform has mitigated achievement gaps between marginalized and other learners. The learners’ mathematical knowledge was two years below grade level; this led to a lot of basic errors, defined as errors not expected at the grade level. The moves used by the teacher were recorded and divided into five categories. In the first week of study, the instructor frequently used the elicit move to get a desired response from a learner, while in the second week, the instructor worked to develop mathematical reasoning in dialogue with his students, increasing his use of the press move to ask learners to explain more of their reasoning or push for something more from them. Previous research has indicated that a first-level teaching move to engage more with students often involves increasing pressing; perhaps this would be a good, low-overhead way to bring more learner-centered instruction into public schools.      (2009). Teaching problem solving and understanding: what does the literature suggest? In Lai (Ed.),  Teaching Undergraduates Mathematics: Mathematical Sciences Research Institute May 2009 Workshop Report.  Berkeley, CA: Mathematical Sciences Research Institute.   This chapter of the workshop proceedings begins by quoting Marilyn Carlson that the debate between “teacher-directed instruction” and “student-centered discovery” is “distract[ing] the community with false dichotomies and vague premises”, a polarizing position that may inadvertently discount quality scholarship. The authors continue by presenting two characterizations of student understanding of mathematical functions: Action-Process-Object-Schema (APOS) theory and covariation. APOS theory defines an “action” as a step-by-step transformation of a set of mathematical objects into another mathematical object; for instance, evaluating a composition of functions at the point x. In contrast, the “process stage” of understanding takes place when students “internalize the action into a process” and can then think about the process without performing it. The process stage entails a greater level of abstraction, e.g. finding a general formula for a composition of functions given data for each function in table or graph form. Covariational reasoning is defined as “the cognitive activities involved in coordinating two varying quantities while attending to the ways in which they change in relation to each other”; for instance, attending to parametric equations. Observations of students suggest that covariational processing involves five kinds of mental action; questioning strategies to promote each action in students are suggested. Finally, the authors discuss the balance of social scaffolding to keep a discussion moving and analytic scaffolding to keep a discussion mathematically productive and suggest requirements for an instructor to use analytic scaffolding successfully.  "
 },
 {
-  "id": "p-715",
+  "id": "p-634",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-715",
+  "url": "sec_annotated-bib.html#p-634",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Questions "
 },
 {
-  "id": "p-717",
+  "id": "p-636",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-717",
+  "url": "sec_annotated-bib.html#p-636",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Aslan Tutak, F., Bondy, E., & Adams, T. L. (2011). Critical pedagogy for critical mathematics education. International Journal of Mathematical Education in Science and Technology , 42 (1), 65–74. doi:10.1080\/0020739X.2010.510221 "
 },
 {
-  "id": "p-722",
+  "id": "p-641",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-722",
+  "url": "sec_annotated-bib.html#p-641",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Bartell, T. G. (2013). Learning to teach mathematics for social justice: Negotiating social justice and mathematical goals. Journal for Research in Mathematics Education , 44 (1), 129–163. "
 },
 {
-  "id": "p-726",
+  "id": "p-645",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-726",
+  "url": "sec_annotated-bib.html#p-645",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Springer, L., Stanne, M. E., & Donovan, S. S. (1999). Effects of small-group learning on undergraduates in science, mathematics, engineering, and technology: A meta-analysis. Review of Educational Research , 69(1), 21–51. "
 },
 {
-  "id": "p-729",
+  "id": "p-648",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-729",
+  "url": "sec_annotated-bib.html#p-648",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Schulteis, M. S. (2013). Serving Hope: Building Service-Learning into a Non-Major Mathematics Course to Benefit the Local Community. Primus : Problems, Resources, and Issues in Mathematics Undergraduate Studies , 23(6), 572–584. "
 },
 {
-  "id": "p-732",
+  "id": "p-651",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-732",
+  "url": "sec_annotated-bib.html#p-651",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Hodge, L. L. (2006). An Orientation on the Mathematics Classroom that Emphasizes Power and Identity: Reflecting on Equity Research. The Urban Review, 38(5), 373–385. doi:10.1007\/s11256-006-0041-7 "
 },
 {
-  "id": "p-735",
+  "id": "p-654",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-735",
+  "url": "sec_annotated-bib.html#p-654",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Treisman, U. (1992). Studying Students Studying Calculus: A Look at the Lives of Minority Mathematics Students in College. The College Mathematics Journal, 23(5) , 362–372. doi:10.2307\/2686410 "
 },
 {
-  "id": "p-738",
+  "id": "p-657",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-738",
+  "url": "sec_annotated-bib.html#p-657",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Gutstein, E., & Peterson, B. (2005). Introduction. In E. Gutstein & B. Peterson (Ed.), Rethinking Mathematics: Teaching Social Justice by the Numbers . Rethinking Schools. "
 },
 {
-  "id": "p-741",
+  "id": "p-660",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-741",
+  "url": "sec_annotated-bib.html#p-660",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Gutiérrez, M. V. (2005). ‘I Thought This U.S. Place Was Supposed to Be About Freedom’: Young Latinas Engage in Mathematics and Social Change to Save Their School. In E. Gutstein & B. Peterson (Ed.), Rethinking Mathematics: Teaching Social Justice by the Numbers . Rethinking Schools. "
 },
 {
-  "id": "p-744",
+  "id": "p-663",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-744",
+  "url": "sec_annotated-bib.html#p-663",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Martin, D. B. (2012). Learning Mathematics while Black . Educational Foundations, 26, 47–66. "
 },
 {
-  "id": "p-747",
+  "id": "p-666",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-747",
+  "url": "sec_annotated-bib.html#p-666",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Malloy, C. E. Instructional Strategies and Dispositions of Teachers Who Help African American Students Gain Conceptual Understanding. In Martin, D. B. (Ed.), Mathematics teaching, learning, and liberation in the lives of black children . New York: Routledge. "
 },
 {
-  "id": "p-750",
+  "id": "p-669",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-750",
+  "url": "sec_annotated-bib.html#p-669",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "McGee, E. O., & Hostetler, A. L. (2014). Historicizing Mathematics and Mathematizing Social Studies for Social Justice: A Call for Integration. Equity & Excellence in Education , 47 (2) , 208–229. https:\/\/www.tandfonline.com\/doi\/abs\/10.1080\/10665684.2014.900428 "
 },
 {
-  "id": "p-753",
+  "id": "p-672",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-753",
+  "url": "sec_annotated-bib.html#p-672",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Winter, D. (2007). Infusing mathematics with culture: Teaching technical subjects for social justice. New Directions for Teaching and Learning, 2007 (111), 97–106. http:\/\/doi.org\/10.1002\/tl.291 "
 },
 {
-  "id": "p-756",
+  "id": "p-675",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-756",
+  "url": "sec_annotated-bib.html#p-675",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Jackson, K., & Wilson, J. (2012). Supporting African American Students’ Learning of Mathematics: A Problem of Practice. Urban Education, 47(2), 354–398. http:\/\/doi.org\/10.1177\/0042085911429083 "
 },
 {
-  "id": "p-759",
+  "id": "p-678",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-759",
+  "url": "sec_annotated-bib.html#p-678",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Osler, J. (2007). A guide for integrating issues of social and economic justice into mathematics curriculum. Retrieved March, 26, 2008. "
 },
 {
-  "id": "p-762",
+  "id": "p-681",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-762",
+  "url": "sec_annotated-bib.html#p-681",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Rousseau, C., & Tate, W. F. (2003). No Time like the Present: Reflecting on Equity in School Mathematics. Theory into Practice , 42 (3), 210–216. "
 },
 {
-  "id": "p-765",
+  "id": "p-684",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-765",
+  "url": "sec_annotated-bib.html#p-684",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Anderson, R. (2007). Being a Mathematics Learner: Four Faces of Identity. Mathematics Educator , 17 (1), 7–14. "
 },
 {
-  "id": "p-768",
+  "id": "p-687",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-768",
+  "url": "sec_annotated-bib.html#p-687",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Joseph, G. G. (1987). Foundations of Eurocentrism in mathematics. Race & Class , 28 (3), 13–28. "
 },
 {
-  "id": "p-771",
+  "id": "p-690",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-771",
+  "url": "sec_annotated-bib.html#p-690",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Gutstein, E. (2008). Reinventing Freire: mathematics education for social transformation. In J. Matos, P. Valero, & Yasukawa, Keiko (Eds.), Proceedings of the Fifth International Mathematics Education and Society Conference . Albufeira, Portugal. "
 },
 {
-  "id": "p-774",
+  "id": "p-693",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-774",
+  "url": "sec_annotated-bib.html#p-693",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Brodie, K. (2008) Describing teacher change: interactions between teacher moves and learner contributions. In J. Matos, P. Valero, & Yasukawa, Keiko (Eds.), Proceedings of the Fifth International Mathematics Education and Society Conference . Albufeira, Portugal. "
 },
 {
-  "id": "p-777",
+  "id": "p-696",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-777",
+  "url": "sec_annotated-bib.html#p-696",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
