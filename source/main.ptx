@@ -45,6 +45,7 @@
 
     <xi:include href="./legislation/ch_legislation.ptx" />
 
+    <xi:include href="./modeling-democracy/ch_modeling_democracy.ptx" />
 
     <xi:include href="./from-latex/ch_from-latex.ptx"/>
 

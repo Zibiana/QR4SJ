@@ -11,10 +11,58 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para">
-<dfn class="terminology">Brodie, K. (2008) Describing teacher change: interactions between teacher moves and learner contributions. In J. Matos, P. Valero, &amp; Yasukawa, Keiko (Eds.),</dfn> <em class="emphasis"><dfn class="terminology">Proceedings of the Fifth International Mathematics Education and Society Conference</dfn></em><dfn class="terminology">. Albufeira, Portugal.</dfn>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical"><ul class="disc">
+<li><div class="para">Let’s estimate.</div></li>
+<li><div class="para">First, how many American high school students are there? We’ll assume this corresponds with the proportion of Americans between ages <span class="process-math">\(14\)</span> and <span class="process-math">\(18\text{,}\)</span> inclusive. This is probably between <span class="process-math">\(5\)</span> and <span class="process-math">\(15\%\)</span> of Americans.</div></li>
+<li><div class="para logical">
+<div class="para">We use a geometric mean to get a single estimate:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+5\% &amp; =5\times10^{0}\%\\
+15\% &amp; =1.5\times10^{1}\%\\
+\text{geometric mean} &amp; =\frac{1.5+5}{2}\times10^{0.5}=3.25\times10^{0.5}\approx10\%.
+\end{aligned}
+\end{equation*}
 </div>
-<span class="incontext"><a href="sec_annotated-bib.html#p-693" class="internal">in-context</a></span>
+</div></li>
+<li><div class="para logical">
+<div class="para">around <span class="process-math">\(10\%\)</span> (guess) of Americans, and there are about <span class="process-math">\(300\)</span> million Americans, so we estimate that there are</div>
+<div class="displaymath process-math">
+\begin{equation*}
+.1\times300,000,000=30,000,000
+\end{equation*}
+</div>
+<div class="para">American high-school students each year. Our answer here is “tens of millions”, which fits with the actual number of about <span class="process-math">\(56.6\)</span> million. [Note that we don’t round; we just count the number of zeroes, which here is <span class="process-math">\(7\text{,}\)</span> meaning our answer is “tens of millions”.]</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Assume that <span class="process-math">\(20\%\)</span> (perhaps a high estimate) of American high-school students drop out each year. That’s</div>
+<div class="displaymath process-math">
+\begin{equation*}
+.2(30,000,000)=6,000,000
+\end{equation*}
+</div>
+<div class="para">dropouts per year.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">We convert to dropouts per second:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{6,000,000\text{ dropouts}}{\text{year}}\times\frac{1\text{ year}}{365\text{ days}}\times\frac{1\text{ day}}{24\text{ hours}}\times\frac{1\text{ hour}}{60\text{ min}}\times\frac{1\text{ min}}{60\text{ sec}}=0.19\approx\frac{0.2\text{ dropouts}}{\text{second}}.
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Finally, we compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{0.2\text{ dropouts}}{\text{second}}\times\frac{26\text{ seconds}}{1\text{ 26-second period}}=\frac{5.2\text{ dropouts}}{\text{26-second period}}
+\end{equation*}
+</div>
+<div class="para">which is higher (rounded up) than Herbert’s estimate. However, we note that we purposefully overestimated the dropout rate in order to be generous to Herbert’s estimate, so we could easily be off by a factor of <span class="process-math">\(5\)</span> (<span class="process-math">\(1\)</span> vs. <span class="process-math">\(5.2\)</span> dropouts per <span class="process-math">\(26\)</span> seconds).</div>
+</div></li>
+</ul></div>
+<span class="incontext"><a href="sec-fermi-estimation.html#p-693" class="internal">in-context</a></span>
 </body>
 </html>
