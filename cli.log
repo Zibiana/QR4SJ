@@ -7,10 +7,10 @@ INFO    :   GitHub Pages site that can be shared with readers who cannot access 
 INFO    :   personal computer.)
 INFO    : 
 WARNING : Port 8000 could not be used.
-WARNING : Trying port 61138 instead.
+WARNING : Trying port 53933 instead.
 
 INFO    : Success! The most recent build of your project can be viewed in a web browser at the following url:
-INFO    :     http://localhost:61138
+INFO    :     http://localhost:53933
 INFO    : This page should open in a new tab automatically.
 INFO    : Use [Ctrl]+[C] to halt the server.
 
