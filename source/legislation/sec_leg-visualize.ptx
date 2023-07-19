@@ -15,8 +15,7 @@
 				<sage language="r">
 					<input>
 						bills_18_20 = read.csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/bills_2018-2020.csv")
-						col_types = c("date", "text", "text", 
-							"text", "text", "text", "numeric"))
+						
 				</input>
 				</sage>
 
