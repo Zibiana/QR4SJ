@@ -15,7 +15,14 @@
 				<sage language="r">
 					<input>
 						bills_18_20 = read.csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/bills_2018-2020.csv")
-						
+						bills_2021 = read_csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/2021 Anti-Trans Bills _ Track Trans Legislation.csv")
+						bills_2022 = read_csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/2022 Anti-Trans Bills _ Track Trans Legislation.csv")
+						bills_2023 = read_csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/2023 Anti-Trans Bills _ Track Trans Legislation.csv")
+						bills_2021$year = format(bills_2021$Date, "%Y")
+						bills_2022$year = format(bills_2022$Date, "%Y")
+						bills_2023$year = format(bills_2023$Date, "%Y")
+						bills_18_20$year = format(bills_18_20$Date, "%Y")
+						bills_21_23 = rbind(bills_2021, bills_2022, bills_2023)
 				</input>
 				</sage>
 
