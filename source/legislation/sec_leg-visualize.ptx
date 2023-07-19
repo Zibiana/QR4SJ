@@ -13,7 +13,11 @@
 				Note that <term>crossing over</term> refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.
 			</p>
 				<sage language="r">
-					<input>#Test code here</input>
+					<input>
+						bills_18_20 = read.csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/bills_2018-2020.csv")
+						col_types = c("date", "text", "text", 
+							"text", "text", "text", "numeric"))
+				</input>
 				</sage>
 
 			<pre>##                      Bill Type Crossed Over Dead/Failed Introduced Passed
