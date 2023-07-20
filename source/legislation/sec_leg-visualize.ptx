@@ -5,6 +5,10 @@
 		<subsection xml:id="bill-type-vs-status">
 			<title>Bill Type vs. Status</title>
 
+			<exploration>
+				<p>Sample preview activity</p>
+			</exploration>
+
 			<p>
 				We now summarize the relationships of the type of bill to its status to determine whether specific types of bills were more likely to succeed.
 			</p>
@@ -14,16 +18,21 @@
 			</p>
 				<sage language="r">
 					<input>
+						sink('/dev/null')
 						bills_18_20 &lt;- read.csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/bills_2018-2020.csv")
 						bills_2021 &lt;- read.csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/2021-Anti-Trans-Bills.csv")
 						bills_2022 &lt;- read.csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/2022-Anti-Trans-Bills.csv")
 						bills_2023 &lt;- read.csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/2023-Anti-Trans-Bills.csv")
-						#bills_2021$year &lt;- format(bills_2021$Date, "%Y")
-						#bills_2022$year &lt;- format(bills_2022$Date, "%Y")
-						#bills_2023$year &lt;- format(bills_2023$Date, "%Y")
-						#bills_18_20$year &lt;- format(bills_18_20$Date, "%Y")
-						#bills_21_23 &lt;- rbind(bills_2021, bills_2022, bills_2023)
+						bills_2021$year &lt; substr(bills_2021$Date,1,4)
+						bills_2022$year &lt; substr(bills_2022$Date,1,4)
+						bills_2023$year &lt; substr(bills_2023$Date,1,4)
+						bills_21_23 &lt;- rbind(bills_2021, bills_2022, bills_2023)
+						sink(); closeAllConnections()
 				</input>
+				</sage>
+				<sage language="r">
+					<input> bills_21_23
+					</input>
 				</sage>
 
 			<pre>##                      Bill Type Crossed Over Dead/Failed Introduced Passed
