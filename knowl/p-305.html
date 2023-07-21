@@ -11,8 +11,13 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para">In this course, most of the material in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "mcdevittClassNotesCryptologic2012" missing or not unique]</code> (which is also provided to students as a supplementary resource) is discussed, with the possible exception of probability, which is often left out due to time constraints. A sample of the discussion of the Diffie-Hellman key exchange and modular exponentiation is provided in Section <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "KI-subsec:The-Diffie-Hellman-Key" missing or not unique]</code>. These notes lead into the material on the square-and-multiply algorithm, Euler’s Theorem, and eventually RSA encryption described in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "mcdevittClassNotesCryptologic2012" missing or not unique]</code>. Sometimes, the extended Euclidean algorithm is also introduced after describing the importance of finding multiplicative inverses when cryptanalyzing the affine cipher, though students without much prior mathematical experience tend to find this material confusing and somewhat intimidating.</div>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical"><ol class="decimal">
+<li><div class="para">Alice places her key inside a box and uses a padlock to lock the box. Alice keeps the key to the padlock and sends the locked box to Bob.</div></li>
+<li><div class="para">The box can’t be opened in transit without Alice’s key. When Bob receives the box, he places an <em class="emphasis">additional</em> padlock on the box and keeps the key to his padlock. Bob then sends the doubly-locked box back to Alice.</div></li>
+<li><div class="para">Again, the box can’t be opened in transit without both Alice and Bob’s keys. When Alice receives the box, she <em class="emphasis">unlocks</em> her padlock and sends the box back to Bob.</div></li>
+<li><div class="para">Finally, the box can’t be unlocked in transit without Bob’s key. However, once Bob receives the box, he simply unlocks his padlock and opens the box.</div></li>
+</ol></div>
 <span class="incontext"><a href="extensions-and-alterations.html#p-305" class="internal">in-context</a></span>
 </body>
 </html>

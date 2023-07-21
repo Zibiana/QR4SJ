@@ -12,13 +12,8 @@
 </head>
 <body class="ignore-math">
 <h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para"><em class="emphasis">It is recommended to give students two other messages as well. At this stage students are often not prepared for ciphers <span class="process-math">\(f\)</span> which are not bijective, so one may use, for example, a <em class="emphasis">keyword cipher</em><div class="displaymath process-math">
-\begin{equation*}
-f=\begin{pmatrix}a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g &amp; h &amp; \dots &amp; z \\
-K &amp; E &amp; Y &amp; W &amp; O &amp; R &amp; D &amp; A &amp; \dots &amp; Z 
-\end{pmatrix}
-\end{equation*}
-</div>where the <em class="emphasis">keyword</em> is a chosen English word and the plaintext, again, is long enough or otherwise rigged so that the plaintext letters occur with similar relative frequencies to those of English as a whole. Note the following features of the keyword cipher: first the keyword is spelled out under the first <span class="process-math">\(n\)</span> letters of the plaintext alphabet, where <span class="process-math">\(n\)</span> is the number of distinct letters in the keyword. Then the alphabet is spelled out in order, except that when a letter has already been written as part of the keyword, it is skipped and we move onto the next letter of the alphabet.</em></div>
-<span class="incontext"><a href="preliminary-activity.html#p-226" class="internal">in-context</a></span>
+<div class="para">Inform students that there is a faster way to decrypt shift ciphers than saying the alphabet backwards in their heads. Ask them to try decrypting a message that was encrypted with a very large forward shift such as <span class="process-math">\(+25\text{.}\)</span> How would they do it? Likely by shifting each letter <em class="emphasis">forwards</em> by <span class="process-math">\(1\)</span> to obtain the plaintext message. This means that in the English alphabet, <span class="process-math">\(0=25+1=26\text{,}\)</span> and now you can introduce modular arithmetic (working with modulus <span class="process-math">\(26\)</span> for the foreseeable future). It’s beneficial to provide students with a <em class="emphasis">letter-to-number correspondence sheet</em>, which numbers English letters in increasing order starting with <span class="process-math">\(a=0\text{.}\)</span>
+</div>
+<span class="incontext"><a href="the-caesarshift-cipher.html#p-226" class="internal">in-context</a></span>
 </body>
 </html>

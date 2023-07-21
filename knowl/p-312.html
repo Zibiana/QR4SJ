@@ -12,12 +12,7 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical"><ol class="decimal">
-<li><div class="para">Alice places her key inside a box and uses a padlock to lock the box. Alice keeps the key to the padlock and sends the locked box to Bob.</div></li>
-<li><div class="para">The box can’t be opened in transit without Alice’s key. When Bob receives the box, he places an <em class="emphasis">additional</em> padlock on the box and keeps the key to his padlock. Bob then sends the doubly-locked box back to Alice.</div></li>
-<li><div class="para">Again, the box can’t be opened in transit without both Alice and Bob’s keys. When Alice receives the box, she <em class="emphasis">unlocks</em> her padlock and sends the box back to Bob.</div></li>
-<li><div class="para">Finally, the box can’t be unlocked in transit without Bob’s key. However, once Bob receives the box, he simply unlocks his padlock and opens the box.</div></li>
-</ol></div>
+<div class="para">What is really needed is a mathematical process that works more like padlocks than socks and shoes. In other words, we want to be able to have Alice and Bob each add their locks, then take them off in the opposite order in order to decrypt the message. And we want to do this without it being possible for anyone who intercepts the message to decrypt it! We want a <em class="emphasis">trapdoor one-way function</em> (easy to encrypt, hard to decrypt without the key) in which <em class="emphasis">encryption with two keys</em> is the same as decryption. A one-way function that arose in the affine cipher is multiplication mod <span class="process-math">\(p\)</span> - finding inverses is hard!</div>
 <span class="incontext"><a href="extensions-and-alterations.html#p-312" class="internal">in-context</a></span>
 </body>
 </html>
