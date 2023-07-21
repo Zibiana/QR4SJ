@@ -1,9 +1,29 @@
 	<section xml:id="sec-leg-visualize">
 		<title>Visualizing the Data</title>
 
+<subsection xml:id="intro-to-data-leg">
+			<title>Introduction to the data set and how to work with variables</title>
+
+			<p> A common claim in the news media, and a common feeling among trans and nonbinary folks, is that 2023 is by far the worst recent year for anti-trans legislation. How do we explore if 2023 was the year of anti-trans legislation? This question is vague - what does an answer to this question mean? How do we use this information in our advocacy? In order to conduct research, we need to drill down into more specific questions that can be answered empirically. </p>
+
+			<p> The targeting of the transgender community through legislation has been a significant topic in the news in 2023. We could compare the volume of news stories related to anti-trans legislation in 2023 to the volume in previous years. However, does this approach measure what we are looking for? Perhaps the same story is being repeated multiple times? </p>
+
+			<p> A better approach is to look at the legislation itself. We can ask a similar question about the legislation. What - if anything - was different about the volume of anti-trans legislation in 2023 from the volume in previous years? This is another question we can investigate with data in order to tell this story. </p>
+
+			<p>This is an important story in that we need to document hate in order to compare it to other cases of hate in the past and in the future. We are trying to understand broader patterns in order to better understand where our advocacy work may make a difference. 
+			</p>
+
+			<p>Lets take a look at the data we sourced and cleaned in the last section. </p>
+
+			<p> Note that <term>crossing over</term> refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.
+						</p>		
+
+</subsection>			
+
+
 
 		<subsection xml:id="bill-type-vs-status">
-			<title>Bill Type vs. Status</title>
+			<title>OLD STUFF BELOW THIS LINE!!!!!!</title>
 
 			<exploration>
 				<p>Sample preview activity</p>

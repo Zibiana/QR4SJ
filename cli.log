@@ -1,16 +1,8 @@
-INFO    : PreTeXt project found in `/Users/drew/DAAAAMN/QR4SJ`.
+INFO    : PreTeXt project found in `/Users/bthompson/Dropbox/github/QR4SJ`.
 WARNING : Project's CLI version could not be detected from `requirements.txt`.
 WARNING : Try `pretext init --refresh` to produce a compatible file.
-INFO    : Now preparing local server to preview directory `/Users/drew/DAAAAMN/QR4SJ/output/web`.
-INFO    :   (Reminder: use `pretext deploy` to deploy your built project to a public
-INFO    :   GitHub Pages site that can be shared with readers who cannot access your
-INFO    :   personal computer.)
+INFO    : Preparing to deploy from active `main` git branch.
 INFO    : 
-WARNING : Port 8000 could not be used.
-WARNING : Trying port 53933 instead.
-
-INFO    : Success! The most recent build of your project can be viewed in a web browser at the following url:
-INFO    :     http://localhost:53933
-INFO    : This page should open in a new tab automatically.
-INFO    : Use [Ctrl]+[C] to halt the server.
-
+INFO    : Changes to project source since last commit detected.
+INFO    : Add/committing these changes to local Git repository.
+INFO    : 
