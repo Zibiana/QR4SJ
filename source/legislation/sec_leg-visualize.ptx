@@ -1,19 +1,18 @@
 	<section xml:id="sec-leg-visualize">
 		<title>Visualizing the Data</title>
 
-<subsection xml:id="intro-to-data-leg">
+<subsection xml:id="sec-intro-to-data-leg">
 			<title>Introduction to the data set and how to work with variables</title>
 
-			<p> A common claim in the news media, and a common feeling among trans and nonbinary folks, is that 2023 is by far the worst recent year for anti-trans legislation. How do we explore if 2023 was the year of anti-trans legislation? This question is vague - what does an answer to this question mean? How do we use this information in our advocacy? In order to conduct research, we need to drill down into more specific questions that can be answered empirically. </p>
+			<p> A common claim in the news media, and a common feeling among trans and nonbinary folks, is that 2023 is by far the worst recent year for anti-trans legislation. How do we explore if 2023 was the year of anti-trans legislation? This question is vague - what does an answer to this question mean? How do we use this information in our advocacy? In order to conduct research, we need to drill down into more specific questions that can be answered empirically. This is an important story in that we need to document hate in order to compare it to other cases of hate in the past and in the future. We are trying to understand broader patterns in order to better understand where our advocacy work may make a difference. 
+			</p>
 
 			<p> The targeting of the transgender community through legislation has been a significant topic in the news in 2023. We could compare the volume of news stories related to anti-trans legislation in 2023 to the volume in previous years. However, does this approach measure what we are looking for? Perhaps the same story is being repeated multiple times? </p>
 
 			<p> A better approach is to look at the legislation itself. We can ask a similar question about the legislation. What - if anything - was different about the volume of anti-trans legislation in 2023 from the volume in previous years? This is another question we can investigate with data in order to tell this story. </p>
 
-			<p>This is an important story in that we need to document hate in order to compare it to other cases of hate in the past and in the future. We are trying to understand broader patterns in order to better understand where our advocacy work may make a difference. 
-			</p>
 
-			<p>Lets take a look at the data we sourced and cleaned in the last section. </p>
+			<p>Lets take a look at the data we sourced and cleaned in the last section. Note, we incude in the cleaned version of the data in this section, and so if you missed the prior section, or did not finish you can still explore in this section.   </p>
 
 			<p> Note that <term>crossing over</term> refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.
 						</p>		
@@ -21,57 +20,214 @@
 </subsection>		
 
 
-<subsection><title>How to explore the data visually</title>
+<subsection xml:id="sec-explore-visually"><title>How to explore the data visually</title>
 
 <p>
-We often start investigating our questions by exploring our data. One of the most powerful ways to explore data (as well as to communicate with data) is through visualization through graphs and charts. 
+We often start investigating our questions by exploring and becoming familiar with our data. One of the most powerful ways to explore data (as well as to communicate with data) is through visualization through graphs and charts. 
 </p>
 
+
+
 <activity>
+
+
 <p>
-\begin{enumerate}
-\item What are some types of graphs you have seen before? For each, what do you think that type of graph is useful for?
+<ol>
+	<li>
+		<p>
+			\begin{enumerate} 
+\item What are some types of graphs you have seen before? For each, what do you think that type of graph is useful for? </p>   </li>
+<li>
+		<p>
 \item The data set includes the status of each bill.
+
+ </p>     </li>
+<li>
+		<p>
+
 \begin{enumerate}
 \item Review the dataset. What are the different statuses?
+</p> </li>
+<li>
+		<p>
 \item Let’s generate a graph showing how many bills there are with each status. 
+
+</p> </li>
+
+
+<li>
+		<p>
 
 The following code comes from the programming language R:
 [INSERT CODE]
+
+</p> </li>
+
+<li>
+		<p>
+
 To generate a graph, replace the [INSERT LABEL] with one of the following:
 \begin{itemize}
+
+</p> </li>
+
+<li>
+		<p>
+
 \item A bar graph: “geom_bar(stat = “identity”)”
+
+</p> </li>
+
+<li>
+		<p>
+ 
 \item A histogram: “geom_histogram(binwidth = 1)”
+
+</p> </li>
+
+<li>
+		<p>
+ 
 \item A boxplot: “geom_boxplot()”
+
+</p> </li>
+
+<li>
+		<p>
+
 \item A line graph: “geom_line()”
+
+</p> </li>
+
+<li>
+		<p>
+
 \item A pie graph: This is the Nickelback of charts (see https://www.businessinsider.com/pie-charts-are-the-worst-2013-6)
+
+</p> </li>
+
+<li>
+		<p>
+ 
 \item A scatterplot: “geom_point()”
 \end{itemize}
+
+</p> </li>
+
+<li>
+		<p>
+ 
 Try to create each type of graph in R. Some will cause errors - that is a sign that this type of graph isn’t appropriate for this question.
 
+
+</p> </li>
+
+<li>
+		<p>
+
 \item Which graph do you think is the clearest? Why do you think that is?
+
+</p> </li>
+
+<li>
+		<p>
+ 
 \item What do you notice from this graph? Does this tell you anything about our question regarding 2023?
+
+</p> </li>
+
+<li>
+		<p>
+
 \end{enumerate}
-\item Now let’s look at something else. Let’s look at the total number of bills proposed between 2018 and 2023.
+\item Now let us look at something else. Let us look at the total number of bills proposed between 2018 and 2023.
+
+</p> </li>
+
+<li>
+		<p>
+
 \begin{enumerate}
 \item Using the code below, generate each type of graph. Remember that some may throw errors because they aren’t appropriate.
+
+</p> </li>
+
+<li>
+		<p>
+
 \item Which graph do you think is the clearest? Why do you think that is?
+
+</p> </li>
+
+<li>
+		<p>
+
 \item What do you notice from this graph? Does this tell you anything about our question?
 \end{enumerate}
-\item Let’s look at all of the bills signed and enacted between 2018 and 2023.
+
+</p> </li>
+
+<li>
+		<p>
+
+\item Let us look at all of the bills signed and enacted between 2018 and 2023.
+
+</p> </li>
+
+<li>
+		<p>
+
 \begin{enumerate}
-\item Using the code below, generate each type of graph. Remember that some may throw errors because they aren’t appropriate.
+\item Using the code below, generate each type of graph. Remember that some may throw errors because they are not appropriate.
+
+</p> </li>
+
+<li>
+		<p>
+
 \item Which graph do you think is the clearest? Why do you think that is?
+
+</p> </li>
+
+<li>
+		<p>
+
 \item What do you notice from this graph? Does this tell you anything about our question?
+
+</p> </li>
+
+<li>
+		<p>
 \end{enumerate}
 \item Finally, let’s look at all of the bills signed and enacted between 2018 and 2023.
+
+</p> </li>
+
+<li>
+		<p>
+
 \begin{enumerate}
-\item Using the code below, generate each type of graph. Remember that some may throw errors because they aren’t appropriate.
+\item Using the code below, generate each type of graph. Remember that some may throw errors because they are not appropriate.
+
+</p> </li>
+
+<li>
+		<p>
 \item Which graph do you think is the clearest? Why do you think that is?
+
+</p> </li>
+
+<li>
+		<p>
+
 \item What do you notice from this graph? Does this tell you anything about our question?
 \end{enumerate}
 
 \end{enumerate}
+</p> </li>
+
+
+</ol>
 </p>
 
 </activity>
