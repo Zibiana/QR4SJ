@@ -34,83 +34,46 @@ We often start investigating our questions by exploring and becoming familiar wi
 <p>
 <ol>
 <li> What are some types of graphs you have seen before? For each, what do you think that type of graph is useful for?</li>
+<li> The data set includes the status of each bill. Review the dataset. What are the different statuses?</li>
+<li> Let’s generate a graph showing how many bills there are with each status. The following code comes from the programming language R:
+[INSERT CODE]. To generate a graph, replace the [INSERT LABEL] with one of the following:
+<ol>
+	<li>
+		<p>
+			A bar graph: “geom_bar(stat = “identity”)”
+		</p>
+	</li>
+	<li>
+		<p>
+			A histogram: “geom_histogram(binwidth = 1)”
+		</p>
+	</li>
+	<li>
+		<p>
+			A boxplot: “geom_boxplot()”
+		</p>
+	</li>
+	<li>
+		<p>
+			A line graph: “geom_line()”
+		</p>
+	</li>
+	<li>
+		<p>
+			A pie graph: This is the Nickelback of charts (see https://www.businessinsider.com/pie-charts-are-the-worst-2013-6)
+		</p>
+	</li>
+	<li>
+		<p>
+			A scatterplot: “geom_point()”
+		</p>
+	</li>
+</ol>
+	</li>
 </ol> </p>   
-<li>
-		<p>
-The data set includes the status of each bill.
-
- </p>     </li>
-<li>
-		<p>
 
 
-Review the dataset. What are the different statuses?
-</p> </li>
-<li>
-		<p>
-Let’s generate a graph showing how many bills there are with each status. 
-
-</p> </li>
-
-
-<li>
-		<p>
-
-The following code comes from the programming language R:
-[INSERT CODE]
-
-</p> </li>
-
-<li>
-		<p>
-
-To generate a graph, replace the [INSERT LABEL] with one of the following:
-
-
-</p> </li>
-
-<li>
-		<p>
-
-A bar graph: “geom_bar(stat = “identity”)”
-
-</p> </li>
-
-<li>
-		<p>
  
-A histogram: “geom_histogram(binwidth = 1)”
-
-</p> </li>
-
-<li>
-		<p>
- 
-A boxplot: “geom_boxplot()”
-
-</p> </li>
-
-<li>
-		<p>
-
-A line graph: “geom_line()”
-
-</p> </li>
-
-<li>
-		<p>
-
-A pie graph: This is the Nickelback of charts (see https://www.businessinsider.com/pie-charts-are-the-worst-2013-6)
-
-</p> </li>
-
-<li>
-		<p>
- 
-A scatterplot: “geom_point()”
-
-
-</p> </li>
 
 <li>
 		<p>
