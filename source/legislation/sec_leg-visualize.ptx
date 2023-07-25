@@ -325,14 +325,13 @@ What feature of the line graph demonstrates this increase?
 We might want to know what prompted these increases to happen, and knowing which types of bills were being proposed during those years might provide insight. Below is a line graph showing just one type of bill.  By changing VARIABLE to other types (list), you can generate different graphs.  
 </p>
 
-
-<!--
-<sage language=”r”>
+<p>
+<sage language="r">
 <input>
 #Line graph of one *type* of bill over time
 </input>
 </sage>
--->
+</p>
 
 <activity><p>
 <ol>
