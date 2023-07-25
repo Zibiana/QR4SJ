@@ -398,10 +398,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
 <div class="toc-item"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.3.2</span> <span class="title">How to explore the data visually</span></a></div>
 <ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.3.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.3.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#subsubsec-how-to-support-using-other-sources" class="internal"><span class="codenumber">5.3.3.1</span> <span class="title">How can we support storytelling using different data sources?</span></a></div></li></ul>
-</li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.3.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
 <li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
 <li>
 <div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">5.3.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span></a></div>
@@ -529,16 +526,18 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6</span><span class="period">.</span>
 </h4>
 <div class="para" id="p-596">What feature of the line graph demonstrates this increase?</div></article><div class="para" id="p-597">We might want to know what prompted these increases to happen, and knowing which types of bills were being proposed during those years might provide insight. Below is a line graph showing just one type of bill.  By changing VARIABLE to other types (list), you can generate different graphs.</div>
+<div class="para" id="p-598"><pre class="ptx-sagecell sagecell-r" id="sage-1"><script type="text/x-sage">#Line graph of one *type* of bill over time
+</script></pre></div>
 <article class="activity project-like" id="activity-7"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">7</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-598"><ol class="decimal">
+<div class="para logical" id="p-599"><ol class="decimal">
 <li id="li-225"><div class="para" id="p-derived-li-225">Which types of bills are increasing in prevalence? Which are decreasing?</div></li>
 <li id="li-226"><div class="para" id="p-derived-li-226">What type(s) of bills drove the large increase in 2021? What types of bills drove the large increase in 2023?</div></li>
 </ol></div></article><article class="activity project-like" id="activity-8"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">8</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-599">
+<div class="para logical" id="p-600">
 <div class="para">Our analysis has so far been focused on bills that were introduced.</div>
 <ol class="decimal">
 <li id="li-227"><div class="para" id="p-derived-li-227">What do we learn from analyzing bills that have been introduced?</div></li>
@@ -547,10 +546,10 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
 </ol>
 </div></article><article class="remark remark-like" id="remark-1"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span>
-</h4>Tell students how to re-run previous analyses for *passed* bills rather than *introduced* bills.</article><div class="para" id="p-600">Our previous visualizations showed that 2023 did have a significant increase in the number of anti-trans bills that were both introduced and passed. In addition to the <em class="emphasis">absolute</em> frequency counts of bills that have passed, we might also be interested in the <em class="emphasis">relative</em> proportion of bills that have been passed–that is, are legislators who are targeting trans people becoming more successful in their efforts?</div>
-<div class="para" id="p-601">SOME KIND OF VISUALIZATION OF “SUCCESS” RATE OVER TIME GOES HERE</div>
-<div class="para" id="p-602">SUMMARIZE THE STORY HERE</div>
-<div class="para logical" id="p-603"><ol class="decimal">
+</h4>Tell students how to re-run previous analyses for *passed* bills rather than *introduced* bills.</article><div class="para" id="p-601">Our previous visualizations showed that 2023 did have a significant increase in the number of anti-trans bills that were both introduced and passed. In addition to the <em class="emphasis">absolute</em> frequency counts of bills that have passed, we might also be interested in the <em class="emphasis">relative</em> proportion of bills that have been passed–that is, are legislators who are targeting trans people becoming more successful in their efforts?</div>
+<div class="para" id="p-602">SOME KIND OF VISUALIZATION OF “SUCCESS” RATE OVER TIME GOES HERE</div>
+<div class="para" id="p-603">SUMMARIZE THE STORY HERE</div>
+<div class="para logical" id="p-604"><ol class="decimal">
 <li id="li-230"><div class="para" id="p-derived-li-230">What total number of anti-trans bills were proposed each year from 2018 to 2023?</div></li>
 <li id="li-231"><div class="para" id="p-derived-li-231">What total number of anti-trans bills were <em class="emphasis">passed</em> each of these years?</div></li>
 <li id="li-232"><div class="para" id="p-derived-li-232">What types of anti-trans bills were proposed more often in 2023 than in previous years?</div></li>
@@ -559,78 +558,44 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
 <article class="activity project-like" id="activity-9"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">9</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-604"><ol class="decimal">
+<div class="para logical" id="p-605"><ol class="decimal">
 <li id="li-234"><div class="para" id="p-derived-li-234">The data in 2023 stops in April 2023, does this impact our ability to answer any of these questions? How does it impact our ability to answer our questions?</div></li>
 <li id="li-235"><div class="para" id="p-derived-li-235">In 2023, since the session is not over in many states, we run the analysis in two ways: including both bills that crossed over and bills that were signed/enacted, and only considering bills which were signed/enacted. What are the pros and cons of each of these decisions in studying the data?</div></li>
 <li id="li-236"><div class="para" id="p-derived-li-236">What observations did you make about  how many anti-trans bills pass than all previous years since 2018 combined (again, recall that the 2023 data in this analysis only goes through April 21, 2023).</div></li>
-</ol></div></article><div class="para" id="p-605">Given our questions this means the variables and levels were are interested in are the bills passed, crossed over (hence passed by at least one chamber of the legislature and not yet dead), and/or signed and enacted between 2021 and 2023, as well as in each year and in the years preceding 2023.</div>
-<div class="para" id="p-606">As you explored in the activity part 1, these bills <dfn class="terminology">only go through April 21, 2023</dfn>. To emphasize the change in the number of bills that have a chance of passing or have already been passed over time, we combine all the years 2017-2022 and compare them to 2023.</div>
-<div class="para" id="p-607">Our first visualizations give information about the count of these bills, but let us talk about the <em class="emphasis">likelihood</em> of any particular anti-trans bill to pass in 2023 compared to previous years. We saw in graph blah that there appears to be a slight increase in the proportion of bills of all types that passed in 2023 compared to 2018-22.</div>
-<div class="para" id="p-608">This final image doesn’t demonstrate an obvious finding, but does motivate another question. Is the difference we are seeing between the two groups significant? What can we <em class="emphasis">infer</em> if we had more refined tools like statistical tests (chi squared, ANOVA, prop test, etc). Or we can refine our questions further, for example, what changes in voter districts, voter laws, or state congress and senate makeup has changed from 2022 to 2023?</div>
+</ol></div></article><div class="para" id="p-606">Given our questions this means the variables and levels were are interested in are the bills passed, crossed over (hence passed by at least one chamber of the legislature and not yet dead), and/or signed and enacted between 2021 and 2023, as well as in each year and in the years preceding 2023.</div>
+<div class="para" id="p-607">As you explored in the activity part 1, these bills <dfn class="terminology">only go through April 21, 2023</dfn>. To emphasize the change in the number of bills that have a chance of passing or have already been passed over time, we combine all the years 2017-2022 and compare them to 2023.</div>
+<div class="para" id="p-608">Our first visualizations give information about the count of these bills, but let us talk about the <em class="emphasis">likelihood</em> of any particular anti-trans bill to pass in 2023 compared to previous years. We saw in graph blah that there appears to be a slight increase in the proportion of bills of all types that passed in 2023 compared to 2018-22.</div>
+<div class="para" id="p-609">This final image doesn’t demonstrate an obvious finding, but does motivate another question. Is the difference we are seeing between the two groups significant? What can we <em class="emphasis">infer</em> if we had more refined tools like statistical tests (chi squared, ANOVA, prop test, etc). Or we can refine our questions further, for example, what changes in voter districts, voter laws, or state congress and senate makeup has changed from 2022 to 2023?</div>
 <article class="activity project-like" id="activity-10"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">10</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-609">stuffstuff</div></article><div class="para" id="p-610">Tell a story about the data What information contributes to answering our research question? What information does not? What limitations are there when working with this data?</div>
+<div class="para" id="p-610">stuffstuff</div></article><div class="para" id="p-611">Tell a story about the data What information contributes to answering our research question? What information does not? What limitations are there when working with this data?</div>
 <article class="activity project-like" id="activity-11"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">11</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-611">In section 1, you wrote ideas about research questions you wanted to explore given this data set. Using the tools we have learned in this section, which questions do you think could be explored and potentially answered? Why you think so? Which graphs would you utilize to explore the data?</div></article><section class="subsubsection" id="subsubsec-how-to-support-using-other-sources"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span> <span class="codenumber">5.3.3.1</span> <span class="title">How can we support storytelling using different data sources?</span>
-</h4>
-<div class="para" id="p-612">Throughout this chapter, you have explored and asked questions about a data set on anti-trans legislation in the US in recent years. This provides a broad overview of the landscape of anti-trans legislation, where it is happening, and the different aspects of civil rights that have been targeted. As we continue to grapple with what these means for us as global citizens and members of society, it’s important to know how to contribute towards the change we want to see in this realm.</div>
-<div class="para" id="p-613">An example of an anti-trans bill that was struck down after legal action and scrutiny is Tennessee’s SB-0001 from 2023. The legislators who supported the bill sought to restrict minors in Tennessee from accessing gender-affirming care. A word-chart of the bill is shown below. Much of the language that lawmakers used surrounded terms like “minors”, “performed”, and “medical procedure(s)” in reference to gender-affirming care for trans youth. The term “violation” was used to frame this care in opposition to the laws proposed in the bill.</div>
-<div class="para" id="p-614">A week before the law was slated to go into effect, it was struck down by a federal judge, in a case brought forth by a 15-year-old transgender girl and her family. In speaking about the effects of gender-affirming care, the girl’s mother said, “We have a confident, happy daughter now, who is free to be herself and she is thriving” [1]. Judge Eli Richardson, in his decision on the case, repeatedly argued that “parents have a fundamental right to direct the medical care of their children” [2]. This argument highlights the role of parents in seeking basic medical care for transgender youth, and it also uses a commonplace term that was never found in the bill itself: “medical care.” In contrast, the downstricken bill referred to medical “procedure(s),” a term chosen to connote experimental, invasive, and potentially harmful treatments.</div>
-<article class="activity project-like" id="activity-12"><h5 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">12</span><span class="period">.</span>
-</h5>
-<div class="para" id="p-615">Consider how else you might be able to use a wordchart like this, or how else you could visualize the distribution of words in a bill that might bring some other obscured feature to light.</div> <div class="para logical" id="p-616"><ol class="decimal">
-<li id="li-237"><div class="para" id="p-derived-li-237">What is a research question that you can answer with a wordchart alone?</div></li>
-<li id="li-238"><div class="para" id="p-derived-li-238">How can you combine a wordchart with other data sources or visualizations when making an argument?</div></li>
-<li id="li-239"><div class="para" id="p-derived-li-239">What is a different way you can imagine to visualize word frequency or textual features of a bill?</div></li>
-</ol></div></article><article class="exercise exercise-like" id="exercise-98"><h5 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
-</h5>
-<div class="para" id="p-617">Next, check out the code chunk below, where we provide the code needed to create the wordchart. As you explore the code and tweak it, try out the following exercises.</div>
-<div class="para logical" id="p-618"><ol class="decimal">
-<li id="li-240"><div class="para" id="p-derived-li-240">Try changing the bill that is being modeled in the word chart. What changes do you see in the output?</div></li>
-<li id="li-241"><div class="para" id="p-derived-li-241">Think of a particular bill *type* that you are interested in (like Sports Bans, or Drag Performance), and select a bill of that type. Using that bill, create the corresponding word chart. What do you notice about the words that are most frequent? How does that output compare to your expectations?</div></li>
-<li id="li-242"><div class="para" id="p-derived-li-242">Using a word chart that you created, write a few sentences about what you noticed and what you can say about the bill itself, using evidence from your chart.</div></li>
-</ol></div></article><div class="para" id="p-619">CODE CHUNK NEEDED for students to play around with word chart creation</div>
-<div class="para" id="p-620">You can analyze a bill using word barcharts and go in many different directions. Above, we showed how tracking the broader history of a bill can add context to the word barchart and aid in interpreting how different terms were used. It also alludes to the roles people can play in fighting for justice against the anti-trans movement. Even beyond the plaintiffs and the judge—the case was brought forward by civil rights organizations; the court cited medical researchers who generated robust findings to demonstrate the safety and effectiveness of gender-affirming care; the residents of Tennessee spoke during legislative hearings to generate discussions that forced lawmakers to explain their reasoning, most of which was debunked during the court case.</div>
-<article class="activity project-like" id="activity-13"><h5 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">13</span><span class="period">.</span>
-</h5>
-<div class="para" id="p-621">Next, think about what type of action you can take in your own community.</div> <div class="para logical" id="p-622"><ol class="decimal">
-<li id="li-243"><div class="para" id="p-derived-li-243">How can you use tools like data visualization and text analysis to learn something about anti-trans legislation and share what you learned with other people in your life?</div></li>
-<li id="li-244"><div class="para" id="p-derived-li-244">What are other issues you care about that you can learn more about and contribute to change using the tools from this section?</div></li>
-</ol></div></article><div class="para" id="p-623">References:</div>
-<div class="para logical" id="p-624"><ol class="decimal">
-<li id="li-245"><div class="para" id="p-derived-li-245">[1] Legal case details from ACLU. https://www.aclu.org/cases/l-w-v-skrmetti</div></li>
-<li id="li-246"><div class="para" id="p-derived-li-246">[2] Court documents and judge’s decision. https://storage.courtlistener.com/recap/gov.uscourts.tnmd.94244/gov.uscourts.tnmd.94244.167.0.pdf</div></li>
-<li id="li-247"><div class="para" id="p-derived-li-247">[3] Narrative sourced from Erin in the Morning. https://www.erininthemorning.com/p/ky-tn-judges-debunk-anti-trans-arguments</div></li>
-</ol></div></section></section><section class="subsection" id="subsec-leg-visual-exercise"><h3 class="heading hide-type">
+<div class="para" id="p-612">In section 1, you wrote ideas about research questions you wanted to explore given this data set. Using the tools we have learned in this section, which questions do you think could be explored and potentially answered? Why you think so? Which graphs would you utilize to explore the data?</div></article></section><section class="subsection" id="subsec-leg-visual-exercise"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.4</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-99"><h4 class="heading">
+<article class="exercise exercise-like" id="exercise-98"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-613">In Section 2, you learned how to read visualizations and how to modify code to create them. Using a question from exercise 1, create graphs that you feel would best help you answer your question. Explain what each graph represents, and what you are noticing in those graphs.</div></article><article class="exercise exercise-like" id="exercise-99"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-625">In Section 2, you learned how to read visualizations and how to modify code to create them. Using a question from exercise 1, create graphs that you feel would best help you answer your question. Explain what each graph represents, and what you are noticing in those graphs.</div></article><article class="exercise exercise-like" id="exercise-100"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span>
-</h4>
-<div class="para" id="p-626">In Section 3, we learned how to synthesize exploratory data visualizations and tell a story with our data. Based on the graphs you created in the prior exercise, tell a story with your data. What actions do you want your data to lead to and how are you using the data to tell that story?</div></article></section><section class="subsection" id="bill-type-vs-status"><h3 class="heading hide-type">
+<div class="para" id="p-614">In Section 3, we learned how to synthesize exploratory data visualizations and tell a story with our data. Based on the graphs you created in the prior exercise, tell a story with your data. What actions do you want your data to lead to and how are you using the data to tell that story?</div></article></section><section class="subsection" id="bill-type-vs-status"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span>
 </h3>
 <article class="exploration project-like" id="exploration-1"><h4 class="heading">
-<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">14</span><span class="period">.</span>
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">12</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-627">Sample preview activity</div></article><div class="para" id="p-628">We now summarize the relationships of the type of bill to its status to determine whether specific types of bills were more likely to succeed.</div>
-<div class="para" id="p-629">Note that <dfn class="terminology">crossing over</dfn> refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.</div>
-<pre class="ptx-sagecell sagecell-r" id="sage-1"><script type="text/x-sage">sink('/dev/null')
+<div class="para" id="p-615">Sample preview activity</div></article><div class="para" id="p-616">We now summarize the relationships of the type of bill to its status to determine whether specific types of bills were more likely to succeed.</div>
+<div class="para" id="p-617">Note that <dfn class="terminology">crossing over</dfn> refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.</div>
+<pre class="ptx-sagecell sagecell-r" id="sage-2"><script type="text/x-sage">sink('/dev/null')
 bills <- read.csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/anti-trans-bills-clean.csv")
 sink(); closeAllConnections()
 </script></pre>
-<div class="para" id="p-630">After loading a data file, it is good practice to look at the first few rows to make sure everything looks reasonable, and to get an idea for what data is present.</div>
-<pre class="ptx-sagecell sagecell-r" id="sage-2"><script type="text/x-sage">head(bills)
+<div class="para" id="p-618">After loading a data file, it is good practice to look at the first few rows to make sure everything looks reasonable, and to get an idea for what data is present.</div>
+<pre class="ptx-sagecell sagecell-r" id="sage-3"><script type="text/x-sage">head(bills)
 </script></pre>
 <pre class="code-block tex2jax_ignore">##                      Bill Type Crossed Over Dead/Failed Introduced Passed
 ##               Drag Performance            6          11         19      0
@@ -655,7 +620,7 @@ sink(); closeAllConnections()
 ##              35      4   293
 ##              78      5   893
 </pre>
-<div class="para" id="p-631">We see what percentage of each bill status was made up of each bill type:</div>
+<div class="para" id="p-619">We see what percentage of each bill status was made up of each bill type:</div>
 <pre class="code-block tex2jax_ignore">##                      Bill Type Crossed Over Dead/Failed Introduced Passed
 ##               Drag Performance        15.8%       28.9%      50.0%   0.0%
 ##                     Healthcare         4.4%       37.1%      48.9%   2.2%
@@ -679,7 +644,7 @@ sink(); closeAllConnections()
 ##           11.9%   1.4% 100.0%
 ##            8.7%   0.6% 100.0%
 </pre>
-<div class="para" id="p-632">And what percentage of each bill type had each status:</div>
+<div class="para" id="p-620">And what percentage of each bill type had each status:</div>
 <pre class="code-block tex2jax_ignore">##          Status Drag Performance Healthcare ID Updates
 ##    Crossed Over             9.1%      15.2%       6.1%
 ##     Dead/Failed             3.8%      29.2%       3.1%
@@ -705,24 +670,24 @@ sink(); closeAllConnections()
 ##                 0.0%           80.0% 100.0%
 ##                11.4%           32.8% 100.0%
 </pre>
-<div class="para" id="p-633">It seems like bills related to “ID updates” (i.e., preventing trans and nonbinary people from having their IDs show their correct gender identity), “public facilities” (often preventing trans people from using the bathroom that fits their gender identity), and “youth athletics” (i.e., preventing trans girls from competing on girls’ sports teams) are most likely to be signed by their state’s governor and enacted into law (after passing both legislative chambers).</div>
-<div class="para" id="p-634">However, of all the bills that were signed and enacted, most of them by far were related to youth athletics (over double the number of bills from any other category), followed by healthcare, suggesting that more bills were proposed in those categories.</div>
-<div class="para" id="p-635">We seek to represent this data in a side-by-side bar chart. In order to provide a more digestible, big-picture viewpoint, we classify the bills by the type of gender-affirming care that is targeted: social transition (excluding artistic performance, which Track Trans Legislation categorizes under <code class="code-inline tex2jax_ignore">Drag Performance</code>), healthcare/medical transition, drag performances (noting that performing in drag and being transgender are distinct, though sometimes overlapping, categories), and <code class="code-inline tex2jax_ignore">Other</code>.</div>
-<div class="para" id="p-636">
+<div class="para" id="p-621">It seems like bills related to “ID updates” (i.e., preventing trans and nonbinary people from having their IDs show their correct gender identity), “public facilities” (often preventing trans people from using the bathroom that fits their gender identity), and “youth athletics” (i.e., preventing trans girls from competing on girls’ sports teams) are most likely to be signed by their state’s governor and enacted into law (after passing both legislative chambers).</div>
+<div class="para" id="p-622">However, of all the bills that were signed and enacted, most of them by far were related to youth athletics (over double the number of bills from any other category), followed by healthcare, suggesting that more bills were proposed in those categories.</div>
+<div class="para" id="p-623">We seek to represent this data in a side-by-side bar chart. In order to provide a more digestible, big-picture viewpoint, we classify the bills by the type of gender-affirming care that is targeted: social transition (excluding artistic performance, which Track Trans Legislation categorizes under <code class="code-inline tex2jax_ignore">Drag Performance</code>), healthcare/medical transition, drag performances (noting that performing in drag and being transgender are distinct, though sometimes overlapping, categories), and <code class="code-inline tex2jax_ignore">Other</code>.</div>
+<div class="para" id="p-624">
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-8-1.png" class="contained"></div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-8-2.png" class="contained"></div>
 </div>
-<div class="para" id="p-637">In order to better see proportions, we also show a stacked bar chart that scales every <em class="emphasis">x</em>-axis group to 100%:</div>
-<div class="para" id="p-638">
+<div class="para" id="p-625">In order to better see proportions, we also show a stacked bar chart that scales every <em class="emphasis">x</em>-axis group to 100%:</div>
+<div class="para" id="p-626">
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-9-1.png" class="contained"></div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-9-2.png" class="contained"></div>
 </div>
 <section class="subsubsection" id="did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span> <span class="codenumber">5.3.5.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span>
 </h4>
-<div class="para" id="p-639">However, the observed trends could simply relate to the fact that the largest <em class="emphasis">numbers</em> of bills nationwide were proposed in those categories.</div>
-<div class="para" id="p-640">In order to simplify the following charts and analysis, we combine certain bill statuses into categories: bills that have crossed over, passed, or were signed and enacted have a significant chance of impacting the lives of trans and nonbinary people in that state, while bills that were vetoed, died, or failed have no chance of impacting lives. Bills listed simply as “introduced” may or may not have the support to eventually pass, but since they are not currently impacting the ability of trans/nonbinary people to access healthcare, play sports, etc., we count them as “Not Passed”.</div>
-<div class="para" id="p-641">Now, we want to see a breakdown of the number and percentages of each type of bill that did and didn’t pass.</div>
+<div class="para" id="p-627">However, the observed trends could simply relate to the fact that the largest <em class="emphasis">numbers</em> of bills nationwide were proposed in those categories.</div>
+<div class="para" id="p-628">In order to simplify the following charts and analysis, we combine certain bill statuses into categories: bills that have crossed over, passed, or were signed and enacted have a significant chance of impacting the lives of trans and nonbinary people in that state, while bills that were vetoed, died, or failed have no chance of impacting lives. Bills listed simply as “introduced” may or may not have the support to eventually pass, but since they are not currently impacting the ability of trans/nonbinary people to access healthcare, play sports, etc., we count them as “Not Passed”.</div>
+<div class="para" id="p-629">Now, we want to see a breakdown of the number and percentages of each type of bill that did and didn’t pass.</div>
 <pre class="code-block tex2jax_ignore">##  Bill Type Not Passed Passed Total
 ##       Drag         30      8    38
 ##    Medical        197     32   229
@@ -737,38 +702,38 @@ sink(); closeAllConnections()
 ##     Social      80.8%  19.2%
 ##      Total      82.3%  17.7%
 </pre>
-<div class="para" id="p-642">We wish to plot the number and proportion of each type of bill that was passed.</div>
+<div class="para" id="p-630">We wish to plot the number and proportion of each type of bill that was passed.</div>
 <figure class="figure figure-like" id="figure-32"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-13-1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="figure figure-like" id="figure-33"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-14-1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-643">From this chart, it appears that bills restricting hormone therapy, puberty blockers, and other medical interventions are actually somewhat less likely to pass than other types of bills, and that while the number of anti-drag bills is substantially smaller than the number of other types of bills, they are somewhat more likely to pass.</div>
-<div class="para" id="p-644">Importantly, fewer than 25% of any type of bill since 2018 has passed. What happens when we break down the bills by year?</div></section></section><section class="subsection" id="is-2023-the-year-of-transphobia"><h3 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="figure figure-like" id="figure-33"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-14-1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-631">From this chart, it appears that bills restricting hormone therapy, puberty blockers, and other medical interventions are actually somewhat less likely to pass than other types of bills, and that while the number of anti-drag bills is substantially smaller than the number of other types of bills, they are somewhat more likely to pass.</div>
+<div class="para" id="p-632">Importantly, fewer than 25% of any type of bill since 2018 has passed. What happens when we break down the bills by year?</div></section></section><section class="subsection" id="is-2023-the-year-of-transphobia"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.6</span> <span class="title">Is 2023 the Year of Transphobia?</span>
 </h3>
-<div class="para" id="p-645">A common claim in the news media, and a common feeling among trans and nonbinary folks, is that 2023 is by far the worst recent year for anti-trans legislation. Let’s investigate the following questions:</div>
-<div class="para logical" id="p-646"><ol class="decimal">
-<li id="li-248"><div class="para" id="p-derived-li-248">What total number of anti-trans bills were proposed each year from 2018 to 2023?</div></li>
-<li id="li-249"><div class="para" id="p-derived-li-249">What total number of anti-trans bills were <em class="emphasis">passed</em> each of these years? In 2023, since the session is not over in many states, we run the analysis in two ways: including both bills that crossed over and bills that were signed/enacted, and only considering bills which were signed/enacted.</div></li>
-<li id="li-250"><div class="para" id="p-derived-li-250">What types of anti-trans bills were proposed more often in 2023 than in previous years?</div></li>
-<li id="li-251"><div class="para" id="p-derived-li-251">What types of anti-trans bills were <em class="emphasis">passed</em> more often in 2023?</div></li>
-<li id="li-252"><div class="para" id="p-derived-li-252">What states introduced/passed the majority of anti-trans bills in 2023, and are these the same states as in previous years?</div></li>
+<div class="para" id="p-633">A common claim in the news media, and a common feeling among trans and nonbinary folks, is that 2023 is by far the worst recent year for anti-trans legislation. Let’s investigate the following questions:</div>
+<div class="para logical" id="p-634"><ol class="decimal">
+<li id="li-237"><div class="para" id="p-derived-li-237">What total number of anti-trans bills were proposed each year from 2018 to 2023?</div></li>
+<li id="li-238"><div class="para" id="p-derived-li-238">What total number of anti-trans bills were <em class="emphasis">passed</em> each of these years? In 2023, since the session is not over in many states, we run the analysis in two ways: including both bills that crossed over and bills that were signed/enacted, and only considering bills which were signed/enacted.</div></li>
+<li id="li-239"><div class="para" id="p-derived-li-239">What types of anti-trans bills were proposed more often in 2023 than in previous years?</div></li>
+<li id="li-240"><div class="para" id="p-derived-li-240">What types of anti-trans bills were <em class="emphasis">passed</em> more often in 2023?</div></li>
+<li id="li-241"><div class="para" id="p-derived-li-241">What states introduced/passed the majority of anti-trans bills in 2023, and are these the same states as in previous years?</div></li>
 </ol></div>
-<div class="para" id="p-647">We start by creating a data frame that shows only the bills passed, crossed over (hence passed by at least one chamber of the legislature and not yet dead), and/or signed and enacted between 2021 and 2023, as well as in each year and in the years preceding 2023.</div>
+<div class="para" id="p-635">We start by creating a data frame that shows only the bills passed, crossed over (hence passed by at least one chamber of the legislature and not yet dead), and/or signed and enacted between 2021 and 2023, as well as in each year and in the years preceding 2023.</div>
 <figure class="figure figure-like" id="figure-34"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-15-1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-648">Note that these bills <dfn class="terminology">only go through April 21, 2022</dfn>. To emphasize the change in the number of bills that have a chance of passing or have already been passed over time, we combine all the years 2017-2022 and compare them to 2023.</div>
-<div class="para" id="p-649">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-636">Note that these bills <dfn class="terminology">only go through April 21, 2022</dfn>. To emphasize the change in the number of bills that have a chance of passing or have already been passed over time, we combine all the years 2017-2022 and compare them to 2023.</div>
+<div class="para" id="p-637">
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-16-1.png" class="contained"></div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-16-2.png" class="contained"></div>
 </div>
-<div class="para" id="p-650">It appears that 2023 will, indeed, have many anti-trans bills pass than all previous years since 2018 combined (again, recall that the 2023 data in this analysis only goes through April 21, 2023). What about the <em class="emphasis">likelihood</em> of any particular anti-trans bill to pass in 2023 compared to previous years?</div>
+<div class="para" id="p-638">It appears that 2023 will, indeed, have many anti-trans bills pass than all previous years since 2018 combined (again, recall that the 2023 data in this analysis only goes through April 21, 2023). What about the <em class="emphasis">likelihood</em> of any particular anti-trans bill to pass in 2023 compared to previous years?</div>
 <figure class="figure figure-like" id="figure-35"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-17-1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-651">There appears to be a slight increase in the proportion of bills of all types that passed in 2023 compared to 2018-22. This difference becomes even more pronounced when we separate 2022:</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-639">There appears to be a slight increase in the proportion of bills of all types that passed in 2023 compared to 2018-22. This difference becomes even more pronounced when we separate 2022:</div>
 <pre class="code-block tex2jax_ignore">##  after_21 Not Passed Passed
 ##   2022-23      78.2%  21.8%
 ##   2018-21      84.7%  15.3%
 ##     Total      80.1%  19.9%
 </pre>
 <figure class="figure figure-like" id="figure-36"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-18-1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.9<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section></section></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-leg-obtain-clean.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-leg-case-study.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
