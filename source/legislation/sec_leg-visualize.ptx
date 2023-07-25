@@ -33,86 +33,47 @@ We often start investigating our questions by exploring and becoming familiar wi
 
 <p>
 <ol>
+<li> What are some types of graphs you have seen before? For each, what do you think that type of graph is useful for?</li>
+<li> The data set includes the status of each bill. Review the dataset. What are the different statuses?</li>
+<li> Let’s generate a graph showing how many bills there are with each status. The following code comes from the programming language R:
+[INSERT CODE]. To generate a graph, replace the [INSERT LABEL] with one of the following:
+<ol>
 	<li>
 		<p>
-			\begin{enumerate} 
-\item What are some types of graphs you have seen before? For each, what do you think that type of graph is useful for? </p>   </li>
-<li>
+			A bar graph: “geom_bar(stat = “identity”)”
+		</p>
+	</li>
+	<li>
 		<p>
-\item The data set includes the status of each bill.
-
- </p>     </li>
-<li>
+			A histogram: “geom_histogram(binwidth = 1)”
+		</p>
+	</li>
+	<li>
 		<p>
-
-\begin{enumerate}
-\item Review the dataset. What are the different statuses?
-</p> </li>
-<li>
+			A boxplot: “geom_boxplot()”
+		</p>
+	</li>
+	<li>
 		<p>
-\item Let’s generate a graph showing how many bills there are with each status. 
-
-</p> </li>
-
-
-<li>
+			A line graph: “geom_line()”
+		</p>
+	</li>
+	<li>
 		<p>
-
-The following code comes from the programming language R:
-[INSERT CODE]
-
-</p> </li>
-
-<li>
+			A pie graph: This is the Nickelback of charts (see https://www.businessinsider.com/pie-charts-are-the-worst-2013-6)
+		</p>
+	</li>
+	<li>
 		<p>
+			A scatterplot: “geom_point()”
+		</p>
+	</li>
+</ol>
+	</li>
+</ol> </p>   
 
-To generate a graph, replace the [INSERT LABEL] with one of the following:
-\begin{itemize}
 
-</p> </li>
-
-<li>
-		<p>
-
-\item A bar graph: “geom_bar(stat = “identity”)”
-
-</p> </li>
-
-<li>
-		<p>
  
-\item A histogram: “geom_histogram(binwidth = 1)”
-
-</p> </li>
-
-<li>
-		<p>
- 
-\item A boxplot: “geom_boxplot()”
-
-</p> </li>
-
-<li>
-		<p>
-
-\item A line graph: “geom_line()”
-
-</p> </li>
-
-<li>
-		<p>
-
-\item A pie graph: This is the Nickelback of charts (see https://www.businessinsider.com/pie-charts-are-the-worst-2013-6)
-
-</p> </li>
-
-<li>
-		<p>
- 
-\item A scatterplot: “geom_point()”
-\end{itemize}
-
-</p> </li>
 
 <li>
 		<p>
@@ -125,110 +86,107 @@ Try to create each type of graph in R. Some will cause errors - that is a sign t
 <li>
 		<p>
 
-\item Which graph do you think is the clearest? Why do you think that is?
+Which graph do you think is the clearest? Why do you think that is?
 
 </p> </li>
 
 <li>
 		<p>
  
-\item What do you notice from this graph? Does this tell you anything about our question regarding 2023?
+What do you notice from this graph? Does this tell you anything about our question regarding 2023?
 
 </p> </li>
 
 <li>
 		<p>
 
-\end{enumerate}
-\item Now let us look at something else. Let us look at the total number of bills proposed between 2018 and 2023.
+ Now let us look at something else. Let us look at the total number of bills proposed between 2018 and 2023.
 
 </p> </li>
 
 <li>
 		<p>
 
-\begin{enumerate}
-\item Using the code below, generate each type of graph. Remember that some may throw errors because they aren’t appropriate.
+
+ Using the code below, generate each type of graph. Remember that some may throw errors because they aren’t appropriate.
 
 </p> </li>
 
 <li>
 		<p>
 
-\item Which graph do you think is the clearest? Why do you think that is?
+Which graph do you think is the clearest? Why do you think that is?
 
 </p> </li>
 
 <li>
 		<p>
 
-\item What do you notice from this graph? Does this tell you anything about our question?
-\end{enumerate}
+What do you notice from this graph? Does this tell you anything about our question?
+
 
 </p> </li>
 
 <li>
 		<p>
 
-\item Let us look at all of the bills signed and enacted between 2018 and 2023.
+Let us look at all of the bills signed and enacted between 2018 and 2023.
 
 </p> </li>
 
 <li>
 		<p>
 
-\begin{enumerate}
-\item Using the code below, generate each type of graph. Remember that some may throw errors because they are not appropriate.
+
+Using the code below, generate each type of graph. Remember that some may throw errors because they are not appropriate.
 
 </p> </li>
 
 <li>
 		<p>
 
-\item Which graph do you think is the clearest? Why do you think that is?
+Which graph do you think is the clearest? Why do you think that is?
 
 </p> </li>
 
 <li>
 		<p>
 
-\item What do you notice from this graph? Does this tell you anything about our question?
-
-</p> </li>
-
-<li>
-		<p>
-\end{enumerate}
-\item Finally, let’s look at all of the bills signed and enacted between 2018 and 2023.
+What do you notice from this graph? Does this tell you anything about our question?
 
 </p> </li>
 
 <li>
 		<p>
 
-\begin{enumerate}
-\item Using the code below, generate each type of graph. Remember that some may throw errors because they are not appropriate.
-
-</p> </li>
-
-<li>
-		<p>
-\item Which graph do you think is the clearest? Why do you think that is?
+Finally, let’s look at all of the bills signed and enacted between 2018 and 2023.
 
 </p> </li>
 
 <li>
 		<p>
 
-\item What do you notice from this graph? Does this tell you anything about our question?
-\end{enumerate}
 
-\end{enumerate}
+Using the code below, generate each type of graph. Remember that some may throw errors because they are not appropriate.
+
+</p> </li>
+
+<li>
+		<p>
+Which graph do you think is the clearest? Why do you think that is?
+
+</p> </li>
+
+<li>
+		<p>
+
+What do you notice from this graph? Does this tell you anything about our question?
+
 </p> </li>
 
 
-</ol>
-</p>
+
+
 
 </activity>
 
