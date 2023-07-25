@@ -30,6 +30,10 @@
   \usetikzlibrary{decorations.markings} 
 </latex-image-preamble>
 
+<!--Rename explorations to Preview Activities-->
+<rename element="exploration" xml:lang="en-US">Preview Activity</rename>
+
+
 <!-- It is possible to rename elements using the tags below -->
   <rename element="investigation" xml:lang="en-US">Puzzle</rename>
   <rename element="assemblage" xml:lang="en-US">Summary</rename>

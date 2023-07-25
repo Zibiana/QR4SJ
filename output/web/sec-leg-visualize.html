@@ -13,8 +13,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
-<meta property="book:author" content="Kenan Ince">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<meta property="book:author" content="Kenan Ince ">
+<meta property="book:author" content="Bianca Thompson">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -26,6 +27,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -44,7 +58,19 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -67,7 +93,7 @@ window.MathJax = {
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="qr4sj.html"><span class="title">Quantitative Reasoning for Social Justice:</span> <span class="subtitle">An Active Learning Workbook</span></a></h1>
-<p class="byline">Kenan Ince</p>
+<p class="byline">Kenan Ince, Bianca Thompson</p>
 </div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
@@ -177,7 +203,7 @@ window.MathJax = {
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-leg-obtain-clean.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="legislation.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-leg-future-directions.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-leg-obtain-clean.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="legislation.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-leg-case-study.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
@@ -226,219 +252,185 @@ window.MathJax = {
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="essential-knowledge.html" class="internal"><span class="codenumber">2</span> <span class="title">What mathematical knowledge is essential?</span></a></div>
+<div class="toc-item"><a href="ch-loans.html" class="internal"><span class="codenumber">2</span> <span class="title">The Staggering &amp; Inequitable Burden of Student Loans</span></a></div>
 <ul class="structural">
+<li><div class="toc-item"><a href="sec_loans-objectives.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Objectives</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec_fermi_estimation.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Fermi Estimation</span></a></div>
+<div class="toc-item"><a href="cui-bono-who-benefits.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Cui Bono: Who Benefits?</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="cui-bono-who-benefits.html#rqs-minhaj" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="debt-big-problem.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</span></a></div></li>
+<li><div class="toc-item"><a href="changes-in-college-tuition-over-time.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Changes in College Tuition over Time</span></a></div></li>
+<li>
+<div class="toc-item"><a href="student-debt-by-college-type.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt by College Type</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#fermi-estimation" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Fermi estimation</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">2.1.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#queer-and-trans-resistance" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
+<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-debt-over-time" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt over Time</span></a></div></li>
+<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-3" class="internal"><span class="codenumber">2.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
+<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-tuition-tracker" class="internal"><span class="codenumber">2.5</span> <span class="title">Trends at Your Institution</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec_spinning_numbers.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Spinning the numbers</span></a></div>
+<div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The Intersectional Inequities of Student Debt</span></a></div>
 <ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_spinning_numbers.html#importing-and-merging-the-data" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Stuff stuff stuffa</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_spinning_numbers.html#exercises-import" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec_spinning_numbers.html#cleaning-the-data" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-toll" class="internal"><span class="codenumber">2.6</span> <span class="title">The Toll of Student Debt in the U.S.</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rq-trends-in-student-aid" class="internal"><span class="codenumber">2.6</span> <span class="title">Trends in Student Aid</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-biden-plan" class="internal"><span class="codenumber">2.6</span> <span class="title">The Biden-Harris Loan Forgiveness Plans</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#reading-questions-4" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-oecd" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-loans-rtn" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading the News on Student Loans</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-by-race" class="internal"><span class="codenumber">2.6</span> <span class="title">Student Debt by Race: What Is Fair?</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec_lying_with_visuals.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Lying with graphs</span></a></div>
+<div class="toc-item"><a href="loans-solving-for-change.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span></a></div>
 <ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_lying_with_visuals.html#graphs" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Bill Type vs. Status</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_lying_with_visuals.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
+<li><div class="toc-item"><a href="loans-solving-for-change.html#reading-questions-7" class="internal"><span class="codenumber">2.7</span> <span class="title">Student Loan Activism &amp; Policy</span></a></div></li>
+<li><div class="toc-item"><a href="loans-solving-for-change.html#exercises-your-benefit" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
 </li>
-<li><div class="toc-item"><a href="sec_lying_with_visuals.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
+<li><div class="toc-item"><a href="loans-wrap-up-exercise.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Wrap-Up Exercise</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec_unit_conversion.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Unit Conversion and why should we care</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_unit_conversion.html#exercises-anti-trans" class="internal"><span class="codenumber">2.4</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
-</li>
+<div class="toc-item"><a href="ch-cryptography.html" class="internal"><span class="codenumber">3</span> <span class="title">Secret Codes &amp; the NSA</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="crypto-objectives.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Objectives &amp; Prerequisites</span></a></div></li>
+<li><div class="toc-item"><a href="preliminary-activity.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Preliminary Activity</span></a></div></li>
+<li><div class="toc-item"><a href="the-caesarshift-cipher.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Caesar/shift cipher</span></a></div></li>
+<li><div class="toc-item"><a href="frequency-analysis.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Frequency analysis</span></a></div></li>
+<li><div class="toc-item"><a href="affine-ciphers.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Affine ciphers</span></a></div></li>
+<li><div class="toc-item"><a href="onramp-to-number-theory.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Onramp to number theory</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec_reading_questions.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Reading Questions</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_reading_questions.html#exercises-leg-project" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="extensions-and-alterations.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Extensions and Alterations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="extensions-and-alterations.html#the-diffie-hellman-key-exchange" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Diffie-Hellman key exchange</span></a></div></li>
+<li><div class="toc-item"><a href="extensions-and-alterations.html#potential-undergraduate-research-projects" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Potential undergraduate research projects</span></a></div></li>
+</ul>
 </li>
-<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">2.6</span> <span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="reflections-and-advice.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Reflections and Advice</span></a></div></li>
+<li><div class="toc-item"><a href="additional-resources.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Additional Resources</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="ch-loans.html" class="internal"><span class="codenumber">3</span> <span class="title">The Staggering &amp; Inequitable Burden of Student Loans</span></a></div>
+<div class="toc-item"><a href="climate-change.html" class="internal"><span class="codenumber">4</span> <span class="title">Climate Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec_loans-objectives.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Objectives</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-objectives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Objectives</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-background.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Understanding the Issue</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-cui-bono.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Cui Bono - Who Benefits?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-big-problem.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Big Problem: What is the best way to reduce greenhouse gas emissions?</span></a></div></li>
 <li>
-<div class="toc-item"><a href="cui-bono-who-benefits.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Cui Bono: Who Benefits?</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="cui-bono-who-benefits.html#rqs-minhaj" class="internal"><span class="codenumber">3.2</span> <span class="title">Reading Questions</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="debt-big-problem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</span></a></div></li>
-<li><div class="toc-item"><a href="changes-in-college-tuition-over-time.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Changes in College Tuition over Time</span></a></div></li>
-<li>
-<div class="toc-item"><a href="student-debt-by-college-type.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Student Debt by College Type</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-debt-over-time" class="internal"><span class="codenumber">3.5</span> <span class="title">Student Debt over Time</span></a></div></li>
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-6" class="internal"><span class="codenumber">3.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-tuition-tracker" class="internal"><span class="codenumber">3.5</span> <span class="title">Trends at Your Institution</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-11" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html" class="internal"><span class="codenumber">3.6</span> <span class="title">The Intersectional Inequities of Student Debt</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Data Visualization</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-toll" class="internal"><span class="codenumber">3.6</span> <span class="title">The Toll of Student Debt in the U.S.</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rq-trends-in-student-aid" class="internal"><span class="codenumber">3.6</span> <span class="title">Trends in Student Aid</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-biden-plan" class="internal"><span class="codenumber">3.6</span> <span class="title">The Biden-Harris Loan Forgiveness Plans</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#reading-questions-4" class="internal"><span class="codenumber">3.6</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-oecd" class="internal"><span class="codenumber">3.6</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-loans-rtn" class="internal"><span class="codenumber">3.6</span> <span class="title">Reading the News on Student Loans</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-by-race" class="internal"><span class="codenumber">3.6</span> <span class="title">Student Debt by Race: What Is Fair?</span></a></div></li>
-</ul>
-</li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-types-of-data" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Types of Data</span></a></div></li>
 <li>
-<div class="toc-item"><a href="loans-solving-for-change.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Graphs</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="loans-solving-for-change.html#reading-questions-7" class="internal"><span class="codenumber">3.7</span> <span class="title">Student Loan Activism &amp; Policy</span></a></div></li>
-<li><div class="toc-item"><a href="loans-solving-for-change.html#exercises-your-benefit" class="internal"><span class="codenumber">3.7</span> <span class="title">Exercises</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="loans-wrap-up-exercise.html" class="internal"><span class="codenumber">3.8</span> <span class="title">Wrap-Up Exercise</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ch-cryptography.html" class="internal"><span class="codenumber">4</span> <span class="title">Secret Codes &amp; the NSA</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="crypto-objectives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Objectives &amp; Prerequisites</span></a></div></li>
-<li><div class="toc-item"><a href="preliminary-activity.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Preliminary Activity</span></a></div></li>
-<li><div class="toc-item"><a href="the-caesarshift-cipher.html" class="internal"><span class="codenumber">4.2</span> <span class="title">The Caesar/shift cipher</span></a></div></li>
-<li><div class="toc-item"><a href="frequency-analysis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Frequency analysis</span></a></div></li>
-<li><div class="toc-item"><a href="affine-ciphers.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Affine ciphers</span></a></div></li>
-<li><div class="toc-item"><a href="onramp-to-number-theory.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Onramp to number theory</span></a></div></li>
-<li>
-<div class="toc-item"><a href="extensions-and-alterations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Extensions and Alterations</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="extensions-and-alterations.html#the-diffie-hellman-key-exchange" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Diffie-Hellman key exchange</span></a></div></li>
-<li><div class="toc-item"><a href="extensions-and-alterations.html#potential-undergraduate-research-projects" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Potential undergraduate research projects</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="reflections-and-advice.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Reflections and Advice</span></a></div></li>
-<li><div class="toc-item"><a href="additional-resources.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Additional Resources</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change.html" class="internal"><span class="codenumber">5</span> <span class="title">Climate Change</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-objectives.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Objectives</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-background.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Understanding the Issue</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-cui-bono.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Cui Bono - Who Benefits?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-big-problem.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Big Problem: What is the best way to reduce greenhouse gas emissions?</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-21" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-22" class="internal"><span class="codenumber">5.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-23" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Significant figures</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Data Visualization</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-types-of-data" class="internal"><span class="codenumber">5.6.1</span> <span class="title">Types of Data</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Graphs</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-bar" class="internal"><span class="codenumber">5.6.2.1</span> <span class="title">Bar Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-5" class="internal"><span class="codenumber">5.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-6" class="internal"><span class="codenumber">5.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-combining-graphs" class="internal"><span class="codenumber">5.6.2.4</span> <span class="title">Combining Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-other-visualizations" class="internal"><span class="codenumber">5.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-accessibility" class="internal"><span class="codenumber">5.6.2.6</span> <span class="title">Accessibiliity</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-bar" class="internal"><span class="codenumber">4.6.2.1</span> <span class="title">Bar Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-4" class="internal"><span class="codenumber">4.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-5" class="internal"><span class="codenumber">4.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-combining-graphs" class="internal"><span class="codenumber">4.6.2.4</span> <span class="title">Combining Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-other-visualizations" class="internal"><span class="codenumber">4.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-accessibility" class="internal"><span class="codenumber">4.6.2.6</span> <span class="title">Accessibiliity</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mathematical Models</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-26" class="internal"><span class="codenumber">5.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-16" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-27" class="internal"><span class="codenumber">5.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-10" class="internal"><span class="codenumber">5.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-28" class="internal"><span class="codenumber">5.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Solving for Change</span></a></div>
+<div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-29" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-30" class="internal"><span class="codenumber">5.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-31" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-19" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-exercises.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-exercises.html" class="internal"><span class="codenumber">4.10</span> <span class="title">Exercises</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">5.11</span> <span class="title">References</span></a></div>
+<div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-32" class="internal"><span class="codenumber">5.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-33" class="internal"><span class="codenumber">5.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-22" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="climate-change.html" class="internal"><span class="codenumber">6</span> <span class="title">Environmental Justice</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="environmental-justice-objectives.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Objectives</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">7</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
+<div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Understanding the Issue</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">7.1</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
+<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Understanding the Issue</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.1</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
+<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Importing and Merging the Data</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Importing and Merging the Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
 </ul>
 </li>
 <li class="active">
-<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Visualizing the Data</span></a></div>
+<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Visualizing the Data</span></a></div>
 <ul class="structural">
+<li><div class="toc-item"><a href="sec-leg-visualize.html#sec-intro-to-data-leg" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Bill Type vs. Status</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">7.3.1.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.3.2</span> <span class="title">How to explore the data visually</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.3.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.3.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">5.3.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">5.3.5.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">5.3.6</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-future-directions.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Directions for Future Work</span></a></div>
+<div class="toc-item"><a href="sec-leg-case-study.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Case Study: How can we support storytelling using different data sources?</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-case-study.html#references-1" class="internal"><span class="codenumber">5.4</span> <span class="title">References</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-textualize.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Textualizing the Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-textualize.html#analyzing-text" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Stuffstuff</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-future-directions.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Directions for Future Work</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#bayesian-analysis" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Bayesian Analysis</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">7.4.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">7.4.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#queer-and-trans-resistance" class="internal"><span class="codenumber">7.4.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#bayesian-analysis" class="internal"><span class="codenumber">5.6.1</span> <span class="title">Bayesian Analysis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">5.6.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">5.6.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">5.6.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#queer-and-trans-resistance" class="internal"><span class="codenumber">5.6.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">5.7</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">7.6</span> <span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">5.8</span> <span class="title">References</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -451,22 +443,165 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec_annotated-bib.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Annotated Bibliography</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="solutions-1.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Hints</span></a></div></li>
-<li><div class="toc-item"><a href="solutions-2.html" class="internal"><span class="codenumber">C</span> <span class="title">Selected Solutions</span></a></div></li>
-<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">D</span> <span class="title">List of Symbols</span></a></div></li>
+<li>
+<div class="toc-item"><a href="solutions-1.html" class="internal"><span class="codenumber">B</span> <span class="title">A guide for using this book, contents, etc</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-instructor.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Chapter 5: Anti-Trans Legislation in the U.S.</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="solutions-2.html" class="internal"><span class="codenumber">C</span> <span class="title">Selected Hints</span></a></div></li>
+<li><div class="toc-item"><a href="solutions-3.html" class="internal"><span class="codenumber">D</span> <span class="title">Selected Solutions</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">E</span> <span class="title">List of Symbols</span></a></div></li>
 <li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
 <li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-leg-visualize"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">7.3</span> <span class="title">Visualizing the Data</span>
+<span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Visualizing the Data</span>
 </h2>
-<section class="subsection" id="bill-type-vs-status"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">7.3.1</span> <span class="title">Bill Type vs. Status</span>
+<section class="subsection" id="sec-intro-to-data-leg"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">Introduction to the data set and how to work with variables</span>
 </h3>
-<div class="para" id="p-645">We now summarize the relationships of the type of bill to its status to determine whether specific types of bills were more likely to succeed.</div>
-<div class="para" id="p-646">Note that <dfn class="terminology">crossing over</dfn> refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.</div>
+<div class="para" id="p-553">A common claim in the news media, and a common feeling among trans and nonbinary folks, is that 2023 is by far the worst recent year for anti-trans legislation. How do we explore if 2023 was the year of anti-trans legislation? This question is vague - what does an answer to this question mean? How do we use this information in our advocacy? In order to conduct research, we need to drill down into more specific questions that can be answered empirically. This is an important story in that we need to document hate in order to compare it to other cases of hate in the past and in the future. We are trying to understand broader patterns in order to better understand where our advocacy work may make a difference.</div>
+<div class="para" id="p-554">The targeting of the transgender community through legislation has been a significant topic in the news in 2023. We could compare the volume of news stories related to anti-trans legislation in 2023 to the volume in previous years. However, does this approach measure what we are looking for? Perhaps the same story is being repeated multiple times?</div>
+<div class="para" id="p-555">A better approach is to look at the legislation itself. We can ask a similar question about the legislation. What - if anything - was different about the volume of anti-trans legislation in 2023 from the volume in previous years? This is another question we can investigate with data in order to tell this story.</div>
+<div class="para" id="p-556">Lets take a look at the data we sourced and cleaned in the last section. Note, we incude in the cleaned version of the data in this section, and so if you missed the prior section, or did not finish you can still explore in this section.</div>
+<div class="para" id="p-557">Note that <dfn class="terminology">crossing over</dfn> refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.</div></section><section class="subsection" id="sec-explore-visually"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">How to explore the data visually</span>
+</h3>
+<div class="para" id="p-558">We often start investigating our questions by exploring and becoming familiar with our data. One of the most powerful ways to explore data (as well as to communicate with data) is through visualization through graphs and charts.</div>
+<article class="activity project-like" id="activity-1"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-559"><ol class="decimal">
+<li id="li-191"><div class="para" id="p-derived-li-191">What are some types of graphs you have seen before? For each, what do you think that type of graph is useful for?</div></li>
+<li id="li-192"><div class="para" id="p-derived-li-192">The data set includes the status of each bill. Review the dataset. What are the different statuses?</div></li>
+<li id="li-193"><div class="para" id="p-derived-li-193"><ol class="lower-alpha">
+<li id="li-194"><div class="para" id="p-560">A bar graph: “geom_bar(stat = “identity”)”</div></li>
+<li id="li-195"><div class="para" id="p-561">A histogram: “geom_histogram(binwidth = 1)”</div></li>
+<li id="li-196"><div class="para" id="p-562">A boxplot: “geom_boxplot()”</div></li>
+<li id="li-197"><div class="para" id="p-563">A line graph: “geom_line()”</div></li>
+<li id="li-198"><div class="para" id="p-564">A pie graph: This is the Nickelback of charts (see https://www.businessinsider.com/pie-charts-are-the-worst-2013-6)</div></li>
+<li id="li-199"><div class="para" id="p-565">A scatterplot: “geom_point()”</div></li>
+</ol></div></li>
+</ol></div> 
+		<div class="para" id="p-566">Try to create each type of graph in R. Some will cause errors - that is a sign that this type of graph isn’t appropriate for this question.</div>  
+		<div class="para" id="p-567">Which graph do you think is the clearest? Why do you think that is?</div>  
+		<div class="para" id="p-568">What do you notice from this graph? Does this tell you anything about our question regarding 2023?</div>  
+		<div class="para" id="p-569">Now let us look at something else. Let us look at the total number of bills proposed between 2018 and 2023.</div>  
+		<div class="para" id="p-570">Using the code below, generate each type of graph. Remember that some may throw errors because they aren’t appropriate.</div>  
+		<div class="para" id="p-571">Which graph do you think is the clearest? Why do you think that is?</div>  
+		<div class="para" id="p-572">What do you notice from this graph? Does this tell you anything about our question?</div>  
+		<div class="para" id="p-573">Let us look at all of the bills signed and enacted between 2018 and 2023.</div>  
+		<div class="para" id="p-574">Using the code below, generate each type of graph. Remember that some may throw errors because they are not appropriate.</div>  
+		<div class="para" id="p-575">Which graph do you think is the clearest? Why do you think that is?</div>  
+		<div class="para" id="p-576">What do you notice from this graph? Does this tell you anything about our question?</div>  
+		<div class="para" id="p-577">Finally, let’s look at all of the bills signed and enacted between 2018 and 2023.</div>  
+		<div class="para" id="p-578">Using the code below, generate each type of graph. Remember that some may throw errors because they are not appropriate.</div>  
+		<div class="para" id="p-579">Which graph do you think is the clearest? Why do you think that is?</div>  
+		<div class="para" id="p-580">What do you notice from this graph? Does this tell you anything about our question?</div> </article><article class="activity project-like" id="activity-2"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-581">Let us look back at our work and see if we can draw some conclusions, both about data visualization and about our story regarding anti-trans legislation in 2023. \begin{enumerate} \item For each graph you generated, what were the variables involved? Were they quantitative or categorical? Which graphs contribute toward our understanding of our question? \item Which types of graphs did you choose? Compare your choices to the variables you compared. What do you notice? Write a guideline to help select one or more graph types based on the data you are examining. \item How did your recommendations differ from your classmates? How was it similar? \item Based on what you found, write one or two sentences summarizing our findings so far regarding anti-trans legislation in 2023. \end{enumerate}</div></article><div class="para" id="p-582">There is a difference between a count and a proportion. A count value tells you the raw number of times something occurs, whereas a proportion tells you the percentage of the total times something occurs. Whenever dealing with proportions, you have to think carefully about the denominator!</div>
+<section class="subsubsection" id="subsubsec-two_plus_var"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.3.2.1</span> <span class="title">Two or more variable graphing</span>
+</h4>
+<div class="para" id="p-583">Both quantitative and qualitative data can be analyzed under two types, categorical and numerical. Categorical data allows us to organize the data into sections or groupings that have similar characteristics. Numerical data often allows us to draw comparisons between the data and analyze trends, relationships, outliers, and other statistical qualifiers. Within the classification of numerical data, we have more descriptive graphs that can be used (scatter plot, line graph, bar graph, etc.)</div>
+<article class="activity project-like" id="activity-3"><h5 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
+</h5>Activity Questions: <div class="para" id="p-584">Suppose we have the following data sets: Crossed over, dead/failed, introduced, passed, signed/enacted, vetoed Total number of anti-trans bills proposed each year between 2018 and 2023 Total number of anti-trans bills passed each year between 2018 and 2023 For each data set (1-3), label it as categorical or numerical. If numerical, give an example of what type of graph you would use (scatter plot, line graph, bar graph) and explain why.</div></article><div class="para" id="p-585">Suppose that we have a bar graph that allows us to compare the numerical data of a particular variable (total number of passed bills from 2018 to 2023). Now consider another bar graph that compares the total number of introduced bills within this same time period. Finally, consider a third bar graph that compares the total number of bills that crossed over again during the same time period. Then we can hope to find a relationship between the proportions of bills which are crossed over or passed within each year as well as the trend over time as to what proportions are crossed over or passed. This can be done by using multiple bar graphs or a combined set of graphs which we call a <em class="emphasis">multigraph</em>.</div>
+<article class="activity project-like" id="activity-4"><h5 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="p-586"><ol class="decimal">
+<li id="li-215"><div class="para" id="p-derived-li-215">Can you see how this data can also be described by using a line graph? Are there any advantages or disadvantages of using one over the other?</div></li>
+<li id="li-216"><div class="para" id="p-derived-li-216">What story is each of these graphs telling? How do they differ? How are they similar.</div></li>
+</ol></div></article><article class="activity project-like" id="activity-5"><h5 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="p-587"><ul class="disc">
+<li id="li-217"><div class="para" id="p-derived-li-217">Consider the total number of bills passed from 2018 to 2022 and the total number of bills passed in 2023.</div></li>
+<li id="li-220"><div class="para" id="p-derived-li-220">Which of these two graphs tells a more compelling story?</div></li>
+<li id="li-221"><div class="para" id="p-derived-li-221">List your thoughts on how the same data presented in two different ways can seem to show different results.</div></li>
+</ul></div></article></section></section><section class="subsection" id="subsec-leg_data_story"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span>
+</h3>
+<div class="para" id="p-588">We began this chapter with the question of how 2023 is different from other years in regards to anti-trans legislation. Section 2 introduced us to different visualizations that can help us explore this and evaluate this question.</div>
+<div class="para" id="p-589">Figure NUM is a line graph that plots raw numbers of bills introduced in each year from 2018-2023. We can see that the number of bills is increasing each year, but the numbers increased more quickly in 2021 and 2023 than in other years.</div>
+<article class="activity project-like" id="activity-6"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-590">What feature of the line graph demonstrates this increase?</div></article><div class="para" id="p-591">We might want to know what prompted these increases to happen, and knowing which types of bills were being proposed during those years might provide insight. Below is a line graph showing just one type of bill.  By changing VARIABLE to other types (list), you can generate different graphs.</div>
+<div class="para" id="p-592"><pre class="ptx-sagecell sagecell-r" id="sage-1"><script type="text/x-sage">#Line graph of one *type* of bill over time
+</script></pre></div>
+<article class="activity project-like" id="activity-7"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-593"><ol class="decimal">
+<li id="li-222"><div class="para" id="p-derived-li-222">Which types of bills are increasing in prevalence? Which are decreasing?</div></li>
+<li id="li-223"><div class="para" id="p-derived-li-223">What type(s) of bills drove the large increase in 2021? What types of bills drove the large increase in 2023?</div></li>
+</ol></div></article><article class="activity project-like" id="activity-8"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-594">
+<div class="para">Our analysis has so far been focused on bills that were introduced.</div>
+<ol class="decimal">
+<li id="li-224"><div class="para" id="p-derived-li-224">What do we learn from analyzing bills that have been introduced?</div></li>
+<li id="li-225"><div class="para" id="p-derived-li-225">What do we learn from analyzing bills that have been passed?</div></li>
+<li id="li-226"><div class="para" id="p-derived-li-226">Do we need to analyze both–do these different questions tell us different things?</div></li>
+</ol>
+</div></article><article class="remark remark-like" id="remark-1"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span>
+</h4>Tell students how to re-run previous analyses for *passed* bills rather than *introduced* bills.</article><div class="para" id="p-595">Our previous visualizations showed that 2023 did have a significant increase in the number of anti-trans bills that were both introduced and passed. In addition to the <em class="emphasis">absolute</em> frequency counts of bills that have passed, we might also be interested in the <em class="emphasis">relative</em> proportion of bills that have been passed–that is, are legislators who are targeting trans people becoming more successful in their efforts?</div>
+<div class="para" id="p-596">SOME KIND OF VISUALIZATION OF “SUCCESS” RATE OVER TIME GOES HERE</div>
+<div class="para" id="p-597">SUMMARIZE THE STORY HERE</div>
+<div class="para logical" id="p-598"><ol class="decimal">
+<li id="li-227"><div class="para" id="p-derived-li-227">What total number of anti-trans bills were proposed each year from 2018 to 2023?</div></li>
+<li id="li-228"><div class="para" id="p-derived-li-228">What total number of anti-trans bills were <em class="emphasis">passed</em> each of these years?</div></li>
+<li id="li-229"><div class="para" id="p-derived-li-229">What types of anti-trans bills were proposed more often in 2023 than in previous years?</div></li>
+<li id="li-230"><div class="para" id="p-derived-li-230">What types of anti-trans bills were <em class="emphasis">passed</em> more often in 2023?</div></li>
+</ol></div>
+<article class="activity project-like" id="activity-9"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-599"><ol class="decimal">
+<li id="li-231"><div class="para" id="p-derived-li-231">The data in 2023 stops in April 2023, does this impact our ability to answer any of these questions? How does it impact our ability to answer our questions?</div></li>
+<li id="li-232"><div class="para" id="p-derived-li-232">In 2023, since the session is not over in many states, we run the analysis in two ways: including both bills that crossed over and bills that were signed/enacted, and only considering bills which were signed/enacted. What are the pros and cons of each of these decisions in studying the data?</div></li>
+<li id="li-233"><div class="para" id="p-derived-li-233">What observations did you make about  how many anti-trans bills pass than all previous years since 2018 combined (again, recall that the 2023 data in this analysis only goes through April 21, 2023).</div></li>
+</ol></div></article><div class="para" id="p-600">Given our questions this means the variables and levels were are interested in are the bills passed, crossed over (hence passed by at least one chamber of the legislature and not yet dead), and/or signed and enacted between 2021 and 2023, as well as in each year and in the years preceding 2023.</div>
+<div class="para" id="p-601">As you explored in the activity part 1, these bills <dfn class="terminology">only go through April 21, 2023</dfn>. To emphasize the change in the number of bills that have a chance of passing or have already been passed over time, we combine all the years 2017-2022 and compare them to 2023.</div>
+<div class="para" id="p-602">Our first visualizations give information about the count of these bills, but let us talk about the <em class="emphasis">likelihood</em> of any particular anti-trans bill to pass in 2023 compared to previous years. We saw in graph blah that there appears to be a slight increase in the proportion of bills of all types that passed in 2023 compared to 2018-22.</div>
+<div class="para" id="p-603">This final image doesn’t demonstrate an obvious finding, but does motivate another question. Is the difference we are seeing between the two groups significant? What can we <em class="emphasis">infer</em> if we had more refined tools like statistical tests (chi squared, ANOVA, prop test, etc). Or we can refine our questions further, for example, what changes in voter districts, voter laws, or state congress and senate makeup has changed from 2022 to 2023?</div>
+<article class="activity project-like" id="activity-10"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">10</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-604">stuffstuff</div></article><div class="para" id="p-605">Tell a story about the data What information contributes to answering our research question? What information does not? What limitations are there when working with this data?</div>
+<article class="activity project-like" id="activity-11"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">11</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-606">In section 1, you wrote ideas about research questions you wanted to explore given this data set. Using the tools we have learned in this section, which questions do you think could be explored and potentially answered? Why you think so? Which graphs would you utilize to explore the data?</div></article></section><section class="subsection" id="subsec-leg-visual-exercise"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-98"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-607">In Section 2, you learned how to read visualizations and how to modify code to create them. Using a question from exercise 1, create graphs that you feel would best help you answer your question. Explain what each graph represents, and what you are noticing in those graphs.</div></article><article class="exercise exercise-like" id="exercise-99"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-608">In Section 3, we learned how to synthesize exploratory data visualizations and tell a story with our data. Based on the graphs you created in the prior exercise, tell a story with your data. What actions do you want your data to lead to and how are you using the data to tell that story?</div></article></section><section class="subsection" id="bill-type-vs-status"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span>
+</h3>
+<article class="exploration project-like" id="exploration-1"><h4 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">12</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-609">Sample preview activity</div></article><div class="para" id="p-610">We now summarize the relationships of the type of bill to its status to determine whether specific types of bills were more likely to succeed.</div>
+<div class="para" id="p-611">Note that <dfn class="terminology">crossing over</dfn> refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.</div>
+<pre class="ptx-sagecell sagecell-r" id="sage-2"><script type="text/x-sage">sink('/dev/null')
+bills <- read.csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data/anti-trans-bills-clean.csv")
+sink(); closeAllConnections()
+</script></pre>
+<div class="para" id="p-612">After loading a data file, it is good practice to look at the first few rows to make sure everything looks reasonable, and to get an idea for what data is present.</div>
+<pre class="ptx-sagecell sagecell-r" id="sage-3"><script type="text/x-sage">head(bills)
+</script></pre>
 <pre class="code-block tex2jax_ignore">##                      Bill Type Crossed Over Dead/Failed Introduced Passed
 ##               Drag Performance            6          11         19      0
 ##                     Healthcare           10          85        112      5
@@ -490,7 +625,7 @@ window.MathJax = {
 ##              35      4   293
 ##              78      5   893
 </pre>
-<div class="para" id="p-647">We see what percentage of each bill status was made up of each bill type:</div>
+<div class="para" id="p-613">We see what percentage of each bill status was made up of each bill type:</div>
 <pre class="code-block tex2jax_ignore">##                      Bill Type Crossed Over Dead/Failed Introduced Passed
 ##               Drag Performance        15.8%       28.9%      50.0%   0.0%
 ##                     Healthcare         4.4%       37.1%      48.9%   2.2%
@@ -514,7 +649,7 @@ window.MathJax = {
 ##           11.9%   1.4% 100.0%
 ##            8.7%   0.6% 100.0%
 </pre>
-<div class="para" id="p-648">And what percentage of each bill type had each status:</div>
+<div class="para" id="p-614">And what percentage of each bill type had each status:</div>
 <pre class="code-block tex2jax_ignore">##          Status Drag Performance Healthcare ID Updates
 ##    Crossed Over             9.1%      15.2%       6.1%
 ##     Dead/Failed             3.8%      29.2%       3.1%
@@ -540,24 +675,24 @@ window.MathJax = {
 ##                 0.0%           80.0% 100.0%
 ##                11.4%           32.8% 100.0%
 </pre>
-<div class="para" id="p-649">It seems like bills related to “ID updates” (i.e., preventing trans and nonbinary people from having their IDs show their correct gender identity), “public facilities” (often preventing trans people from using the bathroom that fits their gender identity), and “youth athletics” (i.e., preventing trans girls from competing on girls’ sports teams) are most likely to be signed by their state’s governor and enacted into law (after passing both legislative chambers).</div>
-<div class="para" id="p-650">However, of all the bills that were signed and enacted, most of them by far were related to youth athletics (over double the number of bills from any other category), followed by healthcare, suggesting that more bills were proposed in those categories.</div>
-<div class="para" id="p-651">We seek to represent this data in a side-by-side bar chart. In order to provide a more digestible, big-picture viewpoint, we classify the bills by the type of gender-affirming care that is targeted: social transition (excluding artistic performance, which Track Trans Legislation categorizes under <code class="code-inline tex2jax_ignore">Drag Performance</code>), healthcare/medical transition, drag performances (noting that performing in drag and being transgender are distinct, though sometimes overlapping, categories), and <code class="code-inline tex2jax_ignore">Other</code>.</div>
-<div class="para" id="p-652">
+<div class="para" id="p-615">It seems like bills related to “ID updates” (i.e., preventing trans and nonbinary people from having their IDs show their correct gender identity), “public facilities” (often preventing trans people from using the bathroom that fits their gender identity), and “youth athletics” (i.e., preventing trans girls from competing on girls’ sports teams) are most likely to be signed by their state’s governor and enacted into law (after passing both legislative chambers).</div>
+<div class="para" id="p-616">However, of all the bills that were signed and enacted, most of them by far were related to youth athletics (over double the number of bills from any other category), followed by healthcare, suggesting that more bills were proposed in those categories.</div>
+<div class="para" id="p-617">We seek to represent this data in a side-by-side bar chart. In order to provide a more digestible, big-picture viewpoint, we classify the bills by the type of gender-affirming care that is targeted: social transition (excluding artistic performance, which Track Trans Legislation categorizes under <code class="code-inline tex2jax_ignore">Drag Performance</code>), healthcare/medical transition, drag performances (noting that performing in drag and being transgender are distinct, though sometimes overlapping, categories), and <code class="code-inline tex2jax_ignore">Other</code>.</div>
+<div class="para" id="p-618">
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-8-1.png" class="contained"></div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-8-2.png" class="contained"></div>
 </div>
-<div class="para" id="p-653">In order to better see proportions, we also show a stacked bar chart that scales every <em class="emphasis">x</em>-axis group to 100%:</div>
-<div class="para" id="p-654">
+<div class="para" id="p-619">In order to better see proportions, we also show a stacked bar chart that scales every <em class="emphasis">x</em>-axis group to 100%:</div>
+<div class="para" id="p-620">
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-9-1.png" class="contained"></div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-9-2.png" class="contained"></div>
 </div>
 <section class="subsubsection" id="did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span> <span class="codenumber">7.3.1.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span>
+<span class="type">Subsubsection</span> <span class="codenumber">5.3.5.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span>
 </h4>
-<div class="para" id="p-655">However, the observed trends could simply relate to the fact that the largest <em class="emphasis">numbers</em> of bills nationwide were proposed in those categories.</div>
-<div class="para" id="p-656">In order to simplify the following charts and analysis, we combine certain bill statuses into categories: bills that have crossed over, passed, or were signed and enacted have a significant chance of impacting the lives of trans and nonbinary people in that state, while bills that were vetoed, died, or failed have no chance of impacting lives. Bills listed simply as “introduced” may or may not have the support to eventually pass, but since they are not currently impacting the ability of trans/nonbinary people to access healthcare, play sports, etc., we count them as “Not Passed”.</div>
-<div class="para" id="p-657">Now, we want to see a breakdown of the number and percentages of each type of bill that did and didn’t pass.</div>
+<div class="para" id="p-621">However, the observed trends could simply relate to the fact that the largest <em class="emphasis">numbers</em> of bills nationwide were proposed in those categories.</div>
+<div class="para" id="p-622">In order to simplify the following charts and analysis, we combine certain bill statuses into categories: bills that have crossed over, passed, or were signed and enacted have a significant chance of impacting the lives of trans and nonbinary people in that state, while bills that were vetoed, died, or failed have no chance of impacting lives. Bills listed simply as “introduced” may or may not have the support to eventually pass, but since they are not currently impacting the ability of trans/nonbinary people to access healthcare, play sports, etc., we count them as “Not Passed”.</div>
+<div class="para" id="p-623">Now, we want to see a breakdown of the number and percentages of each type of bill that did and didn’t pass.</div>
 <pre class="code-block tex2jax_ignore">##  Bill Type Not Passed Passed Total
 ##       Drag         30      8    38
 ##    Medical        197     32   229
@@ -572,40 +707,40 @@ window.MathJax = {
 ##     Social      80.8%  19.2%
 ##      Total      82.3%  17.7%
 </pre>
-<div class="para" id="p-658">We wish to plot the number and proportion of each type of bill that was passed.</div>
-<figure class="figure figure-like" id="figure-37"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-13-1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="figure figure-like" id="figure-38"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-14-1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-659">From this chart, it appears that bills restricting hormone therapy, puberty blockers, and other medical interventions are actually somewhat less likely to pass than other types of bills, and that while the number of anti-drag bills is substantially smaller than the number of other types of bills, they are somewhat more likely to pass.</div>
-<div class="para" id="p-660">Importantly, fewer than 25% of any type of bill since 2018 has passed. What happens when we break down the bills by year?</div></section></section><section class="subsection" id="is-2023-the-year-of-transphobia"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">7.3.2</span> <span class="title">Is 2023 the Year of Transphobia?</span>
+<div class="para" id="p-624">We wish to plot the number and proportion of each type of bill that was passed.</div>
+<figure class="figure figure-like" id="figure-32"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-13-1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="figure figure-like" id="figure-33"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-14-1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-625">From this chart, it appears that bills restricting hormone therapy, puberty blockers, and other medical interventions are actually somewhat less likely to pass than other types of bills, and that while the number of anti-drag bills is substantially smaller than the number of other types of bills, they are somewhat more likely to pass.</div>
+<div class="para" id="p-626">Importantly, fewer than 25% of any type of bill since 2018 has passed. What happens when we break down the bills by year?</div></section></section><section class="subsection" id="is-2023-the-year-of-transphobia"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.6</span> <span class="title">Is 2023 the Year of Transphobia?</span>
 </h3>
-<div class="para" id="p-661">A common claim in the news media, and a common feeling among trans and nonbinary folks, is that 2023 is by far the worst recent year for anti-trans legislation. Let’s investigate the following questions:</div>
-<div class="para logical" id="p-662"><ol class="decimal">
-<li id="li-203"><div class="para" id="p-derived-li-203">What total number of anti-trans bills were proposed each year from 2018 to 2023?</div></li>
-<li id="li-204"><div class="para" id="p-derived-li-204">What total number of anti-trans bills were <em class="emphasis">passed</em> each of these years? In 2023, since the session is not over in many states, we run the analysis in two ways: including both bills that crossed over and bills that were signed/enacted, and only considering bills which were signed/enacted.</div></li>
-<li id="li-205"><div class="para" id="p-derived-li-205">What types of anti-trans bills were proposed more often in 2023 than in previous years?</div></li>
-<li id="li-206"><div class="para" id="p-derived-li-206">What types of anti-trans bills were <em class="emphasis">passed</em> more often in 2023?</div></li>
-<li id="li-207"><div class="para" id="p-derived-li-207">What states introduced/passed the majority of anti-trans bills in 2023, and are these the same states as in previous years?</div></li>
+<div class="para" id="p-627">A common claim in the news media, and a common feeling among trans and nonbinary folks, is that 2023 is by far the worst recent year for anti-trans legislation. Let’s investigate the following questions:</div>
+<div class="para logical" id="p-628"><ol class="decimal">
+<li id="li-234"><div class="para" id="p-derived-li-234">What total number of anti-trans bills were proposed each year from 2018 to 2023?</div></li>
+<li id="li-235"><div class="para" id="p-derived-li-235">What total number of anti-trans bills were <em class="emphasis">passed</em> each of these years? In 2023, since the session is not over in many states, we run the analysis in two ways: including both bills that crossed over and bills that were signed/enacted, and only considering bills which were signed/enacted.</div></li>
+<li id="li-236"><div class="para" id="p-derived-li-236">What types of anti-trans bills were proposed more often in 2023 than in previous years?</div></li>
+<li id="li-237"><div class="para" id="p-derived-li-237">What types of anti-trans bills were <em class="emphasis">passed</em> more often in 2023?</div></li>
+<li id="li-238"><div class="para" id="p-derived-li-238">What states introduced/passed the majority of anti-trans bills in 2023, and are these the same states as in previous years?</div></li>
 </ol></div>
-<div class="para" id="p-663">We start by creating a data frame that shows only the bills passed, crossed over (hence passed by at least one chamber of the legislature and not yet dead), and/or signed and enacted between 2021 and 2023, as well as in each year and in the years preceding 2023.</div>
-<figure class="figure figure-like" id="figure-39"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-15-1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-664">Note that these bills <dfn class="terminology">only go through April 21, 2022</dfn>. To emphasize the change in the number of bills that have a chance of passing or have already been passed over time, we combine all the years 2017-2022 and compare them to 2023.</div>
-<div class="para" id="p-665">
+<div class="para" id="p-629">We start by creating a data frame that shows only the bills passed, crossed over (hence passed by at least one chamber of the legislature and not yet dead), and/or signed and enacted between 2021 and 2023, as well as in each year and in the years preceding 2023.</div>
+<figure class="figure figure-like" id="figure-34"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-15-1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-630">Note that these bills <dfn class="terminology">only go through April 21, 2022</dfn>. To emphasize the change in the number of bills that have a chance of passing or have already been passed over time, we combine all the years 2017-2022 and compare them to 2023.</div>
+<div class="para" id="p-631">
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-16-1.png" class="contained"></div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-16-2.png" class="contained"></div>
 </div>
-<div class="para" id="p-666">It appears that 2023 will, indeed, have many anti-trans bills pass than all previous years since 2018 combined (again, recall that the 2023 data in this analysis only goes through April 21, 2023). What about the <em class="emphasis">likelihood</em> of any particular anti-trans bill to pass in 2023 compared to previous years?</div>
-<figure class="figure figure-like" id="figure-40"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-17-1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-667">There appears to be a slight increase in the proportion of bills of all types that passed in 2023 compared to 2018-22. This difference becomes even more pronounced when we separate 2022:</div>
+<div class="para" id="p-632">It appears that 2023 will, indeed, have many anti-trans bills pass than all previous years since 2018 combined (again, recall that the 2023 data in this analysis only goes through April 21, 2023). What about the <em class="emphasis">likelihood</em> of any particular anti-trans bill to pass in 2023 compared to previous years?</div>
+<figure class="figure figure-like" id="figure-35"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-17-1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-633">There appears to be a slight increase in the proportion of bills of all types that passed in 2023 compared to 2018-22. This difference becomes even more pronounced when we separate 2022:</div>
 <pre class="code-block tex2jax_ignore">##  after_21 Not Passed Passed
 ##   2022-23      78.2%  21.8%
 ##   2018-21      84.7%  15.3%
 ##     Total      80.1%  19.9%
 </pre>
-<figure class="figure figure-like" id="figure-41"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-18-1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section></section></div>
+<figure class="figure figure-like" id="figure-36"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/legislation_files/figure-markdown_strict/unnamed-chunk-18-1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-leg-obtain-clean.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-leg-future-directions.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="sec-leg-obtain-clean.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-leg-case-study.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

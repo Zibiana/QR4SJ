@@ -11,9 +11,13 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para">The use of uppercase in the ciphertext and lowercase in the plaintext is a cryptographic convention designed to distinguish the two types of text, especially in partially-deciphered messages; we will often ignore the distinction and say, for example, “<span class="process-math">\(f(p)=p+3\)</span> is the shift cipher with shift <span class="process-math">\(+3\)</span>” where lowercase <span class="process-math">\(p\in\mathcal{P},c\in\mathcal{C}\)</span> denote individual letters. We will commonly refer to a particular <span class="process-math">\(p\in\mathcal{P}\)</span> which we will call simply <em class="emphasis">the plaintext</em> and its image <span class="process-math">\(c:=f(p)\in\mathcal{C}\)</span> (<em class="emphasis">the ciphertext</em>). Notably, for courses without mathematical prerequisites such as that taught by the other using the flow of concepts below, the spaces and notation <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{C}\)</span> are hidden, and ciphers are analyzed by analyzing particular <span class="process-math">\(p\)</span> and <span class="process-math">\(f(p)\text{,}\)</span> as well as determining <span class="process-math">\(f^{-1}(c)\)</span> given particular <span class="process-math">\(c\in\mathcal{C}\text{.}\)</span>
-</div>
-<span class="incontext"><a href="preliminary-activity.html#p-305" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical"><ol class="decimal">
+<li><div class="para">Alice places her key inside a box and uses a padlock to lock the box. Alice keeps the key to the padlock and sends the locked box to Bob.</div></li>
+<li><div class="para">The box can’t be opened in transit without Alice’s key. When Bob receives the box, he places an <em class="emphasis">additional</em> padlock on the box and keeps the key to his padlock. Bob then sends the doubly-locked box back to Alice.</div></li>
+<li><div class="para">Again, the box can’t be opened in transit without both Alice and Bob’s keys. When Alice receives the box, she <em class="emphasis">unlocks</em> her padlock and sends the box back to Bob.</div></li>
+<li><div class="para">Finally, the box can’t be unlocked in transit without Bob’s key. However, once Bob receives the box, he simply unlocks his padlock and opens the box.</div></li>
+</ol></div>
+<span class="incontext"><a href="extensions-and-alterations.html#p-305" class="internal">in-context</a></span>
 </body>
 </html>

@@ -13,11 +13,18 @@
 			<exercisegroup>
 			<title>Finding Data Online</title>
 			<introduction>
-				Our first goal is to find data. Note that any data found online may change web addresses, stop updating, go offline, or become unreliable over time. Your instructor will be able to tell you which sources of data to use if the ones below are no longer reliable.
+				Our first goal is to find data. Note that any data found online may change web 
+				addresses, stop updating, go offline, or become unreliable over time. Your instructor 
+				will be able to tell you which sources of data to use if the ones below are no longer 
+				reliable.
 			</introduction>
 			    <exercise>
 				<p>
-					Go to the website <url href="https://tracktranslegislation.com">tracktranslegislation.com</url>, which in turn obtains its data from <url href="https://legiscan.com">LegiScan</url>, and browse around. What are two things that you notice about the site? Two things that surprise you? Two things that aren't on the site that you wonder about?
+					Go to the website 
+					<url href="https://tracktranslegislation.com">tracktranslegislation.com</url>, 
+					which in turn obtains its data from <url href="https://legiscan.com">LegiScan</url>, 
+					and browse around. What are two things that you notice about the site? Two things 
+					that surprise you? Two things that aren't on the site that you wonder about?
 				</p>
 				</exercise>
 				<exercise>
@@ -55,7 +62,9 @@
 			<title>Cleaning the Data</title>
 
 			<p>
-				First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., <q>AZ</q> instead of <q>Arizona</q>), while Track Trans Legislation uses full names. So we use a program (that you won't have to worry about!) to convert full names to abbreviations in the whole dataset. 
+				First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., <q>AZ</q> instead of <q>Arizona</q>), while Track Trans Legislation uses full names. So we use a program to convert full names to abbreviations in the whole dataset. We have done this cleaning and it can be found in ADD GITHUB LINK HERE! You can see the code we used here:
+
+				ADD THE CODE FOR STUDENTS THAT ARE CURIOUS!!!!
 				
                 We also note that, for example, the 2021 dataset includes some bills passed in January 2022, so we eliminate duplicate bills.
 			</p>

@@ -13,8 +13,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
-<meta property="book:author" content="Kenan Ince">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<meta property="book:author" content="Kenan Ince ">
+<meta property="book:author" content="Bianca Thompson">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -26,6 +27,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -67,7 +81,7 @@ window.MathJax = {
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="qr4sj.html"><span class="title">Quantitative Reasoning for Social Justice:</span> <span class="subtitle">An Active Learning Workbook</span></a></h1>
-<p class="byline">Kenan Ince</p>
+<p class="byline">Kenan Ince, Bianca Thompson</p>
 </div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
@@ -226,219 +240,185 @@ window.MathJax = {
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="essential-knowledge.html" class="internal"><span class="codenumber">2</span> <span class="title">What mathematical knowledge is essential?</span></a></div>
+<div class="toc-item"><a href="ch-loans.html" class="internal"><span class="codenumber">2</span> <span class="title">The Staggering &amp; Inequitable Burden of Student Loans</span></a></div>
 <ul class="structural">
+<li><div class="toc-item"><a href="sec_loans-objectives.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Objectives</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec_fermi_estimation.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Fermi Estimation</span></a></div>
+<div class="toc-item"><a href="cui-bono-who-benefits.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Cui Bono: Who Benefits?</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="cui-bono-who-benefits.html#rqs-minhaj" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="debt-big-problem.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</span></a></div></li>
+<li><div class="toc-item"><a href="changes-in-college-tuition-over-time.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Changes in College Tuition over Time</span></a></div></li>
+<li>
+<div class="toc-item"><a href="student-debt-by-college-type.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt by College Type</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#fermi-estimation" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Fermi estimation</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">2.1.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#queer-and-trans-resistance" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
+<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-debt-over-time" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt over Time</span></a></div></li>
+<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-3" class="internal"><span class="codenumber">2.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
+<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-tuition-tracker" class="internal"><span class="codenumber">2.5</span> <span class="title">Trends at Your Institution</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec_spinning_numbers.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Spinning the numbers</span></a></div>
+<div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The Intersectional Inequities of Student Debt</span></a></div>
 <ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_spinning_numbers.html#importing-and-merging-the-data" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Stuff stuff stuffa</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_spinning_numbers.html#exercises-import" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec_spinning_numbers.html#cleaning-the-data" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-toll" class="internal"><span class="codenumber">2.6</span> <span class="title">The Toll of Student Debt in the U.S.</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rq-trends-in-student-aid" class="internal"><span class="codenumber">2.6</span> <span class="title">Trends in Student Aid</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-biden-plan" class="internal"><span class="codenumber">2.6</span> <span class="title">The Biden-Harris Loan Forgiveness Plans</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#reading-questions-4" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-oecd" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-loans-rtn" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading the News on Student Loans</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-by-race" class="internal"><span class="codenumber">2.6</span> <span class="title">Student Debt by Race: What Is Fair?</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec_lying_with_visuals.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Lying with graphs</span></a></div>
+<div class="toc-item"><a href="loans-solving-for-change.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span></a></div>
 <ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_lying_with_visuals.html#graphs" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Bill Type vs. Status</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_lying_with_visuals.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
+<li><div class="toc-item"><a href="loans-solving-for-change.html#reading-questions-7" class="internal"><span class="codenumber">2.7</span> <span class="title">Student Loan Activism &amp; Policy</span></a></div></li>
+<li><div class="toc-item"><a href="loans-solving-for-change.html#exercises-your-benefit" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
 </li>
-<li><div class="toc-item"><a href="sec_lying_with_visuals.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
+<li><div class="toc-item"><a href="loans-wrap-up-exercise.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Wrap-Up Exercise</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec_unit_conversion.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Unit Conversion and why should we care</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_unit_conversion.html#exercises-anti-trans" class="internal"><span class="codenumber">2.4</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
-</li>
+<div class="toc-item"><a href="ch-cryptography.html" class="internal"><span class="codenumber">3</span> <span class="title">Secret Codes &amp; the NSA</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="crypto-objectives.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Objectives &amp; Prerequisites</span></a></div></li>
+<li><div class="toc-item"><a href="preliminary-activity.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Preliminary Activity</span></a></div></li>
+<li><div class="toc-item"><a href="the-caesarshift-cipher.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Caesar/shift cipher</span></a></div></li>
+<li><div class="toc-item"><a href="frequency-analysis.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Frequency analysis</span></a></div></li>
+<li><div class="toc-item"><a href="affine-ciphers.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Affine ciphers</span></a></div></li>
+<li><div class="toc-item"><a href="onramp-to-number-theory.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Onramp to number theory</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec_reading_questions.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Reading Questions</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_reading_questions.html#exercises-leg-project" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="extensions-and-alterations.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Extensions and Alterations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="extensions-and-alterations.html#the-diffie-hellman-key-exchange" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Diffie-Hellman key exchange</span></a></div></li>
+<li><div class="toc-item"><a href="extensions-and-alterations.html#potential-undergraduate-research-projects" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Potential undergraduate research projects</span></a></div></li>
+</ul>
 </li>
-<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">2.6</span> <span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="reflections-and-advice.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Reflections and Advice</span></a></div></li>
+<li><div class="toc-item"><a href="additional-resources.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Additional Resources</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="ch-loans.html" class="internal"><span class="codenumber">3</span> <span class="title">The Staggering &amp; Inequitable Burden of Student Loans</span></a></div>
+<div class="toc-item"><a href="climate-change.html" class="internal"><span class="codenumber">4</span> <span class="title">Climate Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec_loans-objectives.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Objectives</span></a></div></li>
-<li>
-<div class="toc-item"><a href="cui-bono-who-benefits.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Cui Bono: Who Benefits?</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="cui-bono-who-benefits.html#rqs-minhaj" class="internal"><span class="codenumber">3.2</span> <span class="title">Reading Questions</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="debt-big-problem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</span></a></div></li>
-<li><div class="toc-item"><a href="changes-in-college-tuition-over-time.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Changes in College Tuition over Time</span></a></div></li>
-<li>
-<div class="toc-item"><a href="student-debt-by-college-type.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Student Debt by College Type</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-debt-over-time" class="internal"><span class="codenumber">3.5</span> <span class="title">Student Debt over Time</span></a></div></li>
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-6" class="internal"><span class="codenumber">3.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-tuition-tracker" class="internal"><span class="codenumber">3.5</span> <span class="title">Trends at Your Institution</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html" class="internal"><span class="codenumber">3.6</span> <span class="title">The Intersectional Inequities of Student Debt</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-toll" class="internal"><span class="codenumber">3.6</span> <span class="title">The Toll of Student Debt in the U.S.</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rq-trends-in-student-aid" class="internal"><span class="codenumber">3.6</span> <span class="title">Trends in Student Aid</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-biden-plan" class="internal"><span class="codenumber">3.6</span> <span class="title">The Biden-Harris Loan Forgiveness Plans</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#reading-questions-4" class="internal"><span class="codenumber">3.6</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-oecd" class="internal"><span class="codenumber">3.6</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-loans-rtn" class="internal"><span class="codenumber">3.6</span> <span class="title">Reading the News on Student Loans</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-by-race" class="internal"><span class="codenumber">3.6</span> <span class="title">Student Debt by Race: What Is Fair?</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="loans-solving-for-change.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="loans-solving-for-change.html#reading-questions-7" class="internal"><span class="codenumber">3.7</span> <span class="title">Student Loan Activism &amp; Policy</span></a></div></li>
-<li><div class="toc-item"><a href="loans-solving-for-change.html#exercises-your-benefit" class="internal"><span class="codenumber">3.7</span> <span class="title">Exercises</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="loans-wrap-up-exercise.html" class="internal"><span class="codenumber">3.8</span> <span class="title">Wrap-Up Exercise</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ch-cryptography.html" class="internal"><span class="codenumber">4</span> <span class="title">Secret Codes &amp; the NSA</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="crypto-objectives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Objectives &amp; Prerequisites</span></a></div></li>
-<li><div class="toc-item"><a href="preliminary-activity.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Preliminary Activity</span></a></div></li>
-<li><div class="toc-item"><a href="the-caesarshift-cipher.html" class="internal"><span class="codenumber">4.2</span> <span class="title">The Caesar/shift cipher</span></a></div></li>
-<li><div class="toc-item"><a href="frequency-analysis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Frequency analysis</span></a></div></li>
-<li><div class="toc-item"><a href="affine-ciphers.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Affine ciphers</span></a></div></li>
-<li><div class="toc-item"><a href="onramp-to-number-theory.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Onramp to number theory</span></a></div></li>
-<li>
-<div class="toc-item"><a href="extensions-and-alterations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Extensions and Alterations</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="extensions-and-alterations.html#the-diffie-hellman-key-exchange" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Diffie-Hellman key exchange</span></a></div></li>
-<li><div class="toc-item"><a href="extensions-and-alterations.html#potential-undergraduate-research-projects" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Potential undergraduate research projects</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="reflections-and-advice.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Reflections and Advice</span></a></div></li>
-<li><div class="toc-item"><a href="additional-resources.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Additional Resources</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change.html" class="internal"><span class="codenumber">5</span> <span class="title">Climate Change</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-objectives.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Objectives</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-background.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Understanding the Issue</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-cui-bono.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Cui Bono - Who Benefits?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-big-problem.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Big Problem: What is the best way to reduce greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-objectives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Objectives</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-background.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Understanding the Issue</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-cui-bono.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Cui Bono - Who Benefits?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-big-problem.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Big Problem: What is the best way to reduce greenhouse gas emissions?</span></a></div></li>
 <li class="active">
-<div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-21" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-22" class="internal"><span class="codenumber">5.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-23" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Significant figures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-11" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Data Visualization</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Data Visualization</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-types-of-data" class="internal"><span class="codenumber">5.6.1</span> <span class="title">Types of Data</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-types-of-data" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Types of Data</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Graphs</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Graphs</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-bar" class="internal"><span class="codenumber">5.6.2.1</span> <span class="title">Bar Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-5" class="internal"><span class="codenumber">5.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-6" class="internal"><span class="codenumber">5.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-combining-graphs" class="internal"><span class="codenumber">5.6.2.4</span> <span class="title">Combining Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-other-visualizations" class="internal"><span class="codenumber">5.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-accessibility" class="internal"><span class="codenumber">5.6.2.6</span> <span class="title">Accessibiliity</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mathematical Models</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-26" class="internal"><span class="codenumber">5.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-27" class="internal"><span class="codenumber">5.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-10" class="internal"><span class="codenumber">5.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-28" class="internal"><span class="codenumber">5.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Solving for Change</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-29" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-30" class="internal"><span class="codenumber">5.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-31" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-exercises.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Exercises</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">5.11</span> <span class="title">References</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-32" class="internal"><span class="codenumber">5.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-33" class="internal"><span class="codenumber">5.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-bar" class="internal"><span class="codenumber">4.6.2.1</span> <span class="title">Bar Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-4" class="internal"><span class="codenumber">4.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-5" class="internal"><span class="codenumber">4.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-combining-graphs" class="internal"><span class="codenumber">4.6.2.4</span> <span class="title">Combining Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-other-visualizations" class="internal"><span class="codenumber">4.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-accessibility" class="internal"><span class="codenumber">4.6.2.6</span> <span class="title">Accessibiliity</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="climate-change.html" class="internal"><span class="codenumber">6</span> <span class="title">Environmental Justice</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="environmental-justice-objectives.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Objectives</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">7</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
 <ul class="structural">
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-16" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
 <li>
-<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Understanding the Issue</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">7.1</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Importing and Merging the Data</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Visualizing the Data</span></a></div>
+<div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
 <ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Bill Type vs. Status</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">7.3.1.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-19" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+</ul>
 </li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-exercises.html" class="internal"><span class="codenumber">4.10</span> <span class="title">Exercises</span></a></div></li>
+<li>
+<div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-22" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-future-directions.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Directions for Future Work</span></a></div>
+<div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#bayesian-analysis" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Bayesian Analysis</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">7.4.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">7.4.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#queer-and-trans-resistance" class="internal"><span class="codenumber">7.4.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
+<li>
+<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Understanding the Issue</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.1</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Importing and Merging the Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Visualizing the Data</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-leg-visualize.html#sec-intro-to-data-leg" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.3.2</span> <span class="title">How to explore the data visually</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.3.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">7.6</span> <span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.3.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">5.3.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">5.3.5.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">5.3.6</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-case-study.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Case Study: How can we support storytelling using different data sources?</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-case-study.html#references-1" class="internal"><span class="codenumber">5.4</span> <span class="title">References</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-textualize.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Textualizing the Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-textualize.html#analyzing-text" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Stuffstuff</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-future-directions.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Directions for Future Work</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#bayesian-analysis" class="internal"><span class="codenumber">5.6.1</span> <span class="title">Bayesian Analysis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">5.6.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">5.6.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">5.6.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#queer-and-trans-resistance" class="internal"><span class="codenumber">5.6.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">5.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">5.8</span> <span class="title">References</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -451,9 +431,13 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec_annotated-bib.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Annotated Bibliography</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="solutions-1.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Hints</span></a></div></li>
-<li><div class="toc-item"><a href="solutions-2.html" class="internal"><span class="codenumber">C</span> <span class="title">Selected Solutions</span></a></div></li>
-<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">D</span> <span class="title">List of Symbols</span></a></div></li>
+<li>
+<div class="toc-item"><a href="solutions-1.html" class="internal"><span class="codenumber">B</span> <span class="title">A guide for using this book, contents, etc</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-instructor.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Chapter 5: Anti-Trans Legislation in the U.S.</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="solutions-2.html" class="internal"><span class="codenumber">C</span> <span class="title">Selected Hints</span></a></div></li>
+<li><div class="toc-item"><a href="solutions-3.html" class="internal"><span class="codenumber">D</span> <span class="title">Selected Solutions</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">E</span> <span class="title">List of Symbols</span></a></div></li>
 <li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
 <li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
@@ -461,50 +445,50 @@ window.MathJax = {
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="climate-change-math-topic-scientific-notation"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">5.5</span> <span class="title">Scientific Notation and Number Sense</span>
+<span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span>
 </h2>
-<section class="subsection" id="subsection-21"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">5.5.1</span> <span class="title">Thinking about Size Comparisons</span>
+<section class="subsection" id="subsection-11"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span>
 </h3>
-<div class="para" id="p-434">How can we compare the numbers 100 and 1,000?</div>
-<div class="para logical" id="p-435">
+<div class="para" id="p-346">How can we compare the numbers 100 and 1,000?</div>
+<div class="para logical" id="p-347">
 <div class="para">Answers you might have given:</div>
 <ul class="disc">
-<li id="li-146"><div class="para" id="p-derived-li-146">1,000 is 900 more than 100.</div></li>
-<li id="li-147"><div class="para" id="p-derived-li-147">100 is 900 less than 1,000.</div></li>
-<li id="li-148"><div class="para" id="p-derived-li-148">100 is 1/10 as big as 1,000.</div></li>
-<li id="li-149"><div class="para" id="p-derived-li-149">1,000 is 10 times as big as 100.</div></li>
+<li id="li-141"><div class="para" id="p-derived-li-141">1,000 is 900 more than 100.</div></li>
+<li id="li-142"><div class="para" id="p-derived-li-142">100 is 900 less than 1,000.</div></li>
+<li id="li-143"><div class="para" id="p-derived-li-143">100 is 1/10 as big as 1,000.</div></li>
+<li id="li-144"><div class="para" id="p-derived-li-144">1,000 is 10 times as big as 100.</div></li>
 </ul>
 </div>
-<article class="assemblage assemblage-like" id="assemblage-2"><div class="para" id="p-436">Reflection question: Look at the different ways of comparing those two numbers. What are the benefits of each of these comparisons? What are some reasons for not using some of these comparisons? Why might someone choose to use one way of comparing instead of another?</div></article><div class="para logical" id="p-437">
+<article class="assemblage assemblage-like" id="assemblage-2"><div class="para" id="p-348">Reflection question: Look at the different ways of comparing those two numbers. What are the benefits of each of these comparisons? What are some reasons for not using some of these comparisons? Why might someone choose to use one way of comparing instead of another?</div></article><div class="para logical" id="p-349">
 <div class="para">How can you compare the following sets of numbers?</div>
 <ul class="disc">
-<li id="li-150"><div class="para" id="p-derived-li-150">1,000,000,000,000 and 10</div></li>
-<li id="li-151"><div class="para" id="p-derived-li-151">545,430,089,384,398,938,938,398,983,982,345,523,234,942 and 9,293,983,983,298,982,983,483</div></li>
-<li id="li-152"><div class="para" id="p-derived-li-152">0.0000000001 and 10,000,000,000,000,000</div></li>
+<li id="li-145"><div class="para" id="p-derived-li-145">1,000,000,000,000 and 10</div></li>
+<li id="li-146"><div class="para" id="p-derived-li-146">545,430,089,384,398,938,938,398,983,982,345,523,234,942 and 9,293,983,983,298,982,983,483</div></li>
+<li id="li-147"><div class="para" id="p-derived-li-147">0.0000000001 and 10,000,000,000,000,000</div></li>
 </ul>
 </div>
-<div class="para" id="p-438">You can compare these numbers in the same ways as the ways you might have chosen to compare 100 and 1000, but they may not be as meaningful or useful.  Instead, you might want to see  Can you think of any other ways to compare these numbers?</div>
-<figure class="figure figure-like" id="figure-10"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/0fKBhvDjuy0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.5.1<span class="period">.</span></span><span class="space"> </span>Powers of Ten is a (slightly outdated) movie from the 1970s which shows how the different powers of ten are related.</figcaption></figure><div class="para" id="p-439">Understanding very large numbers can be hard to do.  Some strategies for trying to understand very large numbers are:</div>
+<div class="para" id="p-350">You can compare these numbers in the same ways as the ways you might have chosen to compare 100 and 1000, but they may not be as meaningful or useful.  Instead, you might want to see  Can you think of any other ways to compare these numbers?</div>
+<figure class="figure figure-like" id="figure-5"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/0fKBhvDjuy0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.1<span class="period">.</span></span><span class="space"> </span>Powers of Ten is a (slightly outdated) movie from the 1970s which shows how the different powers of ten are related.</figcaption></figure><div class="para" id="p-351">Understanding very large numbers can be hard to do.  Some strategies for trying to understand very large numbers are:</div>
 <ul class="disc">
-<li id="li-153"><div class="para" id="p-derived-li-153">Breaking the number down into smaller pieces.  For example, say you were trying to understand the number $1,000,000,000 (1 billion dollars).  If you made $100 an hour, and you worked full-time (40 hours per week in the US), 50 weeks a year, it would take 5000 years for you to earn $1,000,000,000...and that doesn’t even account for taxes!<div class="displaymath process-math">
+<li id="li-148"><div class="para" id="p-derived-li-148">Breaking the number down into smaller pieces.  For example, say you were trying to understand the number $1,000,000,000 (1 billion dollars).  If you made $100 an hour, and you worked full-time (40 hours per week in the US), 50 weeks a year, it would take 5000 years for you to earn $1,000,000,000...and that doesn’t even account for taxes!<div class="displaymath process-math">
 \begin{equation*}
 (\$100/\text{hour})*(40\text{hours/week})*(50\text{weeks/year})*(5000\text{years}) = \$1,000,000,000
 \end{equation*}
 </div>
 </div></li>
-<li id="li-154"><div class="para" id="p-derived-li-154">Changing the units of the number can be helpful, especially when there is another unit which might help you understand better. The Aqua satellite, used to measure greenhouse gas emissions, orbits 2,300,000 feet above the Earth. This large number is easier to comprehend if you convert it into 436 miles <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-aqua-satellite.html" title="Bibliographic Entry 5.11.1.27">[5.11.1.27]</a>
+<li id="li-149"><div class="para" id="p-derived-li-149">Changing the units of the number can be helpful, especially when there is another unit which might help you understand better. The Aqua satellite, used to measure greenhouse gas emissions, orbits 2,300,000 feet above the Earth. This large number is easier to comprehend if you convert it into 436 miles <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-aqua-satellite.html" title="Bibliographic Entry 4.11.1.27">[4.11.1.27]</a>
 </div></li>
-<li id="li-155"><div class="para" id="p-derived-li-155">Comparing the quantity to something else you already can envision.  The 2,300,000 feet or 436 miles we found in the previous bullet is still somewhat difficult to understand.  Thinking of this as the distance from Washington D.C. to Boston, or from San Diego to San Jose, can be more helpful (at least if you’ve been to those cities).</div></li>
-<li id="li-156"><div class="para" id="p-derived-li-156">Looking at the quantity per person, or per unit area, or per some other unit. In 2020, the US used 763 million gallons of oil, on average, every day <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-us-oil-consumption.html" title="Bibliographic Entry 5.11.1.26">[5.11.1.26]</a>.  That is a little bit more than 2 gallons per person.</div></li>
-</ul></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">5.5.2</span> <span class="title">What is Scientific Notation?</span>
+<li id="li-150"><div class="para" id="p-derived-li-150">Comparing the quantity to something else you already can envision.  The 2,300,000 feet or 436 miles we found in the previous bullet is still somewhat difficult to understand.  Thinking of this as the distance from Washington D.C. to Boston, or from San Diego to San Jose, can be more helpful (at least if you’ve been to those cities).</div></li>
+<li id="li-151"><div class="para" id="p-derived-li-151">Looking at the quantity per person, or per unit area, or per some other unit. In 2020, the US used 763 million gallons of oil, on average, every day <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-us-oil-consumption.html" title="Bibliographic Entry 4.11.1.26">[4.11.1.26]</a>.  That is a little bit more than 2 gallons per person.</div></li>
+</ul></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span>
 </h3>
-<div class="para" id="p-440">So far, we have been writing numbers using decimal notation. Decimal notation is our usual way of writing the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 to talk about a number. But, sometimes decimal notation can make it more difficult to understand really big or really small numbers. Scientific notation is a way of writing very large or very small numbers in order to make the numbers easier for people to understand. Scientific notation also makes it easier to write down numbers that would be very long in decimal notation.</div>
+<div class="para" id="p-352">So far, we have been writing numbers using decimal notation. Decimal notation is our usual way of writing the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 to talk about a number. But, sometimes decimal notation can make it more difficult to understand really big or really small numbers. Scientific notation is a way of writing very large or very small numbers in order to make the numbers easier for people to understand. Scientific notation also makes it easier to write down numbers that would be very long in decimal notation.</div>
 <article class="definition definition-like" id="definition-9"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Scientific Notation.</span>
-</h4> <div class="para logical" id="p-441">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Scientific Notation.</span>
+</h4> <div class="para logical" id="p-353">
 <div class="para">We say a number is in <em class="emphasis">scientific notation</em> if it is written in the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -512,15 +496,15 @@ A.XXXX * 10^{power}
 \end{equation*}
 </div>
 <div class="para">where A is the first non-zero digit in the number, and <em class="emphasis">power</em> is the appropriate power.</div>
-</div></article><div class="para" id="p-442">To put a number into scientific notation, we first figure out what the place is of the first nonzero digit.  Each place in a number corresponds to a power of 10 - for example, the hundreds place corresponds to <span class="process-math">\(10^2 = 100\text{,}\)</span> while the millions place corresponds to <span class="process-math">\(10^6 = 1,000,000\text{.}\)</span>  If <span class="process-math">\(n &gt; 0\text{,}\)</span> then <span class="process-math">\(10^n\)</span> is a 1 followed by <span class="process-math">\(n\)</span> 0s.  The ones place is <span class="process-math">\(10^0 = 1\text{.}\)</span>
+</div></article><div class="para" id="p-354">To put a number into scientific notation, we first figure out what the place is of the first nonzero digit.  Each place in a number corresponds to a power of 10 - for example, the hundreds place corresponds to <span class="process-math">\(10^2 = 100\text{,}\)</span> while the millions place corresponds to <span class="process-math">\(10^6 = 1,000,000\text{.}\)</span>  If <span class="process-math">\(n &gt; 0\text{,}\)</span> then <span class="process-math">\(10^n\)</span> is a 1 followed by <span class="process-math">\(n\)</span> 0s.  The ones place is <span class="process-math">\(10^0 = 1\text{.}\)</span>
 </div>
-<div class="para" id="p-443">For negative values of <span class="process-math">\(n\text{,}\)</span> we get decimals.  For example, <span class="process-math">\(10^{-1} = \frac{1}{10^1} = 0.1\text{,}\)</span> one-tenth.  <span class="process-math">\(10^{-3} = \frac{1}{10^3} = 0.001\text{,}\)</span> one one-thousandth.</div>
-<div class="para" id="p-444">To do arithmetic with numbers in scientific notation, you proceed differently depending on what you’re doing.</div>
-<article class="assemblage assemblage-like" id="assemblage-3"><div class="para" id="p-445">To multiply/divide numbers in scientific notation, you can divide both the decimal part and the exponent part separately.</div>
-<div class="para" id="p-446">To add or subtract numbers in scientific notation, you’ll need to write them both with the same power (use whichever power is larger), and then add or subtract the decimal parts.</div>
-<div class="para" id="p-447">If you end up with a zero in front of the decimal, you’ll need to move the decimal place over one or more places:</div></article><div class="para" id="p-448">Try this yourself in the examples below.  Don’t worry about rounding - we’ll talk about how to decide how many decimal places to round to in the next section.</div>
+<div class="para" id="p-355">For negative values of <span class="process-math">\(n\text{,}\)</span> we get decimals.  For example, <span class="process-math">\(10^{-1} = \frac{1}{10^1} = 0.1\text{,}\)</span> one-tenth.  <span class="process-math">\(10^{-3} = \frac{1}{10^3} = 0.001\text{,}\)</span> one one-thousandth.</div>
+<div class="para" id="p-356">To do arithmetic with numbers in scientific notation, you proceed differently depending on what you’re doing.</div>
+<article class="assemblage assemblage-like" id="assemblage-3"><div class="para" id="p-357">To multiply/divide numbers in scientific notation, you can divide both the decimal part and the exponent part separately.</div>
+<div class="para" id="p-358">To add or subtract numbers in scientific notation, you’ll need to write them both with the same power (use whichever power is larger), and then add or subtract the decimal parts.</div>
+<div class="para" id="p-359">If you end up with a zero in front of the decimal, you’ll need to move the decimal place over one or more places:</div></article><div class="para" id="p-360">Try this yourself in the examples below.  Don’t worry about rounding - we’ll talk about how to decide how many decimal places to round to in the next section.</div>
 <article class="example example-like" id="example-1"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span>
 </h4>Find the product of <span class="process-math">\(2.23*10^3\)</span> and <span class="process-math">\(4.25*10^{-4}\text{.}\)</span><div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><div class="displaymath process-math">
 \begin{equation*}
@@ -528,32 +512,32 @@ A.XXXX * 10^{power}
 \end{equation*}
 </div></div></div>
 </div></article><article class="example example-like" id="example-2"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.4</span><span class="period">.</span>
 </h4>Find the sum of <span class="process-math">\(5.72*10^5\)</span> and <span class="process-math">\(6.43*10^6\text{.}\)</span><div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><div class="displaymath process-math">
 \begin{equation*}
 0.572*10^6 + 6.43*10^6 = 7.00*10^6
 \end{equation*}
 </div></div></div>
-</div></article></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">5.5.3</span> <span class="title">Significant figures</span>
+</div></article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.3</span> <span class="title">Significant figures</span>
 </h3>
-<div class="para" id="p-449">When working with numbers with lots of decimal digits, how many digits should you keep? This is the idea behind <em class="emphasis">signficant figures</em>.</div>
+<div class="para" id="p-361">When working with numbers with lots of decimal digits, how many digits should you keep? This is the idea behind <em class="emphasis">signficant figures</em>.</div>
 <article class="definition definition-like" id="definition-10"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Significant Figures.</span>
-</h4> <div class="para" id="p-450">The number of significant figures or significant digits in a number which has been rounded is the total number of digits written, minus any leading zeros (zeros written before the first non-zero digit).  Numbers that have not been rounded have an infinite number of significant figures.</div></article><div class="para" id="p-451">For example, the number 123.4567 has 7 significant digits, but so does the number 0.0001234567.  The number 1.234567000 has 10 significant digits, because we count the zeros which aren’t leading zeros.</div>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Significant Figures.</span>
+</h4> <div class="para" id="p-362">The number of significant figures or significant digits in a number which has been rounded is the total number of digits written, minus any leading zeros (zeros written before the first non-zero digit).  Numbers that have not been rounded have an infinite number of significant figures.</div></article><div class="para" id="p-363">For example, the number 123.4567 has 7 significant digits, but so does the number 0.0001234567.  The number 1.234567000 has 10 significant digits, because we count the zeros which aren’t leading zeros.</div>
 <article class="example example-like" id="example-3"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.6</span><span class="period">.</span>
-</h4>The population of the United States was 328,239,523 in 2019 <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-us-population.html" title="Bibliographic Entry 5.11.1.22">[5.11.1.22]</a>. How many significant digits does this number have?<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><div class="para" id="p-452">There are 9 significant digits here.</div></div></div>
-</div></article><div class="para" id="p-453">In a number written in scientific notation, we count the significant digits the same way.  For example, the number <span class="process-math">\(1.2345*10^{-3}\)</span> has 5 significant digits (notice that this is the same as if we had written it as <span class="process-math">\(0.0012345\)</span>).</div>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.6</span><span class="period">.</span>
+</h4>The population of the United States was 328,239,523 in 2019 <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-us-population.html" title="Bibliographic Entry 4.11.1.22">[4.11.1.22]</a>. How many significant digits does this number have?<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><div class="para" id="p-364">There are 9 significant digits here.</div></div></div>
+</div></article><div class="para" id="p-365">In a number written in scientific notation, we count the significant digits the same way.  For example, the number <span class="process-math">\(1.2345*10^{-3}\)</span> has 5 significant digits (notice that this is the same as if we had written it as <span class="process-math">\(0.0012345\)</span>).</div>
 <article class="example example-like" id="example-4"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.7</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-454">The United States emitted the equivalent of <span class="process-math">\(6.558*10^9\)</span> metric tons of carbon dioxide in greenhouse gases during 2019 <a href="" class="xref" data-knowl="./knowl/greehouse-gas-biblio-emissions-inventory.html" title="Bibliographic Entry 5.11.1.23">[5.11.1.23]</a>. How many significant figures are there in this number?</div>
+<div class="para" id="p-366">The United States emitted the equivalent of <span class="process-math">\(6.558*10^9\)</span> metric tons of carbon dioxide in greenhouse gases during 2019 <a href="" class="xref" data-knowl="./knowl/greehouse-gas-biblio-emissions-inventory.html" title="Bibliographic Entry 4.11.1.23">[4.11.1.23]</a>. How many significant figures are there in this number?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><div class="para" id="p-455">There are 4 significant figures.</div></div></div>
-</div></article><div class="para logical" id="p-456">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><div class="para" id="p-367">There are 4 significant figures.</div></div></div>
+</div></article><div class="para logical" id="p-368">
 <div class="para">Significant figures are important because they tell us how accurate numbers are.  Say we wanted to know what the average CO2 emissions per person were in the United States.  We can take the numbers we had in the last two examples and divide:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -562,10 +546,10 @@ A.XXXX * 10^{power}
 </div>
 <div class="para">The calculator produces a number of digits here, but how can we know how many values to round to? Significant figures give us a way to decide this.</div>
 </div>
-<article class="assemblage assemblage-like" id="assemblage-4"><div class="para" id="p-457">When multiplying or dividing two numbers, round to the smaller number of significant digits.</div>
-<div class="para" id="p-458">When adding or subtracting two numbers, round to the smaller number of decimal places (significant figures after the decimal point).</div></article><div class="para" id="p-459">For our example above, since the population number has 9 significant digits, and the CO2 emissions only has 4, we will round to 4 decimal places and say that the emissions per person is <span class="process-math">\(19.98\)</span> metric tons per person.  Compare this to what we do when we subtract.</div>
-<div class="para logical" id="p-460">
-<div class="para">Say we want to know how many more tons of CO2 equivalents per person were emitted in the US than in China.  In 2019, China had <span class="process-math">\(1.3902*10^{10}\)</span> (5 significant figures) of CO2 equivalent emissions <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-emissions-china.html" title="Bibliographic Entry 5.11.1.24">[5.11.1.24]</a>, and the population was 1,433,783,686 (10 significant figures) <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-china-population.html" title="Bibliographic Entry 5.11.1.25">[5.11.1.25]</a>. So in China, the emissions per person were</div>
+<article class="assemblage assemblage-like" id="assemblage-4"><div class="para" id="p-369">When multiplying or dividing two numbers, round to the smaller number of significant digits.</div>
+<div class="para" id="p-370">When adding or subtracting two numbers, round to the smaller number of decimal places (significant figures after the decimal point).</div></article><div class="para" id="p-371">For our example above, since the population number has 9 significant digits, and the CO2 emissions only has 4, we will round to 4 decimal places and say that the emissions per person is <span class="process-math">\(19.98\)</span> metric tons per person.  Compare this to what we do when we subtract.</div>
+<div class="para logical" id="p-372">
+<div class="para">Say we want to know how many more tons of CO2 equivalents per person were emitted in the US than in China.  In 2019, China had <span class="process-math">\(1.3902*10^{10}\)</span> (5 significant figures) of CO2 equivalent emissions <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-emissions-china.html" title="Bibliographic Entry 4.11.1.24">[4.11.1.24]</a>, and the population was 1,433,783,686 (10 significant figures) <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-china-population.html" title="Bibliographic Entry 4.11.1.25">[4.11.1.25]</a>. So in China, the emissions per person were</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/climate-change-biblio-emissions-china.html ./knowl/climate-change-biblio-china-population.html">
 \begin{equation*}
 \frac{1.3902*10^10}{1,433,783,686} = 9.6960232814...
@@ -579,17 +563,17 @@ A.XXXX * 10^{power}
 </div>
 <div class="para">Since we are subtracting, we take the lesser of the significant figures after the decimal - 2 in this case.  So we round the answer to 10.02 metric tons more per person.</div>
 </div>
-<div class="para" id="p-461">What’s that big ‘E’ on my calculator? You’ve probably seen an output like this before on your calculator.</div>
-<div class="para" id="p-462">The second line might look really complicated, but this is just the way your calculator was programmed to write numbers in scientific notation. The product of 315,246 and 134,512,361 is too big to fit all of it on the calculator screen in one line. So, the calculator programmers decided to represent that product using scientific notation. 4.240448376E13 means the same thing as <span class="process-math">\(4.240448376 * 10^{13}\text{.}\)</span>
+<div class="para" id="p-373">What’s that big ‘E’ on my calculator? You’ve probably seen an output like this before on your calculator.</div>
+<div class="para" id="p-374">The second line might look really complicated, but this is just the way your calculator was programmed to write numbers in scientific notation. The product of 315,246 and 134,512,361 is too big to fit all of it on the calculator screen in one line. So, the calculator programmers decided to represent that product using scientific notation. 4.240448376E13 means the same thing as <span class="process-math">\(4.240448376 * 10^{13}\text{.}\)</span>
 </div>
-<div class="para" id="p-463">But, not all calculators use ‘E’ to describe very large or very small numbers. Desmos provides an <a class="external" href="https://www.desmos.com/scientific" target="_blank">online scientific calculator</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-100" id="fn-100"><sup> 100 </sup></a> that anyone can use. If you try to add, subtract, multiply, or divide two numbers with more than 9 digits, Desmos will automatically write them in scientific notation.  Instead of using the capital E, Desmos writes scientific notation the same way that we’ve seen.</div>
-<div class="para" id="p-464">An important note: There are other symbols that you might see sometimes on your calculator that look similar to this capital E, but they actually mean very different things.</div>
+<div class="para" id="p-375">But, not all calculators use ‘E’ to describe very large or very small numbers. Desmos provides an <a class="external" href="https://www.desmos.com/scientific" target="_blank">online scientific calculator</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-70" id="fn-70"><sup> 70 </sup></a> that anyone can use. If you try to add, subtract, multiply, or divide two numbers with more than 9 digits, Desmos will automatically write them in scientific notation.  Instead of using the capital E, Desmos writes scientific notation the same way that we’ve seen.</div>
+<div class="para" id="p-376">An important note: There are other symbols that you might see sometimes on your calculator that look similar to this capital E, but they actually mean very different things.</div>
 <ul class="disc">
-<li id="li-157"><div class="para" id="p-derived-li-157">
+<li id="li-152"><div class="para" id="p-derived-li-152">
 <span class="process-math">\(e\text{:}\)</span> The lowercase e is a number that is important for lots of applications of mathematics. The name of this number is the same as the name of the letter:  e. It is equal to about 2.71828, and should not be confused with the scientific notation symbol.</div></li>
-<li id="li-158"><div class="para" id="p-derived-li-158">
+<li id="li-153"><div class="para" id="p-derived-li-153">
 <span class="process-math">\(\Sigma\text{:}\)</span>This symbol, which looks like a sideways W,  is called ‘sigma’. Sigma is a Greek letter, and it is sometimes used in mathematics to talk about addition.</div></li>
-</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-100"><div class="fn"><code class="code-inline tex2jax_ignore">www.desmos.com/scientific</code></div></div>
+</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-70"><div class="fn"><code class="code-inline tex2jax_ignore">www.desmos.com/scientific</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="climate-change-big-problem.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="climate-change-math-topic-data-visualization.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

@@ -13,8 +13,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
-<meta property="book:author" content="Kenan Ince">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<meta property="book:author" content="Kenan Ince ">
+<meta property="book:author" content="Bianca Thompson">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -26,6 +27,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -67,7 +81,7 @@ window.MathJax = {
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="qr4sj.html"><span class="title">Quantitative Reasoning for Social Justice:</span> <span class="subtitle">An Active Learning Workbook</span></a></h1>
-<p class="byline">Kenan Ince</p>
+<p class="byline">Kenan Ince, Bianca Thompson</p>
 </div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
@@ -226,219 +240,185 @@ window.MathJax = {
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="essential-knowledge.html" class="internal"><span class="codenumber">2</span> <span class="title">What mathematical knowledge is essential?</span></a></div>
+<div class="toc-item"><a href="ch-loans.html" class="internal"><span class="codenumber">2</span> <span class="title">The Staggering &amp; Inequitable Burden of Student Loans</span></a></div>
 <ul class="structural">
+<li><div class="toc-item"><a href="sec_loans-objectives.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Objectives</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec_fermi_estimation.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Fermi Estimation</span></a></div>
+<div class="toc-item"><a href="cui-bono-who-benefits.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Cui Bono: Who Benefits?</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="cui-bono-who-benefits.html#rqs-minhaj" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="debt-big-problem.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</span></a></div></li>
+<li><div class="toc-item"><a href="changes-in-college-tuition-over-time.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Changes in College Tuition over Time</span></a></div></li>
+<li>
+<div class="toc-item"><a href="student-debt-by-college-type.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt by College Type</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#fermi-estimation" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Fermi estimation</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">2.1.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#queer-and-trans-resistance" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
+<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-debt-over-time" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt over Time</span></a></div></li>
+<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-3" class="internal"><span class="codenumber">2.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
+<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-tuition-tracker" class="internal"><span class="codenumber">2.5</span> <span class="title">Trends at Your Institution</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec_spinning_numbers.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Spinning the numbers</span></a></div>
+<div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The Intersectional Inequities of Student Debt</span></a></div>
 <ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_spinning_numbers.html#importing-and-merging-the-data" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Stuff stuff stuffa</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_spinning_numbers.html#exercises-import" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec_spinning_numbers.html#cleaning-the-data" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-toll" class="internal"><span class="codenumber">2.6</span> <span class="title">The Toll of Student Debt in the U.S.</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rq-trends-in-student-aid" class="internal"><span class="codenumber">2.6</span> <span class="title">Trends in Student Aid</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-biden-plan" class="internal"><span class="codenumber">2.6</span> <span class="title">The Biden-Harris Loan Forgiveness Plans</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#reading-questions-4" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-oecd" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-loans-rtn" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading the News on Student Loans</span></a></div></li>
+<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-by-race" class="internal"><span class="codenumber">2.6</span> <span class="title">Student Debt by Race: What Is Fair?</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec_lying_with_visuals.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Lying with graphs</span></a></div>
+<div class="toc-item"><a href="loans-solving-for-change.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span></a></div>
 <ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_lying_with_visuals.html#graphs" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Bill Type vs. Status</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_lying_with_visuals.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
+<li><div class="toc-item"><a href="loans-solving-for-change.html#reading-questions-7" class="internal"><span class="codenumber">2.7</span> <span class="title">Student Loan Activism &amp; Policy</span></a></div></li>
+<li><div class="toc-item"><a href="loans-solving-for-change.html#exercises-your-benefit" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
 </li>
-<li><div class="toc-item"><a href="sec_lying_with_visuals.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
+<li><div class="toc-item"><a href="loans-wrap-up-exercise.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Wrap-Up Exercise</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec_unit_conversion.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Unit Conversion and why should we care</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_unit_conversion.html#exercises-anti-trans" class="internal"><span class="codenumber">2.4</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
-</li>
+<div class="toc-item"><a href="ch-cryptography.html" class="internal"><span class="codenumber">3</span> <span class="title">Secret Codes &amp; the NSA</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="crypto-objectives.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Objectives &amp; Prerequisites</span></a></div></li>
+<li><div class="toc-item"><a href="preliminary-activity.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Preliminary Activity</span></a></div></li>
+<li><div class="toc-item"><a href="the-caesarshift-cipher.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Caesar/shift cipher</span></a></div></li>
+<li><div class="toc-item"><a href="frequency-analysis.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Frequency analysis</span></a></div></li>
+<li><div class="toc-item"><a href="affine-ciphers.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Affine ciphers</span></a></div></li>
+<li><div class="toc-item"><a href="onramp-to-number-theory.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Onramp to number theory</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec_reading_questions.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Reading Questions</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_reading_questions.html#exercises-leg-project" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="extensions-and-alterations.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Extensions and Alterations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="extensions-and-alterations.html#the-diffie-hellman-key-exchange" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Diffie-Hellman key exchange</span></a></div></li>
+<li><div class="toc-item"><a href="extensions-and-alterations.html#potential-undergraduate-research-projects" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Potential undergraduate research projects</span></a></div></li>
+</ul>
 </li>
-<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">2.6</span> <span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="reflections-and-advice.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Reflections and Advice</span></a></div></li>
+<li><div class="toc-item"><a href="additional-resources.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Additional Resources</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="ch-loans.html" class="internal"><span class="codenumber">3</span> <span class="title">The Staggering &amp; Inequitable Burden of Student Loans</span></a></div>
+<div class="toc-item"><a href="climate-change.html" class="internal"><span class="codenumber">4</span> <span class="title">Climate Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec_loans-objectives.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Objectives</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-objectives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Objectives</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-background.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Understanding the Issue</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-cui-bono.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Cui Bono - Who Benefits?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-big-problem.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Big Problem: What is the best way to reduce greenhouse gas emissions?</span></a></div></li>
 <li>
-<div class="toc-item"><a href="cui-bono-who-benefits.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Cui Bono: Who Benefits?</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="cui-bono-who-benefits.html#rqs-minhaj" class="internal"><span class="codenumber">3.2</span> <span class="title">Reading Questions</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="debt-big-problem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</span></a></div></li>
-<li><div class="toc-item"><a href="changes-in-college-tuition-over-time.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Changes in College Tuition over Time</span></a></div></li>
-<li>
-<div class="toc-item"><a href="student-debt-by-college-type.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Student Debt by College Type</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-debt-over-time" class="internal"><span class="codenumber">3.5</span> <span class="title">Student Debt over Time</span></a></div></li>
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-6" class="internal"><span class="codenumber">3.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-tuition-tracker" class="internal"><span class="codenumber">3.5</span> <span class="title">Trends at Your Institution</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-11" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html" class="internal"><span class="codenumber">3.6</span> <span class="title">The Intersectional Inequities of Student Debt</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Data Visualization</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-toll" class="internal"><span class="codenumber">3.6</span> <span class="title">The Toll of Student Debt in the U.S.</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rq-trends-in-student-aid" class="internal"><span class="codenumber">3.6</span> <span class="title">Trends in Student Aid</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-biden-plan" class="internal"><span class="codenumber">3.6</span> <span class="title">The Biden-Harris Loan Forgiveness Plans</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#reading-questions-4" class="internal"><span class="codenumber">3.6</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-oecd" class="internal"><span class="codenumber">3.6</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-loans-rtn" class="internal"><span class="codenumber">3.6</span> <span class="title">Reading the News on Student Loans</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-by-race" class="internal"><span class="codenumber">3.6</span> <span class="title">Student Debt by Race: What Is Fair?</span></a></div></li>
-</ul>
-</li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-types-of-data" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Types of Data</span></a></div></li>
 <li>
-<div class="toc-item"><a href="loans-solving-for-change.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Graphs</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="loans-solving-for-change.html#reading-questions-7" class="internal"><span class="codenumber">3.7</span> <span class="title">Student Loan Activism &amp; Policy</span></a></div></li>
-<li><div class="toc-item"><a href="loans-solving-for-change.html#exercises-your-benefit" class="internal"><span class="codenumber">3.7</span> <span class="title">Exercises</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="loans-wrap-up-exercise.html" class="internal"><span class="codenumber">3.8</span> <span class="title">Wrap-Up Exercise</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ch-cryptography.html" class="internal"><span class="codenumber">4</span> <span class="title">Secret Codes &amp; the NSA</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="crypto-objectives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Objectives &amp; Prerequisites</span></a></div></li>
-<li><div class="toc-item"><a href="preliminary-activity.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Preliminary Activity</span></a></div></li>
-<li><div class="toc-item"><a href="the-caesarshift-cipher.html" class="internal"><span class="codenumber">4.2</span> <span class="title">The Caesar/shift cipher</span></a></div></li>
-<li><div class="toc-item"><a href="frequency-analysis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Frequency analysis</span></a></div></li>
-<li><div class="toc-item"><a href="affine-ciphers.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Affine ciphers</span></a></div></li>
-<li><div class="toc-item"><a href="onramp-to-number-theory.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Onramp to number theory</span></a></div></li>
-<li>
-<div class="toc-item"><a href="extensions-and-alterations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Extensions and Alterations</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="extensions-and-alterations.html#the-diffie-hellman-key-exchange" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Diffie-Hellman key exchange</span></a></div></li>
-<li><div class="toc-item"><a href="extensions-and-alterations.html#potential-undergraduate-research-projects" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Potential undergraduate research projects</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="reflections-and-advice.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Reflections and Advice</span></a></div></li>
-<li><div class="toc-item"><a href="additional-resources.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Additional Resources</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change.html" class="internal"><span class="codenumber">5</span> <span class="title">Climate Change</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-objectives.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Objectives</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-background.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Understanding the Issue</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-cui-bono.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Cui Bono - Who Benefits?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-big-problem.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Big Problem: What is the best way to reduce greenhouse gas emissions?</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-21" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-22" class="internal"><span class="codenumber">5.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-23" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Significant figures</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Data Visualization</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-types-of-data" class="internal"><span class="codenumber">5.6.1</span> <span class="title">Types of Data</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Graphs</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-bar" class="internal"><span class="codenumber">5.6.2.1</span> <span class="title">Bar Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-5" class="internal"><span class="codenumber">5.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-6" class="internal"><span class="codenumber">5.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-combining-graphs" class="internal"><span class="codenumber">5.6.2.4</span> <span class="title">Combining Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-other-visualizations" class="internal"><span class="codenumber">5.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-accessibility" class="internal"><span class="codenumber">5.6.2.6</span> <span class="title">Accessibiliity</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-bar" class="internal"><span class="codenumber">4.6.2.1</span> <span class="title">Bar Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-4" class="internal"><span class="codenumber">4.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-5" class="internal"><span class="codenumber">4.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-combining-graphs" class="internal"><span class="codenumber">4.6.2.4</span> <span class="title">Combining Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-other-visualizations" class="internal"><span class="codenumber">4.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-accessibility" class="internal"><span class="codenumber">4.6.2.6</span> <span class="title">Accessibiliity</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mathematical Models</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-26" class="internal"><span class="codenumber">5.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-16" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-27" class="internal"><span class="codenumber">5.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-10" class="internal"><span class="codenumber">5.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-28" class="internal"><span class="codenumber">5.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Solving for Change</span></a></div>
+<div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-29" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-30" class="internal"><span class="codenumber">5.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-31" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-19" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-exercises.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-exercises.html" class="internal"><span class="codenumber">4.10</span> <span class="title">Exercises</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">5.11</span> <span class="title">References</span></a></div>
+<div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-32" class="internal"><span class="codenumber">5.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-33" class="internal"><span class="codenumber">5.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-22" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change.html" class="internal"><span class="codenumber">6</span> <span class="title">Environmental Justice</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="environmental-justice-objectives.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Objectives</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">7</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Understanding the Issue</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">7.1</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Importing and Merging the Data</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Visualizing the Data</span></a></div>
+<div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Bill Type vs. Status</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">7.3.1.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
+<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Understanding the Issue</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.1</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Importing and Merging the Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-future-directions.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Directions for Future Work</span></a></div>
+<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Visualizing the Data</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#bayesian-analysis" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Bayesian Analysis</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">7.4.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">7.4.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#queer-and-trans-resistance" class="internal"><span class="codenumber">7.4.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#sec-intro-to-data-leg" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.3.2</span> <span class="title">How to explore the data visually</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.3.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.3.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">5.3.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">5.3.5.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">5.3.6</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-case-study.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Case Study: How can we support storytelling using different data sources?</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-case-study.html#references-1" class="internal"><span class="codenumber">5.4</span> <span class="title">References</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">7.6</span> <span class="title">References</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-leg-textualize.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Textualizing the Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-textualize.html#analyzing-text" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Stuffstuff</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-future-directions.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Directions for Future Work</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#bayesian-analysis" class="internal"><span class="codenumber">5.6.1</span> <span class="title">Bayesian Analysis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">5.6.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">5.6.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">5.6.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#queer-and-trans-resistance" class="internal"><span class="codenumber">5.6.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">5.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">5.8</span> <span class="title">References</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -451,9 +431,13 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec_annotated-bib.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Annotated Bibliography</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="solutions-1.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Hints</span></a></div></li>
-<li><div class="toc-item"><a href="solutions-2.html" class="internal"><span class="codenumber">C</span> <span class="title">Selected Solutions</span></a></div></li>
-<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">D</span> <span class="title">List of Symbols</span></a></div></li>
+<li>
+<div class="toc-item"><a href="solutions-1.html" class="internal"><span class="codenumber">B</span> <span class="title">A guide for using this book, contents, etc</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-instructor.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Chapter 5: Anti-Trans Legislation in the U.S.</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="solutions-2.html" class="internal"><span class="codenumber">C</span> <span class="title">Selected Hints</span></a></div></li>
+<li><div class="toc-item"><a href="solutions-3.html" class="internal"><span class="codenumber">D</span> <span class="title">Selected Solutions</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">E</span> <span class="title">List of Symbols</span></a></div></li>
 <li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
 <li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
@@ -462,17 +446,17 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_research-synthesis"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">A.1</span> <span class="title">Research Synthesis</span>
 </h2>
-<div class="para" id="p-704">Here I review two ways in which mathematics instructors promote equality of opportunity through their teaching work: promoting the academic success of underrepresented students and encouraging students to critically analyze their sociopolitical environment with an eye toward social change. Of course, the definition of “equality of opportunity” is not agreed upon, but in this review it will mean a state in which that no systemic or structural bias prevents groups such as students of color, women, LGBTQ+ students, or poorer students from accessing mathematics and the jobs for which it is a gatekeeper.</div>
-<div class="para" id="p-705">There are many reasons that an equity framework is useful for teaching mathematics. There is still substantial inequality within schools, as financially under-resourced schools have fewer highly-qualified teachers, and 83% of teachers are White. Many teacher training programs provide limited education about social justice or culturally relevant pedagogy, though researchers have confirmed that culturally relevant teaching practices contribute to educational equity (McGee 2014). Preservice teachers often view student diversity as a problem rather than a resource, and many teachers hold a view that “all students should be treated equally in the classroom”, even when this leads to disproportionately negative outcomes for students of color (Rousseau &amp; Tate, 2003). This “one-size-fits-all” mentality is a common, serious obstacle to true teacher reflection and equity. Further, the “color-blind” mentality, in which a teacher claims “not to see color”, leads to ignoring students’ cultural backgrounds in the classroom, thus leading to decreased student engagement, as well as a refusal to combat historical and actual racist practices (Rousseau &amp; Tate, 2003). In classroom observations, Rousseau &amp; Tate (2003) report several instances of students being “allowed to fail” through their teacher’s neglect; such students were disproportionately Black, specifically Black men.</div>
-<div class="para" id="p-706">In addition, the way mathematics is taught around the world is often indicative of a colonial, Eurocentric narrative in which Europe is a “civilizing” force and the significant contributions of mathematicians from non-European backgrounds are downplayed. Such mathematical leaps as written mathematical records, a place value number system, the technique of measurement, our base 10 number system, the “Pythagorean Theorem”, and algebra all originated outside of Europe and were then used by Europeans to advance their own mathematics (Joseph, 1987). The marginalization of these contributions contributes to the perception of mathematics as independent of economics, politics, and culture; frames mathematical pursuits as confined to a select few (usually white, cisgender, heterosexual men); and enshrines deductive axiomatic logic (i.e. “formal” mathematical proof) as the “only” method of mathematical discovery (Joseph, 1987).</div>
-<div class="para" id="p-707">Teaching mathematics with an equity frame doesn’t just help fight these trends of inequity; using an equity frame that emphasizes the role of mathematics in democracy and addressing inequality results in student learning and achievement (Gutstein, 2003; Moses &amp; Cobb, 2001; Winter, 2007). The National Survey of Student Engagement, 2004, has found that undergraduate students are often passionate about social and political issues; bringing such issues into the mathematics classroom can increase student engagement and performance (Winter, 2007).</div>
-<div class="para" id="p-708">One major way that teachers can promote equity and justice is by focusing on reaching students who are traditionally marginalized in schools. Black students are one of the largest underrepresented groups in US education, and several studies have been done to examine what pedagogical techniques promote Black students’ classroom success. Across all the studies reviewed by Johnson and Wilson (2012), it seems that providing African-American students with a common experience that grounds mathematical ideas, as well as explicitly encouraging and supporting African-American students to do more sophisticated mathematics, are important.</div>
-<div class="para" id="p-709">Another way teachers can increase their orientation toward equity issues in the classroom is through reflection. The <em class="emphasis">Professional Standards for Teaching Mathematics</em> (NCTM, 1991) recommend that teacher reflection should focus on how students’ linguistic, ethnic, racial, socioeconomic, and cultural backgrounds influence their learning of mathematics. Generally, student-centered educational models backed by research can provide insights about how to teach mathematics better to all students, including underrepresented groups.</div>
-<div class="para" id="p-710">Two such models were discussed in the proceedings of the Teaching Undergraduates Mathematics workshop at the Mathematical Sciences Research Institute (2009): Action-Process-Object-Schema (APOS) theory and covariation. APOS theory defines an “action” as a step-by-step transformation of a set of mathematical objects into another mathematical object; for instance, evaluating a composition of functions at the point <em class="emphasis">x</em>. In contrast, the “process stage” of understanding takes place when students “internalize the action into a process” and can then think about the process without performing it. The process stage entails a greater level of abstraction, e.g. finding a general formula for a composition of functions given data for each function in table or graph form. <em class="emphasis">Covariational reasoning</em> is defined as “the cognitive activities involved in coordinating two varying quantities while attending to the ways in which they change in relation to each other”; for instance, attending to parametric equations. Observations of students suggest that covariational processing involves five kinds of mental action; questioning strategies to promote each action in students are suggested (Lai, 2009).</div>
-<div class="para" id="p-711">A common problem with implementing student-centered pedagogical styles is a lack of time and institutional support. Research has indicated that a first-level teaching move to engage more with students often involves increasing <em class="emphasis">pressing</em>, or trying to help learners articulate and hence deepen their thinking; perhaps this would be a good, low-overhead way to bring more learner-centered instruction into public schools (Brodie, 2008).</div>
-<div class="para" id="p-712">The second reviewed question involved educating all students in a manner that promoted equity, justice, and a critical analysis of their sociopolitical contexts. In this direction, guidelines include: (1) working with a textbook with a strong mathematical framework and scaffolding, (2) talk to students to decide on equity/justice issues to cover, (3) set up units around “Essential Questions”, (4) introduce the equity/justice issue first, (5) then begin the mathematics, devoting as much time as necessary to the concepts and scaffolding both math and equity/justice along the way, (6) end with a great project. Some specific unit ideas: for exponents, studying compound interest and population growth; for probability, exploring the possibility that a traffic stop should be (and is) a person of color (Osler, 2007; Gutstein, 2008).</div>
-<div class="para" id="p-713">Winter (2007) provides a model of equity- and social justice-oriented pedagogy in STEM courses which introduces sociocultural phenomena through readings, videos, and activities, then assigns a problem and a structured worksheet to help students apply mathematics to the problem. Finally, students interpret their mathematical solution in the context of the original issue, often leading to discussion about the broader implications of their solution. This model has been applied to precalculus classes, teaching functions, graphing, and statistics through examining political corruption and economic development worldwide, climate change in Zimbabwe and its impact on agriculture, and water security and native peoples’ rights in Botswana, to name a few (Winter, 2007). Winter derives several principles for justice-focused education from Marilyn Frankenstein (1990), including using real situations and real information; emphasizing situations that students might have learned about through news or other media; and using controversial materials to help students increase their curiosity, understand other perspectives more accurately, solve problems more effectively, and generate creative ideas (Johnson &amp; Johnson, 1979). Students taught using the justice approach performed statistically significantly better than a control group; they performed better on a mathematical assessment (exceeding the control group’s scores by 11.9%) and had fewer students with a grade of D or lower in the class (15.4% in the justice pedagogy condition, as opposed to 22.9% in the control group) (Winter, 2007).</div>
-<div class="para" id="p-714">There is a dearth of studies that investigate specific teaching practices which benefit underrepresented students, including teacher-student interaction and its effects. Although trying to specify “general” practices across a group as diverse as, for example, African-Americans in the US, may lead to essentialization and/or a deficit framing, a variety of historical conditions in the US have meant that many students of color have been told that they are inferior academically. Therefore, such studies would benefit many groups which are systemically marginalized in US mathematics education, including women and Latin@/e students (Jackson and Wilson, 2012). Further, although there are several collections of “mathematics for social justice” projects, units, and lessons targeted mostly at K-12 educators, Gutstein (2008) claims that no cogent and cohesive curriculum exists and identifies the need for one. Thankfully, Karaali and Khadjavi (2019) have provided a book of resources for postsecondary educators looking to teach math for social justice, and another volume is forthcoming (expected 2021). Further research is needed into the pedagogy and impacts of such an approach, and that such research is deeply essential, since equity-focused mathematics is good for students, underrepresented and otherwise, and good for the society in which we live.</div></section></div>
+<div class="para" id="p-683">Here I review two ways in which mathematics instructors promote equality of opportunity through their teaching work: promoting the academic success of underrepresented students and encouraging students to critically analyze their sociopolitical environment with an eye toward social change. Of course, the definition of “equality of opportunity” is not agreed upon, but in this review it will mean a state in which that no systemic or structural bias prevents groups such as students of color, women, LGBTQ+ students, or poorer students from accessing mathematics and the jobs for which it is a gatekeeper.</div>
+<div class="para" id="p-684">There are many reasons that an equity framework is useful for teaching mathematics. There is still substantial inequality within schools, as financially under-resourced schools have fewer highly-qualified teachers, and 83% of teachers are White. Many teacher training programs provide limited education about social justice or culturally relevant pedagogy, though researchers have confirmed that culturally relevant teaching practices contribute to educational equity (McGee 2014). Preservice teachers often view student diversity as a problem rather than a resource, and many teachers hold a view that “all students should be treated equally in the classroom”, even when this leads to disproportionately negative outcomes for students of color (Rousseau &amp; Tate, 2003). This “one-size-fits-all” mentality is a common, serious obstacle to true teacher reflection and equity. Further, the “color-blind” mentality, in which a teacher claims “not to see color”, leads to ignoring students’ cultural backgrounds in the classroom, thus leading to decreased student engagement, as well as a refusal to combat historical and actual racist practices (Rousseau &amp; Tate, 2003). In classroom observations, Rousseau &amp; Tate (2003) report several instances of students being “allowed to fail” through their teacher’s neglect; such students were disproportionately Black, specifically Black men.</div>
+<div class="para" id="p-685">In addition, the way mathematics is taught around the world is often indicative of a colonial, Eurocentric narrative in which Europe is a “civilizing” force and the significant contributions of mathematicians from non-European backgrounds are downplayed. Such mathematical leaps as written mathematical records, a place value number system, the technique of measurement, our base 10 number system, the “Pythagorean Theorem”, and algebra all originated outside of Europe and were then used by Europeans to advance their own mathematics (Joseph, 1987). The marginalization of these contributions contributes to the perception of mathematics as independent of economics, politics, and culture; frames mathematical pursuits as confined to a select few (usually white, cisgender, heterosexual men); and enshrines deductive axiomatic logic (i.e. “formal” mathematical proof) as the “only” method of mathematical discovery (Joseph, 1987).</div>
+<div class="para" id="p-686">Teaching mathematics with an equity frame doesn’t just help fight these trends of inequity; using an equity frame that emphasizes the role of mathematics in democracy and addressing inequality results in student learning and achievement (Gutstein, 2003; Moses &amp; Cobb, 2001; Winter, 2007). The National Survey of Student Engagement, 2004, has found that undergraduate students are often passionate about social and political issues; bringing such issues into the mathematics classroom can increase student engagement and performance (Winter, 2007).</div>
+<div class="para" id="p-687">One major way that teachers can promote equity and justice is by focusing on reaching students who are traditionally marginalized in schools. Black students are one of the largest underrepresented groups in US education, and several studies have been done to examine what pedagogical techniques promote Black students’ classroom success. Across all the studies reviewed by Johnson and Wilson (2012), it seems that providing African-American students with a common experience that grounds mathematical ideas, as well as explicitly encouraging and supporting African-American students to do more sophisticated mathematics, are important.</div>
+<div class="para" id="p-688">Another way teachers can increase their orientation toward equity issues in the classroom is through reflection. The <em class="emphasis">Professional Standards for Teaching Mathematics</em> (NCTM, 1991) recommend that teacher reflection should focus on how students’ linguistic, ethnic, racial, socioeconomic, and cultural backgrounds influence their learning of mathematics. Generally, student-centered educational models backed by research can provide insights about how to teach mathematics better to all students, including underrepresented groups.</div>
+<div class="para" id="p-689">Two such models were discussed in the proceedings of the Teaching Undergraduates Mathematics workshop at the Mathematical Sciences Research Institute (2009): Action-Process-Object-Schema (APOS) theory and covariation. APOS theory defines an “action” as a step-by-step transformation of a set of mathematical objects into another mathematical object; for instance, evaluating a composition of functions at the point <em class="emphasis">x</em>. In contrast, the “process stage” of understanding takes place when students “internalize the action into a process” and can then think about the process without performing it. The process stage entails a greater level of abstraction, e.g. finding a general formula for a composition of functions given data for each function in table or graph form. <em class="emphasis">Covariational reasoning</em> is defined as “the cognitive activities involved in coordinating two varying quantities while attending to the ways in which they change in relation to each other”; for instance, attending to parametric equations. Observations of students suggest that covariational processing involves five kinds of mental action; questioning strategies to promote each action in students are suggested (Lai, 2009).</div>
+<div class="para" id="p-690">A common problem with implementing student-centered pedagogical styles is a lack of time and institutional support. Research has indicated that a first-level teaching move to engage more with students often involves increasing <em class="emphasis">pressing</em>, or trying to help learners articulate and hence deepen their thinking; perhaps this would be a good, low-overhead way to bring more learner-centered instruction into public schools (Brodie, 2008).</div>
+<div class="para" id="p-691">The second reviewed question involved educating all students in a manner that promoted equity, justice, and a critical analysis of their sociopolitical contexts. In this direction, guidelines include: (1) working with a textbook with a strong mathematical framework and scaffolding, (2) talk to students to decide on equity/justice issues to cover, (3) set up units around “Essential Questions”, (4) introduce the equity/justice issue first, (5) then begin the mathematics, devoting as much time as necessary to the concepts and scaffolding both math and equity/justice along the way, (6) end with a great project. Some specific unit ideas: for exponents, studying compound interest and population growth; for probability, exploring the possibility that a traffic stop should be (and is) a person of color (Osler, 2007; Gutstein, 2008).</div>
+<div class="para" id="p-692">Winter (2007) provides a model of equity- and social justice-oriented pedagogy in STEM courses which introduces sociocultural phenomena through readings, videos, and activities, then assigns a problem and a structured worksheet to help students apply mathematics to the problem. Finally, students interpret their mathematical solution in the context of the original issue, often leading to discussion about the broader implications of their solution. This model has been applied to precalculus classes, teaching functions, graphing, and statistics through examining political corruption and economic development worldwide, climate change in Zimbabwe and its impact on agriculture, and water security and native peoples’ rights in Botswana, to name a few (Winter, 2007). Winter derives several principles for justice-focused education from Marilyn Frankenstein (1990), including using real situations and real information; emphasizing situations that students might have learned about through news or other media; and using controversial materials to help students increase their curiosity, understand other perspectives more accurately, solve problems more effectively, and generate creative ideas (Johnson &amp; Johnson, 1979). Students taught using the justice approach performed statistically significantly better than a control group; they performed better on a mathematical assessment (exceeding the control group’s scores by 11.9%) and had fewer students with a grade of D or lower in the class (15.4% in the justice pedagogy condition, as opposed to 22.9% in the control group) (Winter, 2007).</div>
+<div class="para" id="p-693">There is a dearth of studies that investigate specific teaching practices which benefit underrepresented students, including teacher-student interaction and its effects. Although trying to specify “general” practices across a group as diverse as, for example, African-Americans in the US, may lead to essentialization and/or a deficit framing, a variety of historical conditions in the US have meant that many students of color have been told that they are inferior academically. Therefore, such studies would benefit many groups which are systemically marginalized in US mathematics education, including women and Latin@/e students (Jackson and Wilson, 2012). Further, although there are several collections of “mathematics for social justice” projects, units, and lessons targeted mostly at K-12 educators, Gutstein (2008) claims that no cogent and cohesive curriculum exists and identifies the need for one. Thankfully, Karaali and Khadjavi (2019) have provided a book of resources for postsecondary educators looking to teach math for social justice, and another volume is forthcoming (expected 2021). Further research is needed into the pedagogy and impacts of such an approach, and that such research is deeply essential, since equity-focused mathematics is good for students, underrepresented and otherwise, and good for the society in which we live.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="appendix_lit-review.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec_annotated-bib.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

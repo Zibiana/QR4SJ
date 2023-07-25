@@ -3,8 +3,14 @@
 <chapter xml:id="legislation" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Anti-Trans Legislation in the U.S.</title>
 
-	<introduction>
 
+
+	<introduction>
+		<p>
+			<em>This module is originally authored by Mark Branson, Voula Collins, Carrie Diaz Eaton, Rachel Frisbie, Patti Hammerski, Kenan Ince, Jakini Kauba, Drew Lewis, Victor Piercey, Rachel Roca, and Bianca Thompson.
+			
+			This version of the module was remixed from the original by Kenan Ince in accordance with the Creative Commons 4.0 license.</em>
+		</p>
 		<p>
 			<term>Note. <em>All data (including merged and filtered data) used in this analysis analysis is open-access and can be found <url href="https://github.com/kaince/anti-trans-bills">on GitHub</url>.</em></term>
 		</p>
@@ -17,15 +23,23 @@
 			However, after the 2015 Supreme Court ruling in <em>Obergefell v. Hodges</em> legalizing <q>same-sex marriage</q> (though some of those who were married after <em>Obergefell</em> would not identify their marriages with that term), conservative groups have sought to target LGBTQ+ people through <q>religious freedom</q> laws allowing for discrimination against <q>same-sex couples</q>, and more recently, transgender people, especially transgender youth. Despite the increasing prevalence of trans and nonbinary people in American society, as well as the recent legislative and political attacks on these groups, relatively few academic studies have been conducted on the impact of the surge of anti-trans legislation since 2019. In order to better understand the impact of such legislation, we wish to gather data from various sources to analyze the growth, types, progress, and impacts of various anti-trans and -nonbinary bills from 2018 to 2023.
 		</p>
 	</introduction>
+
 	<xi:include href="./sec_leg-understanding.ptx" />
 
 	<xi:include href="./sec_leg-obtain-clean.ptx" />
 
 	<xi:include href="./sec_leg-visualize.ptx" />	
 
+	<xi:include href="./sec_leg-case-study.ptx" />
+
+	<xi:include href=  "./sec_leg-textualize.ptx" />
+
 	<xi:include href="./sec_leg-future-directions.ptx" />
 
 	<xi:include href="./sec_leg-project.ptx" />
+
+	
+
 
 	<references xml:id="refs-anti-trans-leg">
 		<p>

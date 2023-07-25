@@ -1,0 +1,939 @@
+ <section xml:id="sec-fermi-estimation">
+	<title>Fermi Estimation</title>
+	<subsection xml:id="discussion---bob-moses-math-literacy">
+		<title>Discussion - Bob Moses &amp; Math Literacy</title>
+
+<!-- div attr= class="xca"-->
+		<p>
+			<term> 1</term>.  (TPS; <term>Reading Question</term>) Bob Moses is a veteran of the Civil Rights Movement and a 
+			former leader of the Student Nonviolent Coordinating Committee (SNCC), a major Civil Rights Movement organization 
+			dedicated to community organizing. He is also a math educator and founder of the Algebra Project, which works to 
+			promote mathematical literacy among low-income students and students of color. Please read the attached chapter 
+			from Moses’ book, <em>Radical Equations</em>, entitled <q>Algebra and Civil Rights</q>. While reading, think about your sense of 
+			the connections between mathematics and civil rights, equity, fairness, and justice. Then answer the questions below.
+
+		</p>
+		<question>
+			<p>What is Ella Baker’s definition of radical in the quote at the beginning of the chapter? 
+			How is Baker’s definition similar to or different from your own?</p>
+		</question>
+		<p><ol>
+			<li>
+					<p>
+			What is Ella Baker’s definition of radical in the quote at the beginning of the chapter? 
+			How is Baker’s definition similar to or different from your own?
+		</p>
+			</li>
+
+		
+
+			<li>
+					<p>
+			In your own words, why does Moses believe that the most urgent social issue affecting poor people and people of color is economic access and that economic access and full citizenship depend crucially on math and science literacy (p. 5)?
+		</p>
+			</li>
+
+
+
+			<li>
+					<p>
+			How do you react to Moses’ assertion that not being ’good’ in math does not in any way imply inferiority, rather, it confirms that you’re just like most everyone else (p. 10)? How does this assertion connect to growth mindset and productive failure?
+		</p>
+			</li>
+
+			<li>
+					<p>
+			How have the issues Moses discussed changed since his book was published in early 2002? How have they stayed the same?
+		</p>
+			</li>
+
+			<li>
+					<p>
+			In what ways is Moses’ approach to the Algebra Project similar to and different from his approach to the civil rights movement? Explain.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			In your own words, is learning mathematics important for civil rights, fairness, and social justice? Why or why not?
+		</p>
+
+			</li>
+
+		</ol></p><!--</div attr= class="xca">-->
+
+		<p><ul>
+			<li>
+					<p>
+			For class discussion:
+		</p>
+
+		<p><ul>
+			<li>
+					<p>
+			Other than mathematical literacy, what other important civil rights and social justice issues impact low-income people and people of color in contemporary society? How might we use math to address those issues? We’ll try to find ways.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			What groups other than low-income folks and people of color are being underserved in math literacy education? Explain.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Is algebra still the gatekeeper of the math curriculum?
+		</p>
+
+		<p><ul>
+			<li>
+					<p>
+			Importance of tutoring and Westminster’s tutoring collaborations
+		</p>
+			</li>
+
+		</ul></p>
+			</li>
+
+		</ul></p>
+			</li>
+
+		</ul></p>
+
+	</subsection>
+
+	<subsection xml:id="reading-the-news-week-1">
+		<title>Reading the News Week 1</title>
+
+		<p><ul>
+			<li>
+					<p>
+			Post links to your articles please!
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Many people looked up statistics and just compared the statistics they found online to each other. This is valid, but the goal of this and other assignments on estimation is to be able to practice estimating more complex or unavailable data quickly, on the <q>back of an envelope</q>. I went easy this time, but on our in-class work today, try not to use the Internet to look up statistics.
+		</p>
+			</li>
+
+		</ul></p>
+
+	</subsection>
+
+	<subsection xml:id="top-vote-getters-in-discussion-poll">
+		<title>Top vote-getters in discussion poll</title>
+
+		<p><ol>
+			<li>
+					<p>
+			Class &amp; income inequality
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Four-way tie:
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			3) human trafficking
+		</p>
+			</li>
+
+			<li>
+					<p>
+			environmental justice
+		</p>
+			</li>
+
+			<li>
+					<p>
+			how math perpetuates inequality
+		</p>
+			</li>
+
+			<li>
+					<p>
+			1) racial justice
+		</p>
+			</li>
+
+			<li>
+					<p>
+			2) LGBTQ+ issues
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+		</ol></p>
+
+<!-- div attr= class="xca"-->
+		<p>
+			<term> 2</term>.  Take a ranked-choice class vote between these four. <term>Voters pick a first-choice candidate and have the option to rank backup candidates in order of their choice: second, third, and so on. If a candidate receives more than half of the first choices, that candidate wins, just like in any other election. However, if there is no majority winner after counting first choices, the race is decided by an instant runoff. The candidate with the fewest votes is eliminated, and voters who picked that candidate as ‘number 1’ will have their votes count for their next choice. This process continues until a candidate wins with more than half of the votes.</term>
+		</p><!--</div attr= class="xca">-->
+
+	</subsection>
+
+	<subsection xml:id="news-update-fivethirtyeight-election-forecasts">
+		<title>News update: fivethirtyeight election forecasts</title>
+
+<!-- div attr= class="xca"-->
+		<p>
+			<term> 3</term>.  how do these forecasts estimate the likelihood of Biden winning the 2020 election? How much do we trust them? We’ll dig into their (simulation-like) methodology later in the course and find out!
+		</p>
+
+		<p>
+			In the wake of the mass shooting last Saturday, August 31, in Odessa, TX, mass shootings are once again in the national consciousness. (for how long?) Read over the poll at https://tinyurl.com/HuffPollGuns and answer the following questions:
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			What surprises you about the results to this poll?
+		</p>
+			</li>
+
+			<li>
+					<p>
+			This poll was taken between August 5-6, 2019. What happened near that date that might have affected the results of the poll?
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			August 3: El Paso anti-immigrant mass shooting
+		</p>
+			</li>
+
+			<li>
+					<p>
+			August 4: Dayton, OH, mass shooting killing 9
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			This was a poll of <m>1000</m> people. If you were conducting the poll, how would you determine whether these <m>1000</m> people’s views matched those of the whole United States? If you were choosing the <m>1000</m> people, how would you choose them?
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			Throw darts at a phone book? Great!
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Find people just hanging out outside?
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+		</ol></p><!--</div attr= class="xca">-->
+
+		<p>
+			 
+		</p>
+
+<!-- div attr= class="xca"-->
+		<p>
+			<term> 4</term>.  [RQ: Is math everywhere?]
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			What arguments does Barany give against the statement math is everywhere? How would you reply to his arguments?
+		</p>
+			</li>
+
+			<li>
+					<p>
+			What arguments does Haensch give that math is still everywhere? How would you reply to her arguments?
+		</p>
+			</li>
+
+			<li>
+					<p>
+			After reading both articles, what perspective do you have on the way(s) mathematics interacts with society, power, and oppression?
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Haensch argues that Barany’s arguments do not support the title of his blog post. Do you agree? Why or why not? If you agree, how would you retitle Barany’s piece?
+		</p>
+			</li>
+
+		</ol></p><!--</div attr= class="xca">-->
+
+		<p>
+			 
+		</p>
+
+<!-- div attr= class="xca"-->
+		<p>
+			<term> 5</term>.  [Reading Question: CSM Exercise 1.8.2] In his May 17, 2010 op-ed column in The New York Times Bob Herbert noted that the dropout rate for American high school students was one every 26 seconds. [R10] Is this number reasonable?
+		</p>
+
+		<p><ul>
+			<li>
+					<p>
+			Let’s estimate.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			First, how many American high school students are there? We’ll assume this corresponds with the proportion of Americans between ages <m>14</m> and <m>18</m>, inclusive. This is probably between <m>5</m> and <m>15\%</m> of Americans.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			We use a geometric mean to get a single estimate: <me>\begin{aligned}
+5\% &amp; =5\times10^{0}\%\\
+15\% &amp; =1.5\times10^{1}\%\\
+\text{geometric mean} &amp; =\frac{1.5+5}{2}\times10^{0.5}=3.25\times10^{0.5}\approx10\%.
+\end{aligned}</me>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			around <m>10\%</m> (guess) of Americans, and there are about <m>300</m> million Americans, so we estimate that there are <me>.1\times300,000,000=30,000,000</me> American high-school students each year. Our answer here is <q>tens of millions</q>, which fits with the actual number of about <m>56.6</m> million. [Note that we don’t round; we just count the number of zeroes, which here is <m>7</m>, meaning our answer is <q>tens of millions</q>.]
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Assume that <m>20\%</m> (perhaps a high estimate) of American high-school students drop out each year. That’s <me>.2(30,000,000)=6,000,000</me> dropouts per year.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			We convert to dropouts per second: <me>\frac{6,000,000\text{ dropouts}}{\text{year}}\times\frac{1\text{ year}}{365\text{ days}}\times\frac{1\text{ day}}{24\text{ hours}}\times\frac{1\text{ hour}}{60\text{ min}}\times\frac{1\text{ min}}{60\text{ sec}}=0.19\approx\frac{0.2\text{ dropouts}}{\text{second}}.</me>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Finally, we compute <me>\frac{0.2\text{ dropouts}}{\text{second}}\times\frac{26\text{ seconds}}{1\text{ 26-second period}}=\frac{5.2\text{ dropouts}}{\text{26-second period}}</me> which is higher (rounded up) than Herbert’s estimate. However, we note that we purposefully overestimated the dropout rate in order to be generous to Herbert’s estimate, so we could easily be off by a factor of <m>5</m> (<m>1</m> vs. <m>5.2</m> dropouts per <m>26</m> seconds).
+		</p>
+			</li>
+
+		</ul></p><!--</div attr= class="xca">-->
+
+	</subsection>
+
+	<subsection xml:id="fermi-estimation">
+		<title>Fermi Estimation</title>
+
+		<p><ul>
+			<li>
+					<p>
+			In order to verify claims made in the media, to compute how much sea level rise would be associated with a <m>1^{\circ}</m> rise in global sea temperature, or to test whether the claims Trump makes in his next State of the Union address are correct, it’s essential to have an ability to estimateto lie (or oversimplify) skillfully and in a way that lets us better understand the truth.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			I make many mistakes on this type of problem until I think it through carefully!]
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Tools for <q>back-of-the-envelope calculations</q> aka Fermi estimation
+		</p>
+
+		<p><ul>
+			<li>
+					<p>
+			<term>Estimation</term>round up or down to make calculations easier and numbers less messy. As we saw when estimating the number of classrooms needed for the US household wealth, rounding before the computation ends can introduce error. Therefore, if you have a calculator, it’s best to plug into the calculator before rounding, whereas if you’re computing by hand, rounding may be necessary in order to increase the accuracy of your computations. Everyone makes arithmetic mistakesyou’ll see me do it plenty of times!
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<term>Dimensional analysis</term>: start with the given and multiply by fractions, canceling out the units, until you get something in the units your answer should be in. This is almost always your answer!
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<term>Only guess up to an order of magnitude</term>, i.e. the number of zeroes.
+		</p>
+			</li>
+
+		</ul></p>
+			</li>
+
+			<li>
+					<p>
+			Why bother with Fermi estimates, if your estimates are likely to be off by a factor of 2 or even 10? Often, getting an estimate within a factor of 10 or 20 is enough to make a decision. So Fermi estimates can save you a lot of time, especially as you gain more practice at making them.
+		</p>
+			</li>
+
+		</ul></p>
+
+<!-- div attr= class="question"-->
+		<p>
+			<term> 6</term>.  <em>Can we say for sure that there were less than <m>300</m> million internatinoal phone calls per day in <m>2007</m>?</em>
+		</p>
+
+		<p><ul>
+			<li>
+					<p>
+			<em>Nope! We only can be accurate up to, at most, an <em>order of magnitude</em>that is, there were probably millions but not billions of international phone calls made by Americans per day in <m>2007</m>.</em>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<em>We can say our <em>estimate</em> is <m>3\times10^{8}</m> or <m>300,000,000</m>, but the only part we’re fairly sure about is the eight zeroes, the <m>10^{8}</m>.</em>
+		</p>
+			</li>
+
+		</ul></p><!--</div attr= class="question">-->
+
+	</subsection>
+
+	<subsection xml:id="reading-questions-wmd-intro">
+		<title>Reading Questions: WMD Intro</title>
+
+<!-- div attr= class="xca"-->
+		<p>
+			<term> 7</term>.  Please read the Introduction of Weapons of Math Destruction, by the data scientist Cathy O’Neil (Links to an external site.)Links to an external site., then give the following questions your best attempt. Bring your answers to class for discussion.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			According to O’Neil, what is a weapon of math destruction?
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			a model that manages our lives and tends to reproduce social inequities or inherit prejudice from its programmers/source datasets
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			What paradox does O’Neil note about the standard of evidence WMDs are held to as opposed to humans? How might this paradox lead to social injustice?
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			They’re black-boxed and need provide less evidence to justify profiling a person than that person must provide to exonerate themselves
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			According to O’Neil, in what ways do WMDs differ from the effective use[s] of statistics in Google ad testing?
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			not enough controls/variables to monitor
+		</p>
+			</li>
+
+			<li>
+					<p>
+			no feedback from testing certain variables to conclude that they don’t affect the outcome
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<q>the privileged...are processed more by people, the masses by machines</q>
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			What payoff do the companies who make WMDs receive for their effort? According to O’Neil, how does this payoff lead to a dangerous confusion?
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			they get lots of money and think it’s because they’re on the right track
+		</p>
+			</li>
+
+			<li>
+					<p>
+			they lose track of the people <q>on the receiving end of the transaction</q>
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			What question(s) do you have about data science, statistical models, and WMDs after reading the introduction to O’Neil’s book?
+		</p>
+			</li>
+
+		</ol></p><!--</div attr= class="xca">-->
+
+		<p><ul>
+			<li>
+					<p>
+			Tips for estimation:
+		</p>
+
+		<p><ul>
+			<li>
+					<p>
+			Change the rules to make arithmetic easier. There weren’t exactly <m>300</m> million Americans in <m>2007</m>the actual population was something like <m>301.2</m> million. But since we’re just giving an estimate anyway, we don’t care about the <m>1.2</m>. We <term>round</term> to the nearest hundred million!
+		</p>
+
+		<p><ul>
+			<li>
+					<p>
+			For this reason, we only care about how many zeroes your answer has, not the actual number. So for our purposes <term><m>1,000,000</m> and <m>9,000,000</m> are the same</term> because they give us the answer of <q>millions</q>.
+		</p>
+			</li>
+
+		</ul></p>
+			</li>
+
+			<li>
+					<p>
+			Writing all those zeroes can get unwieldy, so we use <term>scientific notation</term>: <m>1</m> with <m>14</m> zeroes after it is the same as <m>1\times10^{14}</m>. Nine with seventy zeroes after it is written <m>9\times10^{70}</m>.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<term>Divide and conquer</term>: split the problem up by first figuring out all the things we need to know, then using those things in some order to get an answer.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<term>Use ranges.</term> If you feel fairly confident that there are between <m>1000</m> and <m>300000</m> Americans who don’t like Harry Potter (between <m>1\times10^{3}</m> and <m>3\times10^{5}</m> in scientific notation), average the exponents and the single-digit numbers to get your estimate. Here we’d average <m>1</m> and <m>3</m> to get <m>2</m> and <m>3</m> and <m>5</m> to get <m>4</m>, so your answer would be <m>2\times10^{4}=20,000</m> Americans.
+		</p>
+
+		<p><ul>
+			<li>
+					<p>
+			This is called taking a <term>geometric mean</term>, which is easier to take than a <q>regular</q> average when dealing with big numbers and exponents.
+		</p>
+			</li>
+
+		</ul></p>
+			</li>
+
+			<li>
+					<p>
+			<term>Look up related data</term>, if it’s available, to check the reasonableness of your estimation. For example, when estimating the number of active COVID-19 cases in SLC, you could look up scientific estimates of the proportion of COVID-19 cases that are reported, multiply that proportion by the population of SLC, and see if it’s in the same ballpark (same number of zeroes) as your estimate.
+		</p>
+			</li>
+
+		</ul></p>
+			</li>
+
+		</ul></p>
+
+<!-- div attr= class="xca"-->
+		<p>
+			<term> 9</term>.  (Worksheet on Canvas) Estimation. <term>No computers/looking up allowed bc the goal is to practice a skill that is useful when we don’t have real-world data!</term> Divide the students into teams of 3-4. Each team starts on one of the first seven estimates with instructions to move on to the next one when done, circling back to Google search if they reach the end of the list. The teams start in different places, so after about half an hour the class has found two or three estimates for each of the seven tasks. The different answers for each task should have the same order of magnitude. If they don’t, we try to figure out why not. (Good to have poster paper or whiteboards for this)
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			Annual income for <m>1</m> full-time Utah minimum wage worker.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			Federal (and Utah) minimum wage is <m>\$7.25</m>/hour. Round to <m>\$10</m> to make the math easier (we only care about the number of zeroes in our answer, so this should turn out fine).
+		</p>
+			</li>
+
+			<li>
+					<p>
+			A full-time worker works <m>40</m> hours/week.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			There are <m>52\approx50</m> weeks in a year.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Thus the annual income is approximately <me>\frac{\$10}{\text{hour}}\times\frac{40\text{ hours}}{\text{week}}\times\frac{50\text{ weeks}}{\text{year}}=\frac{\$20,000}{\text{year}}.</me> It’s in the tens of thousands of dollars. Notice how all the units cancel out and the answer is in dollars per year, as desired, while our given information was in dollars per hour. At each step, we’re converting from one unit to another (dollars/hour to dollars/week to dollars/year).
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Real answer (for federal/Utah minimum wage): <me>\frac{\$7.25}{\text{hour}}\times\frac{2,080\text{ hours}}{\text{year}}=\$15,080</me> also in the tens of thousands! Note how close our answer is. This is because our rounding (up and down) canceled itself out.
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			Average Westminster student’s household (family) income.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			Mean or median?
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Can we agree that the answer should be higher than <m>\$100,000</m>?
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Should it be a whole order of magnitude (ten times) higher? That would make the average Westminster student’s family income <m>\$1,000,000</m> or above. This is probably a bit overgenerous, so our answer should be <m>\$100,000</m>.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			https://tinyurl.com/WMIncome: real median household income (according to anonymous tax records; is this representative?) is <m>\$103,900</m>; we were very close!
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			Average University of Utah student’s household (family) income
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			Can we assume that the average U student’s family income is less than <m>80\%</m> of a Westminster student’s family income? That would put it around <m>0.8(\$100,000)=\$80,000</m>, so in the tens of thousands of dollars.
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			Number of active COVID-19 cases in Salt Lake City. (Not just confirmed cases.)
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			By some estimates, only <m>10\%</m> of COVID cases are reported.
+		</p>
+
+<!-- div attr= class="question"-->
+		<p>
+			<term> 8</term>.  <em>How could we verify this using a scientific study?</em>
+		</p><!--</div attr= class="question">-->
+			</li>
+
+			<li>
+					<p>
+			According to an article published in <em>JAMA Internal Medicine</em>, ”From comparing the number of estimated cases to reported case figures on the last day of sample collection, the study’s authors estimated that there were six times as many COVID-19 infections in Connecticut, the lowest figure, and potentially 24 times the number of infections in Missouri than were reported.”
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			This cross-sectional study performed serologic testing on a <term>convenience sample</term> of residual sera obtained from persons of all ages.
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			Number of active COVID-19 cases among Westminster students. (Not just confirmed cases.)
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Percentage of active COVID-19 cases in Salt Lake City that occur in people of color.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			According to the CDC, ”Non-Hispanic American Indian or Alaska Native persons and non-Hispanic Black persons had age-adjusted hospitalization rates approximately 4.7 times that of non-Hispanic White persons. The rate for Hispanic or Latino persons was approximately 4.6 times the rate among non-Hispanic White persons.”
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			Average tax rate for an American in the wealthiest <m>1\%</m>.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			We use the given facts; first, we note the average American in the wealthiest <m>1\%</m> earns <m>\$2.5</m> million per year, <m>40\%</m> of which (<m>\$1</m> million) is made in capital gains. This means <m>\$1.5</m> million is not made from capital gains and is taxed at the higher <m>40\%</m> tax rate.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			The tax on the capital gains portion of income is easier to estimate: <me>0.2(\$1,000,000)=\$200,000</me>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			The tax rate on the non-capital gains income would be <m>\$150,000</m> plus <m>40\%</m> of the amount over <m>\$500,000</m>. Since the non-capital gains income totals <m>\$1,500,000</m>, the amount over <m>\$500,000</m> is <m>\$1</m> million. So the tax on the non-capital gains income would be <me>\$150,000+0.4(\$1,000,000)=\$150,000+\$400,000=\$550,000.</me>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Thus, the total tax paid by the average member of the <m>1\%</m> is <m>\$550,000+\$200,000</m>. To find the tax <em>rate</em> paid, we have to figure out what percent of their income this average <m>1</m>-percenter paid. They paid <m>\$750,000</m> in taxes, and their income was <m>\$2.5</m> million, so they paid a tax rate of <me>\frac{\$750,000}{\$2,500,000}\times100\%=30\%.</me>
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			Average tax rate for an American teacher.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			The average teacher earns <m>\$60,000</m> a year. This means their tax rate is <m>\$14,000</m> plus <m>25\%</m> of the amount over <m>\$80,000</m>. Since there’s no amount over <m>\$80,000</m>, this teacher pays <m>\$14,000\approx\$15,000</m> in taxes.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<m>\$15,000</m> is <m>\frac{1}{4}</m> or <m>25\%</m> of the teacher’s income of <m>\$60,000</m>.
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			Is Joe Biden’s statement reasonable?
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			The teacher’s tax rate looks at first glance to be smaller than the top <m>1\%</m>er’s tax rate, but note we estimated. Both of our answers are in ”tens of thousands”, so we can’t
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Due to potential estimation error, it’s actually reasonable that Biden’s statement is true.
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			Average number of Americans who die each day due to mass shootings.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			How to define a <q>mass shooting</q>?
+		</p>
+			</li>
+
+			<li>
+					<p>
+			No official definition: at least <m>4</m> killed? <m>4</m> injured? Including shooter or not? Including violence due to drugs/gangs?
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Estimate the number of mass shootings in <m>2018</m>: between <m>10=1\times10^{1}</m> and <m>100=1\times10^{2}</m>. Take the geometric mean: <m>1\times10^{1.5}\approx30</m>.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Estimate the number of Americans killed in each mass shooting: say <m>5</m> on average. So a total of <me>5\times30=150</me> Americans are estimated to have been killed by mass shootings in <m>2018</m>.
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			Number of Americans killed by undocumented immigrants in <m>2018</m>.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			Note that no data exists.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Given that there were <m>15,000</m> murders total, we need to estimate the number of undocumented immigrants in the US in <m>2018</m>, as a percentage of the population. Say between <m>1</m> and <m>10\%</m>, with geometric mean <m>3\%</m>. Very close to the real number!
+		</p>
+			</li>
+
+			<li>
+					<p>
+			You may have heard the (true) claim that undocumented Americans commit crimes at a lower rate than documented Americans.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Even if you assume the rate is the same, that means that <m>3\%</m> of the <m>15,000</m> murders, or <me>.03(15000)=450\approx500</me> murders were committed by undocumented immigrants in <m>2018</m>.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Both the mass shooting and murder numbers are in the hundreds, so there’s absolutely no evidence for the <q>tens of thousands</q> claim made in the post.
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+			<li>
+					<p>
+			# of Americans arrested each second for possession of weed alone from 2001-2010.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			We know about <m>600,000</m> Americans were arrested for weed alone in <m>2010</m>. Assuming weed policies were more lenient in <m>2010</m> than in <m>2001</m>, we’d guess maybe an average of at most <m>1,000,000</m> Americans a year over this <m>10</m>-year period, for a total of <me>10\times1,000,000=10,000,000</me> Americans arrested.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			We now estimate seconds/year: <me>1\text{ year}\times\frac{350\text{ days}}{\text{year}}\times\frac{25\text{ hours}}{\text{day}}\times\frac{60\text{ min}}{\text{hr}}\times\frac{60\text{ sec}}{\text{min}}=30,000,000\text{ sec}.</me>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			This means that there were <me>\frac{10,000,000}{30,000,000}\approx0.3\text{ arrests/sec}</me> or about one arrest every <m>3</m> sec.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Now note that multiple people could be swept up in a single pot bust. Assume <m>2</m> people on average per bust, that gives <me>0.3\frac{\text{arrests}}{\text{sec}}\times\frac{1\text{ bust}}{2\text{ arrests}}=0.15\frac{\text{busts}}{\text{sec}}</me> or <m>15</m> busts every <m>100</m> sec. This is on the same order of magnitude as the ACLU’s estimate, so their estimate is reasonable.
+		</p>
+			</li>
+
+		</ol></p>
+			</li>
+
+		</ol></p><!--</div attr= class="xca">-->
+
+		<p>
+			 
+		</p>
+
+<!-- div attr= class="xca"-->
+		<p>
+			<term> 10</term>.  [or next time] Please read Sections 2.1-2.2 of Common Sense Mathematics, on units and MPG, then answer the following questions. Bring your answers to class on the date below for discussion.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			There are about 3.8 liters in a gallon and about 1.6 kilometers in a mile. If a car can travel 30 miles for every gallon of gas it burns, approximately how many kilometers can it travel per liter of gas? Just like in Section 2.1 of Common Sense Mathematics, write out your units and cancel units just like you would cancel zeroes in a fraction. Hint: start with <m>30\frac{\text{miles}}{\text{gallon}}</m>. Then multiply by a number with units <m>\frac{\text{kilometers}}{\text{miles}}</m> in order to cancel the miles and replace it with kilometers.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			If a car can travel 30 miles per gallon of gas, how many gallons of gas does the car need to travel one mile? Show all work and units, cancelling units when needed.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			If a car can travel 30 miles per gallon of gas, how many liters of gas does the car need to travel one kilometer? Show all work and units, cancelling units when needed.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			If you were looking to buy a new car, what, if anything, does reading Section 2.2 change about what you’d consider before buying? Explain.
+		</p>
+			</li>
+
+		</ol></p><!--</div attr= class="xca">-->
+	</subsection>
+
+</section>

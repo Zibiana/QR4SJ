@@ -13,8 +13,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
-<meta property="book:author" content="Kenan Ince">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<meta property="book:author" content="Kenan Ince ">
+<meta property="book:author" content="Bianca Thompson">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -26,6 +27,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -67,7 +81,7 @@ window.MathJax = {
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="qr4sj.html"><span class="title">Quantitative Reasoning for Social Justice:</span> <span class="subtitle">An Active Learning Workbook</span></a></h1>
-<p class="byline">Kenan Ince</p>
+<p class="byline">Kenan Ince, Bianca Thompson</p>
 </div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
@@ -230,44 +244,16 @@ window.MathJax = {
 <ul class="structural">
 <li>
 <div class="toc-item"><a href="sec_fermi_estimation.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Fermi Estimation</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#fermi-estimation" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Fermi estimation</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">2.1.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
-<li><div class="toc-item"><a href="sec_fermi_estimation.html#queer-and-trans-resistance" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
-</ul>
+<ul class="structural"><li><div class="toc-item"><a href="sec_fermi_estimation.html#fermi-estimation" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Fermi estimation</span></a></div></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec_spinning_numbers.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Spinning the numbers</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_spinning_numbers.html#importing-and-merging-the-data" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Stuff stuff stuffa</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_spinning_numbers.html#exercises-import" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec_spinning_numbers.html#cleaning-the-data" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="sec_lying_with_visuals.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Lying with graphs</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_lying_with_visuals.html#graphs" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Bill Type vs. Status</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_lying_with_visuals.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">2.3.1.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec_lying_with_visuals.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
-</ul>
-</li>
-<li class="active">
-<div class="toc-item"><a href="sec_unit_conversion.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Unit Conversion and why should we care</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_unit_conversion.html#exercises-anti-trans" class="internal"><span class="codenumber">2.4</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
-</li>
+<li><div class="toc-item"><a href="sec_spinning_numbers.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Spinning the numbers</span></a></div></li>
+<li><div class="toc-item"><a href="sec_lying_with_visuals.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Lying with graphs</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="sec_unit_conversion.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Unit Conversion and why should we care</span></a></div></li>
 <li>
 <div class="toc-item"><a href="sec_reading_questions.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Reading Questions</span></a></div>
 <ul class="structural"><li><div class="toc-item"><a href="sec_reading_questions.html#exercises-leg-project" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">2.6</span> <span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="refs-essential-knowledge.html" class="internal"><span class="codenumber">2.6</span> <span class="title">References</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -284,7 +270,7 @@ window.MathJax = {
 <div class="toc-item"><a href="student-debt-by-college-type.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Student Debt by College Type</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-debt-over-time" class="internal"><span class="codenumber">3.5</span> <span class="title">Student Debt over Time</span></a></div></li>
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-6" class="internal"><span class="codenumber">3.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
+<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-4" class="internal"><span class="codenumber">3.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
 <li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-tuition-tracker" class="internal"><span class="codenumber">3.5</span> <span class="title">Trends at Your Institution</span></a></div></li>
 </ul>
 </li>
@@ -340,9 +326,9 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-21" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-22" class="internal"><span class="codenumber">5.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-23" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Significant figures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">5.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-14" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Significant figures</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -353,8 +339,8 @@ window.MathJax = {
 <div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Graphs</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-bar" class="internal"><span class="codenumber">5.6.2.1</span> <span class="title">Bar Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-5" class="internal"><span class="codenumber">5.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-6" class="internal"><span class="codenumber">5.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-4" class="internal"><span class="codenumber">5.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-5" class="internal"><span class="codenumber">5.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
 <li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-combining-graphs" class="internal"><span class="codenumber">5.6.2.4</span> <span class="title">Combining Graphs</span></a></div></li>
 <li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-other-visualizations" class="internal"><span class="codenumber">5.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span></a></div></li>
 <li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-accessibility" class="internal"><span class="codenumber">5.6.2.6</span> <span class="title">Accessibiliity</span></a></div></li>
@@ -365,20 +351,20 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mathematical Models</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-26" class="internal"><span class="codenumber">5.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">5.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-27" class="internal"><span class="codenumber">5.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-10" class="internal"><span class="codenumber">5.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">5.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">5.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-28" class="internal"><span class="codenumber">5.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-19" class="internal"><span class="codenumber">5.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Solving for Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-29" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-30" class="internal"><span class="codenumber">5.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-31" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">5.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-22" class="internal"><span class="codenumber">5.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
 <li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Reading Questions</span></a></div></li>
@@ -386,8 +372,8 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">5.11</span> <span class="title">References</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-32" class="internal"><span class="codenumber">5.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-33" class="internal"><span class="codenumber">5.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">5.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-24" class="internal"><span class="codenumber">5.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -416,30 +402,73 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Visualizing the Data</span></a></div>
 <ul class="structural">
+<li><div class="toc-item"><a href="sec-leg-visualize.html#intro-to-data-leg" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Bill Type vs. Status</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">7.3.1.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">7.3.2</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">7.3.2.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-future-directions.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Directions for Future Work</span></a></div>
+<div class="toc-item"><a href="sec-leg-textualize.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Textualizing the Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-textualize.html#analyzing-text" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Stuffstuff</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-future-directions.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Directions for Future Work</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#bayesian-analysis" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Bayesian Analysis</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">7.4.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">7.4.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-future-directions.html#queer-and-trans-resistance" class="internal"><span class="codenumber">7.4.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#bayesian-analysis" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Bayesian Analysis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#textual-analysis-of-template-bills-proposed-state-bills" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Textual Analysis of Template Bills &amp; Proposed State Bills</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#do-anti-trans-bills-reflect-the-will-of-voters" class="internal"><span class="codenumber">7.5.3</span> <span class="title">Do Anti-Trans Bills Reflect the Will of Voters?</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#state-prioritization-of-anti-trans-bills" class="internal"><span class="codenumber">7.5.4</span> <span class="title">State Prioritization of Anti-Trans Bills</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#impact-of-anti-trans-bills-on-trans-and-nonbinary-mental-health" class="internal"><span class="codenumber">7.5.5</span> <span class="title">Impact of Anti-Trans Bills on Trans and Nonbinary Mental Health</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-future-directions.html#queer-and-trans-resistance" class="internal"><span class="codenumber">7.5.6</span> <span class="title">Queer and Trans Resistance</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">7.6</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">7.6</span> <span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">7.7</span> <span class="title">References</span></a></div></li>
 </ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch_modeling_democracy.html" class="internal"><span class="codenumber">8</span> <span class="title">How is mathematics used in court cases against districting plans?</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_learning-obj_gerry.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Objectives</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec_cui_bono_gerry.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Who benefits from districting unfairly?</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec_cui_bono_gerry.html#cui_bono_gerry" class="internal"><span class="codenumber">8.2.1</span> <span class="title">But why do we have this?</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec_districting_requirements.html" class="internal"><span class="codenumber">8.3</span> <span class="title">What makes a good district?</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="sec_districting_requirements.html#subsection-38" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Classical measurements of "unfair"</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec_districting_requirements.html#subsubsection-11" class="internal"><span class="codenumber">8.3.1.1</span> <span class="title">Polsby-Popper</span></a></div></li></ul>
+</li></ul>
+</li>
+<li><div class="toc-item"><a href="sec_graphs.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Graph essentialss</span></a></div></li>
+<li><div class="toc-item"><a href="sec_modeling_districts.html" class="internal"><span class="codenumber">8.5</span> <span class="title">How do we measure if districts are doing what we want?</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec_reading_questions_gerry.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Reading Questions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec_reading_questions_gerry.html#exercises-gerry-project" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="refs-modeling-democacy.html" class="internal"><span class="codenumber">8.7</span> <span class="title">References</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="from-latex.html" class="internal"><span class="codenumber">9</span> <span class="title">LaTeX generated things</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="sec-fermi-estimation.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Fermi Estimation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-fermi-estimation.html#discussion---bob-moses-math-literacy" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Discussion - Bob Moses &amp; Math Literacy</span></a></div></li>
+<li><div class="toc-item"><a href="sec-fermi-estimation.html#reading-the-news-week-1" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Reading the News Week 1</span></a></div></li>
+<li><div class="toc-item"><a href="sec-fermi-estimation.html#top-vote-getters-in-discussion-poll" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Top vote-getters in discussion poll</span></a></div></li>
+<li><div class="toc-item"><a href="sec-fermi-estimation.html#news-update-fivethirtyeight-election-forecasts" class="internal"><span class="codenumber">9.1.4</span> <span class="title">News update: fivethirtyeight election forecasts</span></a></div></li>
+<li><div class="toc-item"><a href="sec-fermi-estimation.html#fermi-estimation" class="internal"><span class="codenumber">9.1.5</span> <span class="title">Fermi Estimation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-fermi-estimation.html#reading-questions-wmd-intro" class="internal"><span class="codenumber">9.1.6</span> <span class="title">Reading Questions: WMD Intro</span></a></div></li>
+</ul>
+</li></ul>
 </li>
 <li>
 <div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
@@ -459,35 +488,10 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="section" id="sec_unit_conversion"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_unit_conversion"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Unit Conversion and why should we care</span>
 </h2>
-<section class="introduction" id="introduction-9"><div class="para" id="p-97">We begin by investigating key definitions necessary to understand transgender and nonbinary identities and how they are targeted by recent bills.</div></section><section class="exercises" id="exercises-anti-trans"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span>
-</h3>
-<div class="exercisegroup" id="exercisegroup-2">
-<h4 class="heading"><span class="title">Exercise Group.</span></h4>
-<div class="introduction" id="introduction-10"><div class="para" id="p-98">The following questions are about bills prohibiting various types of transition and healthcare for trans and nonbinary people in the U.S., primarily proposed and passed beginning in 2018. Think about your personal definition, then do some research online, to find definitions of the following terms. Be sure to use reputable websites: most university/college sites (put "site:*.edu" at the end of your Google search), the leading professional organizations (American Medical Association, American Pediatric Association, American Psychological Association), the <a class="external" href="https://www.genderbread.org/" target="_blank">Genderbread Person</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-30" id="fn-30"><sup> 30 </sup></a>, and (usually) the sources linked from Wikipedia are all options. In what way(s) do your personal definition(s) agree and disagree with the Internet definitions?</div></div>
-<div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="exercise-11"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="p-99">Gender.</div></article><article class="exercise exercise-like" id="exercise-12"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="p-100">Biological sex.</div></article><article class="exercise exercise-like" id="exercise-13"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="p-101">Assigned sex at birth.</div></article><article class="exercise exercise-like" id="exercise-14"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
-<div class="para" id="p-102">Gender identity.</div></article><article class="exercise exercise-like" id="exercise-15"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
-<div class="para" id="p-103">Transgender.</div></article><article class="exercise exercise-like" id="exercise-16"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para" id="p-104">Nonbinary.</div></article><article class="exercise exercise-like" id="exercise-17"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
-<div class="para" id="p-105">Social and medical transition.</div></article><article class="exercise exercise-like" id="exercise-18"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para" id="p-106">Gender-affirming healthcare.</div></article><article class="exercise exercise-like" id="exercise-19"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para" id="p-107">Drag performance.</div></article>
-</div>
-</div></section><div class="para" id="p-108">We emphasize the years since 2018 in this analysis because, in 2019, the conservative Heritage Foundation and conservative Christian Family Policy Alliance distributed a model strategy for banning gender-affirming care to state legislators at a conference (Harvard Law Review 2021). In 2020, a conference attendee and South Dakota legislator published a version of the bill seeking to criminalize doctors’ provision of puberty blockers and hormones to transgender patients under the age of 16. Similar bills followed the same year: in Colorado, Florida, Illinois, Iowa, Kentucky, Missouri, Oklahoma, and South Carolina (Bauer 2020). Though the 2020 bills failed, the language in bills in South Carolina, South Dakota, and Arkansas in 2021 attempting to allow physicians to refuse to treat transgender children shared similar language, which originated in a “Model Conscience Protection Act” published by Kevin Theriot and Ken Connelly of the conservative Alliance Defending Freedom (Theriot and Connelly, n.d.). As we will see below, more and more bills are being proposed, and more are passing, every year since.</div>
-<div class="para" id="p-109">These bills go against studies showing that transgender children between the age of 5 and 12 viewed their gender identities similarly to cisgender children (Olson, Key, and Eaton 2015), among other academic studies. The leading association of pediatricians in the United States recommends “that youth who identify as [transgender] have access to comprehensive, gender-affirming, and developmentally appropriate health care that is provided in a safe and inclusive clinical space…[and] that pediatricians have a role in advocating for policies and laws that protect youth who identify as [transgender] from discrimination and violence (Rafferty et al. 2018).”</div>
-<div class="para" id="p-110">We briefly describe how each aspect of gender-affirming healthcare is targeted by the categories of bills used in the data analysis below. Social transition is targeted through <code class="code-inline tex2jax_ignore">youth athletics</code> bills preventing young people from competing on sports teams under their identified gender. <code class="code-inline tex2jax_ignore">ID requirements</code> prevent the changing of the “sex” listed on birth certificates, driver’s licenses, and other government IDs.<code class="code-inline tex2jax_ignore">Public facilities</code> laws prevent all trans people from using restrooms and other gendered public facilities that match their gender identity. <code class="code-inline tex2jax_ignore">Schools/education</code> laws vary but include laws banning teachers from using students’ correct pronouns at all or without parental permission, discussing queer and trans/nonbinary identities in the classroom, and displaying items such as pride flags supporting queer and trans identities, among others.</div>
-<div class="para" id="p-111">
-<code class="code-inline tex2jax_ignore">Drag performance</code> laws (perhaps better categorized as “gender expression laws”), a recent development as of 2023, ban drag shows or “male or female impersonators” in certain circumstances, such as “in the presence of minors” (Tennessee’s Senate Bill 3) or on Sundays from 1 a.m. to 12 p.m. (Arizona’s SB 1030). Laws barring municipalities from passing <code class="code-inline tex2jax_ignore">nondiscrimination protections</code>, as well as <code class="code-inline tex2jax_ignore">religious freedom</code> laws, legalize discrimination in certain circumstances against LGBTQ+ people, particularly by those with a “strongly felt religious conviction” that being LGBTQ+ is wrong. Finally, <code class="code-inline tex2jax_ignore">healthcare</code> laws prevent gender-affirming care for various groups in various ways, often including bans on hormone therapy and surgery for those under 18.</div>
-<div class="para" id="p-112">In the rest of this chapter, you will identify and analyze recent anti-trans and anti-nonbinary bills over time, focusing on their impacts, whether or not they passed, and other details that impact people’s lives.</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-30"><div class="fn"><code class="code-inline tex2jax_ignore">www.genderbread.org/</code></div></div>
-</div>
+<section class="introduction" id="introduction-8"><div class="para" id="p-51">blurblur</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec_lying_with_visuals.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec_reading_questions.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

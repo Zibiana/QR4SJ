@@ -32,7 +32,7 @@
     <!-- Of course you will want to add more chapters as you proceed-->
     <!-- <xi:include href="./part_number.ptx" /> -->
    
-    <xi:include href = "./essential-knowledge/ch_essential_knowledge.ptx" />
+   <!-- <xi:include href = "./essential-knowledge/ch_essential_knowledge.ptx" />-->
 
     <xi:include href = "./ch_loans.ptx" />
     
@@ -40,10 +40,14 @@
 
     <xi:include href="./climate-change/climate-change.ptx" />
 
-    <xi:include href="./environmental-justice/environmental-change.ptx" />
+    <!-- <xi:include href="./environmental-justice/environmental-change.ptx" />-->
 
 
     <xi:include href="./legislation/ch_legislation.ptx" />
+
+   <!--<xi:include href="./modeling-democracy/ch_modeling_democracy.ptx" /> -->
+
+    <!--<xi:include href="./from-latex/ch_from-latex.ptx"/>-->
 
     <!-- The final chapter contains a wide variety of elements to  -->
     <!-- illustrate what pretext can do, plus links to more help.  -->

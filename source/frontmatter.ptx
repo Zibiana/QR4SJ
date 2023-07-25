@@ -6,20 +6,20 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <titlepage>
     <author>
-      <personname>Kenan Ince</personname>
+      <personname>Kenan Ince </personname>
       <department>Department of Mathematics</department>
       <institution>Westminster University, Salt Lake City</institution>
     </author>
-<!--    <author>
+  <!-- <author>
       <personname>Sean Raleigh</personname>
       <department>Departments of Mathematics and Data Science</department>
       <institution>Westminster University, Salt Lake City</institution>
-    </author>
+    </author> -->
     <author>
       <personname>Bianca Thompson</personname>
       <department>Department of Mathematics</department>
       <institution>Westminster University, Salt Lake City</institution>
-    </author> -->
+    </author> 
     <date><today/></date>
   </titlepage>
 

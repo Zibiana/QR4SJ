@@ -10,6 +10,8 @@
   
   <xi:include href="./appendix_lit-review.ptx" />
 
+  <xi:include href="./appendix_for-the-instructor.ptx" />
+
   <solutions divisional="hint">
     <title>Selected Hints</title>
   </solutions>
