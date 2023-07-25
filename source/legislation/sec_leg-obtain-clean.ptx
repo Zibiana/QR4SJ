@@ -2,8 +2,7 @@
 		<title>Obtaining and Cleaning the Data</title>
 		<introduction>
 			<p>
-				Here, we will find reputable sources for data on anti-trans bills and get the data 
-				into a form we can analyze.
+				Here, we will find reputable sources for data on anti-trans bills and get the data into a form we can analyze.
 			</p>
 		</introduction>
 
@@ -63,7 +62,9 @@
 			<title>Cleaning the Data</title>
 
 			<p>
-				First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., <q>AZ</q> instead of <q>Arizona</q>), while Track Trans Legislation uses full names. So we use a program (that you won't have to worry about!) to convert full names to abbreviations in the whole dataset. 
+				First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., <q>AZ</q> instead of <q>Arizona</q>), while Track Trans Legislation uses full names. So we use a program to convert full names to abbreviations in the whole dataset. We have done this cleaning and it can be found in ADD GITHUB LINK HERE! You can see the code we used here:
+
+				ADD THE CODE FOR STUDENTS THAT ARE CURIOUS!!!!
 				
                 We also note that, for example, the 2021 dataset includes some bills passed in January 2022, so we eliminate duplicate bills.
 			</p>
