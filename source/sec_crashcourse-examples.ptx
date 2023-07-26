@@ -2,14 +2,16 @@
 
 <section xml:id="sec_firstch-examples" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Example SJ Math Activities for the First Day</title>
-    <introduction>Here are some examples of questions I've asked my students, almost always in a think-pair-share format, to start off a semester-long course on quantitative reasoning for social justice.</introduction>
+    <subsection>
+        <title>Introductory Questions</title>
+        <p>Here are some examples of questions I've asked my students, almost always in a think-pair-share format, to start off a semester-long course on quantitative reasoning for social justice.</p>
   
- 
           <exercise>
         <title>Defining social justice</title>
 
 
-              <statement>What do you think of when you think of social justice? What are 2-3 issues of SJ you're passionate about? Can we develop a working definition of SJ as a class?</statement>
+              <statement>What do you think of when you think of social justice? What are 2-3 issues of SJ 
+                you're passionate about? Can we develop a working definition of SJ as a class?</statement>
 
     <answer>
       <p>
@@ -111,7 +113,8 @@
             
         </p>
             </solution>        
-    </exercise>    
+    </exercise>
+</subsection>
     	<subsection xml:id="group-work-and-class-norms">
 		<title>Group work and class norms</title>
 <introduction>There is some evidence that the use of group roles, in which all group members rotate assigned tasks each day, improves student learning<fn>See e.g. Hauk, S., Speer, N. M., Kung, D., Tsay, J.-J., and Hsu, E. (Eds.) (2013). Video cases for college mathematics instructor professional development, currently accessible (as of 3-29-2022) at <url visual="http://collegemathvideocases.org/pdf/GroupWork.pdf">this link</url>.</fn>
@@ -125,8 +128,8 @@
 				Given the nature of this course, it's important that we develop class norms to promote an atmosphere which will facilitate the learning process as well as respect the experiences of different groups in the classroom and the larger society. The class can agree to revise them and add others, but all students must commit themselves to the final set of rules by the end of the first class. These principles will guide our class discussions and interactions.
 			</p>
 
-            <statement><title>Setting group norms</title>
-            <exercise><p>Think-Pair-Share on what common norms for group work and discussion are important for our class.</p>
+            <exercise><title>Setting group norms</title>
+            <statement><p>Think-Pair-Share on what common norms for group work and discussion are important for our class.</p>
 
 			<p><ul>
 				<li>
@@ -148,7 +151,7 @@
 				</li>
                 </ul>
             </p>
-            </exercise>
+        </statement>
             <example-solution>
             <p>
 				Here are some useful classroom norms:
@@ -202,7 +205,7 @@
                 </ol>
                 </p>
                 </example-solution>
-                </statement>
+            </exercise>
 <!-- div attr= class="xca"-->
                
 			<exercises>
