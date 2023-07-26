@@ -60,10 +60,38 @@ graph_1 <- anti_trans_bills_type %>% ggplot(aes(x = `Bill Type`, y = n)) + graph
 <div class="para">Try to create each type of graph in R. Some will cause errors - that is a sign that this type of graph isn’t appropriate for this question. Which graph do you think is the clearest? Why do you think that is? What do you notice from this graph? Does this tell you anything about our question regarding 2023?</div>
 </li>
 <li>
-<div class="para">Now let us look at something else. For the following two pieces of data, generate each type of graph and answer the same questions from above: Which graph do you think is the clearest? Why do you think that is? What do you notice from this graph? Does this tell you anything about our question regarding 2023?</div>
+<div class="para">Now let us look at what is happening by year. Run the following code cell to group the data by year.</div>
+<pre class="ptx-sagecell sagecell-r" id="sage-3"><script type="text/x-sage">sink('/dev/null')
+#Group by year
+anti_trans_bills_by_year <- anti_trans_bills_clean %>% group_by(year) %>% summarise(n = n())
+# Remove NA values
+anti_trans_bills_by_year <- na.omit(anti_trans_bills_by_year)
+# Remove a couple outlier values
+anti_trans_bills_by_year <- anti_trans_bills_by_year %>% filter(year != 1905) #Need to omit this observation
+anti_trans_bills_by_year <- anti_trans_bills_by_year %>% filter(year != 2017) #There is only one bill here, and it is causing distortion in the graphs
+
+#filter by year and status
+anti_trans_bills_by_year_enacted <- anti_trans_bills_clean %>% filter(Status == "Signed/Enacted") %>%    group_by(year) %>% summarise(n = n())
+
+# Remove NA values
+anti_trans_bills_by_year_enacted <- na.omit(anti_trans_bills_by_year_enacted)
+#Remove a couple outlier values
+anti_trans_bills_by_year_enacted <- anti_trans_bills_by_year_enacted %>% filter(year != 1905) #Need to omit this observation
+anti_trans_bills_by_year_enacted <- anti_trans_bills_by_year_enacted %>% filter(year != 2017) #There is only one bill here, and it is causing distortion in the graphs
+sink(); closeAllConnections()
+</script></pre>
+<div class="para">For the following two pieces of data, generate each type of graph and answer the same questions from above: Which graph do you think is the clearest? Why do you think that is? What do you notice from this graph? Does this tell you anything about our question regarding 2023?</div>
 <ol class="lower-alpha">
-<li><div class="para">The total number of bills proposed between 2018 and 2023.</div></li>
-<li><div class="para">The bills signed and enacted between 2018 and 2023.</div></li>
+<li>
+<div class="para">The total number of bills proposed between 2018 and 2023.</div>
+<pre class="ptx-sagecell sagecell-r" id="sage-4"><script type="text/x-sage">total_bills_by_year <- anti_trans_bills_by_year %>% ggplot(aes(x = year, y = n)) + geom_line()
+</script></pre>
+</li>
+<li>
+<div class="para">The bills signed and enacted between 2018 and 2023.</div>
+<pre class="ptx-sagecell sagecell-r" id="sage-5"><script type="text/x-sage">total_bills_by_year_enacted <- anti_trans_bills_by_year_enacted %>% ggplot(aes(x = year, y = n)) + geom_line()
+</script></pre>
+</li>
 </ol>
 </li>
 </ol></div></article><span class="incontext"><a href="sec-leg-visualize.html#activity-1" class="internal">in-context</a></span>
