@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Understanding the Issue</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -226,16 +255,19 @@ window.MathJax = {
 </li>
 <li>
 <div class="toc-item"><a href="sec_firstch-examples.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span></a></div>
-<ul class="structural"><li>
-<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Group work and class norms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_firstch-examples.html#subsection-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Ground rules</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.1.2</span> <span class="title">Group roles</span></a></div></li>
+<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span></a></div></li>
 </ul>
-</li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -309,9 +341,9 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-11" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-14" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -334,20 +366,20 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-16" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
 <ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-19" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-19" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-22" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
 <li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
@@ -355,8 +387,8 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-22" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-24" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -446,22 +478,22 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="climate-change-background"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Understanding the Issue</span>
 </h2>
-<div class="para" id="p-328">The earth’s climate is constantly changing, with periods of warming and cooling alternating throughout history and prehistory. Scientists are able to measure the earth’s climate by using temperature records for the last roughly 150 years, and using reconstruction from ice cores and seafloor cores before that.  There are many factors that cause the earth’s climate to change, including changes in the sun, changes in the tilt of the earth’s axis, meteorites, volcanos, and changes in vegetation <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-causes-of-climate-change.html" title="Bibliographic Entry 4.11.1.11">[4.11.1.11]</a>.  Some of these changes, like changes in the sun or the tilt of the earth’s axis, happen slowly over millions of years and cause similarly slow changes in climate.</div>
-<div class="para" id="p-329">Rapid changes in climate tend to be caused by natural disasters, like volcanic eruptions. These changes tend to be small and localized, unless the natural disaster is cataclysmic - like the event, theorized to be caused by a meteor strike in the Yucatan peninsula, which caused the extinction of many dinosaurs between the Cretaceous and Paleogene periods.  This event caused a global temperature drop of <span class="process-math">\(28^circ C\)</span> <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-cretaceous-climate-change.html" title="Bibliographic Entry 4.11.1.12">[4.11.1.12]</a>.  Changes in climate due to cataclysmic events - even like the one which caused the last mass extinction before modern times - tend to be temporary.  That severe cooling event only lasted for 3-4 years.</div>
-<div class="para" id="p-330">The world is currently experiencing such a cataclysmic rise in global temperatures.  While the global temperature has been higher in the past - for example, during the Cretaceous period - there is no evidence that the world has experienced such a rapid warming period over the past million year <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-fourth-assessment.html" title="Bibliographic Entry 4.11.1.13">[4.11.1.13]</a>.  Global temperatures have risen by <span class="process-math">\(1^\circ\)</span>C since records started in 1880, with 2/3 of that warming coming since 1975 - indicating that warming is accelerating <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-world-of-change.html" title="Bibliographic Entry 4.11.1.14">[4.11.1.14]</a>. Projections indicate that the globe could warm by <span class="process-math">\(5^\circ\)</span> in the 21st century alone <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-fourth-assessment.html" title="Bibliographic Entry 4.11.1.13">[4.11.1.13]</a>.</div>
-<div class="para" id="p-331">Unlike past changes to the climate, the current change is driven almost entirely by the actions of a single species - ours. As early as the 1820s, the French mathematician and physicist Joseph Fourier realized that the Earth’s atmosphere must trap some of the sun’s warmth - otherwise the Earth would be as cold as the moon <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-history-global-warming.html" title="Bibliographic Entry 4.11.1.16">[4.11.1.16]</a>. In 1859, the Irish physicist John Tyndall proved in a laboratory setting that certain gases - including water vapor (<span class="process-math">\(H_2O\)</span>), carbon dioxide (<span class="process-math">\(CO_2\)</span>), and methane (<span class="process-math">\(CH_4\)</span>) - were trapping heat in the Earth’s atmosphere.  In 1896, a Swedish physicist, Svante Arrhenius, who was studying carbon dioxide levels during the current time and during the last ice age, coined the term <em class="emphasis">greenhouse effect</em> <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-history-global-warming.html" title="Bibliographic Entry 4.11.1.16">[4.11.1.16]</a>.</div>
+<div class="para" id="p-329">The earth’s climate is constantly changing, with periods of warming and cooling alternating throughout history and prehistory. Scientists are able to measure the earth’s climate by using temperature records for the last roughly 150 years, and using reconstruction from ice cores and seafloor cores before that.  There are many factors that cause the earth’s climate to change, including changes in the sun, changes in the tilt of the earth’s axis, meteorites, volcanos, and changes in vegetation <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-causes-of-climate-change.html" title="Bibliographic Entry 4.11.1.11">[4.11.1.11]</a>.  Some of these changes, like changes in the sun or the tilt of the earth’s axis, happen slowly over millions of years and cause similarly slow changes in climate.</div>
+<div class="para" id="p-330">Rapid changes in climate tend to be caused by natural disasters, like volcanic eruptions. These changes tend to be small and localized, unless the natural disaster is cataclysmic - like the event, theorized to be caused by a meteor strike in the Yucatan peninsula, which caused the extinction of many dinosaurs between the Cretaceous and Paleogene periods.  This event caused a global temperature drop of <span class="process-math">\(28^circ C\)</span> <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-cretaceous-climate-change.html" title="Bibliographic Entry 4.11.1.12">[4.11.1.12]</a>.  Changes in climate due to cataclysmic events - even like the one which caused the last mass extinction before modern times - tend to be temporary.  That severe cooling event only lasted for 3-4 years.</div>
+<div class="para" id="p-331">The world is currently experiencing such a cataclysmic rise in global temperatures.  While the global temperature has been higher in the past - for example, during the Cretaceous period - there is no evidence that the world has experienced such a rapid warming period over the past million year <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-fourth-assessment.html" title="Bibliographic Entry 4.11.1.13">[4.11.1.13]</a>.  Global temperatures have risen by <span class="process-math">\(1^\circ\)</span>C since records started in 1880, with 2/3 of that warming coming since 1975 - indicating that warming is accelerating <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-world-of-change.html" title="Bibliographic Entry 4.11.1.14">[4.11.1.14]</a>. Projections indicate that the globe could warm by <span class="process-math">\(5^\circ\)</span> in the 21st century alone <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-fourth-assessment.html" title="Bibliographic Entry 4.11.1.13">[4.11.1.13]</a>.</div>
+<div class="para" id="p-332">Unlike past changes to the climate, the current change is driven almost entirely by the actions of a single species - ours. As early as the 1820s, the French mathematician and physicist Joseph Fourier realized that the Earth’s atmosphere must trap some of the sun’s warmth - otherwise the Earth would be as cold as the moon <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-history-global-warming.html" title="Bibliographic Entry 4.11.1.16">[4.11.1.16]</a>. In 1859, the Irish physicist John Tyndall proved in a laboratory setting that certain gases - including water vapor (<span class="process-math">\(H_2O\)</span>), carbon dioxide (<span class="process-math">\(CO_2\)</span>), and methane (<span class="process-math">\(CH_4\)</span>) - were trapping heat in the Earth’s atmosphere.  In 1896, a Swedish physicist, Svante Arrhenius, who was studying carbon dioxide levels during the current time and during the last ice age, coined the term <em class="emphasis">greenhouse effect</em> <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-history-global-warming.html" title="Bibliographic Entry 4.11.1.16">[4.11.1.16]</a>.</div>
 <article class="definition definition-like" id="climate-change-definition-greenhouse-effect"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">The Greenhouse Effect.</span>
-</h3> <div class="para" id="p-332">The greenhouse effect refers to the way that certain gases, primarily water vapor, carbon dioxide, methane, and ozone, trap heat inside the Earth’s atmosphere. These four gases are commonly called <em class="emphasis">greenhouse gases</em>.</div></article><div class="para" id="p-333">The greenhouse effect is not, in and of itself, a bad thing. In fact, without the greenhouse effect, the Earth would be a lifeless shell.  The moon receives essentially the same solar energy as the Earth, but its surface temperatures swing between <span class="process-math">\(260^\circ\)</span>F (<span class="process-math">\(127^\circ\)</span>C) during the day to <span class="process-math">\(-280^\circ\)</span>F (<span class="process-math">\(-173^\circ\)</span>C) at night <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-temperature-moon.html" title="Bibliographic Entry 4.11.1.17">[4.11.1.17]</a>.  The greenhouse effect traps heat in the Earth’s atmosphere, releasing it more slowly, and creates a temperature range where life can exist.  The Earth’s natural cycles and processes cause many slow, gradual changes to these greenhouse gases, resulting in slow, gradual fluctuations in the Earth’s temperatures.</div>
-<div class="para" id="p-334">The current global warming is being driven by a very rapid increase in the amount of these greenhouse gases in the atmosphere.  This increase can be explained primarily by human changes to the planet - the burning of fossil fuels, deforestation, and large-scale agriculture.  As human beings produce more of these greenhouse gases, the global climate has warmed at a corresponding rate.  The corresponding changes to the Earth’s climate are called <em class="emphasis">anthropogenic climate change</em>.</div>
+</h3> <div class="para" id="p-333">The greenhouse effect refers to the way that certain gases, primarily water vapor, carbon dioxide, methane, and ozone, trap heat inside the Earth’s atmosphere. These four gases are commonly called <em class="emphasis">greenhouse gases</em>.</div></article><div class="para" id="p-334">The greenhouse effect is not, in and of itself, a bad thing. In fact, without the greenhouse effect, the Earth would be a lifeless shell.  The moon receives essentially the same solar energy as the Earth, but its surface temperatures swing between <span class="process-math">\(260^\circ\)</span>F (<span class="process-math">\(127^\circ\)</span>C) during the day to <span class="process-math">\(-280^\circ\)</span>F (<span class="process-math">\(-173^\circ\)</span>C) at night <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-temperature-moon.html" title="Bibliographic Entry 4.11.1.17">[4.11.1.17]</a>.  The greenhouse effect traps heat in the Earth’s atmosphere, releasing it more slowly, and creates a temperature range where life can exist.  The Earth’s natural cycles and processes cause many slow, gradual changes to these greenhouse gases, resulting in slow, gradual fluctuations in the Earth’s temperatures.</div>
+<div class="para" id="p-335">The current global warming is being driven by a very rapid increase in the amount of these greenhouse gases in the atmosphere.  This increase can be explained primarily by human changes to the planet - the burning of fossil fuels, deforestation, and large-scale agriculture.  As human beings produce more of these greenhouse gases, the global climate has warmed at a corresponding rate.  The corresponding changes to the Earth’s climate are called <em class="emphasis">anthropogenic climate change</em>.</div>
 <article class="definition definition-like" id="climate-change-definition-anthropomorphic-climate-change"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Anthropogenic Climate Change.</span>
-</h3> <div class="para" id="p-335">Anthropogenic climate change is change to the Earth’s climate resulting from human causes, as opposed to climate change caused by natural causes, like volcanic eruptions, natural fluctuations in greenhouse gases, or changes to solar energy.</div></article><div class="para" id="p-336">There are actually several different types of human activity which can cause changes to climate, aside from greenhouse gas emissions.  One example is human-caused changes to the Earth’s <em class="emphasis">albedo</em> - the lightness or darkness of the Earth’s surface.  Lighter colored materials tend to reflect more sunlight, causing a cooling effect, while darker colored materials tend to absorb more sunlight.  Human activity has caused some areas of the Earth’s surface to become darker, like urban areas and areas which were once covered in snow and ice, and thus to absorb more heat.  We have also caused other areas to become lighter, like forests that have been replaced by fields and areas which have become desert, creating a cooling effect (like the moon, deserts tend to be very hot during the day and very cold at night).</div>
-<div class="para" id="p-337">The amount of climate change caused by greenhouse gas emissions, though, vastly outweighs all other sources.  The amount of greenhouse gases in the Earth’s atmosphere has, in the last 100 years, risen to levels not seen in the last 400,000 years.</div>
+</h3> <div class="para" id="p-336">Anthropogenic climate change is change to the Earth’s climate resulting from human causes, as opposed to climate change caused by natural causes, like volcanic eruptions, natural fluctuations in greenhouse gases, or changes to solar energy.</div></article><div class="para" id="p-337">There are actually several different types of human activity which can cause changes to climate, aside from greenhouse gas emissions.  One example is human-caused changes to the Earth’s <em class="emphasis">albedo</em> - the lightness or darkness of the Earth’s surface.  Lighter colored materials tend to reflect more sunlight, causing a cooling effect, while darker colored materials tend to absorb more sunlight.  Human activity has caused some areas of the Earth’s surface to become darker, like urban areas and areas which were once covered in snow and ice, and thus to absorb more heat.  We have also caused other areas to become lighter, like forests that have been replaced by fields and areas which have become desert, creating a cooling effect (like the moon, deserts tend to be very hot during the day and very cold at night).</div>
+<div class="para" id="p-338">The amount of climate change caused by greenhouse gas emissions, though, vastly outweighs all other sources.  The amount of greenhouse gases in the Earth’s atmosphere has, in the last 100 years, risen to levels not seen in the last 400,000 years.</div>
 <figure class="figure figure-like" id="climate-change-figure-history-co2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/climate-change/images/history_atmospheric_co2.jpg" class="contained" alt="Graph showing atmospheric co2 over the last 400,000 years. Image description available."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-338">This unprecedented rapid change to greenhouse gas levels has caused a corresponding rapid increase in global temperatures.  While the Earth’s biosphere (a collective term for all life on the planet, including plants, animals, and all other organisms, and the environments that support that life) has survived changes of similar magnitude in the past, those changes have been much slower.  The natural processes of evolution which allow life to adapt to climate changes tend to happen slowly, over many generations.  So, while some species with very short life-cycles (like bacteria, or even insects) may be able to adapt to the changes through evolution, longer-lived species will only be able to survive by moving to another area.  Scientists estimate that 95% of species will experience local extinction (meaning either extinction or departure from that area) after a <span class="process-math">\(2.86^\circ\)</span>C risee in temperatures, and that 16-30% of species could go extinct by 2070 <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-extinction.html" title="Bibliographic Entry 4.11.1.19">[4.11.1.19]</a>.</div>
-<div class="para" id="p-339">While human beings are unlikely to go extinct - our intelligence has made us more adaptable than other species - climate change has already begun to affect our species.  Research has shown that production of the 10 largest crops in the world has already dropped by 1% since 1974 below where it would be without the impact of climate change <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-crops.html" title="Bibliographic Entry 4.11.1.20">[4.11.1.20]</a>.  The United Nations High Commission on Refugees estimates that between 2008 and 2019, there were over 21.5 million displacements of people - when an individual was forced to flee their home - caused by weather-related events, more than twice as many as those caused by conflicts or violence <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-refugees.html" title="Bibliographic Entry 4.11.1.21">[4.11.1.21]</a>.   The same data shows that climate disasters like droughts, cyclones, and floods can have destabilizing effects on countries, especially those already experiencing conflict, like Afghanistan, Yemen, and Mozambique.</div>
-<div class="para" id="p-340">Climate change - and the greenhouse gas emissions which are driving that change are a major concern for people around the world.  The need to find solutions to this crisis becomes more urgent with every passing year.  Mathematics can help us to understand the causes of the greenhouse effect and to determine the best strategies for slowing - and one day stopping - the pace of climate change.</div></section></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-339">This unprecedented rapid change to greenhouse gas levels has caused a corresponding rapid increase in global temperatures.  While the Earth’s biosphere (a collective term for all life on the planet, including plants, animals, and all other organisms, and the environments that support that life) has survived changes of similar magnitude in the past, those changes have been much slower.  The natural processes of evolution which allow life to adapt to climate changes tend to happen slowly, over many generations.  So, while some species with very short life-cycles (like bacteria, or even insects) may be able to adapt to the changes through evolution, longer-lived species will only be able to survive by moving to another area.  Scientists estimate that 95% of species will experience local extinction (meaning either extinction or departure from that area) after a <span class="process-math">\(2.86^\circ\)</span>C risee in temperatures, and that 16-30% of species could go extinct by 2070 <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-extinction.html" title="Bibliographic Entry 4.11.1.19">[4.11.1.19]</a>.</div>
+<div class="para" id="p-340">While human beings are unlikely to go extinct - our intelligence has made us more adaptable than other species - climate change has already begun to affect our species.  Research has shown that production of the 10 largest crops in the world has already dropped by 1% since 1974 below where it would be without the impact of climate change <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-crops.html" title="Bibliographic Entry 4.11.1.20">[4.11.1.20]</a>.  The United Nations High Commission on Refugees estimates that between 2008 and 2019, there were over 21.5 million displacements of people - when an individual was forced to flee their home - caused by weather-related events, more than twice as many as those caused by conflicts or violence <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-refugees.html" title="Bibliographic Entry 4.11.1.21">[4.11.1.21]</a>.   The same data shows that climate disasters like droughts, cyclones, and floods can have destabilizing effects on countries, especially those already experiencing conflict, like Afghanistan, Yemen, and Mozambique.</div>
+<div class="para" id="p-341">Climate change - and the greenhouse gas emissions which are driving that change are a major concern for people around the world.  The need to find solutions to this crisis becomes more urgent with every passing year.  Mathematics can help us to understand the causes of the greenhouse effect and to determine the best strategies for slowing - and one day stopping - the pace of climate change.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="climate-change-objectives.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="climate-change-cui-bono.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

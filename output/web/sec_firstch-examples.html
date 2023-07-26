@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Example SJ Math Activities for the First Day</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -226,16 +255,19 @@ window.MathJax = {
 </li>
 <li class="active">
 <div class="toc-item"><a href="sec_firstch-examples.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span></a></div>
-<ul class="structural"><li>
-<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Group work and class norms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_firstch-examples.html#subsection-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Ground rules</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.1.2</span> <span class="title">Group roles</span></a></div></li>
+<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span></a></div></li>
 </ul>
-</li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -309,9 +341,9 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-11" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-14" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -334,20 +366,20 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-16" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
 <ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-19" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-19" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-22" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
 <li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
@@ -355,8 +387,8 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-22" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-24" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -447,11 +479,15 @@ window.MathJax = {
 <section class="section" id="sec_firstch-examples"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span>
 </h2>
-<section class="introduction" id="introduction-3">Here are some examples of questions I’ve asked my students, almost always in a think-pair-share format, to start off a semester-long course on quantitative reasoning for social justice.</section><article class="exercise exercise-like" id="exercise-1"><h3 class="heading">
+<section class="subsection" id="subsection-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span>
+</h3>
+<div class="para" id="p-12">Here are some examples of questions I’ve asked my students, almost always in a think-pair-share format, to start off a semester-long course on quantitative reasoning for social justice.</div>
+<article class="exercise exercise-like" id="exercise-1"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Defining social justice.</span>
-</h3>What do you think of when you think of social justice? What are 2-3 issues of SJ you’re passionate about? Can we develop a working definition of SJ as a class?<div class="solutions">
+</h4>What do you think of when you think of social justice? What are 2-3 issues of SJ you’re passionate about? Can we develop a working definition of SJ as a class?<div class="solutions">
 <a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like">
-<div class="para logical" id="p-12">
+<div class="para logical" id="p-13">
 <div class="para">Some possible answers:</div>
 <ul class="disc">
 <li id="li-4"><div class="para" id="p-derived-li-4">justice in terms of the distribution of wealth, opportunities, and privileges within a society. (Google Dictionary)</div></li>
@@ -459,7 +495,7 @@ window.MathJax = {
 <li id="li-6"><div class="para" id="p-derived-li-6">a state or doctrine of egalitarianism (Merriam-Webster)</div></li>
 <li id="li-7"><div class="para" id="p-derived-li-7">A broad term for action intended to create genuine equality, fairness and respect among peoples. (University of Massachusetts Lowell Department of Multicultural Affairs)</div></li>
 </ul>
-</div> <div class="para logical" id="p-13">
+</div> <div class="para logical" id="p-14">
 <div class="para">One working definition that my classes have used (due to Sensoy-DiAngelo) is the following. Social justice is a recognition that:</div>
 <ul class="disc">
 <li id="li-8"><div class="para" id="p-derived-li-8">all people are individuals, but we are also members of socially constructed groups;</div></li>
@@ -473,14 +509,14 @@ window.MathJax = {
 </ul>
 </div>
 </div></div>
-</div></article><div class="para" id="p-14">Here are some more examples I’ve used in courses during the pandemic:</div>
-<article class="exercise exercise-like" id="exercise-2"><h3 class="heading">
+</div></article><div class="para" id="p-15">Here are some more examples I’ve used in courses during the pandemic:</div>
+<article class="exercise exercise-like" id="exercise-2"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">A first-day activity for a pandemic.</span>
-</h3>
-<div class="introduction" id="introduction-4">Consider the following questions</div>
-<article class="task exercise-like" id="task-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>What are some social justice issues that are important to you in the midst of rising inequality and authoritarianism, climate crisis, racial justice movements, and more?</article><article class="task exercise-like" id="task-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>What are some ways we could measure each of these issues? (how bad they are, solutions, societal reactions, etc.)</article><article class="task exercise-like" id="task-3"><h4 class="heading"><span class="codenumber">(c)</span></h4>What are some things you don’t know how to measure about each of these issues?</article><article class="task exercise-like" id="task-4"><h4 class="heading"><span class="codenumber">(d)</span></h4>Estimate: what are some strategies for measuring these things? Don’t try to plug in numbers yet, just make a list.</article><article class="task exercise-like" id="task-5"><h4 class="heading"><span class="codenumber">(e)</span></h4>What are some ways to, as accurately as possible, measure how severe the COVID-19 outbreak is in your city? Write down any assumptions you make about what “severe” means.</article><article class="task exercise-like" id="task-6"><h4 class="heading"><span class="codenumber">(f)</span></h4>If you were a disability rights activist concerned about the dangers of COVID-19 for immunocompromised folks, which of these ways would you choose to measure? Estimate or find the info.</article><article class="task exercise-like" id="task-7"><h4 class="heading"><span class="codenumber">(g)</span></h4>If you were an administrator at your college or university, which of these ways would you choose to measure? Explain, then estimate or find the info.</article><article class="task exercise-like" id="task-8"><h4 class="heading"><span class="codenumber">(h)</span></h4>What are some things it would be ideal to be able to measure in order to curtail or prevent the spread of COVID-19 in your city? Do the same as above: how would you measure these things as a disability rights activist? As a college administrator?</article><article class="task exercise-like" id="task-9"><h4 class="heading"><span class="codenumber">(i)</span></h4>Brainstorm some ways to obtain the measurements you described above. If you obtained these measurements, how could you use them to advocate for positive change?</article><article class="task exercise-like" id="task-10"><h4 class="heading"><span class="codenumber">(j)</span></h4>What questions about social justice, health/accessibility, and math does this activity bring up for you?</article></article><article class="exercise exercise-like" id="exercise-3"><h3 class="heading">
+</h4>
+<div class="introduction" id="introduction-3">Consider the following questions</div>
+<article class="task exercise-like" id="task-1"><h5 class="heading"><span class="codenumber">(a)</span></h5>What are some social justice issues that are important to you in the midst of rising inequality and authoritarianism, climate crisis, racial justice movements, and more?</article><article class="task exercise-like" id="task-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>What are some ways we could measure each of these issues? (how bad they are, solutions, societal reactions, etc.)</article><article class="task exercise-like" id="task-3"><h5 class="heading"><span class="codenumber">(c)</span></h5>What are some things you don’t know how to measure about each of these issues?</article><article class="task exercise-like" id="task-4"><h5 class="heading"><span class="codenumber">(d)</span></h5>Estimate: what are some strategies for measuring these things? Don’t try to plug in numbers yet, just make a list.</article><article class="task exercise-like" id="task-5"><h5 class="heading"><span class="codenumber">(e)</span></h5>What are some ways to, as accurately as possible, measure how severe the COVID-19 outbreak is in your city? Write down any assumptions you make about what “severe” means.</article><article class="task exercise-like" id="task-6"><h5 class="heading"><span class="codenumber">(f)</span></h5>If you were a disability rights activist concerned about the dangers of COVID-19 for immunocompromised folks, which of these ways would you choose to measure? Estimate or find the info.</article><article class="task exercise-like" id="task-7"><h5 class="heading"><span class="codenumber">(g)</span></h5>If you were an administrator at your college or university, which of these ways would you choose to measure? Explain, then estimate or find the info.</article><article class="task exercise-like" id="task-8"><h5 class="heading"><span class="codenumber">(h)</span></h5>What are some things it would be ideal to be able to measure in order to curtail or prevent the spread of COVID-19 in your city? Do the same as above: how would you measure these things as a disability rights activist? As a college administrator?</article><article class="task exercise-like" id="task-9"><h5 class="heading"><span class="codenumber">(i)</span></h5>Brainstorm some ways to obtain the measurements you described above. If you obtained these measurements, how could you use them to advocate for positive change?</article><article class="task exercise-like" id="task-10"><h5 class="heading"><span class="codenumber">(j)</span></h5>What questions about social justice, health/accessibility, and math does this activity bring up for you?</article></article><article class="exercise exercise-like" id="exercise-3"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Setting the stage.</span>
-</h3>Get in groups of size 3–4. Group members should introduce themselves - name, pronouns, hobbies outside school, goals for the semester/year, reason they’re taking the course. For each of the questions that follow, I will ask you to: <ol class="decimal">
+</h4>Get in groups of size 3–4. Group members should introduce themselves - name, pronouns, hobbies outside school, goals for the semester/year, reason they’re taking the course. For each of the questions that follow, I will ask you to: <ol class="decimal">
 <li id="li-22"><div class="para" id="p-derived-li-22">Think about a possible answer on your own.</div></li>
 <li id="li-23"><div class="para" id="p-derived-li-23">Discuss your answers with the rest of your group.</div></li>
 <li id="li-24"><div class="para" id="p-derived-li-24">Share a summary of each group’s discussion.</div></li>
@@ -491,7 +527,7 @@ window.MathJax = {
 <li id="li-28"><div class="para" id="p-derived-li-28">How do we create a safe environment where risk taking is encouraged and productive failure is valued?</div></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><div class="para" id="p-17">As Ernst describes on <a class="external" href="" target="_blank">his website</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-16" id="fn-16"><sup> 16 </sup></a>, <div class="para" id="p-18">Each time I’ve run the activity, the responses are slightly different. The responses to the first two questions are usually what you would expect. Question 3 always generates great discussions. The idea of “productive failure” naturally arises when discussing question 4 and I provide them with this language sometime while discussing this question. Listening to the students’ responses to question 4 is awesome. It’s really nice to get the students establishing the necessary culture of the class without me having to tell them what to do.</div> <div class="para" id="p-19">After we are done discussing the 5 questions, I elaborate on the importance of productive failure and inform that I will often tag things in class with the hashtag #pf in an attempt to emphasize its value. I also provide them with the following quote from Mike Starbird: “Any creative endeavor is built on the ash heap of failure.” I wrap up the activity by conveying some claims I make about education and stating some of my goals as a teacher.</div> <div class="para logical" id="p-20">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><div class="para" id="p-18">As Ernst describes on <a class="external" href="" target="_blank">his website</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-16" id="fn-16"><sup> 16 </sup></a>, <div class="para" id="p-19">Each time I’ve run the activity, the responses are slightly different. The responses to the first two questions are usually what you would expect. Question 3 always generates great discussions. The idea of “productive failure” naturally arises when discussing question 4 and I provide them with this language sometime while discussing this question. Listening to the students’ responses to question 4 is awesome. It’s really nice to get the students establishing the necessary culture of the class without me having to tell them what to do.</div> <div class="para" id="p-20">After we are done discussing the 5 questions, I elaborate on the importance of productive failure and inform that I will often tag things in class with the hashtag #pf in an attempt to emphasize its value. I also provide them with the following quote from Mike Starbird: “Any creative endeavor is built on the ash heap of failure.” I wrap up the activity by conveying some claims I make about education and stating some of my goals as a teacher.</div> <div class="para logical" id="p-21">
 <div class="para">Claims</div>
 <ul class="disc">
 <li id="li-29"><div class="para" id="p-derived-li-29">An education must prepare a student to ask and explore questions in contexts that do not yet exist. That is, we need individuals capable of tackling problems they have never encountered and to ask questions no one has yet thought of.</div></li>
@@ -499,54 +535,43 @@ window.MathJax = {
 </ul>
 </div>
 </div></div></div>
-</div></article><section class="subsection" id="group-work-and-class-norms"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title">Group work and class norms</span>
+</div></article></section><section class="subsection" id="group-work-and-class-norms"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span>
 </h3>
-<section class="introduction" id="introduction-5">There is some evidence that the use of group roles, in which all group members rotate assigned tasks each day, improves student learning<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-17" id="fn-17"><sup> 17 </sup></a> Additionally, in a course that discusses sensitive political topics, my experience has emphasized the importance of agreeing on discussion norms before beginning a sensitive discussion. I hope the following activities help with establishing both of these sets of norms.</section><section class="subsubsection" id="ground-rules"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span> <span class="codenumber">1.2.1.1</span> <span class="title">Ground rules</span>
+<section class="introduction" id="introduction-4">There is some evidence that the use of group roles, in which all group members rotate assigned tasks each day, improves student learning<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-17" id="fn-17"><sup> 17 </sup></a> Additionally, in a course that discusses sensitive political topics, my experience has emphasized the importance of agreeing on discussion norms before beginning a sensitive discussion. I hope the following activities help with establishing both of these sets of norms.</section><section class="subsubsection" id="ground-rules"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span>
 </h4>
-<div class="para" id="p-21">Given the nature of this course, it’s important that we develop class norms to promote an atmosphere which will facilitate the learning process as well as respect the experiences of different groups in the classroom and the larger society. The class can agree to revise them and add others, but all students must commit themselves to the final set of rules by the end of the first class. These principles will guide our class discussions and interactions.</div> <article class="exercise exercise-like" id="exercise-4"></article> <div class="para" id="p-27">Here are some useful classroom norms:</div> <div class="para logical" id="p-28"><ol class="decimal">
-<li id="li-34">
-<div class="para" id="p-29">
-<dfn class="terminology">Controversy and vulnerability</dfn>: different views are expected and honored with a group commitment to understand the sources of disagreement and to work cooperatively toward common solutions <dfn class="terminology">without putting a disproportionate responsibility on marginalized groups to educate us</dfn>.</div>
-<div class="para logical" id="p-30"><ul class="disc">
-<li id="li-35"><div class="para" id="p-31">No one’s identities are under question: e.g. no arguing that queer people are wrong for existing.</div></li>
-<li id="li-36"><div class="para" id="p-32">Please come talk to your instructor anytime you feel uncomfortable enough that it’s affecting your work in class.</div></li>
-</ul></div>
-</li>
-<li id="li-37"><div class="para" id="p-33">
-<dfn class="terminology">Own your intentions and your impact.</dfn> Acknowledge that the impact of your actions is not always congruent with your intentions and that positive or neutral intentions do not trump negative impact. Participate truthfully and accept when your actions or words harm others.</div></li>
-<li id="li-38"><div class="para" id="p-34">
-<dfn class="terminology">Challenge by choice</dfn>: individuals may determine for themselves if and to what degree they will participate in a given discussion or activity. It is possible not to participate in a few activities and still receive an A in the course. Be aware of what factors influence your decision about whether to challenge yourself on a given issue.</div></li>
-<li id="li-39"><div class="para" id="p-35">
-<dfn class="terminology">Respect</dfn>: each other and yourselves. Investigate how your cultural context affects what you think of as respect for others and acknowledge what respect looks like in other contexts.</div></li>
-<li id="li-40"><div class="para" id="p-36">
-<dfn class="terminology">No attacks</dfn>. personal attacks are a form of extreme disrespect. Disagreeing with ideas is welcome; attacking individuals for their ideas is not.</div></li>
-</ol></div>
-<section class="exercises" id="exercises-1"><h5 class="heading hide-type">
+<div class="para" id="p-22">Given the nature of this course, it’s important that we develop class norms to promote an atmosphere which will facilitate the learning process as well as respect the experiences of different groups in the classroom and the larger society. The class can agree to revise them and add others, but all students must commit themselves to the final set of rules by the end of the first class. These principles will guide our class discussions and interactions.</div>
+<article class="exercise exercise-like" id="exercise-4"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Setting group norms.</span>
+</h5>
+<div class="para" id="p-23">Think-Pair-Share on what common norms for group work and discussion are important for our class.</div> <div class="para logical" id="p-24"><ul class="disc">
+<li id="li-31"><div class="para" id="p-25">Whose voices are valued?</div></li>
+<li id="li-32"><div class="para" id="p-26">What philosophy do we have about who can make contributions to mathematics and the value of those contributions?</div></li>
+<li id="li-33"><div class="para" id="p-27">How does this connect to the values we espouse for our democracy?</div></li>
+</ul></div></article><section class="exercises" id="exercises-1"><h5 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h5>
 <article class="exercise exercise-like" id="exercise-5"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<div class="para" id="p-37">(TPS) What does respect look like for you? How might ideas of respect vary with cultural context? How might you firmly challenge the views of someone else in a respectful manner?</div></article><article class="exercise exercise-like" id="exercise-6"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<div class="para" id="p-38">What are the differences betweeen a personal attack and a challenge to an idea that makes an individual feel uncomfortable? What are some situations that might blur the lines between the two? How can we acknowledge when certain beliefs (e.g. trans people not existing) are inherently personal attacks?</div></article></section></section><section class="subsubsection" id="group-roles"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span> <span class="codenumber">1.2.1.2</span> <span class="title">Group roles</span>
+<div class="para" id="p-38">(TPS) What does respect look like for you? How might ideas of respect vary with cultural context? How might you firmly challenge the views of someone else in a respectful manner?</div></article><article class="exercise exercise-like" id="exercise-6"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<div class="para" id="p-39">What are the differences betweeen a personal attack and a challenge to an idea that makes an individual feel uncomfortable? What are some situations that might blur the lines between the two? How can we acknowledge when certain beliefs (e.g. trans people not existing) are inherently personal attacks?</div></article></section></section><section class="subsubsection" id="group-roles"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span>
 </h4>
-<div class="para" id="p-39">
+<div class="para" id="p-40">
 <dfn class="terminology">Group roles</dfn>: In order to facilitate group interaction, you will take on group roles designed to mimic the role of mathematical and/or sociological researchers. The roles are as follows:</div>
-<div class="para logical" id="p-40"><ul class="disc">
-<li id="li-41"><div class="para" id="p-41">
+<div class="para logical" id="p-41"><ul class="disc">
+<li id="li-41"><div class="para" id="p-42">
 <dfn class="terminology">The facilitator</dfn> is responsible for making sure every student is able to contribute and be heard. <em class="emphasis">Contributions</em> may include asking good questions, rephrasing someone else’s idea, coming up with a way of connecting mathematics to the real world, and many others.</div></li>
-<li id="li-42"><div class="para" id="p-42">the <dfn class="terminology">resource manager</dfn> is responsible for obtaining and keeping track of all necessary resources to solve a problem. <em class="emphasis">Resources</em> may include writing utensils, paper, the Internet, your instructor, data sources, and most importantly, your team.</div></li>
-<li id="li-43"><div class="para" id="p-43">the <dfn class="terminology">lead author</dfn> is responsible for writing down the ideas that each group comes up with.</div></li>
-<li id="li-44"><div class="para" id="p-44">the <dfn class="terminology">communicator</dfn> is responsible for reporting what your group came up with to the class, instructor, and any relevant community groups.</div></li>
+<li id="li-42"><div class="para" id="p-43">the <dfn class="terminology">resource manager</dfn> is responsible for obtaining and keeping track of all necessary resources to solve a problem. <em class="emphasis">Resources</em> may include writing utensils, paper, the Internet, your instructor, data sources, and most importantly, your team.</div></li>
+<li id="li-43"><div class="para" id="p-44">the <dfn class="terminology">lead author</dfn> is responsible for writing down the ideas that each group comes up with.</div></li>
+<li id="li-44"><div class="para" id="p-45">the <dfn class="terminology">communicator</dfn> is responsible for reporting what your group came up with to the class, instructor, and any relevant community groups.</div></li>
 </ul></div>
 <article class="exercise exercise-like" id="exercise-7"><h5 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
 </h5>
-<div class="para" id="p-45">Assign roles to each group by first letters of first name; they’ll rotate every day of class. Anyone can answer questions posed to the whole class, but if your group came up with an idea that hasn’t been shared yet, it someone in your group’s responsibility to share your answer so that everyone can learn from you!</div></article></section></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-15"><div class="fn"><code class="code-inline tex2jax_ignore">https://danaernst.com/setting-the-stage/</code></div></div>
+<div class="para" id="p-46">Assign roles to each group by first letters of first name; they’ll rotate every day of class. Anyone can answer questions posed to the whole class, but if your group came up with an idea that hasn’t been shared yet, it someone in your group’s responsibility to share your answer so that everyone can learn from you!</div></article></section></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-15"><div class="fn"><code class="code-inline tex2jax_ignore">https://danaernst.com/setting-the-stage/</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-16"><div class="fn"><code class="code-inline tex2jax_ignore">https://danaernst.com/setting-the-stage/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-17"><div class="fn">See e.g. Hauk, S., Speer, N. M., Kung, D., Tsay, J.-J., and Hsu, E. (Eds.) (2013). Video cases for college mathematics instructor professional development, currently accessible (as of 3-29-2022) at <a class="external" href="" target="_blank">this link</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-18" id="fn-18"><sup> 18 </sup></a>.</div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-18"><div class="fn"><code class="code-inline tex2jax_ignore">http://collegemathvideocases.org/pdf/GroupWork.pdf</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-17"><div class="fn">See e.g. Hauk, S., Speer, N. M., Kung, D., Tsay, J.-J., and Hsu, E. (Eds.) (2013). Video cases for college mathematics instructor professional development, currently accessible (as of 3-29-2022) at <a class="external" href="" target="_blank">this link</a>.</div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec_crashcourse-intro.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="ch-loans.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

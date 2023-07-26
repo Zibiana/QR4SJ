@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Scientific Notation and Number Sense</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -226,16 +255,19 @@ window.MathJax = {
 </li>
 <li>
 <div class="toc-item"><a href="sec_firstch-examples.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span></a></div>
-<ul class="structural"><li>
-<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Group work and class norms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_firstch-examples.html#subsection-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Ground rules</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.1.2</span> <span class="title">Group roles</span></a></div></li>
+<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span></a></div></li>
 </ul>
-</li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -309,9 +341,9 @@ window.MathJax = {
 <li class="active">
 <div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-11" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-14" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -334,20 +366,20 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-16" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
 <ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-19" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-19" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-22" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
 <li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
@@ -355,8 +387,8 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-22" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-24" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -447,11 +479,11 @@ window.MathJax = {
 <section class="section" id="climate-change-math-topic-scientific-notation"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span>
 </h2>
-<section class="subsection" id="subsection-11"><h3 class="heading hide-type">
+<section class="subsection" id="subsection-12"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span>
 </h3>
-<div class="para" id="p-346">How can we compare the numbers 100 and 1,000?</div>
-<div class="para logical" id="p-347">
+<div class="para" id="p-347">How can we compare the numbers 100 and 1,000?</div>
+<div class="para logical" id="p-348">
 <div class="para">Answers you might have given:</div>
 <ul class="disc">
 <li id="li-141"><div class="para" id="p-derived-li-141">1,000 is 900 more than 100.</div></li>
@@ -460,7 +492,7 @@ window.MathJax = {
 <li id="li-144"><div class="para" id="p-derived-li-144">1,000 is 10 times as big as 100.</div></li>
 </ul>
 </div>
-<article class="assemblage assemblage-like" id="assemblage-2"><div class="para" id="p-348">Reflection question: Look at the different ways of comparing those two numbers. What are the benefits of each of these comparisons? What are some reasons for not using some of these comparisons? Why might someone choose to use one way of comparing instead of another?</div></article><div class="para logical" id="p-349">
+<article class="assemblage assemblage-like" id="assemblage-2"><div class="para" id="p-349">Reflection question: Look at the different ways of comparing those two numbers. What are the benefits of each of these comparisons? What are some reasons for not using some of these comparisons? Why might someone choose to use one way of comparing instead of another?</div></article><div class="para logical" id="p-350">
 <div class="para">How can you compare the following sets of numbers?</div>
 <ul class="disc">
 <li id="li-145"><div class="para" id="p-derived-li-145">1,000,000,000,000 and 10</div></li>
@@ -468,9 +500,9 @@ window.MathJax = {
 <li id="li-147"><div class="para" id="p-derived-li-147">0.0000000001 and 10,000,000,000,000,000</div></li>
 </ul>
 </div>
-<div class="para" id="p-350">You can compare these numbers in the same ways as the ways you might have chosen to compare 100 and 1000, but they may not be as meaningful or useful.  Instead, you might want to see  Can you think of any other ways to compare these numbers?</div>
+<div class="para" id="p-351">You can compare these numbers in the same ways as the ways you might have chosen to compare 100 and 1000, but they may not be as meaningful or useful.  Instead, you might want to see  Can you think of any other ways to compare these numbers?</div>
 <figure class="figure figure-like" id="figure-5"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/0fKBhvDjuy0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.1<span class="period">.</span></span><span class="space"> </span>Powers of Ten is a (slightly outdated) movie from the 1970s which shows how the different powers of ten are related.</figcaption></figure><div class="para" id="p-351">Understanding very large numbers can be hard to do.  Some strategies for trying to understand very large numbers are:</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.1<span class="period">.</span></span><span class="space"> </span>Powers of Ten is a (slightly outdated) movie from the 1970s which shows how the different powers of ten are related.</figcaption></figure><div class="para" id="p-352">Understanding very large numbers can be hard to do.  Some strategies for trying to understand very large numbers are:</div>
 <ul class="disc">
 <li id="li-148"><div class="para" id="p-derived-li-148">Breaking the number down into smaller pieces.  For example, say you were trying to understand the number $1,000,000,000 (1 billion dollars).  If you made $100 an hour, and you worked full-time (40 hours per week in the US), 50 weeks a year, it would take 5000 years for you to earn $1,000,000,000...and that doesn’t even account for taxes!<div class="displaymath process-math">
 \begin{equation*}
@@ -482,13 +514,13 @@ window.MathJax = {
 </div></li>
 <li id="li-150"><div class="para" id="p-derived-li-150">Comparing the quantity to something else you already can envision.  The 2,300,000 feet or 436 miles we found in the previous bullet is still somewhat difficult to understand.  Thinking of this as the distance from Washington D.C. to Boston, or from San Diego to San Jose, can be more helpful (at least if you’ve been to those cities).</div></li>
 <li id="li-151"><div class="para" id="p-derived-li-151">Looking at the quantity per person, or per unit area, or per some other unit. In 2020, the US used 763 million gallons of oil, on average, every day <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-us-oil-consumption.html" title="Bibliographic Entry 4.11.1.26">[4.11.1.26]</a>.  That is a little bit more than 2 gallons per person.</div></li>
-</ul></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+</ul></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span>
 </h3>
-<div class="para" id="p-352">So far, we have been writing numbers using decimal notation. Decimal notation is our usual way of writing the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 to talk about a number. But, sometimes decimal notation can make it more difficult to understand really big or really small numbers. Scientific notation is a way of writing very large or very small numbers in order to make the numbers easier for people to understand. Scientific notation also makes it easier to write down numbers that would be very long in decimal notation.</div>
+<div class="para" id="p-353">So far, we have been writing numbers using decimal notation. Decimal notation is our usual way of writing the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 to talk about a number. But, sometimes decimal notation can make it more difficult to understand really big or really small numbers. Scientific notation is a way of writing very large or very small numbers in order to make the numbers easier for people to understand. Scientific notation also makes it easier to write down numbers that would be very long in decimal notation.</div>
 <article class="definition definition-like" id="definition-9"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Scientific Notation.</span>
-</h4> <div class="para logical" id="p-353">
+</h4> <div class="para logical" id="p-354">
 <div class="para">We say a number is in <em class="emphasis">scientific notation</em> if it is written in the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -496,13 +528,13 @@ A.XXXX * 10^{power}
 \end{equation*}
 </div>
 <div class="para">where A is the first non-zero digit in the number, and <em class="emphasis">power</em> is the appropriate power.</div>
-</div></article><div class="para" id="p-354">To put a number into scientific notation, we first figure out what the place is of the first nonzero digit.  Each place in a number corresponds to a power of 10 - for example, the hundreds place corresponds to <span class="process-math">\(10^2 = 100\text{,}\)</span> while the millions place corresponds to <span class="process-math">\(10^6 = 1,000,000\text{.}\)</span>  If <span class="process-math">\(n &gt; 0\text{,}\)</span> then <span class="process-math">\(10^n\)</span> is a 1 followed by <span class="process-math">\(n\)</span> 0s.  The ones place is <span class="process-math">\(10^0 = 1\text{.}\)</span>
+</div></article><div class="para" id="p-355">To put a number into scientific notation, we first figure out what the place is of the first nonzero digit.  Each place in a number corresponds to a power of 10 - for example, the hundreds place corresponds to <span class="process-math">\(10^2 = 100\text{,}\)</span> while the millions place corresponds to <span class="process-math">\(10^6 = 1,000,000\text{.}\)</span>  If <span class="process-math">\(n &gt; 0\text{,}\)</span> then <span class="process-math">\(10^n\)</span> is a 1 followed by <span class="process-math">\(n\)</span> 0s.  The ones place is <span class="process-math">\(10^0 = 1\text{.}\)</span>
 </div>
-<div class="para" id="p-355">For negative values of <span class="process-math">\(n\text{,}\)</span> we get decimals.  For example, <span class="process-math">\(10^{-1} = \frac{1}{10^1} = 0.1\text{,}\)</span> one-tenth.  <span class="process-math">\(10^{-3} = \frac{1}{10^3} = 0.001\text{,}\)</span> one one-thousandth.</div>
-<div class="para" id="p-356">To do arithmetic with numbers in scientific notation, you proceed differently depending on what you’re doing.</div>
-<article class="assemblage assemblage-like" id="assemblage-3"><div class="para" id="p-357">To multiply/divide numbers in scientific notation, you can divide both the decimal part and the exponent part separately.</div>
-<div class="para" id="p-358">To add or subtract numbers in scientific notation, you’ll need to write them both with the same power (use whichever power is larger), and then add or subtract the decimal parts.</div>
-<div class="para" id="p-359">If you end up with a zero in front of the decimal, you’ll need to move the decimal place over one or more places:</div></article><div class="para" id="p-360">Try this yourself in the examples below.  Don’t worry about rounding - we’ll talk about how to decide how many decimal places to round to in the next section.</div>
+<div class="para" id="p-356">For negative values of <span class="process-math">\(n\text{,}\)</span> we get decimals.  For example, <span class="process-math">\(10^{-1} = \frac{1}{10^1} = 0.1\text{,}\)</span> one-tenth.  <span class="process-math">\(10^{-3} = \frac{1}{10^3} = 0.001\text{,}\)</span> one one-thousandth.</div>
+<div class="para" id="p-357">To do arithmetic with numbers in scientific notation, you proceed differently depending on what you’re doing.</div>
+<article class="assemblage assemblage-like" id="assemblage-3"><div class="para" id="p-358">To multiply/divide numbers in scientific notation, you can divide both the decimal part and the exponent part separately.</div>
+<div class="para" id="p-359">To add or subtract numbers in scientific notation, you’ll need to write them both with the same power (use whichever power is larger), and then add or subtract the decimal parts.</div>
+<div class="para" id="p-360">If you end up with a zero in front of the decimal, you’ll need to move the decimal place over one or more places:</div></article><div class="para" id="p-361">Try this yourself in the examples below.  Don’t worry about rounding - we’ll talk about how to decide how many decimal places to round to in the next section.</div>
 <article class="example example-like" id="example-1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span>
 </h4>Find the product of <span class="process-math">\(2.23*10^3\)</span> and <span class="process-math">\(4.25*10^{-4}\text{.}\)</span><div class="solutions">
@@ -519,25 +551,25 @@ A.XXXX * 10^{power}
 0.572*10^6 + 6.43*10^6 = 7.00*10^6
 \end{equation*}
 </div></div></div>
-</div></article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.3</span> <span class="title">Significant figures</span>
 </h3>
-<div class="para" id="p-361">When working with numbers with lots of decimal digits, how many digits should you keep? This is the idea behind <em class="emphasis">signficant figures</em>.</div>
+<div class="para" id="p-362">When working with numbers with lots of decimal digits, how many digits should you keep? This is the idea behind <em class="emphasis">signficant figures</em>.</div>
 <article class="definition definition-like" id="definition-10"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Significant Figures.</span>
-</h4> <div class="para" id="p-362">The number of significant figures or significant digits in a number which has been rounded is the total number of digits written, minus any leading zeros (zeros written before the first non-zero digit).  Numbers that have not been rounded have an infinite number of significant figures.</div></article><div class="para" id="p-363">For example, the number 123.4567 has 7 significant digits, but so does the number 0.0001234567.  The number 1.234567000 has 10 significant digits, because we count the zeros which aren’t leading zeros.</div>
+</h4> <div class="para" id="p-363">The number of significant figures or significant digits in a number which has been rounded is the total number of digits written, minus any leading zeros (zeros written before the first non-zero digit).  Numbers that have not been rounded have an infinite number of significant figures.</div></article><div class="para" id="p-364">For example, the number 123.4567 has 7 significant digits, but so does the number 0.0001234567.  The number 1.234567000 has 10 significant digits, because we count the zeros which aren’t leading zeros.</div>
 <article class="example example-like" id="example-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.6</span><span class="period">.</span>
 </h4>The population of the United States was 328,239,523 in 2019 <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-us-population.html" title="Bibliographic Entry 4.11.1.22">[4.11.1.22]</a>. How many significant digits does this number have?<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><div class="para" id="p-364">There are 9 significant digits here.</div></div></div>
-</div></article><div class="para" id="p-365">In a number written in scientific notation, we count the significant digits the same way.  For example, the number <span class="process-math">\(1.2345*10^{-3}\)</span> has 5 significant digits (notice that this is the same as if we had written it as <span class="process-math">\(0.0012345\)</span>).</div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><div class="para" id="p-365">There are 9 significant digits here.</div></div></div>
+</div></article><div class="para" id="p-366">In a number written in scientific notation, we count the significant digits the same way.  For example, the number <span class="process-math">\(1.2345*10^{-3}\)</span> has 5 significant digits (notice that this is the same as if we had written it as <span class="process-math">\(0.0012345\)</span>).</div>
 <article class="example example-like" id="example-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-366">The United States emitted the equivalent of <span class="process-math">\(6.558*10^9\)</span> metric tons of carbon dioxide in greenhouse gases during 2019 <a href="" class="xref" data-knowl="./knowl/greehouse-gas-biblio-emissions-inventory.html" title="Bibliographic Entry 4.11.1.23">[4.11.1.23]</a>. How many significant figures are there in this number?</div>
+<div class="para" id="p-367">The United States emitted the equivalent of <span class="process-math">\(6.558*10^9\)</span> metric tons of carbon dioxide in greenhouse gases during 2019 <a href="" class="xref" data-knowl="./knowl/greehouse-gas-biblio-emissions-inventory.html" title="Bibliographic Entry 4.11.1.23">[4.11.1.23]</a>. How many significant figures are there in this number?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><div class="para" id="p-367">There are 4 significant figures.</div></div></div>
-</div></article><div class="para logical" id="p-368">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><div class="para" id="p-368">There are 4 significant figures.</div></div></div>
+</div></article><div class="para logical" id="p-369">
 <div class="para">Significant figures are important because they tell us how accurate numbers are.  Say we wanted to know what the average CO2 emissions per person were in the United States.  We can take the numbers we had in the last two examples and divide:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -546,9 +578,9 @@ A.XXXX * 10^{power}
 </div>
 <div class="para">The calculator produces a number of digits here, but how can we know how many values to round to? Significant figures give us a way to decide this.</div>
 </div>
-<article class="assemblage assemblage-like" id="assemblage-4"><div class="para" id="p-369">When multiplying or dividing two numbers, round to the smaller number of significant digits.</div>
-<div class="para" id="p-370">When adding or subtracting two numbers, round to the smaller number of decimal places (significant figures after the decimal point).</div></article><div class="para" id="p-371">For our example above, since the population number has 9 significant digits, and the CO2 emissions only has 4, we will round to 4 decimal places and say that the emissions per person is <span class="process-math">\(19.98\)</span> metric tons per person.  Compare this to what we do when we subtract.</div>
-<div class="para logical" id="p-372">
+<article class="assemblage assemblage-like" id="assemblage-4"><div class="para" id="p-370">When multiplying or dividing two numbers, round to the smaller number of significant digits.</div>
+<div class="para" id="p-371">When adding or subtracting two numbers, round to the smaller number of decimal places (significant figures after the decimal point).</div></article><div class="para" id="p-372">For our example above, since the population number has 9 significant digits, and the CO2 emissions only has 4, we will round to 4 decimal places and say that the emissions per person is <span class="process-math">\(19.98\)</span> metric tons per person.  Compare this to what we do when we subtract.</div>
+<div class="para logical" id="p-373">
 <div class="para">Say we want to know how many more tons of CO2 equivalents per person were emitted in the US than in China.  In 2019, China had <span class="process-math">\(1.3902*10^{10}\)</span> (5 significant figures) of CO2 equivalent emissions <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-emissions-china.html" title="Bibliographic Entry 4.11.1.24">[4.11.1.24]</a>, and the population was 1,433,783,686 (10 significant figures) <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-china-population.html" title="Bibliographic Entry 4.11.1.25">[4.11.1.25]</a>. So in China, the emissions per person were</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/climate-change-biblio-emissions-china.html ./knowl/climate-change-biblio-china-population.html">
 \begin{equation*}
@@ -563,17 +595,17 @@ A.XXXX * 10^{power}
 </div>
 <div class="para">Since we are subtracting, we take the lesser of the significant figures after the decimal - 2 in this case.  So we round the answer to 10.02 metric tons more per person.</div>
 </div>
-<div class="para" id="p-373">What’s that big ‘E’ on my calculator? You’ve probably seen an output like this before on your calculator.</div>
-<div class="para" id="p-374">The second line might look really complicated, but this is just the way your calculator was programmed to write numbers in scientific notation. The product of 315,246 and 134,512,361 is too big to fit all of it on the calculator screen in one line. So, the calculator programmers decided to represent that product using scientific notation. 4.240448376E13 means the same thing as <span class="process-math">\(4.240448376 * 10^{13}\text{.}\)</span>
+<div class="para" id="p-374">What’s that big ‘E’ on my calculator? You’ve probably seen an output like this before on your calculator.</div>
+<div class="para" id="p-375">The second line might look really complicated, but this is just the way your calculator was programmed to write numbers in scientific notation. The product of 315,246 and 134,512,361 is too big to fit all of it on the calculator screen in one line. So, the calculator programmers decided to represent that product using scientific notation. 4.240448376E13 means the same thing as <span class="process-math">\(4.240448376 * 10^{13}\text{.}\)</span>
 </div>
-<div class="para" id="p-375">But, not all calculators use ‘E’ to describe very large or very small numbers. Desmos provides an <a class="external" href="https://www.desmos.com/scientific" target="_blank">online scientific calculator</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-70" id="fn-70"><sup> 70 </sup></a> that anyone can use. If you try to add, subtract, multiply, or divide two numbers with more than 9 digits, Desmos will automatically write them in scientific notation.  Instead of using the capital E, Desmos writes scientific notation the same way that we’ve seen.</div>
-<div class="para" id="p-376">An important note: There are other symbols that you might see sometimes on your calculator that look similar to this capital E, but they actually mean very different things.</div>
+<div class="para" id="p-376">But, not all calculators use ‘E’ to describe very large or very small numbers. Desmos provides an <a class="external" href="https://www.desmos.com/scientific" target="_blank">online scientific calculator</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-69" id="fn-69"><sup> 69 </sup></a> that anyone can use. If you try to add, subtract, multiply, or divide two numbers with more than 9 digits, Desmos will automatically write them in scientific notation.  Instead of using the capital E, Desmos writes scientific notation the same way that we’ve seen.</div>
+<div class="para" id="p-377">An important note: There are other symbols that you might see sometimes on your calculator that look similar to this capital E, but they actually mean very different things.</div>
 <ul class="disc">
 <li id="li-152"><div class="para" id="p-derived-li-152">
 <span class="process-math">\(e\text{:}\)</span> The lowercase e is a number that is important for lots of applications of mathematics. The name of this number is the same as the name of the letter:  e. It is equal to about 2.71828, and should not be confused with the scientific notation symbol.</div></li>
 <li id="li-153"><div class="para" id="p-derived-li-153">
 <span class="process-math">\(\Sigma\text{:}\)</span>This symbol, which looks like a sideways W,  is called ‘sigma’. Sigma is a Greek letter, and it is sometimes used in mathematics to talk about addition.</div></li>
-</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-70"><div class="fn"><code class="code-inline tex2jax_ignore">www.desmos.com/scientific</code></div></div>
+</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-69"><div class="fn"><code class="code-inline tex2jax_ignore">www.desmos.com/scientific</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="climate-change-big-problem.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="climate-change-math-topic-data-visualization.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

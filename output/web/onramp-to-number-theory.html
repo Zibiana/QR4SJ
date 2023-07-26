@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Onramp to number theory</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -226,16 +255,19 @@ window.MathJax = {
 </li>
 <li>
 <div class="toc-item"><a href="sec_firstch-examples.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span></a></div>
-<ul class="structural"><li>
-<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Group work and class norms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_firstch-examples.html#subsection-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Ground rules</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.1.2</span> <span class="title">Group roles</span></a></div></li>
+<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span></a></div></li>
 </ul>
-</li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -309,9 +341,9 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-11" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-14" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -334,20 +366,20 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-16" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
 <ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-19" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-19" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-22" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
 <li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
@@ -355,8 +387,8 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-22" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-24" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -446,8 +478,8 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="subsection" id="onramp-to-number-theory"><h2 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.5</span> <span class="title">Onramp to number theory</span>
 </h2>
-<div class="para" id="p-251">At this stage, students are ready to learn the material in a standard integer division and modular arithmetic unit, in the order you wish to present it for your context. For example, the material of Chapters <span class="process-math">\(2\)</span> through <span class="process-math">\(8\)</span> of <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "crismanNumberTheoryContext2021" missing or not unique]</code>, from integer division and Diophantine equations to the so-called “Chinese” (in particular, Sun-tzu) remainder theorem and the theory of cyclic groups, are all motivated by the theory of affine ciphers and can be covered at this stage. We highly recommend calling back to cryptography whenever possible; the following section is an overview of one possible order in which various number-theoretic results can be motivated by the theory of affine ciphers.</div>
-<div class="para" id="p-252">Following the presentation of shift ciphers above, students may then practice encrypting and decrypting affine ciphers with known multiplicative and additive keys. Prompt them to consider how they would cryptanalyze an affine cipher. After using frequency analysis, they may determine which ciphertext letter corresponds to <span class="process-math">\(e\text{,}\)</span> but this is not enough since we need to solve for two unknowns, <span class="process-math">\(m\)</span> and <span class="process-math">\(k\text{.}\)</span> So students may realize we need to find two letter pairs of the form <span class="process-math">\((p,c)\)</span> where <span class="process-math">\(c=f(p)\)</span> and set up a <em class="emphasis">system of congruences<div class="displaymath process-math">
+<div class="para" id="p-252">At this stage, students are ready to learn the material in a standard integer division and modular arithmetic unit, in the order you wish to present it for your context. For example, the material of Chapters <span class="process-math">\(2\)</span> through <span class="process-math">\(8\)</span> of <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "crismanNumberTheoryContext2021" missing or not unique]</code>, from integer division and Diophantine equations to the so-called “Chinese” (in particular, Sun-tzu) remainder theorem and the theory of cyclic groups, are all motivated by the theory of affine ciphers and can be covered at this stage. We highly recommend calling back to cryptography whenever possible; the following section is an overview of one possible order in which various number-theoretic results can be motivated by the theory of affine ciphers.</div>
+<div class="para" id="p-253">Following the presentation of shift ciphers above, students may then practice encrypting and decrypting affine ciphers with known multiplicative and additive keys. Prompt them to consider how they would cryptanalyze an affine cipher. After using frequency analysis, they may determine which ciphertext letter corresponds to <span class="process-math">\(e\text{,}\)</span> but this is not enough since we need to solve for two unknowns, <span class="process-math">\(m\)</span> and <span class="process-math">\(k\text{.}\)</span> So students may realize we need to find two letter pairs of the form <span class="process-math">\((p,c)\)</span> where <span class="process-math">\(c=f(p)\)</span> and set up a <em class="emphasis">system of congruences<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 c_{1} &amp; \equiv m\cdot p_{1}+k\nonumber \\
@@ -456,8 +488,8 @@ c_{2} &amp; \equiv m\cdot p_{2}+k\mod26.\label{KI-eq:affine-cipher-system}
 \end{equation*}
 </div></em>
 </div>
-<div class="para" id="p-253">Students may remember how they solved systems of equations in high school. It is recommended to encourage them to use elimination, not substitution, in preparation for future linear algebra classes down the road.</div>
-<div class="para logical" id="p-254">
+<div class="para" id="p-254">Students may remember how they solved systems of equations in high school. It is recommended to encourage them to use elimination, not substitution, in preparation for future linear algebra classes down the road.</div>
+<div class="para logical" id="p-255">
 <div class="para">A fruitful area of inquiry at this point is to prompt students how, once they obtain a single congruence of the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -466,65 +498,65 @@ c_{2}-c_{1}\equiv m(p_{2}-p_{1})\mod26,
 </div>
 <div class="para">they might solve for <span class="process-math">\(m\text{.}\)</span> Usually students think they can simply “divide by <span class="process-math">\(p_{2}-p_{1}\text{,}\)</span>” so it takes some prompting (“what if <span class="process-math">\(p_{2}-p_{1}=13\text{?}\)</span>”) for them to realize this is not always possible modulo <span class="process-math">\(n\text{.}\)</span> This is a natural spot to introduce the idea of inverses modulo <span class="process-math">\(26\text{,}\)</span> and more generally modulo <span class="process-math">\(n\text{.}\)</span> We’ll start with some more basic facts and build up to solving systems of congruences.</div>
 </div>
-<div class="para" id="p-255">The <em class="emphasis">multiplicative inverse <span class="process-math">\(a^{-1}\)</span> of <span class="process-math">\(a\mod n\)</span></em> is the number <span class="process-math">\(a^{-1}\)</span> so that <span class="process-math">\(aa^{-1}\equiv1\mod n\text{,}\)</span> if such an <span class="process-math">\(a^{-1}\)</span> exists. Recall that a number is <em class="emphasis">prime</em> if the only integers that divide it are <span class="process-math">\(1\)</span> and itself. <em class="emphasis">Composite numbers</em> are integers greater than one that are not prime. Every positive whole number has a unique <em class="emphasis">prime factorization</em>, i.e. a way to write it as a product of prime numbers. This fact is called the <em class="emphasis">Fundamental Theorem of Arithmetic.</em>
+<div class="para" id="p-256">The <em class="emphasis">multiplicative inverse <span class="process-math">\(a^{-1}\)</span> of <span class="process-math">\(a\mod n\)</span></em> is the number <span class="process-math">\(a^{-1}\)</span> so that <span class="process-math">\(aa^{-1}\equiv1\mod n\text{,}\)</span> if such an <span class="process-math">\(a^{-1}\)</span> exists. Recall that a number is <em class="emphasis">prime</em> if the only integers that divide it are <span class="process-math">\(1\)</span> and itself. <em class="emphasis">Composite numbers</em> are integers greater than one that are not prime. Every positive whole number has a unique <em class="emphasis">prime factorization</em>, i.e. a way to write it as a product of prime numbers. This fact is called the <em class="emphasis">Fundamental Theorem of Arithmetic.</em>
 </div>
-<div class="para" id="p-256">
+<div class="para" id="p-257">
 <dfn class="terminology">6</dfn>.  <em class="emphasis">Have students attempt to encrypt given messages with the affine cipher using various multiplicative and additive keys. To illustrate the relevant idea that <span class="process-math">\(c\equiv mp+k\mod n\)</span> is monoalphabetic if and only if <span class="process-math">\(\gcd(m,n)=1\text{,}\)</span> have students use at least one <span class="process-math">\(m\)</span> relatively prime to <span class="process-math">\(26\)</span> and one <span class="process-math">\(m\)</span> that is not (for example <span class="process-math">\(m=13\text{,}\)</span> which makes very clear to students that the resulting affine cipher is not monoalphabetic and near-impossible to decrypt even by someone who knows the key).</em>
 </div>
-<div class="para" id="p-257"><em class="emphasis">Ask students: from the work you just did, what multiplicative keys do you think “work” for affine ciphers? What is the “problem” with the keys that don’t work? Even if they don’t have a complete sense of the issue, have them explain their hypothesis. Prompt students to make multiplication tables modulo <span class="process-math">\(n\)</span> for some reasonably small composite <span class="process-math">\(n\text{;}\)</span> ask them to compare what happens in rows which are relatively prime to <span class="process-math">\(n\)</span> versus rows that aren’t. How might this connect to the issue with the affine cipher <span class="process-math">\(c\equiv13p+k\mod26\text{?}\)</span> What patterns do they notice or wonder about?</em></div>
-<div class="para" id="p-258">Hopefully students will realize that there are significant problems with an affine cipher where <span class="process-math">\(m\mid26\text{!}\)</span>
+<div class="para" id="p-258"><em class="emphasis">Ask students: from the work you just did, what multiplicative keys do you think “work” for affine ciphers? What is the “problem” with the keys that don’t work? Even if they don’t have a complete sense of the issue, have them explain their hypothesis. Prompt students to make multiplication tables modulo <span class="process-math">\(n\)</span> for some reasonably small composite <span class="process-math">\(n\text{;}\)</span> ask them to compare what happens in rows which are relatively prime to <span class="process-math">\(n\)</span> versus rows that aren’t. How might this connect to the issue with the affine cipher <span class="process-math">\(c\equiv13p+k\mod26\text{?}\)</span> What patterns do they notice or wonder about?</em></div>
+<div class="para" id="p-259">Hopefully students will realize that there are significant problems with an affine cipher where <span class="process-math">\(m\mid26\text{!}\)</span>
 </div>
-<div class="para" id="p-259">
+<div class="para" id="p-260">
 <dfn class="terminology">9</dfn>.</div>
-<div class="para logical" id="p-260"><ol class="decimal">
-<li id="li-106"><div class="para" id="p-261"><em class="emphasis">At this point, it is useful for students to make themselves a “cheat sheet” which tells them the multiplicative inverse of any number mod 26, if it exists. (My expectation is not that they memorize such a list, though more power to them if they’d like to!) At this point, the most likely strategy students will use to find <span class="process-math">\(m^{-1}\mod26\)</span> is trial and error: multiplying each <span class="process-math">\(m\)</span> by various integers mod <span class="process-math">\(26\)</span> until they end up with <span class="process-math">\(1\mod26\text{.}\)</span> The number they multiplied by to get <span class="process-math">\(1\)</span> is their <span class="process-math">\(m^{-1}\text{,}\)</span> if such a number exists. Ask: what relationship between <span class="process-math">\(m\)</span> and the modulus <span class="process-math">\(26\)</span> predicts whether <span class="process-math">\(m^{-1}\)</span> exists?</em></div></li>
+<div class="para logical" id="p-261"><ol class="decimal">
+<li id="li-106"><div class="para" id="p-262"><em class="emphasis">At this point, it is useful for students to make themselves a “cheat sheet” which tells them the multiplicative inverse of any number mod 26, if it exists. (My expectation is not that they memorize such a list, though more power to them if they’d like to!) At this point, the most likely strategy students will use to find <span class="process-math">\(m^{-1}\mod26\)</span> is trial and error: multiplying each <span class="process-math">\(m\)</span> by various integers mod <span class="process-math">\(26\)</span> until they end up with <span class="process-math">\(1\mod26\text{.}\)</span> The number they multiplied by to get <span class="process-math">\(1\)</span> is their <span class="process-math">\(m^{-1}\text{,}\)</span> if such a number exists. Ask: what relationship between <span class="process-math">\(m\)</span> and the modulus <span class="process-math">\(26\)</span> predicts whether <span class="process-math">\(m^{-1}\)</span> exists?</em></div></li>
 <li id="li-107">
-<div class="para" id="p-262"><em class="emphasis">In an introduction to proof or number theory class, this would be an excellent time to prompt students to prove that <span class="process-math">\(m^{-1}\)</span> exists modulo <span class="process-math">\(n\)</span> if and only if <span class="process-math">\(\gcd(m,n)=1\text{.}\)</span> Prompt them to think about their multiplication tables and the fact that every integer modulo <span class="process-math">\(n\)</span> appears in the <span class="process-math">\(m\)</span>th row precisely when <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> are relatively prime. In fact, students can prove that</em></div>
-<div class="para" id="p-263"><em class="emphasis"><dfn class="terminology">7</dfn>.  <em class="emphasis">If <span class="process-math">\(m\)</span> is a whole number between <span class="process-math">\(0\)</span> and <span class="process-math">\(n-1\text{,}\)</span> then <span class="process-math">\(\gcd(m,n)\)</span> divides any number that’s congruent to <span class="process-math">\(m\mod n\text{.}\)</span></em></em></div>
-<div class="para" id="p-264"><em class="emphasis">One prompt to lead students toward the general proof is the following specific example: assume some number <span class="process-math">\(x\)</span> is congruent to <span class="process-math">\(m=4\mod12\text{.}\)</span> Then <span class="process-math">\(x/12=yR4\)</span> (here <span class="process-math">\(R\)</span> denotes “remainder” in language that should be familiar to students), where <span class="process-math">\(y\)</span> is some whole number. So <span class="process-math">\(x\)</span> is some multiple of <span class="process-math">\(12\)</span> plus <span class="process-math">\(4\text{;}\)</span> we can write <span class="process-math">\(x=12y+4\text{,}\)</span> where <span class="process-math">\(y\)</span> is some whole number. Now, <span class="process-math">\(\gcd(4,12)=4\)</span> and <span class="process-math">\(x=4(3y+1)\)</span> is divisible by <span class="process-math">\(4\text{.}\)</span></em></div>
+<div class="para" id="p-263"><em class="emphasis">In an introduction to proof or number theory class, this would be an excellent time to prompt students to prove that <span class="process-math">\(m^{-1}\)</span> exists modulo <span class="process-math">\(n\)</span> if and only if <span class="process-math">\(\gcd(m,n)=1\text{.}\)</span> Prompt them to think about their multiplication tables and the fact that every integer modulo <span class="process-math">\(n\)</span> appears in the <span class="process-math">\(m\)</span>th row precisely when <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> are relatively prime. In fact, students can prove that</em></div>
+<div class="para" id="p-264"><em class="emphasis"><dfn class="terminology">7</dfn>.  <em class="emphasis">If <span class="process-math">\(m\)</span> is a whole number between <span class="process-math">\(0\)</span> and <span class="process-math">\(n-1\text{,}\)</span> then <span class="process-math">\(\gcd(m,n)\)</span> divides any number that’s congruent to <span class="process-math">\(m\mod n\text{.}\)</span></em></em></div>
+<div class="para" id="p-265"><em class="emphasis">One prompt to lead students toward the general proof is the following specific example: assume some number <span class="process-math">\(x\)</span> is congruent to <span class="process-math">\(m=4\mod12\text{.}\)</span> Then <span class="process-math">\(x/12=yR4\)</span> (here <span class="process-math">\(R\)</span> denotes “remainder” in language that should be familiar to students), where <span class="process-math">\(y\)</span> is some whole number. So <span class="process-math">\(x\)</span> is some multiple of <span class="process-math">\(12\)</span> plus <span class="process-math">\(4\text{;}\)</span> we can write <span class="process-math">\(x=12y+4\text{,}\)</span> where <span class="process-math">\(y\)</span> is some whole number. Now, <span class="process-math">\(\gcd(4,12)=4\)</span> and <span class="process-math">\(x=4(3y+1)\)</span> is divisible by <span class="process-math">\(4\text{.}\)</span></em></div>
 </li>
-<li id="li-108"><div class="para" id="p-265"><em class="emphasis">At this point, students have the cheat sheet and tools necessary to decrypt affine ciphers with known key. Have them try decrypting some example ciphertext under various affine ciphers. Naturally, students may at first be most comfortable only doing arithmetic modulo <span class="process-math">\(26\text{,}\)</span> but it takes surprisingly little in my experience to prompt them to consider other moduli. Students may try decrypting affine ciphers in different alphabets at this stage: for example, decrypt <span class="process-math">\(c\equiv7p\mod29\)</span> using the lowercase English alphabet with !?, appended. We need to multiply both sides by some number <span class="process-math">\(x\)</span> so that <span class="process-math">\(7x\equiv1\mod29\text{.}\)</span> How do we systematically find <span class="process-math">\(x\text{?}\)</span> This is a great time for an optional detour into the extended Euclidean algorithm; students without much previous college-level math experience often find this difficult, so it may be skipped without losing the thread of this activity.</em></div></li>
+<li id="li-108"><div class="para" id="p-266"><em class="emphasis">At this point, students have the cheat sheet and tools necessary to decrypt affine ciphers with known key. Have them try decrypting some example ciphertext under various affine ciphers. Naturally, students may at first be most comfortable only doing arithmetic modulo <span class="process-math">\(26\text{,}\)</span> but it takes surprisingly little in my experience to prompt them to consider other moduli. Students may try decrypting affine ciphers in different alphabets at this stage: for example, decrypt <span class="process-math">\(c\equiv7p\mod29\)</span> using the lowercase English alphabet with !?, appended. We need to multiply both sides by some number <span class="process-math">\(x\)</span> so that <span class="process-math">\(7x\equiv1\mod29\text{.}\)</span> How do we systematically find <span class="process-math">\(x\text{?}\)</span> This is a great time for an optional detour into the extended Euclidean algorithm; students without much previous college-level math experience often find this difficult, so it may be skipped without losing the thread of this activity.</em></div></li>
 <li id="li-109">
-<div class="para" id="p-266"><em class="emphasis">Students in a proof-based course may now attempt to prove the following corollary of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "KI-prop:gcd(m, n)-divides-mk" missing or not unique]</code>.</em></div>
-<div class="para" id="p-267"><em class="emphasis"><dfn class="terminology">8</dfn>.  <em class="emphasis">If <span class="process-math">\(\gcd(m,n)\neq1\text{,}\)</span> then no multiple of <span class="process-math">\(m\)</span> is congruent to <span class="process-math">\(1\mod n\text{.}\)</span> In other words, we can’t get every number in row <span class="process-math">\(m\)</span> of the <span class="process-math">\(\mod n\)</span> multiplication table, and <em class="emphasis"><span class="process-math">\(m\)</span></em> does not have a multiplicative inverse <em class="emphasis"><span class="process-math">\(\mod n\text{.}\)</span></em> In fact, the following are equivalent for any whole numbers <span class="process-math">\(m,n\text{:}\)</span></em></em></div>
-<div class="para logical" id="p-268"><ol class="lower-alpha">
-<li id="li-110"><div class="para" id="p-269"><em class="emphasis"><em class="emphasis"><span class="process-math">\(\gcd(m,n)=1\text{.}\)</span></em></em></div></li>
-<li id="li-111"><div class="para" id="p-270"><em class="emphasis"><em class="emphasis">any affine cipher with multiplicative key <span class="process-math">\(m\mod n\)</span> is decryptable by the intended recipient.</em></em></div></li>
-<li id="li-112"><div class="para" id="p-271"><em class="emphasis"><em class="emphasis">every number between <span class="process-math">\(0\)</span> and <span class="process-math">\(n-1\)</span> is a multiple of <span class="process-math">\(m\mod n\text{.}\)</span></em></em></div></li>
-<li id="li-113"><div class="para" id="p-272"><em class="emphasis"><em class="emphasis"><span class="process-math">\(m\)</span> has a multiplicative inverse <span class="process-math">\(m^{-1}\mod n\text{.}\)</span></em></em></div></li>
+<div class="para" id="p-267"><em class="emphasis">Students in a proof-based course may now attempt to prove the following corollary of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "KI-prop:gcd(m, n)-divides-mk" missing or not unique]</code>.</em></div>
+<div class="para" id="p-268"><em class="emphasis"><dfn class="terminology">8</dfn>.  <em class="emphasis">If <span class="process-math">\(\gcd(m,n)\neq1\text{,}\)</span> then no multiple of <span class="process-math">\(m\)</span> is congruent to <span class="process-math">\(1\mod n\text{.}\)</span> In other words, we can’t get every number in row <span class="process-math">\(m\)</span> of the <span class="process-math">\(\mod n\)</span> multiplication table, and <em class="emphasis"><span class="process-math">\(m\)</span></em> does not have a multiplicative inverse <em class="emphasis"><span class="process-math">\(\mod n\text{.}\)</span></em> In fact, the following are equivalent for any whole numbers <span class="process-math">\(m,n\text{:}\)</span></em></em></div>
+<div class="para logical" id="p-269"><ol class="lower-alpha">
+<li id="li-110"><div class="para" id="p-270"><em class="emphasis"><em class="emphasis"><span class="process-math">\(\gcd(m,n)=1\text{.}\)</span></em></em></div></li>
+<li id="li-111"><div class="para" id="p-271"><em class="emphasis"><em class="emphasis">any affine cipher with multiplicative key <span class="process-math">\(m\mod n\)</span> is decryptable by the intended recipient.</em></em></div></li>
+<li id="li-112"><div class="para" id="p-272"><em class="emphasis"><em class="emphasis">every number between <span class="process-math">\(0\)</span> and <span class="process-math">\(n-1\)</span> is a multiple of <span class="process-math">\(m\mod n\text{.}\)</span></em></em></div></li>
+<li id="li-113"><div class="para" id="p-273"><em class="emphasis"><em class="emphasis"><span class="process-math">\(m\)</span> has a multiplicative inverse <span class="process-math">\(m^{-1}\mod n\text{.}\)</span></em></em></div></li>
 </ol></div>
-<div class="para" id="p-273"><em class="emphasis">An example that may lead students toward part of the proof: consider the affine cipher <span class="process-math">\(c\equiv13p\mod26\text{.}\)</span> Note that <span class="process-math">\(\gcd(13,26)=13\text{.}\)</span> Any plaintext letter that we plug in will spit out some multiple of <span class="process-math">\(13\text{.}\)</span> Reduced mod <span class="process-math">\(26\text{,}\)</span> these multiples of <span class="process-math">\(13\)</span> all become either <span class="process-math">\(13\)</span> or <span class="process-math">\(0\text{.}\)</span> And <span class="process-math">\(\gcd(13,26)=13\)</span> divides both <span class="process-math">\(13\)</span> and <span class="process-math">\(0\)</span> evenly. Since no multiple of <span class="process-math">\(13\)</span> can be congruent to <span class="process-math">\(1\mod26\text{,}\)</span> <span class="process-math">\(13\)</span> does not have a multiplicative inverse modulo <span class="process-math">\(26\text{.}\)</span></em></div>
+<div class="para" id="p-274"><em class="emphasis">An example that may lead students toward part of the proof: consider the affine cipher <span class="process-math">\(c\equiv13p\mod26\text{.}\)</span> Note that <span class="process-math">\(\gcd(13,26)=13\text{.}\)</span> Any plaintext letter that we plug in will spit out some multiple of <span class="process-math">\(13\text{.}\)</span> Reduced mod <span class="process-math">\(26\text{,}\)</span> these multiples of <span class="process-math">\(13\)</span> all become either <span class="process-math">\(13\)</span> or <span class="process-math">\(0\text{.}\)</span> And <span class="process-math">\(\gcd(13,26)=13\)</span> divides both <span class="process-math">\(13\)</span> and <span class="process-math">\(0\)</span> evenly. Since no multiple of <span class="process-math">\(13\)</span> can be congruent to <span class="process-math">\(1\mod26\text{,}\)</span> <span class="process-math">\(13\)</span> does not have a multiplicative inverse modulo <span class="process-math">\(26\text{.}\)</span></em></div>
 </li>
-<li id="li-114"><div class="para" id="p-274"><em class="emphasis">Now, prompt students to consider how important it is before decrypting an affine cipher to verify that <span class="process-math">\(\gcd(m,n)=1\text{.}\)</span> Given a cipher like <span class="process-math">\(c\equiv137p+538\mod341319\text{,}\)</span> how could students determine whether the cipher was monoalphabetic, and hence whether our techniques will decrypt it?</em></div></li>
-<li id="li-115"><div class="para" id="p-275"><em class="emphasis">Computers can only understand numbers (which are written in <span class="process-math">\(0\)</span>s and <span class="process-math">\(1\)</span>s), not letters. The computer language ASCII represents all commonly-used written characters as numbers between <span class="process-math">\(1\)</span> and <span class="process-math">\(256\text{.}\)</span> Do you think we can encrypt ASCII messages using the affine cipher <span class="process-math">\(C\equiv8P\mod256\text{?}\)</span> Why or why not? What multiplicative keys can be used in a monoalphabetic, affine ASCII cipher?</em></div></li>
+<li id="li-114"><div class="para" id="p-275"><em class="emphasis">Now, prompt students to consider how important it is before decrypting an affine cipher to verify that <span class="process-math">\(\gcd(m,n)=1\text{.}\)</span> Given a cipher like <span class="process-math">\(c\equiv137p+538\mod341319\text{,}\)</span> how could students determine whether the cipher was monoalphabetic, and hence whether our techniques will decrypt it?</em></div></li>
+<li id="li-115"><div class="para" id="p-276"><em class="emphasis">Computers can only understand numbers (which are written in <span class="process-math">\(0\)</span>s and <span class="process-math">\(1\)</span>s), not letters. The computer language ASCII represents all commonly-used written characters as numbers between <span class="process-math">\(1\)</span> and <span class="process-math">\(256\text{.}\)</span> Do you think we can encrypt ASCII messages using the affine cipher <span class="process-math">\(C\equiv8P\mod256\text{?}\)</span> Why or why not? What multiplicative keys can be used in a monoalphabetic, affine ASCII cipher?</em></div></li>
 </ol></div>
-<div class="para" id="p-276">We now may introduce the Euclidean algorithm as a powerful (and programmable) tool for finding greatest common divisors. A recommended way of introducing the Euclidean algorithm, as in much of these notes, is to start with an example.</div>
-<div class="para" id="p-277">
+<div class="para" id="p-277">We now may introduce the Euclidean algorithm as a powerful (and programmable) tool for finding greatest common divisors. A recommended way of introducing the Euclidean algorithm, as in much of these notes, is to start with an example.</div>
+<div class="para" id="p-278">
 <dfn class="terminology">10</dfn>.</div>
-<div class="para logical" id="p-278"><ol class="decimal">
-<li id="li-116"><div class="para" id="p-279"><em class="emphasis">Suppose we want to find the greatest common divisor of, say, <span class="process-math">\(261\)</span> and <span class="process-math">\(231\text{.}\)</span> Have students recall (perhaps by verifying a specific example) that, if a number divides both <span class="process-math">\(261\)</span> and <span class="process-math">\(231\text{,}\)</span> then it divides <span class="process-math">\(261-231=30\)</span> as well. Similarly, if a number divides both <span class="process-math">\(231\)</span> and <span class="process-math">\(30\)</span> (as it must if it divides <span class="process-math">\(261\)</span> and <span class="process-math">\(231\)</span>), then it divides <span class="process-math">\(231-30=201\text{,}\)</span> and <span class="process-math">\(201-30=171\text{,}\)</span> and<span class="process-math">\(\dots231-30(7)=21\text{.}\)</span> Therefore, <span class="process-math">\(\gcd(261,231)=\gcd(231,30)=\gcd(30,21)=\dots\text{.}\)</span> Hence, compute <span class="process-math">\(\gcd(261,231)\)</span> and verify it using a method more familiar to you, such as factor trees.</em></div></li>
-<li id="li-117"><div class="para" id="p-280"><em class="emphasis">Prove that the Euclidean algorithm “works” in general to compute <span class="process-math">\(\gcd(m,n)\)</span> for any <span class="process-math">\(m,n\in\mathbb{Z}\text{.}\)</span></em></div></li>
-<li id="li-118"><div class="para" id="p-281"><em class="emphasis">Use the Euclidean algorithm to compute the gcds of two or three pairs of numbers. It may benefit students to make the first pair of numbers relatively small and one of the pairs relatively large such that the pair of large numbers has a quick Euclidean algorithm solution which is nonobvious using the method of factor trees. For example, one may use any pair of numbers of the form <span class="process-math">\((n,kn+1)\)</span> for some <span class="process-math">\(n,k\in\mathbb{N}\text{.}\)</span></em></div></li>
-<li id="li-119"><div class="para" id="p-282"><em class="emphasis">Unicode is an updated version of ASCII. Unicode gives a way of encoding information on a computer with <span class="process-math">\(1,114,112\)</span> possible numbers. Only about <span class="process-math">\(10\%\)</span> of them are currently in use; say there are <span class="process-math">\(111,411\)</span> Unicode numbers in use. Does the affine cipher <span class="process-math">\(C\equiv103,011P+34,423\mod111,411\)</span> encrypt Unicode characters monoalphabetically?</em></div></li>
+<div class="para logical" id="p-279"><ol class="decimal">
+<li id="li-116"><div class="para" id="p-280"><em class="emphasis">Suppose we want to find the greatest common divisor of, say, <span class="process-math">\(261\)</span> and <span class="process-math">\(231\text{.}\)</span> Have students recall (perhaps by verifying a specific example) that, if a number divides both <span class="process-math">\(261\)</span> and <span class="process-math">\(231\text{,}\)</span> then it divides <span class="process-math">\(261-231=30\)</span> as well. Similarly, if a number divides both <span class="process-math">\(231\)</span> and <span class="process-math">\(30\)</span> (as it must if it divides <span class="process-math">\(261\)</span> and <span class="process-math">\(231\)</span>), then it divides <span class="process-math">\(231-30=201\text{,}\)</span> and <span class="process-math">\(201-30=171\text{,}\)</span> and<span class="process-math">\(\dots231-30(7)=21\text{.}\)</span> Therefore, <span class="process-math">\(\gcd(261,231)=\gcd(231,30)=\gcd(30,21)=\dots\text{.}\)</span> Hence, compute <span class="process-math">\(\gcd(261,231)\)</span> and verify it using a method more familiar to you, such as factor trees.</em></div></li>
+<li id="li-117"><div class="para" id="p-281"><em class="emphasis">Prove that the Euclidean algorithm “works” in general to compute <span class="process-math">\(\gcd(m,n)\)</span> for any <span class="process-math">\(m,n\in\mathbb{Z}\text{.}\)</span></em></div></li>
+<li id="li-118"><div class="para" id="p-282"><em class="emphasis">Use the Euclidean algorithm to compute the gcds of two or three pairs of numbers. It may benefit students to make the first pair of numbers relatively small and one of the pairs relatively large such that the pair of large numbers has a quick Euclidean algorithm solution which is nonobvious using the method of factor trees. For example, one may use any pair of numbers of the form <span class="process-math">\((n,kn+1)\)</span> for some <span class="process-math">\(n,k\in\mathbb{N}\text{.}\)</span></em></div></li>
+<li id="li-119"><div class="para" id="p-283"><em class="emphasis">Unicode is an updated version of ASCII. Unicode gives a way of encoding information on a computer with <span class="process-math">\(1,114,112\)</span> possible numbers. Only about <span class="process-math">\(10\%\)</span> of them are currently in use; say there are <span class="process-math">\(111,411\)</span> Unicode numbers in use. Does the affine cipher <span class="process-math">\(C\equiv103,011P+34,423\mod111,411\)</span> encrypt Unicode characters monoalphabetically?</em></div></li>
 </ol></div>
-<div class="para" id="p-283">To motivate solving systems of linear congruences, we may use the cryptanalysis of affine ciphers. As in (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "KI-eq:affine-cipher-system" missing or not unique]</code>) above, systems of linear congruences arise naturally after guessing two plaintext-ciphertext pairs in an affine cipher. Solving the system is necessary to determine the multiplicative and additive keys of the affine cipher, hence to decrypt it. The dangerous thing for students at this point is to make the “wrong” guess and end up trying to solve a congruence of the form <span class="process-math">\(am\equiv b\mod26\)</span> where <span class="process-math">\(\gcd(a,26)\neq1\text{.}\)</span> <em class="emphasis"></em> This is an excellent time to discuss the general theory of solving linear congruences, and if you wish even generalize to polynomial, factorial, and other more general congruences. At any rate, students may now use the following algorithm to cryptanalyze any monoalphabetic affine cipher:</div>
-<div class="para logical" id="p-284"><ol class="decimal">
-<li id="li-120"><div class="para" id="p-285">Form a system of linear congruences to solve for <span class="process-math">\(m\text{,}\)</span> the multiplicative constant, and <span class="process-math">\(k\text{,}\)</span> the additive constant.</div></li>
-<li id="li-121"><div class="para" id="p-286">Simplify the system of congruences by substitution, elimination, or addition/subtraction of congruences.</div></li>
-<li id="li-122"><div class="para" id="p-287">Find the solution of the resulting congruence using trial and error or the extended Euclidean algorithm.</div></li>
-<li id="li-123"><div class="para" id="p-288">Use <span class="process-math">\(m\)</span> and <span class="process-math">\(k\)</span> to decrypt the ciphertext using the formula <span class="process-math">\(p=m^{-1}(c-k)\)</span> mod <span class="process-math">\(26\text{.}\)</span>
+<div class="para" id="p-284">To motivate solving systems of linear congruences, we may use the cryptanalysis of affine ciphers. As in (<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "KI-eq:affine-cipher-system" missing or not unique]</code>) above, systems of linear congruences arise naturally after guessing two plaintext-ciphertext pairs in an affine cipher. Solving the system is necessary to determine the multiplicative and additive keys of the affine cipher, hence to decrypt it. The dangerous thing for students at this point is to make the “wrong” guess and end up trying to solve a congruence of the form <span class="process-math">\(am\equiv b\mod26\)</span> where <span class="process-math">\(\gcd(a,26)\neq1\text{.}\)</span> <em class="emphasis"></em> This is an excellent time to discuss the general theory of solving linear congruences, and if you wish even generalize to polynomial, factorial, and other more general congruences. At any rate, students may now use the following algorithm to cryptanalyze any monoalphabetic affine cipher:</div>
+<div class="para logical" id="p-285"><ol class="decimal">
+<li id="li-120"><div class="para" id="p-286">Form a system of linear congruences to solve for <span class="process-math">\(m\text{,}\)</span> the multiplicative constant, and <span class="process-math">\(k\text{,}\)</span> the additive constant.</div></li>
+<li id="li-121"><div class="para" id="p-287">Simplify the system of congruences by substitution, elimination, or addition/subtraction of congruences.</div></li>
+<li id="li-122"><div class="para" id="p-288">Find the solution of the resulting congruence using trial and error or the extended Euclidean algorithm.</div></li>
+<li id="li-123"><div class="para" id="p-289">Use <span class="process-math">\(m\)</span> and <span class="process-math">\(k\)</span> to decrypt the ciphertext using the formula <span class="process-math">\(p=m^{-1}(c-k)\)</span> mod <span class="process-math">\(26\text{.}\)</span>
 </div></li>
 </ol></div>
-<div class="para" id="p-289">To accomplish step <span class="process-math">\(1\text{,}\)</span> students must guess two plaintext-ciphertext pairs, and to avoid insoluble congruences, it suffices to always guess the ciphertext corresponding to plaintext <span class="process-math">\(e,t\text{.}\)</span> Students can type the messages into an online frequency analysis tool to get a frequency count, or, in a more programming-focused course, the collection of Python modules at <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "inceResourcesFirstYearCollege2022" missing or not unique]</code> includes a module in which students write a frequency analysis tool themselves in Python.</div>
-<div class="para" id="p-290">Students may notice one issue with this algorithm: what if you have no idea what ciphertext letter corresponds to plaintext <span class="process-math">\(e\)</span> in your message? Certainly English messages may have different most-common letters. This could lead to a lesson on the index of coincidence and other probabilistic methods for determining both which cipher we’re dealing with and matching letter frequencies. Though these concepts are beyond the scope of these notes as written, see Chapter <span class="process-math">\(2\)</span> of <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "mcdevittClassNotesCryptologic2012" missing or not unique]</code> for an excellent treatment without prerequisites.</div>
-<div class="para" id="p-291">
+<div class="para" id="p-290">To accomplish step <span class="process-math">\(1\text{,}\)</span> students must guess two plaintext-ciphertext pairs, and to avoid insoluble congruences, it suffices to always guess the ciphertext corresponding to plaintext <span class="process-math">\(e,t\text{.}\)</span> Students can type the messages into an online frequency analysis tool to get a frequency count, or, in a more programming-focused course, the collection of Python modules at <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "inceResourcesFirstYearCollege2022" missing or not unique]</code> includes a module in which students write a frequency analysis tool themselves in Python.</div>
+<div class="para" id="p-291">Students may notice one issue with this algorithm: what if you have no idea what ciphertext letter corresponds to plaintext <span class="process-math">\(e\)</span> in your message? Certainly English messages may have different most-common letters. This could lead to a lesson on the index of coincidence and other probabilistic methods for determining both which cipher we’re dealing with and matching letter frequencies. Though these concepts are beyond the scope of these notes as written, see Chapter <span class="process-math">\(2\)</span> of <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "mcdevittClassNotesCryptologic2012" missing or not unique]</code> for an excellent treatment without prerequisites.</div>
+<div class="para" id="p-292">
 <dfn class="terminology">11</dfn>.</div>
-<div class="para logical" id="p-292"><ol class="decimal">
-<li id="li-124"><div class="para" id="p-293"><em class="emphasis">Encrypt some short (<span class="process-math">\(3\)</span>-<span class="process-math">\(10\)</span> words) plaintext using an affine cipher of your choice. Now, give students the equation of the affine cipher (say, <span class="process-math">\(c\equiv 3p+2\mod26\)</span>) and have students determine the <em class="emphasis">decryption equation</em> for that affine cipher by solving for <span class="process-math">\(p\)</span> in the cipher’s equation. Finally, use that decryption equation to determine the plaintext <span class="process-math">\(p\)</span> corresponding to each given ciphertext letter <span class="process-math">\(c\text{,}\)</span> and hence decrypt the message.</em></div></li>
-<li id="li-125"><div class="para" id="p-294"><em class="emphasis">Encrypt some short (<span class="process-math">\(3\)</span>-<span class="process-math">\(10\)</span> words) plaintext <em class="emphasis">in which the most common letter is ‘e’ and the second-most common is ‘t’)</em> using an affine cipher of your choice. Now, have students use the algorithm to cryptanalyze this affine ciphertext.</em></div></li>
+<div class="para logical" id="p-293"><ol class="decimal">
+<li id="li-124"><div class="para" id="p-294"><em class="emphasis">Encrypt some short (<span class="process-math">\(3\)</span>-<span class="process-math">\(10\)</span> words) plaintext using an affine cipher of your choice. Now, give students the equation of the affine cipher (say, <span class="process-math">\(c\equiv 3p+2\mod26\)</span>) and have students determine the <em class="emphasis">decryption equation</em> for that affine cipher by solving for <span class="process-math">\(p\)</span> in the cipher’s equation. Finally, use that decryption equation to determine the plaintext <span class="process-math">\(p\)</span> corresponding to each given ciphertext letter <span class="process-math">\(c\text{,}\)</span> and hence decrypt the message.</em></div></li>
+<li id="li-125"><div class="para" id="p-295"><em class="emphasis">Encrypt some short (<span class="process-math">\(3\)</span>-<span class="process-math">\(10\)</span> words) plaintext <em class="emphasis">in which the most common letter is ‘e’ and the second-most common is ‘t’)</em> using an affine cipher of your choice. Now, have students use the algorithm to cryptanalyze this affine ciphertext.</em></div></li>
 </ol></div>
-<div class="para" id="p-295">At this point in the project, one may introduce the Vigenère cipher and its primary tools for cryptanalysis, the Kasiski and Friedman tests. This leads naturally to asking what happens when a Vigenère keyword is as long as the message it’s used to encrypt, whence students can prove to themselves that such a cipher (a <em class="emphasis">one-time pad</em>) is theoretically unbreakable by showing that different keywords lead to intelligible, but different, plaintext messages. The <em class="emphasis">Enigma machine</em> is then introduced as a “portable one-time pad generator,” providing an opportunity to tie the course to the more recent history of World War II.</div>
-<div class="para" id="p-296">However, because these concepts are less explicitly connected to number theory and algebra, they are omitted in this text. See <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "mcdevittClassNotesCryptologic2012" missing or not unique]</code> for an excellent set of notes for those who choose to teach this material.</div></section></div>
+<div class="para" id="p-296">At this point in the project, one may introduce the Vigenère cipher and its primary tools for cryptanalysis, the Kasiski and Friedman tests. This leads naturally to asking what happens when a Vigenère keyword is as long as the message it’s used to encrypt, whence students can prove to themselves that such a cipher (a <em class="emphasis">one-time pad</em>) is theoretically unbreakable by showing that different keywords lead to intelligible, but different, plaintext messages. The <em class="emphasis">Enigma machine</em> is then introduced as a “portable one-time pad generator,” providing an opportunity to tie the course to the more recent history of World War II.</div>
+<div class="para" id="p-297">However, because these concepts are less explicitly connected to number theory and algebra, they are omitted in this text. See <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "mcdevittClassNotesCryptologic2012" missing or not unique]</code> for an excellent set of notes for those who choose to teach this material.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="affine-ciphers.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="extensions-and-alterations.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

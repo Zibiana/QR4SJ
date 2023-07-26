@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Case Study: How can we support storytelling using different data sources?</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -226,16 +255,19 @@ window.MathJax = {
 </li>
 <li>
 <div class="toc-item"><a href="sec_firstch-examples.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span></a></div>
-<ul class="structural"><li>
-<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Group work and class norms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_firstch-examples.html#subsection-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Ground rules</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.1.2</span> <span class="title">Group roles</span></a></div></li>
+<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span></a></div></li>
 </ul>
-</li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -309,9 +341,9 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-11" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-14" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -334,20 +366,20 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-16" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
 <ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-19" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-19" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-22" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
 <li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
@@ -355,8 +387,8 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-22" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-24" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -446,37 +478,37 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-leg-case-study"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Case Study: How can we support storytelling using different data sources?</span>
 </h2>
-<div class="para" id="p-634">Throughout this chapter, you have explored and asked questions about a data set on anti-trans legislation in the US in recent years. This provides a broad overview of the landscape of anti-trans legislation, where it is happening, and the different aspects of civil rights that have been targeted. As we continue to grapple with what these means for us as global citizens and members of society, it’s important to know how to contribute towards the change we want to see in this realm.</div>
-<div class="para" id="p-635">An example of an anti-trans bill that was struck down after legal action and scrutiny is Tennessee’s SB-0001 from 2023. The legislators who supported the bill sought to restrict minors in Tennessee from accessing gender-affirming care. A word-chart of the bill is shown below. Much of the language that lawmakers used surrounded terms like “minors”, “performed”, and “medical procedure(s)” in reference to gender-affirming care for trans youth. The term “violation” was used to frame this care in opposition to the laws proposed in the bill.</div>
-<div class="para" id="p-636">A week before the law was slated to go into effect, it was struck down by a federal judge, in a case brought forth by a 15-year-old transgender girl and her family. In speaking about the effects of gender-affirming care, the girl’s mother said, “We have a confident, happy daughter now, who is free to be herself and she is thriving” [1]<a href="" class="xref" data-knowl="./knowl/ACLU.html" title="Bibliographic Entry 5.4.1">[5.4.1]</a>. Judge Eli Richardson, in his decision on the case, repeatedly argued that “parents have a fundamental right to direct the medical care of their children” [2]. This argument highlights the role of parents in seeking basic medical care for transgender youth, and it also uses a commonplace term that was never found in the bill itself: “medical care.” In contrast, the downstricken bill referred to medical “procedure(s),” a term chosen to connote experimental, invasive, and potentially harmful treatments.</div>
+<div class="para" id="p-625">Throughout this chapter, you have explored and asked questions about a data set on anti-trans legislation in the US in recent years. This provides a broad overview of the landscape of anti-trans legislation, where it is happening, and the different aspects of civil rights that have been targeted. As we continue to grapple with what these means for us as global citizens and members of society, it’s important to know how to contribute towards the change we want to see in this realm.</div>
+<div class="para" id="p-626">An example of an anti-trans bill that was struck down after legal action and scrutiny is Tennessee’s SB-0001 from 2023. The legislators who supported the bill sought to restrict minors in Tennessee from accessing gender-affirming care. A word-chart of the bill is shown below. Much of the language that lawmakers used surrounded terms like “minors”, “performed”, and “medical procedure(s)” in reference to gender-affirming care for trans youth. The term “violation” was used to frame this care in opposition to the laws proposed in the bill.</div>
+<div class="para" id="p-627">A week before the law was slated to go into effect, it was struck down by a federal judge, in a case brought forth by a 15-year-old transgender girl and her family. In speaking about the effects of gender-affirming care, the girl’s mother said, “We have a confident, happy daughter now, who is free to be herself and she is thriving” [1]<a href="" class="xref" data-knowl="./knowl/ACLU.html" title="Bibliographic Entry 5.4.1">[5.4.1]</a>. Judge Eli Richardson, in his decision on the case, repeatedly argued that “parents have a fundamental right to direct the medical care of their children” [2]. This argument highlights the role of parents in seeking basic medical care for transgender youth, and it also uses a commonplace term that was never found in the bill itself: “medical care.” In contrast, the downstricken bill referred to medical “procedure(s),” a term chosen to connote experimental, invasive, and potentially harmful treatments.</div>
 <article class="activity project-like" id="activity-12"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">13</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-637">Consider how else you might be able to use a wordchart like this, or how else you could visualize the distribution of words in a bill that might bring some other obscured feature to light.</div> <div class="para logical" id="p-638"><ol class="decimal">
-<li id="li-239"><div class="para" id="p-derived-li-239">What is a research question that you can answer with a wordchart alone?</div></li>
-<li id="li-240"><div class="para" id="p-derived-li-240">How can you combine a wordchart with other data sources or visualizations when making an argument?</div></li>
-<li id="li-241"><div class="para" id="p-derived-li-241">What is a different way you can imagine to visualize word frequency or textual features of a bill?</div></li>
+<div class="para" id="p-628">Consider how else you might be able to use a wordchart like this, or how else you could visualize the distribution of words in a bill that might bring some other obscured feature to light.</div> <div class="para logical" id="p-629"><ol class="decimal">
+<li id="li-230"><div class="para" id="p-derived-li-230">What is a research question that you can answer with a wordchart alone?</div></li>
+<li id="li-231"><div class="para" id="p-derived-li-231">How can you combine a wordchart with other data sources or visualizations when making an argument?</div></li>
+<li id="li-232"><div class="para" id="p-derived-li-232">What is a different way you can imagine to visualize word frequency or textual features of a bill?</div></li>
 </ol></div></article><article class="exercise exercise-like" id="exercise-100"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-639">Next, check out the code chunk below, where we provide the code needed to create the wordchart. As you explore the code and tweak it, try out the following exercises.</div>
-<div class="para logical" id="p-640"><ol class="decimal">
-<li id="li-242"><div class="para" id="p-derived-li-242">Try changing the bill that is being modeled in the word chart. What changes do you see in the output?</div></li>
-<li id="li-243"><div class="para" id="p-derived-li-243">Think of a particular bill *type* that you are interested in (like Sports Bans, or Drag Performance), and select a bill of that type. Using that bill, create the corresponding word chart. What do you notice about the words that are most frequent? How does that output compare to your expectations?</div></li>
-<li id="li-244"><div class="para" id="p-derived-li-244">Using a word chart that you created, write a few sentences about what you noticed and what you can say about the bill itself, using evidence from your chart.</div></li>
-</ol></div></article><div class="para" id="p-641">CODE CHUNK NEEDED for students to play around with word chart creation</div>
-<div class="para" id="p-642">You can analyze a bill using word barcharts and go in many different directions. Above, we showed how tracking the broader history of a bill can add context to the word barchart and aid in interpreting how different terms were used. It also alludes to the roles people can play in fighting for justice against the anti-trans movement. Even beyond the plaintiffs and the judge—the case was brought forward by civil rights organizations; the court cited medical researchers who generated robust findings to demonstrate the safety and effectiveness of gender-affirming care; the residents of Tennessee spoke during legislative hearings to generate discussions that forced lawmakers to explain their reasoning, most of which was debunked during the court case.</div>
+<div class="para" id="p-630">Next, check out the code chunk below, where we provide the code needed to create the wordchart. As you explore the code and tweak it, try out the following exercises.</div>
+<div class="para logical" id="p-631"><ol class="decimal">
+<li id="li-233"><div class="para" id="p-derived-li-233">Try changing the bill that is being modeled in the word chart. What changes do you see in the output?</div></li>
+<li id="li-234"><div class="para" id="p-derived-li-234">Think of a particular bill *type* that you are interested in (like Sports Bans, or Drag Performance), and select a bill of that type. Using that bill, create the corresponding word chart. What do you notice about the words that are most frequent? How does that output compare to your expectations?</div></li>
+<li id="li-235"><div class="para" id="p-derived-li-235">Using a word chart that you created, write a few sentences about what you noticed and what you can say about the bill itself, using evidence from your chart.</div></li>
+</ol></div></article><div class="para" id="p-632">CODE CHUNK NEEDED for students to play around with word chart creation</div>
+<div class="para" id="p-633">You can analyze a bill using word barcharts and go in many different directions. Above, we showed how tracking the broader history of a bill can add context to the word barchart and aid in interpreting how different terms were used. It also alludes to the roles people can play in fighting for justice against the anti-trans movement. Even beyond the plaintiffs and the judge—the case was brought forward by civil rights organizations; the court cited medical researchers who generated robust findings to demonstrate the safety and effectiveness of gender-affirming care; the residents of Tennessee spoke during legislative hearings to generate discussions that forced lawmakers to explain their reasoning, most of which was debunked during the court case.</div>
 <article class="activity project-like" id="activity-13"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">14</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-643">Next, think about what type of action you can take in your own community.</div> <div class="para logical" id="p-644"><ol class="decimal">
-<li id="li-245"><div class="para" id="p-derived-li-245">How can you use tools like data visualization and text analysis to learn something about anti-trans legislation and share what you learned with other people in your life?</div></li>
-<li id="li-246"><div class="para" id="p-derived-li-246">What are other issues you care about that you can learn more about and contribute to change using the tools from this section?</div></li>
-</ol></div></article><div class="para" id="p-645">References:</div>
-<div class="para logical" id="p-646"><ol class="decimal">
-<li id="li-247"><div class="para" id="p-derived-li-247">[1] Legal case details from ACLU. https://www.aclu.org/cases/l-w-v-skrmetti</div></li>
-<li id="li-248"><div class="para" id="p-derived-li-248">[2] Court documents and judge’s decision. https://storage.courtlistener.com/recap/gov.uscourts.tnmd.94244/gov.uscourts.tnmd.94244.167.0.pdf</div></li>
-<li id="li-249"><div class="para" id="p-derived-li-249">[3] Narrative sourced from Erin in the Morning. https://www.erininthemorning.com/p/ky-tn-judges-debunk-anti-trans-arguments</div></li>
+<div class="para" id="p-634">Next, think about what type of action you can take in your own community.</div> <div class="para logical" id="p-635"><ol class="decimal">
+<li id="li-236"><div class="para" id="p-derived-li-236">How can you use tools like data visualization and text analysis to learn something about anti-trans legislation and share what you learned with other people in your life?</div></li>
+<li id="li-237"><div class="para" id="p-derived-li-237">What are other issues you care about that you can learn more about and contribute to change using the tools from this section?</div></li>
+</ol></div></article><div class="para" id="p-636">References:</div>
+<div class="para logical" id="p-637"><ol class="decimal">
+<li id="li-238"><div class="para" id="p-derived-li-238">[1] Legal case details from ACLU. https://www.aclu.org/cases/l-w-v-skrmetti</div></li>
+<li id="li-239"><div class="para" id="p-derived-li-239">[2] Court documents and judge’s decision. https://storage.courtlistener.com/recap/gov.uscourts.tnmd.94244/gov.uscourts.tnmd.94244.167.0.pdf</div></li>
+<li id="li-240"><div class="para" id="p-derived-li-240">[3] Narrative sourced from Erin in the Morning. https://www.erininthemorning.com/p/ky-tn-judges-debunk-anti-trans-arguments</div></li>
 </ol></div>
 <section class="references" id="references-1"><h3 class="heading hide-type">
 <span class="type">References</span> <span class="codenumber"></span> <span class="title">References</span>

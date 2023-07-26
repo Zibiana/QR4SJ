@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Preliminary Activity</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -226,16 +255,19 @@ window.MathJax = {
 </li>
 <li>
 <div class="toc-item"><a href="sec_firstch-examples.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span></a></div>
-<ul class="structural"><li>
-<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Group work and class norms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_firstch-examples.html#subsection-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Ground rules</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.1.2</span> <span class="title">Group roles</span></a></div></li>
+<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span></a></div></li>
 </ul>
-</li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -309,9 +341,9 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-11" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-14" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -334,20 +366,20 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-16" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
 <ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-19" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-19" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-22" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
 <li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
@@ -355,8 +387,8 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-22" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-24" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -446,13 +478,13 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="subsection" id="preliminary-activity"><h2 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1</span> <span class="title">Preliminary Activity</span>
 </h2>
-<div class="para" id="p-211">There are many exercises below in which students are asked to analyze plaintext or ciphertext where said text is not specified. These texts may be provided the instructor based on the cryptographic methods described below. This flexibility is emphasized in order to allow customization of the specific texts students will play with, including customizing ciphertexts to a college or university’s context.</div>
-<div class="para" id="p-212">It is useful to establish some cryptographic terminology which we will use for the remainder of this text. To that end, consider the definitions below:</div>
-<div class="para" id="p-213">
+<div class="para" id="p-212">There are many exercises below in which students are asked to analyze plaintext or ciphertext where said text is not specified. These texts may be provided the instructor based on the cryptographic methods described below. This flexibility is emphasized in order to allow customization of the specific texts students will play with, including customizing ciphertexts to a college or university’s context.</div>
+<div class="para" id="p-213">It is useful to establish some cryptographic terminology which we will use for the remainder of this text. To that end, consider the definitions below:</div>
+<div class="para" id="p-214">
 <em class="emphasis">Cryptography</em> (from Greek <em class="emphasis">kryptos-</em>, meaning “hidden”) is secret communication by hiding the meaning of a message, not its existence. The process of hiding the meaning of a message is called <em class="emphasis">encryption.</em> The recipient of the message has to <em class="emphasis">decrypt</em> or <em class="emphasis">decipher</em> the message in order to read it.</div>
-<div class="para" id="p-214">Often the method of encryption relies on a <em class="emphasis">key</em>, some special number(s) or word(s) that only the sender and recipient know. <em class="emphasis">Cryptanalysis</em> is the study of cryptographic algorithms with the intent of recovering secret messages <em class="emphasis">without</em> knowing the secret key.</div>
-<div class="para" id="p-215">There are two basic tools that can be used in encryption algorithms: <em class="emphasis">transposition</em> (rearranging the characters) and <em class="emphasis">substitution</em> (replacing characters with other characters). The emphasis of these notes will be on substitution ciphers.</div>
-<div class="para logical" id="p-216">
+<div class="para" id="p-215">Often the method of encryption relies on a <em class="emphasis">key</em>, some special number(s) or word(s) that only the sender and recipient know. <em class="emphasis">Cryptanalysis</em> is the study of cryptographic algorithms with the intent of recovering secret messages <em class="emphasis">without</em> knowing the secret key.</div>
+<div class="para" id="p-216">There are two basic tools that can be used in encryption algorithms: <em class="emphasis">transposition</em> (rearranging the characters) and <em class="emphasis">substitution</em> (replacing characters with other characters). The emphasis of these notes will be on substitution ciphers.</div>
+<div class="para logical" id="p-217">
 <div class="para">A <em class="emphasis">(substitution)</em> <em class="emphasis">cipher</em> is an algorithm for encrypting a message into apparently unintelligible <em class="emphasis"></em> text<em class="emphasis">.</em> Each cipher may be viewed as a function</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -461,22 +493,22 @@ f:\mathcal{P}\to\mathcal{C}
 </div>
 <div class="para">where <span class="process-math">\(\mathcal{P}\)</span> is the space of <em class="emphasis">plaintext</em>, or readable text in a given alphabet (here the English alphabet consisting of the <span class="process-math">\(26\)</span> lowercase English letters will be used unless specified otherwise) and <span class="process-math">\(\mathcal{C}\)</span> is the space of <em class="emphasis">ciphertext</em> or encrypted text (here the uppercase <span class="process-math">\(26\)</span>-letter English alphabet unless otherwise specified). We also identify each letter in <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{C}\text{,}\)</span> in order, with an element of <span class="process-math">\(\mathbb{Z}/26\mathbb{Z}\)</span> (so that <span class="process-math">\(a\leftrightarrow0,b\leftrightarrow1\text{,}\)</span> etc.). It will be clear from context which representation of <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{C}\)</span> we are using. If <span class="process-math">\(f\)</span> is injective (and hence, since here <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{C}\)</span> are finite, bijective), we say it is a <em class="emphasis">monoalphabetic (substitution) cipher</em>.</div>
 </div>
-<div class="para" id="p-217">The use of uppercase in the ciphertext and lowercase in the plaintext is a cryptographic convention designed to distinguish the two types of text, especially in partially-deciphered messages; we will often ignore the distinction and say, for example, “<span class="process-math">\(f(p)=p+3\)</span> is the shift cipher with shift <span class="process-math">\(+3\)</span>” where lowercase <span class="process-math">\(p\in\mathcal{P},c\in\mathcal{C}\)</span> denote individual letters. We will commonly refer to a particular <span class="process-math">\(p\in\mathcal{P}\)</span> which we will call simply <em class="emphasis">the plaintext</em> and its image <span class="process-math">\(c:=f(p)\in\mathcal{C}\)</span> (<em class="emphasis">the ciphertext</em>). Notably, for courses without mathematical prerequisites such as that taught by the other using the flow of concepts below, the spaces and notation <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{C}\)</span> are hidden, and ciphers are analyzed by analyzing particular <span class="process-math">\(p\)</span> and <span class="process-math">\(f(p)\text{,}\)</span> as well as determining <span class="process-math">\(f^{-1}(c)\)</span> given particular <span class="process-math">\(c\in\mathcal{C}\text{.}\)</span>
+<div class="para" id="p-218">The use of uppercase in the ciphertext and lowercase in the plaintext is a cryptographic convention designed to distinguish the two types of text, especially in partially-deciphered messages; we will often ignore the distinction and say, for example, “<span class="process-math">\(f(p)=p+3\)</span> is the shift cipher with shift <span class="process-math">\(+3\)</span>” where lowercase <span class="process-math">\(p\in\mathcal{P},c\in\mathcal{C}\)</span> denote individual letters. We will commonly refer to a particular <span class="process-math">\(p\in\mathcal{P}\)</span> which we will call simply <em class="emphasis">the plaintext</em> and its image <span class="process-math">\(c:=f(p)\in\mathcal{C}\)</span> (<em class="emphasis">the ciphertext</em>). Notably, for courses without mathematical prerequisites such as that taught by the other using the flow of concepts below, the spaces and notation <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{C}\)</span> are hidden, and ciphers are analyzed by analyzing particular <span class="process-math">\(p\)</span> and <span class="process-math">\(f(p)\text{,}\)</span> as well as determining <span class="process-math">\(f^{-1}(c)\)</span> given particular <span class="process-math">\(c\in\mathcal{C}\text{.}\)</span>
 </div>
-<div class="para" id="p-218">
+<div class="para" id="p-219">
 <dfn class="terminology">1</dfn>.  <em class="emphasis">One may begin by simply giving students various encrypted messages to decode along with a handful of hints. Ask students to work in groups, with one member of each group of 3-4 students serving as the facilitator, the recorder, and the reporter (sharing their work with the class), respectively. For instructors following the order of topics below, it is important that at least one message be a <em class="emphasis">shift cipher</em>, a cipher of form <span class="process-math">\(f(p)=p+k\mod26\)</span> for some <span class="process-math">\(k\in\mathbb{Z}/26\mathbb{Z}\text{.}\)</span> In order for students to be able to systematically decrypt a shift cipher, the message should either be fairly long (students can split the message into pieces when decrypting it) or otherwise rigged so that plaintext ‘e’ is one of the top three most common letters in the plaintext.</em>
 </div>
-<div class="para" id="p-219"><em class="emphasis">It is recommended to give students two other messages as well. At this stage students are often not prepared for ciphers <span class="process-math">\(f\)</span> which are not bijective, so one may use, for example, a <em class="emphasis">keyword cipher</em><div class="displaymath process-math">
+<div class="para" id="p-220"><em class="emphasis">It is recommended to give students two other messages as well. At this stage students are often not prepared for ciphers <span class="process-math">\(f\)</span> which are not bijective, so one may use, for example, a <em class="emphasis">keyword cipher</em><div class="displaymath process-math">
 \begin{equation*}
 f=\begin{pmatrix}a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g &amp; h &amp; \dots &amp; z \\
 K &amp; E &amp; Y &amp; W &amp; O &amp; R &amp; D &amp; A &amp; \dots &amp; Z 
 \end{pmatrix}
 \end{equation*}
 </div>where the <em class="emphasis">keyword</em> is a chosen English word and the plaintext, again, is long enough or otherwise rigged so that the plaintext letters occur with similar relative frequencies to those of English as a whole. Note the following features of the keyword cipher: first the keyword is spelled out under the first <span class="process-math">\(n\)</span> letters of the plaintext alphabet, where <span class="process-math">\(n\)</span> is the number of distinct letters in the keyword. Then the alphabet is spelled out in order, except that when a letter has already been written as part of the keyword, it is skipped and we move onto the next letter of the alphabet.</em></div>
-<div class="para" id="p-220"><em class="emphasis">The above keyword cipher illustrates a <em class="emphasis">cipher alphabet</em> in function form: a representation of the ordered pair <span class="process-math">\((\mathcal{P},f(\mathcal{P}))\)</span> for a given cipher <span class="process-math">\(f\text{.}\)</span> Of course, any other representation of <span class="process-math">\((\mathcal{P},f(\mathcal{P}))\text{,}\)</span> such as a table of values, will do (and tables of values are commonly used to represent cipher alphabets). Students often decrypt such a message without identifying the keyword, but it is fruitful to point out that identifying a pattern will assist in the decryption process at this stage.</em></div>
-<div class="para" id="p-221"><em class="emphasis">Finally, it is recommended to assign one unsolved cipher such as that used in Part <span class="process-math">\(4\)</span> of the Kryptos sculpture <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "bauerJamesSanbornKryptos2016" missing or not unique]</code>. Pass on (unattributed) to the students the hints that artist Jim Sanborn gave: the ciphertext letters NYPVTT decrypt to BERLIN, and the word immediately following BERLIN is CLOCK. Then, give students time in groups to attempt to solve all three ciphers. Usually many students solve the shift cipher, a good handful (with my assistance) solve the keyword cipher, and generally these students move onto Kryptos, notice it’s not monoalphabetic since (by the hints) <span class="process-math">\(i,n\mapsto T\text{,}\)</span> get frustrated, wonder about spacing, and come to a loss. At this stage one may tell them something like, “this is an unsolved cipher known as Kryptos Part <span class="process-math">\(4\text{;}\)</span> solve it and you’ll be famous!”</em></div>
-<div class="para" id="p-222"><em class="emphasis">Follow up by letting them know that we are not trying to be cruel, then ask them why we would give them an unsolved code. Based on our conversation, one may follow up with statements like, “What do you think mathematicians spend most of their time doing? How do you define “success” when working on an unsolved problem?” We emphasize that making sense of a problem, increasing their depth of understanding (what methods DON’T work?), describing their process of engagement, and even failing are all completely normal aspects of doing mathematics. Even problems that are solved often took years or even millennia to solve; therefore, there is no shame or cause for alarm if they don’t understand something immediately. This helps ground students as we move onto more and more abstract and difficult mathematics.</em></div>
-<div class="para" id="p-223">Now, ask students what strategies they used to decrypt the messages above. For the first message, students may use <em class="emphasis">brute force,</em> simply trying various shifts until one works. However, a more interesting strategy involves counting which ciphertext letter is the most frequent and guessing that letter corresponds to plaintext ‘e’.</div></section></div>
+<div class="para" id="p-221"><em class="emphasis">The above keyword cipher illustrates a <em class="emphasis">cipher alphabet</em> in function form: a representation of the ordered pair <span class="process-math">\((\mathcal{P},f(\mathcal{P}))\)</span> for a given cipher <span class="process-math">\(f\text{.}\)</span> Of course, any other representation of <span class="process-math">\((\mathcal{P},f(\mathcal{P}))\text{,}\)</span> such as a table of values, will do (and tables of values are commonly used to represent cipher alphabets). Students often decrypt such a message without identifying the keyword, but it is fruitful to point out that identifying a pattern will assist in the decryption process at this stage.</em></div>
+<div class="para" id="p-222"><em class="emphasis">Finally, it is recommended to assign one unsolved cipher such as that used in Part <span class="process-math">\(4\)</span> of the Kryptos sculpture <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "bauerJamesSanbornKryptos2016" missing or not unique]</code>. Pass on (unattributed) to the students the hints that artist Jim Sanborn gave: the ciphertext letters NYPVTT decrypt to BERLIN, and the word immediately following BERLIN is CLOCK. Then, give students time in groups to attempt to solve all three ciphers. Usually many students solve the shift cipher, a good handful (with my assistance) solve the keyword cipher, and generally these students move onto Kryptos, notice it’s not monoalphabetic since (by the hints) <span class="process-math">\(i,n\mapsto T\text{,}\)</span> get frustrated, wonder about spacing, and come to a loss. At this stage one may tell them something like, “this is an unsolved cipher known as Kryptos Part <span class="process-math">\(4\text{;}\)</span> solve it and you’ll be famous!”</em></div>
+<div class="para" id="p-223"><em class="emphasis">Follow up by letting them know that we are not trying to be cruel, then ask them why we would give them an unsolved code. Based on our conversation, one may follow up with statements like, “What do you think mathematicians spend most of their time doing? How do you define “success” when working on an unsolved problem?” We emphasize that making sense of a problem, increasing their depth of understanding (what methods DON’T work?), describing their process of engagement, and even failing are all completely normal aspects of doing mathematics. Even problems that are solved often took years or even millennia to solve; therefore, there is no shame or cause for alarm if they don’t understand something immediately. This helps ground students as we move onto more and more abstract and difficult mathematics.</em></div>
+<div class="para" id="p-224">Now, ask students what strategies they used to decrypt the messages above. For the first message, students may use <em class="emphasis">brute force,</em> simply trying various shifts until one works. However, a more interesting strategy involves counting which ciphertext letter is the most frequent and guessing that letter corresponds to plaintext ‘e’.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="crypto-objectives.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="the-caesarshift-cipher.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

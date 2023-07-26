@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>The Caesar/shift cipher</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -226,16 +255,19 @@ window.MathJax = {
 </li>
 <li>
 <div class="toc-item"><a href="sec_firstch-examples.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span></a></div>
-<ul class="structural"><li>
-<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Group work and class norms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_firstch-examples.html#subsection-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Ground rules</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.1.2</span> <span class="title">Group roles</span></a></div></li>
+<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span></a></div></li>
 </ul>
-</li></ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -309,9 +341,9 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-11" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-14" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -334,20 +366,20 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-16" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
 <li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
 <ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-19" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-19" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-22" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
 <li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
@@ -355,8 +387,8 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-22" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li><div class="toc-item"><a href="climate-change-references.html#subsection-24" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -446,25 +478,25 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="subsection" id="the-caesarshift-cipher"><h2 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2</span> <span class="title">The Caesar/shift cipher</span>
 </h2>
-<div class="para" id="p-224">The <em class="emphasis">Caesar cipher</em> is an example of a <em class="emphasis">monoalphabetic substitution cipher</em>, in which every character is replaced by some other character. It is the earliest known example of a substitution cipher and, according to the Roman historian Suetonius, was used by Julius Caesar himself. It is currently understood as encrypting messages by shifting every letter forward in the alphabet by <span class="process-math">\(3\text{;}\)</span> that is, as the function <span class="process-math">\(f(p)=p+3\mod26\text{.}\)</span> More generally, a <em class="emphasis">shift cipher</em> may shift every letter forward by any amount.</div>
-<div class="para" id="p-225">It is easy to generate example shift ciphertext and have students decrypt this ciphertext. Prompt them to continually investigate the methods they use to cryptanalyze shift ciphers: does it involve brute force? Counting the number of occurrences of each letter and comparing to English letter frequencies, then guessing the most common ciphertext letter corresponds to <span class="process-math">\(e\text{?}\)</span> Spotting patterns between adjacent letters? There is no “wrong” way, but it is the goal of cryptographers to find a general method for decrypting a given family of cipher no matter the particular message or peculiarities of the cipher; therefore, we want to move students’ thinking toward counting letter frequencies as a method of cryptanalyzing any monoalphabetic substitution cipher.</div>
-<div class="para" id="p-226">Inform students that there is a faster way to decrypt shift ciphers than saying the alphabet backwards in their heads. Ask them to try decrypting a message that was encrypted with a very large forward shift such as <span class="process-math">\(+25\text{.}\)</span> How would they do it? Likely by shifting each letter <em class="emphasis">forwards</em> by <span class="process-math">\(1\)</span> to obtain the plaintext message. This means that in the English alphabet, <span class="process-math">\(0=25+1=26\text{,}\)</span> and now you can introduce modular arithmetic (working with modulus <span class="process-math">\(26\)</span> for the foreseeable future). It’s beneficial to provide students with a <em class="emphasis">letter-to-number correspondence sheet</em>, which numbers English letters in increasing order starting with <span class="process-math">\(a=0\text{.}\)</span>
+<div class="para" id="p-225">The <em class="emphasis">Caesar cipher</em> is an example of a <em class="emphasis">monoalphabetic substitution cipher</em>, in which every character is replaced by some other character. It is the earliest known example of a substitution cipher and, according to the Roman historian Suetonius, was used by Julius Caesar himself. It is currently understood as encrypting messages by shifting every letter forward in the alphabet by <span class="process-math">\(3\text{;}\)</span> that is, as the function <span class="process-math">\(f(p)=p+3\mod26\text{.}\)</span> More generally, a <em class="emphasis">shift cipher</em> may shift every letter forward by any amount.</div>
+<div class="para" id="p-226">It is easy to generate example shift ciphertext and have students decrypt this ciphertext. Prompt them to continually investigate the methods they use to cryptanalyze shift ciphers: does it involve brute force? Counting the number of occurrences of each letter and comparing to English letter frequencies, then guessing the most common ciphertext letter corresponds to <span class="process-math">\(e\text{?}\)</span> Spotting patterns between adjacent letters? There is no “wrong” way, but it is the goal of cryptographers to find a general method for decrypting a given family of cipher no matter the particular message or peculiarities of the cipher; therefore, we want to move students’ thinking toward counting letter frequencies as a method of cryptanalyzing any monoalphabetic substitution cipher.</div>
+<div class="para" id="p-227">Inform students that there is a faster way to decrypt shift ciphers than saying the alphabet backwards in their heads. Ask them to try decrypting a message that was encrypted with a very large forward shift such as <span class="process-math">\(+25\text{.}\)</span> How would they do it? Likely by shifting each letter <em class="emphasis">forwards</em> by <span class="process-math">\(1\)</span> to obtain the plaintext message. This means that in the English alphabet, <span class="process-math">\(0=25+1=26\text{,}\)</span> and now you can introduce modular arithmetic (working with modulus <span class="process-math">\(26\)</span> for the foreseeable future). It’s beneficial to provide students with a <em class="emphasis">letter-to-number correspondence sheet</em>, which numbers English letters in increasing order starting with <span class="process-math">\(a=0\text{.}\)</span>
 </div>
-<div class="para" id="p-227">
+<div class="para" id="p-228">
 <dfn class="terminology">2</dfn>.  <em class="emphasis">Have students decrypt a message (long enough or rigged so that its letter frequencies are close to those in English in general) that was encrypted using each of the following:</em>
 </div>
-<div class="para logical" id="p-228"><ol class="decimal">
-<li id="li-96"><div class="para" id="p-229"><em class="emphasis">A Caesar cipher <span class="process-math">\(c\equiv p+3\mod26\text{.}\)</span></em></div></li>
-<li id="li-97"><div class="para" id="p-230"><em class="emphasis">A shift cipher with a shift other than <span class="process-math">\(3\)</span> (without telling students the shift).</em></div></li>
-<li id="li-98"><div class="para" id="p-231"><em class="emphasis">A shift cipher with a shift greater than <span class="process-math">\(26\)</span> (without telling students the shift).</em></div></li>
-<li id="li-99"><div class="para" id="p-232"><em class="emphasis">How many different shift ciphers are there in the English alphabet? In other words, how hard is it to cryptanalyze the shift cipher by brute force?</em></div></li>
+<div class="para logical" id="p-229"><ol class="decimal">
+<li id="li-96"><div class="para" id="p-230"><em class="emphasis">A Caesar cipher <span class="process-math">\(c\equiv p+3\mod26\text{.}\)</span></em></div></li>
+<li id="li-97"><div class="para" id="p-231"><em class="emphasis">A shift cipher with a shift other than <span class="process-math">\(3\)</span> (without telling students the shift).</em></div></li>
+<li id="li-98"><div class="para" id="p-232"><em class="emphasis">A shift cipher with a shift greater than <span class="process-math">\(26\)</span> (without telling students the shift).</em></div></li>
+<li id="li-99"><div class="para" id="p-233"><em class="emphasis">How many different shift ciphers are there in the English alphabet? In other words, how hard is it to cryptanalyze the shift cipher by brute force?</em></div></li>
 </ol></div>
-<div class="para" id="p-233">The usefulness of the clock metaphor for introducing modular arithmetic cannot be overstated: we are thinking of the alphabet as a clock with <span class="process-math">\(26\)</span> numbers on it, going from <span class="process-math">\(0\)</span> on the top to <span class="process-math">\(25\text{.}\)</span> Can students determine various times on this clock? Up until this point, students were not likely to fully understand our definition of a cipher as a function modulo <span class="process-math">\(26\text{,}\)</span> but now they can. The following activity is one I’ve used to help students learn basic modular arithmetic without any prerequisites:</div>
-<div class="para" id="p-234">
+<div class="para" id="p-234">The usefulness of the clock metaphor for introducing modular arithmetic cannot be overstated: we are thinking of the alphabet as a clock with <span class="process-math">\(26\)</span> numbers on it, going from <span class="process-math">\(0\)</span> on the top to <span class="process-math">\(25\text{.}\)</span> Can students determine various times on this clock? Up until this point, students were not likely to fully understand our definition of a cipher as a function modulo <span class="process-math">\(26\text{,}\)</span> but now they can. The following activity is one I’ve used to help students learn basic modular arithmetic without any prerequisites:</div>
+<div class="para" id="p-235">
 <dfn class="terminology">3</dfn>.</div>
-<div class="para logical" id="p-235"><ol class="decimal">
-<li id="li-100"><div class="para" id="p-236"><em class="emphasis">Reduce several numbers modulo <span class="process-math">\(26\text{,}\)</span> including numbers much larger than <span class="process-math">\(26\text{,}\)</span> using various notions of “congruence modulo <span class="process-math">\(26\)</span>” (e.g. <span class="process-math">\(a\equiv b\mod26\)</span> if <span class="process-math">\(a\text{:}\)</span>00 and <span class="process-math">\(b\text{:}\)</span>00 are the same time on a <span class="process-math">\(26\)</span>-hour clock, <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> have the same remainder upon division by <span class="process-math">\(26\text{,}\)</span> <span class="process-math">\(26\mid (a-b)\text{,}\)</span> subtracting a multiple of <span class="process-math">\(26\)</span> from <span class="process-math">\(b\)</span> yields <span class="process-math">\(a\)</span>).</em></div></li>
-<li id="li-101"><div class="para" id="p-237"><em class="emphasis">Create addition and multiplication tables modulo 5 and modulo 14. What patterns do students notice? What do they wonder about these tables?</em></div></li>
+<div class="para logical" id="p-236"><ol class="decimal">
+<li id="li-100"><div class="para" id="p-237"><em class="emphasis">Reduce several numbers modulo <span class="process-math">\(26\text{,}\)</span> including numbers much larger than <span class="process-math">\(26\text{,}\)</span> using various notions of “congruence modulo <span class="process-math">\(26\)</span>” (e.g. <span class="process-math">\(a\equiv b\mod26\)</span> if <span class="process-math">\(a\text{:}\)</span>00 and <span class="process-math">\(b\text{:}\)</span>00 are the same time on a <span class="process-math">\(26\)</span>-hour clock, <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> have the same remainder upon division by <span class="process-math">\(26\text{,}\)</span> <span class="process-math">\(26\mid (a-b)\text{,}\)</span> subtracting a multiple of <span class="process-math">\(26\)</span> from <span class="process-math">\(b\)</span> yields <span class="process-math">\(a\)</span>).</em></div></li>
+<li id="li-101"><div class="para" id="p-238"><em class="emphasis">Create addition and multiplication tables modulo 5 and modulo 14. What patterns do students notice? What do they wonder about these tables?</em></div></li>
 </ol></div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="preliminary-activity.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="frequency-analysis.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
