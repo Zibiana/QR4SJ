@@ -14,12 +14,15 @@
     </p>
 
     <p>
-        The Wharton School also released the data in <xref ref="tab-debt-forgiven-by-income-age" /> on the distribution of student loan forgiveness benefits by income.
+        The Wharton School also released the data in <xref ref="tab-debt-forgiven-by-income-age" /> on the distribution of 
+        student loan forgiveness benefits by income under the <m>2022</m> Biden student loan forgiveness plan. 
+        Most of the debt forgiven would have 
+        accumulated for those in the <m>25</m>-<m>35</m> age group; hence, this column may be more representative 
+        of the plan's effects. No benefit is expected to go to the top <m>5\%</m> of earners in either age group. 
+        Data from Wharton School of Business.
     </p>
-
     <table xml:id="tab-debt-forgiven-by-income-age">
         <title>Student Debt Forgiven under the <m>2022</m> Biden-Harris Plan</title>
-        <caption>Distribution of student loan forgiveness benefit by income under the <m>2022</m> Biden student loan forgiveness plan. Most of the debt forgiven would have accumulated for those in the <m>25</m>-<m>35</m> age group; hence, this column may be more representative of the plan's effects. No benefit is expected to go to the top <m>5\%</m> of earners in either age group. Data from Wharton School of Business.</caption>
     <tabular>
         <row header="yes">
             <cell halign="center"></cell>
