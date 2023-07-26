@@ -52,7 +52,7 @@ ways to explore data (as well as to communicate with data) is through visualizat
 <li> What are some types of graphs you have seen before? For each, what do you think that type of graph is useful for?</li>
 <li> The data set includes the status of each bill. Review the dataset. What are the different statuses?</li>
 <li> <p>Let’s generate a graph showing how many bills there are with each status. 
-	To generate a graph, replace the [INSERT LABEL] with one of the following in the code cell below:</p>
+	To generate a graph, replace the [INSERT_GRAPH_TYPE] with one of the following in the code cell below:</p>
 <ol>
 	<li>
 		<p>
@@ -87,8 +87,9 @@ ways to explore data (as well as to communicate with data) is through visualizat
 </ol>
 	<sage language="r">
 		<input>
+			graph_type = INSERT_GRAPH_TYPE
 			anti_trans_bills_type &lt;- anti_trans_bills_clean %&gt;% group_by(`Bill Type`) %&gt;% summarise(n = n())
-			graph_1 &lt;- anti_trans_bills_type %&gt;% ggplot(aes(x = `Bill Type`, y = n)) + INSERT_LABEL + coord_flip()
+			graph_1 &lt;- anti_trans_bills_type %&gt;% ggplot(aes(x = `Bill Type`, y = n)) + graph_type + coord_flip()
 		</input>
 	</sage>
 	<p>
