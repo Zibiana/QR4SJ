@@ -33,14 +33,12 @@ ways to explore data (as well as to communicate with data) is through visualizat
 
 <sage language="r">
 	<input>
-		sink('/dev/null')
-		library(readr); library(dplyr); library(ggplot2)
+		sink('/dev/null'); library(tidyverse)
 		#Load the data file
-		anti_trans_bills_clean &lt;- read_csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data-leg/anti-trans-bills-clean.csv")
-		sink(); closeAllConnections()
+		anti_trans_bills_clean &lt;- read.csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data-leg/anti-trans-bills-clean.csv"); sink(); closeAllConnections()
 
 		#Take a peek at the data file
-		head(anti_trans_bills_clean)
+		head(anti_trans_bills_clean,15)
 </input>
 </sage>
 
