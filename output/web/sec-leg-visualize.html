@@ -508,14 +508,12 @@ sagecell.makeSagecell({
 <div class="para" id="p-558">Note that <dfn class="terminology">crossing over</dfn> refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.</div></section><section class="subsection" id="sec-explore-visually"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">How to explore the data visually</span>
 </h3>
-<section class="introduction" id="introduction-32"><div class="para" id="p-559">We often start investigating our questions by exploring and becoming familiar with our data. One of the most powerful ways to explore data (as well as to communicate with data) is through visualization through graphs and charts.</div> <div class="para" id="p-560">Before proceeding, be sure to run this code cell that reads in the data file.</div> <pre class="ptx-sagecell sagecell-r" id="sage-1"><script type="text/x-sage">sink('/dev/null')
-library(readr); library(dplyr); library(ggplot2)
+<section class="introduction" id="introduction-32"><div class="para" id="p-559">We often start investigating our questions by exploring and becoming familiar with our data. One of the most powerful ways to explore data (as well as to communicate with data) is through visualization through graphs and charts.</div> <div class="para" id="p-560">Before proceeding, be sure to run this code cell that reads in the data file.</div> <pre class="ptx-sagecell sagecell-r" id="sage-1"><script type="text/x-sage">sink('/dev/null'); library(tidyverse)
 #Load the data file
-anti_trans_bills_clean <- read_csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data-leg/anti-trans-bills-clean.csv")
-sink(); closeAllConnections()
+anti_trans_bills_clean <- read.csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data-leg/anti-trans-bills-clean.csv"); sink(); closeAllConnections()
 
 #Take a peek at the data file
-head(anti_trans_bills_clean)
+head(anti_trans_bills_clean,15)
 </script></pre> <article class="activity project-like" id="activity-1"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h4>
