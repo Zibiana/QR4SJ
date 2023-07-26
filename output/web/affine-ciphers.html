@@ -328,7 +328,10 @@ window.MathJax = {
 </ul>
 </li>
 <li><div class="toc-item"><a href="reflections-and-advice.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Reflections and Advice</span></a></div></li>
-<li><div class="toc-item"><a href="additional-resources.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Additional Resources</span></a></div></li>
+<li>
+<div class="toc-item"><a href="additional-resources.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Additional Resources</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="additional-resources.html#references-1" class="internal"><span class="codenumber">3.4</span> <span class="title">References</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li>
@@ -429,7 +432,7 @@ window.MathJax = {
 </li>
 <li>
 <div class="toc-item"><a href="sec-leg-case-study.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Case Study: How can we support storytelling using different data sources?</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-case-study.html#references-1" class="internal"><span class="codenumber">5.4</span> <span class="title">References</span></a></div></li></ul>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-case-study.html#references-2" class="internal"><span class="codenumber">5.4</span> <span class="title">References</span></a></div></li></ul>
 </li>
 <li>
 <div class="toc-item"><a href="sec-leg-textualize.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Textualizing the Data</span></a></div>
@@ -480,10 +483,10 @@ window.MathJax = {
 </h2>
 <div class="para logical" id="p-247">
 <div class="para">At this stage, you may introduce <em class="emphasis">affine ciphers</em>, a natural generalization of shift ciphers. We’ve described the shift cipher as a function <span class="process-math">\(f(p)\equiv p+k\mod26\text{.}\)</span> Note that this is simply a linear function with slope <span class="process-math">\(1\)</span> and <span class="process-math">\(y\)</span>-intercept <span class="process-math">\(k\text{.}\)</span> But there is no requirement that ciphers stick to a slope of <span class="process-math">\(1\text{;}\)</span> the <em class="emphasis">affine cipher</em> first <em class="emphasis">multiplies</em> the plaintext letter by a certain amount <span class="process-math">\(m\text{,}\)</span> then adds a constant amount <span class="process-math">\(k\text{.}\)</span> Its equation is</div>
-<div class="displaymath process-math">
-\begin{equation*}
-c:=f(p)\equiv mp+k\mod26.\label{KI-eq:affine-cipher}
-\end{equation*}
+<div class="displaymath process-math" id="md-1">
+\begin{gather}
+c:=f(p)\equiv mp+k\mod26.\tag{3.1}
+\end{gather}
 </div>
 <div class="para">Here <span class="process-math">\(m\)</span> is called the <em class="emphasis">multiplicative key</em> and <span class="process-math">\(k\)</span> the <em class="emphasis">additive key</em>. (We do not call these “linear ciphers” to avoid confusion with the notion of “linear” students may see in the future when studying linear transformations and homomorphisms.)</div>
 </div>
