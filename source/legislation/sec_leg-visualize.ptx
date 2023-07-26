@@ -21,7 +21,7 @@
 
 
 <subsection xml:id="sec-explore-visually"><title>How to explore the data visually</title>
-
+<introduction>
 <p>
 We often start investigating our questions by exploring and becoming familiar with our data. One of the most powerful ways to explore data (as well as to communicate with data) is through visualization through graphs and charts. 
 </p>
@@ -116,6 +116,7 @@ Based on what you found, write one or two sentences summarizing our findings so 
 
 <p>There is a difference between a count and a proportion. A count value tells you the raw number of times something occurs, whereas a proportion tells you the percentage of the total times something occurs. Whenever dealing with proportions, you have to think carefully about the denominator!
 </p>
+</introduction>
 
 <subsubsection xml:id="subsubsec-two_plus_var"><title> Two or more variable graphing</title>
 
@@ -343,7 +344,7 @@ What limitations are there when working with this data?
 
 		<subsection xml:id="bill-type-vs-status">
 			<title>OLD STUFF BELOW THIS LINE!!!!!!</title>
-
+			<introduction>
 			<exploration>
 				<p>Sample preview activity</p>
 			</exploration>
@@ -474,7 +475,7 @@ What limitations are there when working with this data?
 				<image source='legislation_files/figure-markdown_strict/unnamed-chunk-9-1.png'/><image source='legislation_files/figure-markdown_strict/unnamed-chunk-9-2.png'/>
 			</p>
 
-
+		</introduction>
 			<subsubsection xml:id="did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed">
 				<title>Did the type of bill impact its likelihood of being passed and/or signed?</title>
 
