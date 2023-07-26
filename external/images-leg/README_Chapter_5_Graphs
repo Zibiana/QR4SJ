@@ -1,0 +1,15 @@
+The graphs for the data visualization section in the chapter on anti-trans legislation are as follows:
+
+1. Basic Graphs (R-code in file: "Basic_Graphs")
+The section opens with generating basic univariate graphs. I generated a bar graph for bills by type ("By_Bill_Type") and line graphs for total bills introduced ("Bills_Introduced_By_Year") and total bills enacted ("Total_Bills_Enacted_by_Year")
+
+2. Comparing Counts and Proportions (R-code in file: "Visualize_the_Data")
+This section compares the total number of bills introduced each year in a bar graph ("Count_Graph") to percentage of introduced bills that are signed/enacted, also in a bar graph ("Proportion_Graph")
+
+3. Hard-to-read-multigraphs (R-code in file: "Hard to read multigraphs")
+This section includes a bar graph ("Hard_to_read_multibar_graph") and a line graph ("Hard_to_read_multiline_graph") that have too many categories to be readable.
+
+4. Multigraphs (R-code in file: "Multigraphs")
+There are two subsections here. One has readable multibar ("Multibar_Graph") and multiline ("Multiline_Graph") graphs displaying the number of failed and number of enacted anti-trans bills by year.
+
+The second uses stacked bar graphs. One stacked bar graph contains the counts of bills introduced by type each year ("Stacked_Bars_Count") and the other contains the proportion of each type of bill introduced each year ("Stacked_Bars_Proportion")
