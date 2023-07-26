@@ -39,7 +39,7 @@ sagecell.makeSagecell({
 <li><div class="para">What are some types of graphs you have seen before? For each, what do you think that type of graph is useful for?</div></li>
 <li><div class="para">The data set includes the status of each bill. Review the dataset. What are the different statuses?</div></li>
 <li>
-<div class="para">Let’s generate a graph showing how many bills there are with each status. To generate a graph, replace the [INSERT LABEL] with one of the following in the code cell below:</div>
+<div class="para">Let’s generate a graph showing how many bills there are with each status. To generate a graph, replace the [INSERT_GRAPH_TYPE] with one of the following in the code cell below:</div>
 <ol class="lower-alpha">
 <li><div class="para">A bar graph: <code class="code-inline tex2jax_ignore">geom_bar(stat = "identity")</code>
 </div></li>
@@ -53,8 +53,9 @@ sagecell.makeSagecell({
 <li><div class="para">A scatterplot: <code class="code-inline tex2jax_ignore">geom_point()</code>
 </div></li>
 </ol>
-<pre class="ptx-sagecell sagecell-r" id="sage-2"><script type="text/x-sage">anti_trans_bills_type <- anti_trans_bills_clean %>% group_by(`Bill Type`) %>% summarise(n = n())
-graph_1 <- anti_trans_bills_type %>% ggplot(aes(x = `Bill Type`, y = n)) + INSERT_LABEL + coord_flip()
+<pre class="ptx-sagecell sagecell-r" id="sage-2"><script type="text/x-sage">graph_type = INSERT_GRAPH_TYPE
+anti_trans_bills_type <- anti_trans_bills_clean %>% group_by(`Bill Type`) %>% summarise(n = n())
+graph_1 <- anti_trans_bills_type %>% ggplot(aes(x = `Bill Type`, y = n)) + graph_type + coord_flip()
 </script></pre>
 <div class="para">Try to create each type of graph in R. Some will cause errors - that is a sign that this type of graph isn’t appropriate for this question. Which graph do you think is the clearest? Why do you think that is? What do you notice from this graph? Does this tell you anything about our question regarding 2023?</div>
 </li>
