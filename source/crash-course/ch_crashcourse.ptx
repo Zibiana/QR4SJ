@@ -16,8 +16,8 @@
   <!-- with organization to include them as separate files.      -->
   <!-- That way it is easy to include the section in a different -->
   <!-- chapter later if you change your mind about the order.    -->
-  <xi:include href="./sec_crashcourse-intro.ptx" />
-  <xi:include href="./sec_crashcourse-examples.ptx" />
+  <xi:include href="sec_crashcourse-intro.ptx" />
+  <xi:include href="sec_crashcourse-examples.ptx" />
 
   <!-- One or more of the sections of a chapter might be exercises-->
   <!-- <xi:include href="./ex_firstch.ptx"/> -->

@@ -27,14 +27,14 @@
     <!-- possible structure of the book.  Once you know what the   -->
     <!-- title of the chapter is, rename the file something based  -->
     <!-- on the title (ch-shorttitle.ptx) both here and on disk    -->
-    <xi:include href="./ch_crashcourse.ptx" />
+    <xi:include href="crash-course/ch_crashcourse.ptx" />
     <!-- <xi:include href="./ch_empty.ptx"/> -->
     <!-- Of course you will want to add more chapters as you proceed-->
     <!-- <xi:include href="./part_number.ptx" /> -->
    
    <!-- <xi:include href = "./essential-knowledge/ch_essential_knowledge.ptx" />-->
 
-    <xi:include href = "./ch_loans.ptx" />
+    <xi:include href = "loans/ch_loans.ptx" />
     
     <xi:include href="./cryptography/cryptography.ptx" />
 
