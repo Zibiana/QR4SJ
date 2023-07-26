@@ -23,10 +23,26 @@
 <subsection xml:id="sec-explore-visually"><title>How to explore the data visually</title>
 <introduction>
 <p>
-We often start investigating our questions by exploring and becoming familiar with our data. One of the most powerful ways to explore data (as well as to communicate with data) is through visualization through graphs and charts. 
+We often start investigating our questions by exploring and becoming familiar with our data. One of the most powerful 
+ways to explore data (as well as to communicate with data) is through visualization through graphs and charts. 
 </p>
 
+<p>
+	Before proceeding, be sure to run this code cell that reads in the data file.
+</p>
 
+<sage language="r">
+	<input>
+		sink('/dev/null')
+		library(readr)
+		library(dplyr)
+		library(ggplot2)
+		anti_trans_bills_clean &lt;- read_csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data-leg/anti-trans-bills-clean.csv")
+		sink(); closeAllConnections()
+		#Take a peek at the data file
+		head(anti_trans_bills_clean)
+</input>
+</sage>
 
 <activity>
 
@@ -35,27 +51,27 @@ We often start investigating our questions by exploring and becoming familiar wi
 <ol>
 <li> What are some types of graphs you have seen before? For each, what do you think that type of graph is useful for?</li>
 <li> The data set includes the status of each bill. Review the dataset. What are the different statuses?</li>
-<li> <p>Let’s generate a graph showing how many bills there are with each status. The following code comes from the programming language R:
-[INSERT CODE]. To generate a graph, replace the [INSERT LABEL] with one of the following:</p>
+<li> <p>Let’s generate a graph showing how many bills there are with each status. 
+	To generate a graph, replace the [INSERT LABEL] with one of the following in the code cell below:</p>
 <ol>
 	<li>
 		<p>
-			A bar graph: “geom_bar(stat = “identity”)”
+			A bar graph: <c>geom_bar(stat = "identity")</c>
 		</p>
 	</li>
 	<li>
 		<p>
-			A histogram: “geom_histogram(binwidth = 1)”
+			A histogram: <c>geom_histogram(binwidth = 1)</c>
 		</p>
 	</li>
 	<li>
 		<p>
-			A boxplot: “geom_boxplot()”
+			A boxplot: <c>geom_boxplot()</c>
 		</p>
 	</li>
 	<li>
 		<p>
-			A line graph: “geom_line()”
+			A line graph: <c>geom_line()</c>
 		</p>
 	</li>
 	<li>
@@ -65,10 +81,16 @@ We often start investigating our questions by exploring and becoming familiar wi
 	</li>
 	<li>
 		<p>
-			A scatterplot: “geom_point()”
+			A scatterplot: <c>geom_point()</c>
 		</p>
 	</li>
 </ol>
+	<sage language="r">
+		<input>
+			anti_trans_bills_type &lt;- anti_trans_bills_clean %&gt;% group_by(`Bill Type`) %&gt;% summarise(n = n())
+			graph_1 &lt;- anti_trans_bills_type %&gt;% ggplot(aes(x = `Bill Type`, y = n)) + INSERT_LABEL + coord_flip()
+		</input>
+	</sage>
 	<p>
 	Try to create each type of graph in R. Some will cause errors - that is a sign that this type of graph isn’t appropriate for this question.
 	Which graph do you think is the clearest? Why do you think that is?
@@ -231,7 +253,7 @@ Our previous visualizations showed that 2023 did have a significant increase in 
 </p>
 
 <p>
-SOME KIND OF VISUALIZATION OF “SUCCESS” RATE OVER TIME GOES HERE
+SOME KIND OF VISUALIZATION OF "SUCCESS" RATE OVER TIME GOES HERE
 </p>
 
 <p>SUMMARIZE THE STORY HERE

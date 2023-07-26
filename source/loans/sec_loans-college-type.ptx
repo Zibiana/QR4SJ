@@ -77,13 +77,13 @@
 </exercise>
 <exercise xml:id="r-squared-nonprofit-status">
 <p>
-        Left-click on your graph. In the top menu under “Chart Tools”, click Design. Click Add Chart Element -&gt; Trendline -&gt; More trendline options. Click on the data you want to make a trendline for. In the right sidebar, select Polynomial and play around with the “Order” until you get a good fit for your data. Check “Display Equation on chart” and “Display R-squared value on chart”. Now, our goal is to get all our <m>R^{2}</m> values larger than roughly 0.96, which is a very large degree of accuracy. If some of your trendlines have <m>R^{2}\leq0.96</m>, double-click on the offending trendline(s) until the sidebar comes up and increase the “Order” of your polynomial until <m>R^{2}\gt 0.96</m>.
+        Left-click on your graph. In the top menu under "Chart Tools", click Design. Click Add Chart Element -&gt; Trendline -&gt; More trendline options. Click on the data you want to make a trendline for. In the right sidebar, select Polynomial and play around with the "Order" until you get a good fit for your data. Check "Display Equation on chart" and "Display R-squared value on chart". Now, our goal is to get all our <m>R^{2}</m> values larger than roughly 0.96, which is a very large degree of accuracy. If some of your trendlines have <m>R^{2}\leq0.96</m>, double-click on the offending trendline(s) until the sidebar comes up and increase the "Order" of your polynomial until <m>R^{2}\gt 0.96</m>.
     </p>
 </exercise>
 
         <exercise>
                 <p>
-        What trends over time do you notice in each the three graphs? Describe trends in words, using phrases like “increasing”, “decreasing”, “increasing slope”, “decreasing slope”. What overall trend do we notice that's common to all three graphs over time?
+        What trends over time do you notice in each the three graphs? Describe trends in words, using phrases like "increasing", "decreasing", "increasing slope", "decreasing slope". What overall trend do we notice that's common to all three graphs over time?
     </p>
 </exercise>
 
