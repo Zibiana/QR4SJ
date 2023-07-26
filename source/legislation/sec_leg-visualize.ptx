@@ -34,11 +34,11 @@ ways to explore data (as well as to communicate with data) is through visualizat
 <sage language="r">
 	<input>
 		sink('/dev/null')
-		library(readr)
-		library(dplyr)
-		library(ggplot2)
+		library(readr); library(dplyr); library(ggplot2)
+		#Load the data file
 		anti_trans_bills_clean &lt;- read_csv("https://github.com/Zibiana/QR4SJ/raw/main/assets/data-leg/anti-trans-bills-clean.csv")
 		sink(); closeAllConnections()
+
 		#Take a peek at the data file
 		head(anti_trans_bills_clean)
 </input>
@@ -99,7 +99,31 @@ ways to explore data (as well as to communicate with data) is through visualizat
 	</p>
 	</li>
 <li>
-	<p> Now let us look at something else. For the following two pieces of data, generate each type of graph and answer the same questions from above: Which graph do you think is the clearest? Why do you think that is?
+	<p> Now let us look at what is happening by year. Run the following code cell to group the data by year. 
+	</p>
+	<sage language="r">
+	<input>
+		sink('/dev/null')
+		#Group by year
+		anti_trans_bills_by_year &lt;- anti_trans_bills_clean %&gt;% group_by(year) %&gt;% summarise(n = n())
+		# Remove NA values
+		anti_trans_bills_by_year &lt;- na.omit(anti_trans_bills_by_year)
+		# Remove a couple outlier values
+		anti_trans_bills_by_year &lt;- anti_trans_bills_by_year %&gt;% filter(year != 1905) #Need to omit this observation
+		anti_trans_bills_by_year &lt;- anti_trans_bills_by_year %&gt;% filter(year != 2017) #There is only one bill here, and it is causing distortion in the graphs
+
+		#filter by year and status
+		anti_trans_bills_by_year_enacted &lt;- anti_trans_bills_clean %&gt;% filter(Status == "Signed/Enacted") %&gt;%    group_by(year) %&gt;% summarise(n = n())
+
+		# Remove NA values
+		anti_trans_bills_by_year_enacted &lt;- na.omit(anti_trans_bills_by_year_enacted)
+		#Remove a couple outlier values
+		anti_trans_bills_by_year_enacted &lt;- anti_trans_bills_by_year_enacted %&gt;% filter(year != 1905) #Need to omit this observation
+		anti_trans_bills_by_year_enacted &lt;- anti_trans_bills_by_year_enacted %&gt;% filter(year != 2017) #There is only one bill here, and it is causing distortion in the graphs
+		sink(); closeAllConnections()
+	</input>
+	</sage>
+	<p>For the following two pieces of data, generate each type of graph and answer the same questions from above: Which graph do you think is the clearest? Why do you think that is?
 	What do you notice from this graph? Does this tell you anything about our question regarding 2023? 
 	</p>
 	<ol>
@@ -107,11 +131,22 @@ ways to explore data (as well as to communicate with data) is through visualizat
 			<p>
 				The total number of bills proposed between 2018 and 2023.
 			</p>
+			<sage language="r">
+				<input>
+					total_bills_by_year &lt;- anti_trans_bills_by_year %&gt;% ggplot(aes(x = year, y = n)) + geom_line()
+				</input>
+			</sage>
+
 		</li>
 		<li>
 			<p>
 				The bills signed and enacted between 2018 and 2023.
 			</p>
+			<sage language="r">
+				<input>
+					total_bills_by_year_enacted &lt;- anti_trans_bills_by_year_enacted %&gt;% ggplot(aes(x = year, y = n)) + geom_line()
+				</input>
+			</sage>
 		</li>
 	</ol>
 </li>
