@@ -17,6 +17,38 @@
 			<p> Note that <term>crossing over</term> refers to a bill being passed out of one state legislative chamber (either the State House or State Senate) and moving forward for consideration in the other chamber. Thus, a bill that has crossed over suggests majority support for the bill in at least one chamber.
 						</p>		
 
+						<activity>
+						<p>
+						Where did the data come from?  Assess the trustworthiness of the data and the sources.
+						</p>
+						</activity>
+						
+						<definition>A <term> variable </term> is, roughly, a column in the dataset.  </definition> 
+						
+						<activity><p>We described some of the variables that are in this dataset. 
+						<ol>
+						<li>What variables would you be interested in that are missing from the data?</li>
+						<li>What questions do you have about the data set?</li>
+						</ol>
+						</p></activity>
+						
+						<definition>
+						A <term> quantitative variable</term> is a variable that represents something that is inherently numerical (such as the cost of a good or service), and a <term> categorical variable </term> is a variable whose values represent certain categories (such as military ranks).
+						</definition>
+						
+						<activity><p>
+						Which variables in the dataset are quantitative and which are categorical?
+						</p></activity>
+						
+						<p> Sometimes variable values are directly observable. For example, if we wanted to make a dataset for the price of a specific product at three different stores, we can go to the stores and find those prices. Sometimes variable values are not directly observable. For example, the number of individuals in a location who have committed crimes. </p>
+						<definition> 
+						A <term>proxy variable</term> is a directly observable variable that is used in place of variable that is not directly observable. For example, we may use the number of convicted criminals as a proxy for the number of criminals.
+						</definition>
+						
+						<activity><p>What research questions do you have after exploring the data set?</p>
+						</activity>
+						
+
 </subsection>		
 
 
