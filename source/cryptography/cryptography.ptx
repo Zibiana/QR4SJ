@@ -184,7 +184,11 @@
 			<title>Affine ciphers</title>
 
 			<p>
-				At this stage, you may introduce <em>affine ciphers</em>, a natural generalization of shift ciphers. We’ve described the shift cipher as a function <m>f(p)\equiv p+k\mod26</m>. Note that this is simply a linear function with slope <m>1</m> and <m>y</m>-intercept <m>k</m>. But there is no requirement that ciphers stick to a slope of <m>1</m>; the <em>affine cipher</em> first <em>multiplies</em> the plaintext letter by a certain amount <m>m</m>, then adds a constant amount <m>k</m>. Its equation is <me>c:=f(p)\equiv mp+k\mod26.\label{KI-eq:affine-cipher}</me> Here <m>m</m> is called the <em>multiplicative key</em> and <m>k</m> the <em>additive key</em>. (We do not call these <q>linear ciphers</q> to avoid confusion with the notion of <q>linear</q> students may see in the future when studying linear transformations and homomorphisms.)
+				At this stage, you may introduce <em>affine ciphers</em>, a natural generalization of shift ciphers. We’ve described the shift cipher as a function <m>f(p)\equiv p+k\mod26</m>. Note that this is simply a linear function with slope <m>1</m> and <m>y</m>-intercept <m>k</m>. But there is no requirement that ciphers stick to a slope of <m>1</m>; the <em>affine cipher</em> first <em>multiplies</em> the plaintext letter by a certain amount <m>m</m>, then adds a constant amount <m>k</m>. Its equation is 
+				<md>
+					<mrow number="yes" xml:id="KI-eq-affine-cipher-system">c:=f(p)\equiv mp+k\mod26.</mrow> 
+				</md>
+				Here <m>m</m> is called the <em>multiplicative key</em> and <m>k</m> the <em>additive key</em>. (We do not call these <q>linear ciphers</q> to avoid confusion with the notion of <q>linear</q> students may see in the future when studying linear transformations and homomorphisms.)
 			</p>
 
 <!-- div attr= class="act"-->
@@ -266,9 +270,15 @@ c_{2} &amp; \equiv m\cdot p_{2}+k\mod26.\label{KI-eq:affine-cipher-system}
 			</p>
 
 <!-- div attr= xml:id="KI-prop:gcd(m,n)-divides-mk" class="prop"-->
-			<p>
-				<em><term> 7</term>.  <em>If <m>m</m> is a whole number between <m>0</m> and <m>n-1</m>, then <m>\gcd(m,n)</m> divides any number that’s congruent to <m>m\mod n</m>.</em></em>
-			</p><!--</div attr= xml:id="KI-prop:gcd(m,n)-divides-mk" class="prop">-->
+				<proposition xml:id="KI-prop-gcd-m-n-divides-mk">
+					<statement>
+						<p>
+							If <m>m</m> is a whole number between <m>0</m> and <m>n-1</m>, then <m>\gcd(m,n)</m> 
+							divides any number that’s congruent to <m>m\mod n</m>.
+						</p>
+					</statement>
+				</proposition>
+			<!--</div attr= xml:id="KI-prop:gcd(m,n)-divides-mk" class="prop">-->
 
 			<p>
 				<em>One prompt to lead students toward the general proof is the following specific example: assume some number <m>x</m> is congruent to <m>m=4\mod12</m>. Then <m>x/12=yR4</m> (here <m>R</m> denotes <q>remainder</q> in language that should be familiar to students), where <m>y</m> is some whole number. So <m>x</m> is some multiple of <m>12</m> plus <m>4</m>; we can write <m>x=12y+4</m>, where <m>y</m> is some whole number. Now, <m>\gcd(4,12)=4</m> and <m>x=4(3y+1)</m> is divisible by <m>4</m>.</em>
@@ -283,7 +293,7 @@ c_{2} &amp; \equiv m\cdot p_{2}+k\mod26.\label{KI-eq:affine-cipher-system}
 
 				<li>
 							<p>
-				<em>Students in a proof-based course may now attempt to prove the following corollary of Proposition <xref ref="KI-prop:gcd(m,n)-divides-mk" />.</em>
+				<em>Students in a proof-based course may now attempt to prove the following corollary of Proposition <xref ref="KI-prop-gcd-m-n-divides-mk" />.</em>
 			</p>
 
 <!-- div attr= class="cor"-->
@@ -374,7 +384,7 @@ c_{2} &amp; \equiv m\cdot p_{2}+k\mod26.\label{KI-eq:affine-cipher-system}
 			</ol></p><!--</div attr= class="act">-->
 
 			<p>
-				To motivate solving systems of linear congruences, we may use the cryptanalysis of affine ciphers. As in (<xref ref="KI-eq:affine-cipher-system" />) above, systems of linear congruences arise naturally after guessing two plaintext-ciphertext pairs in an affine cipher. Solving the system is necessary to determine the multiplicative and additive keys of the affine cipher, hence to decrypt it. The dangerous thing for students at this point is to make the <q>wrong</q> guess and end up trying to solve a congruence of the form <m>am\equiv b\mod26</m> where <m>\gcd(a,26)\neq1</m>. <em></em> This is an excellent time to discuss the general theory of solving linear congruences, and if you wish even generalize to polynomial, factorial, and other more general congruences. At any rate, students may now use the following algorithm to cryptanalyze any monoalphabetic affine cipher:
+				To motivate solving systems of linear congruences, we may use the cryptanalysis of affine ciphers. As in (<xref ref="KI-eq-affine-cipher-system" />) above, systems of linear congruences arise naturally after guessing two plaintext-ciphertext pairs in an affine cipher. Solving the system is necessary to determine the multiplicative and additive keys of the affine cipher, hence to decrypt it. The dangerous thing for students at this point is to make the <q>wrong</q> guess and end up trying to solve a congruence of the form <m>am\equiv b\mod26</m> where <m>\gcd(a,26)\neq1</m>. <em></em> This is an excellent time to discuss the general theory of solving linear congruences, and if you wish even generalize to polynomial, factorial, and other more general congruences. At any rate, students may now use the following algorithm to cryptanalyze any monoalphabetic affine cipher:
 			</p>
 
 			<p><ol>
@@ -450,11 +460,11 @@ c_{2} &amp; \equiv m\cdot p_{2}+k\mod26.\label{KI-eq:affine-cipher-system}
 		</p>
 
 		<p>
-			In this course, most of the material in <xref ref="mcdevittClassNotesCryptologic2012"></xref> (which is also provided to students as a supplementary resource) is discussed, with the possible exception of probability, which is often left out due to time constraints. A sample of the discussion of the Diffie-Hellman key exchange and modular exponentiation is provided in Section <xref ref="KI-subsec:The-Diffie-Hellman-Key" />. These notes lead into the material on the square-and-multiply algorithm, Euler’s Theorem, and eventually RSA encryption described in <xref ref="mcdevittClassNotesCryptologic2012"></xref>. Sometimes, the extended Euclidean algorithm is also introduced after describing the importance of finding multiplicative inverses when cryptanalyzing the affine cipher, though students without much prior mathematical experience tend to find this material confusing and somewhat intimidating.
+			In this course, most of the material in <xref ref="mcdevittClassNotesCryptologic2012"></xref> (which is also provided to students as a supplementary resource) is discussed, with the possible exception of probability, which is often left out due to time constraints. A sample of the discussion of the Diffie-Hellman key exchange and modular exponentiation is provided in a Subsection <xref ref="the-diffie-hellman-key-exchange"/>. These notes lead into the material on the square-and-multiply algorithm, Euler’s Theorem, and eventually RSA encryption described in <xref ref="mcdevittClassNotesCryptologic2012"></xref>. Sometimes, the extended Euclidean algorithm is also introduced after describing the importance of finding multiplicative inverses when cryptanalyzing the affine cipher, though students without much prior mathematical experience tend to find this material confusing and somewhat intimidating.
 		</p>
 
 		<p>
-			This activity has not yet been extended to a research project; however, some ideas for such projects are included in Section <xref ref="KI-subsec:Potential-Undergraduate-Research" />.
+			This activity has not yet been extended to a research project; however, some ideas for such projects are included in Subsection <xref ref="potential-undergraduate-research-projects" />.
 		</p>
 
 		<p>
@@ -586,6 +596,125 @@ c_{2} &amp; \equiv m\cdot p_{2}+k\mod26.\label{KI-eq:affine-cipher-system}
 		<p>
 			Please find the bibliography below. High praise is reserved for Tim McDevitt and Frank Arnold’s text <xref ref="mcdevittClassNotesCryptologic2012"></xref>, which is provided to the author’s students as a resource (and from which exercises are sometimes assigned as homework). Simon Singh’s <em>The Code Book</em> <xref ref="singhCodeBookScience2011"></xref> is an excellent, richly detailed, and deeply readable source for the historical and sociopolitical context of cryptography as well as entertaining descriptions of the underlying mathematics. The Cipher Challenge at the back of the book leads students through all of the ciphers described therein; the author uses it as a way for students to earn extra credit by solving a set number of the ten parts. In order to emphasize the human aspects of cryptography and its contemporary relevance, one may have students watch a video or read about the NSA/GCHQ and other cryptographic agencies as well as their recent political activities. Given that the NSA is the United States’ largest employer of Ph.D. mathematicians, and in the context of the revelations of Edward Snowden and other recent whistleblowers, this discussion remains deeply relevant.
 		</p>
+
+	<references>
+		<biblio xml:id="bauerJamesSanbornKryptos2016">
+			Bauer, C., Link, G., and Molle, D.
+			(2016). 
+			James Sanborn's Kryptos and the Matrix Encryption Conjecture.
+			<em>Cryptologia, 40</em>(6), 541--552.
+			<url href=" https://doi.org/10.1080/01611194.2016.1141556"/>
+		</biblio>
+		<biblio xml:id="brownSaintsScoundrelsTwo2015">
+			Brown, E.
+			(2015).
+			Saints and Scoundrels and Two Theorems That Are Really the Same.
+			<url href="http://maa.publisher.ingentaconnect.com/search/article?option1=fulltext\&amp;value1=cryptography\&amp;operator9=AND\&amp;option9=publications\&amp;value9=maa\&amp;freetype=unlimited\&amp;sortDescending=true\&amp;sortField=default\&amp;pageSize=10\&amp;index=14"/>
+		</biblio>
+		<biblio xml:id="christensenPolishMathematiciansFinding2007a">
+			Christensen, C.
+			(2007).
+			Polish Mathematicians Finding Patterns in Enigma Messages.
+			<em>Mathematics Magazine, 80</em>(4), 247--223.
+		</biblio>
+		<biblio xml:id="christensenReviewShadowFactory2009">
+			Christensen, C.
+			(2009).
+			Review of <em>The Shadow Factory: The Ultra-Secret NSA from 9/11 to the Eavesdropping on America</em> by James Bamford.
+			<em>Cryptologia, 33</em>(4), 356--358.
+		</biblio>
+		<biblio xml:id="CoCalcCollaborativeCalculation">
+			CoCalc--Collaborative Calculation.
+			<url href="https://cocalc.com"/>
+		</biblio>
+		<biblio xml:id="crismanNumberTheoryContext2021">
+			Crisman, K.-D.
+			(2021).
+			<em>Number Theory: In Context and Interactive</em>.
+		</biblio>
+		<biblio xml:id="EnigmaSimulatorApps">
+			Enigma Simulator -- Apps on Google Play.
+			<url href="https://play.google.com/store/apps/details?id=uk.co.franklinheath.enigmasim\&amp;hl=en\&amp;gl=US"/>
+		</biblio>
+		<biblio xml:id="farhiQuantumMoneyKnots2010">
+			Farhi, E., Gosset, D., Hassidim, A., Lutomirski, A., and Shor, P.
+			(2010)
+			Quantum Money from Knots.
+			<em>arXiv:1004.5127</em>.
+		</biblio>
+		<biblio xml:id="friederesCryptii2022">
+			Cryptii.
+			(2022).
+			<url href="https://github.com/cryptii/cryptii"/>
+		</biblio>
+		<biblio xml:id="horaciojimenezMininigmaEnigmaSimulator">
+			Jiminez, H.
+			Mininigma: Enigma Simulator.
+			<url href="https://apps.apple.com/us/app/mininigma-enigma-simulator/id334855344"/>
+		</biblio>
+		<biblio xml:id="inceResourcesFirstYearCollege2022">
+			Ince, K.
+			(2022).
+			Resources for a First-Year College Mathematical Cryptography Course.
+			<url href="https://github.com/kaince/cryptography"/>
+		</biblio>
+		<biblio xml:id="johnstonProblems2006">
+			Johnston, E.
+			(2006).
+			Problems.
+			<em>Mathematics Magazine, 79</em>(4), 311.
+		</biblio>
+		<biblio xml:id="karstCryptographyContextCoteaching2019a">
+			Karst, N. and Slegers, R.
+			(2019).
+			Cryptography in Context: Co-teaching Ethics and Mathematics.
+			<em>PRIMUS 29</em>(9), 1039--1059.
+		</biblio>
+		<biblio xml:id="lastweektonightEncryptionLastWeek2016">
+			Encryption: Last Week Tonight with John Oliver (HBO).
+			(2016, March).
+		</biblio>
+		<biblio xml:id="marzuoliFaulttolerantMosaicEncoding2012">
+			Marzuoli, A. and Palumbo, G.
+			(2012).
+			Fault-Tolerant Mosaic Encoding in Knot-Based Cryptography.
+			<em>arXiv:1206.5709</em>
+		</biblio>
+		<biblio xml:id="marzuoliPostQuantumCryptography2011">
+			Marzuoli, A. and Palumbo, G.
+			(2011).
+			Post Quantum Cryptography from Mutant Prime Knots.
+			<em>International Journal of Geometric Methods in Modern Physics 8</em>(7), 1571--1581.
+		</biblio>
+		<biblio xml:id="mcdevittClassNotesCryptologic2012">
+			McDevitt, T. and Arnold, F.
+			(2012).
+			Class Notes for Cryptologic Mathematics (FYS 100).
+		</biblio>
+		<biblio xml:id="reedsJOHNDEEMAGIC2006">
+			Reeds, J.
+			(2006).
+			John Dee and the Magic Tables in the Book of SOYGA.
+			In <em>John Dee: Interdisciplinary Studies in English Renaissance Thought</em>, ed. S. Clucas. 177--204.
+		</biblio>
+		<biblio xml:id="schaeferMathematicsEncryptionElementary2015">
+			Schaefer, E.
+			(2015).
+			The Mathematics of Encryption: An Elementary Introduction.
+			<url href="http://maa.publisher.ingentaconnect.com/search/article?option1=fulltext\&amp;value1=cryptography\&amp;operator9=AND\&amp;option9=publications\&amp;value9=maa\&amp;freetype=unlimited\&amp;sortDescending=true\&amp;sortField=default\&amp;pageSize=10\&amp;index=5"/>
+		</biblio>
+		<biblio xml:id="singhCodeBookScience2011">
+			Singh, S.
+			(2011).
+			<em>The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography</em>.
+		</biblio>
+		<biblio xml:id="smithMakingHashThings2015a">
+			Smith, A. and Whitcher, U.
+			(2015).
+			Making a Hash of Things.
+			<em>Math Horizons 23</em>(2), 5--8.
+		</biblio>
+	</references>
 
 	</section>
 
