@@ -565,8 +565,8 @@ head(anti_trans_bills_clean,15)
 </div></li>
 </ol>
 <pre class="ptx-sagecell sagecell-r" id="sage-2"><script type="text/x-sage">graph_type = INSERT_GRAPH_TYPE
-anti_trans_bills_type <- anti_trans_bills_clean %>% group_by(`Bill Type`) %>% summarise(n = n())
-graph_1 <- anti_trans_bills_type %>% ggplot(aes(x = `Bill Type`, y = n)) + graph_type + coord_flip()
+anti_trans_bills_type <- anti_trans_bills_clean %>% group_by(`Bill.Type`) %>% summarise(n = n())
+graph_1 <- anti_trans_bills_type %>% ggplot(aes(x = `Bill.Type`, y = n)) + graph_type + coord_flip()
 </script></pre>
 <div class="para" id="p-574">Try to create each type of graph in R. Some will cause errors - that is a sign that this type of graph isn’t appropriate for this question. Which graph do you think is the clearest? Why do you think that is? What do you notice from this graph? Does this tell you anything about our question regarding 2023?</div>
 </li>
