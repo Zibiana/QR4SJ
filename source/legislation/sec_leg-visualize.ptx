@@ -118,8 +118,8 @@ ways to explore data (as well as to communicate with data) is through visualizat
 	<sage language="r">
 		<input>
 			graph_type = INSERT_GRAPH_TYPE
-			anti_trans_bills_type &lt;- anti_trans_bills_clean %&gt;% group_by(`Bill Type`) %&gt;% summarise(n = n())
-			graph_1 &lt;- anti_trans_bills_type %&gt;% ggplot(aes(x = `Bill Type`, y = n)) + graph_type + coord_flip()
+			anti_trans_bills_type &lt;- anti_trans_bills_clean %&gt;% group_by(`Bill.Type`) %&gt;% summarise(n = n())
+			graph_1 &lt;- anti_trans_bills_type %&gt;% ggplot(aes(x = `Bill.Type`, y = n)) + graph_type + coord_flip()
 		</input>
 	</sage>
 	<p>
