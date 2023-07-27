@@ -323,7 +323,7 @@ In the above activity we had bar graphs that allows us to compare the numerical 
 			variable_1 = anti_trans_bills_clean$INSERT_1ST_Variable
 			variable_2 = anti_trans_bills_clean$INSERT_2ND_Variable
 			 
-			ggplot(anti_trans_bills_clean, aes(x = `variable_1`,, fill = `variable_2`)) + geom_bar(position = "dodge")
+			ggplot(anti_trans_bills_clean, aes(x = factor(`variable_1`), fill = factor(`variable_2`))) + geom_bar(position = "dodge")
 		</input>
 	</sage>
 	<p>
