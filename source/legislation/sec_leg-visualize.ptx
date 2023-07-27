@@ -215,26 +215,98 @@ Both quantitative and qualitative data can be analyzed under two types, categori
 <activity>
 Activity Questions: 
 <p>
-Suppose we have the following data sets: 
+	Often we want to compare a variable against another to see how they might be associated. So it's worthwhile to imagine how we'd plot two variables on a single graph. Let's explore some of those graph types here. 
+<!--Suppose we have the following data sets: 
 Crossed over, dead/failed, introduced, passed, signed/enacted, vetoed
 Total number of anti-trans bills proposed each year between 2018 and 2023
 Total number of anti-trans bills passed each year between 2018 and 2023
-For each data set (1-3), label it as categorical or numerical. If numerical, give an example of what type of graph you would use (scatter plot, line graph, bar graph) and explain why. 
+For each data set (1-3), label it as categorical or numerical. If numerical, give an example of what type of graph you would use (scatter plot, line graph, bar graph) and explain why. -->
 </p>
+
+<ol>
+	<li>
+		<p>
+			A scatterplot: <c>geom_point()</c>
+		</p>
+	</li>
+	<li>
+		<p>
+			A stacked bar graph: <c>CODEGOESHERE</c>
+		</p>
+	</li>
+	<li>
+		<p>
+			A stacked bar graph with proportions: <c>CODEGOESHERE</c>
+		</p>
+	</li>
+	<li>
+		<p>
+			A dodge bar graph: <c>CODEGOESHERE</c>
+		</p>
+	</li>
+	<li>
+		<p>
+			A dodge bar graph with proportios: <c>CODEGOESHERE</c>
+		</p>
+	</li>
+	
+	<li>
+		<p>
+			A boxplot: <c>CODEGOESHERE</c>
+		</p>
+	</li>
+</ol>
+<sage language="r">
+	<input>
+		#CODE NEEDS TO BE UPDATED
+		graph_type = INSERT_GRAPH_TYPE
+		anti_trans_bills_type &lt;- anti_trans_bills_clean %&gt;% group_by(`Bill.Type`) %&gt;% summarise(n = n())
+		graph_1 &lt;- anti_trans_bills_type %&gt;% ggplot(aes(x = `Bill.Type`, y = n)) + graph_type + coord_flip()
+	</input>
+</sage>
+
+<p>
+	Try to create each type of graph in R. Some will cause errors - that is a sign that this type of graph isn’t appropriate for this question.
+	Which graph do you think is the clearest? Why do you think that is?
+	What do you notice from this graph? Does this tell you anything about our question regarding 2023? Do these graphs prompt any new questions?
+	</p>
+
 </activity>
 
 <p>
-Suppose that we have a bar graph that allows us to compare the numerical data of a particular variable (total number of passed bills from 2018 to 2023). Now consider another bar graph that compares the total number of introduced bills within this same time period. Finally, consider a third bar graph that compares the total number of bills that crossed over again during the same time period. Then we can hope to find a relationship between the proportions of bills which are crossed over or passed within each year as well as the trend over time as to what proportions are crossed over or passed. This can be done by using multiple bar graphs or a combined set of graphs which we call a <em>multigraph</em>. 
+In the above activity we had bar graphs that allows us to compare the numerical data of a particular variable (total number of passed bills from 2018 to 2023) with the total number of introduced bills within this same time period or the total number of bills that crossed over again during the same time period. Using these graphs we can explore a relationship between the proportions of bills which are crossed over or passed within each year as well as the trend over time as to what proportions are crossed over or passed. These bar graphs are sometimes referred to as <em>multigraphs</em>. 
 </p>
 
 <!--Include visual representation of multigraph here. -->
+
+
+<p>
+	In the above activity we created similar graphs by focusing on the frequency or count of a <c>Bill.Type</c> appearing, and then we'd look at the proportion of that <c>Bill.Type</c> compared to the total number of bills during that year. Let's explore the pros and cons of representing data in these two methods.
+</p>
+
+	<p>
+	Try to create each type of graph in R. Some will cause errors - that is a sign that this type of graph isn’t appropriate for this question.
+	Which graph do you think is the clearest? Why do you think that is?
+	What do you notice from this graph? Does this tell you anything about our question regarding 2023?
+	</p>
 
 <activity><p>
 <ol>
 <li>Can you see how this data can also be described by using a line graph? Are there any advantages or disadvantages of using one over the other? </li>
 
 
-Code goes here for proportion vs. count graph for types of anti-trans bills proposed in 2023 compared to previous years to showcase if absolute or relative frequency is best to be used in this way. Want 4 graphs, 2 graphs are rate vs count of types of bills. The second two graphs are rate vs count of passed bills. 
+<sage language="r">
+	<input>
+		#CODE NEEDS TO BE UPDATED to have the two graph types!!! somethingvsomething?
+		graph_type = INSERT_GRAPH_TYPE
+		anti_trans_bills_type &lt;- anti_trans_bills_clean %&gt;% group_by(`Bill.Type`) %&gt;% summarise(n = n())
+		graph_1 &lt;- anti_trans_bills_type %&gt;% ggplot(aes(x = `Bill.Type`, y = n)) + graph_type + coord_flip()
+	</input>
+</sage>
+
+<p>CODEGOESHERE for proportion vs. count graph for types of anti-trans bills proposed in 2023 compared to previous years to showcase if absolute or relative frequency is best to be used in this way. Want 4 graphs, 2 graphs are rate vs count of types of bills. The second two graphs are rate vs count of passed bills. 
+</p>
+
 <li>What story is each of these graphs telling? How do they differ? How are they similar. </li>
 
 </ol>
@@ -242,14 +314,28 @@ Code goes here for proportion vs. count graph for types of anti-trans bills prop
 </activity>
 	
 <activity>
-
 <p>
+	In the code below, you can change the variables by replacing "INSERT_Variable" with your variable that you want to explore. 
+</p>
+	<sage language="r">
+		<input>
+			#CODE NEEDS TO BE UPDATED
+			variable_1 = anti_trans_bills_clean$INSERT_1ST_Variable
+			variable_2 = anti_trans_bills_clean$INSERT_2ND_Variable
+			 
+			ggplot(anti_trans_bills_clean, aes(x = `variable_1`,, fill = `variable_2`)) + geom_bar(position = "dodge")
+		</input>
+	</sage>
+	<p>
+<!-- How can we explain the embedded code above so that students can do this? Or do we given them some half done code where they plug in their variables?  -->
+
 
 <ul>
 <li> Consider the total number of bills passed from 2018 to 2022 and the total number of bills passed in 2023. </li>
+
 <ul>
-<li> First, create a multigraph which categorizes the bill type on the x-axis and lists the totals by bill status. </li>
-<li> Then create another multigraph which categorizes bill status on the x-axis and lists the totals by bill type. </li>
+<li> First, create a multigraph which categorizes the <c>Bill.Type</c> on the x-axis and lists the totals by <c>Status</c>. </li>
+<li> Then create another multigraph which categorizes <c>Status</c> on the x-axis and lists the totals by <c>Bill.Type</c>. </li>
 </ul>
 <li> Which of these two graphs tells a more compelling story? </li>
 <li> List your thoughts on how the same data presented in two different ways can seem to show different results. </li>
@@ -267,6 +353,8 @@ Code goes here for proportion vs. count graph for types of anti-trans bills prop
 
 <p> We began this chapter with the question of how 2023 is different from other years in regards to anti-trans legislation. Section 2 introduced us to different visualizations that can help us explore this and evaluate this question. 
 </p>
+
+<!-- Include image of this line graph, see assets for the image-->
 
 <p>
 Figure NUM is a line graph that plots raw numbers of bills introduced in each year from 2018-2023. We can see that the number of bills is increasing each year, but the numbers increased more quickly in 2021 and 2023 than in other years.

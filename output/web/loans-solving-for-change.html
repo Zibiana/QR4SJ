@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Solving for Change: Student Loan Reform &amp; Activism in the U.S.</title>
@@ -15,38 +15,20 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "extpfeil",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "knowl"
-      ]
-    }
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
   },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math",
-    "renderActions": {
-      "findScript": [
-        10,
-        function (doc) {
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -56,36 +38,25 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        },
-        ""
-      ]
-    }
+        }, '']
+    },
   },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
   },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/extpfeil",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
-    }
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
   },
-  "startup": {
+  startup: {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  }
+  },
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -482,10 +453,10 @@ window.MathJax = {
 <section class="section" id="loans-solving-for-change"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span>
 </h2>
-<div class="para" id="p-167">In August <span class="process-math">\(2022\text{,}\)</span> President Biden committed to forgiving <span class="process-math">\(\$10,000\)</span> in student debt for around <span class="process-math">\(43\)</span> million debtors in the U.S., with an additional <span class="process-math">\(\$10,000\)</span> being forgiven for Pell Grant recipients. The debt was forgiven only for <a class="external" href="https://web.archive.org/web/20230301033830/https://globalnews.ca/news/9081983/biden-forgives-student-loans-americans/" target="_blank">single adults earning under <span class="process-math">\(\$125,000\)</span> a year and married couples earning under <span class="process-math">\(\$250,000\)</span> a year</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-60" id="fn-60"><sup> 60 </sup></a>.</div>
-<div class="para" id="p-168">Student debt in the U.S. in <span class="process-math">\(2022\text{,}\)</span> when President Biden proposed his student loan debt forgiveness plan, was <a class="external" href="https://web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html" target="_blank">roughly equal to the size of the economy of Brazil</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-61" id="fn-61"><sup> 61 </sup></a>. Additionally, the amount of funding for higher education provided by state governments has declined from around <span class="process-math">\(70\%\)</span> in the <span class="process-math">\(1970\)</span>s to slightly under <span class="process-math">\(60\%\)</span> in <span class="process-math">\(2019\text{.}\)</span>
+<div class="para" id="p-167">In August <span class="process-math">\(2022\text{,}\)</span> President Biden committed to forgiving <span class="process-math">\(\$10,000\)</span> in student debt for around <span class="process-math">\(43\)</span> million debtors in the U.S., with an additional <span class="process-math">\(\$10,000\)</span> being forgiven for Pell Grant recipients. The debt was forgiven only for <a class="external" href="https://web.archive.org/web/20230301033830/https://globalnews.ca/news/9081983/biden-forgives-student-loans-americans/" target="_blank">single adults earning under <span class="process-math">\(\$125,000\)</span> a year and married couples earning under <span class="process-math">\(\$250,000\)</span> a year</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-61" id="fn-61"><sup> 61 </sup></a>.</div>
+<div class="para" id="p-168">Student debt in the U.S. in <span class="process-math">\(2022\text{,}\)</span> when President Biden proposed his student loan debt forgiveness plan, was <a class="external" href="https://web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html" target="_blank">roughly equal to the size of the economy of Brazil</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-62" id="fn-62"><sup> 62 </sup></a>. Additionally, the amount of funding for higher education provided by state governments has declined from around <span class="process-math">\(70\%\)</span> in the <span class="process-math">\(1970\)</span>s to slightly under <span class="process-math">\(60\%\)</span> in <span class="process-math">\(2019\text{.}\)</span>
 </div>
-<div class="para" id="p-169">An independent analysis by the University of Pennsylvania Wharton School of Business found that about two-thirds of the financial benefit from Biden’s student loan forgiveness plan will be <a class="external" href="https://budgetmodel.wharton.upenn.edu/issues/2022/8/26/biden-student-loan-forgiveness" target="_blank">to households making <span class="process-math">\(\$88,000\)</span> or less per year, especially households earning between <span class="process-math">\(\$51,000\)</span> and <span class="process-math">\(\$82,000\)</span> a year</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-62" id="fn-62"><sup> 62 </sup></a>. The impact to the U.S. budget will be between <span class="process-math">\(\$469\)</span> and <span class="process-math">\(\$519\)</span> billion.</div>
+<div class="para" id="p-169">An independent analysis by the University of Pennsylvania Wharton School of Business found that about two-thirds of the financial benefit from Biden’s student loan forgiveness plan will be <a class="external" href="https://budgetmodel.wharton.upenn.edu/issues/2022/8/26/biden-student-loan-forgiveness" target="_blank">to households making <span class="process-math">\(\$88,000\)</span> or less per year, especially households earning between <span class="process-math">\(\$51,000\)</span> and <span class="process-math">\(\$82,000\)</span> a year</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-63" id="fn-63"><sup> 63 </sup></a>. The impact to the U.S. budget will be between <span class="process-math">\(\$469\)</span> and <span class="process-math">\(\$519\)</span> billion.</div>
 <div class="para" id="p-170">The Wharton School also released the data in <a href="" class="xref" data-knowl="./knowl/tab-debt-forgiven-by-income-age.html" title="Table 2.7.1: Student Debt Forgiven under the 2022 Biden-Harris Plan">Table 2.7.1</a> on the distribution of student loan forgiveness benefits by income under the <span class="process-math">\(2022\)</span> Biden student loan forgiveness plan. Most of the debt forgiven would have accumulated for those in the <span class="process-math">\(25\)</span>-<span class="process-math">\(35\)</span> age group; hence, this column may be more representative of the plan’s effects. No benefit is expected to go to the top <span class="process-math">\(5\%\)</span> of earners in either age group. Data from Wharton School of Business.</div>
 <figure class="table table-like" id="tab-debt-forgiven-by-income-age"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.7.1<span class="period">.</span></span><span class="space"> </span>Student Debt Forgiven under the <span class="process-math">\(2022\)</span> Biden-Harris Plan</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
@@ -542,7 +513,7 @@ window.MathJax = {
 <section class="introduction" id="introduction-16"><div class="para" id="p-171">For each of the following questions, read the cited article, considering the listed questions. Then use what you’ve read, as well as your own thoughts, to make your best attempt at answering these questions. Finally, bring these attempts to class and discuss them with your group. Choose someone in your group to report your group’s conclusions during full-class discussion.</div></section><div class="exercisegroup" id="exercisegroup-6">
 <h4 class="heading"><span class="title">Exercise Group.</span></h4>
 <div class="introduction" id="introduction-17">
-<a class="external" href="https://www.motherjones.com/politics/2022/06/biden-student-debt-cancellation-occupy-wall-street-collective/" target="_blank">This article by <em class="emphasis">Mother Jones</em></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-63" id="fn-63"><sup> 63 </sup></a> (known for being a left-leaning publication) investigates the history of the student loan debt forgiveness movement, beginning with the activism of Occupy Wall Street in <span class="process-math">\(2011\)</span> (see <a href="" class="xref" data-knowl="./knowl/fig-occupy-student-loans.html" title="Figure 2.7.2">Figure 2.7.2</a>) and America’s first debtors’ union, the Debt Collective.</div>
+<a class="external" href="https://www.motherjones.com/politics/2022/06/biden-student-debt-cancellation-occupy-wall-street-collective/" target="_blank">This article by <em class="emphasis">Mother Jones</em></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-64" id="fn-64"><sup> 64 </sup></a> (known for being a left-leaning publication) investigates the history of the student loan debt forgiveness movement, beginning with the activism of Occupy Wall Street in <span class="process-math">\(2011\)</span> (see <a href="" class="xref" data-knowl="./knowl/fig-occupy-student-loans.html" title="Figure 2.7.2">Figure 2.7.2</a>) and America’s first debtors’ union, the Debt Collective.</div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-55"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
 <div class="para" id="p-172">What does the article describe as the origin of the Debt Collective and the movement to cancel student debt from for-profit colleges?</div></article><article class="exercise exercise-like" id="exercise-56"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
@@ -552,7 +523,7 @@ window.MathJax = {
 <figure class="figure figure-like" id="fig-occupy-student-loans"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/occupy-wall-street-student-loans.svg" role="img" class="contained" alt='A photo of two Occupy Wall Street protesters, one of whom carries a sign saying "I Owe SallieMae \(\$25,123.91\text{.}\)" Photo by Bob Jagendorf entitled ``Occupy Wall Street - Student Loans’’ under a CC BY-NC 2.0 license.'></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.7.2<span class="period">.</span></span><span class="space"> </span>A photo of two Occupy Wall Street protesters, one of whom carries a sign saying "I Owe SallieMae <span class="process-math">\(\$25,123.91\text{.}\)</span>" Photo by Bob Jagendorf entitled "Occupy Wall Street - Student Loans" under a CC BY-NC 2.0 license.</figcaption></figure><div class="exercisegroup" id="exercisegroup-7">
 <h4 class="heading"><span class="title">For-Profit Colleges and Department of Education Policy.</span></h4>
-<div class="introduction" id="introduction-18">For-profit colleges have defrauded students and led to an increase in student debt; this was a major concern of Occupy Wall Street activists and is described in <a class="external" href="https://www.youtube.com/watch?v=P8pjd1QEA0c" target="_blank">the following 2014 Last Week Tonight video</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-64" id="fn-64"><sup> 64 </sup></a>. In June <span class="process-math">\(2022\text{,}\)</span> the federal Department of Education <a class="external" href="https://www.motherjones.com/politics/2022/06/education-department-student-debt-cancellation-corinthian/" target="_blank">automatically canceled all debt currently held by Corinthian Colleges students and alumni</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-65" id="fn-65"><sup> 65 </sup></a>. <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="loans-oliver" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/P8pjd1QEA0c?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<div class="introduction" id="introduction-18">For-profit colleges have defrauded students and led to an increase in student debt; this was a major concern of Occupy Wall Street activists and is described in <a class="external" href="https://www.youtube.com/watch?v=P8pjd1QEA0c" target="_blank">the following 2014 Last Week Tonight video</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-65" id="fn-65"><sup> 65 </sup></a>. In June <span class="process-math">\(2022\text{,}\)</span> the federal Department of Education <a class="external" href="https://www.motherjones.com/politics/2022/06/education-department-student-debt-cancellation-corinthian/" target="_blank">automatically canceled all debt currently held by Corinthian Colleges students and alumni</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-66" id="fn-66"><sup> 66 </sup></a>. <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="loans-oliver" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/P8pjd1QEA0c?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 </div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-57"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
@@ -572,20 +543,20 @@ window.MathJax = {
 <div class="para logical" id="p-182"><ol class="lower-alpha">
 <li id="li-75"><div class="para" id="p-183">Given this information, estimate the percentage of the student loan forgiveness plan your income group will receive.</div></li>
 <li id="li-76"><div class="para" id="p-184">
-<a class="external" href="https://www.cbo.gov/system/files/2022-09/58494-Student-Loans.pdf" target="_blank">The Congressional Budget Office</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-66" id="fn-66"><sup> 66 </sup></a>, a nonpartisan organization within the legislative branch of the United States government, estimated the total cost of Biden’s student loan forgiveness program at <span class="process-math">\(\$400\)</span> billion. Use this estimate, together with the information above, to estimate how much total debt relief (in U.S. dollars) your income and age group wlil receive <span class="process-math">\(10\)</span> years from now.</div></li>
+<a class="external" href="https://www.cbo.gov/system/files/2022-09/58494-Student-Loans.pdf" target="_blank">The Congressional Budget Office</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-67" id="fn-67"><sup> 67 </sup></a>, a nonpartisan organization within the legislative branch of the United States government, estimated the total cost of Biden’s student loan forgiveness program at <span class="process-math">\(\$400\)</span> billion. Use this estimate, together with the information above, to estimate how much total debt relief (in U.S. dollars) your income and age group wlil receive <span class="process-math">\(10\)</span> years from now.</div></li>
 </ol></div></article><article class="exercise exercise-like" id="exercise-65"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para" id="p-185">President Biden’s loan forgiveness program involves an “income cap”, which means that the program only applies to individuals who earn below <span class="process-math">\(\$125,000\)</span> or households who earn below <span class="process-math">\(\$250,000\)</span> each year. According to the Wharton analysis shown in <a href="" class="xref" data-knowl="./knowl/tab-debt-forgiven-by-income-age.html" title="Table 2.7.1: Student Debt Forgiven under the 2022 Biden-Harris Plan">Table 2.7.1</a>, whether or not an income cap is applied, the most loan forgiveness would go to households earning between <span class="process-math">\(\$51,000\)</span> and <span class="process-math">\(\$82,000\)</span> a year.</div>
 <div class="para logical" id="p-186"><ol class="lower-alpha">
 <li id="li-77"><div class="para" id="p-187">What income percentile(s) in <a href="" class="xref" data-knowl="./knowl/tab-debt-forgiven-by-income-age.html" title="Table 2.7.1: Student Debt Forgiven under the 2022 Biden-Harris Plan">Table 2.7.1</a> do these earners belong to?</div></li>
 <li id="li-78"><div class="para" id="p-188">Assuming that the loan forgiveness policy stays constant for the next <span class="process-math">\(10\)</span> years, estimate the percentage of loan forgiveness that will apply to these income percentile(s). Make the simplifying assumption that all student loan borrowers are individuals and not households.</div></li>
 <li id="li-79"><div class="para" id="p-189">Does the Wharton estimate make sense? Why or why not?</div></li>
-</ol></div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-60"><div class="fn"><code class="code-inline tex2jax_ignore">web.archive.org/web/20230301033830/https://globalnews.ca/news/9081983/biden-forgives-student-loans-americans/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-61"><div class="fn"><code class="code-inline tex2jax_ignore">web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-62"><div class="fn"><code class="code-inline tex2jax_ignore">budgetmodel.wharton.upenn.edu/issues/2022/8/26/biden-student-loan-forgiveness</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-63"><div class="fn"><code class="code-inline tex2jax_ignore">www.motherjones.com/politics/2022/06/biden-student-debt-cancellation-occupy-wall-street-collective/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-64"><div class="fn"><code class="code-inline tex2jax_ignore">www.youtube.com/watch?v=P8pjd1QEA0c</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-65"><div class="fn"><code class="code-inline tex2jax_ignore">www.motherjones.com/politics/2022/06/education-department-student-debt-cancellation-corinthian/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-66"><div class="fn"><code class="code-inline tex2jax_ignore">www.cbo.gov/system/files/2022-09/58494-Student-Loans.pdf</code></div></div>
+</ol></div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-61"><div class="fn"><code class="code-inline tex2jax_ignore">web.archive.org/web/20230301033830/https://globalnews.ca/news/9081983/biden-forgives-student-loans-americans/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-62"><div class="fn"><code class="code-inline tex2jax_ignore">web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-63"><div class="fn"><code class="code-inline tex2jax_ignore">budgetmodel.wharton.upenn.edu/issues/2022/8/26/biden-student-loan-forgiveness</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-64"><div class="fn"><code class="code-inline tex2jax_ignore">www.motherjones.com/politics/2022/06/biden-student-debt-cancellation-occupy-wall-street-collective/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-65"><div class="fn"><code class="code-inline tex2jax_ignore">www.youtube.com/watch?v=P8pjd1QEA0c</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-66"><div class="fn"><code class="code-inline tex2jax_ignore">www.motherjones.com/politics/2022/06/education-department-student-debt-cancellation-corinthian/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-67"><div class="fn"><code class="code-inline tex2jax_ignore">www.cbo.gov/system/files/2022-09/58494-Student-Loans.pdf</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="the-intersectional-inequities-of-student-debt.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="loans-wrap-up-exercise.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
