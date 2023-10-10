@@ -34,8 +34,6 @@
 
 	<xi:include href=  "./sec_leg-textualize.ptx" />
 
-	<xi:include href="./sec_leg-future-directions.ptx" />
-
 	<xi:include href="./sec_leg-project.ptx" />
 
 	
