@@ -1,0 +1,136 @@
+---
+title: "atl_bill 1 (Part 2)"
+output: html_document
+date: '2023-11-03'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+## Visualizing the word vector output
+
+### Summary of the data
+```{r}
+library(dplyr)
+# Get a sense for the data through a table of word counts
+
+# you will need a read command if you are just picking up from the cleaned text
+
+ltext_df<-read.csv("bill_1")
+View(ltext_df)
+
+#how many words are there? This may come up later
+n_words <- dim(ltext_df)[1]
+
+# Use dplyr to automatically count the words that exist. This creates a table (in a dataframe structure) in which you have the list of unique words and an absolute frequency count next to each word.
+ltext_counts <- ltext_df %>% count(words)
+
+#relative freq
+ltext_counts$relf <- ltext_counts$n / n_words
+View(ltext_counts)
+
+# use dim() to tell me how big the matrix is
+print(dim(ltext_counts))
+
+```
+
+The first number is rows (67) and the second is columns (3). This means that our word vector contains 67 distinct words & 3 columns - the word, the absolute frequency or count, and the relative frequency or probability of occurance. 
+
+Some methods of visualization, like the base plotting function in R, use this form of the data.
+
+
+### Base plot in R
+```{r}
+# This is the base plotting function in R
+barplot(height=ltext_counts$n, names=ltext_counts$words)
+
+# Great reference
+# https://r-graph-gallery.com/208-basic-barplot.html
+```
+
+This plot is illegible. Because it has 226 words. We can look instead at just the 20 most frequently used words.
+
+### Top 20
+
+```{r}
+#This will order in descending order
+counts_ordered <- ltext_counts %>% arrange(desc(n))
+View(counts_ordered)
+
+#This will extract the top 20 for visualization purposes
+top20 <-  head(counts_ordered, 20)
+top20
+```
+
+
+```{r}
+# Same but top 20
+barplot(height=top20$n, names=top20$words)
+
+```
+
+This is much better, but you cannot read the words, so we will have the words tilted for better readability
+```{r}
+# las 2 will make vertical labels
+# col will make it a little less boring in color
+barplot(height=top20$n, names=top20$words, las = 2, col=rgb(0.2,0.4,0.6,0.6) )
+
+# Great reference for options
+# https://r-graph-gallery.com/209-the-options-of-barplot.html
+```
+
+### Plot in ggplot2
+
+ggplot2 can look prettier :)
+```{r}
+library(ggplot2)
+# ggplot2 version
+# help guide: https://r-graph-gallery.com/218-basic-barplots-with-ggplot2.html
+ggplot(top20, aes(x=words, y=n)) + 
+  geom_bar(stat = "identity")
+
+```
+
+again the figure would be more easily read if the text was vertical
+```{r}
+ggplot(top20, aes(x=words, y=n)) + 
+  geom_bar(stat = "identity", color=rgb(0.1,0.4,0.5,0.7), fill=rgb(0.1,0.4,0.5,0.7)) +
+# Rotate x-axis text to make labels vertical
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(x = NULL)  # or xlab("")
+
+```
+
+Reorder from biggest to smallest
+```{r}
+# This pulls the words as ordered
+ordered.words <- top20 %>%
+  arrange(desc(n)) %>%
+  pull(words)
+
+# This will help ggplot interpret the words as factors, and in particular, factors with a particular order.
+top20$words <- ordered(top20$words, levels = ordered.words)
+
+top20 %>%
+ggplot(aes(x=words, y=n)) + 
+  geom_bar(stat = "identity", color=rgb(0.1,0.4,0.5,0.7), fill=rgb(0.1,0.4,0.5,0.7)) +
+# Rotate x-axis text to make labels vertical
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(x = NULL)  # or xlab("")
+```
+
+Freq graph
+```{r}
+top20 %>%
+ggplot(aes(x=words, y=relf)) + 
+  geom_bar(stat = "identity", color=rgb(0.1,0.4,0.5,0.7), fill=rgb(0.1,0.4,0.5,0.7)) +
+# Rotate x-axis text to make labels vertical
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(x = NULL, y= "Relative frequency")  # or xlab("")
+```
+
