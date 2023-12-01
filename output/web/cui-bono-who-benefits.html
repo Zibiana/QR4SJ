@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cui Bono: Who Benefits?</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -382,6 +411,7 @@ window.MathJax = {
 <ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercise" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Exercise</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -457,18 +487,18 @@ window.MathJax = {
 <div class="para" id="p-80">What is an income-based repayment plan? What is forbearance, and why has it negatively affected borrowers when Navient encourages borrowers to enter forbearance instead of income-based repayment?</div></article><article class="exercise exercise-like" id="exercise-13"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
 <div class="para" id="p-81">In what ways does Minhaj argue that the Department of Education has failed borrowers?</div></article>
 </div>
-</div></section><div class="para" id="p-82">The highest proportion of student loan debt (the amount of debt held per student) <a class="external" href="https://web.archive.org/web/20230407141731/https://www.nytimes.com/interactive/2018/08/25/opinion/sunday/student-debt-loan-default-college.html" target="_blank">is held by students at for-profit colleges</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-26" id="fn-26"><sup> 26 </sup></a>, which are colleges that are not funded by taxes but instead depend on federal student aid (guaranteed by the government) and the tuition dollars that students pay to attend, often backed up by federal student aid. Contrast this situation with the vast majority of colleges and universities in the U.S., which are nonprofit institutions, which are usually run by a not-for-profit institution, religious organization, or government and hence often receive funding from taxes or a particular religious group.</div>
-<div class="para" id="p-83">The greatest proportion of defaults (see <a href="" class="xref" data-knowl="./knowl/def-default.html" title="Definition 2.3.2">Definition 2.3.2</a>) on student debt in <span class="process-math">\(2015\)</span> <a class="external" href="https://muse.jhu.edu/article/616850" target="_blank">occurred at the University of Phoenix, Walden University, Nova Southeastern University, Capella University, and Strayer University</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-27" id="fn-27"><sup> 27 </sup></a>, of which all but Nova are for-profit.</div>
-<div class="para" id="p-84">Almost all students are eligible to receive federal student loans, which are student loans funded by the U.S. federal government through programs such as Pell Grants. Federal loans are either subsidized (that is, interest payments are <a class="external" href="https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized" target="_blank">covered by the federal government for a period including the student’s time at a college or university</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-28" id="fn-28"><sup> 28 </sup></a>; such loans are restricted to undergraduates only) or unsubsidized (in which case borrowers must pay the interest).</div>
-<div class="para" id="p-85">In contrast, private student loans are loans offered by non-governmental companies which are heavily advertised, do not offer the relatively generous forbearance and deferred-payment options that federal loans do, and charge interest while the borrower is in college. Often, private student loan interest rates are higher even than those of unsubsidized federal student loans. Since many students do not have a credit history, federal student loans do not require proof of, or a co-signer attesting, “creditworthiness”, or evidence of past ability to repay debt; as of the <span class="process-math">\(2010\)</span>s, <a class="external" href="https://files.consumerfinance.gov/f/201207_cfpb_Reports_Private-Student-Loans.pdf" target="_blank">most private student loans required such proof</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-29" id="fn-29"><sup> 29 </sup></a>. Additionally, students who declare bankruptcy are unable to discharge private student loans, meaning borrowers who have no money are <a class="external" href="https://www.txs.uscourts.gov/sites/txs/files/CLE%20Discharge%20and%20Dischargeability%20%202019%20%20Podcast.pdf" target="_blank">still required to pay private corporations back for student loans</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-30" id="fn-30"><sup> 30 </sup></a>. Therefore, the U.S. government earns more income from student loans, but profits less, on average, than private student loan companies.</div>
-<div class="para" id="p-86">Employers benefit from the number of students who attend college, including those who could not otherwise attend without taking out student loans. “Credentialism”, the continuing growth in employers’ expectations of postsecondary education on the part of their employees, <a class="external" href="https://journals.sagepub.com/doi/10.1177/23328584221093325" target="_blank">has been called a key driver of student loan debt</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-31" id="fn-31"><sup> 31 </sup></a>. In <span class="process-math">\(2020\text{,}\)</span> earnings were stagnant for most workers, but declined rapidly for workers with no college education. This pressures people to seek a college education whether or not they can afford it.</div>
-<div class="para" id="p-87">Finally, <a class="external" href="https://webcache.googleusercontent.com/search?q=cache:QCadmloDEIoJ:https://www.theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us" target="_blank">a <span class="process-math">\(2022\)</span> article in <em class="emphasis">The Atlantic</em></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-32" id="fn-32"><sup> 32 </sup></a> implies that middle-class college graduates were able to advance their cause over other causes championed by more marginalized groups because they have higher relative political power compared to non-college graduates. Certainly, as we will see in the next sections, middle-class college graduates benefit a great deal from President Biden’s <span class="process-math">\(2022\)</span> student debt cancellation policy.</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-26"><div class="fn"><code class="code-inline tex2jax_ignore">nytimes.com/interactive/2018/08/25/opinion/sunday/student-debt-loan-default-college.html</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-27"><div class="fn"><code class="code-inline tex2jax_ignore">muse.jhu.edu/article/616850</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-28"><div class="fn"><code class="code-inline tex2jax_ignore">studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-29"><div class="fn"><code class="code-inline tex2jax_ignore">files.consumerfinance.gov/f/201207_cfpb_Reports_Private-Student-Loans.pdf</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-30"><div class="fn"><code class="code-inline tex2jax_ignore">txs.uscourts.gov/sites/txs/files/CLE%20Discharge%20and%20Dischargeability%20%202019%20%20Podcast.pdf</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-31"><div class="fn"><code class="code-inline tex2jax_ignore">journals.sagepub.com/doi/10.1177/23328584221093325</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-32"><div class="fn"><code class="code-inline tex2jax_ignore">theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us</code></div></div>
+</div></section><div class="para" id="p-82">The highest proportion of student loan debt (the amount of debt held per student) <a class="external" href="https://web.archive.org/web/20230407141731/https://www.nytimes.com/interactive/2018/08/25/opinion/sunday/student-debt-loan-default-college.html" target="_blank">is held by students at for-profit colleges</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-25" id="fn-25"><sup> 25 </sup></a>, which are colleges that are not funded by taxes but instead depend on federal student aid (guaranteed by the government) and the tuition dollars that students pay to attend, often backed up by federal student aid. Contrast this situation with the vast majority of colleges and universities in the U.S., which are nonprofit institutions, which are usually run by a not-for-profit institution, religious organization, or government and hence often receive funding from taxes or a particular religious group.</div>
+<div class="para" id="p-83">The greatest proportion of defaults (see <a href="" class="xref" data-knowl="./knowl/def-default.html" title="Definition 2.3.2">Definition 2.3.2</a>) on student debt in <span class="process-math">\(2015\)</span> <a class="external" href="https://muse.jhu.edu/article/616850" target="_blank">occurred at the University of Phoenix, Walden University, Nova Southeastern University, Capella University, and Strayer University</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-26" id="fn-26"><sup> 26 </sup></a>, of which all but Nova are for-profit.</div>
+<div class="para" id="p-84">Almost all students are eligible to receive federal student loans, which are student loans funded by the U.S. federal government through programs such as Pell Grants. Federal loans are either subsidized (that is, interest payments are <a class="external" href="https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized" target="_blank">covered by the federal government for a period including the student’s time at a college or university</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-27" id="fn-27"><sup> 27 </sup></a>; such loans are restricted to undergraduates only) or unsubsidized (in which case borrowers must pay the interest).</div>
+<div class="para" id="p-85">In contrast, private student loans are loans offered by non-governmental companies which are heavily advertised, do not offer the relatively generous forbearance and deferred-payment options that federal loans do, and charge interest while the borrower is in college. Often, private student loan interest rates are higher even than those of unsubsidized federal student loans. Since many students do not have a credit history, federal student loans do not require proof of, or a co-signer attesting, “creditworthiness”, or evidence of past ability to repay debt; as of the <span class="process-math">\(2010\)</span>s, <a class="external" href="https://files.consumerfinance.gov/f/201207_cfpb_Reports_Private-Student-Loans.pdf" target="_blank">most private student loans required such proof</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-28" id="fn-28"><sup> 28 </sup></a>. Additionally, students who declare bankruptcy are unable to discharge private student loans, meaning borrowers who have no money are <a class="external" href="https://www.txs.uscourts.gov/sites/txs/files/CLE%20Discharge%20and%20Dischargeability%20%202019%20%20Podcast.pdf" target="_blank">still required to pay private corporations back for student loans</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-29" id="fn-29"><sup> 29 </sup></a>. Therefore, the U.S. government earns more income from student loans, but profits less, on average, than private student loan companies.</div>
+<div class="para" id="p-86">Employers benefit from the number of students who attend college, including those who could not otherwise attend without taking out student loans. “Credentialism”, the continuing growth in employers’ expectations of postsecondary education on the part of their employees, <a class="external" href="https://journals.sagepub.com/doi/10.1177/23328584221093325" target="_blank">has been called a key driver of student loan debt</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-30" id="fn-30"><sup> 30 </sup></a>. In <span class="process-math">\(2020\text{,}\)</span> earnings were stagnant for most workers, but declined rapidly for workers with no college education. This pressures people to seek a college education whether or not they can afford it.</div>
+<div class="para" id="p-87">Finally, <a class="external" href="https://webcache.googleusercontent.com/search?q=cache:QCadmloDEIoJ:https://www.theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us" target="_blank">a <span class="process-math">\(2022\)</span> article in <em class="emphasis">The Atlantic</em></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-31" id="fn-31"><sup> 31 </sup></a> implies that middle-class college graduates were able to advance their cause over other causes championed by more marginalized groups because they have higher relative political power compared to non-college graduates. Certainly, as we will see in the next sections, middle-class college graduates benefit a great deal from President Biden’s <span class="process-math">\(2022\)</span> student debt cancellation policy.</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-25"><div class="fn"><code class="code-inline tex2jax_ignore">nytimes.com/interactive/2018/08/25/opinion/sunday/student-debt-loan-default-college.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-26"><div class="fn"><code class="code-inline tex2jax_ignore">muse.jhu.edu/article/616850</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-27"><div class="fn"><code class="code-inline tex2jax_ignore">studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-28"><div class="fn"><code class="code-inline tex2jax_ignore">files.consumerfinance.gov/f/201207_cfpb_Reports_Private-Student-Loans.pdf</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-29"><div class="fn"><code class="code-inline tex2jax_ignore">txs.uscourts.gov/sites/txs/files/CLE%20Discharge%20and%20Dischargeability%20%202019%20%20Podcast.pdf</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-30"><div class="fn"><code class="code-inline tex2jax_ignore">journals.sagepub.com/doi/10.1177/23328584221093325</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-31"><div class="fn"><code class="code-inline tex2jax_ignore">theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec_loans-objectives.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="debt-big-problem.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

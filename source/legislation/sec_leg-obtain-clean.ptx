@@ -68,7 +68,7 @@
 		<subsection xml:id="cleaning-the-data">
 			<title>Cleaning the Data</title>
 			<p>
-			Cleaning is a process that involves fixing or removing incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data within a dataset. For more information, check out Tableau&apos;s <url href= "https://www.tableau.com/learn/articles/what-is-data-cleaning">Guide to Data Cleaning </href>. After importing and merging data sets, it is integral to clean the data before working or manipulating the data and producing any conclusions. While the cleaning process can be done manually, it is much more efficient to use a software program such as Microsoft Excel or a programming language such as R when working with multiple data sets or large quantities of data.
+			Cleaning is a process that involves fixing or removing incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data within a dataset. For more information, check out Tableau&apos;s <url href= "https://www.tableau.com/learn/articles/what-is-data-cleaning">Guide to Data Cleaning </url>. After importing and merging data sets, it is integral to clean the data before working or manipulating the data and producing any conclusions. While the cleaning process can be done manually, it is much more efficient to use a software program such as Microsoft Excel or a programming language such as R when working with multiple data sets or large quantities of data.
 			</p>
 			<p> Here are the steps to clean your data: </p>
 			<p> 1. Remove duplicate or irrelevant information </p>
@@ -96,40 +96,44 @@
 			<p> Let’s walk through cleaning the most recent anti-trans legislation data from  <url href="https://www.tracktranslegislation.com/">Track Trans Legislation</url> </p>
 
 			<p> 1. Let’s look at the data from all states, all bill types, and all statuses (i.e. you should not be filtering anything in this case). Click on the “Export” button and download the data as a CSV file. </p>
-			<p> <image source="5.3 Images/(1) Cleaning data example.jpg"/> </p>
-			<p> <shortdescription> Data from Track Trans Legislation displaying dates, states, bills, bill types, and statuses with a red box highlighting the "Export" button. </shortdescription> </p>
+			<image source="5.3 Images/(1) Cleaning data example.png"> 
+			<shortdescription> Data from Track Trans Legislation displaying dates, states, bills, bill types, and statuses with a red box highlighting the "Export" button. </shortdescription> </image>
 			<p> 2. We now need to open the CSV file in Excel. To do this, take the following steps: Open Excel. Select File → Open…→ Choose the CSV file. The Excel sheet should populate with the data.</p>
 			<p> 3. To get a preview of what the data looks like, go to the Home tab within Excel and press Analyze Data. A side panel should appear on the right of the screen. Always be sure to check these insights present the information clearly.</p>
 			<p> <image source="5.3 Images/(2) Cleaning Data Example 1 (5.3).jpg"/> </p>
 			<p> <shortdescription> Excel file downloaded from Track Trans Legislation displaying the "Analyzing Data" button and corresponding window. </shortdescription> </p>
 			<p> 4. Remove any duplicates. To remove duplicates: Data → Remove Duplicates, ensure that all columns with duplicates are checked off so they are removed.</p>
 			<p> <image source="5.3 Images/(3) Cleaning data example.jpg"/> </p>
-			<p> <shortdescription> Excel heading with the "Data" tab and "Remove Duplicates" button highlighted in a red box. </shortdescription> </p>			
-			<p> 5. Now, let’s make sure the formatting is consistent. Let’s try lowercasing all of the state names. First, create a new column to the side of the states column. Next, in this new column, enter “=LOWER( )” function into the first cell. In the parentheses, write X:X, replacing the Xs with the letter of the original column and hit enter. This will populate the new column with all of the state names in lowercase letters:
+			<p> <shortdescription> Excel heading with the "Data" tab and "Remove Duplicates" button highlighted in a red box. </shortdescription> 
+			</p>			
+			<p> 5. Now, let’s make sure the formatting is consistent. Let’s try lowercasing all of the state names. First, create a new column to the side of the states column. Next, in this new column, enter “=LOWER( )” function into the first cell. In the parentheses, write X:X, replacing the Xs with the letter of the original column and hit enter. This will populate the new column with all of the state names in lowercase letters: </p>
 			<p> <image source="5.3 Images/(4) Cleaning data example.jpg"/> </p>
 			<p> <image source="5.3 Images/(5) Cleaning data example.jpg"/> </p>
 			<p> <shortdescription> Columns E and F from Excel file showing the before and after results of using the "=LOWER()" function</shortdescription> </p>
 			<p> Note: If you don’t want the formulas in the resultant cells, you just want the new lowercased versions of the names as if they had been hand-typed, you can select the names, press Control-C to copy them, navigate to Paste → Paste Values, and paste them into a new column or on top of the column you had previously made. Doing this will allow you to delete the original column without affecting the new, lowercase column. We can also capitalize all letters in the cells we select by using “=UPPER( )” or use “=PROPER( )” to reset the capitalization so the first letter is the only one capitalized. </p>
 			<p> <image source="5.3 Images/(6) Cleaning data example.jpg"/> </p>
 			<p> <shortdescription> Drop down from the "Paste" with "Paste Values" highlighted in green. </shortdescription> </p>
-			<p> 6. Next, we will find entries for the state of “Oklahoma” and replace them with the state abbreviation “OK” using the Find and Replace function. To do this, the following steps apply: First, navigate to Home → Editing → Find & Select. Next, Replace → Find what: “Oklahoma” and Replace with: “OK” → Replace All. Note, the alert will notify you of how many cells were altered and you should make sure that all planned changes were made. </p>
+			<p> 6. Next, we will find entries for the state of “Oklahoma” and replace them with the state abbreviation “OK” using the Find and Replace function. To do this, the following steps apply: First, navigate to Home → Editing → Find &amp; Select. Next, Replace → Find what: “Oklahoma” and Replace with: “OK” → Replace All. Note, the alert will notify you of how many cells were altered and you should make sure that all planned changes were made. </p>
 			<p> <image source="5.3 Images/Step 6 Part A.jpg"/> </p>
-			<p> <shortdescription> Excel heading with the "Home" tab and the "Find & Select" button highlighted in red boxes. </shortdescription> </p>
+			<p> <shortdescription> Excel heading with the "Home" tab and the "Find &amp; Select" button highlighted in red boxes. </shortdescription> </p>
 			<p> <image source="5.3 Images/Step 6 Part B.jpg"/> </p>
-			<p> <shortdescription> The "Find & Replace" pop-up window with "Find what:" and "Replace with:" dropdowns, the "Replace All" button, and alert message highlighted in red boxes. </shortdescription> </p>
-			<p> 7. Finally, we can use the TRIM( ) function to eliminate excessive spaces. For example, if in our data set we have “ Arizona” (note the extra space before the A) and we want “Arizona,” we first need to create a new column adjacent to the state column. Next, in this new column, enter “=TRIM( )” into the first cell. In the parentheses, write X:X, replacing the Xs with the letter of the original state column and hit enter. This will populate the new column with all of the state names without excessive spaces.
+			<p> <shortdescription> The "Find &amp; Replace" pop-up window with "Find what:" and "Replace with:" dropdowns, the "Replace All" button, and alert message highlighted in red boxes. </shortdescription> </p>
+			<p> 7. Finally, we can use the TRIM( ) function to eliminate excessive spaces. For example, if in our data set we have “ Arizona” (note the extra space before the A) and we want “Arizona,” we first need to create a new column adjacent to the state column. Next, in this new column, enter “=TRIM( )” into the first cell. In the parentheses, write X:X, replacing the Xs with the letter of the original state column and hit enter. This will populate the new column with all of the state names without excessive spaces. </p>
 			<p> Note: The TRIM( ) function will not remove any spaces between two words in a state name (“North Carolina” to “NorthCarolina”), it will just remove excess spaces at the beginning and end of the state name. </p>
 		</subsection>
 
 		<subsection xml:id="exercise">
 			<title>Exercise</title>
 			<p> Instructions: Open the Oklahoma Excel file and click “view raw” to download the file. You are part of a data-cleaning team focused on this data set. Your job is to clean the provided data set as follows:
-			<p> 1) Delete all conditional formatting (i.e. capitalization)
-			<p> 2) Replace all mentions of “Alabama” with “Oklahoma”
-			<p> 3) Ensure that everything is spelled correctly (use spell check)
-			<p> 4) Remove all duplicate bills 
-			<p> 5) Create a new column called “Bill Description 2.” Use the TRIM() function to remove excess spaces in the “Bill Description” column.
-			<p> 6) Your boss wants a new “State2” column where all of the state names are completely capitalized (i.e. “OKLAHOMA”). Create a new “State2” column using the UPPER( ) function.
-			<p> Note: If you want to know how to clean data using the R language, check out <url href="https://rc2e.com/datastructures#intro-DataStructures"Chapter 5 on Data Structures</url> in RCookbook. </p>
+				<ol>
+					<li>  Delete all conditional formatting (i.e. capitalization)</li>
+						<li>  Replace all mentions of “Alabama” with “Oklahoma”</li>
+						<li>  Ensure that everything is spelled correctly (use spell check)</li>
+						<li>  Remove all duplicate bills </li>
+						<li>  Create a new column called “Bill Description 2.” Use the TRIM() function to remove excess spaces in the “Bill Description” column.</li>
+						<li>  Your boss wants a new “State2” column where all of the state names are completely capitalized (i.e. “OKLAHOMA”). Create a new “State2” column using the UPPER( ) function. </li>
+				</ol>
+			</p>
+			<p> Note: If you want to know how to clean data using the R language, check out <url href="https://rc2e.com/datastructures#intro-DataStructures"> Chapter 5 on Data Structures</url> in RCookbook. </p>
 		</subsection>
 	</section>

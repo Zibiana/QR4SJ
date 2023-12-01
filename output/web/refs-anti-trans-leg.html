@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>References</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -382,6 +411,7 @@ window.MathJax = {
 <ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercise" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Exercise</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -442,37 +472,37 @@ window.MathJax = {
 <section class="references" id="refs-anti-trans-leg"><h2 class="heading hide-type">
 <span class="type">References</span> <span class="codenumber">5.7</span> <span class="title">References</span>
 </h2>
-<div class="para" id="p-658">ACLU of Missouri. 2023. “Advocates Sue to Block Missouri Attorney General’s Anti-Transgender Rule Restricting Gender-Affirming Care.” <a class="external" href="https://www.aclu-mo.org/en/news/advocates-sue-block-missouri-attorney-generals-anti-transgender-rule-restricting-gender" target="_blank">https://www.aclu-mo.org/en/news/advocates-sue-block-missouri-attorney-generals-anti-transgender-rule-restricting-gender</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-102" id="fn-102"><sup> 102 </sup></a>.</div>
-<div class="para" id="p-659">American Civil Liberties Union. 2018. “Past Legislation Affecting LGBT Rights Across the Country (2018).” <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018" target="_blank">https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-103" id="fn-103"><sup> 103 </sup></a>.</div>
-<div class="para" id="p-660">———. 2019. “Past Legislation Affecting LGBT Rights Across Country 2019.” <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2019" target="_blank">https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2019</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-104" id="fn-104"><sup> 104 </sup></a>.</div>
-<div class="para" id="p-661">———. 2020. “Past Legislation Affecting LGBT Rights Across the Country 2020.” <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020" target="_blank">https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-105" id="fn-105"><sup> 105 </sup></a>.</div>
-<div class="para" id="p-662">Bauer, Sydney. 2020. “The New Anti-Trans Culture War Hiding in Plain Sight.” <em class="emphasis">The New Republic</em>, February. <a class="external" href="https://newrepublic.com/article/156539/new-anti-trans-culture-war-hiding-plain-sight" target="_blank">https://newrepublic.com/article/156539/new-anti-trans-culture-war-hiding-plain-sight</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-106" id="fn-106"><sup> 106 </sup></a>.</div>
-<div class="para" id="p-663">Contreras, Russell. 2023. “The Forces Behind Anti-Trans Bills Across the U.S.” <a class="external" href="https://www.axios.com/2023/03/31/anti-trans-bills-2023-america" target="_blank">https://www.axios.com/2023/03/31/anti-trans-bills-2023-america</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-107" id="fn-107"><sup> 107 </sup></a>.</div>
-<div class="para" id="p-664">González, Oriana. 2023. “What Is the State of Gender-Affirming Care in America.” <a class="external" href="https://www.axios.com/2023/03/03/gender-affirming-care-trans-youth-us" target="_blank">https://www.axios.com/2023/03/03/gender-affirming-care-trans-youth-us</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-108" id="fn-108"><sup> 108 </sup></a>.</div>
-<div class="para" id="p-665">Harvard Law Review. 2021. “Outlawing Trans Youth: State Legislatures and the Battle over Gender-Affirming Healthcare for Minors.” <em class="emphasis">Harvard Law Review</em> 134 (6). <a class="external" href="https://harvardlawreview.org/print/vol-134/outlawing-trans-youth-state-legislatures-and-the-battle-over-gender-affirming-healthcare-for-minors/" target="_blank">https://harvardlawreview.org/print/vol-134/outlawing-trans-youth-state-legislatures-and-the-battle-over-gender-affirming-healthcare-for-minors/</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-109" id="fn-109"><sup> 109 </sup></a>.</div>
-<div class="para" id="p-666">Katy Steinmetz. 2014. “The Transgender Tipping Point.” <a class="external" href="https://time.com/135480/transgender-tipping-point/" target="_blank">https://time.com/135480/transgender-tipping-point/</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-110" id="fn-110"><sup> 110 </sup></a>.</div>
-<div class="para" id="p-667">Metric Geometry &amp; Gerrymandering Group. n.d. “GerryChain.” <a class="external" href="https://mggg.github.io/GerryChain/" target="_blank">https://mggg.github.io/GerryChain/</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-111" id="fn-111"><sup> 111 </sup></a>.</div>
-<div class="para" id="p-668">Olson, Kristina R., Aidan C. Key, and Nicholas R. Eaton. 2015. “Gender cognition in transgender children.” <em class="emphasis">Psychological Science</em> 26 (4): 467–74. <a class="external" href="https://doi.org/10.1177/0956797614568156" target="_blank">https://doi.org/10.1177/0956797614568156</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-112" id="fn-112"><sup> 112 </sup></a>.</div>
-<div class="para" id="p-669">Pauly, Madison. 2023. “Inside the Secret Working Group That Helped Push Anti-Trans Laws Across the Country.” <a class="external" href="https://www.motherjones.com/politics/2023/03/anti-trans-transgender-health-care-ban-legislation-bill-minors-children-lgbtq/" target="_blank">https://www.motherjones.com/politics/2023/03/anti-trans-transgender-health-care-ban-legislation-bill-minors-children-lgbtq/</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-113" id="fn-113"><sup> 113 </sup></a>.</div>
-<div class="para" id="p-670">Rafferty, Jason, COMMITTEE ON PSYCHOSOCIAL ASPECTS OF CHILD AND FAMILY HEALTH, COMMITTEE ON ADOLESCENCE, GAY, BISEXUAL, AND TRANSGENDER HEALTH AND WELLNESS SECTION ON LESBIAN, Michael Yogman, Rebecca Baum, Thresia B. Gambon, et al. 2018. “Ensuring Comprehensive Care and Support for Transgender and Gender-Diverse Children and Adolescents.” <em class="emphasis">Pediatrics</em> 142 (4): e20182162. <a class="external" href="https://doi.org/10.1542/peds.2018-2162" target="_blank">https://doi.org/10.1542/peds.2018-2162</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-114" id="fn-114"><sup> 114 </sup></a>.</div>
-<div class="para" id="p-671">Schipper, Kellie. 2022. “Conservative Political Tactics to Obstruct Gender-Affirming Healthcare for Transgender Youth in the USA.” PhD thesis.</div>
-<div class="para" id="p-672">The Trevor Project. 2022. “2022 National Survey on LGBTQ Youth Mental Health.” <a class="external" href="https://www.thetrevorproject.org/survey-2022/assets/static/trevor01_2022survey_final.pdf" target="_blank">https://www.thetrevorproject.org/survey-2022/assets/static/trevor01_2022survey_final.pdf</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-115" id="fn-115"><sup> 115 </sup></a>.</div>
-<div class="para" id="p-673">Theriot, Kevin H, and Ken Connelly. n.d. “Free to Do No Harm: Conscience Protections for Healthcare Professionals.” <em class="emphasis">Arizona State Law Journal</em> 49 (0549): 549–605.</div>
-<div class="para" id="p-674">Trans Legislation Tracker. n.d. “Trans Legislation Tracker: 2022 Anti-Transgender Bills.” <a class="external" href="https://translegislation.com/bills/2022" target="_blank">https://translegislation.com/bills/2022</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-116" id="fn-116"><sup> 116 </sup></a>.</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-102"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu-mo.org/en/news/advocates-sue-block-missouri-attorney-generals-anti-transgender-rule-restricting-gender</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-103"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-104"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2019</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-105"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-106"><div class="fn"><code class="code-inline tex2jax_ignore">newrepublic.com/article/156539/new-anti-trans-culture-war-hiding-plain-sight</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-107"><div class="fn"><code class="code-inline tex2jax_ignore">www.axios.com/2023/03/31/anti-trans-bills-2023-america</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-108"><div class="fn"><code class="code-inline tex2jax_ignore">www.axios.com/2023/03/03/gender-affirming-care-trans-youth-us</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-109"><div class="fn"><code class="code-inline tex2jax_ignore">harvardlawreview.org/print/vol-134/outlawing-trans-youth-state-legislatures-and-the-battle-over-gender-affirming-healthcare-for-minors/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-110"><div class="fn"><code class="code-inline tex2jax_ignore">time.com/135480/transgender-tipping-point/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-111"><div class="fn"><code class="code-inline tex2jax_ignore">mggg.github.io/GerryChain/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-112"><div class="fn"><code class="code-inline tex2jax_ignore">doi.org/10.1177/0956797614568156</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-113"><div class="fn"><code class="code-inline tex2jax_ignore">www.motherjones.com/politics/2023/03/anti-trans-transgender-health-care-ban-legislation-bill-minors-children-lgbtq/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-114"><div class="fn"><code class="code-inline tex2jax_ignore">doi.org/10.1542/peds.2018-2162</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-115"><div class="fn"><code class="code-inline tex2jax_ignore">www.thetrevorproject.org/survey-2022/assets/static/trevor01_2022survey_final.pdf</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-116"><div class="fn"><code class="code-inline tex2jax_ignore">translegislation.com/bills/2022</code></div></div>
+<div class="para" id="p-697">ACLU of Missouri. 2023. “Advocates Sue to Block Missouri Attorney General’s Anti-Transgender Rule Restricting Gender-Affirming Care.” <a class="external" href="https://www.aclu-mo.org/en/news/advocates-sue-block-missouri-attorney-generals-anti-transgender-rule-restricting-gender" target="_blank">https://www.aclu-mo.org/en/news/advocates-sue-block-missouri-attorney-generals-anti-transgender-rule-restricting-gender</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-110" id="fn-110"><sup> 110 </sup></a>.</div>
+<div class="para" id="p-698">American Civil Liberties Union. 2018. “Past Legislation Affecting LGBT Rights Across the Country (2018).” <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018" target="_blank">https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-111" id="fn-111"><sup> 111 </sup></a>.</div>
+<div class="para" id="p-699">———. 2019. “Past Legislation Affecting LGBT Rights Across Country 2019.” <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2019" target="_blank">https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2019</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-112" id="fn-112"><sup> 112 </sup></a>.</div>
+<div class="para" id="p-700">———. 2020. “Past Legislation Affecting LGBT Rights Across the Country 2020.” <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020" target="_blank">https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-113" id="fn-113"><sup> 113 </sup></a>.</div>
+<div class="para" id="p-701">Bauer, Sydney. 2020. “The New Anti-Trans Culture War Hiding in Plain Sight.” <em class="emphasis">The New Republic</em>, February. <a class="external" href="https://newrepublic.com/article/156539/new-anti-trans-culture-war-hiding-plain-sight" target="_blank">https://newrepublic.com/article/156539/new-anti-trans-culture-war-hiding-plain-sight</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-114" id="fn-114"><sup> 114 </sup></a>.</div>
+<div class="para" id="p-702">Contreras, Russell. 2023. “The Forces Behind Anti-Trans Bills Across the U.S.” <a class="external" href="https://www.axios.com/2023/03/31/anti-trans-bills-2023-america" target="_blank">https://www.axios.com/2023/03/31/anti-trans-bills-2023-america</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-115" id="fn-115"><sup> 115 </sup></a>.</div>
+<div class="para" id="p-703">González, Oriana. 2023. “What Is the State of Gender-Affirming Care in America.” <a class="external" href="https://www.axios.com/2023/03/03/gender-affirming-care-trans-youth-us" target="_blank">https://www.axios.com/2023/03/03/gender-affirming-care-trans-youth-us</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-116" id="fn-116"><sup> 116 </sup></a>.</div>
+<div class="para" id="p-704">Harvard Law Review. 2021. “Outlawing Trans Youth: State Legislatures and the Battle over Gender-Affirming Healthcare for Minors.” <em class="emphasis">Harvard Law Review</em> 134 (6). <a class="external" href="https://harvardlawreview.org/print/vol-134/outlawing-trans-youth-state-legislatures-and-the-battle-over-gender-affirming-healthcare-for-minors/" target="_blank">https://harvardlawreview.org/print/vol-134/outlawing-trans-youth-state-legislatures-and-the-battle-over-gender-affirming-healthcare-for-minors/</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-117" id="fn-117"><sup> 117 </sup></a>.</div>
+<div class="para" id="p-705">Katy Steinmetz. 2014. “The Transgender Tipping Point.” <a class="external" href="https://time.com/135480/transgender-tipping-point/" target="_blank">https://time.com/135480/transgender-tipping-point/</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-118" id="fn-118"><sup> 118 </sup></a>.</div>
+<div class="para" id="p-706">Metric Geometry &amp; Gerrymandering Group. n.d. “GerryChain.” <a class="external" href="https://mggg.github.io/GerryChain/" target="_blank">https://mggg.github.io/GerryChain/</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-119" id="fn-119"><sup> 119 </sup></a>.</div>
+<div class="para" id="p-707">Olson, Kristina R., Aidan C. Key, and Nicholas R. Eaton. 2015. “Gender cognition in transgender children.” <em class="emphasis">Psychological Science</em> 26 (4): 467–74. <a class="external" href="https://doi.org/10.1177/0956797614568156" target="_blank">https://doi.org/10.1177/0956797614568156</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-120" id="fn-120"><sup> 120 </sup></a>.</div>
+<div class="para" id="p-708">Pauly, Madison. 2023. “Inside the Secret Working Group That Helped Push Anti-Trans Laws Across the Country.” <a class="external" href="https://www.motherjones.com/politics/2023/03/anti-trans-transgender-health-care-ban-legislation-bill-minors-children-lgbtq/" target="_blank">https://www.motherjones.com/politics/2023/03/anti-trans-transgender-health-care-ban-legislation-bill-minors-children-lgbtq/</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-121" id="fn-121"><sup> 121 </sup></a>.</div>
+<div class="para" id="p-709">Rafferty, Jason, COMMITTEE ON PSYCHOSOCIAL ASPECTS OF CHILD AND FAMILY HEALTH, COMMITTEE ON ADOLESCENCE, GAY, BISEXUAL, AND TRANSGENDER HEALTH AND WELLNESS SECTION ON LESBIAN, Michael Yogman, Rebecca Baum, Thresia B. Gambon, et al. 2018. “Ensuring Comprehensive Care and Support for Transgender and Gender-Diverse Children and Adolescents.” <em class="emphasis">Pediatrics</em> 142 (4): e20182162. <a class="external" href="https://doi.org/10.1542/peds.2018-2162" target="_blank">https://doi.org/10.1542/peds.2018-2162</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-122" id="fn-122"><sup> 122 </sup></a>.</div>
+<div class="para" id="p-710">Schipper, Kellie. 2022. “Conservative Political Tactics to Obstruct Gender-Affirming Healthcare for Transgender Youth in the USA.” PhD thesis.</div>
+<div class="para" id="p-711">The Trevor Project. 2022. “2022 National Survey on LGBTQ Youth Mental Health.” <a class="external" href="https://www.thetrevorproject.org/survey-2022/assets/static/trevor01_2022survey_final.pdf" target="_blank">https://www.thetrevorproject.org/survey-2022/assets/static/trevor01_2022survey_final.pdf</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-123" id="fn-123"><sup> 123 </sup></a>.</div>
+<div class="para" id="p-712">Theriot, Kevin H, and Ken Connelly. n.d. “Free to Do No Harm: Conscience Protections for Healthcare Professionals.” <em class="emphasis">Arizona State Law Journal</em> 49 (0549): 549–605.</div>
+<div class="para" id="p-713">Trans Legislation Tracker. n.d. “Trans Legislation Tracker: 2022 Anti-Transgender Bills.” <a class="external" href="https://translegislation.com/bills/2022" target="_blank">https://translegislation.com/bills/2022</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-124" id="fn-124"><sup> 124 </sup></a>.</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-110"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu-mo.org/en/news/advocates-sue-block-missouri-attorney-generals-anti-transgender-rule-restricting-gender</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-111"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-112"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2019</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-113"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-114"><div class="fn"><code class="code-inline tex2jax_ignore">newrepublic.com/article/156539/new-anti-trans-culture-war-hiding-plain-sight</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-115"><div class="fn"><code class="code-inline tex2jax_ignore">www.axios.com/2023/03/31/anti-trans-bills-2023-america</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-116"><div class="fn"><code class="code-inline tex2jax_ignore">www.axios.com/2023/03/03/gender-affirming-care-trans-youth-us</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-117"><div class="fn"><code class="code-inline tex2jax_ignore">harvardlawreview.org/print/vol-134/outlawing-trans-youth-state-legislatures-and-the-battle-over-gender-affirming-healthcare-for-minors/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-118"><div class="fn"><code class="code-inline tex2jax_ignore">time.com/135480/transgender-tipping-point/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-119"><div class="fn"><code class="code-inline tex2jax_ignore">mggg.github.io/GerryChain/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-120"><div class="fn"><code class="code-inline tex2jax_ignore">doi.org/10.1177/0956797614568156</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-121"><div class="fn"><code class="code-inline tex2jax_ignore">www.motherjones.com/politics/2023/03/anti-trans-transgender-health-care-ban-legislation-bill-minors-children-lgbtq/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-122"><div class="fn"><code class="code-inline tex2jax_ignore">doi.org/10.1542/peds.2018-2162</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-123"><div class="fn"><code class="code-inline tex2jax_ignore">www.thetrevorproject.org/survey-2022/assets/static/trevor01_2022survey_final.pdf</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-124"><div class="fn"><code class="code-inline tex2jax_ignore">translegislation.com/bills/2022</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-leg-project.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
