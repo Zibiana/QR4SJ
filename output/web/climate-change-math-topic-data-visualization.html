@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Data Visualization</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -371,49 +400,35 @@ window.MathJax = {
 <div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Understanding the Issue</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.1</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
+<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Visualizing the Data</span></a></div>
 <ul class="structural">
+<li><div class="toc-item"><a href="sec-leg-visualize.html#sec-intro-to-data-leg" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Importing and Merging the Data</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.1.2</span> <span class="title">How to explore the data visually</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.1.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.1.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Exercises</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">5.1.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">5.1.5.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">5.1.6</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Visualizing the Data</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-visualize.html#sec-intro-to-data-leg" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.3.2</span> <span class="title">How to explore the data visually</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.3.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.3.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">5.3.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">5.3.5.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">5.3.6</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
-</ul>
+<div class="toc-item"><a href="sec-leg-case-study.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Case Study: How can we support storytelling using different data sources?</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-case-study.html#references-2" class="internal"><span class="codenumber">5.2</span> <span class="title">References</span></a></div></li></ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-case-study.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Case Study: How can we support storytelling using different data sources?</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-case-study.html#references-2" class="internal"><span class="codenumber">5.4</span> <span class="title">References</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-textualize.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Textualizing the Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-textualize.html#analyzing-text" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Stuffstuff</span></a></div></li></ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-textualize.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Textualizing the Data</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-textualize.html#analyzing-text" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Stuffstuff</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">5.6</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">5.7</span> <span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">5.5</span> <span class="title">References</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -768,20 +783,20 @@ window.MathJax = {
 </h4>
 <div class="para" id="p-410">Our next type of graph is used when we have a correspondence between two quantitative continuous data sets.  In a <em class="emphasis">scatterplot</em>, we plot a point on the x-y coordinates which represents a pair of data values.  Those points, then, can reveal patterns in how the data sets are related.</div>
 <div class="para" id="p-411">Our data set for this example will consist of gross domestic product (GDP), a measure of how wealthy a country is, and CO2 emissions.  Both of these numbers will naturally be larger for larger countries, because more people will produce more wealth and more CO2, so we consider the <em class="emphasis">per capita</em> numbers, meaning the amount of money or CO2 per person.  We can get these numbers by taking the total amount and dividing by the population of the country.  If you already know that there is a relationship between data sets because of something like population, dividing out by the value is an easy way to eliminate that relationship.  This is called <em class="emphasis">normalizing</em> the data set.</div>
-<div class="para" id="p-412">Because our data set has these values for 165 countries, we will not include the data table in the text.  The data can be found in <a class="external" href="data-files/co2-emissions-vs-gdp-2018.xlsx" target="_blank">gdp and co2 emissions for all countries in 2018 [Excel Spreadsheet]</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-71" id="fn-71"><sup> 71 </sup></a> (data from <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-gdp-vs-co2.html" title="Bibliographic Entry 4.11.1.24">[4.11.1.24]</a>).  We can construct a scatterplot by taking each pair of values and creating a point.  For example, the nation of Qatar has per capita CO2 emissions of 39.27 tons per person, and a GDP of $153,764 per person.  This is because Qatar is a very small nation (Qatar only had 2.7 million people in 2018, when this data was collected) which produces a large amount of oil - oil production is a major source of CO2 emissions and countries with large oil production tend to use more fossil fuels. Qatar would be marked by a dot at x = 39.27, and y = 153,764. Yemen, a country close to Qatar, but much poorer and with much less oil production (and which was fighting a civil war in 2018) has per capita CO2 emissions of only 0.35 tons per person, and a per capita GDP of only $2,285 per person.  The dot for Yemen would be at x=0.35 and y=2,285.</div>
+<div class="para" id="p-412">Because our data set has these values for 165 countries, we will not include the data table in the text.  The data can be found in <a class="external" href="data-files/co2-emissions-vs-gdp-2018.xlsx" target="_blank">gdp and co2 emissions for all countries in 2018 [Excel Spreadsheet]</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-70" id="fn-70"><sup> 70 </sup></a> (data from <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-gdp-vs-co2.html" title="Bibliographic Entry 4.11.1.24">[4.11.1.24]</a>).  We can construct a scatterplot by taking each pair of values and creating a point.  For example, the nation of Qatar has per capita CO2 emissions of 39.27 tons per person, and a GDP of $153,764 per person.  This is because Qatar is a very small nation (Qatar only had 2.7 million people in 2018, when this data was collected) which produces a large amount of oil - oil production is a major source of CO2 emissions and countries with large oil production tend to use more fossil fuels. Qatar would be marked by a dot at x = 39.27, and y = 153,764. Yemen, a country close to Qatar, but much poorer and with much less oil production (and which was fighting a civil war in 2018) has per capita CO2 emissions of only 0.35 tons per person, and a per capita GDP of only $2,285 per person.  The dot for Yemen would be at x=0.35 and y=2,285.</div>
 <div class="para" id="p-413">Here is a scatterplot of the entire data set:</div>
 <figure class="figure figure-like" id="climate-change-math-topic-data-visualization-graphs-scatterplot-gdp-co2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/climate-change/images/scatterplot-gdp-co2.png" class="contained" alt="Scatterplot of the gdp and co2 data.  Image description available."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.21<span class="period">.</span></span><span class="space"> </span>Scatterplot of the relationship between GDP and CO2, per capita, of nations in 2018. <a href="" class="xref" data-knowl="./knowl/climate-change-image-scatterplot-gdp-co2.html" title="Item 6">Image Description 6</a>.</figcaption></figure><div class="para" id="p-414">Scatterplots are useful because they help us see patterns in the data.  In this graph, we can see that for countries with low emissions and low GDP, an increase in GDP generally corresponds to an increase in CO2 emissions.  This makes sense, because we associate increased economic activity with increased usage of fossil fuels.  We see this especially in the dot for Qatar, located at the extreme right &amp; top of the graph.  However, a number of wealthier nations, including Norway (84,580, 8.21), Singapore (68,402, 6.65), Ireland (64,684, 8.85), Switzerland (61,373, 4.33), and Sweden (45,542, 4.19) don’t fit this trend, having much lower emissions than nations with similar GDPs.  Similarly, there are a number of nations with much higher emissions than countries with similar GDPs - Trinidad &amp; Tobago (28,549, 27.24), Mongolia (13,383, 20.35), Kazakhstan (25,308, 17.45), and Bahrain (39,499, 20.14).  While you can see this from looking at the data table, it is much easier to see these data points that stand out (called <em class="emphasis">outliers</em>) from looking at the scatterplot.</div>
 <div class="para" id="p-415">Each of these countries has a unique reason why their CO2 emissions are lower or higher than expected from GDP.  Do some research on your own and see if you can explain why they don’t fit the general trend of the other points.</div>
 <div class="para" id="p-416">When we have two quantitative continuous data sets where there are no repeated values in one data set, a type of scatterplot called a <em class="emphasis">line graph</em> can be used.  In a line graph, the data set with no repeated values is marked on the horizontal axis.  Adjacent points are then connected by short lines.</div>
 <div class="para" id="p-417">Line graphs are used to imply that, although we do not have data values for every x-axis value, we can assume that the data between values follows a similar pattern.  The lines are a visual way of indicating this.  Line graphs are frequently used when one data set represents time (since there will only be one data value for each time).</div>
-<div class="para" id="p-418">The data in <a class="external" href="data-files/global-temperature-anomaly.xlsx" target="_blank">global mean temperature anomalies [Excel Spreadsheet]</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-72" id="fn-72"><sup> 72 </sup></a> is from the National Oceanic and Atmospheric Administration (NOAA).  This data gives the global mean temperature anomaly for every year from 1880 to 2019.  Because we have a correspondence between quantitative continuous data values (year and global mean temperature anomaly), and because there is only one value for each year, this data is an ideal candidate for a line graph.</div>
+<div class="para" id="p-418">The data in <a class="external" href="data-files/global-temperature-anomaly.xlsx" target="_blank">global mean temperature anomalies [Excel Spreadsheet]</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-71" id="fn-71"><sup> 71 </sup></a> is from the National Oceanic and Atmospheric Administration (NOAA).  This data gives the global mean temperature anomaly for every year from 1880 to 2019.  Because we have a correspondence between quantitative continuous data values (year and global mean temperature anomaly), and because there is only one value for each year, this data is an ideal candidate for a line graph.</div>
 <figure class="figure figure-like" id="figure-14"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/climate-change/images/line-graph-global-temperature-anomaly.png" class="contained" alt="Line graph of the global mean temperature anomaly. Image description available."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.22<span class="period">.</span></span><span class="space"> </span>Line graph of the global mean temperature anomaly fom 1880 to 2019. Data is from <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-global-temperature-anomaly.html" title="Bibliographic Entry 4.11.1.25">[4.11.1.25]</a>.  <a href="" class="xref" data-knowl="./knowl/climate-change-image-line-graph-global-temperature-anomaly.html" title="Item 7">Image Description 7</a>.</figcaption></figure></section><section class="subsubsection" id="climate-change-math-topic-data-visualization-graphs-combining-graphs"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span> <span class="codenumber">4.6.2.4</span> <span class="title">Combining Graphs</span>
 </h4>
 <div class="para" id="p-419">You can show multiple data sets at the same time by combining these graphs in various ways.  If the two data sets have quantitative values in the same (or similar) ranges, it may make sense to combine them into a single bar chart (with different colored/shaded bars for each data set) or a single line graph (with a different color/pattern for each data set).</div>
-<div class="para" id="p-420">For example, the data in <a class="external" href="data-files/paired-line-graph-co2-us-china.xlsx" target="_blank">total co2 emissions of the USA and China [Excel Spreadsheet]</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-73" id="fn-73"><sup> 73 </sup></a> is from the World Bank.  The data gives the CO2 emissions of the United States and China from 1960 to 2018 in kilotons.  Because these data sets have a similar scale, we can display them on a single graph.  We use a line graph because the data set is quantitative continuous and has a single value for each year.</div>
+<div class="para" id="p-420">For example, the data in <a class="external" href="data-files/paired-line-graph-co2-us-china.xlsx" target="_blank">total co2 emissions of the USA and China [Excel Spreadsheet]</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-72" id="fn-72"><sup> 72 </sup></a> is from the World Bank.  The data gives the CO2 emissions of the United States and China from 1960 to 2018 in kilotons.  Because these data sets have a similar scale, we can display them on a single graph.  We use a line graph because the data set is quantitative continuous and has a single value for each year.</div>
 <figure class="figure figure-like" id="figure-15"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/climate-change/images/paired-line-graph-co2-us-china.png" class="contained" alt="Line graphs of the total CO2 emissions of the United States and China. Image description available."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.23<span class="period">.</span></span><span class="space"> </span>Paired line graph of the total CO2 emissions of the United States and China from 1960 to 2018 in gigatons. Data is from <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-overall-co2-emissions.html" title="Bibliographic Entry 4.11.1.26">[4.11.1.26]</a>. <a href="" class="xref" data-knowl="./knowl/climate-change-image-paired-line-graph-co2-us-china.html" title="Item 8">Image Description 8</a>.</figcaption></figure><div class="para" id="p-421">If you have data with very different scales, though, a paired line graph is not a great choice.  Consider the graph below, which shows CO2 emissions for the United States again (in gigatons) and the emissions for Singapore, a much smaller nation with much lower emissions.</div>
 <figure class="figure figure-like" id="figure-16"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/climate-change/images/paired-line-graph-co2-us-singapore.png" class="contained" alt="Line graphs of the total CO2 emissions of the United States and Singapore. Image description available."></div>
@@ -806,16 +821,16 @@ window.MathJax = {
 <div class="para" id="p-428">The internet has greatly changed the way that people visualize data.  With books, magazines, and newspapers, data visualizations were restricted to static images like graphs and charts.  The modern internet provides the ability to use more dynamic and interactive data visualizations.  These data visualizations can be useful and help people understand data better, but they can also be overwhelming.  We’ll look at some examples and talk about the advantages and disadvantages of these types of data visualizations.</div>
 <div class="para" id="p-429">One example of a data visualization using the internet is a video which shows multiple different graphs.  Sometimes these visualizations will just be a series of graphs like the ones we’ve seen before.  For example, the graph in <a href="" class="xref" data-knowl="./knowl/climate-change-math-topic-data-visualization-graphs-scatterplot-gdp-co2.html" title="Figure 4.6.21">Figure 4.6.21</a> showed the relationship between the gross domestic product (GDP) and CO2 emissions per person for countries in 2018. The video in <a href="" class="xref" data-knowl="./knowl/climate-change-math-topic-data-visualization-graphs-video-scatterplot-gdp-co2.html" title="Figure 4.6.31">Figure 4.6.31</a> shows the same data, but for every year from 1961 to 2014.  It also adds another data set - how much the temperature in that country has gone up or down from the average over 1961-2018.  The temperature change is represented by the color and size of the dot.</div>
 <figure class="figure figure-like" id="climate-change-math-topic-data-visualization-graphs-video-scatterplot-gdp-co2"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-4" class="video" controls=""><source src="external/climate-change/images/video-scatterplot-gdp-co2.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.31<span class="period">.</span></span><span class="space"> </span>National gross domestic product and CO2 emissions per person 1961-2014. Video by Antti Lipponen, <a class="external" href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC-BY-2.0</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-74" id="fn-74"><sup> 74 </sup></a>. <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-video-scatterplot-gdp-co2.html" title="Bibliographic Entry 4.11.1.28">[4.11.1.28]</a>.</figcaption></figure><div class="para" id="p-430">This graph contains a lot of information - 3 different data sets (GDP, CO2 Emissions, and temperature change) for every country for every year from 1961-2014.  Looking at all of that data in a table could be overwhelming, but this visualization makes it easier to see certain patterns.  We can see that in general, as time changes, the nations of the world are getting richer (the points move right), producing more CO2 (the points move up), and hotter (the points get larger and more red).  We can also see that despite all these changes, inequality persists - some countries remain poor while others get even more wealthy.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.31<span class="period">.</span></span><span class="space"> </span>National gross domestic product and CO2 emissions per person 1961-2014. Video by Antti Lipponen, <a class="external" href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC-BY-2.0</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-73" id="fn-73"><sup> 73 </sup></a>. <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-video-scatterplot-gdp-co2.html" title="Bibliographic Entry 4.11.1.28">[4.11.1.28]</a>.</figcaption></figure><div class="para" id="p-430">This graph contains a lot of information - 3 different data sets (GDP, CO2 Emissions, and temperature change) for every country for every year from 1961-2014.  Looking at all of that data in a table could be overwhelming, but this visualization makes it easier to see certain patterns.  We can see that in general, as time changes, the nations of the world are getting richer (the points move right), producing more CO2 (the points move up), and hotter (the points get larger and more red).  We can also see that despite all these changes, inequality persists - some countries remain poor while others get even more wealthy.</div>
 <div class="para" id="p-431">In some ways, though, the visualization also hides other information.  This graph uses a logarithmic scale on both axes. In a normal scale on a graph (what we call a linear scale in mathematics), when you go a unit over on the graph, you add the same amount on the scale - so you may go from 10 at one mark, to 20 at the next, to 30 at the next, adding 10 each time.  In a logarithmic scale, instead of adding each time, you multiply by the same amount.  For example, on this graph, the marks on the horizontal axis go from 100 to 1000, multiplying by 10, and then to 10,000, multiplying by 10 again, and then 100,000, multiplying by 10 again.</div>
 <div class="para" id="p-432">Logarithmic scales are used when we have very small numbers and very large numbers in the same graph, like we do here - some countries have much lower GDPs than others, because of global wealth inequality. The logarithmic scale conceals an increase in inequality in this graph - as the points move to the left and up, the gap between the poorest &amp; least emitting countries and the wealthiest &amp; most emitting countries is getting larger and larger.</div>
 <div class="para" id="p-433">Other video data visualizations use different graphing techniques.  The video in <a href="" class="xref" data-knowl="./knowl/climate-change-math-topic-data-visualization-graphs-video-temperature-anomalies.html" title="Figure 4.6.32">Figure 4.6.32</a>, the position of the points doesn’t really convey any information (it’s just determined by the country’s name in the English alphabet), but the size and color of the dot gives the temperature anomaly for that country in a particular month.  You can see the points get larger and redder as the climate warms.</div>
 <figure class="figure figure-like" id="climate-change-math-topic-data-visualization-graphs-video-temperature-anomalies"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-5" class="video" controls=""><source src="external/climate-change/images/video-temperature-anomalies.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.32<span class="period">.</span></span><span class="space"> </span>Monthly temperature anomaly for countries from 1880-2017. Video by Antti Lipponen, <a class="external" href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC-BY-2.0</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-75" id="fn-75"><sup> 75 </sup></a>. <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-video-temperature-anomalies.html" title="Bibliographic Entry 4.11.1.29">[4.11.1.29]</a>.</figcaption></figure><div class="para" id="p-434">The visualization in <a href="" class="xref" data-knowl="./knowl/climate-change-math-topic-data-visualization-graphs-video-temperature-anomalies.html" title="Figure 4.6.32">Figure 4.6.32</a> gives the viewer a very clear picture of how severe and widespread the warming has been in countries around the world.  It does not, however, give a lot of data on how that warming is spread out, because the countries are arranged alphabetically.  The video in <a href="" class="xref" data-knowl="./knowl/climate-change-math-topic-data-visualization-graphs-video-map-co2.html" title="Figure 4.6.33">Figure 4.6.33</a> shows the CO2 emissions per country for each year from 1850 to 2016, but arranged on a map of the world (unfortunately, a Mercator projection, which creates a biased map where northern countries appear much larger than those near the equator).  This allows the viewer to see a different kind of pattern - the geographical relationship between countries with high CO2 emissions.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.32<span class="period">.</span></span><span class="space"> </span>Monthly temperature anomaly for countries from 1880-2017. Video by Antti Lipponen, <a class="external" href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC-BY-2.0</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-74" id="fn-74"><sup> 74 </sup></a>. <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-video-temperature-anomalies.html" title="Bibliographic Entry 4.11.1.29">[4.11.1.29]</a>.</figcaption></figure><div class="para" id="p-434">The visualization in <a href="" class="xref" data-knowl="./knowl/climate-change-math-topic-data-visualization-graphs-video-temperature-anomalies.html" title="Figure 4.6.32">Figure 4.6.32</a> gives the viewer a very clear picture of how severe and widespread the warming has been in countries around the world.  It does not, however, give a lot of data on how that warming is spread out, because the countries are arranged alphabetically.  The video in <a href="" class="xref" data-knowl="./knowl/climate-change-math-topic-data-visualization-graphs-video-map-co2.html" title="Figure 4.6.33">Figure 4.6.33</a> shows the CO2 emissions per country for each year from 1850 to 2016, but arranged on a map of the world (unfortunately, a Mercator projection, which creates a biased map where northern countries appear much larger than those near the equator).  This allows the viewer to see a different kind of pattern - the geographical relationship between countries with high CO2 emissions.</div>
 <figure class="figure figure-like" id="climate-change-math-topic-data-visualization-graphs-video-map-co2"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-6" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/oa-1vTTsOn0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.33<span class="period">.</span></span><span class="space"> </span>Map of the world, showing greenhouse gas emissions per person for each country. <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-video-per-capita-co2.html" title="Bibliographic Entry 4.11.1.30">[4.11.1.30]</a>.</figcaption></figure><div class="para" id="p-435">
 <a href="" class="xref" data-knowl="./knowl/climate-change-math-topic-data-visualization-graphs-video-map-co2.html" title="Figure 4.6.33">Figure 4.6.33</a> shows us that greenhouse gas emissions per person have grown most in large fossil fuel producing nations like the USA, Canada, and Russia, as well as smaller nations in West Asia like Oman and Saudia Arabia.  It does conceeal some of the highest emitters, like Bahrain and Qatar, which can be seen in <a href="" class="xref" data-knowl="./knowl/climate-change-math-topic-data-visualization-graphs-video-scatterplot-gdp-co2.html" title="Figure 4.6.31">Figure 4.6.31</a>, because they are too small to show up clearly on the map.</div>
-<div class="para" id="p-436">Data visualizations on the internet can also be interactive.  The Earth Sciences Communications Team at the National Aeronautics and Space Association’s (NASA) Jet Propulsion Laboratory has produced several outstanding interactive data visualizations around climate change.  The <a class="external" href="https://climate.nasa.gov/interactives/climate-time-machine" target="_blank">Climate Time Machine</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-76" id="fn-76"><sup> 76 </sup></a> allows viewers to see how the climate has changed over time in four different ways - sea ice, sea level, CO2 emissions, and temperature change. <a class="external" href="https://climate.nasa.gov/earth-now/#/" target="_blank">Earth Now</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-77" id="fn-77"><sup> 77 </sup></a> is even more elaborate, allowing the viewer to display a wide range of global data sets on an animated globe, and to look at that data over a range of time or at a point in history.</div></section><section class="subsubsection" id="climate-change-math-topic-data-visualization-graphs-accessibility"><h4 class="heading hide-type">
+<div class="para" id="p-436">Data visualizations on the internet can also be interactive.  The Earth Sciences Communications Team at the National Aeronautics and Space Association’s (NASA) Jet Propulsion Laboratory has produced several outstanding interactive data visualizations around climate change.  The <a class="external" href="https://climate.nasa.gov/interactives/climate-time-machine" target="_blank">Climate Time Machine</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-75" id="fn-75"><sup> 75 </sup></a> allows viewers to see how the climate has changed over time in four different ways - sea ice, sea level, CO2 emissions, and temperature change. <a class="external" href="https://climate.nasa.gov/earth-now/#/" target="_blank">Earth Now</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-76" id="fn-76"><sup> 76 </sup></a> is even more elaborate, allowing the viewer to display a wide range of global data sets on an animated globe, and to look at that data over a range of time or at a point in history.</div></section><section class="subsubsection" id="climate-change-math-topic-data-visualization-graphs-accessibility"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span> <span class="codenumber">4.6.2.6</span> <span class="title">Accessibiliity</span>
 </h4>
 <div class="para" id="p-437">All of these data visualizations - both the static images we saw before and the videos here - have one major flaw.  These visualizations, because they convey data visually, are only accessible to people without visual impairment.  People with no sight or sight which is limited in some way (like color-blindness) may be unable to use data visualizations as effectively as people without visual impairment.</div>
@@ -828,17 +843,17 @@ window.MathJax = {
 <li id="li-163"><div class="para" id="p-derived-li-163">Choose a good title for your graph.  People with reading or attention disabilities may read only the title, so make sure it conveys as much information about what the graph means as possible.</div></li>
 <li id="li-164"><div class="para" id="p-derived-li-164">Use redundancy - for example, a particular quality may be represented by both the color and size of a dot.  If someone doesn’t notice or can’t detect one quality, they may be able to detect the other.</div></li>
 </ul>
-<div class="para" id="p-440">One example of accessibility is the creation of data sonifications - like a visualization, but with sound.  The online graphing calculator Desmos, for example, has a feature called <a class="external" href="https://www.desmos.com/accessibility#audio-trace" target="_blank">Audio Trace</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-78" id="fn-78"><sup> 78 </sup></a> which allows users to hear a graph in the graphing calculator.  The sound moves across stereo speakers from left to right, and increases in pitch as the graph increases (with static added when it’s negative).  This allows visually-impaired people the opportunity to hear the same patterns that others can see in the graph.</div>
+<div class="para" id="p-440">One example of accessibility is the creation of data sonifications - like a visualization, but with sound.  The online graphing calculator Desmos, for example, has a feature called <a class="external" href="https://www.desmos.com/accessibility#audio-trace" target="_blank">Audio Trace</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-77" id="fn-77"><sup> 77 </sup></a> which allows users to hear a graph in the graphing calculator.  The sound moves across stereo speakers from left to right, and increases in pitch as the graph increases (with static added when it’s negative).  This allows visually-impaired people the opportunity to hear the same patterns that others can see in the graph.</div>
 <div class="para" id="p-441">A powerful climate change sonification from the Center for Computer Research in Music and Acoustics at Stanford University is "shown" in <a href="" class="xref" data-knowl="./knowl/climate-change-math-topic-data-visualization-graphs-accessibility-sonification.html" title="Figure 4.6.34">Figure 4.6.34</a>. In this sonification, which starts roughly 400 years ago, the CO2 levels in the atmosphere provide the pitch for a background tone, while a strumming guitar sound gets louder and higher in pitch as temperature anomalies increase.  The result is a haunting sound which becomes more and more urgent as time approaches the present - just like the climate crisis.</div>
 <figure class="figure figure-like" id="climate-change-math-topic-data-visualization-graphs-accessibility-sonification"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-7" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ONuA9HmkF3M?&amp;modestbranding=1&amp;rel=0"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.34<span class="period">.</span></span><span class="space"> </span>Climate data from the past 400 years as a single sound file.  The pitch of the background tone rises as carbon dioxide in the atmosphere increases, while the plucked sound of the guitar increases in volume and pitch as global temperatures increase. <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-climate-sound.html" title="Bibliographic Entry 4.11.1.31">[4.11.1.31]</a></figcaption></figure></section></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-71"><div class="fn"><code class="code-inline tex2jax_ignore">data-files/co2-emissions-vs-gdp-2018.xlsx</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-72"><div class="fn"><code class="code-inline tex2jax_ignore">data-files/global-temperature-anomaly.xlsx</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-73"><div class="fn"><code class="code-inline tex2jax_ignore">data-files/paired-line-graph-co2-us-china.xlsx</code></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.34<span class="period">.</span></span><span class="space"> </span>Climate data from the past 400 years as a single sound file.  The pitch of the background tone rises as carbon dioxide in the atmosphere increases, while the plucked sound of the guitar increases in volume and pitch as global temperatures increase. <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-climate-sound.html" title="Bibliographic Entry 4.11.1.31">[4.11.1.31]</a></figcaption></figure></section></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-70"><div class="fn"><code class="code-inline tex2jax_ignore">data-files/co2-emissions-vs-gdp-2018.xlsx</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-71"><div class="fn"><code class="code-inline tex2jax_ignore">data-files/global-temperature-anomaly.xlsx</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-72"><div class="fn"><code class="code-inline tex2jax_ignore">data-files/paired-line-graph-co2-us-china.xlsx</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-73"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by/2.0/</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-74"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by/2.0/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-75"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by/2.0/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-76"><div class="fn"><code class="code-inline tex2jax_ignore">climate.nasa.gov/interactives/climate-time-machine</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-77"><div class="fn"><code class="code-inline tex2jax_ignore">climate.nasa.gov/earth-now/#/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-78"><div class="fn"><code class="code-inline tex2jax_ignore">www.desmos.com/accessibility#audio-trace</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-75"><div class="fn"><code class="code-inline tex2jax_ignore">climate.nasa.gov/interactives/climate-time-machine</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-76"><div class="fn"><code class="code-inline tex2jax_ignore">climate.nasa.gov/earth-now/#/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-77"><div class="fn"><code class="code-inline tex2jax_ignore">www.desmos.com/accessibility#audio-trace</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="climate-change-math-topic-scientific-notation.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="climate-change-math-topic-mathematical-models.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
