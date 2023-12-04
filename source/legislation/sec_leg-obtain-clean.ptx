@@ -126,7 +126,8 @@
 
 		<subsection xml:id="exercise">
 			<title>Exercise</title>
-			<p> Instructions: Open the Oklahoma Excel file and click “view raw” to download the file. You are part of a data-cleaning team focused on this data set. Your job is to clean the provided data set as follows:
+			<p> Instructions: Open the <dataurl source = "Excel files/5.3 Exercise 1.xlsx">Oklahoma Excel file</dataurl> and click “view raw” to download the file. You are part of a data-cleaning team focused on this data set. Your job is to clean the provided data set as follows:
+				<url href="https://tracktranslegislation.com">tracktranslegislation.com</url>
 				<ol>
 						<li>  Delete all conditional formatting (i.e. capitalization)</li>
 						<li>  Replace all mentions of “Alabama” with “Oklahoma”</li>
