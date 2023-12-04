@@ -14,15 +14,9 @@
 		<p>
 			<term>Note. <em>All data (including merged and filtered data) used in this analysis analysis is open-access and can be found <url href="https://github.com/Zibiana/QR4SJ/tree/main/assets/data-leg">on GitHub</url>.</em></term>
 		</p>
-
-		<p>
-			Americans who identify as lesbian, gay, bisexual, transgender, queer, or many other identities under the queer and trans umbrella (LGBTQ+ folks for short) have long been targeted by conservative groups in the U.S. Nonetheless, the mid-2010s seemed to many to be a time of increasing acceptance of LGBTQ+ identities; the <em>Time</em> magazine article <q>The Transgender Tipping Point,</q> for example, quoted actress and advocate Laverne Cox as saying, <q>We are in a place now where more and more trans people want to come forward and say, <sq>This is who I am.</sq> […] More of us are living visibly and pursuing our dreams visibly, so people can say, <sq>Oh yeah, I know someone who is trans.</sq> When people have points of reference that are humanizing, that demystifies difference (<url href="https://time.com/135480/transgender-tipping-point/">Katy Steinmetz 2014</url>).</q>
-		</p>
-
-		<p>
-			However, after the 2015 Supreme Court ruling in <em>Obergefell v. Hodges</em> legalizing <q>same-sex marriage</q> (though some of those who were married after <em>Obergefell</em> would not identify their marriages with that term), conservative groups have sought to target LGBTQ+ people through <q>religious freedom</q> laws allowing for discrimination against <q>same-sex couples</q>, and more recently, transgender people, especially transgender youth. Despite the increasing prevalence of trans and nonbinary people in American society, as well as the recent legislative and political attacks on these groups, relatively few academic studies have been conducted on the impact of the surge of anti-trans legislation since 2019. In order to better understand the impact of such legislation, we wish to gather data from various sources to analyze the growth, types, progress, and impacts of various anti-trans and -nonbinary bills from 2018 to 2023.
-		</p>
 	</introduction>
+
+	<xi:include href="./sec_leg-objectives.ptx" />
 
 	<xi:include href="./sec_leg-understanding.ptx" />
 
@@ -33,8 +27,6 @@
 	<xi:include href="./sec_leg-case-study.ptx" />
 
 	<xi:include href=  "./sec_leg-textualize.ptx" />
-
-	<xi:include href="./sec_leg-future-directions.ptx" />
 
 	<xi:include href="./sec_leg-project.ptx" />
 

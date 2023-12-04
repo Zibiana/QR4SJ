@@ -1,0 +1,80 @@
+<section xml:id="sec-leg-objectives">
+    <title>Objectives </title>
+
+    <p>
+        By the end of this section, an engaged learner will be able to:
+        <ul>
+            <li>
+                <p>
+                    Understand the context around anti-trans legislation.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Extract the data needed to make informed and justified claims.
+
+                </p>
+            </li>
+            <li>
+                <p>
+                    Formulate questions based on available data and assess the limitations of a given data set.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Describe fundamental processes for cleaning and analyzing textual data.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Use both qualitative and quantitative data to present stories about people harmed by legislation targeting specific identities.
+                </p>
+            </li>
+        </ul>
+    </p>
+    <subsection xml:id="technical-process-overivew">
+        <title>Technical Process Overview</title>
+
+    <p>
+        In the rest of this chapter, you will identify and analyze recent anti-trans and anti-nonbinary bills over time, focusing on their impacts, whether or not they passed, and other details that impact people's lives. In section 5.3, you will find a data set in order to import, merge, and finally clean on anti-trans legislation. Section 5.4 will have you analyze text from “template bills” and proposed state bills to understand which template bills and organizations have had the most influence on the passage of legislation. In section 5.5, you will visualize data using side-by-side and stacked barcharts from anti-trans bills to explore trends and patterns by bill type and status. [EDIT THIS WITH FINALIZED SECTIONS]. Motivating ideas from each section will summarize the coding skills you will master and how they apply to a particular aspect of anti-trans legislation. The end of each section will contain a series of exercises which apply the chapter objectives and motivating section ideas.
+    </p>
+</subsection>
+
+<subsection xml:id="leg-resources">
+    <title>Resources</title>
+
+    <ul>
+        <li>
+            <p>
+                <url href ="https://r-graph-gallery.com/">The R Graph Gallery</url> - A collection of charts and graphs that can be created in R using tidyverse and ggplot2. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <url href ="https://rc2e.com/">R Cookbook, 2nd Edition</url> - Book of "how-to recipes" for beginner and intermediate-level R users. Each recipe represents one of many solutions but often presents the simplest one.
+            </p>
+        </li>
+        <li>
+            <p>
+                <url href = "https://stackoverflow.com/">Stack Overflow</url> - Public platform for users to ask and answer coding questions.
+            </p>
+        </li>
+        <li>
+            <p>
+                <url href = "https://www.datacamp.com/"> DataCamp</url> - Online learning platform with data science and AI tutorials teaching students non-coding and coding essentials.
+            </p>
+        </li>
+        <li>
+            <p>
+                <url href = "https://www.penguinrandomhouse.com/books/611537/beyond-the-gender-binary-by-alok-vaid-menon-illustrated-by-ashley-lukashevsky/"> Beyond the Gender Binary by Alok Vaid-Menon</url> - Written by gender non-conforming artist Alok Vaid-Menon known for creatively challenging societal norms of the gender binary. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <url href = "https://www.vox.com/the-highlight/2019/5/20/18542843/intersectionality-conservatism-law-race-gender-discrimination"> The Intersectionality Wars </url> - Understanding Kimberlé Crenshaw’s coinage of “intersectionality” and its applications from a relatively obscure legal concept to understanding our identities today.
+            </p>
+        </li>
+    </ul>
+</subsection>
+
+</section>

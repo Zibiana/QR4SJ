@@ -4,23 +4,30 @@
 		<introduction>
 			<title>Motivating Ideas</title>
 			<p>
+			In this section, I will...
 				<ul >
-					<li> First item. </li>
-					<li> Another item. </li>
+					<li> Define key terms relating to trans legislation. </li>
+					<li> Understand past and current contexts regarding anti-trans legislation and their impact on people’s lives. </li>
+					<li> Be prepared to apply this understanding to mathematical and data analysis.  </li>
 				</ul>			
 			</p>
 
-		</introduction>
+
 			<p>
-				<em>Need to add an activity or something here that helps students grapple with trauma around all that's been happening. </em>	
+				<em>Need to add an activity or something here that helps students grapple with trauma around all that's been happening. </em> </p>	
 
-
+			<p>
 				We begin by investigating key definitions necessary to understand transgender and nonbinary identities and how they are targeted by recent bills.
 			</p>
 
-
 		<exercises xml:id="exercises-anti-trans">
 		<title>Anti-Trans Bills in the U.S. Starting 2018</title>
+		<p>
+		Americans who identify as lesbian, gay, bisexual, transgender, queer, or many other identities under the queer and trans umbrella (LGBTQ+ folks for short) have long been targeted by conservative groups in the United States. Nonetheless, the mid-2010s seemed to be a time of increasing acceptance of LGBTQ+ identities; the Time magazine article “The Transgender Tipping Point” quoted actress Laverne Cox as saying, “We are in a place now where more and more trans people want to come forward and say, ‘This is who I am’” <url href = "https://time.com/135480/transgender-tipping-point/"> (Katy Steinmetz 2014). </url> 
+		</p>
+		<p> 
+		However, after the 2015 Supreme Court ruling in <url href ="https://en.wikipedia.org/wiki/Obergefell_v._Hodges"> Obergefell v. Hodges</url> legalizing same-sex marriage, conservative groups have sought to target LGBTQ+ people through “religious freedom” laws allowing for discrimination against same-sex couples, and more recently, transgender people of all ages. Despite the recent legislative and political attacks on these groups, relatively few academic studies have been conducted on the impact of the surge of anti-trans legislation since 2019.
+		</p>
 		<exercisegroup>
 			<introduction>
 				<p>
@@ -75,15 +82,15 @@
 		</exercises>
 
 		<p>
-			We emphasize the years since 2018 in this analysis because, in 2019, the conservative Heritage Foundation and conservative Christian Family Policy Alliance distributed a model strategy for banning gender-affirming care to state legislators at a conference (<url href="https://harvardlawreview.org/print/vol-134/outlawing-trans-youth-state-legislatures-and-the-battle-over-gender-affirming-healthcare-for-minors/">Harvard Law Review 2021</url>). In 2020, a conference attendee and South Dakota legislator published a version of the bill seeking to criminalize doctors&apos; provision of puberty blockers and hormones to transgender patients under the age of 16. Similar bills followed the same year: in Colorado, Florida, Illinois, Iowa, Kentucky, Missouri, Oklahoma, and South Carolina (Bauer 2020). Though the 2020 bills failed, the language in bills in South Carolina, South Dakota, and Arkansas in 2021 attempting to allow physicians to refuse to treat transgender children shared similar language, which originated in a <q>Model Conscience Protection Act</q> published by Kevin Theriot and Ken Connelly of the conservative Alliance Defending Freedom (Theriot and Connelly, n.d.). As we will see below, more and more bills are being proposed, and more are passing, every year since.
+			In order to better understand the impact of such legislation, we wish to gather data from various sources to analyze the growth, types, progress, and impacts of various anti-trans and nonbinary bills from 2018 to 2023. We emphasize the years since 2018 in this analysis because, in 2019, the conservative Heritage Foundation and conservative Christian Family Policy Alliance distributed a model strategy for banning gender-affirming care to state legislators at a conference (<url href="https://harvardlawreview.org/print/vol-134/outlawing-trans-youth-state-legislatures-and-the-battle-over-gender-affirming-healthcare-for-minors/">Harvard Law Review 2021</url>). In 2020, a conference attendee and South Dakota legislator published a version of the bill seeking to criminalize doctors&apos; provision of puberty blockers and hormones to transgender patients under the age of 16. Similar bills followed the same year: in Colorado, Florida, Illinois, Iowa, Kentucky, Missouri, Oklahoma, and South Carolina <url href = "https://newrepublic.com/article/156539/new-anti-trans-culture-war-hiding-plain-sight"> (Bauer 2020) </url>. Though the 2020 bills failed, the language in bills in South Carolina, South Dakota, and Arkansas in 2021 attempting to allow physicians to refuse to treat transgender children shared similar language, which originated in a <q>Model Conscience Protection Act</q> published by Kevin Theriot and Ken Connelly of the conservative Alliance Defending Freedom <url href = "https://arizonastatelawjournal.org/wp-content/uploads/2017/07/Theriot_Final-Update.pdf"> (Theriot and Connelly, n.d.) </url>. As we will see below, more and more bills are being proposed, and more are passing, every year since.
 		</p>
 
 		<p>
-			These bills go against studies showing that transgender children between the age of 5 and 12 viewed their gender identities similarly to cisgender children (Olson, Key, and Eaton 2015), among other academic studies. The leading association of pediatricians in the United States recommends <q>that youth who identify as [transgender] have access to comprehensive, gender-affirming, and developmentally appropriate health care that is provided in a safe and inclusive clinical space…[and] that pediatricians have a role in advocating for policies and laws that protect youth who identify as [transgender] from discrimination and violence (Rafferty et al. 2018).</q>
+			These bills go against studies showing that transgender children between the age of 5 and 12 are able to confidently identify their own gender identity <url href = "https://doi.org/10.1177/0956797614568156"> (Olson, Key, and Eaton 2015) </url>, among other academic studies. The leading association of pediatricians in the United States recommends <q>that youth who identify as [transgender] have access to comprehensive, gender-affirming, and developmentally appropriate health care that is provided in a safe and inclusive clinical space…[and] that pediatricians have a role in advocating for policies and laws that protect youth who identify as [transgender] from discrimination and violence <url href = "https://doi.org/10.1542/peds.2018-2162"> (Rafferty et al. 2018) </url>.</q>
 		</p>
 
 		<p>
-			We briefly describe how each aspect of gender-affirming healthcare is targeted by the categories of bills used in the data analysis below. Social transition is targeted through <c>youth athletics</c> bills preventing young people from competing on sports teams under their identified gender. <c>ID requirements</c> prevent the changing of the <q>sex</q> listed on birth certificates, driver&apos;s licenses, and other government IDs.<c>Public facilities</c> laws prevent all trans people from using restrooms and other gendered public facilities that match their gender identity. <c>Schools/education</c> laws vary but include laws banning teachers from using students&apos; correct pronouns at all or without parental permission, discussing queer and trans/nonbinary identities in the classroom, and displaying items such as pride flags supporting queer and trans identities, among others.
+			We briefly describe how each aspect of gender-affirming healthcare is targeted by the categories of bills used in the data analysis in the next sections. Social transition is targeted through <c>youth athletics</c> bills preventing young people from competing on sports teams under their identified gender. <c>ID requirements</c> prevent the changing of the <q>sex</q> listed on birth certificates, driver&apos;s licenses, and other government IDs.<c>Public facilities</c> laws prevent all trans people from using restrooms and other gendered public facilities that match their gender identity. <c>Schools/education</c> laws vary but include laws banning teachers from using students&apos; correct pronouns at all or without parental permission, discussing queer and trans/nonbinary identities in the classroom, and displaying items such as pride flags supporting queer and trans identities, among others.
 		</p>
 
 		<p>
@@ -91,7 +98,7 @@
 		</p>
 		
 		<p>
-			In the rest of this chapter, you will identify and analyze recent anti-trans and anti-nonbinary bills over time, focusing on their impacts, whether or not they passed, and other details that impact people's lives.
+			In the rest of this chapter, you will gain the skills to identify and analyze recent anti-trans and anti-nonbinary bills over time, focusing on their impacts, whether or not they passed, and other details that impact people's lives.
 		</p>
 
 		

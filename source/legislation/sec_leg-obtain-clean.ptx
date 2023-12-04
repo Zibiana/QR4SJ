@@ -4,6 +4,15 @@
 			<p>
 				Here, we will find reputable sources for data on anti-trans bills and get the data into a form we can analyze.
 			</p>
+			<p>
+			<title>Motivating Ideas</title>
+			In this section, I will...
+				<ul >
+					<li> Provide reasons for why data needs to be cleaned. </li>
+					<li> Learn how to access, merge, and clean my own data sets. </li>
+					<li> Explain and execute the data cleaning process for analysis. </li>
+				</ul>	
+			</p>
 		</introduction>
 
 
@@ -14,9 +23,10 @@
 			<title>Finding Data Online</title>
 			<introduction>
 				Our first goal is to find data. Note that any data found online may change web 
-				addresses, stop updating, go offline, or become unreliable over time. Your instructor 
-				will be able to tell you which sources of data to use if the ones below are no longer 
-				reliable.
+				addresses, stop updating, go offline, or become unreliable over time so downloading 
+				the dataset as a .csv (comma-separated values) or .xlsx (Microsoft Excel Open XML Format Spreadsheet) 
+				file could save you time and stress in the future. Your instructor may give you 
+				alternative sources of data if these are no longer reliable.
 			</introduction>
 			    <exercise>
 				<p>
@@ -50,7 +60,7 @@
                 Note that the 2020 ACLU page was last updated on March 20, 2020, since many state legislatures were suspended or closed during the first year of the COVID-19 pandemic; the ACLU page promised to <q>update the tracker as major new developments occur[red] .</q> This data has distinct variable names and organization, so we also modify the ACLU data to match the Track Trans Legislation data as closely as possible.
             </p>
 			<p>
-				For example, bills that were withdrawn, not passed by the end of a given legislative session, explicitly listed as <q>Dead</q>, or were recommended against by a committee and did not proceed in the legislature were relabeled <q>Dead</q> (at least for that year). The exception was when the bill description is specifically listed as <q>hearing scheduled</q>, <q>referred to committee</q>, carried over from another year, or otherwise makes clear that the bill is still under consideration, in which case <q>Introduced</q> or <q>Crossed Over</q> (depending on whether the bill had been passed by at least one chamber) were used.
+				For example, bills that were withdrawn, not passed by the end of a given legislative session, explicitly listed as <q>Dead</q>, or were recommended against by a committee and did not proceed in the legislature were relabeled <q>Dead</q> (at least for that year). The exception is when the bill description is specifically listed as <q>hearing scheduled</q>, <q>referred to committee</q>, carried over from another year, or otherwise makes clear that the bill is still under consideration, in which case <q>Introduced</q> or <q>Crossed Over</q> (depending on whether the bill had been passed by at least one chamber) is used.
 			</p>
 
 			<p>
@@ -60,6 +70,15 @@
 
 		<subsection xml:id="cleaning-the-data">
 			<title>Cleaning the Data</title>
+			<p>
+			Cleaning is a process that involves fixing or removing incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data within a dataset. For more information, check out Tableau&apos;s <url href= "https://www.tableau.com/learn/articles/what-is-data-cleaning">Guide to Data Cleaning </url>. After importing and merging data sets, it is integral to clean the data before working or manipulating the data and producing any conclusions. While the cleaning process can be done manually, it is much more efficient to use a software program such as Microsoft Excel or a programming language such as R when working with multiple data sets or large quantities of data.
+			</p>
+			<p> Here are the steps to clean your data: </p>
+			<li> 1. Remove duplicate or irrelevant information </li>
+			<li> 2. Fix naming conventions, typos, or any other structural errors that do not make the data uniform </li>
+			<li> 3. Filter unwanted data such as outliers </li>
+			<li> 4. Handle missing data by dropping observations, inputting missing values, or altering the data </li>
+			<li> 5. Validate and ensure that the cleaning process was completed correctly before beginning the coding or visualizing process </li>
 
 			<p>
 				First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., <q>AZ</q> instead of <q>Arizona</q>), while Track Trans Legislation uses full names. So we use a program to convert full names to abbreviations in the whole dataset. We have done this cleaning and it can be found in ADD GITHUB LINK HERE! You can see the code we used here:
@@ -77,5 +96,48 @@
 				Moreover, one bill&apos;s status is listed as <q>Posted</q>, Kentucky&apos;s HB132 in 2020. <url href="https://legiscan.com/KY/bill/HB132/2020">LegiScan research</url> reveals that this bill died in committee, so we update its status to <c>Dead/Failed</c>.
 			</p>
 
+			<p> Let’s walk through cleaning the most recent anti-trans legislation data from  <url href="https://www.tracktranslegislation.com/">Track Trans Legislation</url> </p>
+
+			<p> 1. Let’s look at the data from all states, all bill types, and all statuses (i.e. you should not be filtering anything in this case). Click on the “Export” button and download the data as a CSV file. </p>
+			<image source="5.3 Images/(1) Cleaning data example.png"> 
+			<shortdescription> Data from Track Trans Legislation displaying dates, states, bills, bill types, and statuses with a red box highlighting the "Export" button. </shortdescription> </image>
+			<p> 2. We now need to open the CSV file in Excel. To do this, take the following steps: Open Excel. Select File → Open…→ Choose the CSV file. The Excel sheet should populate with the data.</p>
+			<p> 3. To get a preview of what the data looks like, go to the Home tab within Excel and press Analyze Data. A side panel should appear on the right of the screen. Always be sure to check these insights present the information clearly.</p>
+			<p> <image source="5.3 Images/(2) Cleaning Data Example 1 (5.3).png"/> </p>
+			<p> <shortdescription> Excel file downloaded from Track Trans Legislation displaying the "Analyzing Data" button and corresponding window. </shortdescription> </p>
+			<p> 4. Remove any duplicates. To remove duplicates: Data → Remove Duplicates, ensure that all columns with duplicates are checked off so they are removed.</p>
+			<p> <image source="5.3 Images/(3) Cleaning data example.png"/> </p>
+			<p> <shortdescription> Excel heading with the "Data" tab and "Remove Duplicates" button highlighted in a red box. </shortdescription> 
+			</p>			
+			<p> 5. Now, let’s make sure the formatting is consistent. Let’s try lowercasing all of the state names. First, create a new column to the side of the states column. Next, in this new column, enter “=LOWER( )” function into the first cell. In the parentheses, write X:X, replacing the Xs with the letter of the original column and hit enter. This will populate the new column with all of the state names in lowercase letters: </p>
+			<p> <image source="5.3 Images/(4) Cleaning data example.png"/> </p>
+			<p> <image source="5.3 Images/(5) Cleaning data example.png"/> </p>
+			<p> <shortdescription> Columns E and F from Excel file showing the before and after results of using the "=LOWER()" function</shortdescription> </p>
+			<p> Note: If you don’t want the formulas in the resultant cells, you just want the new lowercased versions of the names as if they had been hand-typed, you can select the names, press Control-C to copy them, navigate to Paste → Paste Values, and paste them into a new column or on top of the column you had previously made. Doing this will allow you to delete the original column without affecting the new, lowercase column. We can also capitalize all letters in the cells we select by using “=UPPER( )” or use “=PROPER( )” to reset the capitalization so the first letter is the only one capitalized. </p>
+			<p> <image source="5.3 Images/(6) Cleaning data example.png"/> </p>
+			<p> <shortdescription> Drop down from the "Paste" with "Paste Values" highlighted in green. </shortdescription> </p>
+			<p> 6. Next, we will find entries for the state of “Oklahoma” and replace them with the state abbreviation “OK” using the Find and Replace function. To do this, the following steps apply: First, navigate to Home → Editing → Find &amp; Select. Next, Replace → Find what: “Oklahoma” and Replace with: “OK” → Replace All. Note, the alert will notify you of how many cells were altered and you should make sure that all planned changes were made. </p>
+			<p> <image source="5.3 Images/Step 6 Part A.png"/> </p>
+			<p> <shortdescription> Excel heading with the "Home" tab and the "Find &amp; Select" button highlighted in red boxes. </shortdescription> </p>
+			<p> <image source="5.3 Images/Step 6 Part B.png"/> </p>
+			<p> <shortdescription> The "Find &amp; Replace" pop-up window with "Find what:" and "Replace with:" dropdowns, the "Replace All" button, and alert message highlighted in red boxes. </shortdescription> </p>
+			<p> 7. Finally, we can use the TRIM( ) function to eliminate excessive spaces. For example, if in our data set we have “ Arizona” (note the extra space before the A) and we want “Arizona,” we first need to create a new column adjacent to the state column. Next, in this new column, enter “=TRIM( )” into the first cell. In the parentheses, write X:X, replacing the Xs with the letter of the original state column and hit enter. This will populate the new column with all of the state names without excessive spaces. </p>
+			<p> Note: The TRIM( ) function will not remove any spaces between two words in a state name (“North Carolina” to “NorthCarolina”), it will just remove excess spaces at the beginning and end of the state name. </p>
+		</subsection>
+
+		<subsection xml:id="exercise">
+			<title>Exercise</title>
+			<p> Instructions: Open the <dataurl source = "Excel files/5.3 Exercise 1.xlsx">Oklahoma Excel file</dataurl> and click “view raw” to download the file. You are part of a data-cleaning team focused on this data set. Your job is to clean the provided data set as follows:
+				<url href="https://tracktranslegislation.com">tracktranslegislation.com</url>
+				<ol>
+						<li>  Delete all conditional formatting (i.e. capitalization)</li>
+						<li>  Replace all mentions of “Alabama” with “Oklahoma”</li>
+						<li>  Ensure that everything is spelled correctly (use spell check)</li>
+						<li>  Remove all duplicate bills </li>
+						<li>  Create a new column called “Bill Description 2.” Use the TRIM() function to remove excess spaces in the “Bill Description” column.</li>
+						<li>  Your boss wants a new “State2” column where all of the state names are completely capitalized (i.e. “OKLAHOMA”). Create a new “State2” column using the UPPER( ) function. </li>
+				</ol>
+			</p>
+			<p> Note: If you want to know how to clean data using the R language, check out <url href="https://rc2e.com/datastructures#intro-DataStructures"> Chapter 5 on Data Structures</url> in RCookbook. </p>
 		</subsection>
 	</section>
