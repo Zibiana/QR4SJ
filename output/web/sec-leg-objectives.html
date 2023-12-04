@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Obtaining and Cleaning the Data</title>
+<title>Objectives</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -220,7 +220,7 @@ window.MathJax = {
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="leg-understanding.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="legislation.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-leg-visualize.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="legislation.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="legislation.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="leg-understanding.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
@@ -399,7 +399,7 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
 <ul class="structural">
-<li>
+<li class="active">
 <div class="toc-item"><a href="sec-leg-objectives.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Objectives</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="sec-leg-objectives.html#technical-process-overivew" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Technical Process Overview</span></a></div></li>
@@ -410,7 +410,7 @@ window.MathJax = {
 <div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Understanding the Issue</span></a></div>
 <ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.2</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
 </li>
-<li class="active">
+<li>
 <div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
 <ul class="structural">
 <li>
@@ -476,99 +476,47 @@ window.MathJax = {
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="section" id="sec-leg-obtain-clean"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Obtaining and Cleaning the Data</span>
+<section class="section" id="sec-leg-objectives"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Objectives</span>
 </h2>
-<section class="introduction" id="introduction-30"><div class="para" id="p-557">Here, we will find reputable sources for data on anti-trans bills and get the data into a form we can analyze.</div> <div class="para logical" id="p-558">
-<div class="para"> In this section, I will...</div>
+<div class="para logical" id="p-525">
+<div class="para">By the end of this section, an engaged learner will be able to:</div>
 <ul class="disc">
-<li id="li-205"><div class="para" id="p-derived-li-205">Provide reasons for why data needs to be cleaned.</div></li>
-<li id="li-206"><div class="para" id="p-derived-li-206">Learn how to access, merge, and clean my own data sets.</div></li>
-<li id="li-207"><div class="para" id="p-derived-li-207">Explain and execute the data cleaning process for analysis.</div></li>
+<li id="li-191"><div class="para" id="p-526">Understand the context around anti-trans legislation.</div></li>
+<li id="li-192"><div class="para" id="p-527">Extract the data needed to make informed and justified claims.</div></li>
+<li id="li-193"><div class="para" id="p-528">Formulate questions based on available data and assess the limitations of a given data set.</div></li>
+<li id="li-194"><div class="para" id="p-529">Describe fundamental processes for cleaning and analyzing textual data.</div></li>
+<li id="li-195"><div class="para" id="p-530">Use both qualitative and quantitative data to present stories about people harmed by legislation targeting specific identities.</div></li>
 </ul>
-</div></section><section class="subsection" id="importing-and-merging-the-data"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">Importing and Merging the Data</span>
-</h3>
-<section class="exercises" id="exercises-import"><h4 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
-</h4>
-<div class="exercisegroup" id="exercisegroup-9">
-<h5 class="heading"><span class="title">Finding Data Online.</span></h5>
-<div class="introduction" id="introduction-31">Our first goal is to find data. Note that any data found online may change web addresses, stop updating, go offline, or become unreliable over time so downloading the dataset as a .csv (comma-separated values) or .xlsx (Microsoft Excel Open XML Format Spreadsheet) file could save you time and stress in the future. Your instructor may give you alternative sources of data if these are no longer reliable.</div>
-<div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="exercise-95"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<div class="para" id="p-559">Go to the website <a class="external" href="https://tracktranslegislation.com" target="_blank">tracktranslegislation.com</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-102" id="fn-102"><sup> 102 </sup></a>, which in turn obtains its data from <a class="external" href="https://legiscan.com" target="_blank">LegiScan</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-103" id="fn-103"><sup> 103 </sup></a>, and browse around. What are two things that you notice about the site? Two things that surprise you? Two things that aren’t on the site that you wonder about?</div></article><article class="exercise exercise-like" id="exercise-96"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<div class="para" id="p-560">This data is up-to-date from 2021 through April 21, 2023. In order to track bills prior to 2021, we use data from the ACLU’s <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018" target="_blank">“Past Legislation Affecting LGBT Rights Across the Country” pages for 2018, 2019, and 2020</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-104" id="fn-104"><sup> 104 </sup></a>.</div>
-<div class="para" id="p-561">Go to the <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020" target="_blank">ACLU "Past Legislation Affecting LGBT Rights Across the Country 2020"</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-105" id="fn-105"><sup> 105 </sup></a> webpage and skim that page. What similarities do you notice with the data found on the Track Trans Legislation website? What differences do you notice? Click on the "View 2019" and "View 2018 Session bills" links and do the same for those years.</div></article><article class="exercise exercise-like" id="exercise-97"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<div class="para" id="p-562">We’d like to get a sense of how anti-trans legislation in the U.S. changed over time, so we’re going to try to <em class="emphasis">merge</em> the Track Trans Legislation (TTL) data with the ACLU data. Since the ACLU data has different bill "Status" categories than TTL, we’ll need to figure out how to classify each ACLU bill into one of the TTL categories.</div>
-<div class="para" id="p-563">Use the <a class="external" href="https://www.tracktranslegislation.com/terminology" target="_blank">Terminology</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-106" id="fn-106"><sup> 106 </sup></a> page on the TTL website to answer the following question. Which of the TTL categories would you classify "Referred to committee" into? "Hearing scheduled"? "Withdrawn"? You may want to click on the bill numbers on the ACLU site to see how the website LegiScan, a constantly-updated bill tracker, classifies each bill.</div></article>
 </div>
-</div></section><div class="para" id="p-564">Note that the 2020 ACLU page was last updated on March 20, 2020, since many state legislatures were suspended or closed during the first year of the COVID-19 pandemic; the ACLU page promised to “update the tracker as major new developments occur[red] .” This data has distinct variable names and organization, so we also modify the ACLU data to match the Track Trans Legislation data as closely as possible.</div>
-<div class="para" id="p-565">For example, bills that were withdrawn, not passed by the end of a given legislative session, explicitly listed as “Dead”, or were recommended against by a committee and did not proceed in the legislature were relabeled “Dead” (at least for that year). The exception is when the bill description is specifically listed as “hearing scheduled”, “referred to committee”, carried over from another year, or otherwise makes clear that the bill is still under consideration, in which case “Introduced” or “Crossed Over” (depending on whether the bill had been passed by at least one chamber) is used.</div>
-<div class="para" id="p-566">We only include bills in categories tracked by both data sources; this leaves out, for example, bills preventing localities from passing anti-discrimination ordinances within a state. We use a broad reading of the “religious freedom” category to include bills that allow for people with “sincerely-held religious beliefs” in that state to challenge nondiscrimination laws, discriminate against LGBTQ+ people, refuse to provide healthcare to LGBTQ+ people, refuse to provide adoption services to LGBTQ+ people; discriminate against married LGBTQ+ people, and receive funding for discriminatory student groups at public universities, among others.</div></section><section class="subsection" id="cleaning-the-data"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">Cleaning the Data</span>
+<section class="subsection" id="technical-process-overivew"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.1</span> <span class="title">Technical Process Overview</span>
 </h3>
-<div class="para" id="p-567">Cleaning is a process that involves fixing or removing incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data within a dataset. For more information, check out Tableau’s <a class="external" href="https://www.tableau.com/learn/articles/what-is-data-cleaning" target="_blank">Guide to Data Cleaning</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-107" id="fn-107"><sup> 107 </sup></a>. After importing and merging data sets, it is integral to clean the data before working or manipulating the data and producing any conclusions. While the cleaning process can be done manually, it is much more efficient to use a software program such as Microsoft Excel or a programming language such as R when working with multiple data sets or large quantities of data.</div>
-<div class="para" id="p-568">Here are the steps to clean your data:</div>
-<div class="para" id="p-569">1. Remove duplicate or irrelevant information</div>
-<div class="para" id="p-570">2. Fix naming conventions, typos, or any other structural errors that do not make the data uniform</div>
-<div class="para" id="p-571">3. Filter unwanted data such as outliers</div>
-<div class="para" id="p-572">4. Handle missing data by dropping observations, inputting missing values, or altering the data</div>
-<div class="para" id="p-573">5. Validate and ensure that the cleaning process was completed correctly before beginning the coding or visualizing process</div>
-<div class="para" id="p-574">First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., “AZ” instead of “Arizona”), while Track Trans Legislation uses full names. So we use a program to convert full names to abbreviations in the whole dataset. We have done this cleaning and it can be found in ADD GITHUB LINK HERE! You can see the code we used here: ADD THE CODE FOR STUDENTS THAT ARE CURIOUS!!!! We also note that, for example, the 2021 dataset includes some bills passed in January 2022, so we eliminate duplicate bills.</div>
-<div class="para" id="p-575">This decreases the number of bills in our dataset from 927 to 893. Next, note that the bills whose status is labeled <code class="code-inline tex2jax_ignore">Introduced*</code> by TTL are those that failed to meet their state’s “crossover deadline”, the date by which a bill must pass out of the chamber in which it was introduced and to the other chamber (e.g. State House vs. Senate). According to the site <a class="external" href="https://www.tracktranslegislation.com/" target="_blank">Track Trans Legislation</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-108" id="fn-108"><sup> 108 </sup></a>, a bill that is not passed in its initial chamber by the crossover deadline “faces high procedural hurdles in order to move forward.” Thus, we wish to classify these bills (at least for the current session) as “Dead/Failed”.</div>
-<div class="para" id="p-576">Moreover, one bill’s status is listed as “Posted”, Kentucky’s HB132 in 2020. <a class="external" href="https://legiscan.com/KY/bill/HB132/2020" target="_blank">LegiScan research</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-109" id="fn-109"><sup> 109 </sup></a> reveals that this bill died in committee, so we update its status to <code class="code-inline tex2jax_ignore">Dead/Failed</code>.</div>
-<div class="para" id="p-577">Let’s walk through cleaning the most recent anti-trans legislation data from  <a class="external" href="https://www.tracktranslegislation.com/" target="_blank">Track Trans Legislation</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-110" id="fn-110"><sup> 110 </sup></a>
-</div>
-<div class="para" id="p-578">1. Let’s look at the data from all states, all bill types, and all statuses (i.e. you should not be filtering anything in this case). Click on the “Export” button and download the data as a CSV file.</div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5.3%20Images/(1)%20Cleaning%20data%20example.png" class="contained"></div>
-<div class="para" id="p-579">2. We now need to open the CSV file in Excel. To do this, take the following steps: Open Excel. Select File → Open…→ Choose the CSV file. The Excel sheet should populate with the data.</div>
-<div class="para" id="p-580">3. To get a preview of what the data looks like, go to the Home tab within Excel and press Analyze Data. A side panel should appear on the right of the screen. Always be sure to check these insights present the information clearly.</div>
-<div class="para" id="p-581"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5.3%20Images/(2)%20Cleaning%20Data%20Example%201%20(5.3).jpg" class="contained"></div></div>
-<div class="para" id="p-582">Excel file downloaded from Track Trans Legislation displaying the "Analyzing Data" button and corresponding window.</div>
-<div class="para" id="p-583">4. Remove any duplicates. To remove duplicates: Data → Remove Duplicates, ensure that all columns with duplicates are checked off so they are removed.</div>
-<div class="para" id="p-584"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5.3%20Images/(3)%20Cleaning%20data%20example.jpg" class="contained"></div></div>
-<div class="para" id="p-585">Excel heading with the "Data" tab and "Remove Duplicates" button highlighted in a red box.</div>
-<div class="para" id="p-586">5. Now, let’s make sure the formatting is consistent. Let’s try lowercasing all of the state names. First, create a new column to the side of the states column. Next, in this new column, enter “=LOWER( )” function into the first cell. In the parentheses, write X:X, replacing the Xs with the letter of the original column and hit enter. This will populate the new column with all of the state names in lowercase letters:</div>
-<div class="para" id="p-587"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5.3%20Images/(4)%20Cleaning%20data%20example.jpg" class="contained"></div></div>
-<div class="para" id="p-588"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5.3%20Images/(5)%20Cleaning%20data%20example.jpg" class="contained"></div></div>
-<div class="para" id="p-589">Columns E and F from Excel file showing the before and after results of using the "=LOWER()" function</div>
-<div class="para" id="p-590">Note: If you don’t want the formulas in the resultant cells, you just want the new lowercased versions of the names as if they had been hand-typed, you can select the names, press Control-C to copy them, navigate to Paste → Paste Values, and paste them into a new column or on top of the column you had previously made. Doing this will allow you to delete the original column without affecting the new, lowercase column. We can also capitalize all letters in the cells we select by using “=UPPER( )” or use “=PROPER( )” to reset the capitalization so the first letter is the only one capitalized.</div>
-<div class="para" id="p-591"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5.3%20Images/(6)%20Cleaning%20data%20example.jpg" class="contained"></div></div>
-<div class="para" id="p-592">Drop down from the "Paste" with "Paste Values" highlighted in green.</div>
-<div class="para" id="p-593">6. Next, we will find entries for the state of “Oklahoma” and replace them with the state abbreviation “OK” using the Find and Replace function. To do this, the following steps apply: First, navigate to Home → Editing → Find &amp; Select. Next, Replace → Find what: “Oklahoma” and Replace with: “OK” → Replace All. Note, the alert will notify you of how many cells were altered and you should make sure that all planned changes were made.</div>
-<div class="para" id="p-594"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5.3%20Images/Step%206%20Part%20A.jpg" class="contained"></div></div>
-<div class="para" id="p-595">Excel heading with the "Home" tab and the "Find &amp; Select" button highlighted in red boxes.</div>
-<div class="para" id="p-596"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5.3%20Images/Step%206%20Part%20B.jpg" class="contained"></div></div>
-<div class="para" id="p-597">The "Find &amp; Replace" pop-up window with "Find what:" and "Replace with:" dropdowns, the "Replace All" button, and alert message highlighted in red boxes.</div>
-<div class="para" id="p-598">7. Finally, we can use the TRIM( ) function to eliminate excessive spaces. For example, if in our data set we have “ Arizona” (note the extra space before the A) and we want “Arizona,” we first need to create a new column adjacent to the state column. Next, in this new column, enter “=TRIM( )” into the first cell. In the parentheses, write X:X, replacing the Xs with the letter of the original state column and hit enter. This will populate the new column with all of the state names without excessive spaces.</div>
-<div class="para" id="p-599">Note: The TRIM( ) function will not remove any spaces between two words in a state name (“North Carolina” to “NorthCarolina”), it will just remove excess spaces at the beginning and end of the state name.</div></section><section class="subsection" id="exercise"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">5.3.3</span> <span class="title">Exercise</span>
+<div class="para" id="p-531">In the rest of this chapter, you will identify and analyze recent anti-trans and anti-nonbinary bills over time, focusing on their impacts, whether or not they passed, and other details that impact people’s lives. In section 5.3, you will find a data set in order to import, merge, and finally clean on anti-trans legislation. Section 5.4 will have you analyze text from “template bills” and proposed state bills to understand which template bills and organizations have had the most influence on the passage of legislation. In section 5.5, you will visualize data using side-by-side and stacked barcharts from anti-trans bills to explore trends and patterns by bill type and status. [EDIT THIS WITH FINALIZED SECTIONS]. Motivating ideas from each section will summarize the coding skills you will master and how they apply to a particular aspect of anti-trans legislation. The end of each section will contain a series of exercises which apply the chapter objectives and motivating section ideas.</div></section><section class="subsection" id="leg-resources"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.2</span> <span class="title">Resources</span>
 </h3>
-<div class="para logical" id="p-600">
-<div class="para">Instructions: Open the Oklahoma Excel file and click “view raw” to download the file. You are part of a data-cleaning team focused on this data set. Your job is to clean the provided data set as follows:</div>
-<ol class="decimal">
-<li id="li-208"><div class="para" id="p-derived-li-208">Delete all conditional formatting (i.e. capitalization)</div></li>
-<li id="li-209"><div class="para" id="p-derived-li-209">Replace all mentions of “Alabama” with “Oklahoma”</div></li>
-<li id="li-210"><div class="para" id="p-derived-li-210">Ensure that everything is spelled correctly (use spell check)</div></li>
-<li id="li-211"><div class="para" id="p-derived-li-211">Remove all duplicate bills</div></li>
-<li id="li-212"><div class="para" id="p-derived-li-212">Create a new column called “Bill Description 2.” Use the TRIM() function to remove excess spaces in the “Bill Description” column.</div></li>
-<li id="li-213"><div class="para" id="p-derived-li-213">Your boss wants a new “State2” column where all of the state names are completely capitalized (i.e. “OKLAHOMA”). Create a new “State2” column using the UPPER( ) function.</div></li>
-</ol>
-</div>
-<div class="para" id="p-601">Note: If you want to know how to clean data using the R language, check out <a class="external" href="https://rc2e.com/datastructures#intro-DataStructures" target="_blank">Chapter 5 on Data Structures</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-111" id="fn-111"><sup> 111 </sup></a> in RCookbook.</div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-102"><div class="fn"><code class="code-inline tex2jax_ignore">tracktranslegislation.com</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-103"><div class="fn"><code class="code-inline tex2jax_ignore">legiscan.com</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-104"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-105"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-106"><div class="fn"><code class="code-inline tex2jax_ignore">www.tracktranslegislation.com/terminology</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-107"><div class="fn"><code class="code-inline tex2jax_ignore">www.tableau.com/learn/articles/what-is-data-cleaning</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-108"><div class="fn"><code class="code-inline tex2jax_ignore">www.tracktranslegislation.com/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-109"><div class="fn"><code class="code-inline tex2jax_ignore">legiscan.com/KY/bill/HB132/2020</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-110"><div class="fn"><code class="code-inline tex2jax_ignore">www.tracktranslegislation.com/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-111"><div class="fn"><code class="code-inline tex2jax_ignore">rc2e.com/datastructures#intro-DataStructures</code></div></div>
+<ul class="disc">
+<li id="li-196"><div class="para" id="p-532">
+<a class="external" href="https://r-graph-gallery.com/" target="_blank">The R Graph Gallery</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-88" id="fn-88"><sup> 88 </sup></a> - A collection of charts and graphs that can be created in R using tidyverse and ggplot2.</div></li>
+<li id="li-197"><div class="para" id="p-533">
+<a class="external" href="https://rc2e.com/" target="_blank">R Cookbook, 2nd Edition</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-89" id="fn-89"><sup> 89 </sup></a> - Book of "how-to recipes" for beginner and intermediate-level R users. Each recipe represents one of many solutions but often presents the simplest one.</div></li>
+<li id="li-198"><div class="para" id="p-534">
+<a class="external" href="https://stackoverflow.com/" target="_blank">Stack Overflow</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-90" id="fn-90"><sup> 90 </sup></a> - Public platform for users to ask and answer coding questions.</div></li>
+<li id="li-199"><div class="para" id="p-535">
+<a class="external" href="https://www.datacamp.com/" target="_blank">DataCamp</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-91" id="fn-91"><sup> 91 </sup></a> - Online learning platform with data science and AI tutorials teaching students non-coding and coding essentials.</div></li>
+<li id="li-200"><div class="para" id="p-536">
+<a class="external" href="https://www.penguinrandomhouse.com/books/611537/beyond-the-gender-binary-by-alok-vaid-menon-illustrated-by-ashley-lukashevsky/" target="_blank">Beyond the Gender Binary by Alok Vaid-Menon</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-92" id="fn-92"><sup> 92 </sup></a> - Written by gender non-conforming artist Alok Vaid-Menon known for creatively challenging societal norms of the gender binary.</div></li>
+<li id="li-201"><div class="para" id="p-537">
+<a class="external" href="https://www.vox.com/the-highlight/2019/5/20/18542843/intersectionality-conservatism-law-race-gender-discrimination" target="_blank">The Intersectionality Wars</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-93" id="fn-93"><sup> 93 </sup></a> - Understanding Kimberlé Crenshaw’s coinage of “intersectionality” and its applications from a relatively obscure legal concept to understanding our identities today.</div></li>
+</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-88"><div class="fn"><code class="code-inline tex2jax_ignore">r-graph-gallery.com/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-89"><div class="fn"><code class="code-inline tex2jax_ignore">rc2e.com/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-90"><div class="fn"><code class="code-inline tex2jax_ignore">stackoverflow.com/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-91"><div class="fn"><code class="code-inline tex2jax_ignore">www.datacamp.com/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-92"><div class="fn"><code class="code-inline tex2jax_ignore">www.penguinrandomhouse.com/books/611537/beyond-the-gender-binary-by-alok-vaid-menon-illustrated-by-ashley-lukashevsky/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-93"><div class="fn"><code class="code-inline tex2jax_ignore">www.vox.com/the-highlight/2019/5/20/18542843/intersectionality-conservatism-law-race-gender-discrimination</code></div></div>
 </div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="leg-understanding.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-leg-visualize.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="legislation.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="leg-understanding.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

@@ -6,10 +6,13 @@
 			</p>
 			<p>
 			<title>Motivating Ideas</title>
+			In this section, I will...
+				<ul >
+					<li> Provide reasons for why data needs to be cleaned. </li>
+					<li> Learn how to access, merge, and clean my own data sets. </li>
+					<li> Explain and execute the data cleaning process for analysis. </li>
+				</ul>	
 			</p>
-			<p>1. Provide reasons for why data needs to be cleaned </p>
-			<p>2. Learn how to access, merge, and clean my own data sets </p>
-			<p> 3. Explain and execute the data cleaning process for analysis </p>
 		</introduction>
 
 
