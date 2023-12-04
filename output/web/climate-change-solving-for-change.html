@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Solving for Change</title>
@@ -15,20 +15,43 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<<<<<<< HEAD
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+=======
+<script>
+>>>>>>> eb5744ea02136079fa9ac6f28679302790c9d0ad
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+<<<<<<< HEAD
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +61,39 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
+=======
+    "processHtmlClass": "process-math"
+>>>>>>> eb5744ea02136079fa9ac6f28679302790c9d0ad
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -371,34 +408,25 @@ window.MathJax = {
 <div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Understanding the Issue</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.1</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
+<div class="toc-item"><a href="sec-leg-objectives.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Objectives</span></a></div>
 <ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Importing and Merging the Data</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-objectives.html#technical-process-overivew" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Technical Process Overview</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-objectives.html#leg-resources" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Resources</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Visualizing the Data</span></a></div>
+<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Understanding the Issue</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.2</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-visualize.html#sec-intro-to-data-leg" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.3.2</span> <span class="title">How to explore the data visually</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.3.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Importing and Merging the Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.3.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">5.3.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">5.3.5.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">5.3.6</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercise" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Exercise</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -540,12 +568,12 @@ window.MathJax = {
 </div>The USA produces more than twice as much <span class="process-math">\(CO_2\)</span> per person as China.</div></div></article><div class="para" id="p-499">What are the factors that should be used in deciding how much each country should reduce emissions? Should the population of the country play a role in making this decision? What about the overall wealth and how developed the country is? Should larger countries, like India and China, that are still developing be allowed to reduce emissions less than well-developed regions like the USA and Europe?  The effects of global warming are also unevenly distributed, with low-lying, typhoon-prone countries in Oceania and drought-prone &amp; desertifying countries in Africa being hardest hit.  These regions have lower emissions (Oceania’s total is skewed up by the presence of Australia and New Zealand, both highly developed countries with higher emissions).  Should they be asked to make the same sacrifices as other nations in terms of cutting emissions, when they will also need to be dealing with the other consequences of global warming?  All of these are questions that mathematics can help us understand, by allowing us to compare the quantities involved, and the consequences of changing those quantities.</div></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span>
 </h3>
-<div class="para" id="p-500">You may have heard of the <dfn class="terminology">carbon footprint</dfn>, a particular individual’s contribution to the carbon dioxide in the atmosphere.  The idea of a carbon footprint is that each individual is responsible for their part of the greenhouse gas emission problem, and that they should do their part to help fix it.  The <a class="external" href="https://coolclimate.berkeley.edu/calculator" target="_blank">Cool Climate Calculator</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-79" id="fn-79"><sup> 79 </sup></a> from the University of California at Berkeley is one such carbon footprint calculator.  The Cool Climate Calculator estimates how much carbon you personally produce, from sources such as driving, electricity, and foods you eat.  It then provides suggestions for how you can reduce you carbon footprint, by doing things like driving less, carpooling, buying more efficient appliances, or becoming a vegetarian.</div>
+<div class="para" id="p-500">You may have heard of the <dfn class="terminology">carbon footprint</dfn>, a particular individual’s contribution to the carbon dioxide in the atmosphere.  The idea of a carbon footprint is that each individual is responsible for their part of the greenhouse gas emission problem, and that they should do their part to help fix it.  The <a class="external" href="https://coolclimate.berkeley.edu/calculator" target="_blank">Cool Climate Calculator</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-78" id="fn-78"><sup> 78 </sup></a> from the University of California at Berkeley is one such carbon footprint calculator.  The Cool Climate Calculator estimates how much carbon you personally produce, from sources such as driving, electricity, and foods you eat.  It then provides suggestions for how you can reduce you carbon footprint, by doing things like driving less, carpooling, buying more efficient appliances, or becoming a vegetarian.</div>
 <div class="para" id="p-501">The idea of using carbon footprints to reduce emissions is that if everyone were aware of how much carbon they used, and made small changes, then our overall carbon use would go down.  For example, livestock - animals raised for meat and other food products like milk - are estimated to make up 14.5% of global greenhouse gas emissions <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-livestock.html" title="Bibliographic Entry 4.11.1.54">[4.11.1.54]</a>.  Therefore, if everyone in the world switched to a vegan diet, those emissions would be reduced - though not eliminated, since they would be replaced by the emissions necessary to feed everyone a vegan diet instead.</div>
 <div class="para" id="p-502">Of course, getting everyone in the world to switch to a vegan diet would be very challenging.  Individual actions to reduce emissions, like changing diet, buying more fuel-efficient vehicles, and switching to LED light bulbs do have an effect on overall emissions, but that effect is small.  Effective climate change mitigation requires that these changes be made on a much larger scale.</div>
 <div class="para" id="p-503">The global pandemic, which shuttered businesses and reduced driving and energy use across the world, reduced carbon emissions into the atmosphere by only 5.4% <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-pandemic.html" title="Bibliographic Entry 4.11.1.56">[4.11.1.56]</a>.  Experts estimate that we would need to reduce emissions by about 10 times that in order to keep global warming to 2 degrees Centigrade above pre-industrial levels. <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-necessary-reduction.html" title="Bibliographic Entry 4.11.1.57">[4.11.1.57]</a>.  If you think about how your life changed during the pandemic, imagine having to make similarly dramatic changes every year for 10 years to get a sense of how much you would need to change your life to solve this problem - and not only would you need to do it, but you would need to get everyone else to agree to do it too.</div>
 <div class="para" id="p-504">While the carbon footprint encourages <em class="emphasis">individuals</em> to make change in their own lives, other solutions focus on making broader change across entire countries or across the world.  For example, another way to reduce emissions from livestock production would be to increases taxes and fees on meat production, encouraging people to eat less.  The most effective ways to reduce emissions from driving - estimated to make up 25% of US emissions <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-sources-of-emissions.html" title="Bibliographic Entry 4.11.1.55">[4.11.1.55]</a> include requiring cars to have higher gas mileage, increasing the cost of gasoline, and developing better public transit.</div>
-<div class="para" id="p-505">By looking at the problem from a mathematical perspective, we can start to get an appreciation for the scale of the problem and which solutions will be most effective at solving it.  The United Nations Environmental Programme has an interactive infographic on a <a class="external" href="https://www.unep.org/interactive/six-sector-solution-climate-change/" target="_blank">Six Sector Solution for Climate Change</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-80" id="fn-80"><sup> 80 </sup></a> which talks about the way that the solutions must balance individual and government action.</div>
+<div class="para" id="p-505">By looking at the problem from a mathematical perspective, we can start to get an appreciation for the scale of the problem and which solutions will be most effective at solving it.  The United Nations Environmental Programme has an interactive infographic on a <a class="external" href="https://www.unep.org/interactive/six-sector-solution-climate-change/" target="_blank">Six Sector Solution for Climate Change</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-79" id="fn-79"><sup> 79 </sup></a> which talks about the way that the solutions must balance individual and government action.</div>
 <article class="exercise exercise-like" id="exercise-80"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.8.6</span><span class="period">.</span>
 </h4>
@@ -755,19 +783,19 @@ window.MathJax = {
 <td class="l m b0 r0 l0 t0 lines">0.73</td>
 <td class="l m b0 r0 l0 t0 lines">1.87</td>
 </tr>
-</table></div></figure><div class="para" id="p-510">The <a class="external" href="https://coastal.climatecentral.org/" target="_blank">Coastal Risk Screening Tool</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-81" id="fn-81"><sup> 81 </sup></a> by Climate Central allows you to see maps of different cities after sea levels have risen. For example, this map shows the <a class="external" href="https://coastal.climatecentral.org/map/12/-74.0854/40.6792/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.2&amp;water_unit=m" target="_blank">New York City area with 2.2m of sea level rise</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-82" id="fn-82"><sup> 82 </sup></a>, the upper limit of the sea level rise estimated in <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-sea-level-rise.html" title="Bibliographic Entry 4.11.1.60">[4.11.1.60]</a>.  You can see that large parts of the area are underwater, including Newark and LaGuardia International Airports, Coney Island, and large parts of downtown Manhattan, including the World Trade Center.  The densely populated city of Guangzhou, China, would suffer even more <a class="external" href="https://coastal.climatecentral.org/map/11/113.5688/22.784/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.0&amp;water_unit=m" target="_blank">under the worst-case scenario of 1.99 m of sea level rise</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-83" id="fn-83"><sup> 83 </sup></a>.</div>
+</table></div></figure><div class="para" id="p-510">The <a class="external" href="https://coastal.climatecentral.org/" target="_blank">Coastal Risk Screening Tool</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-80" id="fn-80"><sup> 80 </sup></a> by Climate Central allows you to see maps of different cities after sea levels have risen. For example, this map shows the <a class="external" href="https://coastal.climatecentral.org/map/12/-74.0854/40.6792/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.2&amp;water_unit=m" target="_blank">New York City area with 2.2m of sea level rise</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-81" id="fn-81"><sup> 81 </sup></a>, the upper limit of the sea level rise estimated in <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-sea-level-rise.html" title="Bibliographic Entry 4.11.1.60">[4.11.1.60]</a>.  You can see that large parts of the area are underwater, including Newark and LaGuardia International Airports, Coney Island, and large parts of downtown Manhattan, including the World Trade Center.  The densely populated city of Guangzhou, China, would suffer even more <a class="external" href="https://coastal.climatecentral.org/map/11/113.5688/22.784/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.0&amp;water_unit=m" target="_blank">under the worst-case scenario of 1.99 m of sea level rise</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-82" id="fn-82"><sup> 82 </sup></a>.</div>
 <article class="exercise exercise-like" id="exercise-81"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.8.8</span><span class="period">.</span>
 </h4>
 <div class="para" id="p-511">What would London look like with the median sea level rise from 5℃ of global warming?</div>
 <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-8" id="hint-8"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like">The median sea level rise from 5℃ of global warming is 0.78m, so we can round to 0.8m.</div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><div class="para" id="p-512">Putting this into the map, we get the following <a class="external" href="https://coastal.climatecentral.org/map/10/-0.1016/51.5289/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.8&amp;water_unit=m" target="_blank">map of London</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-84" id="fn-84"><sup> 84 </sup></a>.  Substantial parts of South London would be under water, and even more of the port areas east of the city.</div></div></div></article><article class="exercise exercise-like" id="exercise-82"><h4 class="heading">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><div class="para" id="p-512">Putting this into the map, we get the following <a class="external" href="https://coastal.climatecentral.org/map/10/-0.1016/51.5289/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.8&amp;water_unit=m" target="_blank">map of London</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-83" id="fn-83"><sup> 83 </sup></a>.  Substantial parts of South London would be under water, and even more of the port areas east of the city.</div></div></div></article><article class="exercise exercise-like" id="exercise-82"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.8.9</span><span class="period">.</span>
 </h4>
 <div class="para" id="p-513">The article <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-sea-level-rise.html" title="Bibliographic Entry 4.11.1.60">[4.11.1.60]</a> gives sea level rise figures for 136 coastal cities in Table S2.  Find the median sea level rise in Miami if global warming is 5℃ by 2100.  How does this compare to the median sea level rise if global warming is limited to 2℃ by 2100?</div>
 <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-9" id="hint-9"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-9"><div class="hint solution-like">The median sea level rise with 5℃ is 0.86 m.  With 2℃ it is 0.22 m.</div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">
-<div class="para" id="p-514">With 0.9 m of sea level rise, substantial parts of Miami Beach and areas around the river will be flooded, as seen in <a class="external" href="https://coastal.climatecentral.org/map/12/-80.1871/25.7679/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.9&amp;water_unit=m" target="_blank">this map of Miami</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-85" id="fn-85"><sup> 85 </sup></a>.</div> <div class="para" id="p-515">With 0.2 m of sea level rise, only small coastal areas will flood, as seen in <a class="external" href="https://coastal.climatecentral.org/map/13/-80.2073/25.7657/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.2&amp;water_unit=m" target="_blank">this map of Miami</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-86" id="fn-86"><sup> 86 </sup></a>.</div>
+<div class="para" id="p-514">With 0.9 m of sea level rise, substantial parts of Miami Beach and areas around the river will be flooded, as seen in <a class="external" href="https://coastal.climatecentral.org/map/12/-80.1871/25.7679/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.9&amp;water_unit=m" target="_blank">this map of Miami</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-84" id="fn-84"><sup> 84 </sup></a>.</div> <div class="para" id="p-515">With 0.2 m of sea level rise, only small coastal areas will flood, as seen in <a class="external" href="https://coastal.climatecentral.org/map/13/-80.2073/25.7657/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.2&amp;water_unit=m" target="_blank">this map of Miami</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-85" id="fn-85"><sup> 85 </sup></a>.</div>
 </div></div></article><div class="para" id="p-516">Of course, all of these sea level rise calculations only account for the level of the sea under normal conditions.  Other factors, like tides and winds, especially the storm surge from hurricanes, can produce temporarily much higher sea levels.  Cities like Miami already experience flooding during high tides, which can reach as high as 1.2 m above current sea level <a href="" class="xref" data-knowl="./knowl/climate-change-biblio-miami-tides.html" title="Bibliographic Entry 4.11.1.61">[4.11.1.61]</a>.  Global warming will increase the frequency and amplitude of these high tides, making the flooding even worse.</div>
 <div class="para" id="p-517">Mathematical models can be used to estimate the storm surge from future storms. Like the rise in sea level, this is very specific to particular areas - in this case, because of the geography that causes storm surge.  The shape of the sea in a particular area can increase flooding in one area and decrease it in others.  A mathematical model of New York harbor in New York City predicts that storm surges from hurricanes, which currently average 2 m, could be 2.75 m on average by 2100 in the RCP4.5 (2.4 ℃ of warming) scenario or over 3 m in the RCP8.6 (5 ℃ of warming) scenario.</div>
 <article class="exercise exercise-like" id="exercise-83"><h4 class="heading">
@@ -775,15 +803,15 @@ window.MathJax = {
 </h4>
 <div class="para" id="p-518">Use the maps to see what New York City would look like if it suffered a hurricane with a 3 m storm surge, on top of the median sea level rise from 5 ℃ of global warming.</div>
 <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-10" id="hint-10"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-10"><div class="hint solution-like">3 m plus median sea level rise of 1.09 m is 4.09 meters above the current sea level.</div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">4.1 meters over current sea level would inundate huge portions of the New York City area, as seen in <a class="external" href="https://coastal.climatecentral.org/map/10/-73.9797/40.6979/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=4.1&amp;water_unit=m" target="_blank">this map of New York City</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-87" id="fn-87"><sup> 87 </sup></a>.  All three major airports are underwater, and entire neighborhoods - Downtown, SoHo, Long Island City, Flushing, Jersey City, Hoboken -  would be damaged.</div></div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-79"><div class="fn"><code class="code-inline tex2jax_ignore">coolclimate.berkeley.edu/calculator</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-80"><div class="fn"><code class="code-inline tex2jax_ignore">www.unep.org/interactive/six-sector-solution-climate-change/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-81"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-82"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/12/-74.0854/40.6792/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.2&amp;water_unit=m</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-83"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/11/113.5688/22.784/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.0&amp;water_unit=m</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-84"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/10/-0.1016/51.5289/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.8&amp;water_unit=m</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-85"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/12/-80.1871/25.7679/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.9&amp;water_unit=m</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-86"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/13/-80.2073/25.7657/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.2&amp;water_unit=m</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-87"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/10/-73.9797/40.6979/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=4.1&amp;water_unit=m</code></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">4.1 meters over current sea level would inundate huge portions of the New York City area, as seen in <a class="external" href="https://coastal.climatecentral.org/map/10/-73.9797/40.6979/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=4.1&amp;water_unit=m" target="_blank">this map of New York City</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-86" id="fn-86"><sup> 86 </sup></a>.  All three major airports are underwater, and entire neighborhoods - Downtown, SoHo, Long Island City, Flushing, Jersey City, Hoboken -  would be damaged.</div></div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-78"><div class="fn"><code class="code-inline tex2jax_ignore">coolclimate.berkeley.edu/calculator</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-79"><div class="fn"><code class="code-inline tex2jax_ignore">www.unep.org/interactive/six-sector-solution-climate-change/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-80"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-81"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/12/-74.0854/40.6792/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.2&amp;water_unit=m</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-82"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/11/113.5688/22.784/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.0&amp;water_unit=m</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-83"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/10/-0.1016/51.5289/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.8&amp;water_unit=m</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-84"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/12/-80.1871/25.7679/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.9&amp;water_unit=m</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-85"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/13/-80.2073/25.7657/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.2&amp;water_unit=m</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-86"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/10/-73.9797/40.6979/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=4.1&amp;water_unit=m</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="climate-change-math-topic-mathematical-models.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="legislation.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

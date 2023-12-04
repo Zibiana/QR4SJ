@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Changes in College Tuition over Time</title>
@@ -15,20 +15,43 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<<<<<<< HEAD
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+=======
+<script>
+>>>>>>> eb5744ea02136079fa9ac6f28679302790c9d0ad
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+<<<<<<< HEAD
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +61,39 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
+=======
+    "processHtmlClass": "process-math"
+>>>>>>> eb5744ea02136079fa9ac6f28679302790c9d0ad
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -371,34 +408,25 @@ window.MathJax = {
 <div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
 <ul class="structural">
 <li>
-<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Understanding the Issue</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.1</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
+<div class="toc-item"><a href="sec-leg-objectives.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Objectives</span></a></div>
 <ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Importing and Merging the Data</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-objectives.html#technical-process-overivew" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Technical Process Overview</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-objectives.html#leg-resources" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Resources</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Visualizing the Data</span></a></div>
+<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Understanding the Issue</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.2</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-visualize.html#sec-intro-to-data-leg" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.3.2</span> <span class="title">How to explore the data visually</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.3.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
+<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Importing and Merging the Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.3.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">5.3.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">5.3.5.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">5.3.6</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercise" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Exercise</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -442,7 +470,7 @@ window.MathJax = {
 <section class="section" id="changes-in-college-tuition-over-time"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Changes in College Tuition over Time</span>
 </h2>
-<div class="para" id="p-100">Use <a class="external" href="https://docs.google.com/spreadsheets/d/1lbB5OSSsxrwQdDh5Px8fqMSRRwwvxseg/edit?usp=sharing&amp;ouid=113361107850751941418&amp;rtpof=true&amp;sd=true" target="_blank">the Excel spreadsheet on average undergraduate tuition and fees and room and board rates charged for full-time students in degree-granting institutions, by level and control of institution: 1969-70 through 2020-21</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-40" id="fn-40"><sup> 40 </sup></a> (from <a class="external" href="https://nces.ed.gov/ipeds/" target="_blank">the National Center for Education Statistics</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-41" id="fn-41"><sup> 41 </sup></a>) to do the following:</div>
+<div class="para" id="p-100">Use <a class="external" href="https://docs.google.com/spreadsheets/d/1lbB5OSSsxrwQdDh5Px8fqMSRRwwvxseg/edit?usp=sharing&amp;ouid=113361107850751941418&amp;rtpof=true&amp;sd=true" target="_blank">the Excel spreadsheet on average undergraduate tuition and fees and room and board rates charged for full-time students in degree-granting institutions, by level and control of institution: 1969-70 through 2020-21</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-39" id="fn-39"><sup> 39 </sup></a> (from <a class="external" href="https://nces.ed.gov/ipeds/" target="_blank">the National Center for Education Statistics</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-40" id="fn-40"><sup> 40 </sup></a>) to do the following:</div>
 <div class="para logical" id="p-101"><ol class="decimal">
 <li id="li-64"><div class="para" id="p-102">Create a graph, trendline, and interpret the <span class="process-math">\(R^{2}\)</span> value for each type of institution: public nonprofit, private nonprofit, private for-profit. What does it mean?</div></li>
 <li id="li-65"><div class="para" id="p-103">Use it to predict average tuition and fees across the country in the current year. How accurate is your prediction?</div></li>
@@ -461,8 +489,8 @@ f(x)=a_{n}x^{n}+a_{n-1}x^{n-1}+\dots+a_{1}x^{1}+a_{0}
 <li id="li-70"><div class="para" id="p-108">Use this model to predict the tuition cost for a student entering each type of institution in the current academic year. How accurate do you think your prediction is?</div></li>
 <li id="li-71"><div class="para" id="p-109">Use the model to predict the tuition cost for a student entering a public two-year college in the academic years <span class="process-math">\(2050\)</span>-<span class="process-math">\(2051\text{,}\)</span> <span class="process-math">\(2100\)</span>-<span class="process-math">\(2101\text{,}\)</span> and <span class="process-math">\(1900\)</span>-<span class="process-math">\(1901\text{.}\)</span> How accurate do you think your predictions are?</div></li>
 <li id="li-72"><div class="para" id="p-110">Within (roughly) what domain do you think your trendline can make fairly accurate predictions? Explain.</div></li>
-</ol></div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-40"><div class="fn"><code class="code-inline tex2jax_ignore">docs.google.com/spreadsheets/d/1lbB5OSSsxrwQdDh5Px8fqMSRRwwvxseg/edit?usp=sharing&amp;ouid=113361107850751941418&amp;rtpof=true&amp;sd=true</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-41"><div class="fn"><code class="code-inline tex2jax_ignore">nces.ed.gov/ipeds/</code></div></div>
+</ol></div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-39"><div class="fn"><code class="code-inline tex2jax_ignore">docs.google.com/spreadsheets/d/1lbB5OSSsxrwQdDh5Px8fqMSRRwwvxseg/edit?usp=sharing&amp;ouid=113361107850751941418&amp;rtpof=true&amp;sd=true</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-40"><div class="fn"><code class="code-inline tex2jax_ignore">nces.ed.gov/ipeds/</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="debt-big-problem.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="student-debt-by-college-type.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
