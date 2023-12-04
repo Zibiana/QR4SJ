@@ -1,15 +1,14 @@
 	<section xml:id="sec-leg-textualize">
 		<title>Textualizing the Data</title>
-
+		<introduction>
 		<title>Motivating Ideas</title>
-		In this section, I will...
-			<ul >
+		<p> In this section, I will... </p>
+			<ul>
 				<li> Understand the definition and process of text analysis. </li>
 				<li> Know how to clean data for text analysis. </li>
 				<li> Know how to create qualitative visualizations. </li>
 				<li> Understand how to use text analysis to interpret legislation </li>
 			</ul>	
-		</p>
 	</introduction>
 
 		<subsection xml:id="cleaning-for-text-analysis">
