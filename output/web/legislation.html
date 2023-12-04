@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Anti-Trans Legislation in the U.S.</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,38 +56,57 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Evaluate (Sage)'});
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
 </script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
 // Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
-                       linked: true,
-                       languages: ['r'],
-                       evalButtonText: 'Evaluate (R)'});
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-r",
+  "linked": true,
+  "languages": [
+    "r"
+  ],
+  "evalButtonText": "Evaluate (R)"
+});
 </script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
@@ -465,7 +502,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
 <section class="chapter" id="legislation"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span>
 </h2>
-<section class="introduction" id="introduction-27"><div class="para" id="p-523"><em class="emphasis">This module is originally authored by Mark Branson, Voula Collins, Carrie Diaz Eaton, Rachel Frisbie, Patti Hammerski, Kenan Ince, Jakini Kauba, Drew Lewis, Victor Piercey, Rachel Roca, and Bianca Thompson. This version of the module was remixed from the original by Kenan Ince in accordance with the Creative Commons 4.0 license.</em></div> <div class="para" id="p-524"><dfn class="terminology">Note. <em class="emphasis">All data (including merged and filtered data) used in this analysis analysis is open-access and can be found <a class="external" href="https://github.com/Zibiana/QR4SJ/tree/main/assets/data-leg" target="_blank">on GitHub</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-88" id="fn-88"><sup> 88 </sup></a>.</em></dfn></div> <div class="para" id="p-525">Americans who identify as lesbian, gay, bisexual, transgender, queer, or many other identities under the queer and trans umbrella (LGBTQ+ folks for short) have long been targeted by conservative groups in the U.S. Nonetheless, the mid-2010s seemed to many to be a time of increasing acceptance of LGBTQ+ identities; the <em class="emphasis">Time</em> magazine article “The Transgender Tipping Point,” for example, quoted actress and advocate Laverne Cox as saying, “We are in a place now where more and more trans people want to come forward and say, ‘This is who I am.’ […] More of us are living visibly and pursuing our dreams visibly, so people can say, ‘Oh yeah, I know someone who is trans.’ When people have points of reference that are humanizing, that demystifies difference (<a class="external" href="https://time.com/135480/transgender-tipping-point/" target="_blank">Katy Steinmetz 2014</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-89" id="fn-89"><sup> 89 </sup></a>).”</div> <div class="para" id="p-526">However, after the 2015 Supreme Court ruling in <em class="emphasis">Obergefell v. Hodges</em> legalizing “same-sex marriage” (though some of those who were married after <em class="emphasis">Obergefell</em> would not identify their marriages with that term), conservative groups have sought to target LGBTQ+ people through “religious freedom” laws allowing for discrimination against “same-sex couples”, and more recently, transgender people, especially transgender youth. Despite the increasing prevalence of trans and nonbinary people in American society, as well as the recent legislative and political attacks on these groups, relatively few academic studies have been conducted on the impact of the surge of anti-trans legislation since 2019. In order to better understand the impact of such legislation, we wish to gather data from various sources to analyze the growth, types, progress, and impacts of various anti-trans and -nonbinary bills from 2018 to 2023.</div></section><nav class="summary-links"><ul>
+<section class="introduction" id="introduction-27"><div class="para" id="p-523"><em class="emphasis">This module is originally authored by Mark Branson, Voula Collins, Carrie Diaz Eaton, Rachel Frisbie, Patti Hammerski, Kenan Ince, Jakini Kauba, Drew Lewis, Victor Piercey, Rachel Roca, and Bianca Thompson. This version of the module was remixed from the original by Kenan Ince in accordance with the Creative Commons 4.0 license.</em></div> <div class="para" id="p-524"><dfn class="terminology">Note. <em class="emphasis">All data (including merged and filtered data) used in this analysis analysis is open-access and can be found <a class="external" href="https://github.com/Zibiana/QR4SJ/tree/main/assets/data-leg" target="_blank">on GitHub</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-87" id="fn-87"><sup> 87 </sup></a>.</em></dfn></div> <div class="para" id="p-525">Americans who identify as lesbian, gay, bisexual, transgender, queer, or many other identities under the queer and trans umbrella (LGBTQ+ folks for short) have long been targeted by conservative groups in the U.S. Nonetheless, the mid-2010s seemed to many to be a time of increasing acceptance of LGBTQ+ identities; the <em class="emphasis">Time</em> magazine article “The Transgender Tipping Point,” for example, quoted actress and advocate Laverne Cox as saying, “We are in a place now where more and more trans people want to come forward and say, ‘This is who I am.’ […] More of us are living visibly and pursuing our dreams visibly, so people can say, ‘Oh yeah, I know someone who is trans.’ When people have points of reference that are humanizing, that demystifies difference (<a class="external" href="https://time.com/135480/transgender-tipping-point/" target="_blank">Katy Steinmetz 2014</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-88" id="fn-88"><sup> 88 </sup></a>).”</div> <div class="para" id="p-526">However, after the 2015 Supreme Court ruling in <em class="emphasis">Obergefell v. Hodges</em> legalizing “same-sex marriage” (though some of those who were married after <em class="emphasis">Obergefell</em> would not identify their marriages with that term), conservative groups have sought to target LGBTQ+ people through “religious freedom” laws allowing for discrimination against “same-sex couples”, and more recently, transgender people, especially transgender youth. Despite the increasing prevalence of trans and nonbinary people in American society, as well as the recent legislative and political attacks on these groups, relatively few academic studies have been conducted on the impact of the surge of anti-trans legislation since 2019. In order to better understand the impact of such legislation, we wish to gather data from various sources to analyze the growth, types, progress, and impacts of various anti-trans and -nonbinary bills from 2018 to 2023.</div></section><nav class="summary-links"><ul>
 <li><a href="leg-understanding.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Understanding the Issue</span></a></li>
 <li><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Obtaining and Cleaning the Data</span></a></li>
 <li><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Visualizing the Data</span></a></li>
@@ -474,8 +511,8 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
 <li><a href="sec-leg-future-directions.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Directions for Future Work</span></a></li>
 <li><a href="sec-leg-project.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></li>
 <li><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">5.8</span> <span class="title">References</span></a></li>
-</ul></nav></section><div class="hidden-content tex2jax_ignore" id="hk-fn-88"><div class="fn"><code class="code-inline tex2jax_ignore">github.com/Zibiana/QR4SJ/tree/main/assets/data-leg</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-89"><div class="fn"><code class="code-inline tex2jax_ignore">time.com/135480/transgender-tipping-point/</code></div></div>
+</ul></nav></section><div class="hidden-content tex2jax_ignore" id="hk-fn-87"><div class="fn"><code class="code-inline tex2jax_ignore">github.com/Zibiana/QR4SJ/tree/main/assets/data-leg</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-88"><div class="fn"><code class="code-inline tex2jax_ignore">time.com/135480/transgender-tipping-point/</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="climate-change-references.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="leg-understanding.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Obtaining and Cleaning the Data</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -453,7 +482,7 @@ window.MathJax = {
 <section class="section" id="sec-leg-obtain-clean"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Obtaining and Cleaning the Data</span>
 </h2>
-<section class="introduction" id="introduction-30"><div class="para" id="p-542">Here, we will find reputable sources for data on anti-trans bills and get the data into a form we can analyze.</div></section><section class="subsection" id="importing-and-merging-the-data"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-30"><div class="para" id="p-543">Here, we will find reputable sources for data on anti-trans bills and get the data into a form we can analyze.</div></section><section class="subsection" id="importing-and-merging-the-data"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.2.1</span> <span class="title">Importing and Merging the Data</span>
 </h3>
 <section class="exercises" id="exercises-import"><h4 class="heading hide-type">
@@ -464,26 +493,26 @@ window.MathJax = {
 <div class="introduction" id="introduction-31">Our first goal is to find data. Note that any data found online may change web addresses, stop updating, go offline, or become unreliable over time. Your instructor will be able to tell you which sources of data to use if the ones below are no longer reliable.</div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-95"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<div class="para" id="p-543">Go to the website <a class="external" href="https://tracktranslegislation.com" target="_blank">tracktranslegislation.com</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-92" id="fn-92"><sup> 92 </sup></a>, which in turn obtains its data from <a class="external" href="https://legiscan.com" target="_blank">LegiScan</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-93" id="fn-93"><sup> 93 </sup></a>, and browse around. What are two things that you notice about the site? Two things that surprise you? Two things that aren’t on the site that you wonder about?</div></article><article class="exercise exercise-like" id="exercise-96"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<div class="para" id="p-544">This data is up-to-date from 2021 through April 21, 2023. In order to track bills prior to 2021, we use data from the ACLU’s <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018" target="_blank">“Past Legislation Affecting LGBT Rights Across the Country” pages for 2018, 2019, and 2020</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-94" id="fn-94"><sup> 94 </sup></a>.</div>
-<div class="para" id="p-545">Go to the <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020" target="_blank">ACLU "Past Legislation Affecting LGBT Rights Across the Country 2020"</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-95" id="fn-95"><sup> 95 </sup></a> webpage and skim that page. What similarities do you notice with the data found on the Track Trans Legislation website? What differences do you notice? Click on the "View 2019" and "View 2018 Session bills" links and do the same for those years.</div></article><article class="exercise exercise-like" id="exercise-97"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<div class="para" id="p-546">We’d like to get a sense of how anti-trans legislation in the U.S. changed over time, so we’re going to try to <em class="emphasis">merge</em> the Track Trans Legislation (TTL) data with the ACLU data. Since the ACLU data has different bill "Status" categories than TTL, we’ll need to figure out how to classify each ACLU bill into one of the TTL categories.</div>
-<div class="para" id="p-547">Use the <a class="external" href="https://www.tracktranslegislation.com/terminology" target="_blank">Terminology</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-96" id="fn-96"><sup> 96 </sup></a> page on the TTL website to answer the following question. Which of the TTL categories would you classify "Referred to committee" into? "Hearing scheduled"? "Withdrawn"? You may want to click on the bill numbers on the ACLU site to see how the website LegiScan, a constantly-updated bill tracker, classifies each bill.</div></article>
+<div class="para" id="p-544">Go to the website <a class="external" href="https://tracktranslegislation.com" target="_blank">tracktranslegislation.com</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-91" id="fn-91"><sup> 91 </sup></a>, which in turn obtains its data from <a class="external" href="https://legiscan.com" target="_blank">LegiScan</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-92" id="fn-92"><sup> 92 </sup></a>, and browse around. What are two things that you notice about the site? Two things that surprise you? Two things that aren’t on the site that you wonder about?</div></article><article class="exercise exercise-like" id="exercise-96"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<div class="para" id="p-545">This data is up-to-date from 2021 through April 21, 2023. In order to track bills prior to 2021, we use data from the ACLU’s <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018" target="_blank">“Past Legislation Affecting LGBT Rights Across the Country” pages for 2018, 2019, and 2020</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-93" id="fn-93"><sup> 93 </sup></a>.</div>
+<div class="para" id="p-546">Go to the <a class="external" href="https://www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020" target="_blank">ACLU "Past Legislation Affecting LGBT Rights Across the Country 2020"</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-94" id="fn-94"><sup> 94 </sup></a> webpage and skim that page. What similarities do you notice with the data found on the Track Trans Legislation website? What differences do you notice? Click on the "View 2019" and "View 2018 Session bills" links and do the same for those years.</div></article><article class="exercise exercise-like" id="exercise-97"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<div class="para" id="p-547">We’d like to get a sense of how anti-trans legislation in the U.S. changed over time, so we’re going to try to <em class="emphasis">merge</em> the Track Trans Legislation (TTL) data with the ACLU data. Since the ACLU data has different bill "Status" categories than TTL, we’ll need to figure out how to classify each ACLU bill into one of the TTL categories.</div>
+<div class="para" id="p-548">Use the <a class="external" href="https://www.tracktranslegislation.com/terminology" target="_blank">Terminology</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-95" id="fn-95"><sup> 95 </sup></a> page on the TTL website to answer the following question. Which of the TTL categories would you classify "Referred to committee" into? "Hearing scheduled"? "Withdrawn"? You may want to click on the bill numbers on the ACLU site to see how the website LegiScan, a constantly-updated bill tracker, classifies each bill.</div></article>
 </div>
-</div></section><div class="para" id="p-548">Note that the 2020 ACLU page was last updated on March 20, 2020, since many state legislatures were suspended or closed during the first year of the COVID-19 pandemic; the ACLU page promised to “update the tracker as major new developments occur[red] .” This data has distinct variable names and organization, so we also modify the ACLU data to match the Track Trans Legislation data as closely as possible.</div>
-<div class="para" id="p-549">For example, bills that were withdrawn, not passed by the end of a given legislative session, explicitly listed as “Dead”, or were recommended against by a committee and did not proceed in the legislature were relabeled “Dead” (at least for that year). The exception was when the bill description is specifically listed as “hearing scheduled”, “referred to committee”, carried over from another year, or otherwise makes clear that the bill is still under consideration, in which case “Introduced” or “Crossed Over” (depending on whether the bill had been passed by at least one chamber) were used.</div>
-<div class="para" id="p-550">We only include bills in categories tracked by both data sources; this leaves out, for example, bills preventing localities from passing anti-discrimination ordinances within a state. We use a broad reading of the “religious freedom” category to include bills that allow for people with “sincerely-held religious beliefs” in that state to challenge nondiscrimination laws, discriminate against LGBTQ+ people, refuse to provide healthcare to LGBTQ+ people, refuse to provide adoption services to LGBTQ+ people; discriminate against married LGBTQ+ people, and receive funding for discriminatory student groups at public universities, among others.</div></section><section class="subsection" id="cleaning-the-data"><h3 class="heading hide-type">
+</div></section><div class="para" id="p-549">Note that the 2020 ACLU page was last updated on March 20, 2020, since many state legislatures were suspended or closed during the first year of the COVID-19 pandemic; the ACLU page promised to “update the tracker as major new developments occur[red] .” This data has distinct variable names and organization, so we also modify the ACLU data to match the Track Trans Legislation data as closely as possible.</div>
+<div class="para" id="p-550">For example, bills that were withdrawn, not passed by the end of a given legislative session, explicitly listed as “Dead”, or were recommended against by a committee and did not proceed in the legislature were relabeled “Dead” (at least for that year). The exception was when the bill description is specifically listed as “hearing scheduled”, “referred to committee”, carried over from another year, or otherwise makes clear that the bill is still under consideration, in which case “Introduced” or “Crossed Over” (depending on whether the bill had been passed by at least one chamber) were used.</div>
+<div class="para" id="p-551">We only include bills in categories tracked by both data sources; this leaves out, for example, bills preventing localities from passing anti-discrimination ordinances within a state. We use a broad reading of the “religious freedom” category to include bills that allow for people with “sincerely-held religious beliefs” in that state to challenge nondiscrimination laws, discriminate against LGBTQ+ people, refuse to provide healthcare to LGBTQ+ people, refuse to provide adoption services to LGBTQ+ people; discriminate against married LGBTQ+ people, and receive funding for discriminatory student groups at public universities, among others.</div></section><section class="subsection" id="cleaning-the-data"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.2.2</span> <span class="title">Cleaning the Data</span>
 </h3>
-<div class="para" id="p-551">First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., “AZ” instead of “Arizona”), while Track Trans Legislation uses full names. So we use a program to convert full names to abbreviations in the whole dataset. We have done this cleaning and it can be found in ADD GITHUB LINK HERE! You can see the code we used here: ADD THE CODE FOR STUDENTS THAT ARE CURIOUS!!!! We also note that, for example, the 2021 dataset includes some bills passed in January 2022, so we eliminate duplicate bills.</div>
-<div class="para" id="p-552">This decreases the number of bills in our dataset from 927 to 893. Next, note that the bills whose status is labeled <code class="code-inline tex2jax_ignore">Introduced*</code> by TTL are those that failed to meet their state’s “crossover deadline”, the date by which a bill must pass out of the chamber in which it was introduced and to the other chamber (e.g. State House vs. Senate). According to the site <a class="external" href="https://www.tracktranslegislation.com/" target="_blank">Track Trans Legislation</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-97" id="fn-97"><sup> 97 </sup></a>, a bill that is not passed in its initial chamber by the crossover deadline “faces high procedural hurdles in order to move forward.” Thus, we wish to classify these bills (at least for the current session) as “Dead/Failed”.</div>
-<div class="para" id="p-553">Moreover, one bill’s status is listed as “Posted”, Kentucky’s HB132 in 2020. <a class="external" href="https://legiscan.com/KY/bill/HB132/2020" target="_blank">LegiScan research</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-98" id="fn-98"><sup> 98 </sup></a> reveals that this bill died in committee, so we update its status to <code class="code-inline tex2jax_ignore">Dead/Failed</code>.</div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-92"><div class="fn"><code class="code-inline tex2jax_ignore">tracktranslegislation.com</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-93"><div class="fn"><code class="code-inline tex2jax_ignore">legiscan.com</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-94"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-95"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-96"><div class="fn"><code class="code-inline tex2jax_ignore">www.tracktranslegislation.com/terminology</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-97"><div class="fn"><code class="code-inline tex2jax_ignore">www.tracktranslegislation.com/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-98"><div class="fn"><code class="code-inline tex2jax_ignore">legiscan.com/KY/bill/HB132/2020</code></div></div>
+<div class="para" id="p-552">First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., “AZ” instead of “Arizona”), while Track Trans Legislation uses full names. So we use a program to convert full names to abbreviations in the whole dataset. We have done this cleaning and it can be found in ADD GITHUB LINK HERE! You can see the code we used here: ADD THE CODE FOR STUDENTS THAT ARE CURIOUS!!!! We also note that, for example, the 2021 dataset includes some bills passed in January 2022, so we eliminate duplicate bills.</div>
+<div class="para" id="p-553">This decreases the number of bills in our dataset from 927 to 893. Next, note that the bills whose status is labeled <code class="code-inline tex2jax_ignore">Introduced*</code> by TTL are those that failed to meet their state’s “crossover deadline”, the date by which a bill must pass out of the chamber in which it was introduced and to the other chamber (e.g. State House vs. Senate). According to the site <a class="external" href="https://www.tracktranslegislation.com/" target="_blank">Track Trans Legislation</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-96" id="fn-96"><sup> 96 </sup></a>, a bill that is not passed in its initial chamber by the crossover deadline “faces high procedural hurdles in order to move forward.” Thus, we wish to classify these bills (at least for the current session) as “Dead/Failed”.</div>
+<div class="para" id="p-554">Moreover, one bill’s status is listed as “Posted”, Kentucky’s HB132 in 2020. <a class="external" href="https://legiscan.com/KY/bill/HB132/2020" target="_blank">LegiScan research</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-97" id="fn-97"><sup> 97 </sup></a> reveals that this bill died in committee, so we update its status to <code class="code-inline tex2jax_ignore">Dead/Failed</code>.</div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-91"><div class="fn"><code class="code-inline tex2jax_ignore">tracktranslegislation.com</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-92"><div class="fn"><code class="code-inline tex2jax_ignore">legiscan.com</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-93"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2018</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-94"><div class="fn"><code class="code-inline tex2jax_ignore">www.aclu.org/past-legislation-affecting-lgbt-rights-across-country-2020</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-95"><div class="fn"><code class="code-inline tex2jax_ignore">www.tracktranslegislation.com/terminology</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-96"><div class="fn"><code class="code-inline tex2jax_ignore">www.tracktranslegislation.com/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-97"><div class="fn"><code class="code-inline tex2jax_ignore">legiscan.com/KY/bill/HB132/2020</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="leg-understanding.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-leg-visualize.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>The Staggering &amp; Inequitable Burden of Student Loans</title>
@@ -15,20 +15,38 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,25 +56,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -453,7 +482,7 @@ window.MathJax = {
 <section class="chapter" id="ch-loans"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">2</span> <span class="title">The Staggering &amp; Inequitable Burden of Student Loans</span>
 </h2>
-<section class="introduction" id="introduction-5"><div class="para" id="p-47">In <span class="process-math">\(2020\text{,}\)</span> Joseph Biden, Jr., said during his winning campaign for U.S. President that he would forgive <span class="process-math">\(\$10,000\)</span> in debt for all those who had taken out student loans. In June <span class="process-math">\(2021\text{,}\)</span> in the Education Department’s largest student loan forgiveness action currently in effect, it eliminated <span class="process-math">\(\$5.8\)</span> billion in debt owed by <span class="process-math">\(560,000\)</span> former students of the now-defunct for-profit Corinthian Colleges system, <a class="external" href="https://web.archive.org/web/20230414070909/https://www.nytimes.com/2022/06/01/business/corinthian-student-loan-forgiveness.html" target="_blank">which collapsed in <span class="process-math">\(2015\)</span> amid federal investigations and lawsuits</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-19" id="fn-19"><sup> 19 </sup></a>.</div> <div class="para" id="p-48">One year later, on August <span class="process-math">\(24\text{,}\)</span> <span class="process-math">\(2022\text{,}\)</span> President Biden announced a plan that would forgive <span class="process-math">\(\$10,000\)</span> for a subset of lower-income student debtors who had attended both for-profit and nonprofit colleges, then an additional <span class="process-math">\(\$10,000\)</span> in student debt for an additional subset of highest-need borrowers. This plan was immediately controversial, quickly challenged by many Republican-led states, and <a class="external" href="https://web.archive.org/web/20230412142404/nytimes.com/2022/11/14/business/bidens-student-debt-cancellation-blocked.html" target="_blank">unanimously blocked by the U.S. Court of Appeals for the Eighth Circuit on November <span class="process-math">\(14\text{,}\)</span> <span class="process-math">\(2022\)</span></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-20" id="fn-20"><sup> 20 </sup></a>. This injunction preventing debt forgiveness from coming into effect was upheld by the U.S. Supreme Court, which heard arguments in February <span class="process-math">\(2023\)</span> on the case.</div> <div class="para" id="p-49">Finally, on January <span class="process-math">\(10\text{,}\)</span> <span class="process-math">\(2023\text{,}\)</span> President Biden proposed a <a class="external" href="https://web.archive.org/web/20230414065847/https://www.nytimes.com/2023/01/10/your-money/student-loans-income-driven-repayment.html" target="_blank">novel income-based federal student loan repayment plan</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-21" id="fn-21"><sup> 21 </sup></a>. Why did President Biden feel the political impetus to forgive student loan debt? What were the political causes of and blowback to these debt forgiveness actions, and why were they so controversial? Whether or not Biden’s loan forgiveness policy is overturned by the Supreme Court, what would its impacts be, and should future Presidents and legislators continue to advocate for student loan forgiveness?</div> <div class="para" id="p-50">In this module, we begin by attempting to understand student loan debt through an analysis of media and political claims and the academic literature. Specifically, we ask:</div> <div class="para logical" id="p-51"><ul class="disc">
+<section class="introduction" id="introduction-5"><div class="para" id="p-47">In <span class="process-math">\(2020\text{,}\)</span> Joseph Biden, Jr., said during his winning campaign for U.S. President that he would forgive <span class="process-math">\(\$10,000\)</span> in debt for all those who had taken out student loans. In June <span class="process-math">\(2021\text{,}\)</span> in the Education Department’s largest student loan forgiveness action currently in effect, it eliminated <span class="process-math">\(\$5.8\)</span> billion in debt owed by <span class="process-math">\(560,000\)</span> former students of the now-defunct for-profit Corinthian Colleges system, <a class="external" href="https://web.archive.org/web/20230414070909/https://www.nytimes.com/2022/06/01/business/corinthian-student-loan-forgiveness.html" target="_blank">which collapsed in <span class="process-math">\(2015\)</span> amid federal investigations and lawsuits</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-18" id="fn-18"><sup> 18 </sup></a>.</div> <div class="para" id="p-48">One year later, on August <span class="process-math">\(24\text{,}\)</span> <span class="process-math">\(2022\text{,}\)</span> President Biden announced a plan that would forgive <span class="process-math">\(\$10,000\)</span> for a subset of lower-income student debtors who had attended both for-profit and nonprofit colleges, then an additional <span class="process-math">\(\$10,000\)</span> in student debt for an additional subset of highest-need borrowers. This plan was immediately controversial, quickly challenged by many Republican-led states, and <a class="external" href="https://web.archive.org/web/20230412142404/nytimes.com/2022/11/14/business/bidens-student-debt-cancellation-blocked.html" target="_blank">unanimously blocked by the U.S. Court of Appeals for the Eighth Circuit on November <span class="process-math">\(14\text{,}\)</span> <span class="process-math">\(2022\)</span></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-19" id="fn-19"><sup> 19 </sup></a>. This injunction preventing debt forgiveness from coming into effect was upheld by the U.S. Supreme Court, which heard arguments in February <span class="process-math">\(2023\)</span> on the case.</div> <div class="para" id="p-49">Finally, on January <span class="process-math">\(10\text{,}\)</span> <span class="process-math">\(2023\text{,}\)</span> President Biden proposed a <a class="external" href="https://web.archive.org/web/20230414065847/https://www.nytimes.com/2023/01/10/your-money/student-loans-income-driven-repayment.html" target="_blank">novel income-based federal student loan repayment plan</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-20" id="fn-20"><sup> 20 </sup></a>. Why did President Biden feel the political impetus to forgive student loan debt? What were the political causes of and blowback to these debt forgiveness actions, and why were they so controversial? Whether or not Biden’s loan forgiveness policy is overturned by the Supreme Court, what would its impacts be, and should future Presidents and legislators continue to advocate for student loan forgiveness?</div> <div class="para" id="p-50">In this module, we begin by attempting to understand student loan debt through an analysis of media and political claims and the academic literature. Specifically, we ask:</div> <div class="para logical" id="p-51"><ul class="disc">
 <li id="li-45"><div class="para" id="p-52">what are the causes of the current level of student loan debt?</div></li>
 <li id="li-46"><div class="para" id="p-53">who benefits from the high rate of student loan debt in the U.S.?</div></li>
 <li id="li-47"><div class="para" id="p-54">how does the load of student loan debt impact college students’ and graduates’ lives?</div></li>
@@ -462,16 +491,16 @@ window.MathJax = {
 <li id="li-50"><div class="para" id="p-57">what is the federal government doing in response to the large amount of student loan debt in the U.S.?</div></li>
 </ul></div> <div class="para" id="p-58">References to explore:</div> <div class="para logical" id="p-59"><ul class="disc">
 <li id="li-51"><div class="para" id="p-60">
-<a class="external" href="https://www.youtube.com/watch?v=P8pjd1QEA0c" target="_blank">Last Week Tonight with John Oliver - Student Debt (2014)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-22" id="fn-22"><sup> 22 </sup></a>
+<a class="external" href="https://www.youtube.com/watch?v=P8pjd1QEA0c" target="_blank">Last Week Tonight with John Oliver - Student Debt (2014)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-21" id="fn-21"><sup> 21 </sup></a>
 </div></li>
 <li id="li-52"><div class="para" id="p-61">
-<a class="external" href="https://web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html" target="_blank">Internet Archive - The Toll of Student Debt in the U.S. (New York Times, 2023)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-23" id="fn-23"><sup> 23 </sup></a>
+<a class="external" href="https://web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html" target="_blank">Internet Archive - The Toll of Student Debt in the U.S. (New York Times, 2023)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-22" id="fn-22"><sup> 22 </sup></a>
 </div></li>
 <li id="li-53"><div class="para" id="p-62">
-<a class="external" href="https://web.archive.org/web/20230406021331/https://www.nytimes.com/2023/01/10/your-money/student-loans-income-driven-repayment.html" target="_blank">Internet Archive - What to Know About Biden’s Income-Driven Repayment Proposal (New York Times, 2023)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-24" id="fn-24"><sup> 24 </sup></a>
+<a class="external" href="https://web.archive.org/web/20230406021331/https://www.nytimes.com/2023/01/10/your-money/student-loans-income-driven-repayment.html" target="_blank">Internet Archive - What to Know About Biden’s Income-Driven Repayment Proposal (New York Times, 2023)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-23" id="fn-23"><sup> 23 </sup></a>
 </div></li>
 <li id="li-54"><div class="para" id="p-63">
-<a class="external" href="https://eric.ed.gov/?id=ED621932" target="_blank">Disproportionately Impacted: Closing the Racial Weath Gap through Student Loan Cancellation, Payment Reforms, and Investment in College Affordability (Center for Law and Social Policy, 2022)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-25" id="fn-25"><sup> 25 </sup></a>
+<a class="external" href="https://eric.ed.gov/?id=ED621932" target="_blank">Disproportionately Impacted: Closing the Racial Weath Gap through Student Loan Cancellation, Payment Reforms, and Investment in College Affordability (Center for Law and Social Policy, 2022)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-24" id="fn-24"><sup> 24 </sup></a>
 </div></li>
 </ul></div></section><nav class="summary-links"><ul>
 <li><a href="sec_loans-objectives.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Objectives</span></a></li>
@@ -482,13 +511,13 @@ window.MathJax = {
 <li><a href="the-intersectional-inequities-of-student-debt.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The Intersectional Inequities of Student Debt</span></a></li>
 <li><a href="loans-solving-for-change.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span></a></li>
 <li><a href="loans-wrap-up-exercise.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Wrap-Up Exercise</span></a></li>
-</ul></nav></section><div class="hidden-content tex2jax_ignore" id="hk-fn-19"><div class="fn"><code class="code-inline tex2jax_ignore">nytimes.com/2022/06/01/business/corinthian-student-loan-forgiveness.html</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-20"><div class="fn"><code class="code-inline tex2jax_ignore">nytimes.com/2022/11/14/business/bidens-student-debt-cancellation-blocked.html</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-21"><div class="fn"><code class="code-inline tex2jax_ignore">nytimes.com/2023/01/10/your-money/student-loans-income-driven-repayment.html</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-22"><div class="fn"><code class="code-inline tex2jax_ignore">www.youtube.com/watch?v=P8pjd1QEA0c</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-23"><div class="fn"><code class="code-inline tex2jax_ignore">web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-24"><div class="fn"><code class="code-inline tex2jax_ignore">web.archive.org/web/20230406021331/https://www.nytimes.com/2023/01/10/your-money/student-loans-income-driven-repayment.html</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-25"><div class="fn"><code class="code-inline tex2jax_ignore">eric.ed.gov/?id=ED621932</code></div></div>
+</ul></nav></section><div class="hidden-content tex2jax_ignore" id="hk-fn-18"><div class="fn"><code class="code-inline tex2jax_ignore">nytimes.com/2022/06/01/business/corinthian-student-loan-forgiveness.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-19"><div class="fn"><code class="code-inline tex2jax_ignore">nytimes.com/2022/11/14/business/bidens-student-debt-cancellation-blocked.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-20"><div class="fn"><code class="code-inline tex2jax_ignore">nytimes.com/2023/01/10/your-money/student-loans-income-driven-repayment.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-21"><div class="fn"><code class="code-inline tex2jax_ignore">www.youtube.com/watch?v=P8pjd1QEA0c</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-22"><div class="fn"><code class="code-inline tex2jax_ignore">web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-23"><div class="fn"><code class="code-inline tex2jax_ignore">web.archive.org/web/20230406021331/https://www.nytimes.com/2023/01/10/your-money/student-loans-income-driven-repayment.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-24"><div class="fn"><code class="code-inline tex2jax_ignore">eric.ed.gov/?id=ED621932</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec_firstch-examples.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec_loans-objectives.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
