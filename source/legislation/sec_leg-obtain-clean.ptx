@@ -103,23 +103,23 @@
 			<shortdescription> Data from Track Trans Legislation displaying dates, states, bills, bill types, and statuses with a red box highlighting the "Export" button. </shortdescription> </image>
 			<p> 2. We now need to open the CSV file in Excel. To do this, take the following steps: Open Excel. Select File → Open…→ Choose the CSV file. The Excel sheet should populate with the data.</p>
 			<p> 3. To get a preview of what the data looks like, go to the Home tab within Excel and press Analyze Data. A side panel should appear on the right of the screen. Always be sure to check these insights present the information clearly.</p>
-			<p> <image source="5.3 Images/(2) Cleaning Data Example 1 (5.3).jpg"/> </p>
+			<p> <image source="5.3 Images/(2) Cleaning Data Example 1 (5.3).png"/> </p>
 			<p> <shortdescription> Excel file downloaded from Track Trans Legislation displaying the "Analyzing Data" button and corresponding window. </shortdescription> </p>
 			<p> 4. Remove any duplicates. To remove duplicates: Data → Remove Duplicates, ensure that all columns with duplicates are checked off so they are removed.</p>
-			<p> <image source="5.3 Images/(3) Cleaning data example.jpg"/> </p>
+			<p> <image source="5.3 Images/(3) Cleaning data example.png"/> </p>
 			<p> <shortdescription> Excel heading with the "Data" tab and "Remove Duplicates" button highlighted in a red box. </shortdescription> 
 			</p>			
 			<p> 5. Now, let’s make sure the formatting is consistent. Let’s try lowercasing all of the state names. First, create a new column to the side of the states column. Next, in this new column, enter “=LOWER( )” function into the first cell. In the parentheses, write X:X, replacing the Xs with the letter of the original column and hit enter. This will populate the new column with all of the state names in lowercase letters: </p>
-			<p> <image source="5.3 Images/(4) Cleaning data example.jpg"/> </p>
-			<p> <image source="5.3 Images/(5) Cleaning data example.jpg"/> </p>
+			<p> <image source="5.3 Images/(4) Cleaning data example.png"/> </p>
+			<p> <image source="5.3 Images/(5) Cleaning data example.png"/> </p>
 			<p> <shortdescription> Columns E and F from Excel file showing the before and after results of using the "=LOWER()" function</shortdescription> </p>
 			<p> Note: If you don’t want the formulas in the resultant cells, you just want the new lowercased versions of the names as if they had been hand-typed, you can select the names, press Control-C to copy them, navigate to Paste → Paste Values, and paste them into a new column or on top of the column you had previously made. Doing this will allow you to delete the original column without affecting the new, lowercase column. We can also capitalize all letters in the cells we select by using “=UPPER( )” or use “=PROPER( )” to reset the capitalization so the first letter is the only one capitalized. </p>
-			<p> <image source="5.3 Images/(6) Cleaning data example.jpg"/> </p>
+			<p> <image source="5.3 Images/(6) Cleaning data example.png"/> </p>
 			<p> <shortdescription> Drop down from the "Paste" with "Paste Values" highlighted in green. </shortdescription> </p>
 			<p> 6. Next, we will find entries for the state of “Oklahoma” and replace them with the state abbreviation “OK” using the Find and Replace function. To do this, the following steps apply: First, navigate to Home → Editing → Find &amp; Select. Next, Replace → Find what: “Oklahoma” and Replace with: “OK” → Replace All. Note, the alert will notify you of how many cells were altered and you should make sure that all planned changes were made. </p>
-			<p> <image source="5.3 Images/Step 6 Part A.jpg"/> </p>
+			<p> <image source="5.3 Images/Step 6 Part A.png"/> </p>
 			<p> <shortdescription> Excel heading with the "Home" tab and the "Find &amp; Select" button highlighted in red boxes. </shortdescription> </p>
-			<p> <image source="5.3 Images/Step 6 Part B.jpg"/> </p>
+			<p> <image source="5.3 Images/Step 6 Part B.png"/> </p>
 			<p> <shortdescription> The "Find &amp; Replace" pop-up window with "Find what:" and "Replace with:" dropdowns, the "Replace All" button, and alert message highlighted in red boxes. </shortdescription> </p>
 			<p> 7. Finally, we can use the TRIM( ) function to eliminate excessive spaces. For example, if in our data set we have “ Arizona” (note the extra space before the A) and we want “Arizona,” we first need to create a new column adjacent to the state column. Next, in this new column, enter “=TRIM( )” into the first cell. In the parentheses, write X:X, replacing the Xs with the letter of the original state column and hit enter. This will populate the new column with all of the state names without excessive spaces. </p>
 			<p> Note: The TRIM( ) function will not remove any spaces between two words in a state name (“North Carolina” to “NorthCarolina”), it will just remove excess spaces at the beginning and end of the state name. </p>
@@ -127,9 +127,10 @@
 
 		<subsection xml:id="exercise">
 			<title>Exercise</title>
-			<p> Instructions: Open the Oklahoma Excel file and click “view raw” to download the file. You are part of a data-cleaning team focused on this data set. Your job is to clean the provided data set as follows:
+			<p> Instructions: Open the <dataurl source = "Excel files/5.3 Exercise 1.xlsx">Oklahoma Excel file</dataurl> and click “view raw” to download the file. You are part of a data-cleaning team focused on this data set. Your job is to clean the provided data set as follows:
+				<url href="https://tracktranslegislation.com">tracktranslegislation.com</url>
 				<ol>
-					<li>  Delete all conditional formatting (i.e. capitalization)</li>
+						<li>  Delete all conditional formatting (i.e. capitalization)</li>
 						<li>  Replace all mentions of “Alabama” with “Oklahoma”</li>
 						<li>  Ensure that everything is spelled correctly (use spell check)</li>
 						<li>  Remove all duplicate bills </li>
