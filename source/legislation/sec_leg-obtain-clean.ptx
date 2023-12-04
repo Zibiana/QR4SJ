@@ -74,11 +74,11 @@
 			Cleaning is a process that involves fixing or removing incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data within a dataset. For more information, check out Tableau&apos;s <url href= "https://www.tableau.com/learn/articles/what-is-data-cleaning">Guide to Data Cleaning </url>. After importing and merging data sets, it is integral to clean the data before working or manipulating the data and producing any conclusions. While the cleaning process can be done manually, it is much more efficient to use a software program such as Microsoft Excel or a programming language such as R when working with multiple data sets or large quantities of data.
 			</p>
 			<p> Here are the steps to clean your data: </p>
-			<p> 1. Remove duplicate or irrelevant information </p>
-			<p> 2. Fix naming conventions, typos, or any other structural errors that do not make the data uniform </p>
-			<p> 3. Filter unwanted data such as outliers </p>
-			<p> 4. Handle missing data by dropping observations, inputting missing values, or altering the data </p>
-			<p> 5. Validate and ensure that the cleaning process was completed correctly before beginning the coding or visualizing process </p>
+			<li> 1. Remove duplicate or irrelevant information </li>
+			<li> 2. Fix naming conventions, typos, or any other structural errors that do not make the data uniform </li>
+			<li> 3. Filter unwanted data such as outliers </li>
+			<li> 4. Handle missing data by dropping observations, inputting missing values, or altering the data </li>
+			<li> 5. Validate and ensure that the cleaning process was completed correctly before beginning the coding or visualizing process </li>
 
 			<p>
 				First, the 2018-2020 ACLU datasets code state names by their two-letter abbreviations (e.g., <q>AZ</q> instead of <q>Arizona</q>), while Track Trans Legislation uses full names. So we use a program to convert full names to abbreviations in the whole dataset. We have done this cleaning and it can be found in ADD GITHUB LINK HERE! You can see the code we used here:
