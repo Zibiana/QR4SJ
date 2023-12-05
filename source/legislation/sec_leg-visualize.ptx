@@ -523,13 +523,14 @@ What limitations are there when working with this data?
 <exercise>
 	<p> Now, let&apos;s put everything together and refer to the following figure and answer the following questions. </p>
 	<p> <image source="folder/file.png"/> </p>
+	<ul>
 		<li> What is the name of this type of visualization? </li>
 		<li> In the year 2023, what bill type is most common? </li>
 		<li> During which year were the most Youth Athletics bills passed? </li>
 		<li> About how many bills were passed in the year 2021? </li>
 		<li> What is an alternative way to visualize this set of data? </li>
 		<li> If you grouped by “Bill Type,” how many tick marks would be on the x-axis? </li>
-		
+	</ul>
 		For more information on creating grouped and stacked bar plots in R, check out the tutorials in <url href = "https://r-graph-gallery.com/">R Graph Gallery</url>.
 		
 </exercise>
