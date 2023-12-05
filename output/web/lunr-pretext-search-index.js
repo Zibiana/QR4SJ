@@ -2278,20 +2278,92 @@ var ptx_lunr_docs = [
   "body": " Next, think about what type of action you can take in your own community.   How can you use tools like data visualization and text analysis to learn something about anti-trans legislation and share what you learned with other people in your life?  What are other issues you care about that you can learn more about and contribute to change using the tools from this section?   "
 },
 {
-  "id": "sec-leg-project",
+  "id": "sec-leg-textualize",
   "level": "1",
-  "url": "sec-leg-project.html",
+  "url": "sec-leg-textualize.html",
   "type": "Section",
   "number": "5.6",
-  "title": "Mini-Project: Analyzing Legislation",
-  "body": " Mini-Project: Analyzing Legislation   In a democracy, or even a state which retains enough characteristics of a democracy that there is a legislative process, social justice advocates often must monitor trends in legislation that is proposed and passed. In the U.S., the legislative branch of the government was designed by the founders to be the most powerful, having the ability to control the number of justices on the Supreme Court and confirm justices, as well as overriding vetoes and policy of the executive branch.  Access to data is itself a social justice issue. For example, researchers over the last decade have monitored public Twitter posts to analyze how people feel about various issues (a process called \"sentiment analysis\") or generally what people are talking about. Previously, access to of tweets on the platform had been free through Twitter's API, a collection of methods for accessing Twitter's data. However, in March 2023, Elon Musk and other Twitter decision-makers raised the price for access to of tweets to $42,000 a month , a cost that one researcher said no \"academic on the planet...could afford.\"  More directly related to legislative analysis, proposed legislation is usually listed on state and territorial government webpages, but one would have to visit all of these 56+ pages, find a way of downloading the data into a spreadsheet, and continually monitor each of the pages for new bills in order to keep up with proposed legislation nationwide. Websites such as LegiScan make this easier by aggregating data from all state legislatures, but in order to get this data into a form that can be imported into data analysis software, some knowledge of data scraping\/scripting is required, and for large queries, paid API access may be necessary.  For these reasons, we use data that has already been collected and cleaned by nonprofit or government sources. We have first accessed the website \"CRT Forward Tracking Project\" , which tracks bills seeking to ban or limit discussion of historical and systemic racism in the United States. This website does not provide a way of downloading its data, so we try a couple of low-effort tricks before simply copy-pasting their entire table into an Excel file. In this chapter, you've seen how one might analyze legislation affecting transgender and nonbinary rights. Now it's your turn: download this Excel file and use it to answer the following questions.      "
+  "title": "Textualizing the Data",
+  "body": " Textualizing the Data   Motivating Ideas  In this section, I will...   Understand the definition and process of text analysis.  Know how to clean data for text analysis.  Know how to create qualitative visualizations.  Understand how to use text analysis to interpret legislation.     Cleaning for Text Analysis  Text analysis is the process of using computer systems to understand human-written text for analysis purposes including analyzing legislation. Text can be analyzed from unstructured data sources such as emails, surveys, documents, and other online material to extract insights. The main feature of text analysis is training computer software to associate words with meanings, similar to how humans learn a new language through objects, actions, and emotions. Deep learning and natural language processing (NLP) are the principles of text analysis. (Source).   In this chapter, you will explore anti-trans legislation through text analysis. Note, this approach requires additional cleaning. This cleaning process depends on the specific bill, its formatting, and your group’s preferences. Decisions must be made about how much you want to clean the data for your specific project.  Note: whenever you download a file to open in R or R Studio, make sure to set your working directory to wherever that file is located. For example, if you have the file just on your desktop (not in any folder), entering “setwd(\"~\/Desktop\")” in the console window will set the working directory to your desktop.   Insert atl_bill1 (Part 1).rmd and atl_bill (Part 1).html here     Cleaning for Text Analysis  After cleaning the data, a block of text remains. In order to analyze the block of text, we need to get these words into what is called a word vector. For those unfamiliar with the idea of vectors, word vectors are a list of words, with one word on each line. If you are familiar with vectors from other math courses, the idea of a word vector is similar: it is a list of words in an array format.   Insert atl_bill1 (Part 2).rmd and atl_bill (Part 2).html here    Download atl_heritage.Rmd, 4-bill-test.xlsx, template legislation.xlsx, and Pro-LGBTQ-Bills.csv from GitHub.  Run the code by selecting Run→Run All. A small yellow banner may pop up at the top of your screen that you do not have a library installed. Press “Install,” and run the code again.  Tabs named “bills,” “template_leg,” “probills,” “ltext_cuonts,” and “counts_ordered” appear in the bar next to the original .Rmd file. What information do each of these tabs contain?  After running the code, some tables and graphs will appear directly in the code. Return to the .Rmd tab and scroll through the code until you find the following table. How many times does the word “employee” appear in the bill? Hint: look at the “n” column. What is the relative frequency of the word “education”? Hint: look at the “relf” column.  Continue to scroll through the graphs. Talk with a partner about what looks nice in each graph, and what you would want to change. Which graph is your favorite? Why?     Exercises  Now, it's your turn to try!  Using the following graph, answer the questions 1-6.   What does the label “n” on the y-axis mean? What title would you give to the graph? How many words appear exactly 5 times in the bill? How many words appear at least 7 times in the bill? What word appears the most? What might this information tell us about the bill?  List 3 things you can do to clean data learned in Section 5.4 and 3 things you can do to clean data for text analysis (discussed in this section). What are some similarities and differences between the methods you came up with?  What do you think would happen if you didn't clean the data before making a word vector? How might the graph look different?  Which cleaning method for text analysis do you think would be most useful to learn? Why? This question is asking for an opinion, there is no right answer.   "
+},
+{
+  "id": "activity-18",
+  "level": "2",
+  "url": "sec-leg-textualize.html#activity-18",
+  "type": "Activity",
+  "number": "19",
+  "title": "",
+  "body": " Insert atl_bill1 (Part 1).rmd and atl_bill (Part 1).html here  "
+},
+{
+  "id": "activity-19",
+  "level": "2",
+  "url": "sec-leg-textualize.html#activity-19",
+  "type": "Activity",
+  "number": "20",
+  "title": "",
+  "body": " Insert atl_bill1 (Part 2).rmd and atl_bill (Part 2).html here  "
+},
+{
+  "id": "activity-20",
+  "level": "2",
+  "url": "sec-leg-textualize.html#activity-20",
+  "type": "Activity",
+  "number": "21",
+  "title": "",
+  "body": " Download atl_heritage.Rmd, 4-bill-test.xlsx, template legislation.xlsx, and Pro-LGBTQ-Bills.csv from GitHub.  Run the code by selecting Run→Run All. A small yellow banner may pop up at the top of your screen that you do not have a library installed. Press “Install,” and run the code again.  Tabs named “bills,” “template_leg,” “probills,” “ltext_cuonts,” and “counts_ordered” appear in the bar next to the original .Rmd file. What information do each of these tabs contain?  After running the code, some tables and graphs will appear directly in the code. Return to the .Rmd tab and scroll through the code until you find the following table. How many times does the word “employee” appear in the bill? Hint: look at the “n” column. What is the relative frequency of the word “education”? Hint: look at the “relf” column.  Continue to scroll through the graphs. Talk with a partner about what looks nice in each graph, and what you would want to change. Which graph is your favorite? Why?  "
 },
 {
   "id": "exercise-102",
   "level": "2",
-  "url": "sec-leg-project.html#exercise-102",
-  "type": "Exercise",
+  "url": "sec-leg-textualize.html#exercise-102",
+  "type": "Checkpoint",
   "number": "5.6.1",
+  "title": "",
+  "body": "Using the following graph, answer the questions 1-6.   What does the label “n” on the y-axis mean? What title would you give to the graph? How many words appear exactly 5 times in the bill? How many words appear at least 7 times in the bill? What word appears the most? What might this information tell us about the bill? "
+},
+{
+  "id": "exercise-103",
+  "level": "2",
+  "url": "sec-leg-textualize.html#exercise-103",
+  "type": "Checkpoint",
+  "number": "5.6.2",
+  "title": "",
+  "body": "List 3 things you can do to clean data learned in Section 5.4 and 3 things you can do to clean data for text analysis (discussed in this section). What are some similarities and differences between the methods you came up with? "
+},
+{
+  "id": "exercise-104",
+  "level": "2",
+  "url": "sec-leg-textualize.html#exercise-104",
+  "type": "Checkpoint",
+  "number": "5.6.3",
+  "title": "",
+  "body": "What do you think would happen if you didn't clean the data before making a word vector? How might the graph look different? "
+},
+{
+  "id": "exercise-105",
+  "level": "2",
+  "url": "sec-leg-textualize.html#exercise-105",
+  "type": "Checkpoint",
+  "number": "5.6.4",
+  "title": "",
+  "body": "Which cleaning method for text analysis do you think would be most useful to learn? Why? This question is asking for an opinion, there is no right answer. "
+},
+{
+  "id": "sec-leg-project",
+  "level": "1",
+  "url": "sec-leg-project.html",
+  "type": "Section",
+  "number": "5.7",
+  "title": "Mini-Project: Analyzing Legislation",
+  "body": " Mini-Project: Analyzing Legislation   In a democracy, or even a state which retains enough characteristics of a democracy that there is a legislative process, social justice advocates often must monitor trends in legislation that is proposed and passed. In the U.S., the legislative branch of the government was designed by the founders to be the most powerful, having the ability to control the number of justices on the Supreme Court and confirm justices, as well as overriding vetoes and policy of the executive branch.  Access to data is itself a social justice issue. For example, researchers over the last decade have monitored public Twitter posts to analyze how people feel about various issues (a process called \"sentiment analysis\") or generally what people are talking about. Previously, access to of tweets on the platform had been free through Twitter's API, a collection of methods for accessing Twitter's data. However, in March 2023, Elon Musk and other Twitter decision-makers raised the price for access to of tweets to $42,000 a month , a cost that one researcher said no \"academic on the planet...could afford.\"  More directly related to legislative analysis, proposed legislation is usually listed on state and territorial government webpages, but one would have to visit all of these 56+ pages, find a way of downloading the data into a spreadsheet, and continually monitor each of the pages for new bills in order to keep up with proposed legislation nationwide. Websites such as LegiScan make this easier by aggregating data from all state legislatures, but in order to get this data into a form that can be imported into data analysis software, some knowledge of data scraping\/scripting is required, and for large queries, paid API access may be necessary.  For these reasons, we use data that has already been collected and cleaned by nonprofit or government sources. We have first accessed the website \"CRT Forward Tracking Project\" , which tracks bills seeking to ban or limit discussion of historical and systemic racism in the United States. This website does not provide a way of downloading its data, so we try a couple of low-effort tricks before simply copy-pasting their entire table into an Excel file. In this chapter, you've seen how one might analyze legislation affecting transgender and nonbinary rights. Now it's your turn: download this Excel file and use it to answer the following questions.      "
+},
+{
+  "id": "exercise-106",
+  "level": "2",
+  "url": "sec-leg-project.html#exercise-106",
+  "type": "Exercise",
+  "number": "5.7.1",
   "title": "",
   "body": ""
 },
@@ -2300,7 +2372,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "refs-anti-trans-leg.html",
   "type": "References",
-  "number": "5.7",
+  "number": "5.8",
   "title": "References",
   "body": " ACLU of Missouri. 2023. Advocates Sue to Block Missouri Attorney General's Anti-Transgender Rule Restricting Gender-Affirming Care.  https:\/\/www.aclu-mo.org\/en\/news\/advocates-sue-block-missouri-attorney-generals-anti-transgender-rule-restricting-gender .  American Civil Liberties Union. 2018. Past Legislation Affecting LGBT Rights Across the Country (2018).  https:\/\/www.aclu.org\/past-legislation-affecting-lgbt-rights-across-country-2018 .  ———. 2019. Past Legislation Affecting LGBT Rights Across Country 2019.  https:\/\/www.aclu.org\/past-legislation-affecting-lgbt-rights-across-country-2019 .  ———. 2020. Past Legislation Affecting LGBT Rights Across the Country 2020.  https:\/\/www.aclu.org\/past-legislation-affecting-lgbt-rights-across-country-2020 .  Bauer, Sydney. 2020. The New Anti-Trans Culture War Hiding in Plain Sight.  The New Republic , February. https:\/\/newrepublic.com\/article\/156539\/new-anti-trans-culture-war-hiding-plain-sight .  Contreras, Russell. 2023. The Forces Behind Anti-Trans Bills Across the U.S.  https:\/\/www.axios.com\/2023\/03\/31\/anti-trans-bills-2023-america .  González, Oriana. 2023. What Is the State of Gender-Affirming Care in America.  https:\/\/www.axios.com\/2023\/03\/03\/gender-affirming-care-trans-youth-us .  Harvard Law Review. 2021. Outlawing Trans Youth: State Legislatures and the Battle over Gender-Affirming Healthcare for Minors.  Harvard Law Review 134 (6). https:\/\/harvardlawreview.org\/print\/vol-134\/outlawing-trans-youth-state-legislatures-and-the-battle-over-gender-affirming-healthcare-for-minors\/ .  Katy Steinmetz. 2014. The Transgender Tipping Point.  https:\/\/time.com\/135480\/transgender-tipping-point\/ .  Metric Geometry & Gerrymandering Group. n.d. GerryChain.  https:\/\/mggg.github.io\/GerryChain\/ .  Olson, Kristina R., Aidan C. Key, and Nicholas R. Eaton. 2015. Gender cognition in transgender children.  Psychological Science 26 (4): 467–74. https:\/\/doi.org\/10.1177\/0956797614568156 .  Pauly, Madison. 2023. Inside the Secret Working Group That Helped Push Anti-Trans Laws Across the Country.  https:\/\/www.motherjones.com\/politics\/2023\/03\/anti-trans-transgender-health-care-ban-legislation-bill-minors-children-lgbtq\/ .  Rafferty, Jason, COMMITTEE ON PSYCHOSOCIAL ASPECTS OF CHILD AND FAMILY HEALTH, COMMITTEE ON ADOLESCENCE, GAY, BISEXUAL, AND TRANSGENDER HEALTH AND WELLNESS SECTION ON LESBIAN, Michael Yogman, Rebecca Baum, Thresia B. Gambon, et al. 2018. Ensuring Comprehensive Care and Support for Transgender and Gender-Diverse Children and Adolescents.  Pediatrics 142 (4): e20182162. https:\/\/doi.org\/10.1542\/peds.2018-2162 .  Schipper, Kellie. 2022. Conservative Political Tactics to Obstruct Gender-Affirming Healthcare for Transgender Youth in the USA. PhD thesis.  The Trevor Project. 2022. 2022 National Survey on LGBTQ Youth Mental Health.  https:\/\/www.thetrevorproject.org\/survey-2022\/assets\/static\/trevor01_2022survey_final.pdf .  Theriot, Kevin H, and Ken Connelly. n.d. Free to Do No Harm: Conscience Protections for Healthcare Professionals.  Arizona State Law Journal 49 (0549): 549–605.  Trans Legislation Tracker. n.d. Trans Legislation Tracker: 2022 Anti-Transgender Bills.  https:\/\/translegislation.com\/bills\/2022 .  "
 },
@@ -2323,58 +2395,22 @@ var ptx_lunr_docs = [
   "body": " Annotated Bibliography   Questions : How can higher-education mathematics instructors promote equality of opportunity through working toward the academic success of underrepresented students and encouraging students to critically analyze their sociopolitical environment with an eye toward social change?     Aslan Tutak, F., Bondy, E., & Adams, T. L. (2011). Critical pedagogy for critical mathematics education.  International Journal of Mathematical Education in Science and Technology ,  42 (1), 65–74. doi:10.1080\/0020739X.2010.510221   Critical pedagogy is pedagogy that aims to raise questions about \"the way things are\" and how things might be done differently with an eye toward equality and justice. Three domains related to critical mathematics education are surveyed: ethnomathematics, equity in mathematics education, and culturally responsive teaching. Ethnomathematics emphasizes the ways various cultures have done and do mathematics; culturally responsive teaching is defined as \"using the cultural characteristics, experiences, and perspectives of ethnically diverse students as conduits for teaching them more effectively\"; and equity in mathematics education is the creation of an educational environment in which all groups enjoy equal opportunities and equitable treatment.  Aslan Tutak, Bondy, and Adams argue that critical pedagogy has not been implemented systematically or in-depth in mathematics classrooms. The authors envision a combination of multiculturalism and equity efforts with a critical perspective, supported by education research. The authors also emphasize the importance of critical education of teachers.  Because critical pedagogy gives no specific teaching techniques or subject matter, it requires the deep commitment of the teacher or professor to the critical education process and adjustment of techniques to fit specific classrooms.     Bartell, T. G. (2013). Learning to teach mathematics for social justice: Negotiating social justice and mathematical goals.  Journal for Research in Mathematics Education ,  44 (1), 129–163.   The concept of teaching mathematics for social justice (TMSJ) is introduced as the use of mathematics both to provide students with the education necessary to succeed in the current system as well as \"to critically analyze [students'] world to ultimately promote a democratic society in which all get an opportunity to participate fully\". A growing number of researchers argue that TMSJ can support the \"ongoing struggle for equity in mathematics education\". This article presents a qualitative study of teachers in a graduate course learning to implement TMSJ. Although there are many conceptions of what \"social justice\" and \"equity\" are, the author draws her conception from Paulo Freire of an education \"not to integrate those who are marginalized into the existing society but rather to change society so that all are included\". Darling-Hammond's (2002) model of equity pedagogy includes understanding of oneself in relation to others (Self), the power structures that interact with their understanding of pedagogy (Society), the ways that culture and context affect students (Students), and how to develop classroom practices that support their students (School). It seems to me that as students grow to understand mathematics as \"useful in investigating the sociopolitical realities that shape their lives\", we will see greater engagement by underrepresented students in mathematics, so that the dual goals of TMSJ are mutually reinforcing.  Bartell argues that expanding a social justice-related math curriculum across a whole unit or year, as well as educating teachers on how to choose data, would increase the extent to which teachers achieved TMSJ goals.     Springer, L., Stanne, M. E., & Donovan, S. S. (1999). Effects of small-group learning on undergraduates in science, mathematics, engineering, and technology: A meta-analysis.  Review of Educational Research , 69(1), 21–51.   Excessively competitive classroom environments have been shown to decrease the ability of underrepresented students to participate in the classroom. Several meta-analyses have shown that small-group learning and cooperation in the classroom increases achievement and productivity, self-esteem, inter-group attitudes, and attitudes toward learning, all of which benefit underrepresented students greatly and help to counter stereotype threat. Affective or humanist theorists argue that a move toward more democratic and collaborative teaching and learning processes would benefit women and underrepresented groups by giving them more opportunities to be heard. The authors’ meta-analysis showed that small-group learning benefitted student achievement significantly more for groups composed primarily of Black or Latin@\/e students ( d = 0.76 ) compared with mostly white ( d = 0.46 ) or relatively heterogeneous ( d = 0.42 ) groups. Moreover, small-group learning led to more favorable attitudes toward learning among all students, but especially among women.      Schulteis, M. S. (2013). Serving Hope: Building Service-Learning into a Non-Major Mathematics Course to Benefit the Local Community.  Primus  : Problems, Resources, and Issues in Mathematics Undergraduate Studies , 23(6), 572–584.   Service learning has been shown to provide an avenue to connect students’ learning with their lives and, in doing so, enhances both. Particularly in math courses, service learning has given students new motivation to master the course content. At Concordia University Irvine, a small liberal arts university, the required core mathematics course recommends that students tutor elementary-aged homeless students in mathematics. The university claims that the tutoring gives students an opportunity to relearn and strengthen their mastery of basic math skills. Moreover, students reflect on their experiences through written and oral work, and this gives them an increased sense of personal efficacy, awareness of the world, and awareness of their own personal values. Students also reflected on the ways that the mathematical \"life lessons\" from the Heart of Mathematics textbook by Burger and Starbird were used during the tutoring. Overall, service learning seemed to promote a greater understanding of both mathematics and the importance of service.      Hodge, L. L. (2006). An Orientation on the Mathematics Classroom that Emphasizes Power and Identity: Reflecting on Equity Research.  The Urban Review, 38(5),  373–385. doi:10.1007\/s11256-006-0041-7   This paper is focused on critiquing the notion of the neutrality of the mathematics classroom. Hodge defines diversity as cultural diversity, with \"culture\" including race, ethnicity, home life, class, gender, and the interactions between such categories. Hodge points out that racial groups are a social construct and argues against seeing racial groups as homogeneous. Hodge is oriented toward promoting equity in the mathematics classroom, especially considering mathematics as a \"gatekeeper\" for careers and life chances in general. Hodge argues that we should see the mathematics classroom as an environment for students which promotes a certain kind of thinking, one that is structured by \"relationships among qualities\" (376). Per Hodge, students possess ways of speaking, writing, dressing, and thinking determined by their culture (\"cultural capital\"), and students with cultural capital similar to that deemed \"acceptable\" or dominant in the classroom generally succeed and are rewarded. This conception of cultural capital brings into question the kinds of \"academic success\" that math teachers and professors are concerned with promoting. Hodge draws on the work of Moll (1997) to argue for the situation of mathematics education in the cultural realities of students, as well as examining what is regarded as \"legitimate\" participation in mathematics classrooms.      Treisman, U. (1992). Studying Students Studying Calculus: A Look at the Lives of Minority Mathematics Students in College.  The College Mathematics Journal, 23(5) , 362–372. doi:10.2307\/2686410   This article, adapted from a lecture by the author, discusses the author and colleagues’ experiences in trying to improve the performances (as measured by GPA and test scores) of students of color in calculus classrooms at UC-Berkeley. In the mid-1970s, when the author began his work, 60% of Black students enrolled in calculus at Berkeley received a D or F. The author’s initial conception of the reasons for this poor performance named student motivation, inadequate preparation, lack of family support, and income gaps as the culprits. Through interviews, Treisman realized the average student of color at Berkeley was highly motivated, that even students of color with high SAT scores (a measure of \"prior preparedness\") were failing, and that students of color often had very supportive parents, though often they had lower incomes. However, Treisman noticed that the difference between (primarily) Black students who were failing and the Chinese students he studied who were getting higher grades was amount of time spent working outside of class and amount of group collaboration outside of class. Treisman implemented an \"anti-remedial program\" (368) for students who saw themselves as well-prepared to provide students with a challenging, collaborative, community-based learning environment, which emphasized the importance of a great deal of out-of-class work. According to Treisman, the program resulted in Black students outperforming their white and Asian peers. This seems to support the results of studies showing that all students, especially students of color, benefit greatly from group learning (c.f. Springer, Stanne, & Donovan, 1999, above).      Gutstein, E., & Peterson, B. (2005). Introduction. In E. Gutstein & B. Peterson (Ed.),  Rethinking Mathematics: Teaching Social Justice by the Numbers . Rethinking Schools.   In this section of their book Rethinking Mathematics , Gutstein and Peterson argue that a social justice approach to mathematics benefits students by allowing them to recognize the importance of mathematics as an essential tool for understanding and potentially changing the world. Other benefits of this philosophy, according to the authors, include educating students about social issues, connecting mathematics with students’ cultural and community histories, increasing student participation in democracy, and increasing student motivation. No studies are cited to support these assertions, but anecdotal evidence is used throughout the book to justify them. The authors advise teachers to get to know their students and communities and to use the issues students bring up as springboards for math lessons. This fits with the idea, brought up in class, that students come in to a classroom with their own schemas for understanding the world, and that meeting the students where they are is the best educational philosophy. The authors point out that disadvantaged communities, those who are currently the target of outreach to improve retention and performance in math courses, are the ones whose experiences are privileged under this style of teaching, and thus that they may be more likely to learn math in a justice framework. Gutstein and Peterson argue that teaching math in a \"neutral\" way is not possible, because even trying to leave politics out of the classroom is a political decision that prevents questioning of the status quo.      Gutiérrez, M. V. (2005). ‘I Thought This U.S. Place Was Supposed to Be About Freedom’: Young Latinas Engage in Mathematics and Social Change to Save Their School. In E. Gutstein & B. Peterson (Ed.),  Rethinking Mathematics: Teaching Social Justice by the Numbers . Rethinking Schools.   This chapter of Rethinking Mathematics centers around the math-based effort of the author and a group of 5th-grade, Latina students to prevent the closure of their elementary school. The district argued that the school, Agave Elementary, was close enough to the receiving school and labeled \"underperforming\" on standardized tests, thus it should be closed. The author helped shape the students’ ideas into solvable problems. The girls analyzed test score data over time and found an increase in performance over the past few years. Moreover, the girls investigated the walk to the receiving school, measuring the amount of time it took them to walk based on a given rate. This points to a potential connection with calculus and using derivatives to measure velocity if a similar activity were done for undergraduate students. Having shown that the receiving school was too far a walk by gathering and analyzing data, the district allowed Agave to remain open. The statements of one of the girls suggest that she felt empowered and connected to the math that she used. In general, activities like this that combine math with students’ lives and with politics help support an education that engages students to become active agents for social change.      Martin, D. B. (2012).  Learning Mathematics while Black . Educational Foundations, 26, 47–66.   In this article, Martin argues that, despite a dearth of \"rigorous, explanatory research\" on Black children and mathematics, Black children and their competencies tend to be framed in ways that reinforce stereotypes of Black children as \"underperforming\" and \"mathematically illiterate\". Martin points out that historical and structural considerations affect the material and cultural circumstances of Black children, and that some policymakers and researchers ignore these forces when describing Black children in the context of \"at-risk, poverty-ridden communities, ghettos, dysfunctional families, and oppositional stances toward schooling\". Martin argues for a more robust view of the \"resilience\" of Black children in education, including the ways that Black children overcome \"ideologies of Black intellectual inferiority\". Resilience among Black students has been categorized by McGee (2009) as fragile or robust , according as students’ motivations were to disprove external racial stereotypes or to develop self-generated motivations and racial identities. Martin argues that scholars in teaching and learning ignore issues such as neoliberal education reform, structural racism, and social policy at their own detriment and to the detriment of Black children who come to be characterized as innately \"underachieving\", despite having to overcome issues such as poor teacher support, low funding for public education, school closures, lowered expectations, and others. Finally, Martin describes a study that showed how strong early educational experiences, recognition of their abilities by educators, strong support systems, and a strong positive mathematical and academic identity promoted success among Black children.      Malloy, C. E. Instructional Strategies and Dispositions of Teachers Who Help African American Students Gain Conceptual Understanding. In Martin, D. B. (Ed.),  Mathematics teaching, learning, and liberation in the lives of black children . New York: Routledge.   Malloy begins his chapter by examining a case study in which a Black student is left out of group work because he was \"not at the same level as the rest of the students in the class\"; this exemplifies how students who are not prepared well by previous coursework could be invisibilized and neglected in future courses. Studies show that Black students learn math best when they are allowed to \"focus on the whole, use improvisational intuitive thinking, recall relevant verbal ideas, engage in human and social content material, respond to extrinsic motivation, focus on interests, learn from informal class discussion, achieve interdependently, and narrate human concepts\". Thus, in order to accommodate instruction for all students, teachers must acknowledge student preferences in acquiring knowledge, develop activities that promote student-student and student-teacher interaction, value the knowledge that students bring in to the classroom, create learning opportunities in which students are interdependent, and encourage\/provide feedback to students as they learn. This process is encouraged by the culturally relevant\/responsive pedagogies of Ladson-Billings and Irvine. The primary aim of Ladson-Billings’ pedagogy is to \"assist in the development of a relevant Black personality that allows African American students to choose academic excellence yet still identify with their African and African American culture\". Irvine emphasizes that effective teachers must provide all students with high-level knowledge regardless of previous categorization. Furthermore, using a social justice frame that emphasizes the role of mathematics in democracy and addressing inequality results in student learning and achievement (Gutstein, 2003; Moses & Cobb, 2001). Malloy identifies the concern that most teachers studied did not ask students to use \"complex and non-algorithmic\" thinking, nor did they work to develop a sociopolitical or critical consciousness in their students.      McGee, E. O., & Hostetler, A. L. (2014). Historicizing Mathematics and Mathematizing Social Studies for Social Justice: A Call for Integration.  Equity & Excellence in Education , 47 (2) , 208–229.  https:\/\/www.tandfonline.com\/doi\/abs\/10.1080\/10665684.2014.900428   The authors argue for greater integration of mathematics and social studies at the K-12 level in order to emphasize their intersections. The authors define social justice in U.S. education as focused on \"striving for educational excellence via the examination of social and historical issues and, therefore, giving voice to the marginalized, and recognizing inequities in order to empower marginalized and privileged students alike so that they can empower those around them to promote diversity and inclusiveness for all persons\". Studies have shown that teachers of social studies and mathematics alike focus very little on sexism and racism. In mathematics, this may stem from the myth of math’s objectivity, as instructors may consider social issues \"out of the scope\" of their classroom. However, there is still substantial inequality even within schools, as financially under-resourced schools have fewer highly-qualified teachers, and 83% of teachers are White. Many teacher training programs provide limited education about social justice or culturally relevant pedagogy, though researchers have confirmed that culturally relevant teaching practices contributes to educational equity and social justice. Bob Moses, a civil rights activist who started the Algebra Project to provide social justice-based algebra education to low-income students, argues that algebra acts as a gatekeeper to higher levels of mathematics, which disproportionately excludes students of color and poorer students. Although some criticism has held that social justice pedagogy in mathematics is under-theorized, non-rigorous, and requires highly socially conscious teachers to work, others argue that content knowledge becomes more meaningful when it is applied to social issues.      Winter, D. (2007). Infusing mathematics with culture: Teaching technical subjects for social justice.  New Directions for Teaching and Learning, 2007 (111), 97–106.  http:\/\/doi.org\/10.1002\/tl.291   The National Survey of Student Engagement, 2004, has found that undergraduate students are often passionate about social and political issues; the author argues that bringing such issues into the mathematics classroom can increase student engagement and performance. This provides evidence against the criticism often leveled against social justice pedagogy in mathematics that it necessarily would not focus enough on mathematical proficiency. The author provides a model of social justice pedagogy in STEM courses which introduces sociocultural phenomena through readings, videos, and activities, then the students would be given a problem and a structured worksheet to apply mathematics to the problem. Finally, students interpreted their mathematical solution in the context of the original issue, often leading to discussion about the broader implications of their solution. In this study, the author applies this model to precalculus classes, teaching functions, graphing, and statistics through examining political corruption and economic development worldwide, climate change in Zimbabwe and its impact on agriculture, and water security and native peoples’ rights in Botswana, to name a few. Winter derives several principles for social justice education from Marilyn Frankenstein (1990), including using real situations and real information, emphasizing situations that students might have learned about through news or other media, and using controversial materials to help students increase their curiosity, understand other perspectives more accurately, solve problems more effectively, and generate creative ideas (Johnson and Johnson, 1979). Students taught using the social justice approach performed statistically significantly better than a control group; they performed better on a mathematical assessment (exceeding the control group’s scores by 11.9%) and had fewer students with a grade of D or lower in the class (15.4% in the social justice pedagogy condition, as opposed to 22.9% in the control group).      Jackson, K., & Wilson, J. (2012). Supporting African American Students’ Learning of Mathematics: A Problem of Practice. Urban Education, 47(2), 354–398.  http:\/\/doi.org\/10.1177\/0042085911429083   There is a lack of studies that investigate specific teaching practices which benefit African-American students, including teacher-student interaction and its effects. Although trying to specify \"general\" practices across a group as diverse as African-Americans in the US may lead to essentialization, a variety of historical conditions in the US have meant that almost all African-Americans have been told that they are inferior academically. Therefore, the studies this article calls for would benefit any group which is systemically marginalized in US mathematics education, including women and Latin@s. Across all the studies reviewed, it seems that providing African-American students with a common experience that grounds mathematical ideas, as well as explicitly encouraging and supporting African-American students to do more sophisticated mathematics, are important. Studies that focus on \"successful\" African-American learners provide an important counternarrative but also do not explicitly state what made those learners \"successful\". The authors suggest that future studies investigate \"(a) teachers’ orientations to teaching African-American students math, (b) forms of instructional practice that support African-American students to participate in rigorous mathematical activity, and (c) African-American students’ experiences as learners of mathematics\".      Osler, J. (2007). A guide for integrating issues of social and economic justice into mathematics curriculum. Retrieved March, 26, 2008.   In contrast to the above article, a series of conjectured forms of instructional practice that would support African-American students (and all marginalized students) is given, and many of them are congruent with scientifically studied pedagogical recommendations, although few have been tested under controlled conditions. In the absence of scholarship testing specific practices, it seems the SoTL community is currently limited to such suggestions. The article suggests that, in a context of worsening oppression for low-income and people of color in the US, a failure to address social and economic justice in all areas of education is actively harmful for future generations. Drawing on ideas of Bob Moses (founder of the Algebra Project) and Paulo Freire, Osler delineates two components of \"social justice mathematics\": math literacy as a civil right\/social justice issue, and studying issues of social justice in the math classroom. Osler suggests that the use of such practices would not only give students a concrete connection to the mathematics they were learning, it would allow students to engage in higher-level mathematical thinking. Osler’s guidelines include: (1) working with a textbook with a strong mathematical framework and scaffolding, (2) talk to students to decide on social justice issues to cover, (3) set up units around \"Essential Questions\", (4) introduce the social justice issue first, (5) then begin the mathematics, devoting as much time as necessary to the concepts and scaffolding both math and social justice along the way, (6) end with a great project. Some specific unit ideas: for exponents, studying compound interest and population growth; for probability, exploring the possibility that a traffic stop should be (and is) a person of color.      Rousseau, C., & Tate, W. F. (2003). No Time like the Present: Reflecting on Equity in School Mathematics.  Theory into Practice ,  42 (3), 210–216.   The Professional Standards for Teaching Mathematics (NCTM, 1991) recommend that teacher reflection should occur and focus on how students’ linguistic, ethnic, racial, socioeconomic, and cultural backgrounds influence their learning of mathematics. Within the social reconstructionist tradition, teacher reflection was a political act \"that either contributes to or hinders the realization of a more just and humane society\" (Zeichner, 1996). However, preservice teachers often view student diversity as a problem rather than a resource, and many teachers hold a view that \"all students should be treated equally in the classroom\", even when this leads to disproportionately negative outcomes for students of color. The authors argue that this \"one-size-fits-all\" mentality is a common, serious obstacle to true teacher reflection and social justice. Further, the authors identify the \"color-blind\" mentality, in which a teacher claims \"not to see color\", to lead to ignoring students’ cultural backgrounds in the classroom, thus decreasing student engagement, as well as a refusal to combat historical and actual racist practices. In classroom observations, the authors report several instances of students being \"allowed to fail\" through their teacher’s neglect; such students were disproportionately Black, specifically Black men.      Anderson, R. (2007). Being a Mathematics Learner: Four Faces of Identity.  Mathematics Educator ,  17 (1), 7–14.   This paper focuses on a view of learning mathematics through \"social participation\" (Wenger, 1998) and includes not only thoughts and actions but membership in social communities. Four \"faces\" of mathematical identity are discussed using selected quotations from students attending a small, rural high school in the U.S. Pacific Northwest. Identity refers to \"how we define ourselves and how others define us\". The first face of identity is engagement (direct experience of the world and active involvement with others); students made to do repetitive exercises without creating meaning on their own may not see themselves as mathematics learners. The second face is imagination, how students envision mathematics fitting in to their broader lives; teaching mathematics without contextualizing it in students’ personal worlds would lead to students developing an identity as \"not a mathematics learner\". The third face is alignment, how students align their energies within an institution in response to the imagination phase. The fourth face is nature, but scientific studies have indicated that all students have the capacity to be mathematics learners. The authors recommend that teachers allow students to generate meaning and strategies for solving problems; one starting point is using mathematical tasks that have multiple responses or one response with multiple solutions; hdold their students to high expectations; keeping students informed of institutional requirements for college and careers; and discount the nature face in favor of the others.      Joseph, G. G. (1987). Foundations of Eurocentrism in mathematics.  Race & Class ,  28 (3), 13–28.   The author argues that the way mathematics is taught around the world is indicative of a colonial, Eurocentric narrative in which Europe is seen as a \"civilizing\" force and the significant contributions of mathematicians from non-European backgrounds are downplayed. Through a historical narrative, Joseph shows that such mathematical leaps as written mathematical records, a place value number system, the technique of measurement, our base 10 number system, the \"Pythagorean Theorem\", and algebra all originated outside of Europe and were then used by Europeans to advance their own mathematics. Some of the greatest mathematicians of antiquity, such as Euclid, Archimedes, Apollonius, and Diophantus, developed from the intersections of Greek mathematics with Babylonian and Egyptian mathematics during the Alexandrian Empire. Arab scholars developed a rigorous, advanced geometry and algebra during what in Europe was known as the \"Dark Ages\". The marginalization of these contributions contributes to the perception of mathematics as independent of economics, politics, and culture; frames mathematical pursuits as confined to a select few (usually white men); and the enshrining of deductive axiomatic logic (i.e. \"formal\" mathematical proof) as the \"only\" method of mathematical discovery. If we as teachers acknowledge the diverse groups which contribute to mathematics and the diversity of ways of doing mathematics, we may be better able to engage students with various backgrounds and mathematical cultures.      Gutstein, E. (2008). Reinventing Freire: mathematics education for social transformation. In J. Matos, P. Valero, & Yasukawa, Keiko (Eds.),  Proceedings of the Fifth International Mathematics Education and Society Conference . Albufeira, Portugal.   The author reflects on the educational philosophy of Paulo Freire as it relates to the current state of mathematics education in the US. Freire’s emphasis on basing the content of education on \"the present, existential, concrete situation, reflecting the aspirations of the people\". Gutstein identifies Freire’s idea that \"political experiences are necessary to develop political consciousness\" as the most relevant to his current work. Gutstein argues that the modern emphasis on mathematics education in the US is largely in service of the status quo and \"profitability for the financial and corporate elite\". In contrast, Gutstein aims to politicize the mathematics he teaches in a social justice-focused school in Chicago. Although there are several collections of \"mathematics for social justice\" projects, units, and lessons, Gutstein claims that no cogent and cohesive curriculum exists and identifies the need for one. However, Gutstein identifies one \"solution\" to this problem as using rich mathematics curricula and including relevant social justice concepts that are co-created with students in response to the curriculum.      Brodie, K. (2008) Describing teacher change: interactions between teacher moves and learner contributions. In J. Matos, P. Valero, & Yasukawa, Keiko (Eds.),  Proceedings of the Fifth International Mathematics Education and Society Conference . Albufeira, Portugal.   This paper describes a case study of a motivated, mathematically knowledgeable tenth-grade teacher at a public school in Johannesburg, South Africa, made up entirely of Black students; learners are often assaulted on their way to and from school. Since recent research has shown that mathematics education reform has mitigated achievement gaps between marginalized and other learners. The learners’ mathematical knowledge was two years below grade level; this led to a lot of basic errors, defined as errors not expected at the grade level. The moves used by the teacher were recorded and divided into five categories. In the first week of study, the instructor frequently used the elicit move to get a desired response from a learner, while in the second week, the instructor worked to develop mathematical reasoning in dialogue with his students, increasing his use of the press move to ask learners to explain more of their reasoning or push for something more from them. Previous research has indicated that a first-level teaching move to engage more with students often involves increasing pressing; perhaps this would be a good, low-overhead way to bring more learner-centered instruction into public schools.      (2009). Teaching problem solving and understanding: what does the literature suggest? In Lai (Ed.),  Teaching Undergraduates Mathematics: Mathematical Sciences Research Institute May 2009 Workshop Report.  Berkeley, CA: Mathematical Sciences Research Institute.   This chapter of the workshop proceedings begins by quoting Marilyn Carlson that the debate between \"teacher-directed instruction\" and \"student-centered discovery\" is \"distract[ing] the community with false dichotomies and vague premises\", a polarizing position that may inadvertently discount quality scholarship. The authors continue by presenting two characterizations of student understanding of mathematical functions: Action-Process-Object-Schema (APOS) theory and covariation. APOS theory defines an \"action\" as a step-by-step transformation of a set of mathematical objects into another mathematical object; for instance, evaluating a composition of functions at the point x. In contrast, the \"process stage\" of understanding takes place when students \"internalize the action into a process\" and can then think about the process without performing it. The process stage entails a greater level of abstraction, e.g. finding a general formula for a composition of functions given data for each function in table or graph form. Covariational reasoning is defined as \"the cognitive activities involved in coordinating two varying quantities while attending to the ways in which they change in relation to each other\"; for instance, attending to parametric equations. Observations of students suggest that covariational processing involves five kinds of mental action; questioning strategies to promote each action in students are suggested. Finally, the authors discuss the balance of social scaffolding to keep a discussion moving and analytic scaffolding to keep a discussion mathematically productive and suggest requirements for an instructor to use analytic scaffolding successfully.  "
 },
 {
-  "id": "p-735",
+  "id": "p-748",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-735",
+  "url": "sec_annotated-bib.html#p-748",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Questions "
 },
 {
-  "id": "p-737",
+  "id": "p-750",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-737",
+  "url": "sec_annotated-bib.html#p-750",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Aslan Tutak, F., Bondy, E., & Adams, T. L. (2011). Critical pedagogy for critical mathematics education. International Journal of Mathematical Education in Science and Technology , 42 (1), 65–74. doi:10.1080\/0020739X.2010.510221 "
-},
-{
-  "id": "p-742",
-  "level": "2",
-  "url": "sec_annotated-bib.html#p-742",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Bartell, T. G. (2013). Learning to teach mathematics for social justice: Negotiating social justice and mathematical goals. Journal for Research in Mathematics Education , 44 (1), 129–163. "
-},
-{
-  "id": "p-746",
-  "level": "2",
-  "url": "sec_annotated-bib.html#p-746",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Springer, L., Stanne, M. E., & Donovan, S. S. (1999). Effects of small-group learning on undergraduates in science, mathematics, engineering, and technology: A meta-analysis. Review of Educational Research , 69(1), 21–51. "
-},
-{
-  "id": "p-749",
-  "level": "2",
-  "url": "sec_annotated-bib.html#p-749",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Schulteis, M. S. (2013). Serving Hope: Building Service-Learning into a Non-Major Mathematics Course to Benefit the Local Community. Primus : Problems, Resources, and Issues in Mathematics Undergraduate Studies , 23(6), 572–584. "
-},
-{
-  "id": "p-752",
-  "level": "2",
-  "url": "sec_annotated-bib.html#p-752",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Hodge, L. L. (2006). An Orientation on the Mathematics Classroom that Emphasizes Power and Identity: Reflecting on Equity Research. The Urban Review, 38(5), 373–385. doi:10.1007\/s11256-006-0041-7 "
 },
 {
   "id": "p-755",
@@ -2383,129 +2419,165 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
+  "body": "Bartell, T. G. (2013). Learning to teach mathematics for social justice: Negotiating social justice and mathematical goals. Journal for Research in Mathematics Education , 44 (1), 129–163. "
+},
+{
+  "id": "p-759",
+  "level": "2",
+  "url": "sec_annotated-bib.html#p-759",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Springer, L., Stanne, M. E., & Donovan, S. S. (1999). Effects of small-group learning on undergraduates in science, mathematics, engineering, and technology: A meta-analysis. Review of Educational Research , 69(1), 21–51. "
+},
+{
+  "id": "p-762",
+  "level": "2",
+  "url": "sec_annotated-bib.html#p-762",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Schulteis, M. S. (2013). Serving Hope: Building Service-Learning into a Non-Major Mathematics Course to Benefit the Local Community. Primus : Problems, Resources, and Issues in Mathematics Undergraduate Studies , 23(6), 572–584. "
+},
+{
+  "id": "p-765",
+  "level": "2",
+  "url": "sec_annotated-bib.html#p-765",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Hodge, L. L. (2006). An Orientation on the Mathematics Classroom that Emphasizes Power and Identity: Reflecting on Equity Research. The Urban Review, 38(5), 373–385. doi:10.1007\/s11256-006-0041-7 "
+},
+{
+  "id": "p-768",
+  "level": "2",
+  "url": "sec_annotated-bib.html#p-768",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
   "body": "Treisman, U. (1992). Studying Students Studying Calculus: A Look at the Lives of Minority Mathematics Students in College. The College Mathematics Journal, 23(5) , 362–372. doi:10.2307\/2686410 "
 },
 {
-  "id": "p-758",
+  "id": "p-771",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-758",
+  "url": "sec_annotated-bib.html#p-771",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Gutstein, E., & Peterson, B. (2005). Introduction. In E. Gutstein & B. Peterson (Ed.), Rethinking Mathematics: Teaching Social Justice by the Numbers . Rethinking Schools. "
 },
 {
-  "id": "p-761",
+  "id": "p-774",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-761",
+  "url": "sec_annotated-bib.html#p-774",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Gutiérrez, M. V. (2005). ‘I Thought This U.S. Place Was Supposed to Be About Freedom’: Young Latinas Engage in Mathematics and Social Change to Save Their School. In E. Gutstein & B. Peterson (Ed.), Rethinking Mathematics: Teaching Social Justice by the Numbers . Rethinking Schools. "
 },
 {
-  "id": "p-764",
+  "id": "p-777",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-764",
+  "url": "sec_annotated-bib.html#p-777",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Martin, D. B. (2012). Learning Mathematics while Black . Educational Foundations, 26, 47–66. "
 },
 {
-  "id": "p-767",
+  "id": "p-780",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-767",
+  "url": "sec_annotated-bib.html#p-780",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Malloy, C. E. Instructional Strategies and Dispositions of Teachers Who Help African American Students Gain Conceptual Understanding. In Martin, D. B. (Ed.), Mathematics teaching, learning, and liberation in the lives of black children . New York: Routledge. "
 },
 {
-  "id": "p-770",
+  "id": "p-783",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-770",
+  "url": "sec_annotated-bib.html#p-783",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "McGee, E. O., & Hostetler, A. L. (2014). Historicizing Mathematics and Mathematizing Social Studies for Social Justice: A Call for Integration. Equity & Excellence in Education , 47 (2) , 208–229. https:\/\/www.tandfonline.com\/doi\/abs\/10.1080\/10665684.2014.900428 "
 },
 {
-  "id": "p-773",
+  "id": "p-786",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-773",
+  "url": "sec_annotated-bib.html#p-786",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Winter, D. (2007). Infusing mathematics with culture: Teaching technical subjects for social justice. New Directions for Teaching and Learning, 2007 (111), 97–106. http:\/\/doi.org\/10.1002\/tl.291 "
 },
 {
-  "id": "p-776",
+  "id": "p-789",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-776",
+  "url": "sec_annotated-bib.html#p-789",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Jackson, K., & Wilson, J. (2012). Supporting African American Students’ Learning of Mathematics: A Problem of Practice. Urban Education, 47(2), 354–398. http:\/\/doi.org\/10.1177\/0042085911429083 "
 },
 {
-  "id": "p-779",
+  "id": "p-792",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-779",
+  "url": "sec_annotated-bib.html#p-792",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Osler, J. (2007). A guide for integrating issues of social and economic justice into mathematics curriculum. Retrieved March, 26, 2008. "
 },
 {
-  "id": "p-782",
+  "id": "p-795",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-782",
+  "url": "sec_annotated-bib.html#p-795",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Rousseau, C., & Tate, W. F. (2003). No Time like the Present: Reflecting on Equity in School Mathematics. Theory into Practice , 42 (3), 210–216. "
 },
 {
-  "id": "p-785",
+  "id": "p-798",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-785",
+  "url": "sec_annotated-bib.html#p-798",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Anderson, R. (2007). Being a Mathematics Learner: Four Faces of Identity. Mathematics Educator , 17 (1), 7–14. "
 },
 {
-  "id": "p-788",
+  "id": "p-801",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-788",
+  "url": "sec_annotated-bib.html#p-801",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Joseph, G. G. (1987). Foundations of Eurocentrism in mathematics. Race & Class , 28 (3), 13–28. "
 },
 {
-  "id": "p-791",
+  "id": "p-804",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-791",
+  "url": "sec_annotated-bib.html#p-804",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Gutstein, E. (2008). Reinventing Freire: mathematics education for social transformation. In J. Matos, P. Valero, & Yasukawa, Keiko (Eds.), Proceedings of the Fifth International Mathematics Education and Society Conference . Albufeira, Portugal. "
 },
 {
-  "id": "p-794",
+  "id": "p-807",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-794",
+  "url": "sec_annotated-bib.html#p-807",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Brodie, K. (2008) Describing teacher change: interactions between teacher moves and learner contributions. In J. Matos, P. Valero, & Yasukawa, Keiko (Eds.), Proceedings of the Fifth International Mathematics Education and Society Conference . Albufeira, Portugal. "
 },
 {
-  "id": "p-797",
+  "id": "p-810",
   "level": "2",
-  "url": "sec_annotated-bib.html#p-797",
+  "url": "sec_annotated-bib.html#p-810",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",

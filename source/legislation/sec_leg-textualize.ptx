@@ -52,12 +52,14 @@
 			<exercise> 
 				<p> Using the following graph, answer the questions 1-6. </p>
 				<p> <image source="folder/file.png"/> </p>
-					<ol> What does the label “n” on the y-axis mean? </ol>
-					<ol> What title would you give to the graph? </ol>
-					<ol> How many words appear exactly 5 times in the bill? </ol>
-					<ol> How many words appear at least 7 times in the bill? </ol>
-					<ol> What word appears the most? </ol>
-					<ol> What might this information tell us about the bill? </ol>
+				<ol>
+					<li> What does the label “n” on the y-axis mean? </li>
+					<li> What title would you give to the graph? </li>
+					<li> How many words appear exactly 5 times in the bill? </li>
+					<li> How many words appear at least 7 times in the bill? </li>
+					<li> What word appears the most? </li>
+					<li> What might this information tell us about the bill? </li>
+				</ol>
 			</exercise>
 
 			<exercise>
