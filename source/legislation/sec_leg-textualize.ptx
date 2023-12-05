@@ -1,14 +1,14 @@
 	<section xml:id="sec-leg-textualize">
 		<title>Textualizing the Data</title>
-		<introduction>
+	<introduction>
 		<title>Motivating Ideas</title>
-		<p> In this section, I will... </p>
-			<ul>
-				<li> Understand the definition and process of text analysis. </li>
-				<li> Know how to clean data for text analysis. </li>
-				<li> Know how to create qualitative visualizations. </li>
-				<li> Understand how to use text analysis to interpret legislation </li>
-			</ul>	
+			<p> In this section, I will... </p>
+				<ul>
+					<li> Understand the definition and process of text analysis. </li>
+					<li> Know how to clean data for text analysis. </li>
+					<li> Know how to create qualitative visualizations. </li>
+					<li> Understand how to use text analysis to interpret legislation. </li>
+				</ul>	
 	</introduction>
 
 		<subsection xml:id="cleaning-for-text-analysis">
@@ -25,9 +25,51 @@
 				Note: whenever you download a file to open in R or R Studio, make sure to set your working directory to wherever that file is located. For example, if you have the file just on your desktop (not in any folder), entering <em> “setwd("~/Desktop")” </em> in the console window will set the working directory to your desktop.
 			</p>
 			
-
-			
-
+			<activity>
+				<p> Insert atl_bill1 (Part 1).rmd and atl_bill (Part 1).html here </p>
+			</activity>
 		</subsection>
+
+		<subsection xml:id="visualizing-text-analysis-data">
+			<title>Cleaning for Text Analysis</title>
+			<p> After cleaning the data, a block of text remains. In order to analyze the block of text, we need to get these words into what is called a word vector. For those unfamiliar with the idea of vectors, word vectors are a list of words, with one word on each line. If you are familiar with vectors from other math courses, the idea of a word vector is similar: it is a list of words in an array format. </p>
+			<activity>
+				<p> Insert atl_bill1 (Part 2).rmd and atl_bill (Part 2).html here </p>
+			</activity>
+
+			<activity>
+				<ol> Download atl_heritage.Rmd, 4-bill-test.xlsx, template legislation.xlsx, and Pro-LGBTQ-Bills.csv from GitHub. </ol>
+				<ol> Run the code by selecting Run→Run All. A small yellow banner may pop up at the top of your screen that you do not have a library installed. Press “Install,” and run the code again. </ol>
+				<ol> Tabs named “bills,” “template_leg,” “probills,” “ltext_cuonts,” and “counts_ordered” appear in the bar next to the original .Rmd file. What information do each of these tabs contain? </ol>
+				<ol> After running the code, some tables and graphs will appear directly in the code. Return to the .Rmd tab and scroll through the code until you find the following table. How many times does the word “employee” appear in the bill? Hint: look at the “n” column. What is the relative frequency of the word “education”? Hint: look at the “relf” column. </ol>
+				<ol> Continue to scroll through the graphs. Talk with a partner about what looks nice in each graph, and what you would want to change. Which graph is your favorite? Why? </ol>
+			</activity>
+		</subsection>
+		
+		<subsection xml:id="subsec-leg-textual-exercise">
+			<title>Exercises</title>
+			<p> Now, it&apos;s your turn to try! </p>
+			<exercise> 
+				<p> Using the following graph, answer the questions 1-6. </p>
+				<p> <image source="folder/file.png"/> </p>
+					<ol> What does the label “n” on the y-axis mean? </ol>
+					<ol> What title would you give to the graph? </ol>
+					<ol> How many words appear exactly 5 times in the bill? </ol>
+					<ol> How many words appear at least 7 times in the bill? </ol>
+					<ol> What word appears the most? </ol>
+					<ol> What might this information tell us about the bill? </ol>
+			</exercise>
+
+			<exercise>
+				<p> List 3 things you can do to clean data learned in Section 5.4 and 3 things you can do to clean data for text analysis (discussed in this section). What are some similarities and differences between the methods you came up with?</p>
+			</exercise>
+
+			<exercise>
+				<p> What do you think would happen if you didn&apos;t clean the data before making a word vector? How might the graph look different? </p>
+			</exercise>
+
+			<exercise>
+				<p> Which cleaning method for text analysis do you think would be most useful to learn? Why? This question is asking for an opinion, there is no right answer. </p>
+			</exercise>
 	</section>
 
