@@ -531,7 +531,7 @@ What limitations are there when working with this data?
 		<li> What is an alternative way to visualize this set of data? </li>
 		<li> If you grouped by “Bill Type,” how many tick marks would be on the x-axis? </li>
 	</ul>
-		For more information on creating grouped and stacked bar plots in R, check out the tutorials in <url href = "https://r-graph-gallery.com/">R Graph Gallery</url>.
+	<p> For more information on creating grouped and stacked bar plots in R, check out the tutorials in <url href = "https://r-graph-gallery.com/">R Graph Gallery</url>. </p>
 		
 </exercise>
 
