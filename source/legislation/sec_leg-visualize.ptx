@@ -89,7 +89,7 @@ ways to explore data (as well as to communicate with data) is through visualizat
 <ol>
 <li> What are some types of graphs you have seen before? For each, what do you think that type of graph is useful for?</li>
 <li> The data set includes the status of each bill. Review the dataset. What are the different statuses?</li>
-<li> <p>Let’s generate a graph showing how many bills there are with each status. 
+<li> <p>Let&apos;s generate a graph showing how many bills there are with each status. 
 	To generate a graph, replace the [INSERT_GRAPH_TYPE] with one of the following in the code cell below:</p>
 <ol>
 	<li>
@@ -466,7 +466,7 @@ As you explored in the activity part 1, these bills <term>only go through April 
 			</p>
 
 <p>
-This final image doesn’t demonstrate an obvious finding, but does motivate another question. Is the difference we are seeing between the two groups significant? What can we <em>infer</em> if we had more refined tools like statistical tests (chi squared, ANOVA, prop test, etc). Or we can refine our questions further, for example, what changes in voter districts, voter laws, or state congress and senate makeup has changed from 2022 to 2023?
+This final image doesn&apos;t demonstrate an obvious finding, but does motivate another question. Is the difference we are seeing between the two groups significant? What can we <em>infer</em> if we had more refined tools like statistical tests (chi squared, ANOVA, prop test, etc). Or we can refine our questions further, for example, what changes in voter districts, voter laws, or state congress and senate makeup has changed from 2022 to 2023?
 </p>
 
 <activity>
@@ -520,7 +520,19 @@ What limitations are there when working with this data?
 
 </exercise>
 
-
+<exercise>
+	<p> Now, let&apos;s put everything together and refer to the following figure and answer the following questions. </p>
+	<p> <image source="folder/file.png"/> </p>
+		<li> What is the name of this type of visualization? </li>
+		<li> In the year 2023, what bill type is most common? </li>
+		<li> During which year were the most Youth Athletics bills passed? </li>
+		<li> About how many bills were passed in the year 2021? </li>
+		<li> What is an alternative way to visualize this set of data? </li>
+		<li> If you grouped by “Bill Type,” how many tick marks would be on the x-axis? </li>
+		
+		For more information on creating grouped and stacked bar plots in R, check out the tutorials in <url href = "https://r-graph-gallery.com/">R Graph Gallery</url>.
+		
+</exercise>
 
 </subsection>
 
