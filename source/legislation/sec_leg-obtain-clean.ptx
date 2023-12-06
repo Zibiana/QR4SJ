@@ -110,11 +110,11 @@
 			<p> <shortdescription> Excel heading with the "Data" tab and "Remove Duplicates" button highlighted in a red box. </shortdescription> 
 			</p>			
 			<p> 5. Now, let’s make sure the formatting is consistent. Let’s try lowercasing all of the state names. First, create a new column to the side of the states column. Next, in this new column, enter “=LOWER( )” function into the first cell. In the parentheses, write X:X, replacing the Xs with the letter of the original column and hit enter. This will populate the new column with all of the state names in lowercase letters: </p>
-			<p> <image source="5.3 Images/(4) Cleaning data example.png"/> </p>
-			<p> <image source="5.3 Images/(5) Cleaning data example.png"/> </p>
+			<p> <image source="5.3 Images/(4) Cleaning data example.png" width="50%"/> </p>
+			<p> <image source="5.3 Images/(5) Cleaning data example.png" width="50%"/> </p>
 			<p> <shortdescription> Columns E and F from Excel file showing the before and after results of using the "=LOWER()" function</shortdescription> </p>
 			<p> Note: If you don’t want the formulas in the resultant cells, you just want the new lowercased versions of the names as if they had been hand-typed, you can select the names, press Control-C to copy them, navigate to Paste → Paste Values, and paste them into a new column or on top of the column you had previously made. Doing this will allow you to delete the original column without affecting the new, lowercase column. We can also capitalize all letters in the cells we select by using “=UPPER( )” or use “=PROPER( )” to reset the capitalization so the first letter is the only one capitalized. </p>
-			<p> <image source="5.3 Images/(6) Cleaning data example.png"/> </p>
+			<p> <image source="5.3 Images/(6) Cleaning data example.png" width="50%"/> </p>
 			<p> <shortdescription> Drop down from the "Paste" with "Paste Values" highlighted in green. </shortdescription> </p>
 			<p> 6. Next, we will find entries for the state of “Oklahoma” and replace them with the state abbreviation “OK” using the Find and Replace function. To do this, the following steps apply: First, navigate to Home → Editing → Find &amp; Select. Next, Replace → Find what: “Oklahoma” and Replace with: “OK” → Replace All. Note, the alert will notify you of how many cells were altered and you should make sure that all planned changes were made. </p>
 			<p> <image source="5.3 Images/Step 6 Part A.png"/> </p>

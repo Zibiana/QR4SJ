@@ -29,22 +29,26 @@
 				<p> Before we do any text analysis, we have to do some data cleaning. We will use an Arizona bill regarding trans legislation as an example, which can be viewed <url href = "https://github.com/BatesDCS23-24/anti-trans-legislation/blob/3f450de86643b58c20df51e910cf7ebd8c4a266e/4-bill-test.xlsx"> here </url>. </p>
 
 				<p> After downloading the "4-bill-test" excel file, we can enter the following code in R: </p>
-				<p> [Insert image 1 here] </p>
+				<p> <image source="Textualizing the Data Images/Text Analysis Image 1.png"/> </p>
 				<p> This will install some necessary packages for cleaning and read the excel file into R. We want to look at first anti-trans bill in the excel file- an Arizona bill vetoed that addresses pronoun use in schools. Add the following code below what you already have: </p>
-				<p> [Insert image 2 here] </p>
+				<p> <image source="Textualizing the Data Images/Text Analysis Image 2.png" width="75%"/> </p>
 				<p> This code will output the first row of text of the bills file. We will now clean this section with the following code. Run each block one at a time along with the code from above. You can enter "ltext" at any point to check your progress. </p>
 				<ol> 
 					<li> 
-						<p> Removing line breaks. </p> <p> Insert image here. </p> 
+						<p> Removing line breaks. </p> 
+						<p> <image source="Textualizing the Data Images/Text Analysis Image 3.png"/> </p>
 					</li>
 					<li>  
-						<p> Deleting punctuation. </p> <p> Insert image here. </p>
+						<p> Deleting punctuation. </p> 
+						<p> <image source="Textualizing the Data Images/Text Analysis Image 4.png"/> </p>
 					</li>
 					<li>  
-						<p> Deleting a phrase or line. </p> <p> This text tends to have a 1. and a. and (a) and (b). We already eliminated parentheses and periods, so now we are going to eliminate all single letter words and numbers.  We are intentionally not removing all numbers. There are several references to K12 or under 18 so we want to maintain these. We also want to make sure that our words will be recognized as the same when we construct relationships, so we have to convert everything to lowercase. </p> <p> Insert image here. </p>
+						<p> Deleting a phrase or line. </p> <p> This text tends to have a 1. and a. and (a) and (b). We already eliminated parentheses and periods, so now we are going to eliminate all single letter words and numbers.  We are intentionally not removing all numbers. There are several references to K12 or under 18 so we want to maintain these. We also want to make sure that our words will be recognized as the same when we construct relationships, so we have to convert everything to lowercase. </p>
+						<p> <image source="Textualizing the Data Images/Text Analysis Image 5.png"/> </p>
 					</li>
 					<li>  
-						<p> Removing redundant spaces. </p> <p> Insert image here. </p>
+						<p> Removing redundant spaces. </p> 
+						<p> <image source="Textualizing the Data Images/Text Analysis Image 6.png"/> </p>
 					</li>
 					<li>  
 						<p> Identifying and eliminating stop words. </p> <p> Stop words are common words that carry little textual meaning, so we do not need to include them in our analysis. For example, "the", "are", "is", etc... </p> <p> Insert image here. </p>
