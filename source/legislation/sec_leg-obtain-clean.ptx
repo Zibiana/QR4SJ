@@ -127,7 +127,7 @@
 
 		<subsection xml:id="exercise">
 			<title>Exercise</title>
-			<p> Instructions: Open the <dataurl source = "Excel files/5.3 Exercise 1.xlsx">Oklahoma Excel file</dataurl> and click “view raw” to download the file. </p>
+			<p> Instructions: Open the <url href = "https://github.com/BatesDCS23-24/FemSTEM2/blob/b680dd6723a2a4097ad27e978de7d686d9deeb02/Excel%20files/5.3%20Exercise%201.xlsx">Oklahoma Excel file</url> and click “view raw” to download the file. </p>
 			<p> You are part of a data-cleaning team focused on this data set. Your job is to clean the provided data set as follows: 
 				<url href="https://tracktranslegislation.com">tracktranslegislation.com</url>
 				<ol>
