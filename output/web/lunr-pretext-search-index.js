@@ -2242,103 +2242,103 @@ var ptx_lunr_docs = [
   "body": "   "
 },
 {
-  "id": "sec-leg-case-study",
-  "level": "1",
-  "url": "sec-leg-case-study.html",
-  "type": "Section",
-  "number": "5.5",
-  "title": "Case Study: How can we support storytelling using different data sources?",
-  "body": "Case Study: How can we support storytelling using different data sources?  Throughout this chapter, you have explored and asked questions about a data set on anti-trans legislation in the US in recent years. This provides a broad overview of the landscape of anti-trans legislation, where it is happening, and the different aspects of civil rights that have been targeted. As we continue to grapple with what these means for us as global citizens and members of society, it’s important to know how to contribute towards the change we want to see in this realm.  An example of an anti-trans bill that was struck down after legal action and scrutiny is Tennessee’s SB-0001 from 2023. The legislators who supported the bill sought to restrict minors in Tennessee from accessing gender-affirming care. A word-chart of the bill is shown below. Much of the language that lawmakers used surrounded terms like \"minors\", \"performed\", and \"medical procedure(s)\" in reference to gender-affirming care for trans youth. The term \"violation\" was used to frame this care in opposition to the laws proposed in the bill.   A week before the law was slated to go into effect, it was struck down by a federal judge, in a case brought forth by a 15-year-old transgender girl and her family. In speaking about the effects of gender-affirming care, the girl’s mother said, \"We have a confident, happy daughter now, who is free to be herself and she is thriving\" [ . Judge Eli Richardson, in his decision on the case, repeatedly argued that \"parents have a fundamental right to direct the medical care of their children\" . This argument highlights the role of parents in seeking basic medical care for transgender youth, and it also uses a commonplace term that was never found in the bill itself: \"medical care.\" In contrast, the downstricken bill referred to medical \"procedure(s),\" a term chosen to connote experimental, invasive, and potentially harmful treatments.   Consider how else you might be able to use a wordchart like this, or how else you could visualize the distribution of words in a bill that might bring some other obscured feature to light.   What is a research question that you can answer with a wordchart alone?  How can you combine a wordchart with other data sources or visualizations when making an argument?  What is a different way you can imagine to visualize word frequency or textual features of a bill?    Next, check out the code chunk below, where we provide the code needed to create the wordchart. As you explore the code and tweak it, try out the following exercises.  Try changing the bill that is being modeled in the word chart. What changes do you see in the output?  Think of a particular bill *type* that you are interested in (like Sports Bans, or Drag Performance), and select a bill of that type. Using that bill, create the corresponding word chart. What do you notice about the words that are most frequent? How does that output compare to your expectations?  Using a word chart that you created, write a few sentences about what you noticed and what you can say about the bill itself, using evidence from your chart.   CODE CHUNK NEEDED for students to play around with word chart creation  You can analyze a bill using word barcharts and go in many different directions. Above, we showed how tracking the broader history of a bill can add context to the word barchart and aid in interpreting how different terms were used. It also alludes to the roles people can play in fighting for justice against the anti-trans movement. Even beyond the plaintiffs and the judge—the case was brought forward by civil rights organizations; the court cited medical researchers who generated robust findings to demonstrate the safety and effectiveness of gender-affirming care; the residents of Tennessee spoke during legislative hearings to generate discussions that forced lawmakers to explain their reasoning, most of which was debunked during the court case.   Next, think about what type of action you can take in your own community.   How can you use tools like data visualization and text analysis to learn something about anti-trans legislation and share what you learned with other people in your life?  What are other issues you care about that you can learn more about and contribute to change using the tools from this section?     Legal case details from ACLU.   Court documents and judge’s decision.   Narrative sourced from Erin in the Morning.    "
-},
-{
-  "id": "activity-16",
-  "level": "2",
-  "url": "sec-leg-case-study.html#activity-16",
-  "type": "Activity",
-  "number": "17",
-  "title": "",
-  "body": " Consider how else you might be able to use a wordchart like this, or how else you could visualize the distribution of words in a bill that might bring some other obscured feature to light.   What is a research question that you can answer with a wordchart alone?  How can you combine a wordchart with other data sources or visualizations when making an argument?  What is a different way you can imagine to visualize word frequency or textual features of a bill?   "
-},
-{
-  "id": "exercise-101",
-  "level": "2",
-  "url": "sec-leg-case-study.html#exercise-101",
-  "type": "Checkpoint",
-  "number": "5.5.1",
-  "title": "",
-  "body": "Next, check out the code chunk below, where we provide the code needed to create the wordchart. As you explore the code and tweak it, try out the following exercises.  Try changing the bill that is being modeled in the word chart. What changes do you see in the output?  Think of a particular bill *type* that you are interested in (like Sports Bans, or Drag Performance), and select a bill of that type. Using that bill, create the corresponding word chart. What do you notice about the words that are most frequent? How does that output compare to your expectations?  Using a word chart that you created, write a few sentences about what you noticed and what you can say about the bill itself, using evidence from your chart.  "
-},
-{
-  "id": "activity-17",
-  "level": "2",
-  "url": "sec-leg-case-study.html#activity-17",
-  "type": "Activity",
-  "number": "18",
-  "title": "",
-  "body": " Next, think about what type of action you can take in your own community.   How can you use tools like data visualization and text analysis to learn something about anti-trans legislation and share what you learned with other people in your life?  What are other issues you care about that you can learn more about and contribute to change using the tools from this section?   "
-},
-{
   "id": "sec-leg-textualize",
   "level": "1",
   "url": "sec-leg-textualize.html",
   "type": "Section",
-  "number": "5.6",
+  "number": "5.5",
   "title": "Textualizing the Data",
   "body": " Textualizing the Data   Motivating Ideas  In this section, I will...   Understand the definition and process of text analysis.  Know how to clean data for text analysis.  Know how to create qualitative visualizations.  Understand how to use text analysis to interpret legislation.     Cleaning for Text Analysis  Text analysis is the process of using computer systems to understand human-written text for analysis purposes including analyzing legislation. Text can be analyzed from unstructured data sources such as emails, surveys, documents, and other online material to extract insights. The main feature of text analysis is training computer software to associate words with meanings, similar to how humans learn a new language through objects, actions, and emotions. Deep learning and natural language processing (NLP) are the principles of text analysis. (Source).   In this chapter, you will explore anti-trans legislation through text analysis. Note, this approach requires additional cleaning. This cleaning process depends on the specific bill, its formatting, and your group’s preferences. Decisions must be made about how much you want to clean the data for your specific project.  Note: whenever you download a file to open in R or R Studio, make sure to set your working directory to wherever that file is located. For example, if you have the file just on your desktop (not in any folder), entering “setwd(\"~\/Desktop\")” in the console window will set the working directory to your desktop.   Before we do any text analysis, we have to do some data cleaning. We will use an Arizona bill regarding trans legislation as an example, which can be viewed here .  After downloading the \"4-bill-test\" excel file, we can enter the following code in R:     This will install some necessary packages for cleaning and read the excel file into R. We want to look at first anti-trans bill in the excel file- an Arizona bill vetoed that addresses pronoun use in schools. Add the following code below what you already have:     This code will output the first row of text of the bills file. We will now clean this section with the following code. Run each block one at a time along with the code from above. You can enter \"ltext\" at any point to check your progress.    Removing line breaks.       Deleting punctuation.       Deleting a phrase or line.  This text tends to have a 1. and a. and (a) and (b). We already eliminated parentheses and periods, so now we are going to eliminate all single letter words and numbers. We are intentionally not removing all numbers. There are several references to K12 or under 18 so we want to maintain these. We also want to make sure that our words will be recognized as the same when we construct relationships, so we have to convert everything to lowercase.       Removing redundant spaces.       Identifying and eliminating stop words.  Stop words are common words that carry little textual meaning, so we do not need to include them in our analysis. For example, \"the\", \"are\", \"is\", etc...       After cleaning the data, a block of text remains.     In order to analyze the block of text, we need to get these words into what is called a word vector. For those unfamiliar with the idea of vectors, word vectors are a list of words, with one word on each line. If you are familiar with vectors from other math courses, the idea of a word vector is similar: it is a list of words in an array format. We can create a word vector and save it as a new csv file with the following code:     You can enter \"ltext_vec\" to view our word vector. Play with the following code to analyze your text.     We can note that the relative frequency (rflel) is the number of times a particular value for a variable has been observed in relation to the total number of values for that variable. We can also see from our top 20 list that \"school\" and \"pronoun\" were of the most common words used in the text. This makes sense given the context of this bill.        Visualizing Text Analysis Data  We can continue our investigation of the bill by creating and analyzing visualizations.    Download the atl_heritage.Rmd , 4-bill-test.xlsx , template legislation.xlsx , and Pro-LGBTQ-Bills.csv files from GitHub .  Open atl_heritage.Rmd in R Studio and run the code by selecting Run→Run All. A small yellow banner may pop up at the top of your screen that you do not have a library installed. Press “Install,” and run the code again.  Tabs named “bills,” “template_leg,” “probills,” “ltext_cuonts,” and “counts_ordered” appear in the bar next to the original .Rmd file. What information do each of these tabs contain?  After running the code, some tables and graphs will appear directly in the code. Return to the .Rmd tab and scroll through the code until you find the following table. How many times does the word “employee” appear in the bill? Hint: look at the “n” column. What is the relative frequency of the word “education”? Hint: look at the “relf” column.     Continue to scroll through the graphs. Talk with a partner about what looks nice in each graph, and what you would want to change. Which graph is your favorite? Why?      Exercises  Now, it's your turn to try!  Using the following graph, answer the questions 1-6.    What does the label “n” on the y-axis mean?  What title would you give to the graph?  How many words appear exactly 5 times in the bill?  How many words appear at least 7 times in the bill?  What word appears the most?  What might this information tell us about the bill?   List 3 things you can do to clean data learned in Section 5.4 and 3 things you can do to clean data for text analysis (discussed in this section). What are some similarities and differences between the methods you came up with?  What do you think would happen if you didn't clean the data before making a word vector? How might the graph look different?  Which cleaning method for text analysis do you think would be most useful to learn? Why? This question is asking for an opinion, there is no right answer.   "
 },
 {
-  "id": "activity-18",
+  "id": "activity-16",
   "level": "2",
-  "url": "sec-leg-textualize.html#activity-18",
+  "url": "sec-leg-textualize.html#activity-16",
   "type": "Activity",
-  "number": "19",
+  "number": "17",
   "title": "",
   "body": " Before we do any text analysis, we have to do some data cleaning. We will use an Arizona bill regarding trans legislation as an example, which can be viewed here .  After downloading the \"4-bill-test\" excel file, we can enter the following code in R:     This will install some necessary packages for cleaning and read the excel file into R. We want to look at first anti-trans bill in the excel file- an Arizona bill vetoed that addresses pronoun use in schools. Add the following code below what you already have:     This code will output the first row of text of the bills file. We will now clean this section with the following code. Run each block one at a time along with the code from above. You can enter \"ltext\" at any point to check your progress.    Removing line breaks.       Deleting punctuation.       Deleting a phrase or line.  This text tends to have a 1. and a. and (a) and (b). We already eliminated parentheses and periods, so now we are going to eliminate all single letter words and numbers. We are intentionally not removing all numbers. There are several references to K12 or under 18 so we want to maintain these. We also want to make sure that our words will be recognized as the same when we construct relationships, so we have to convert everything to lowercase.       Removing redundant spaces.       Identifying and eliminating stop words.  Stop words are common words that carry little textual meaning, so we do not need to include them in our analysis. For example, \"the\", \"are\", \"is\", etc...       After cleaning the data, a block of text remains.     In order to analyze the block of text, we need to get these words into what is called a word vector. For those unfamiliar with the idea of vectors, word vectors are a list of words, with one word on each line. If you are familiar with vectors from other math courses, the idea of a word vector is similar: it is a list of words in an array format. We can create a word vector and save it as a new csv file with the following code:     You can enter \"ltext_vec\" to view our word vector. Play with the following code to analyze your text.     We can note that the relative frequency (rflel) is the number of times a particular value for a variable has been observed in relation to the total number of values for that variable. We can also see from our top 20 list that \"school\" and \"pronoun\" were of the most common words used in the text. This makes sense given the context of this bill.     "
 },
 {
-  "id": "activity-19",
+  "id": "activity-17",
   "level": "2",
-  "url": "sec-leg-textualize.html#activity-19",
+  "url": "sec-leg-textualize.html#activity-17",
   "type": "Activity",
-  "number": "20",
+  "number": "18",
   "title": "",
   "body": "  Download the atl_heritage.Rmd , 4-bill-test.xlsx , template legislation.xlsx , and Pro-LGBTQ-Bills.csv files from GitHub .  Open atl_heritage.Rmd in R Studio and run the code by selecting Run→Run All. A small yellow banner may pop up at the top of your screen that you do not have a library installed. Press “Install,” and run the code again.  Tabs named “bills,” “template_leg,” “probills,” “ltext_cuonts,” and “counts_ordered” appear in the bar next to the original .Rmd file. What information do each of these tabs contain?  After running the code, some tables and graphs will appear directly in the code. Return to the .Rmd tab and scroll through the code until you find the following table. How many times does the word “employee” appear in the bill? Hint: look at the “n” column. What is the relative frequency of the word “education”? Hint: look at the “relf” column.     Continue to scroll through the graphs. Talk with a partner about what looks nice in each graph, and what you would want to change. Which graph is your favorite? Why?   "
+},
+{
+  "id": "exercise-101",
+  "level": "2",
+  "url": "sec-leg-textualize.html#exercise-101",
+  "type": "Checkpoint",
+  "number": "5.5.1",
+  "title": "",
+  "body": "Using the following graph, answer the questions 1-6.    What does the label “n” on the y-axis mean?  What title would you give to the graph?  How many words appear exactly 5 times in the bill?  How many words appear at least 7 times in the bill?  What word appears the most?  What might this information tell us about the bill?  "
 },
 {
   "id": "exercise-102",
   "level": "2",
   "url": "sec-leg-textualize.html#exercise-102",
   "type": "Checkpoint",
-  "number": "5.6.1",
+  "number": "5.5.2",
   "title": "",
-  "body": "Using the following graph, answer the questions 1-6.    What does the label “n” on the y-axis mean?  What title would you give to the graph?  How many words appear exactly 5 times in the bill?  How many words appear at least 7 times in the bill?  What word appears the most?  What might this information tell us about the bill?  "
+  "body": "List 3 things you can do to clean data learned in Section 5.4 and 3 things you can do to clean data for text analysis (discussed in this section). What are some similarities and differences between the methods you came up with? "
 },
 {
   "id": "exercise-103",
   "level": "2",
   "url": "sec-leg-textualize.html#exercise-103",
   "type": "Checkpoint",
-  "number": "5.6.2",
+  "number": "5.5.3",
   "title": "",
-  "body": "List 3 things you can do to clean data learned in Section 5.4 and 3 things you can do to clean data for text analysis (discussed in this section). What are some similarities and differences between the methods you came up with? "
+  "body": "What do you think would happen if you didn't clean the data before making a word vector? How might the graph look different? "
 },
 {
   "id": "exercise-104",
   "level": "2",
   "url": "sec-leg-textualize.html#exercise-104",
   "type": "Checkpoint",
-  "number": "5.6.3",
+  "number": "5.5.4",
   "title": "",
-  "body": "What do you think would happen if you didn't clean the data before making a word vector? How might the graph look different? "
+  "body": "Which cleaning method for text analysis do you think would be most useful to learn? Why? This question is asking for an opinion, there is no right answer. "
+},
+{
+  "id": "sec-leg-case-study",
+  "level": "1",
+  "url": "sec-leg-case-study.html",
+  "type": "Section",
+  "number": "5.6",
+  "title": "Case Study: How can we support storytelling using different data sources?",
+  "body": "Case Study: How can we support storytelling using different data sources?  Throughout this chapter, you have explored and asked questions about a data set on anti-trans legislation in the US in recent years. This provides a broad overview of the landscape of anti-trans legislation, where it is happening, and the different aspects of civil rights that have been targeted. As we continue to grapple with what these means for us as global citizens and members of society, it’s important to know how to contribute towards the change we want to see in this realm.  An example of an anti-trans bill that was struck down after legal action and scrutiny is Tennessee’s SB-0001 from 2023. The legislators who supported the bill sought to restrict minors in Tennessee from accessing gender-affirming care. A word-chart of the bill is shown below. Much of the language that lawmakers used surrounded terms like \"minors\", \"performed\", and \"medical procedure(s)\" in reference to gender-affirming care for trans youth. The term \"violation\" was used to frame this care in opposition to the laws proposed in the bill.   A week before the law was slated to go into effect, it was struck down by a federal judge, in a case brought forth by a 15-year-old transgender girl and her family. In speaking about the effects of gender-affirming care, the girl’s mother said, \"We have a confident, happy daughter now, who is free to be herself and she is thriving\" [ . Judge Eli Richardson, in his decision on the case, repeatedly argued that \"parents have a fundamental right to direct the medical care of their children\" . This argument highlights the role of parents in seeking basic medical care for transgender youth, and it also uses a commonplace term that was never found in the bill itself: \"medical care.\" In contrast, the downstricken bill referred to medical \"procedure(s),\" a term chosen to connote experimental, invasive, and potentially harmful treatments.   Consider how else you might be able to use a wordchart like this, or how else you could visualize the distribution of words in a bill that might bring some other obscured feature to light.   What is a research question that you can answer with a wordchart alone?  How can you combine a wordchart with other data sources or visualizations when making an argument?  What is a different way you can imagine to visualize word frequency or textual features of a bill?    Next, check out the code chunk below, where we provide the code needed to create the wordchart. As you explore the code and tweak it, try out the following exercises.  Try changing the bill that is being modeled in the word chart. What changes do you see in the output?  Think of a particular bill *type* that you are interested in (like Sports Bans, or Drag Performance), and select a bill of that type. Using that bill, create the corresponding word chart. What do you notice about the words that are most frequent? How does that output compare to your expectations?  Using a word chart that you created, write a few sentences about what you noticed and what you can say about the bill itself, using evidence from your chart.   CODE CHUNK NEEDED for students to play around with word chart creation  You can analyze a bill using word barcharts and go in many different directions. Above, we showed how tracking the broader history of a bill can add context to the word barchart and aid in interpreting how different terms were used. It also alludes to the roles people can play in fighting for justice against the anti-trans movement. Even beyond the plaintiffs and the judge—the case was brought forward by civil rights organizations; the court cited medical researchers who generated robust findings to demonstrate the safety and effectiveness of gender-affirming care; the residents of Tennessee spoke during legislative hearings to generate discussions that forced lawmakers to explain their reasoning, most of which was debunked during the court case.   Next, think about what type of action you can take in your own community.   How can you use tools like data visualization and text analysis to learn something about anti-trans legislation and share what you learned with other people in your life?  What are other issues you care about that you can learn more about and contribute to change using the tools from this section?     Legal case details from ACLU.   Court documents and judge’s decision.   Narrative sourced from Erin in the Morning.    "
+},
+{
+  "id": "activity-18",
+  "level": "2",
+  "url": "sec-leg-case-study.html#activity-18",
+  "type": "Activity",
+  "number": "19",
+  "title": "",
+  "body": " Consider how else you might be able to use a wordchart like this, or how else you could visualize the distribution of words in a bill that might bring some other obscured feature to light.   What is a research question that you can answer with a wordchart alone?  How can you combine a wordchart with other data sources or visualizations when making an argument?  What is a different way you can imagine to visualize word frequency or textual features of a bill?   "
 },
 {
   "id": "exercise-105",
   "level": "2",
-  "url": "sec-leg-textualize.html#exercise-105",
+  "url": "sec-leg-case-study.html#exercise-105",
   "type": "Checkpoint",
-  "number": "5.6.4",
+  "number": "5.6.1",
   "title": "",
-  "body": "Which cleaning method for text analysis do you think would be most useful to learn? Why? This question is asking for an opinion, there is no right answer. "
+  "body": "Next, check out the code chunk below, where we provide the code needed to create the wordchart. As you explore the code and tweak it, try out the following exercises.  Try changing the bill that is being modeled in the word chart. What changes do you see in the output?  Think of a particular bill *type* that you are interested in (like Sports Bans, or Drag Performance), and select a bill of that type. Using that bill, create the corresponding word chart. What do you notice about the words that are most frequent? How does that output compare to your expectations?  Using a word chart that you created, write a few sentences about what you noticed and what you can say about the bill itself, using evidence from your chart.  "
+},
+{
+  "id": "activity-19",
+  "level": "2",
+  "url": "sec-leg-case-study.html#activity-19",
+  "type": "Activity",
+  "number": "20",
+  "title": "",
+  "body": " Next, think about what type of action you can take in your own community.   How can you use tools like data visualization and text analysis to learn something about anti-trans legislation and share what you learned with other people in your life?  What are other issues you care about that you can learn more about and contribute to change using the tools from this section?   "
 },
 {
   "id": "sec-leg-project",
