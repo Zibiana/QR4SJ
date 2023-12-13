@@ -24,9 +24,9 @@
 
 	<xi:include href="./sec_leg-visualize.ptx" />	
 
-	<xi:include href="./sec_leg-case-study.ptx" />
-
 	<xi:include href=  "./sec_leg-textualize.ptx" />
+
+	<xi:include href="./sec_leg-case-study.ptx" />
 
 	<xi:include href="./sec_leg-project.ptx" />
 
