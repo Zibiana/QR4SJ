@@ -9,14 +9,18 @@
 					<li> Know how to create qualitative visualizations. </li>
 					<li> Understand how to use text analysis to interpret legislation. </li>
 				</ul>	
+		
 	</introduction>
 
 		<subsection xml:id="cleaning-for-text-analysis">
+
 			<title>Cleaning for Text Analysis</title>
 			<p>
 				Text analysis is the process of using computer systems to understand human-written text for analysis purposes including analyzing legislation. Text can be analyzed from unstructured data sources such as emails, surveys, documents, and other online material to extract insights. The main feature of text analysis is training computer software to associate words with meanings, similar to how humans learn a new language through objects, actions, and emotions. Deep learning and natural language processing (NLP) are the principles of text analysis. <url href = "https://aws.amazon.com/what-is/text-analysis/">(Source).</url>
 			</p>
-
+			<p>
+			The goal of this section is to give foundational steps to clean a txt document in R studio and then use R studio to analyze the text using frequency analysis, bigrams, and optionally networks. 		
+			</p>	
 			<p>
 				In this chapter, you will explore anti-trans legislation through text analysis. Note, this approach requires additional cleaning. This cleaning process depends on the specific bill, its formatting, and your group’s preferences. Decisions must be made about how much you want to clean the data for your specific project. 
 			</p>

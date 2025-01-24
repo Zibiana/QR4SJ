@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</title>
@@ -15,38 +15,20 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "extpfeil",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "knowl"
-      ]
-    }
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
   },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math",
-    "renderActions": {
-      "findScript": [
-        10,
-        function (doc) {
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -56,36 +38,25 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        },
-        ""
-      ]
-    }
+        }, '']
+    },
   },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
   },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/extpfeil",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
-    }
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
   },
-  "startup": {
+  startup: {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  }
+  },
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -431,11 +402,6 @@ window.MathJax = {
 </li>
 <li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.4.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
 <li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">5.4.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">5.4.5.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">5.4.6</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -487,34 +453,34 @@ window.MathJax = {
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
 </h3>
 <div class="para" id="p-88">
-<dfn class="terminology">Student loans</dfn> are a form of debt taken on in order to help students afford to pay tuition, fees, and other expenses necessary to attend colleges and universities. Unlike scholarships or grants, student loans must be repaid.</div></article><div class="para" id="p-89">In July <span class="process-math">\(2021\text{,}\)</span> student loan debt in the U.S. totaled <span class="process-math">\(\$1.73\)</span> trillion. In <span class="process-math">\(2019\text{,}\)</span> <a class="external" href="https://web.archive.org/web/20230130125025/https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans" target="_blank">the average debt held by a student loan borrower was <span class="process-math">\(\$30,000\)</span></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-32" id="fn-32"><sup> 32 </sup></a>.</div>
+<dfn class="terminology">Student loans</dfn> are a form of debt taken on in order to help students afford to pay tuition, fees, and other expenses necessary to attend colleges and universities. Unlike scholarships or grants, student loans must be repaid.</div></article><div class="para" id="p-89">In July <span class="process-math">\(2021\text{,}\)</span> student loan debt in the U.S. totaled <span class="process-math">\(\$1.73\)</span> trillion. In <span class="process-math">\(2019\text{,}\)</span> <a class="external" href="https://web.archive.org/web/20230130125025/https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans" target="_blank">the average debt held by a student loan borrower was <span class="process-math">\(\$30,000\)</span></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-33" id="fn-33"><sup> 33 </sup></a>.</div>
 <article class="definition definition-like" id="def-default"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
 </h3>
 <div class="para" id="p-90">
-<dfn class="terminology">Defaulting</dfn> on a loan means a borrower stops making the required payments on that loan. When someone defaults on a student loan, the federal government is allowed to withhold their tax refund, paycheck, or (for older adults) Social Security payments.</div></article><div class="para" id="p-91">The average person to default on their student loans owes less than <span class="process-math">\(\$10,000\text{,}\)</span> suggesting that defaulters are make significantly lower incomes than the average student loan borrower. Those borrowers who did not complete a college degree are <a class="external" href="https://web.archive.org/web/20230130125025/https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans" target="_blank">three times as likely to default as those who completed</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-33" id="fn-33"><sup> 33 </sup></a>. Moreover, half of Black borrowers who took out loans in <span class="process-math">\(2003\)</span>-<span class="process-math">\(2004\)</span> had defaulted after <span class="process-math">\(12\)</span> years.</div>
+<dfn class="terminology">Defaulting</dfn> on a loan means a borrower stops making the required payments on that loan. When someone defaults on a student loan, the federal government is allowed to withhold their tax refund, paycheck, or (for older adults) Social Security payments.</div></article><div class="para" id="p-91">The average person to default on their student loans owes less than <span class="process-math">\(\$10,000\text{,}\)</span> suggesting that defaulters are make significantly lower incomes than the average student loan borrower. Those borrowers who did not complete a college degree are <a class="external" href="https://web.archive.org/web/20230130125025/https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans" target="_blank">three times as likely to default as those who completed</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-34" id="fn-34"><sup> 34 </sup></a>. Moreover, half of Black borrowers who took out loans in <span class="process-math">\(2003\)</span>-<span class="process-math">\(2004\)</span> had defaulted after <span class="process-math">\(12\)</span> years.</div>
 <article class="definition definition-like" id="def-pell"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-92">The <dfn class="terminology">Pell Grant</dfn> is a federal government grant which provides money for college to low-income students that does not have to be repaid, unlike student loans.</div></article><div class="para" id="p-93">Those who receive a Pell Grant, signaling they are low-income without adding to their debt, are still <a class="external" href="https://web.archive.org/web/20230130125025/https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans" target="_blank">disproportionately likely to default on their student loans</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-34" id="fn-34"><sup> 34 </sup></a>.</div>
+<div class="para" id="p-92">The <dfn class="terminology">Pell Grant</dfn> is a federal government grant which provides money for college to low-income students that does not have to be repaid, unlike student loans.</div></article><div class="para" id="p-93">Those who receive a Pell Grant, signaling they are low-income without adding to their debt, are still <a class="external" href="https://web.archive.org/web/20230130125025/https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans" target="_blank">disproportionately likely to default on their student loans</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-35" id="fn-35"><sup> 35 </sup></a>.</div>
 <article class="definition definition-like" id="def-for-profit"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-94">All public and most private colleges (<span class="process-math">\(91\%\)</span> of all colleges in <span class="process-math">\(2016\)</span> <a class="external" href="https://files.eric.ed.gov/fulltext/ED603581.pdf" target="_blank">are <dfn class="terminology">not-for-profit institutions</dfn></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-35" id="fn-35"><sup> 35 </sup></a>, meaning they invest their profits back into the institution and often operate under independent governance. A college that is not registered as a not-for-profit institution is called a <dfn class="terminology">for-profit college</dfn>.</div></article><article class="definition definition-like" id="def-independent"><h3 class="heading">
+<div class="para" id="p-94">All public and most private colleges (<span class="process-math">\(91\%\)</span> of all colleges in <span class="process-math">\(2016\)</span> <a class="external" href="https://files.eric.ed.gov/fulltext/ED603581.pdf" target="_blank">are <dfn class="terminology">not-for-profit institutions</dfn></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-36" id="fn-36"><sup> 36 </sup></a>, meaning they invest their profits back into the institution and often operate under independent governance. A college that is not registered as a not-for-profit institution is called a <dfn class="terminology">for-profit college</dfn>.</div></article><article class="definition definition-like" id="def-independent"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-95">A college or university operates under <dfn class="terminology">independent governance</dfn> if their leadership is <a class="external" href="https://files.eric.ed.gov/fulltext/ED603581.pdf" target="_blank">required to focus on factors other than generating a profit when providing an education</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-36" id="fn-36"><sup> 36 </sup></a>.</div></article><div class="para" id="p-96">A government study in <span class="process-math">\(2017\)</span> found that the default rates for student borrowers at for-profit institutions, which are not required to focus on factors other than profit, were nearly double compared to community colleges; for-profit institutions have <a class="external" href="https://nces.ed.gov/pubs2018/2018410.pdf" target="_blank">more expensive tuition and fees than community colleges, have lower graduation rates, and have less valuable credentials</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-37" id="fn-37"><sup> 37 </sup></a>.</div>
+<div class="para" id="p-95">A college or university operates under <dfn class="terminology">independent governance</dfn> if their leadership is <a class="external" href="https://files.eric.ed.gov/fulltext/ED603581.pdf" target="_blank">required to focus on factors other than generating a profit when providing an education</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-37" id="fn-37"><sup> 37 </sup></a>.</div></article><div class="para" id="p-96">A government study in <span class="process-math">\(2017\)</span> found that the default rates for student borrowers at for-profit institutions, which are not required to focus on factors other than profit, were nearly double compared to community colleges; for-profit institutions have <a class="external" href="https://nces.ed.gov/pubs2018/2018410.pdf" target="_blank">more expensive tuition and fees than community colleges, have lower graduation rates, and have less valuable credentials</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-38" id="fn-38"><sup> 38 </sup></a>.</div>
 <article class="definition definition-like" id="def-tuition-fees"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
 </h3>
 <div class="para" id="p-97">
-<dfn class="terminology">Tuition</dfn> is the amount of money charged by a college for instruction by faculty.</div> <div class="para" id="p-98">A <dfn class="terminology">student fee</dfn> is a sum of money charged to students at a school, college, or university in addition to tuition. Student fees may be used to support student organizations and activities, sports teams, exercise facilities, class supplies such as art materials, or anything else beyond the cost of instruction.</div></article><div class="para" id="p-99">The United States is a relative outlier compared to other nations in the high cost of college tuition and fees. For example, according to a late <span class="process-math">\(2017\)</span> study by the Organisation for Economic Cooperation and Development (OECD), the U.S. has the <a class="external" href="https://read.oecd-ilibrary.org/education/education-at-a-glance-2017_eag-2017-en" target="_blank">highest average tuition costs of the <span class="process-math">\(35\)</span> OECD member countries</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-38" id="fn-38"><sup> 38 </sup></a>. This tuition has increased over time.</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-32"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-33"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans</code></div></div>
+<dfn class="terminology">Tuition</dfn> is the amount of money charged by a college for instruction by faculty.</div> <div class="para" id="p-98">A <dfn class="terminology">student fee</dfn> is a sum of money charged to students at a school, college, or university in addition to tuition. Student fees may be used to support student organizations and activities, sports teams, exercise facilities, class supplies such as art materials, or anything else beyond the cost of instruction.</div></article><div class="para" id="p-99">The United States is a relative outlier compared to other nations in the high cost of college tuition and fees. For example, according to a late <span class="process-math">\(2017\)</span> study by the Organisation for Economic Cooperation and Development (OECD), the U.S. has the <a class="external" href="https://read.oecd-ilibrary.org/education/education-at-a-glance-2017_eag-2017-en" target="_blank">highest average tuition costs of the <span class="process-math">\(35\)</span> OECD member countries</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-39" id="fn-39"><sup> 39 </sup></a>. This tuition has increased over time.</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-33"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-34"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-35"><div class="fn"><code class="code-inline tex2jax_ignore">files.eric.ed.gov/fulltext/ED603581.pdf</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-35"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.npr.org/2019/07/09/738985632/these-are-the-people-struggling-the-most-to-pay-back-student-loans</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-36"><div class="fn"><code class="code-inline tex2jax_ignore">files.eric.ed.gov/fulltext/ED603581.pdf</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-37"><div class="fn"><code class="code-inline tex2jax_ignore">nces.ed.gov/pubs2018/2018410.pdf</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-38"><div class="fn"><code class="code-inline tex2jax_ignore">read.oecd-ilibrary.org/education/education-at-a-glance-2017_eag-2017-en</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-37"><div class="fn"><code class="code-inline tex2jax_ignore">files.eric.ed.gov/fulltext/ED603581.pdf</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-38"><div class="fn"><code class="code-inline tex2jax_ignore">nces.ed.gov/pubs2018/2018410.pdf</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-39"><div class="fn"><code class="code-inline tex2jax_ignore">read.oecd-ilibrary.org/education/education-at-a-glance-2017_eag-2017-en</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="cui-bono-who-benefits.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="changes-in-college-tuition-over-time.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

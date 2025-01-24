@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Objectives</title>
@@ -15,38 +15,20 @@
 <meta property="book:title" content="Quantitative Reasoning for Social Justice">
 <meta property="book:author" content="Kenan Ince ">
 <meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "extpfeil",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "knowl"
-      ]
-    }
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
   },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math",
-    "renderActions": {
-      "findScript": [
-        10,
-        function (doc) {
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -56,36 +38,25 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        },
-        ""
-      ]
-    }
+        }, '']
+    },
   },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
   },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/extpfeil",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
-    }
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
   },
-  "startup": {
+  startup: {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  }
+  },
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
@@ -431,11 +402,6 @@ window.MathJax = {
 </li>
 <li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.4.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
 <li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html#bill-type-vs-status" class="internal"><span class="codenumber">5.4.5</span> <span class="title">OLD STUFF BELOW THIS LINE!!!!!!</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#did-the-type-of-bill-impact-its-likelihood-of-being-passed-andor-signed" class="internal"><span class="codenumber">5.4.5.1</span> <span class="title">Did the type of bill impact its likelihood of being passed and/or signed?</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#is-2023-the-year-of-transphobia" class="internal"><span class="codenumber">5.4.6</span> <span class="title">Is 2023 the Year of Transphobia?</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -501,23 +467,23 @@ window.MathJax = {
 </h3>
 <ul class="disc">
 <li id="li-196"><div class="para" id="p-532">
-<a class="external" href="https://r-graph-gallery.com/" target="_blank">The R Graph Gallery</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-88" id="fn-88"><sup> 88 </sup></a> - A collection of charts and graphs that can be created in R using tidyverse and ggplot2.</div></li>
+<a class="external" href="https://r-graph-gallery.com/" target="_blank">The R Graph Gallery</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-89" id="fn-89"><sup> 89 </sup></a> - A collection of charts and graphs that can be created in R using tidyverse and ggplot2.</div></li>
 <li id="li-197"><div class="para" id="p-533">
-<a class="external" href="https://rc2e.com/" target="_blank">R Cookbook, 2nd Edition</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-89" id="fn-89"><sup> 89 </sup></a> - Book of "how-to recipes" for beginner and intermediate-level R users. Each recipe represents one of many solutions but often presents the simplest one.</div></li>
+<a class="external" href="https://rc2e.com/" target="_blank">R Cookbook, 2nd Edition</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-90" id="fn-90"><sup> 90 </sup></a> - Book of "how-to recipes" for beginner and intermediate-level R users. Each recipe represents one of many solutions but often presents the simplest one.</div></li>
 <li id="li-198"><div class="para" id="p-534">
-<a class="external" href="https://stackoverflow.com/" target="_blank">Stack Overflow</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-90" id="fn-90"><sup> 90 </sup></a> - Public platform for users to ask and answer coding questions.</div></li>
+<a class="external" href="https://stackoverflow.com/" target="_blank">Stack Overflow</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-91" id="fn-91"><sup> 91 </sup></a> - Public platform for users to ask and answer coding questions.</div></li>
 <li id="li-199"><div class="para" id="p-535">
-<a class="external" href="https://www.datacamp.com/" target="_blank">DataCamp</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-91" id="fn-91"><sup> 91 </sup></a> - Online learning platform with data science and AI tutorials teaching students non-coding and coding essentials.</div></li>
+<a class="external" href="https://www.datacamp.com/" target="_blank">DataCamp</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-92" id="fn-92"><sup> 92 </sup></a> - Online learning platform with data science and AI tutorials teaching students non-coding and coding essentials.</div></li>
 <li id="li-200"><div class="para" id="p-536">
-<a class="external" href="https://www.penguinrandomhouse.com/books/611537/beyond-the-gender-binary-by-alok-vaid-menon-illustrated-by-ashley-lukashevsky/" target="_blank">Beyond the Gender Binary by Alok Vaid-Menon</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-92" id="fn-92"><sup> 92 </sup></a> - Written by gender non-conforming artist Alok Vaid-Menon known for creatively challenging societal norms of the gender binary.</div></li>
+<a class="external" href="https://www.penguinrandomhouse.com/books/611537/beyond-the-gender-binary-by-alok-vaid-menon-illustrated-by-ashley-lukashevsky/" target="_blank">Beyond the Gender Binary by Alok Vaid-Menon</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-93" id="fn-93"><sup> 93 </sup></a> - Written by gender non-conforming artist Alok Vaid-Menon known for creatively challenging societal norms of the gender binary.</div></li>
 <li id="li-201"><div class="para" id="p-537">
-<a class="external" href="https://www.vox.com/the-highlight/2019/5/20/18542843/intersectionality-conservatism-law-race-gender-discrimination" target="_blank">The Intersectionality Wars</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-93" id="fn-93"><sup> 93 </sup></a> - Understanding Kimberlé Crenshaw’s coinage of “intersectionality” and its applications from a relatively obscure legal concept to understanding our identities today.</div></li>
-</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-88"><div class="fn"><code class="code-inline tex2jax_ignore">r-graph-gallery.com/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-89"><div class="fn"><code class="code-inline tex2jax_ignore">rc2e.com/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-90"><div class="fn"><code class="code-inline tex2jax_ignore">stackoverflow.com/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-91"><div class="fn"><code class="code-inline tex2jax_ignore">www.datacamp.com/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-92"><div class="fn"><code class="code-inline tex2jax_ignore">www.penguinrandomhouse.com/books/611537/beyond-the-gender-binary-by-alok-vaid-menon-illustrated-by-ashley-lukashevsky/</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-93"><div class="fn"><code class="code-inline tex2jax_ignore">www.vox.com/the-highlight/2019/5/20/18542843/intersectionality-conservatism-law-race-gender-discrimination</code></div></div>
+<a class="external" href="https://www.vox.com/the-highlight/2019/5/20/18542843/intersectionality-conservatism-law-race-gender-discrimination" target="_blank">The Intersectionality Wars</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-94" id="fn-94"><sup> 94 </sup></a> - Understanding Kimberlé Crenshaw’s coinage of “intersectionality” and its applications from a relatively obscure legal concept to understanding our identities today.</div></li>
+</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-89"><div class="fn"><code class="code-inline tex2jax_ignore">r-graph-gallery.com/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-90"><div class="fn"><code class="code-inline tex2jax_ignore">rc2e.com/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-91"><div class="fn"><code class="code-inline tex2jax_ignore">stackoverflow.com/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-92"><div class="fn"><code class="code-inline tex2jax_ignore">www.datacamp.com/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-93"><div class="fn"><code class="code-inline tex2jax_ignore">www.penguinrandomhouse.com/books/611537/beyond-the-gender-binary-by-alok-vaid-menon-illustrated-by-ashley-lukashevsky/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-94"><div class="fn"><code class="code-inline tex2jax_ignore">www.vox.com/the-highlight/2019/5/20/18542843/intersectionality-conservatism-law-race-gender-discrimination</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="legislation.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="leg-understanding.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
