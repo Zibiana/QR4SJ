@@ -10,6 +10,7 @@
 
 ## Latest Book Version
 [v04/12/2025: included chapter on anti and pro translegislation](https://zibiana.github.io/QR4SJ/qr4sj.html)
+
 [v04/18/2023: includes introduction and Student Loans section](https://qr-for-social-justice.github.io/workbook/)
 
 ## Welcome
