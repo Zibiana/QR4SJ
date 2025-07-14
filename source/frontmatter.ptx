@@ -4,7 +4,7 @@
 <!-- works.                                                        -->
 
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
-  <titlepage>
+  <bibinfo>
     <author>
       <personname>Kenan Ince </personname>
       <department>Department of Mathematics</department>
@@ -21,12 +21,8 @@
       <institution>Westminster University, Salt Lake City</institution>
     </author> 
     <date><today/></date>
-  </titlepage>
-
-  <colophon>
-    <website>
-      <name><c>cs.westminstercollege.edu/~kince</c></name>
-      <address>https://cs.westminstercollege.edu/~kince</address>
+        <website>
+      <url href="https://cs.westminstercollege.edu/~kince"><c>cs.westminstercollege.edu/~kince</c></url>
     </website>
 
     <copyright>
@@ -47,6 +43,11 @@
       </shortlicense>
 
     </copyright>
+  </bibinfo>
+  <titlepage><titlepage-items/></titlepage>
+
+  <colophon>
+
 
   </colophon>
 

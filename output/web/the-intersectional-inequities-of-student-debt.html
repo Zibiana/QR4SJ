@@ -5,30 +5,52 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-red                     *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>The Intersectional Inequities of Student Debt</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Quantitative Reasoning for Social Justice">
-<meta property="book:author" content="Kenan Ince ">
-<meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,162 +60,95 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.7/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Quantitative Reasoning for Social Justice">
+<meta property="book:author" content="Kenan Ince ">
+<meta property="book:author" content="Bianca Thompson">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.8.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a99e275a1e410b98.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.58623b9a3097f5e4.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="qr4sj.html"><span class="title">Quantitative Reasoning for Social Justice:</span> <span class="subtitle">An Active Learning Workbook</span></a></h1>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="qr4sj.html"><span class="title">Quantitative Reasoning for Social Justice</span> <span class="subtitle">An Active Learning Workbook</span></a></h1>
 <p class="byline">Kenan Ince, Bianca Thompson</p>
-</div>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-7.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
-</h2>
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
 <div id="searchempty" class="searchempty"><span>No results.</span></div>
 <ol id="searchresults" class="searchresults"></ol>
 </div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="avatarbutton" class="avatarbutton name">You!</span><div id="preferences_menu_holder" class="preferences_menu_holder hidden"><ol id="preferences_menu" class="preferences_menu" style="font-family: 'Roboto Serif', serif;">
-<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden avatar">
-<li data-val="You!" tabindex="-1">
-<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
-<li data-val="😺" tabindex="-1">
-<span id="the😺" class="avatarcheck"></span>😺</li>
-<li data-val="👤" tabindex="-1">
-<span id="the👤" class="avatarcheck"></span>👤</li>
-<li data-val="👽" tabindex="-1">
-<span id="the👽" class="avatarcheck"></span>👽</li>
-<li data-val="🐶" tabindex="-1">
-<span id="the🐶" class="avatarcheck"></span>🐶</li>
-<li data-val="🐼" tabindex="-1">
-<span id="the🐼" class="avatarcheck"></span>🐼</li>
-<li data-val="🌈" tabindex="-1">
-<span id="the🌈" class="avatarcheck"></span>🌈</li>
-</ol>
-</li>
-<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fontfamily">
-<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
-<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
-<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-</ol>
-</li>
-<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fonts">
-<li>Size</li>
-<li><span id="thesize">12</span></li>
-<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
-<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
-<li>Width</li>
-<li><span id="thewdth">100</span></li>
-<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
-<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
-<li>Weight</li>
-<li><span id="thewght">400</span></li>
-<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
-<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
-<li>Letter spacing</li>
-<li>
-<span id="thelspace">0</span><span class="byunits">/200</span>
-</li>
-<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
-<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
-<li>Word spacing</li>
-<li>
-<span id="thewspace">0</span><span class="byunits">/50</span>
-</li>
-<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
-<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
-<li>Line Spacing</li>
-<li>
-<span id="theheight">135</span><span class="byunits">/100</span>
-</li>
-<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
-<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
-</ol>
-</li>
-<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden atmosphere">
-<li data-val="default" tabindex="-1">
-<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
-<li data-val="pastel" tabindex="-1">
-<span id="thepastel" class="atmospherecheck"></span>pastel</li>
-<li data-val="darktwilight" tabindex="-1">
-<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
-<li data-val="dark" tabindex="-1">
-<span id="thedark" class="atmospherecheck"></span>dark</li>
-<li data-val="darkmidnight" tabindex="-1">
-<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
-</ol>
-</li>
-<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden ruler">
-<li data-val="none" tabindex="-1">
-<span id="thenone" class="rulercheck">✔️</span>none</li>
-<li data-val="underline" tabindex="-1">
-<span id="theunderline" class="rulercheck"></span>underline</li>
-<li data-val="lunderline" tabindex="-1">
-<span id="thelunderline" class="rulercheck"></span>L-underline</li>
-<li data-val="greybar" tabindex="-1">
-<span id="thegreybar" class="rulercheck"></span>grey bar</li>
-<li data-val="lightbox" tabindex="-1">
-<span id="thelightbox" class="rulercheck"></span>light box</li>
-<li data-val="sunrise" tabindex="-1">
-<span id="thesunrise" class="rulercheck"></span>sunrise</li>
-<li data-val="sunriseunderline" tabindex="-1">
-<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
-<li class="moveQ">Motion by:</li>
-<li data-val="mouse" tabindex="-1">
-<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
-<li data-val="arrow" tabindex="-1">
-<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
-<li data-val="eye" tabindex="-1">
-<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
-</ol>
-</li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="student-debt-by-college-type.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-loans.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="loans-solving-for-change.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="student-debt-by-college-type.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-loans.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="loans-solving-for-change.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\R}{\mathbb R}
@@ -204,339 +159,401 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural">
-<li>
-<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li><div class="toc-item"><a href="dedication-1.html" class="internal"><span class="title">Dedication</span></a></div></li>
-<li><div class="toc-item"><a href="acknowledgement-1.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
-<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-6.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-crashcourse.html" class="internal"><span class="codenumber">1</span> <span class="title">A Crash Course: Incorporating Social Justice into Postsecondary Math</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_crashcourse-intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Getting Started</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec_crashcourse-intro.html#subsec-why-math-for-SJ" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Why Teach Postsecondary Math for Social Justice?</span></a></div></li>
-<li><div class="toc-item"><a href="sec_crashcourse-intro.html#subsec-other-textbooks" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Other Texts for a Math for Social Justice Course</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-crashcourse.html" class="internal"><span class="codenumber">1</span> <span class="title">A Crash Course: Incorporating Social Justice into Postsecondary Math</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_crashcourse-intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Getting Started</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_crashcourse-intro.html#subsec-why-math-for-SJ" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Why Teach Postsecondary Math for Social Justice?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_crashcourse-intro.html#subsec-other-textbooks" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Other Texts for a Math for Social Justice Course</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec_firstch-examples.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec_firstch-examples.html#subsection-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span></a></div></li>
-<li>
-<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_firstch-examples.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_firstch-examples.html#sec_firstch-examples-2" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection">
+<div class="toc-title-box"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_firstch-examples.html#ground-rules-4" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ch-loans.html" class="internal"><span class="codenumber">2</span> <span class="title">The Staggering &amp; Inequitable Burden of Student Loans</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec_loans-objectives.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Objectives</span></a></div></li>
-<li>
-<div class="toc-item"><a href="cui-bono-who-benefits.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Cui Bono: Who Benefits?</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="cui-bono-who-benefits.html#rqs-minhaj" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="debt-big-problem.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</span></a></div></li>
-<li><div class="toc-item"><a href="changes-in-college-tuition-over-time.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Changes in College Tuition over Time</span></a></div></li>
-<li>
-<div class="toc-item"><a href="student-debt-by-college-type.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt by College Type</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-debt-over-time" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt over Time</span></a></div></li>
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-3" class="internal"><span class="codenumber">2.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-tuition-tracker" class="internal"><span class="codenumber">2.5</span> <span class="title">Trends at Your Institution</span></a></div></li>
-</ul>
-</li>
-<li class="active">
-<div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The Intersectional Inequities of Student Debt</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-toll" class="internal"><span class="codenumber">2.6</span> <span class="title">The Toll of Student Debt in the U.S.</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rq-trends-in-student-aid" class="internal"><span class="codenumber">2.6</span> <span class="title">Trends in Student Aid</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-biden-plan" class="internal"><span class="codenumber">2.6</span> <span class="title">The Biden-Harris Loan Forgiveness Plans</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#reading-questions-4" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-oecd" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-loans-rtn" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading the News on Student Loans</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-by-race" class="internal"><span class="codenumber">2.6</span> <span class="title">Student Debt by Race: What Is Fair?</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="loans-solving-for-change.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="loans-solving-for-change.html#reading-questions-7" class="internal"><span class="codenumber">2.7</span> <span class="title">Student Loan Activism &amp; Policy</span></a></div></li>
-<li><div class="toc-item"><a href="loans-solving-for-change.html#exercises-your-benefit" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="loans-wrap-up-exercise.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Wrap-Up Exercise</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ch-cryptography.html" class="internal"><span class="codenumber">3</span> <span class="title">Secret Codes &amp; the NSA</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="crypto-objectives.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Objectives &amp; Prerequisites</span></a></div></li>
-<li><div class="toc-item"><a href="preliminary-activity.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Preliminary Activity</span></a></div></li>
-<li><div class="toc-item"><a href="the-caesarshift-cipher.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Caesar/shift cipher</span></a></div></li>
-<li><div class="toc-item"><a href="frequency-analysis.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Frequency analysis</span></a></div></li>
-<li><div class="toc-item"><a href="affine-ciphers.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Affine ciphers</span></a></div></li>
-<li><div class="toc-item"><a href="onramp-to-number-theory.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Onramp to number theory</span></a></div></li>
-<li>
-<div class="toc-item"><a href="extensions-and-alterations.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Extensions and Alterations</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="extensions-and-alterations.html#the-diffie-hellman-key-exchange" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Diffie-Hellman key exchange</span></a></div></li>
-<li><div class="toc-item"><a href="extensions-and-alterations.html#potential-undergraduate-research-projects" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Potential undergraduate research projects</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="reflections-and-advice.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Reflections and Advice</span></a></div></li>
-<li>
-<div class="toc-item"><a href="additional-resources.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Additional Resources</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="additional-resources.html#references-1" class="internal"><span class="codenumber">3.4</span> <span class="title">References</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change.html" class="internal"><span class="codenumber">4</span> <span class="title">Climate Change</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-objectives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Objectives</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-background.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Understanding the Issue</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-cui-bono.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Cui Bono - Who Benefits?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-big-problem.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Big Problem: What is the best way to reduce greenhouse gas emissions?</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-14" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Data Visualization</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-types-of-data" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Types of Data</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Graphs</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-bar" class="internal"><span class="codenumber">4.6.2.1</span> <span class="title">Bar Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-4" class="internal"><span class="codenumber">4.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-5" class="internal"><span class="codenumber">4.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-combining-graphs" class="internal"><span class="codenumber">4.6.2.4</span> <span class="title">Combining Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-other-visualizations" class="internal"><span class="codenumber">4.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-accessibility" class="internal"><span class="codenumber">4.6.2.6</span> <span class="title">Accessibiliity</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-19" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-22" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-loans.html" class="internal"><span class="codenumber">2</span> <span class="title">The Staggering &amp; Inequitable Burden of Student Loans</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_loans-objectives.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Objectives</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="cui-bono-who-benefits.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Cui Bono: Who Benefits?</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="cui-bono-who-benefits.html#rqs-minhaj" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="debt-big-problem.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="changes-in-college-tuition-over-time.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Changes in College Tuition over Time</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="student-debt-by-college-type.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt by College Type</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="student-debt-by-college-type.html#exercises-debt-over-time" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt over Time</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="student-debt-by-college-type.html#student-debt-by-college-type-5" class="internal"><span class="codenumber">2.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="student-debt-by-college-type.html#exercises-tuition-tracker" class="internal"><span class="codenumber">2.5</span> <span class="title">Trends at Your Institution</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-exercises.html" class="internal"><span class="codenumber">4.10</span> <span class="title">Exercises</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-24" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The Intersectional Inequities of Student Debt</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-toll" class="internal"><span class="codenumber">2.6</span> <span class="title">The Toll of Student Debt in the U.S.</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#rq-trends-in-student-aid" class="internal"><span class="codenumber">2.6</span> <span class="title">Trends in Student Aid</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#rqs-biden-plan" class="internal"><span class="codenumber">2.6</span> <span class="title">The Biden-Harris Loan Forgiveness Plans</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#the-intersectional-inequities-of-student-debt-12" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#rqs-oecd" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#rqs-loans-rtn" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading the News on Student Loans</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-by-race" class="internal"><span class="codenumber">2.6</span> <span class="title">Student Debt by Race: What Is Fair?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="loans-solving-for-change.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="loans-solving-for-change.html#loans-solving-for-change-7" class="internal"><span class="codenumber">2.7</span> <span class="title">Student Loan Activism &amp; Policy</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="loans-solving-for-change.html#exercises-your-benefit" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="loans-wrap-up-exercise.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Wrap-Up Exercise</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cryptography.html" class="internal"><span class="codenumber">3</span> <span class="title">Secret Codes &amp; the NSA</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="crypto-objectives.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Objectives &amp; Prerequisites</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="preliminary-activity.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Preliminary Activity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-caesarshift-cipher.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Caesar/shift cipher</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="frequency-analysis.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Frequency analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="affine-ciphers.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Affine ciphers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="onramp-to-number-theory.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Onramp to number theory</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="extensions-and-alterations.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Extensions and Alterations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="extensions-and-alterations.html#the-diffie-hellman-key-exchange" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Diffie-Hellman key exchange</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="extensions-and-alterations.html#potential-undergraduate-research-projects" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Potential undergraduate research projects</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="reflections-and-advice.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Reflections and Advice</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="additional-resources.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Additional Resources</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="additional-resources.html#additional-resources-3" class="internal"><span class="codenumber">3.4</span> <span class="title">References</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="climate-change.html" class="internal"><span class="codenumber">4</span> <span class="title">Climate Change</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="climate-change-objectives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="climate-change-background.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Understanding the Issue</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="climate-change-cui-bono.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Cui Bono - Who Benefits?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="climate-change-big-problem.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Big Problem: What is the best way to reduce greenhouse gas emissions?</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-scientific-notation.html#climate-change-math-topic-scientific-notation-2" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-scientific-notation.html#climate-change-math-topic-scientific-notation-3" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-scientific-notation.html#climate-change-math-topic-scientific-notation-4" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Data Visualization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-types-of-data" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Types of Data</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Graphs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-bar" class="internal"><span class="codenumber">4.6.2.1</span> <span class="title">Bar Graphs</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-4" class="internal"><span class="codenumber">4.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-5" class="internal"><span class="codenumber">4.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-combining-graphs" class="internal"><span class="codenumber">4.6.2.4</span> <span class="title">Combining Graphs</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-other-visualizations" class="internal"><span class="codenumber">4.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-accessibility" class="internal"><span class="codenumber">4.6.2.6</span> <span class="title">Accessibiliity</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-leg-objectives.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Objectives</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-objectives.html#technical-process-overivew" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Technical Process Overview</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-objectives.html#leg-resources" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Resources</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-mathematical-models.html#climate-change-math-topic-mathematical-models-3" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="climate-change-math-topic-mathematical-models.html#climate-change-math-topic-mathematical-models-4" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-mathematical-models.html#climate-change-math-topic-mathematical-models-4-3" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-mathematical-models.html#climate-change-math-topic-mathematical-models-5" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Understanding the Issue</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.2</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Importing and Merging the Data</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Cleaning the Data</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercise" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Exercise</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-solving-for-change.html#climate-change-solving-for-change-3" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-solving-for-change.html#climate-change-solving-for-change-4" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-solving-for-change.html#climate-change-solving-for-change-5" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Visualizing the Data</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-visualize.html#sec-intro-to-data-leg" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.4.2</span> <span class="title">How to explore the data visually</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.4.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.4.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="climate-change-exercises.html" class="internal"><span class="codenumber">4.10</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-references.html#climate-change-references-2" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-references.html#climate-change-references-3" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-leg-textualize.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Textualizing the Data</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-textualize.html#cleaning-for-text-analysis" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Cleaning for Text Analysis</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-textualize.html#visualizing-text-analysis-data" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Visualizing Text Analysis Data</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-textualize.html#subsec-leg-textual-exercise" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-leg-case-study.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Case Study: How can we support storytelling using different data sources?</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-case-study.html#references-2" class="internal"><span class="codenumber">5.6</span> <span class="title">References</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">5.7</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">5.8</span> <span class="title">References</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="legislation.html" class="internal"><span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-objectives.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Objectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-objectives.html#technical-process-overivew" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Technical Process Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-objectives.html#leg-resources" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Resources</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="appendix_lit-review.html" class="internal"><span class="codenumber">A</span> <span class="title">Teaching Mathematics with an Equity Framework (A Literature Review)</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec_research-synthesis.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Research Synthesis</span></a></div></li>
-<li><div class="toc-item"><a href="sec_annotated-bib.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Annotated Bibliography</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Understanding the Issue</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.2</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Importing and Merging the Data</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-obtain-clean.html#exercise" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Exercise</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="solutions-1.html" class="internal"><span class="codenumber">B</span> <span class="title">A guide for using this book, contents, etc</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-instructor.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Chapter 5: Anti-Trans Legislation in the U.S.</span></a></div></li></ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Visualizing the Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-visualize.html#sec-intro-to-data-leg" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.4.2</span> <span class="title">How to explore the data visually</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.4.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="solutions-2.html" class="internal"><span class="codenumber">C</span> <span class="title">Selected Hints</span></a></div></li>
-<li><div class="toc-item"><a href="solutions-3.html" class="internal"><span class="codenumber">D</span> <span class="title">Selected Solutions</span></a></div></li>
-<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">E</span> <span class="title">List of Symbols</span></a></div></li>
-<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
-<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.4.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-textualize.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Textualizing the Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-textualize.html#cleaning-for-text-analysis" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Cleaning for Text Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-textualize.html#visualizing-text-analysis-data" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Visualizing Text Analysis Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-textualize.html#subsec-leg-textual-exercise" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-case-study.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Case Study: How can we support storytelling using different data sources?</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="sec-leg-case-study.html#sec-leg-case-study-10" class="internal"><span class="codenumber">5.6</span> <span class="title">References</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-project.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">5.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">5.8</span> <span class="title">References</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix_lit-review.html" class="internal"><span class="codenumber">A</span> <span class="title">Teaching Mathematics with an Equity Framework (A Literature Review)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_research-synthesis.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Research Synthesis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_annotated-bib.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Annotated Bibliography</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-solutions">
+<div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="codenumber">B</span> <span class="title">A guide for using this book, contents, etc</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-leg-instructor.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Chapter 5: Anti-Trans Legislation in the U.S.</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="codenumber">C</span> <span class="title">Selected Hints</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="codenumber">D</span> <span class="title">Selected Solutions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="backmatter-6.html" class="internal"><span class="codenumber">E</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-7.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-8.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="section" id="the-intersectional-inequities-of-student-debt"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">The Intersectional Inequities of Student Debt</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="the-intersectional-inequities-of-student-debt"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.6</span><span class="space"> </span><span class="title">The Intersectional Inequities of Student Debt</span>
 </h2>
-<div class="para" id="p-128">The average undergraduate student who takes out student loans has around <span class="process-math">\(\$25,000\)</span> in debt by the end of their higher education, according to the U.S. Department of Education. However, this debt is not spread equitably by demographic category: <a class="external" href="https://web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html" target="_blank"><span class="process-math">\(30\%\)</span> of non-Hispanic-identifying Black families carry an education loan, compared to <span class="process-math">\(20\%\)</span> of non-Hispanic white families and <span class="process-math">\(14\%\)</span> of Hispanic-identifying families</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-48" id="fn-48"><sup> 48 </sup></a>.</div>
-<div class="para" id="p-129">Student debt is also not equally spread among age groups; Millennials (who were <span class="process-math">\(30\)</span>-<span class="process-math">\(39\)</span> years old in <span class="process-math">\(2021\)</span>) total over <span class="process-math">\(\$500\)</span> billion in student loan debt, compared to a little over <span class="process-math">\(\$350\)</span> million of Gen Z (under <span class="process-math">\(30\)</span> in <span class="process-math">\(2021\)</span>), a little under <span class="process-math">\(\$350\)</span> million held by those <span class="process-math">\(40\)</span>-<span class="process-math">\(49\)</span> years of age in <span class="process-math">\(2021\text{,}\)</span> a bit under <span class="process-math">\(\$250\)</span> million held by those <span class="process-math">\(50\)</span>-<span class="process-math">\(59\)</span> years old, and <a class="external" href="https://web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html" target="_blank">only around <span class="process-math">\(\$125\)</span> million held by those <span class="process-math">\(60\)</span> or older in <span class="process-math">\(2021\)</span></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-49" id="fn-49"><sup> 49 </sup></a>.</div>
-<div class="para" id="p-130">Since Black families have been prevented from amassing generational wealth through systemic racism (in which laws favor one racial group over another), the legacy of slavery and Jim Crow, and mass incarceration, as well as continued implicit and explicit racism in public policy, housing (including the legacy of redlining, a policy which conitnued through <span class="process-math">\(1977\)</span>), private banking and lending, access to education, and hiring practices, Black folks are both <a class="external" href="https://eric.ed.gov/?id=ED621932" target="_blank">more likely to have to take on debt to attend college and less likely to attain wealth due to a college education</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-50" id="fn-50"><sup> 50 </sup></a>.</div>
-<div class="para" id="p-131">In particular, a <span class="process-math">\(2013\)</span> study found that the average white college-educated parent contributed <span class="process-math">\(\$73,500\)</span> to their children’s education, while Black parents contributed <span class="process-math">\(\$16,000\)</span> on average. This is true despite the fact that, when controlling by household type and economic situation, Black parents contribute more on average than white parents.</div>
-<div class="para" id="p-132">Lower-income Black parents are disproportionately likely to take out Parent PLUS loans, which are loans provided by the U.S. Department of Education to the parents of college students. Parent PLUS loans are unsubsidized and charge a <a class="external" href="https://studentaid.gov/help-center/answers/article/what-is-parent-plus-loan" target="_blank">“loan fee” (added to each loan payment) of <span class="process-math">\(4.228\%\)</span> and an interest rate of <span class="process-math">\(7.54\%\)</span> as of <span class="process-math">\(2022\)</span></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-51" id="fn-51"><sup> 51 </sup></a>, adding a substantial financial burden to the parent borrower.</div>
-<div class="para" id="p-133">Under these circumstances, Black borrowers default on student loans five times more often that white borrowers <a class="external" href="marka.brownStudentLoansNot2022" target="_blank"><code class="code-inline tex2jax_ignore">marka.brownStudentLoansNot2022</code></a>. Therefore, the disproportionate load of student debt on Black borrowers is both a symptom of, and exacerbates, the racial wealth gap in the U.S., or the difference in total assets and debts between Black and white Americans.</div>
-<div class="para" id="p-134">Defaulting on federal student loan debt leads to consequences such as <a class="external" href="https://www.proquest.com/openview/e5f160af46c6a00c16709c8f31c7311f/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" target="_blank">bad credit ratings, a decrease in tax refunds, the garnishment of wages, and removal of security clearances which are at times a condition of employment</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-52" id="fn-52"><sup> 52 </sup></a>. The consequences for those who default include an inability to obtain loans to buy homes or cars, loss of wages, or loss of employment.</div>
+<div class="para" id="the-intersectional-inequities-of-student-debt-2">The average undergraduate student who takes out student loans has around <span class="process-math">\(\$25,000\)</span> in debt by the end of their higher education, according to the U.S. Department of Education. However, this debt is not spread equitably by demographic category: <a class="external" href="https://web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html" target="_blank"><span class="process-math">\(30\%\)</span> of non-Hispanic-identifying Black families carry an education loan, compared to <span class="process-math">\(20\%\)</span> of non-Hispanic white families and <span class="process-math">\(14\%\)</span> of Hispanic-identifying families</a><details class="ptx-footnote" aria-live="polite" id="the-intersectional-inequities-of-student-debt-2-3"><summary class="ptx-footnote__number" title="Footnote 48"><sup> 48 </sup></summary><div class="ptx-footnote__contents" id="the-intersectional-inequities-of-student-debt-2-3"><code class="code-inline tex2jax_ignore">nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html</code></div></details>.<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="the-intersectional-inequities-of-student-debt-3">Student debt is also not equally spread among age groups; Millennials (who were <span class="process-math">\(30\)</span>-<span class="process-math">\(39\)</span> years old in <span class="process-math">\(2021\)</span>) total over <span class="process-math">\(\$500\)</span> billion in student loan debt, compared to a little over <span class="process-math">\(\$350\)</span> million of Gen Z (under <span class="process-math">\(30\)</span> in <span class="process-math">\(2021\)</span>), a little under <span class="process-math">\(\$350\)</span> million held by those <span class="process-math">\(40\)</span>-<span class="process-math">\(49\)</span> years of age in <span class="process-math">\(2021\text{,}\)</span> a bit under <span class="process-math">\(\$250\)</span> million held by those <span class="process-math">\(50\)</span>-<span class="process-math">\(59\)</span> years old, and <a class="external" href="https://web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html" target="_blank">only around <span class="process-math">\(\$125\)</span> million held by those <span class="process-math">\(60\)</span> or older in <span class="process-math">\(2021\)</span></a><details class="ptx-footnote" aria-live="polite" id="the-intersectional-inequities-of-student-debt-3-16"><summary class="ptx-footnote__number" title="Footnote 49"><sup> 49 </sup></summary><div class="ptx-footnote__contents" id="the-intersectional-inequities-of-student-debt-3-16"><code class="code-inline tex2jax_ignore">nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html</code></div></details>.<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="the-intersectional-inequities-of-student-debt-4">Since Black families have been prevented from amassing generational wealth through systemic racism (in which laws favor one racial group over another), the legacy of slavery and Jim Crow, and mass incarceration, as well as continued implicit and explicit racism in public policy, housing (including the legacy of redlining, a policy which conitnued through <span class="process-math">\(1977\)</span>), private banking and lending, access to education, and hiring practices, Black folks are both <a class="external" href="https://eric.ed.gov/?id=ED621932" target="_blank">more likely to have to take on debt to attend college and less likely to attain wealth due to a college education</a><details class="ptx-footnote" aria-live="polite" id="the-intersectional-inequities-of-student-debt-4-3"><summary class="ptx-footnote__number" title="Footnote 50"><sup> 50 </sup></summary><div class="ptx-footnote__contents" id="the-intersectional-inequities-of-student-debt-4-3"><code class="code-inline tex2jax_ignore">eric.ed.gov/?id=ED621932</code></div></details>.<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="the-intersectional-inequities-of-student-debt-5">In particular, a <span class="process-math">\(2013\)</span> study found that the average white college-educated parent contributed <span class="process-math">\(\$73,500\)</span> to their children’s education, while Black parents contributed <span class="process-math">\(\$16,000\)</span> on average. This is true despite the fact that, when controlling by household type and economic situation, Black parents contribute more on average than white parents.<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="the-intersectional-inequities-of-student-debt-6">Lower-income Black parents are disproportionately likely to take out Parent PLUS loans, which are loans provided by the U.S. Department of Education to the parents of college students. Parent PLUS loans are unsubsidized and charge a <a class="external" href="https://studentaid.gov/help-center/answers/article/what-is-parent-plus-loan" target="_blank">“loan fee” (added to each loan payment) of <span class="process-math">\(4.228\%\)</span> and an interest rate of <span class="process-math">\(7.54\%\)</span> as of <span class="process-math">\(2022\)</span></a><details class="ptx-footnote" aria-live="polite" id="the-intersectional-inequities-of-student-debt-6-2"><summary class="ptx-footnote__number" title="Footnote 51"><sup> 51 </sup></summary><div class="ptx-footnote__contents" id="the-intersectional-inequities-of-student-debt-6-2"><code class="code-inline tex2jax_ignore">studentaid.gov/help-center/answers/article/what-is-parent-plus-loan</code></div></details>, adding a substantial financial burden to the parent borrower.<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="the-intersectional-inequities-of-student-debt-7">Under these circumstances, Black borrowers default on student loans five times more often that white borrowers <a class="external" href="marka.brownStudentLoansNot2022" target="_blank"><code class="code-inline tex2jax_ignore">marka.brownStudentLoansNot2022</code></a>. Therefore, the disproportionate load of student debt on Black borrowers is both a symptom of, and exacerbates, the racial wealth gap in the U.S., or the difference in total assets and debts between Black and white Americans.<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="the-intersectional-inequities-of-student-debt-8">Defaulting on federal student loan debt leads to consequences such as <a class="external" href="https://www.proquest.com/openview/e5f160af46c6a00c16709c8f31c7311f/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" target="_blank">bad credit ratings, a decrease in tax refunds, the garnishment of wages, and removal of security clearances which are at times a condition of employment</a><details class="ptx-footnote" aria-live="polite" id="the-intersectional-inequities-of-student-debt-8-2"><summary class="ptx-footnote__number" title="Footnote 52"><sup> 52 </sup></summary><div class="ptx-footnote__contents" id="the-intersectional-inequities-of-student-debt-8-2"><code class="code-inline tex2jax_ignore">www.proquest.com/openview/e5f160af46c6a00c16709c8f31c7311f/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y</code></div></details>. The consequences for those who default include an inability to obtain loans to buy homes or cars, loss of wages, or loss of employment.<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <section class="exercises" id="exercises-debt-toll"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">The Toll of Student Debt in the U.S.</span>
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">The Toll of Student Debt in the U.S.</span>
 </h3>
-<div class="exercisegroup" id="exercisegroup-4">
+<div class="exercisegroup" id="exercises-debt-toll-2">
 <h4 class="heading"><span class="title">Exercise Group.</span></h4>
-<div class="introduction" id="introduction-9">The data in this section come partly from a <em class="emphasis">New York Times</em> article by Ella Koeze and Karl Russell entitled “The Toll of Student Debt in the U.S.” An archived version of the article can be accessed <a class="external" href="https://web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html" target="_blank">here</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-53" id="fn-53"><sup> 53 </sup></a>.</div>
-<div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="exercise-31"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="p-135">What are three things you notice about the graphs shown in the article? Explain what these particular things mean for students with debt.</div></article><article class="exercise exercise-like" id="exercise-32"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="p-136">What are three things you wonder about based on the article that are not answered in the article itself?</div></article><article class="exercise exercise-like" id="exercise-33"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="p-137">Do some research online and find reputable sources to answer your questions above.</div></article>
+<div class="introduction" id="exercises-debt-toll-2-1">
+<em class="emphasis">New York Times</em>“The Toll of Student Debt in the U.S.”<a class="external" href="https://web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html" target="_blank">here</a><details class="ptx-footnote" aria-live="polite" id="exercises-debt-toll-2-1-4"><summary class="ptx-footnote__number" title="Footnote 53"><sup> 53 </sup></summary><div class="ptx-footnote__contents" id="exercises-debt-toll-2-1-4"><code class="code-inline tex2jax_ignore">web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html</code></div></details>
 </div>
-</div></section><section class="reading-questions" id="rq-trends-in-student-aid"><h3 class="heading hide-type">
-<span class="type">Reading Questions</span> <span class="codenumber"></span> <span class="title">Trends in Student Aid</span>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercises-debt-toll-2-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="exercises-debt-toll-2-2-1">What are three things you notice about the graphs shown in the article? Explain what these particular things mean for students with debt.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-debt-toll-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.1"><a href="#exercises-debt-toll-2-2" title="Copy heading and permalink for Exercise 2.6.1" aria-label="Copy heading and permalink for Exercise 2.6.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises-debt-toll-2-3"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para" id="exercises-debt-toll-2-3-1">What are three things you wonder about based on the article that are not answered in the article itself?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-debt-toll-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.2"><a href="#exercises-debt-toll-2-3" title="Copy heading and permalink for Exercise 2.6.2" aria-label="Copy heading and permalink for Exercise 2.6.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises-debt-toll-2-4"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="exercises-debt-toll-2-4-1">Do some research online and find reputable sources to answer your questions above.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-debt-toll-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.3"><a href="#exercises-debt-toll-2-4" title="Copy heading and permalink for Exercise 2.6.3" aria-label="Copy heading and permalink for Exercise 2.6.3">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 2.6.1–3"><a href="#exercises-debt-toll-2" title="Copy heading and permalink for Exercise Group 2.6.1–3" aria-label="Copy heading and permalink for Exercise Group 2.6.1–3">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercises 2.6: The Toll of Student Debt in the U.S."><a href="#exercises-debt-toll" title="Copy heading and permalink for Exercises 2.6: The Toll of Student Debt in the U.S." aria-label="Copy heading and permalink for Exercises 2.6: The Toll of Student Debt in the U.S.">🔗</a></div></section><section class="reading-questions" id="rq-trends-in-student-aid"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Trends in Student Aid</span>
 </h3>
-<section class="introduction" id="introduction-10"><div class="para" id="p-138">The following four questions are about the most recent College Board <em class="emphasis">Trends in Student Aid</em> publication, which can be downloaded <a class="external" href="https://research.collegeboard.org/trends/student-aid" target="_blank">here</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-54" id="fn-54"><sup> 54 </sup></a>.</div></section><article class="exercise exercise-like" id="exercise-34"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-139">Explain the difference between subsidized and unsubsidized federal loans. (You may have to use other online sources.)</div></article><article class="exercise exercise-like" id="exercise-35"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-140">When did the federal government begin giving unsubsidized loans to students according to the chart in <em class="emphasis">Trends in Student Aid</em>? (You may also have to use other online sources.)</div></article><article class="exercise exercise-like" id="exercise-36"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-141">Since the year <span class="process-math">\(2000\text{,}\)</span> describe the trend for both subsidized and unsubsidized loans.</div></article></section><section class="reading-questions" id="rqs-biden-plan"><h3 class="heading hide-type">
-<span class="type">Reading Questions</span> <span class="codenumber"></span> <span class="title">The Biden-Harris Loan Forgiveness Plans</span>
+<section class="introduction" id="rq-trends-in-student-aid-2"><div class="para" id="rq-trends-in-student-aid-2-1">The following four questions are about the most recent College Board <em class="emphasis">Trends in Student Aid</em> publication, which can be downloaded <a class="external" href="https://research.collegeboard.org/trends/student-aid" target="_blank">here</a><details class="ptx-footnote" aria-live="polite" id="rq-trends-in-student-aid-2-1-3"><summary class="ptx-footnote__number" title="Footnote 54"><sup> 54 </sup></summary><div class="ptx-footnote__contents" id="rq-trends-in-student-aid-2-1-3"><code class="code-inline tex2jax_ignore">research.collegeboard.org/trends/student-aid</code></div></details>.<div class="autopermalink" data-description="Paragraph"><a href="#rq-trends-in-student-aid-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><article class="exercise exercise-like" id="rq-trends-in-student-aid-3"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="rq-trends-in-student-aid-3-1">Explain the difference between subsidized and unsubsidized federal loans. (You may have to use other online sources.)<div class="autopermalink" data-description="Paragraph"><a href="#rq-trends-in-student-aid-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.1"><a href="#rq-trends-in-student-aid-3" title="Copy heading and permalink for Reading Question 2.6.1" aria-label="Copy heading and permalink for Reading Question 2.6.1">🔗</a></div></article><article class="exercise exercise-like" id="rq-trends-in-student-aid-4"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="rq-trends-in-student-aid-4-1">When did the federal government begin giving unsubsidized loans to students according to the chart in <em class="emphasis">Trends in Student Aid</em>? (You may also have to use other online sources.)<div class="autopermalink" data-description="Paragraph"><a href="#rq-trends-in-student-aid-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.2"><a href="#rq-trends-in-student-aid-4" title="Copy heading and permalink for Reading Question 2.6.2" aria-label="Copy heading and permalink for Reading Question 2.6.2">🔗</a></div></article><article class="exercise exercise-like" id="rq-trends-in-student-aid-5"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="rq-trends-in-student-aid-5-1">Since the year <span class="process-math">\(2000\text{,}\)</span> describe the trend for both subsidized and unsubsidized loans.<div class="autopermalink" data-description="Paragraph"><a href="#rq-trends-in-student-aid-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.3"><a href="#rq-trends-in-student-aid-5" title="Copy heading and permalink for Reading Question 2.6.3" aria-label="Copy heading and permalink for Reading Question 2.6.3">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 2.6: Trends in Student Aid"><a href="#rq-trends-in-student-aid" title="Copy heading and permalink for Reading Questions 2.6: Trends in Student Aid" aria-label="Copy heading and permalink for Reading Questions 2.6: Trends in Student Aid">🔗</a></div></section><section class="reading-questions" id="rqs-biden-plan"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">The Biden-Harris Loan Forgiveness Plans</span>
 </h3>
-<section class="introduction" id="introduction-11"><div class="para" id="p-142">In <span class="process-math">\(2022\)</span> and <span class="process-math">\(2023\text{,}\)</span> the Biden-Harris administration released a plan whose multiple components are designed to decrease the burden of student loan debt on lower-income individuals. Read <a class="external" href="https://studentaid.gov/debt-relief-announcement" target="_blank">the White House’s announcement of the plan</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-55" id="fn-55"><sup> 55 </sup></a>, then answer the following questions.</div></section><article class="exercise exercise-like" id="exercise-37"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-143">In your own words, describe the three main components of the White House’s “student debt relief plan”. Who is impacted by each part? What impacts would the plan have on each group?</div></article><article class="exercise exercise-like" id="exercise-38"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-144">Which do you feel is the most essential component of the plan? Why?</div></article><article class="exercise exercise-like" id="exercise-39"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-145">What is the current status of this debt relief plan? You may have to do additional research online. Has it been blocked by the courts? Changed by legislation? Implemented in full? Why or why not?</div></article></section><section class="reading-questions" id="reading-questions-4"><h3 class="heading hide-type">
-<span class="type">Reading Questions</span> <span class="codenumber"></span> <span class="title">Reading Questions</span>
+<section class="introduction" id="rqs-biden-plan-2"><div class="para" id="rqs-biden-plan-2-1">In <span class="process-math">\(2022\)</span> and <span class="process-math">\(2023\text{,}\)</span> the Biden-Harris administration released a plan whose multiple components are designed to decrease the burden of student loan debt on lower-income individuals. Read <a class="external" href="https://studentaid.gov/debt-relief-announcement" target="_blank">the White House’s announcement of the plan</a><details class="ptx-footnote" aria-live="polite" id="rqs-biden-plan-2-1-4"><summary class="ptx-footnote__number" title="Footnote 55"><sup> 55 </sup></summary><div class="ptx-footnote__contents" id="rqs-biden-plan-2-1-4"><code class="code-inline tex2jax_ignore">studentaid.gov/debt-relief-announcement</code></div></details>, then answer the following questions.<div class="autopermalink" data-description="Paragraph"><a href="#rqs-biden-plan-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><article class="exercise exercise-like" id="rqs-biden-plan-3"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="rqs-biden-plan-3-1">In your own words, describe the three main components of the White House’s “student debt relief plan”. Who is impacted by each part? What impacts would the plan have on each group?<div class="autopermalink" data-description="Paragraph"><a href="#rqs-biden-plan-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.1"><a href="#rqs-biden-plan-3" title="Copy heading and permalink for Reading Question 2.6.1" aria-label="Copy heading and permalink for Reading Question 2.6.1">🔗</a></div></article><article class="exercise exercise-like" id="rqs-biden-plan-4"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="rqs-biden-plan-4-1">Which do you feel is the most essential component of the plan? Why?<div class="autopermalink" data-description="Paragraph"><a href="#rqs-biden-plan-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.2"><a href="#rqs-biden-plan-4" title="Copy heading and permalink for Reading Question 2.6.2" aria-label="Copy heading and permalink for Reading Question 2.6.2">🔗</a></div></article><article class="exercise exercise-like" id="rqs-biden-plan-5"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="rqs-biden-plan-5-1">What is the current status of this debt relief plan? You may have to do additional research online. Has it been blocked by the courts? Changed by legislation? Implemented in full? Why or why not?<div class="autopermalink" data-description="Paragraph"><a href="#rqs-biden-plan-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.3"><a href="#rqs-biden-plan-5" title="Copy heading and permalink for Reading Question 2.6.3" aria-label="Copy heading and permalink for Reading Question 2.6.3">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 2.6: The Biden-Harris Loan Forgiveness Plans"><a href="#rqs-biden-plan" title="Copy heading and permalink for Reading Questions 2.6: The Biden-Harris Loan Forgiveness Plans" aria-label="Copy heading and permalink for Reading Questions 2.6: The Biden-Harris Loan Forgiveness Plans">🔗</a></div></section><section class="reading-questions" id="the-intersectional-inequities-of-student-debt-12"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
-<section class="introduction" id="introduction-12"><em class="emphasis">The Atlantic</em> asks, "<a class="external" href="https://webcache.googleusercontent.com/search?q=cache:QCadmloDEIoJ:https://www.theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us" target="_blank">Who Really Benefits From Student-Loan Forgiveness</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-56" id="fn-56"><sup> 56 </sup></a>?"</section><article class="exercise exercise-like" id="exercise-40"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-146">The article hints that student loan debt has received national attention because college graduates have significant political power. Do you believe that student debt forgiveness is a privileged position to advocate for? Why or why not?</div></article><article class="exercise exercise-like" id="exercise-41"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-147">Why might student debt exacerbate the racial wealth gap? Do you think it does?</div></article><article class="exercise exercise-like" id="exercise-42"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-148">Do you believe that canceling student debt helps shrink the racial wealth gap? Why or why not?</div></article><article class="exercise exercise-like" id="exercise-43"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="p-149">How could you use statistics to determine whether student loan debt was due to rising tuition/fees, inflation, or as the article mentions, the number of recipients attending grad school? What do you believe?</div></article></section><section class="reading-questions" id="rqs-oecd"><h3 class="heading hide-type">
-<span class="type">Reading Questions</span> <span class="codenumber"></span> <span class="title">Reading Questions</span>
+<section class="introduction" id="the-intersectional-inequities-of-student-debt-12-1"><em class="emphasis">The Atlantic</em><a class="external" href="https://webcache.googleusercontent.com/search?q=cache:QCadmloDEIoJ:https://www.theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us" target="_blank">Who Really Benefits From Student-Loan Forgiveness</a><details class="ptx-footnote" aria-live="polite" id="the-intersectional-inequities-of-student-debt-12-1-3"><summary class="ptx-footnote__number" title="Footnote 56"><sup> 56 </sup></summary><div class="ptx-footnote__contents" id="the-intersectional-inequities-of-student-debt-12-1-3"><code class="code-inline tex2jax_ignore">webcache.googleusercontent.com/search?q=cache:QCadmloDEIoJ:https://www.theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us</code></div></details></section><article class="exercise exercise-like" id="the-intersectional-inequities-of-student-debt-12-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="the-intersectional-inequities-of-student-debt-12-2-1">The article hints that student loan debt has received national attention because college graduates have significant political power. Do you believe that student debt forgiveness is a privileged position to advocate for? Why or why not?<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.1"><a href="#the-intersectional-inequities-of-student-debt-12-2" title="Copy heading and permalink for Reading Question 2.6.1" aria-label="Copy heading and permalink for Reading Question 2.6.1">🔗</a></div></article><article class="exercise exercise-like" id="the-intersectional-inequities-of-student-debt-12-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="the-intersectional-inequities-of-student-debt-12-3-1">Why might student debt exacerbate the racial wealth gap? Do you think it does?<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-12-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.2"><a href="#the-intersectional-inequities-of-student-debt-12-3" title="Copy heading and permalink for Reading Question 2.6.2" aria-label="Copy heading and permalink for Reading Question 2.6.2">🔗</a></div></article><article class="exercise exercise-like" id="the-intersectional-inequities-of-student-debt-12-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="the-intersectional-inequities-of-student-debt-12-4-1">Do you believe that canceling student debt helps shrink the racial wealth gap? Why or why not?<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-12-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.3"><a href="#the-intersectional-inequities-of-student-debt-12-4" title="Copy heading and permalink for Reading Question 2.6.3" aria-label="Copy heading and permalink for Reading Question 2.6.3">🔗</a></div></article><article class="exercise exercise-like" id="the-intersectional-inequities-of-student-debt-12-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="the-intersectional-inequities-of-student-debt-12-5-1">How could you use statistics to determine whether student loan debt was due to rising tuition/fees, inflation, or as the article mentions, the number of recipients attending grad school? What do you believe?<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-12-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.4"><a href="#the-intersectional-inequities-of-student-debt-12-5" title="Copy heading and permalink for Reading Question 2.6.4" aria-label="Copy heading and permalink for Reading Question 2.6.4">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 2.6"><a href="#the-intersectional-inequities-of-student-debt-12" title="Copy heading and permalink for Reading Questions 2.6" aria-label="Copy heading and permalink for Reading Questions 2.6">🔗</a></div></section><section class="reading-questions" id="rqs-oecd"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
-<section class="introduction" id="introduction-13"><div class="para" id="p-150">According to a <a class="external" href="https://read.oecd-ilibrary.org/education/education-at-a-glance-2017_eag-2017-en#page222" target="_blank">late 2017 study by the Organisation for Economic Cooperation and Development</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-57" id="fn-57"><sup> 57 </sup></a>, the U.S. has the greatest annual average tuition and fees of all surveyed countries charged to nationals of that country. Note that the symbols ‘a’ in the table mean “the category does not pply”, while ‘m’ means “data are not available” (<dfn class="terminology">missing</dfn>).</div></section><article class="exercise exercise-like" id="exercise-44"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-151">What general trends (by continent, region, degree type, or type of institution) do you notice in the table? Explain.</div></article><article class="exercise exercise-like" id="exercise-45"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-152">What impact may the missing or “not applicable” data have on the general trends observed in the table? Explain.</div></article></section><section class="reading-questions" id="rqs-loans-rtn"><h3 class="heading hide-type">
-<span class="type">Reading Questions</span> <span class="codenumber"></span> <span class="title">Reading the News on Student Loans</span>
+<section class="introduction" id="rqs-oecd-1"><div class="para" id="rqs-oecd-1-1">According to a <a class="external" href="https://read.oecd-ilibrary.org/education/education-at-a-glance-2017_eag-2017-en#page222" target="_blank">late 2017 study by the Organisation for Economic Cooperation and Development</a><details class="ptx-footnote" aria-live="polite" id="rqs-oecd-1-1-2"><summary class="ptx-footnote__number" title="Footnote 57"><sup> 57 </sup></summary><div class="ptx-footnote__contents" id="rqs-oecd-1-1-2"><code class="code-inline tex2jax_ignore">read.oecd-ilibrary.org/education/education-at-a-glance-2017_eag-2017-en#page222</code></div></details>, the U.S. has the greatest annual average tuition and fees of all surveyed countries charged to nationals of that country. Note that the symbols ‘a’ in the table mean “the category does not pply”, while ‘m’ means “data are not available” (<dfn class="terminology">missing</dfn>).<div class="autopermalink" data-description="Paragraph"><a href="#rqs-oecd-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><article class="exercise exercise-like" id="rqs-oecd-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="rqs-oecd-2-1">What general trends (by continent, region, degree type, or type of institution) do you notice in the table? Explain.<div class="autopermalink" data-description="Paragraph"><a href="#rqs-oecd-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.1"><a href="#rqs-oecd-2" title="Copy heading and permalink for Reading Question 2.6.1" aria-label="Copy heading and permalink for Reading Question 2.6.1">🔗</a></div></article><article class="exercise exercise-like" id="rqs-oecd-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="rqs-oecd-3-1">What impact may the missing or “not applicable” data have on the general trends observed in the table? Explain.<div class="autopermalink" data-description="Paragraph"><a href="#rqs-oecd-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.2"><a href="#rqs-oecd-3" title="Copy heading and permalink for Reading Question 2.6.2" aria-label="Copy heading and permalink for Reading Question 2.6.2">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 2.6"><a href="#rqs-oecd" title="Copy heading and permalink for Reading Questions 2.6" aria-label="Copy heading and permalink for Reading Questions 2.6">🔗</a></div></section><section class="reading-questions" id="rqs-loans-rtn"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Reading the News on Student Loans</span>
 </h3>
-<section class="introduction" id="introduction-14"><div class="para" id="p-153">Part of quantitative literacy is being able to critically interpret numbers and mathematics in the news media. To that end, find an article from the last four years involving student loans that makes at least 2-3 numerical claims. The <a class="external" href="https://trends.collegeboard.org/college-pricing/figures-tables/variation-published-priceshttps://trends.collegeboard.org/college-pricing/figures-tables/variation-published-prices" target="_blank">College Board website</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-58" id="fn-58"><sup> 58 </sup></a> or reputable news sources (<em class="emphasis">New York Times</em>, <em class="emphasis">Washington Post</em>, Reuters, Associated Press, etc.) about government policy on student loans and loan forgiveness are good sources,; you’re welcome to find your own sources as well. Take the number(s) in your article and do the following:</div></section><article class="exercise exercise-like" id="exercise-46"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-154">Decide what point the article is trying to make by citing these numbers.</div></article><article class="exercise exercise-like" id="exercise-47"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-155">Before pulling out an electronic device, brainstorm a list of questions (3-5) you’d like to know about the numbers–things that would help you understand if the numbers are big or small, and whether or not the underlying data actually supports the article’s argument.</div></article><article class="exercise exercise-like" id="exercise-48"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-156">Get online and try to answer your questions.</div></article><article class="exercise exercise-like" id="exercise-49"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="p-157">Rate the article’s claims on two scales:</div>
-<ol class="lower-alpha">
-<li id="li-73"><div class="para" id="p-158">How true is the statement? (0 = completely false, 4 = completely true)</div></li>
-<li id="li-74"><div class="para" id="p-159">How misleading is the statement? (0 = not at all, 4 = totally misleading) (In other words, when you look at the underlying data, does it support the article’s point or not?)</div></li>
-</ol></article></section><section class="exercises" id="exercises-debt-by-race"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Student Debt by Race: What Is Fair?</span>
+<section class="introduction" id="rqs-loans-rtn-2"><div class="para" id="rqs-loans-rtn-2-1">Part of quantitative literacy is being able to critically interpret numbers and mathematics in the news media. To that end, find an article from the last four years involving student loans that makes at least 2-3 numerical claims. The <a class="external" href="https://trends.collegeboard.org/college-pricing/figures-tables/variation-published-priceshttps://trends.collegeboard.org/college-pricing/figures-tables/variation-published-prices" target="_blank">College Board website</a><details class="ptx-footnote" aria-live="polite" id="rqs-loans-rtn-2-1-2"><summary class="ptx-footnote__number" title="Footnote 58"><sup> 58 </sup></summary><div class="ptx-footnote__contents" id="rqs-loans-rtn-2-1-2"><code class="code-inline tex2jax_ignore">trends.collegeboard.org/college-pricing/figures-tables/variation-published-priceshttps://trends.collegeboard.org/college-pricing/figures-tables/variation-published-prices</code></div></details> or reputable news sources (<em class="emphasis">New York Times</em>, <em class="emphasis">Washington Post</em>, Reuters, Associated Press, etc.) about government policy on student loans and loan forgiveness are good sources,; you’re welcome to find your own sources as well. Take the number(s) in your article and do the following:<div class="autopermalink" data-description="Paragraph"><a href="#rqs-loans-rtn-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><article class="exercise exercise-like" id="rqs-loans-rtn-3"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="rqs-loans-rtn-3-1">Decide what point the article is trying to make by citing these numbers.<div class="autopermalink" data-description="Paragraph"><a href="#rqs-loans-rtn-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.1"><a href="#rqs-loans-rtn-3" title="Copy heading and permalink for Reading Question 2.6.1" aria-label="Copy heading and permalink for Reading Question 2.6.1">🔗</a></div></article><article class="exercise exercise-like" id="rqs-loans-rtn-4"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="rqs-loans-rtn-4-1">Before pulling out an electronic device, brainstorm a list of questions (3-5) you’d like to know about the numbers–things that would help you understand if the numbers are big or small, and whether or not the underlying data actually supports the article’s argument.<div class="autopermalink" data-description="Paragraph"><a href="#rqs-loans-rtn-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.2"><a href="#rqs-loans-rtn-4" title="Copy heading and permalink for Reading Question 2.6.2" aria-label="Copy heading and permalink for Reading Question 2.6.2">🔗</a></div></article><article class="exercise exercise-like" id="rqs-loans-rtn-5"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="rqs-loans-rtn-5-1">Get online and try to answer your questions.<div class="autopermalink" data-description="Paragraph"><a href="#rqs-loans-rtn-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.6.3"><a href="#rqs-loans-rtn-5" title="Copy heading and permalink for Reading Question 2.6.3" aria-label="Copy heading and permalink for Reading Question 2.6.3">🔗</a></div></article><article class="exercise exercise-like" id="rqs-loans-rtn-6"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="rqs-loans-rtn-6-1">Rate the article’s claims on two scales:<div class="autopermalink" data-description="Paragraph"><a href="#rqs-loans-rtn-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="lower-alpha lower-alpha-level-1" id="rqs-loans-rtn-6-2">
+<li id="rqs-loans-rtn-6-2-1">
+<div class="para" id="rqs-loans-rtn-6-2-1-1">How true is the statement? (0 = completely false, 4 = completely true)<div class="autopermalink" data-description="Paragraph"><a href="#rqs-loans-rtn-6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.a"><a href="#rqs-loans-rtn-6-2-1" title="Copy heading and permalink for Item 2.6.4.a" aria-label="Copy heading and permalink for Item 2.6.4.a">🔗</a></div>
+</li>
+<li id="rqs-loans-rtn-6-2-2">
+<div class="para" id="rqs-loans-rtn-6-2-2-1">How misleading is the statement? (0 = not at all, 4 = totally misleading) (In other words, when you look at the underlying data, does it support the article’s point or not?)<div class="autopermalink" data-description="Paragraph"><a href="#rqs-loans-rtn-6-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.b"><a href="#rqs-loans-rtn-6-2-2" title="Copy heading and permalink for Item 2.6.4.b" aria-label="Copy heading and permalink for Item 2.6.4.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Reading Question 2.6.4"><a href="#rqs-loans-rtn-6" title="Copy heading and permalink for Reading Question 2.6.4" aria-label="Copy heading and permalink for Reading Question 2.6.4">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 2.6: Reading the News on Student Loans"><a href="#rqs-loans-rtn" title="Copy heading and permalink for Reading Questions 2.6: Reading the News on Student Loans" aria-label="Copy heading and permalink for Reading Questions 2.6: Reading the News on Student Loans">🔗</a></div></section><section class="exercises" id="exercises-debt-by-race"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Student Debt by Race: What Is Fair?</span>
 </h3>
-<div class="exercisegroup" id="exercisegroup-5">
+<div class="exercisegroup" id="exercises-debt-by-race-2">
 <h4 class="heading"><span class="title">Exercise Group.</span></h4>
-<div class="introduction" id="introduction-15"><div class="para" id="p-160">Compare the total amount paid in student debt for various racial groups using <a class="external" href="https://nces.ed.gov/fastfacts/display.asp?id=900" target="_blank">this table</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-59" id="fn-59"><sup> 59 </sup></a>.</div></div>
+<div class="introduction" id="exercises-debt-by-race-2-1"><div class="para" id="exercises-debt-by-race-2-1-1">Compare the total amount paid in student debt for various racial groups using <a class="external" href="https://nces.ed.gov/fastfacts/display.asp?id=900" target="_blank">this table</a><details class="ptx-footnote" aria-live="polite" id="exercises-debt-by-race-2-1-1-2"><summary class="ptx-footnote__number" title="Footnote 59"><sup> 59 </sup></summary><div class="ptx-footnote__contents" id="exercises-debt-by-race-2-1-1-2"><code class="code-inline tex2jax_ignore">nces.ed.gov/fastfacts/display.asp?id=900</code></div></details>.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-debt-by-race-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
 <div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="exercise-50"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="p-161">Does it seem like any racial groups are being disproportionately saddled with student loan debt? How can we compare, say, debt held by white vs. Asian students to see whether the difference is larger than we’d expect? Well, first we need to quantify the idea of "what we’d expect"...what does this mean? Create an <dfn class="terminology">expected frequency table</dfn> for what you’d expect to see if there were absolutely no racial differences in student debt.</div></article><article class="exercise exercise-like" id="exercise-51"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="p-162">Compute the difference between the observed count for each race <span class="process-math">\(O\)</span> and the expected count <span class="process-math">\(E\text{.}\)</span> What do you notice?</div></article><article class="exercise exercise-like" id="exercise-52"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="p-163">What if we averaged all the <span class="process-math">\(O-E\)</span>’s for each racial group? This is effectively the idea of a <dfn class="terminology">chi-squared test for goodness-of-fit</dfn>, which is used by statisticians to determine whether any differences observed are small enough to be due to chance or large enough that they give evidence of a difference. What would the equation for this average look like?</div></article><article class="exercise exercise-like" id="exercise-53"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
-<div class="para" id="p-164">We’ll use a computer to perform this test in a minute. First, what groups do you think are disproportionately likely/unlikely to hold student loan debt? What racial groups have a higher/lower debt burden per person?</div></article><article class="exercise exercise-like" id="exercise-54"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
-<div class="para" id="p-165">Now, enter this data into an app such as RStudio or an online tool. In RStudio, run this code to do a chi-squared test. (In a statistics class, walk through the steps.) Output the <span class="process-math">\(p\)</span>-value (the likelihood the observed differences are due to chance alone) and <dfn class="terminology">residuals</dfn>, which are basically scaled versions of the <span class="process-math">\(O-E\)</span> s for each racial group. Which are highest? Lowest? Is there evidence of racial bias?</div></article>
+<article class="exercise exercise-like" id="exercises-debt-by-race-2-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="exercises-debt-by-race-2-2-1">Does it seem like any racial groups are being disproportionately saddled with student loan debt? How can we compare, say, debt held by white vs. Asian students to see whether the difference is larger than we’d expect? Well, first we need to quantify the idea of "what we’d expect"...what does this mean? Create an <dfn class="terminology">expected frequency table</dfn> for what you’d expect to see if there were absolutely no racial differences in student debt.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-debt-by-race-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-</div></section><div class="para" id="p-166">If these materials are being used for a course in, say, introductory statistics for STEM fields or a higher-level data science class, this is a good time to discuss <a class="external" href="https://openintro-ims.netlify.app/model-mlr.html" target="_blank">linear regression with multiple predictors</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-60" id="fn-60"><sup> 60 </sup></a> to formalize the effect of year and type of institution on tuition or race and year on student debt. However, since this text is primarily intended for courses without prerequisites targeted at majors and non-majors alike, such material is beyond the scope of this chapter.</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-48"><div class="fn"><code class="code-inline tex2jax_ignore">nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-49"><div class="fn"><code class="code-inline tex2jax_ignore">nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-50"><div class="fn"><code class="code-inline tex2jax_ignore">eric.ed.gov/?id=ED621932</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-51"><div class="fn"><code class="code-inline tex2jax_ignore">studentaid.gov/help-center/answers/article/what-is-parent-plus-loan</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-52"><div class="fn"><code class="code-inline tex2jax_ignore">www.proquest.com/openview/e5f160af46c6a00c16709c8f31c7311f/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-53"><div class="fn"><code class="code-inline tex2jax_ignore">web.archive.org/web/20230122063133/https://www.nytimes.com/interactive/2022/08/26/your-money/student-loan-forgiveness-debt.html</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-54"><div class="fn"><code class="code-inline tex2jax_ignore">research.collegeboard.org/trends/student-aid</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-55"><div class="fn"><code class="code-inline tex2jax_ignore">studentaid.gov/debt-relief-announcement</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-56"><div class="fn"><code class="code-inline tex2jax_ignore">webcache.googleusercontent.com/search?q=cache:QCadmloDEIoJ:https://www.theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-57"><div class="fn"><code class="code-inline tex2jax_ignore">read.oecd-ilibrary.org/education/education-at-a-glance-2017_eag-2017-en#page222</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-58"><div class="fn"><code class="code-inline tex2jax_ignore">trends.collegeboard.org/college-pricing/figures-tables/variation-published-priceshttps://trends.collegeboard.org/college-pricing/figures-tables/variation-published-prices</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-59"><div class="fn"><code class="code-inline tex2jax_ignore">nces.ed.gov/fastfacts/display.asp?id=900</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-60"><div class="fn"><code class="code-inline tex2jax_ignore">openintro-ims.netlify.app/model-mlr.html</code></div></div>
+<div class="autopermalink" data-description="Exercise 2.6.1"><a href="#exercises-debt-by-race-2-2" title="Copy heading and permalink for Exercise 2.6.1" aria-label="Copy heading and permalink for Exercise 2.6.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises-debt-by-race-2-3"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para" id="exercises-debt-by-race-2-3-1">Compute the difference between the observed count for each race <span class="process-math">\(O\)</span> and the expected count <span class="process-math">\(E\text{.}\)</span> What do you notice?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-debt-by-race-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="student-debt-by-college-type.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="loans-solving-for-change.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<div class="autopermalink" data-description="Exercise 2.6.2"><a href="#exercises-debt-by-race-2-3" title="Copy heading and permalink for Exercise 2.6.2" aria-label="Copy heading and permalink for Exercise 2.6.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises-debt-by-race-2-4"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="exercises-debt-by-race-2-4-1">What if we averaged all the <span class="process-math">\(O-E\)</span>’s for each racial group? This is effectively the idea of a <dfn class="terminology">chi-squared test for goodness-of-fit</dfn>, which is used by statisticians to determine whether any differences observed are small enough to be due to chance or large enough that they give evidence of a difference. What would the equation for this average look like?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-debt-by-race-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.3"><a href="#exercises-debt-by-race-2-4" title="Copy heading and permalink for Exercise 2.6.3" aria-label="Copy heading and permalink for Exercise 2.6.3">🔗</a></div></article><article class="exercise exercise-like" id="exercises-debt-by-race-2-5"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para" id="exercises-debt-by-race-2-5-1">We’ll use a computer to perform this test in a minute. First, what groups do you think are disproportionately likely/unlikely to hold student loan debt? What racial groups have a higher/lower debt burden per person?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-debt-by-race-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.4"><a href="#exercises-debt-by-race-2-5" title="Copy heading and permalink for Exercise 2.6.4" aria-label="Copy heading and permalink for Exercise 2.6.4">🔗</a></div></article><article class="exercise exercise-like" id="exercises-debt-by-race-2-6"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="exercises-debt-by-race-2-6-1">Now, enter this data into an app such as RStudio or an online tool. In RStudio, run this code to do a chi-squared test. (In a statistics class, walk through the steps.) Output the <span class="process-math">\(p\)</span>-value (the likelihood the observed differences are due to chance alone) and <dfn class="terminology">residuals</dfn>, which are basically scaled versions of the <span class="process-math">\(O-E\)</span> s for each racial group. Which are highest? Lowest? Is there evidence of racial bias?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-debt-by-race-2-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.5"><a href="#exercises-debt-by-race-2-6" title="Copy heading and permalink for Exercise 2.6.5" aria-label="Copy heading and permalink for Exercise 2.6.5">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 2.6.1–5"><a href="#exercises-debt-by-race-2" title="Copy heading and permalink for Exercise Group 2.6.1–5" aria-label="Copy heading and permalink for Exercise Group 2.6.1–5">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercises 2.6: Student Debt by Race: What Is Fair?"><a href="#exercises-debt-by-race" title="Copy heading and permalink for Exercises 2.6: Student Debt by Race: What Is Fair?" aria-label="Copy heading and permalink for Exercises 2.6: Student Debt by Race: What Is Fair?">🔗</a></div></section><div class="para" id="the-intersectional-inequities-of-student-debt-16">If these materials are being used for a course in, say, introductory statistics for STEM fields or a higher-level data science class, this is a good time to discuss <a class="external" href="https://openintro-ims.netlify.app/model-mlr.html" target="_blank">linear regression with multiple predictors</a><details class="ptx-footnote" aria-live="polite" id="the-intersectional-inequities-of-student-debt-16-2"><summary class="ptx-footnote__number" title="Footnote 60"><sup> 60 </sup></summary><div class="ptx-footnote__contents" id="the-intersectional-inequities-of-student-debt-16-2"><code class="code-inline tex2jax_ignore">openintro-ims.netlify.app/model-mlr.html</code></div></details> to formalize the effect of year and type of institution on tuition or race and year on student debt. However, since this text is primarily intended for courses without prerequisites targeted at majors and non-majors alike, such material is beyond the scope of this chapter.<div class="autopermalink" data-description="Paragraph"><a href="#the-intersectional-inequities-of-student-debt-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 2.6: The Intersectional Inequities of Student Debt"><a href="#the-intersectional-inequities-of-student-debt" title="Copy heading and permalink for Section 2.6: The Intersectional Inequities of Student Debt" aria-label="Copy heading and permalink for Section 2.6: The Intersectional Inequities of Student Debt">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="student-debt-by-college-type.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="loans-solving-for-change.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

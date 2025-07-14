@@ -1,6 +1,6 @@
 <section xml:id="sec-leg-objectives">
     <title>Objectives </title>
-
+    <introduction>
     <p>
         By the end of this section, an engaged learner will be able to:
         <ul>
@@ -32,6 +32,7 @@
             </li>
         </ul>
     </p>
+</introduction>
     <subsection xml:id="technical-process-overivew">
         <title>Technical Process Overview</title>
 

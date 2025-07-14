@@ -5,30 +5,52 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-red                     *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cui Bono: Who Benefits?</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Quantitative Reasoning for Social Justice">
-<meta property="book:author" content="Kenan Ince ">
-<meta property="book:author" content="Bianca Thompson">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,162 +60,95 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.7/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.7/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Quantitative Reasoning for Social Justice">
+<meta property="book:author" content="Kenan Ince ">
+<meta property="book:author" content="Bianca Thompson">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.8.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a99e275a1e410b98.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.58623b9a3097f5e4.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="qr4sj.html"><span class="title">Quantitative Reasoning for Social Justice:</span> <span class="subtitle">An Active Learning Workbook</span></a></h1>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="qr4sj.html"><span class="title">Quantitative Reasoning for Social Justice</span> <span class="subtitle">An Active Learning Workbook</span></a></h1>
 <p class="byline">Kenan Ince, Bianca Thompson</p>
-</div>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-7.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
-</h2>
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
 <div id="searchempty" class="searchempty"><span>No results.</span></div>
 <ol id="searchresults" class="searchresults"></ol>
 </div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="avatarbutton" class="avatarbutton name">You!</span><div id="preferences_menu_holder" class="preferences_menu_holder hidden"><ol id="preferences_menu" class="preferences_menu" style="font-family: 'Roboto Serif', serif;">
-<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden avatar">
-<li data-val="You!" tabindex="-1">
-<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
-<li data-val="😺" tabindex="-1">
-<span id="the😺" class="avatarcheck"></span>😺</li>
-<li data-val="👤" tabindex="-1">
-<span id="the👤" class="avatarcheck"></span>👤</li>
-<li data-val="👽" tabindex="-1">
-<span id="the👽" class="avatarcheck"></span>👽</li>
-<li data-val="🐶" tabindex="-1">
-<span id="the🐶" class="avatarcheck"></span>🐶</li>
-<li data-val="🐼" tabindex="-1">
-<span id="the🐼" class="avatarcheck"></span>🐼</li>
-<li data-val="🌈" tabindex="-1">
-<span id="the🌈" class="avatarcheck"></span>🌈</li>
-</ol>
-</li>
-<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fontfamily">
-<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
-<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
-<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-</ol>
-</li>
-<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fonts">
-<li>Size</li>
-<li><span id="thesize">12</span></li>
-<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
-<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
-<li>Width</li>
-<li><span id="thewdth">100</span></li>
-<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
-<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
-<li>Weight</li>
-<li><span id="thewght">400</span></li>
-<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
-<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
-<li>Letter spacing</li>
-<li>
-<span id="thelspace">0</span><span class="byunits">/200</span>
-</li>
-<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
-<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
-<li>Word spacing</li>
-<li>
-<span id="thewspace">0</span><span class="byunits">/50</span>
-</li>
-<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
-<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
-<li>Line Spacing</li>
-<li>
-<span id="theheight">135</span><span class="byunits">/100</span>
-</li>
-<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
-<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
-</ol>
-</li>
-<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden atmosphere">
-<li data-val="default" tabindex="-1">
-<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
-<li data-val="pastel" tabindex="-1">
-<span id="thepastel" class="atmospherecheck"></span>pastel</li>
-<li data-val="darktwilight" tabindex="-1">
-<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
-<li data-val="dark" tabindex="-1">
-<span id="thedark" class="atmospherecheck"></span>dark</li>
-<li data-val="darkmidnight" tabindex="-1">
-<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
-</ol>
-</li>
-<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden ruler">
-<li data-val="none" tabindex="-1">
-<span id="thenone" class="rulercheck">✔️</span>none</li>
-<li data-val="underline" tabindex="-1">
-<span id="theunderline" class="rulercheck"></span>underline</li>
-<li data-val="lunderline" tabindex="-1">
-<span id="thelunderline" class="rulercheck"></span>L-underline</li>
-<li data-val="greybar" tabindex="-1">
-<span id="thegreybar" class="rulercheck"></span>grey bar</li>
-<li data-val="lightbox" tabindex="-1">
-<span id="thelightbox" class="rulercheck"></span>light box</li>
-<li data-val="sunrise" tabindex="-1">
-<span id="thesunrise" class="rulercheck"></span>sunrise</li>
-<li data-val="sunriseunderline" tabindex="-1">
-<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
-<li class="moveQ">Motion by:</li>
-<li data-val="mouse" tabindex="-1">
-<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
-<li data-val="arrow" tabindex="-1">
-<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
-<li data-val="eye" tabindex="-1">
-<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
-</ol>
-</li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec_loans-objectives.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-loans.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="debt-big-problem.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec_loans-objectives.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-loans.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="debt-big-problem.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\R}{\mathbb R}
@@ -204,285 +159,299 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural">
-<li>
-<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li><div class="toc-item"><a href="dedication-1.html" class="internal"><span class="title">Dedication</span></a></div></li>
-<li><div class="toc-item"><a href="acknowledgement-1.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
-<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-6.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-crashcourse.html" class="internal"><span class="codenumber">1</span> <span class="title">A Crash Course: Incorporating Social Justice into Postsecondary Math</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_crashcourse-intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Getting Started</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec_crashcourse-intro.html#subsec-why-math-for-SJ" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Why Teach Postsecondary Math for Social Justice?</span></a></div></li>
-<li><div class="toc-item"><a href="sec_crashcourse-intro.html#subsec-other-textbooks" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Other Texts for a Math for Social Justice Course</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-crashcourse.html" class="internal"><span class="codenumber">1</span> <span class="title">A Crash Course: Incorporating Social Justice into Postsecondary Math</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_crashcourse-intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Getting Started</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_crashcourse-intro.html#subsec-why-math-for-SJ" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Why Teach Postsecondary Math for Social Justice?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_crashcourse-intro.html#subsec-other-textbooks" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Other Texts for a Math for Social Justice Course</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec_firstch-examples.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec_firstch-examples.html#subsection-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span></a></div></li>
-<li>
-<div class="toc-item"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec_firstch-examples.html#exercises-1" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_firstch-examples.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Example SJ Math Activities for the First Day</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_firstch-examples.html#sec_firstch-examples-2" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Introductory Questions</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_firstch-examples.html#group-work-and-class-norms" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Group work and class norms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection">
+<div class="toc-title-box"><a href="sec_firstch-examples.html#ground-rules" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Ground rules</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_firstch-examples.html#ground-rules-4" class="internal"><span class="codenumber">1.2.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ch-loans.html" class="internal"><span class="codenumber">2</span> <span class="title">The Staggering &amp; Inequitable Burden of Student Loans</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec_loans-objectives.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Objectives</span></a></div></li>
-<li class="active">
-<div class="toc-item"><a href="cui-bono-who-benefits.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Cui Bono: Who Benefits?</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="cui-bono-who-benefits.html#rqs-minhaj" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="debt-big-problem.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</span></a></div></li>
-<li><div class="toc-item"><a href="changes-in-college-tuition-over-time.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Changes in College Tuition over Time</span></a></div></li>
-<li>
-<div class="toc-item"><a href="student-debt-by-college-type.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt by College Type</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-debt-over-time" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt over Time</span></a></div></li>
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-3" class="internal"><span class="codenumber">2.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
-<li><div class="toc-item"><a href="student-debt-by-college-type.html#exercises-tuition-tracker" class="internal"><span class="codenumber">2.5</span> <span class="title">Trends at Your Institution</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The Intersectional Inequities of Student Debt</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-toll" class="internal"><span class="codenumber">2.6</span> <span class="title">The Toll of Student Debt in the U.S.</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rq-trends-in-student-aid" class="internal"><span class="codenumber">2.6</span> <span class="title">Trends in Student Aid</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-biden-plan" class="internal"><span class="codenumber">2.6</span> <span class="title">The Biden-Harris Loan Forgiveness Plans</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#reading-questions-4" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-oecd" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#rqs-loans-rtn" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading the News on Student Loans</span></a></div></li>
-<li><div class="toc-item"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-by-race" class="internal"><span class="codenumber">2.6</span> <span class="title">Student Debt by Race: What Is Fair?</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="loans-solving-for-change.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="loans-solving-for-change.html#reading-questions-7" class="internal"><span class="codenumber">2.7</span> <span class="title">Student Loan Activism &amp; Policy</span></a></div></li>
-<li><div class="toc-item"><a href="loans-solving-for-change.html#exercises-your-benefit" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="loans-wrap-up-exercise.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Wrap-Up Exercise</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ch-cryptography.html" class="internal"><span class="codenumber">3</span> <span class="title">Secret Codes &amp; the NSA</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="crypto-objectives.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Objectives &amp; Prerequisites</span></a></div></li>
-<li><div class="toc-item"><a href="preliminary-activity.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Preliminary Activity</span></a></div></li>
-<li><div class="toc-item"><a href="the-caesarshift-cipher.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Caesar/shift cipher</span></a></div></li>
-<li><div class="toc-item"><a href="frequency-analysis.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Frequency analysis</span></a></div></li>
-<li><div class="toc-item"><a href="affine-ciphers.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Affine ciphers</span></a></div></li>
-<li><div class="toc-item"><a href="onramp-to-number-theory.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Onramp to number theory</span></a></div></li>
-<li>
-<div class="toc-item"><a href="extensions-and-alterations.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Extensions and Alterations</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="extensions-and-alterations.html#the-diffie-hellman-key-exchange" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Diffie-Hellman key exchange</span></a></div></li>
-<li><div class="toc-item"><a href="extensions-and-alterations.html#potential-undergraduate-research-projects" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Potential undergraduate research projects</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="reflections-and-advice.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Reflections and Advice</span></a></div></li>
-<li>
-<div class="toc-item"><a href="additional-resources.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Additional Resources</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="additional-resources.html#references-1" class="internal"><span class="codenumber">3.4</span> <span class="title">References</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change.html" class="internal"><span class="codenumber">4</span> <span class="title">Climate Change</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-objectives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Objectives</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-background.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Understanding the Issue</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-cui-bono.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Cui Bono - Who Benefits?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-big-problem.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Big Problem: What is the best way to reduce greenhouse gas emissions?</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-12" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-13" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-scientific-notation.html#subsection-14" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Data Visualization</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-types-of-data" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Types of Data</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Graphs</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-bar" class="internal"><span class="codenumber">4.6.2.1</span> <span class="title">Bar Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-4" class="internal"><span class="codenumber">4.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#subsubsection-5" class="internal"><span class="codenumber">4.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-combining-graphs" class="internal"><span class="codenumber">4.6.2.4</span> <span class="title">Combining Graphs</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-other-visualizations" class="internal"><span class="codenumber">4.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-accessibility" class="internal"><span class="codenumber">4.6.2.6</span> <span class="title">Accessibiliity</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_firstch-examples.html#group-roles" class="internal"><span class="codenumber">1.2.2.2</span> <span class="title">Group roles</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-17" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-18" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsubsection-9" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="climate-change-math-topic-mathematical-models.html#subsection-19" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-20" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-21" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-solving-for-change.html#subsection-22" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-loans.html" class="internal"><span class="codenumber">2</span> <span class="title">The Staggering &amp; Inequitable Burden of Student Loans</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_loans-objectives.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Objectives</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="cui-bono-who-benefits.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Cui Bono: Who Benefits?</span></a></div>
+<ul class="structural toc-item-list active"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="cui-bono-who-benefits.html#rqs-minhaj" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="debt-big-problem.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="changes-in-college-tuition-over-time.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Changes in College Tuition over Time</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="student-debt-by-college-type.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt by College Type</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="student-debt-by-college-type.html#exercises-debt-over-time" class="internal"><span class="codenumber">2.5</span> <span class="title">Student Debt over Time</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="student-debt-by-college-type.html#student-debt-by-college-type-5" class="internal"><span class="codenumber">2.5</span> <span class="title">Tuition by Nonprofit and Public Status</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="student-debt-by-college-type.html#exercises-tuition-tracker" class="internal"><span class="codenumber">2.5</span> <span class="title">Trends at Your Institution</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-exercises.html" class="internal"><span class="codenumber">4.10</span> <span class="title">Exercises</span></a></div></li>
-<li>
-<div class="toc-item"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-23" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
-<li><div class="toc-item"><a href="climate-change-references.html#subsection-24" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The Intersectional Inequities of Student Debt</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-toll" class="internal"><span class="codenumber">2.6</span> <span class="title">The Toll of Student Debt in the U.S.</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#rq-trends-in-student-aid" class="internal"><span class="codenumber">2.6</span> <span class="title">Trends in Student Aid</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#rqs-biden-plan" class="internal"><span class="codenumber">2.6</span> <span class="title">The Biden-Harris Loan Forgiveness Plans</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#the-intersectional-inequities-of-student-debt-12" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#rqs-oecd" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#rqs-loans-rtn" class="internal"><span class="codenumber">2.6</span> <span class="title">Reading the News on Student Loans</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="the-intersectional-inequities-of-student-debt.html#exercises-debt-by-race" class="internal"><span class="codenumber">2.6</span> <span class="title">Student Debt by Race: What Is Fair?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="loans-solving-for-change.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Solving for Change: Student Loan Reform &amp; Activism in the U.S.</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="loans-solving-for-change.html#loans-solving-for-change-7" class="internal"><span class="codenumber">2.7</span> <span class="title">Student Loan Activism &amp; Policy</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="loans-solving-for-change.html#exercises-your-benefit" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="loans-wrap-up-exercise.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Wrap-Up Exercise</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cryptography.html" class="internal"><span class="codenumber">3</span> <span class="title">Secret Codes &amp; the NSA</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="crypto-objectives.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Objectives &amp; Prerequisites</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="preliminary-activity.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Preliminary Activity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="the-caesarshift-cipher.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Caesar/shift cipher</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="frequency-analysis.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Frequency analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="affine-ciphers.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Affine ciphers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="onramp-to-number-theory.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Onramp to number theory</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="extensions-and-alterations.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Extensions and Alterations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="extensions-and-alterations.html#the-diffie-hellman-key-exchange" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Diffie-Hellman key exchange</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="extensions-and-alterations.html#potential-undergraduate-research-projects" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Potential undergraduate research projects</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="reflections-and-advice.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Reflections and Advice</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="additional-resources.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Additional Resources</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="additional-resources.html#additional-resources-3" class="internal"><span class="codenumber">3.4</span> <span class="title">References</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="climate-change.html" class="internal"><span class="codenumber">4</span> <span class="title">Climate Change</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="climate-change-objectives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="climate-change-background.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Understanding the Issue</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="climate-change-cui-bono.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Cui Bono - Who Benefits?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="climate-change-big-problem.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Big Problem: What is the best way to reduce greenhouse gas emissions?</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="climate-change-math-topic-scientific-notation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Scientific Notation and Number Sense</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-scientific-notation.html#climate-change-math-topic-scientific-notation-2" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Thinking about Size Comparisons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-scientific-notation.html#climate-change-math-topic-scientific-notation-3" class="internal"><span class="codenumber">4.5.2</span> <span class="title">What is Scientific Notation?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-scientific-notation.html#climate-change-math-topic-scientific-notation-4" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Significant figures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Data Visualization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-types-of-data" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Types of Data</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Graphs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-bar" class="internal"><span class="codenumber">4.6.2.1</span> <span class="title">Bar Graphs</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-4" class="internal"><span class="codenumber">4.6.2.2</span> <span class="title">Pie Charts</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-5" class="internal"><span class="codenumber">4.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-combining-graphs" class="internal"><span class="codenumber">4.6.2.4</span> <span class="title">Combining Graphs</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-other-visualizations" class="internal"><span class="codenumber">4.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-data-visualization.html#climate-change-math-topic-data-visualization-graphs-accessibility" class="internal"><span class="codenumber">4.6.2.6</span> <span class="title">Accessibiliity</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="legislation.html" class="internal"><span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-leg-objectives.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Objectives</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-objectives.html#technical-process-overivew" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Technical Process Overview</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-objectives.html#leg-resources" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Resources</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="climate-change-math-topic-mathematical-models.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Mathematical Models</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-mathematical-models.html#climate-change-math-topic-mathematical-models-3" class="internal"><span class="codenumber">4.7.1</span> <span class="title">The Green House Effect</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="climate-change-math-topic-mathematical-models.html#climate-change-math-topic-mathematical-models-4" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Modeling the Green House Effect</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="climate-change-math-topic-mathematical-models.html#climate-change-math-topic-mathematical-models-4-3" class="internal"><span class="codenumber">4.7.2.1</span> <span class="title">First Model: one level of atmosphere</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-math-topic-mathematical-models.html#climate-change-math-topic-mathematical-models-5" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Other Models and Measures</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Understanding the Issue</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.2</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Importing and Merging the Data</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Cleaning the Data</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-obtain-clean.html#exercise" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Exercise</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="climate-change-solving-for-change.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Solving for Change</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-solving-for-change.html#climate-change-solving-for-change-3" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-solving-for-change.html#climate-change-solving-for-change-4" class="internal"><span class="codenumber">4.8.2</span> <span class="title">What are the strategies for reducing emissions?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-solving-for-change.html#climate-change-solving-for-change-5" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Consequences of Failing to Act</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Visualizing the Data</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-visualize.html#sec-intro-to-data-leg" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
-<li>
-<div class="toc-item"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.4.2</span> <span class="title">How to explore the data visually</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.4.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.4.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="climate-change-reflection.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="climate-change-exercises.html" class="internal"><span class="codenumber">4.10</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="climate-change-references.html" class="internal"><span class="codenumber">4.11</span> <span class="title">References</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-references.html#climate-change-references-2" class="internal"><span class="codenumber">4.11.1</span> <span class="title">Bibliography</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="climate-change-references.html#climate-change-references-3" class="internal"><span class="codenumber">4.11.2</span> <span class="title">Image Descriptions</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-leg-textualize.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Textualizing the Data</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-leg-textualize.html#cleaning-for-text-analysis" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Cleaning for Text Analysis</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-textualize.html#visualizing-text-analysis-data" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Visualizing Text Analysis Data</span></a></div></li>
-<li><div class="toc-item"><a href="sec-leg-textualize.html#subsec-leg-textual-exercise" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-leg-case-study.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Case Study: How can we support storytelling using different data sources?</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-case-study.html#references-2" class="internal"><span class="codenumber">5.6</span> <span class="title">References</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="sec-leg-project.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">5.7</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li><div class="toc-item"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">5.8</span> <span class="title">References</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="legislation.html" class="internal"><span class="codenumber">5</span> <span class="title">Anti-Trans Legislation in the U.S.</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-objectives.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Objectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-objectives.html#technical-process-overivew" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Technical Process Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-objectives.html#leg-resources" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Resources</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="appendix_lit-review.html" class="internal"><span class="codenumber">A</span> <span class="title">Teaching Mathematics with an Equity Framework (A Literature Review)</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec_research-synthesis.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Research Synthesis</span></a></div></li>
-<li><div class="toc-item"><a href="sec_annotated-bib.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Annotated Bibliography</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="leg-understanding.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Understanding the Issue</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="leg-understanding.html#exercises-anti-trans" class="internal"><span class="codenumber">5.2</span> <span class="title">Anti-Trans Bills in the U.S. Starting 2018</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-obtain-clean.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Obtaining and Cleaning the Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-leg-obtain-clean.html#importing-and-merging-the-data" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Importing and Merging the Data</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-leg-obtain-clean.html#exercises-import" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-obtain-clean.html#cleaning-the-data" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Cleaning the Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-obtain-clean.html#exercise" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Exercise</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="solutions-1.html" class="internal"><span class="codenumber">B</span> <span class="title">A guide for using this book, contents, etc</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-leg-instructor.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Chapter 5: Anti-Trans Legislation in the U.S.</span></a></div></li></ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-visualize.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Visualizing the Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-visualize.html#sec-intro-to-data-leg" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Introduction to the data set and how to work with variables</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-leg-visualize.html#sec-explore-visually" class="internal"><span class="codenumber">5.4.2</span> <span class="title">How to explore the data visually</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-leg-visualize.html#subsubsec-two_plus_var" class="internal"><span class="codenumber">5.4.2.1</span> <span class="title">Two or more variable graphing</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="solutions-2.html" class="internal"><span class="codenumber">C</span> <span class="title">Selected Hints</span></a></div></li>
-<li><div class="toc-item"><a href="solutions-3.html" class="internal"><span class="codenumber">D</span> <span class="title">Selected Solutions</span></a></div></li>
-<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">E</span> <span class="title">List of Symbols</span></a></div></li>
-<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
-<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-visualize.html#subsec-leg_data_story" class="internal"><span class="codenumber">5.4.3</span> <span class="title">How do we tell a story with the data: answering how is 2023 different from other years</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-visualize.html#subsec-leg-visual-exercise" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-textualize.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Textualizing the Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-textualize.html#cleaning-for-text-analysis" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Cleaning for Text Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-textualize.html#visualizing-text-analysis-data" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Visualizing Text Analysis Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-leg-textualize.html#subsec-leg-textual-exercise" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-case-study.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Case Study: How can we support storytelling using different data sources?</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="sec-leg-case-study.html#sec-leg-case-study-10" class="internal"><span class="codenumber">5.6</span> <span class="title">References</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-leg-project.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mini-Project: Analyzing Legislation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-leg-project.html#exercises-leg-project" class="internal"><span class="codenumber">5.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="refs-anti-trans-leg.html" class="internal"><span class="codenumber">5.8</span> <span class="title">References</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix_lit-review.html" class="internal"><span class="codenumber">A</span> <span class="title">Teaching Mathematics with an Equity Framework (A Literature Review)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_research-synthesis.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Research Synthesis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_annotated-bib.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Annotated Bibliography</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-solutions">
+<div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="codenumber">B</span> <span class="title">A guide for using this book, contents, etc</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-leg-instructor.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Chapter 5: Anti-Trans Legislation in the U.S.</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="codenumber">C</span> <span class="title">Selected Hints</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="codenumber">D</span> <span class="title">Selected Solutions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="backmatter-6.html" class="internal"><span class="codenumber">E</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-7.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-8.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="section" id="cui-bono-who-benefits"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Cui Bono: Who Benefits?</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="cui-bono-who-benefits"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.2</span><span class="space"> </span><span class="title">Cui Bono: Who Benefits?</span>
 </h2>
 <section class="reading-questions" id="rqs-minhaj"><h3 class="heading hide-type">
-<span class="type">Reading Questions</span> <span class="codenumber"></span> <span class="title">Reading Questions</span>
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
-<div class="exercisegroup" id="exercisegroup-1">
+<div class="exercisegroup" id="rqs-minhaj-1">
 <h4 class="heading"><span class="title">Hasan Minhaj on Student Loans.</span></h4>
-<div class="introduction" id="introduction-6">The comedian Hasan Minhaj, of the former Netflix weekly show Patriot Act, focused a popular episode of his show on student loans in the US. Amazingly, this led to an invitation to testify before Congress on September 10, 2019, on the student loan debt crisis. <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="netflixisajokeStudentLoansPatriot2019" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/t0CyBv18A5k?&amp;modestbranding=1&amp;rel=0"></iframe></div> Please watch the above YouTube clip from Patriot Act (good closed captioning available on YouTube), then answer the following questions.</div>
+<div class="introduction" id="rqs-minhaj-1-2">
+<div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/t0CyBv18A5k?&amp;modestbranding=1&amp;rel=0" id="netflixisajokeStudentLoansPatriot2019"></iframe></div>Patriot Act</div>
 <div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="exercise-8"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="p-76">What are some of the consequences that are faced by people who can’t pay off their student loans?</div></article><article class="exercise exercise-like" id="exercise-9"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="p-77">What happened in 2010 to change the landscape of student loan debt in the US?</div></article><article class="exercise exercise-like" id="exercise-10"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="p-78">What are loan servicers, and what has their role been in the student loan crisis?</div></article><article class="exercise exercise-like" id="exercise-11"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
-<div class="para" id="p-79">What are three ways in which Navient has mistreated borrowers?</div></article><article class="exercise exercise-like" id="exercise-12"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
-<div class="para" id="p-80">What is an income-based repayment plan? What is forbearance, and why has it negatively affected borrowers when Navient encourages borrowers to enter forbearance instead of income-based repayment?</div></article><article class="exercise exercise-like" id="exercise-13"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para" id="p-81">In what ways does Minhaj argue that the Department of Education has failed borrowers?</div></article>
+<article class="exercise exercise-like" id="rqs-minhaj-1-3"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="rqs-minhaj-1-3-1">What are some of the consequences that are faced by people who can’t pay off their student loans?<div class="autopermalink" data-description="Paragraph"><a href="#rqs-minhaj-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-</div></section><div class="para" id="p-82">The highest proportion of student loan debt (the amount of debt held per student) <a class="external" href="https://web.archive.org/web/20230407141731/https://www.nytimes.com/interactive/2018/08/25/opinion/sunday/student-debt-loan-default-college.html" target="_blank">is held by students at for-profit colleges</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-26" id="fn-26"><sup> 26 </sup></a>, which are colleges that are not funded by taxes but instead depend on federal student aid (guaranteed by the government) and the tuition dollars that students pay to attend, often backed up by federal student aid. Contrast this situation with the vast majority of colleges and universities in the U.S., which are nonprofit institutions, which are usually run by a not-for-profit institution, religious organization, or government and hence often receive funding from taxes or a particular religious group.</div>
-<div class="para" id="p-83">The greatest proportion of defaults (see <a href="" class="xref" data-knowl="./knowl/def-default.html" title="Definition 2.3.2">Definition 2.3.2</a>) on student debt in <span class="process-math">\(2015\)</span> <a class="external" href="https://muse.jhu.edu/article/616850" target="_blank">occurred at the University of Phoenix, Walden University, Nova Southeastern University, Capella University, and Strayer University</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-27" id="fn-27"><sup> 27 </sup></a>, of which all but Nova are for-profit.</div>
-<div class="para" id="p-84">Almost all students are eligible to receive federal student loans, which are student loans funded by the U.S. federal government through programs such as Pell Grants. Federal loans are either subsidized (that is, interest payments are <a class="external" href="https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized" target="_blank">covered by the federal government for a period including the student’s time at a college or university</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-28" id="fn-28"><sup> 28 </sup></a>; such loans are restricted to undergraduates only) or unsubsidized (in which case borrowers must pay the interest).</div>
-<div class="para" id="p-85">In contrast, private student loans are loans offered by non-governmental companies which are heavily advertised, do not offer the relatively generous forbearance and deferred-payment options that federal loans do, and charge interest while the borrower is in college. Often, private student loan interest rates are higher even than those of unsubsidized federal student loans. Since many students do not have a credit history, federal student loans do not require proof of, or a co-signer attesting, “creditworthiness”, or evidence of past ability to repay debt; as of the <span class="process-math">\(2010\)</span>s, <a class="external" href="https://files.consumerfinance.gov/f/201207_cfpb_Reports_Private-Student-Loans.pdf" target="_blank">most private student loans required such proof</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-29" id="fn-29"><sup> 29 </sup></a>. Additionally, students who declare bankruptcy are unable to discharge private student loans, meaning borrowers who have no money are <a class="external" href="https://www.txs.uscourts.gov/sites/txs/files/CLE%20Discharge%20and%20Dischargeability%20%202019%20%20Podcast.pdf" target="_blank">still required to pay private corporations back for student loans</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-30" id="fn-30"><sup> 30 </sup></a>. Therefore, the U.S. government earns more income from student loans, but profits less, on average, than private student loan companies.</div>
-<div class="para" id="p-86">Employers benefit from the number of students who attend college, including those who could not otherwise attend without taking out student loans. “Credentialism”, the continuing growth in employers’ expectations of postsecondary education on the part of their employees, <a class="external" href="https://journals.sagepub.com/doi/10.1177/23328584221093325" target="_blank">has been called a key driver of student loan debt</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-31" id="fn-31"><sup> 31 </sup></a>. In <span class="process-math">\(2020\text{,}\)</span> earnings were stagnant for most workers, but declined rapidly for workers with no college education. This pressures people to seek a college education whether or not they can afford it.</div>
-<div class="para" id="p-87">Finally, <a class="external" href="https://webcache.googleusercontent.com/search?q=cache:QCadmloDEIoJ:https://www.theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us" target="_blank">a <span class="process-math">\(2022\)</span> article in <em class="emphasis">The Atlantic</em></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-32" id="fn-32"><sup> 32 </sup></a> implies that middle-class college graduates were able to advance their cause over other causes championed by more marginalized groups because they have higher relative political power compared to non-college graduates. Certainly, as we will see in the next sections, middle-class college graduates benefit a great deal from President Biden’s <span class="process-math">\(2022\)</span> student debt cancellation policy.</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-26"><div class="fn"><code class="code-inline tex2jax_ignore">nytimes.com/interactive/2018/08/25/opinion/sunday/student-debt-loan-default-college.html</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-27"><div class="fn"><code class="code-inline tex2jax_ignore">muse.jhu.edu/article/616850</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-28"><div class="fn"><code class="code-inline tex2jax_ignore">studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-29"><div class="fn"><code class="code-inline tex2jax_ignore">files.consumerfinance.gov/f/201207_cfpb_Reports_Private-Student-Loans.pdf</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-30"><div class="fn"><code class="code-inline tex2jax_ignore">txs.uscourts.gov/sites/txs/files/CLE%20Discharge%20and%20Dischargeability%20%202019%20%20Podcast.pdf</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-31"><div class="fn"><code class="code-inline tex2jax_ignore">journals.sagepub.com/doi/10.1177/23328584221093325</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-32"><div class="fn"><code class="code-inline tex2jax_ignore">theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us</code></div></div>
+<div class="autopermalink" data-description="Reading Question 2.2.1"><a href="#rqs-minhaj-1-3" title="Copy heading and permalink for Reading Question 2.2.1" aria-label="Copy heading and permalink for Reading Question 2.2.1">🔗</a></div></article><article class="exercise exercise-like" id="rqs-minhaj-1-4"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para" id="rqs-minhaj-1-4-1">What happened in 2010 to change the landscape of student loan debt in the US?<div class="autopermalink" data-description="Paragraph"><a href="#rqs-minhaj-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="sec_loans-objectives.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="debt-big-problem.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<div class="autopermalink" data-description="Reading Question 2.2.2"><a href="#rqs-minhaj-1-4" title="Copy heading and permalink for Reading Question 2.2.2" aria-label="Copy heading and permalink for Reading Question 2.2.2">🔗</a></div></article><article class="exercise exercise-like" id="rqs-minhaj-1-5"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="rqs-minhaj-1-5-1">What are loan servicers, and what has their role been in the student loan crisis?<div class="autopermalink" data-description="Paragraph"><a href="#rqs-minhaj-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.2.3"><a href="#rqs-minhaj-1-5" title="Copy heading and permalink for Reading Question 2.2.3" aria-label="Copy heading and permalink for Reading Question 2.2.3">🔗</a></div></article><article class="exercise exercise-like" id="rqs-minhaj-1-6"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para" id="rqs-minhaj-1-6-1">What are three ways in which Navient has mistreated borrowers?<div class="autopermalink" data-description="Paragraph"><a href="#rqs-minhaj-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.2.4"><a href="#rqs-minhaj-1-6" title="Copy heading and permalink for Reading Question 2.2.4" aria-label="Copy heading and permalink for Reading Question 2.2.4">🔗</a></div></article><article class="exercise exercise-like" id="rqs-minhaj-1-7"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="rqs-minhaj-1-7-1">What is an income-based repayment plan? What is forbearance, and why has it negatively affected borrowers when Navient encourages borrowers to enter forbearance instead of income-based repayment?<div class="autopermalink" data-description="Paragraph"><a href="#rqs-minhaj-1-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.2.5"><a href="#rqs-minhaj-1-7" title="Copy heading and permalink for Reading Question 2.2.5" aria-label="Copy heading and permalink for Reading Question 2.2.5">🔗</a></div></article><article class="exercise exercise-like" id="rqs-minhaj-1-8"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para" id="rqs-minhaj-1-8-1">In what ways does Minhaj argue that the Department of Education has failed borrowers?<div class="autopermalink" data-description="Paragraph"><a href="#rqs-minhaj-1-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 2.2.6"><a href="#rqs-minhaj-1-8" title="Copy heading and permalink for Reading Question 2.2.6" aria-label="Copy heading and permalink for Reading Question 2.2.6">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 2.2.1–6: Hasan Minhaj on Student Loans"><a href="#rqs-minhaj-1" title="Copy heading and permalink for Exercise Group 2.2.1–6: Hasan Minhaj on Student Loans" aria-label="Copy heading and permalink for Exercise Group 2.2.1–6: Hasan Minhaj on Student Loans">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Questions 2.2"><a href="#rqs-minhaj" title="Copy heading and permalink for Reading Questions 2.2" aria-label="Copy heading and permalink for Reading Questions 2.2">🔗</a></div></section><div class="para" id="cui-bono-who-benefits-3">The highest proportion of student loan debt (the amount of debt held per student) <a class="external" href="https://web.archive.org/web/20230407141731/https://www.nytimes.com/interactive/2018/08/25/opinion/sunday/student-debt-loan-default-college.html" target="_blank">is held by students at for-profit colleges</a><details class="ptx-footnote" aria-live="polite" id="cui-bono-who-benefits-3-2"><summary class="ptx-footnote__number" title="Footnote 26"><sup> 26 </sup></summary><div class="ptx-footnote__contents" id="cui-bono-who-benefits-3-2"><code class="code-inline tex2jax_ignore">nytimes.com/interactive/2018/08/25/opinion/sunday/student-debt-loan-default-college.html</code></div></details>, which are colleges that are not funded by taxes but instead depend on federal student aid (guaranteed by the government) and the tuition dollars that students pay to attend, often backed up by federal student aid. Contrast this situation with the vast majority of colleges and universities in the U.S., which are nonprofit institutions, which are usually run by a not-for-profit institution, religious organization, or government and hence often receive funding from taxes or a particular religious group.<div class="autopermalink" data-description="Paragraph"><a href="#cui-bono-who-benefits-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="cui-bono-who-benefits-4">The greatest proportion of defaults (see <a href="debt-big-problem.html#def-default" class="xref" data-knowl="./knowl/xref/def-default.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.3.2">Definition 2.3.2</a>) on student debt in <span class="process-math">\(2015\)</span> <a class="external" href="https://muse.jhu.edu/article/616850" target="_blank">occurred at the University of Phoenix, Walden University, Nova Southeastern University, Capella University, and Strayer University</a><details class="ptx-footnote" aria-live="polite" id="cui-bono-who-benefits-4-4"><summary class="ptx-footnote__number" title="Footnote 27"><sup> 27 </sup></summary><div class="ptx-footnote__contents" id="cui-bono-who-benefits-4-4"><code class="code-inline tex2jax_ignore">muse.jhu.edu/article/616850</code></div></details>, of which all but Nova are for-profit.<div class="autopermalink" data-description="Paragraph"><a href="#cui-bono-who-benefits-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="cui-bono-who-benefits-5">Almost all students are eligible to receive federal student loans, which are student loans funded by the U.S. federal government through programs such as Pell Grants. Federal loans are either subsidized (that is, interest payments are <a class="external" href="https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized" target="_blank">covered by the federal government for a period including the student’s time at a college or university</a><details class="ptx-footnote" aria-live="polite" id="cui-bono-who-benefits-5-2"><summary class="ptx-footnote__number" title="Footnote 28"><sup> 28 </sup></summary><div class="ptx-footnote__contents" id="cui-bono-who-benefits-5-2"><code class="code-inline tex2jax_ignore">studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized</code></div></details>; such loans are restricted to undergraduates only) or unsubsidized (in which case borrowers must pay the interest).<div class="autopermalink" data-description="Paragraph"><a href="#cui-bono-who-benefits-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="cui-bono-who-benefits-6">In contrast, private student loans are loans offered by non-governmental companies which are heavily advertised, do not offer the relatively generous forbearance and deferred-payment options that federal loans do, and charge interest while the borrower is in college. Often, private student loan interest rates are higher even than those of unsubsidized federal student loans. Since many students do not have a credit history, federal student loans do not require proof of, or a co-signer attesting, “creditworthiness”, or evidence of past ability to repay debt; as of the <span class="process-math">\(2010\)</span>s, <a class="external" href="https://files.consumerfinance.gov/f/201207_cfpb_Reports_Private-Student-Loans.pdf" target="_blank">most private student loans required such proof</a><details class="ptx-footnote" aria-live="polite" id="cui-bono-who-benefits-6-4"><summary class="ptx-footnote__number" title="Footnote 29"><sup> 29 </sup></summary><div class="ptx-footnote__contents" id="cui-bono-who-benefits-6-4"><code class="code-inline tex2jax_ignore">files.consumerfinance.gov/f/201207_cfpb_Reports_Private-Student-Loans.pdf</code></div></details>. Additionally, students who declare bankruptcy are unable to discharge private student loans, meaning borrowers who have no money are <a class="external" href="https://www.txs.uscourts.gov/sites/txs/files/CLE%20Discharge%20and%20Dischargeability%20%202019%20%20Podcast.pdf" target="_blank">still required to pay private corporations back for student loans</a><details class="ptx-footnote" aria-live="polite" id="cui-bono-who-benefits-6-6"><summary class="ptx-footnote__number" title="Footnote 30"><sup> 30 </sup></summary><div class="ptx-footnote__contents" id="cui-bono-who-benefits-6-6"><code class="code-inline tex2jax_ignore">txs.uscourts.gov/sites/txs/files/CLE%20Discharge%20and%20Dischargeability%20%202019%20%20Podcast.pdf</code></div></details>. Therefore, the U.S. government earns more income from student loans, but profits less, on average, than private student loan companies.<div class="autopermalink" data-description="Paragraph"><a href="#cui-bono-who-benefits-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="cui-bono-who-benefits-7">Employers benefit from the number of students who attend college, including those who could not otherwise attend without taking out student loans. “Credentialism”, the continuing growth in employers’ expectations of postsecondary education on the part of their employees, <a class="external" href="https://journals.sagepub.com/doi/10.1177/23328584221093325" target="_blank">has been called a key driver of student loan debt</a><details class="ptx-footnote" aria-live="polite" id="cui-bono-who-benefits-7-3"><summary class="ptx-footnote__number" title="Footnote 31"><sup> 31 </sup></summary><div class="ptx-footnote__contents" id="cui-bono-who-benefits-7-3"><code class="code-inline tex2jax_ignore">journals.sagepub.com/doi/10.1177/23328584221093325</code></div></details>. In <span class="process-math">\(2020\text{,}\)</span> earnings were stagnant for most workers, but declined rapidly for workers with no college education. This pressures people to seek a college education whether or not they can afford it.<div class="autopermalink" data-description="Paragraph"><a href="#cui-bono-who-benefits-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="cui-bono-who-benefits-8">Finally, <a class="external" href="https://webcache.googleusercontent.com/search?q=cache:QCadmloDEIoJ:https://www.theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us" target="_blank">a <span class="process-math">\(2022\)</span> article in <em class="emphasis">The Atlantic</em></a><details class="ptx-footnote" aria-live="polite" id="cui-bono-who-benefits-8-2"><summary class="ptx-footnote__number" title="Footnote 32"><sup> 32 </sup></summary><div class="ptx-footnote__contents" id="cui-bono-who-benefits-8-2"><code class="code-inline tex2jax_ignore">theatlantic.com/ideas/archive/2022/04/should-biden-forgive-student-loan-debt/629700/&amp;cd=18&amp;hl=en&amp;ct=clnk&amp;gl=us</code></div></details> implies that middle-class college graduates were able to advance their cause over other causes championed by more marginalized groups because they have higher relative political power compared to non-college graduates. Certainly, as we will see in the next sections, middle-class college graduates benefit a great deal from President Biden’s <span class="process-math">\(2022\)</span> student debt cancellation policy.<div class="autopermalink" data-description="Paragraph"><a href="#cui-bono-who-benefits-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 2.2: Cui Bono: Who Benefits?"><a href="#cui-bono-who-benefits" title="Copy heading and permalink for Section 2.2: Cui Bono: Who Benefits?" aria-label="Copy heading and permalink for Section 2.2: Cui Bono: Who Benefits?">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec_loans-objectives.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="debt-big-problem.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>
