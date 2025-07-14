@@ -7,13 +7,13 @@ on:
   # Currently, this workflow only runs when manually selected (the `workflow_dispatch` event).
   # If you would like it to run on other events, uncomment some of the lines below.
 
-  # # Runs on pull requests
+  # # Runs on pull requests 
   # pull_request:
   #     branches: ["*"]
 
-  # # Runs on pushes to main
-  # push:
-  #     branches: ["main"]
+  # Runs on pushes to main
+  push:
+      branches: ["main"]
 
   # # Runs every day at 00:00 UTC
   # schedule:
