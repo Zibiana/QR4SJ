@@ -1,5 +1,8 @@
 # Quantitative Reasoning for Social Justice: An Active Learning Workbook
 
+We are now living on the [MathForSocialJusticeOER](https://github.com/MathForSocialJusticeOER/QR4SJ). The version of the book on my github account is archived now. 
+
+
 ### Kenan Ince and Bianca Thompson
 #### Department of Mathematics, Westminster University, Salt Lake City
 ##### Migrated from [github.com/kaince](https://github.com/kaince)
