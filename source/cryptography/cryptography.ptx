@@ -269,7 +269,7 @@ c_{2} &amp; \equiv m\cdot p_{2}+k\mod26.\label{KI-eq:affine-cipher-system}
 				<em>In an introduction to proof or number theory class, this would be an excellent time to prompt students to prove that <m>m^{-1}</m> exists modulo <m>n</m> if and only if <m>\gcd(m,n)=1</m>. Prompt them to think about their multiplication tables and the fact that every integer modulo <m>n</m> appears in the <m>m</m>th row precisely when <m>m</m> and <m>n</m> are relatively prime. In fact, students can prove that</em>
 			</p>
 
-<!-- div attr= xml:id="KI-prop:gcd(m,n)-divides-mk" class="prop"-->
+
 				<proposition xml:id="KI-prop-gcd-m-n-divides-mk">
 					<statement>
 						<p>
@@ -278,7 +278,7 @@ c_{2} &amp; \equiv m\cdot p_{2}+k\mod26.\label{KI-eq:affine-cipher-system}
 						</p>
 					</statement>
 				</proposition>
-			<!--</div attr= xml:id="KI-prop:gcd(m,n)-divides-mk" class="prop">-->
+
 
 			<p>
 				<em>One prompt to lead students toward the general proof is the following specific example: assume some number <m>x</m> is congruent to <m>m=4\mod12</m>. Then <m>x/12=yR4</m> (here <m>R</m> denotes <q>remainder</q> in language that should be familiar to students), where <m>y</m> is some whole number. So <m>x</m> is some multiple of <m>12</m> plus <m>4</m>; we can write <m>x=12y+4</m>, where <m>y</m> is some whole number. Now, <m>\gcd(4,12)=4</m> and <m>x=4(3y+1)</m> is divisible by <m>4</m>.</em>
