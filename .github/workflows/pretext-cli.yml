@@ -13,8 +13,8 @@ on:
     pull_request:
         branches: ["*"]
     ## Runs on pushes to main
-    #push:
-    #    branches: ["main"]
+    push:
+        branches: ["main"]
     # Runs on demand
     workflow_dispatch:
 
