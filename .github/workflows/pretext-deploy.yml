@@ -12,8 +12,8 @@ on:
   #     branches: ["*"]
 
   # Runs on pushes to main
-  push:
-      branches: ["main"]
+  #push:
+      #branches: ["main"]
 
   # # Runs every day at 00:00 UTC
   # schedule:
