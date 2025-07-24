@@ -56,6 +56,6 @@
     <!--    <xi:include href="./ch_pretext-features.ptx" /> -->
 
     <!-- Finaly we place the backmatter in its own file and inlcude-->
-    <xi:include href="./backmatter.ptx" />
+    <xi:include href="./backmatter.ptx" /> 
   </book>
 </pretext>
